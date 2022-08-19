@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +11,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'tardigrada';
 
-  openStudentLoginDialog(){
+  constructor(    
+    public dialog: MatDialog,
+  ){}
 
+  public openStudentLoginDialog():void{
+    const dialogRef: MatDialogRef<LoginDialogComponent, any> =
+      this.dialog.open(LoginDialogComponent, {
+        data: {},
+      });
   }
 
-  openTeacherLoginDialog(){
-
+  public openTeacherLoginDialog():void{
+    const dialogRef: MatDialogRef<LoginDialogComponent, any> =
+      this.dialog.open(LoginDialogComponent, {
+        data: {},
+      });
   }
 }
