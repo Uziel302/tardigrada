@@ -1,3 +1,85 @@
 button, img {
   margin-left:10px;
 }
+
+.hidden {
+	display:none;
+}
+
+#menuScreen {
+	position: fixed;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color: #220315;
+	z-index:1;
+}
+
+#menu-box {
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu-item {
+  color: white;
+	font-size: 32px;
+	font-family: 'Zhizn';
+	padding: 32px;
+}
+
+
+#muscari {
+	position: fixed;
+	bottom:0;
+	right:1px;
+}
+#tent {
+	position: fixed;
+  bottom:100px;
+	height: 43vh;
+	left:175px;
+}
+
+@media screen and (max-width: 1260px){
+	#muscari, #tent {
+		display:none;
+	}
+}
+
+body:after {
+ display: none;
+ content: url('https://tardigradaschool.com/wp-content/uploads/tent.png') url('https://tardigradaschool.com/wp-content/uploads/muscari.png');
+}
+#bottomMenuLine, #topMenuLine, #toggle-nav {
+	position: fixed;
+	right:50px;
+	height: 2px;
+	width: 48px;
+	z-index:101;
+}
+#topMenuLine {
+	top:40px;
+	background-color: gray;
+}
+#bottomMenuLine {
+	top:46px;
+	background-color: gray;
+}
+#toggle-nav {
+	height:60px;
+}
+#topMenuLine.tilted {
+  transition: 0.5s;
+	transform: translateY(3px) rotate(45deg);
+}
+#bottomMenuLine.tilted {
+  transition: 0.5s;
+	transform: translateY(-3px) rotate(-45deg);
+}

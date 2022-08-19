@@ -1,32 +1,14 @@
-<div id="toggle-nav" onclick="toggleMenu()">
-  <div id="topMenuLine" class=""></div>
-  <div id="bottomMenuLine" class=""></div>
+<div id="toggle-nav" (click)="toggleMenu()">
+  <div id="topMenuLine" [class.tilted]="tilted" class=""></div>
+  <div id="bottomMenuLine" [class.tilted]="tilted" class=""></div>
 </div>
-<div id="menuScreen" class="d-none">
-    <img id="tent" src="https://tardigradaschool.com/wp-content/uploads/tent.png">
-    <img id="muscari" src="https://tardigradaschool.com/wp-content/uploads/muscari.png">
-    <div id="menu-box">
-        <a class="menu-item" href="https://tardigradaschool.com/о-школе/">о школе</a>
-        <a class="menu-item" href="https://tardigradaschool.com/контакты/">контакты</a>
-        <a class="menu-item" href="https://tardigradaschool.com/расписание/">расписание</a>
-        <a class="menu-item" href="https://tardigradaschool.com/помочь/">помочь</a>
-    </div>
-</div>
-
-
-<div>
-  Who are you?
-  <div style="display:flex;">
-    <div style="display:flex; flex-direction:column;">
-      <img style="width:150px; height: 195px;" src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg?quality=85&w=766">
-      <button style="width:150px" (click)="openStudentLoginDialog()">Student login</button>
-      <button style="width:150px" (click)="openStudentRegDialog()">Student registration</button>
-    </div>
-
-    <div style="display:flex; flex-direction:column;">
-      <img style="width:150px; height: 195px;" src="https://i.pinimg.com/originals/44/9c/9b/449c9b1917ba458a5e5933007a33dbb5.jpg">
-      <button style="width:150px" (click)="openTeacherLoginDialog()">Teacher login</button>
-      <button style="width:150px" (click)="openTeacherRegDialog()">Teacher registration</button>
-    </div>
-  </div>
+<div id="menuScreen" [class.hidden]="hidden">
+  <img id="tent" src="https://tardigradaschool.com/wp-content/uploads/tent.png">
+  <img id="muscari" src="https://tardigradaschool.com/wp-content/uploads/muscari.png">
+  <div id="menu-box">
+    <a class="menu-item" routerLink="/login">Войти</a>
+    <a class="menu-item" href="https://tardigradaschool.com/о-школе/">о школе</a>
+    <a class="menu-item" href="https://tardigradaschool.com/контакты/">контакты</a>
+    <a class="menu-item" href="https://tardigradaschool.com/расписание/">расписание</a>
+    <a class="menu-item" href="https://tardigradaschool.com/помочь/">помочь</a>
 </div>

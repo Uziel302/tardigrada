@@ -12,6 +12,7 @@ import { TeacherAreaComponent } from './teacher-area/teacher-area.component';
 import { StudentAreaComponent } from './student-area/student-area.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginScreenComponent } from './login-screen/login-screen.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     TeacherAreaComponent,
     StudentAreaComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginScreenComponent
   ],
   imports: [
     BrowserModule,
