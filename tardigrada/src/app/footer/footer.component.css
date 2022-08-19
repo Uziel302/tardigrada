@@ -1,0 +1,17 @@
+#footer {
+  position: fixed;
+  background-color: #220315;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+}
+#footer img{
+  margin:0 5px;
+}
+#footer-container {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  font-family: 'Helvetica';
+  margin: 10px;
+}
