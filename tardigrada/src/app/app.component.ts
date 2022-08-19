@@ -18,14 +18,28 @@ export class AppComponent {
   public openStudentLoginDialog():void{
     const dialogRef: MatDialogRef<LoginDialogComponent, any> =
       this.dialog.open(LoginDialogComponent, {
-        data: {type: 'student'},
+        data: {type: 'student', login: true},
       });
   }
 
   public openTeacherLoginDialog():void{
     const dialogRef: MatDialogRef<LoginDialogComponent, any> =
       this.dialog.open(LoginDialogComponent, {
-        data: {type: 'teacher'},
+        data: {type: 'teacher', login: true},
+      });
+  }
+
+  public openStudentRegDialog():void{
+    const dialogRef: MatDialogRef<LoginDialogComponent, any> =
+      this.dialog.open(LoginDialogComponent, {
+        data: {type: 'student', login: false},
+      });
+  }
+
+  public openTeacherRegDialog():void{
+    const dialogRef: MatDialogRef<LoginDialogComponent, any> =
+      this.dialog.open(LoginDialogComponent, {
+        data: {type: 'teacher', login: false},
       });
   }
 }

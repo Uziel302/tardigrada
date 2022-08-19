@@ -8,11 +8,13 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class LoginDialogComponent implements OnInit {
   public type: string = '';
+  public login: boolean = true;
 
   constructor(
     public dialogRef: MatDialogRef<LoginDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: {type: string}) {
+    @Inject(MAT_DIALOG_DATA) public data: {type: string, login: boolean}) {
       this.type = data.type;
+      this.login = data.login;
   }
 
   ngOnInit(): void {
