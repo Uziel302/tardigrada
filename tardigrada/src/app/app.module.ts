@@ -8,11 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TeacherAreaComponent } from './teacher-area/teacher-area.component';
+import { StudentAreaComponent } from './student-area/student-area.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    TeacherAreaComponent,
+    StudentAreaComponent
   ],
   imports: [
     BrowserModule,
