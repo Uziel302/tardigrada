@@ -10,7 +10,7 @@
 }
 
 #subtitle {
-  
+
 }
 
 #teacher {
@@ -20,4 +20,19 @@
 
 #hour {
 
+}
+
+#container {
+  display: flex;
+  text-align: center;
+  height: 140px;
+}
+
+#clickable-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 4px;
+  border-radius: 10px;
 }
