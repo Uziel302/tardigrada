@@ -7,12 +7,14 @@ import { LoginScreenComponent } from './login-screen/login-screen.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'app-root', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'donate', component: DonateComponent },
+  { path: 'schedule', component: ScheduleComponent },
   { path: 'login', component: LoginScreenComponent },
   { path: 'student/:name', component: StudentAreaComponent },
   { path: 'teacher/:name', component: TeacherAreaComponent },
