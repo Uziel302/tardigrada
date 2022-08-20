@@ -1,4 +1,9 @@
 
-<div>
-  <div id="title">{{data.content.title}}</div>
+<div style="display: flex; text-align: center; height: 140px;">
+  <a [href]="data.url" [style.background]="data.background" style="display: flex; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;">
+    <div id="title">{{data.content.title}}</div>
+    <div id="subtitle">{{data.content.subtitle}}</div>
+    <div id="teacher">{{data.content.teacher}}</div>
+    <div id="hour">{{data.content.hour}}</div>
+  </a>
 </div>

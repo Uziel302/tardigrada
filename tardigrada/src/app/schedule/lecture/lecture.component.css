@@ -1,0 +1,23 @@
+* {
+  font-weight:500;
+  font-size:12px;
+}
+
+#title {
+  padding:0 5px;
+  color: #DFDEE7;
+  font-size: 18px;
+}
+
+#subtitle {
+  
+}
+
+#teacher {
+  padding-top: 15px;
+  font-weight: 300;
+}
+
+#hour {
+
+}

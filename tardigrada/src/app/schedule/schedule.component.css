@@ -145,38 +145,6 @@ body:after {
 .btn { font-size:1.6rem!important; }
 .toggle.radius .toggle-handle { background-color:white; border-radius:20px; width:60px;}
 
-.lesson-top {
-  display:flex;
-  justify-content:space-between;
-  width:90%;
-  padding-top:6px;
-}
-
-.lesson-top > img {
-  height:25px;
-}
-
-.lesson-title, .lesson-subtitle, .lesson-teacher, .lesson-hour {
-  font-family: 'Ubuntu';
-  font-weight:500;
-}
-
-.lesson-title {
-  color: #DFDEE7;
-  font-size: 18px;
-}
-.lesson-subtitle, .lesson-teacher, .lesson-hour {
-  font-size:12px;
-}
-
-.lesson-teacher {
-  padding-top: 15px;
-  font-weight: 300;
-}
-
-.lesson-title {
-  padding:0 5px;
-}
 
 #daysDropdown {
   width:100%;
