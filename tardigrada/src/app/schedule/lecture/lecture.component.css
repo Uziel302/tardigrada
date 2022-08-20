@@ -11,17 +11,9 @@
   font-size: 18px;
 }
 
-#subtitle {
-
-}
-
 #teacher {
   padding-top: 15px;
   font-weight: 300;
-}
-
-#hour {
-
 }
 
 #container {
@@ -38,7 +30,6 @@
   margin: 4px;
   border-radius: 10px;
 }
-
 
 .lesson-top {
   display:flex;
