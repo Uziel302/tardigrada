@@ -1,87 +1,84 @@
-<div class="vc_row wpb_row vc_row-fluid background"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
-	<div class="wpb_raw_code wpb_content_element wpb_raw_html mobile-none">
-		<div class="wpb_wrapper">
-			<img id="top-flower" src="https://tardigradaschool.com/wp-content/uploads/flower2.png">
-
-		</div>
+<div class="background">
+	<div class="mobile-none">
+		<img id="top-flower" src="https://tardigradaschool.com/wp-content/uploads/flower2.png">
 	</div>
-<div class="vc_empty_space" style="height: 134px"><span class="vc_empty_space_inner"></span></div>
-	<div class="wpb_text_column wpb_content_element  contact-title" id="top-title">
-		<div class="wpb_wrapper">
-			<p>расписание</p>
-
-		</div>
+  <div style="height: 134px"><span class="vc_empty_space_inner"></span></div>
+	<div class="contact-title" id="top-title">
+		<p>расписание</p>
 	</div>
 
-	<div class="wpb_text_column wpb_content_element " id="subtitle">
-		<div class="wpb_wrapper">
-			<p>GMT+3 (Киев, Москва, Иерусалим)</p>
-
-		</div>
+	<div id="subtitle">
+		<p>GMT+3 (Киев, Москва, Иерусалим)</p>
 	</div>
-<div class="vc_empty_space" style="height: 57px"><span class="vc_empty_space_inner"></span></div>
-	<div class="wpb_raw_code wpb_content_element wpb_raw_html">
-		<div class="wpb_wrapper">
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script src="https://unpkg.com/vue@next"></script>
+  
+  <div>
+    here will come the week radio buttons
+  </div>
 
-		</div>
-	</div>
-<div class="vc_empty_space" style="height: 100px"><span class="vc_empty_space_inner"></span></div>
-	<div class="wpb_raw_code wpb_content_element wpb_raw_html">
-		<div class="wpb_wrapper">
-			<div id="vue_app" data-v-app=""><div id="toggle" style="width: 100%; text-align: center; padding: 20px; display: flex; align-items: center; justify-content: center;"><input type="checkbox" data-toggle="toggle" data-on="daily view" data-off="weekly view" data-style="radius" data-width="141" data-onstyle="info" data-offstyle="info"></div><div id="daysDropdown"><select id="select-day"><option value="0">Понедельник </option><option value="1">Вторник </option><option value="2">Среда </option><option value="3">Четверг </option><option value="4">Пятница </option><option value="5">Суббота </option><option value="6">Воскресенье </option></select></div><div id="age-container"><div class="age-box"><input type="checkbox" id="4" value="4"><label for="box4">4</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="5" value="5"><label for="box5">5</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="6" value="6"><label for="box6">6</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="7" value="7"><label for="box7">7</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="8" value="8"><label for="box8">8</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="9" value="9"><label for="box9">9</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="10" value="10"><label for="box10">10</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="11" value="11"><label for="box11">11</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="12" value="12"><label for="box12">12</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="13" value="13"><label for="box13">13</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="14" value="14"><label for="box14">14</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="15" value="15"><label for="box15">15</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="16" value="16"><label for="box16">16</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="17" value="17"><label for="box17">17</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="18" value="18"><label for="box18">18</label><!--v-if--></div><div class="age-box"><input type="checkbox" id="19" value="19"><!--v-if--><label for="box19">19+</label></div></div><div id="separator" style="width: 100%; display: flex; justify-content: center; padding: 10px;"><div style="background-size: 4px; border-top: 2px solid rgb(255, 240, 242); border-right-color: rgb(255, 240, 242); border-bottom-color: rgb(255, 240, 242); border-left-color: rgb(255, 240, 242); width: 300px;"></div></div><div id="weekly-container" style="width: 100%; overflow-x: scroll;"><div id="weekly-flex" style="width: 100%; display: block;"><div><!-- loop week's days or single day in daily view --><div class="daily-container" style="display: flex; justify-content: center;"><!-- loop all day's array --><div style="flex-direction: column; width: 90%; min-width: 300px; max-width: 800px;"><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">9:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">9:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="https://t.me/+YkyOyBDOHroxZDZi" target="_blank" style="background: rgb(157, 56, 72); display: flex; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">10:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title">Математика</div><div class="lesson-subtitle">8-9 лет</div><div class="lesson-teacher">со Настя Коляда</div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">10:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="https://t.me/+KrXFv-vm5vUwNjUy" target="_blank" style="background: rgb(71, 106, 138); display: flex; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">11:15</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title">Английский</div><div class="lesson-subtitle">6-9 лет (не с нуля)</div><div class="lesson-teacher">со Яна Вайсборд</div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">11:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="https://t.me/+dTvUq7-o0Z5lZDA6" target="_blank" style="background: rgb(104, 80, 104); display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">12:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title">Иврит</div><div class="lesson-subtitle">9-11 лет</div><div class="lesson-teacher">со Виталий Лернер</div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">12:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="https://t.me/+hbhGuaK7eP9mMWFi" target="_blank" style="background: rgb(70, 148, 148); display: flex; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">13:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title">Русский</div><div class="lesson-subtitle">13-18 лет</div><div class="lesson-teacher">со Лиза Гайдукова</div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">13:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="https://t.me/+hbhGuaK7eP9mMWFi" target="_blank" style="background: green; display: flex; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">14:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title">Литература</div><div class="lesson-subtitle">13-18 лет</div><div class="lesson-teacher">со Лиза Гайдукова</div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">14:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="https://t.me/+8HMA5dNZ8XZjMTZi" target="_blank" style="background: rgb(71, 106, 138); display: flex; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">15:30</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title">Как приручить английский язык</div><div class="lesson-subtitle">13-18 лет</div><div class="lesson-teacher">со Аня Зиндер</div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">15:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">16:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">16:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="https://t.me/+IIDvjpBd4ToxYzhi" target="_blank" style="background: rgb(104, 80, 104); display: flex; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">17:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title">Иврит с нуля</div><div class="lesson-subtitle">13-18 лет</div><div class="lesson-teacher">со Соня Велле</div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">17:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">18:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">18:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">19:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">19:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="https://t.me/+PQQg5A3HnOM3NTky" target="_blank" style="background: red; display: flex; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">20:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title">История</div><div class="lesson-subtitle">12-18 лет</div><div class="lesson-teacher">со Гриша Конников</div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">20:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div><div><!-- create container for each couple --><div style="display: flex; text-align: center; height: 140px;"><!-- loop through couple --><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">21:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a><a href="" target="_blank" style="display: none; flex-direction: column; align-items: center; width: 100%; margin: 4px; border-radius: 10px;"><div class="lesson-top"><div class="lesson-hour">21:00</div><img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png"></div><div class="lesson-title"></div><div class="lesson-subtitle"></div><div class="lesson-teacher">со </div></a></div></div><div><!-- create container for each couple --><!--v-if--></div></div></div></div></div></div></div>
-    
-    <div id="separator" style="width:100%;display:flex;justify-content:center;padding:10px;">
-    <div style="background-size:4px; border-top:2px solid #FFF0F2; border-color: #FFF0F2;width:300px;"></div>
+  <div *ngFor="let day of weekDays">
+    <input type="radio" name="day" [value]="day" [(ngModel)]="myRadio"/>
+  </div>
+  
+  <div id="age-container">
+    <div class="age-box" *ngFor="let age of ageList">
+        <input type="checkbox" id="age" value="age" v-model="checkedNames">
+        <label *ngIf="age != 19">{{age}}</label>
+        <label *ngIf="age == 19">19+</label>
     </div>
-    
-		</div>
-	</div>
-<div class="vc_empty_space" style="height: 100px"><span class="vc_empty_space_inner"></span></div>
-	<div class="wpb_text_column wpb_content_element " id="text-after-schedule">
-		<div class="wpb_wrapper">
-			<p>Все ссылки на группы в телеграм канале школы</p>
-<p>@nomadic_tardigrade</p>
+  </div>
+  
+  <div id="separator" style="width:100%;display:flex;justify-content:center;padding:10px;">
+      <div style="background-size:4px; border-top:2px solid #FFF0F2; border-color: #FFF0F2;width:300px;"></div>
+  </div>
+  
+  <div id='weekly-container' style="width:100%;overflow-x: scroll;"></div>
 
-		</div>
-	</div>
-
+  
 	<div class="wpb_raw_code wpb_content_element wpb_raw_html">
-		<div class="wpb_wrapper">
-			<div id="flower-container">
-
-<img id="left-flower" src="https://tardigradaschool.com/wp-content/uploads/left-flower-e1656139455356.png">
-
-<a target="_blank" href="https://t.me/nomadic_tardigrade" id="telegram-container">
- <div id="main-telegram-button"></div>
-</a>
-
-</div>
-		</div>
+    <div id="separator" style="width:100%;display:flex;justify-content:center;padding:10px;">
+      <div style="background-size:4px; border-top:2px solid #FFF0F2; border-color: #FFF0F2;width:300px;"></div>
+    </div>
 	</div>
-<div class="vc_empty_space" style="height: 125px"><span class="vc_empty_space_inner"></span></div>
-	<div class="wpb_raw_code wpb_content_element wpb_raw_html">
-		<div class="wpb_wrapper">
-			<div id="bottom-container">
 
-<div id="m-third-title">нужно ли платить?</div>
-<div id="circle-container">
-<a href="https://tardigradaschool.com/помочь/">
-  <img id="right-circle" src="https://tardigradaschool.com/wp-content/uploads/rightcircle.png">
-</a>
-</div>
+  <div class="vc_empty_space" style="height: 100px">
+    <span class="vc_empty_space_inner"></span>
+  </div>
 
-<div id="third-text">
-<div id="third-title">нужно ли платить?</div>
-<div id="third-passage">Если вы находитесь в сложной ситуации и ваши дети не могут ходить в школу - все занятия  бесплатны.<br><br>
-Мы работаем не только для беженцев. Мы будем рады стать для вас онлайн-школой дополнительного образования. Пока ваши донаты для нас - единственный источник финансирования, и мы ожидаем от вас оплаты в приемлемом для вас объеме. 
-</div>
-</div>
+  <div class="wpb_text_column wpb_content_element " id="text-after-schedule">
+    <div class="wpb_wrapper">
+      <p>Все ссылки на группы в телеграм канале школы</p>
+      <p>@nomadic_tardigrade</p>
+    </div>
+  </div>
 
+  <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+    <div class="wpb_wrapper">
+      <div id="flower-container">
+        <img id="left-flower" src="https://tardigradaschool.com/wp-content/uploads/left-flower-e1656139455356.png">
+        <a target="_blank" href="https://t.me/nomadic_tardigrade" id="telegram-container">
+          <div id="main-telegram-button"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="vc_empty_space" style="height: 125px">
+    <span class="vc_empty_space_inner"></span>
+  </div>
+
+  <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+    <div class="wpb_wrapper">
+      <div id="bottom-container">
+        <div id="m-third-title">нужно ли платить?</div>
+        <div id="circle-container">
+          <a href="https://tardigradaschool.com/помочь/">
+            <img id="right-circle" src="https://tardigradaschool.com/wp-content/uploads/rightcircle.png">
+          </a>
+        </div>
+
+  <div id="third-text">
+  <div id="third-title">нужно ли платить?</div>
+  <div id="third-passage">Если вы находитесь в сложной ситуации и ваши дети не могут ходить в школу - все занятия  бесплатны.<br><br>
+  Мы работаем не только для беженцев. Мы будем рады стать для вас онлайн-школой дополнительного образования. Пока ваши донаты для нас - единственный источник финансирования, и мы ожидаем от вас оплаты в приемлемом для вас объеме. 
+  </div>
 </div>
-		</div>
-	</div>
-</div></div></div></div>
