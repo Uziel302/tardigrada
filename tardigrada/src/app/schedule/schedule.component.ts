@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
-  public myRadio: string = 'Понедельник';
+  public weekRadio: string = 'Понедельник';
   public weekDays = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье', 'Все'];
   public ageList: number[] = [4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
   public checkedNames: number[] = [...this.ageList]
