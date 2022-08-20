@@ -28,8 +28,4 @@ export class ScheduleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  stringi(stringa: string){
-    return JSON.stringify(stringa);
-  }
-
 }

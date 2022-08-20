@@ -17,6 +17,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { LectureComponent } from './schedule/lecture/lecture.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
     AboutComponent,
     ContactComponent,
     DonateComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    LectureComponent
   ],
   imports: [
     BrowserModule,
