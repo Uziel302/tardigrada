@@ -11,12 +11,11 @@
 		<p>GMT+3 (Киев, Москва, Иерусалим)</p>
 	</div>
   
-  <div>
-    here will come the week radio buttons
-  </div>
-
-  <div *ngFor="let day of weekDays">
-    <input type="radio" name="day" [value]="day" [(ngModel)]="myRadio"/>
+  <div id="days-radio">
+    Select day
+    <div *ngFor="let day of weekDays">
+      <input type="radio" name="day" [value]="day" [(ngModel)]="myRadio"/>{{day}}
+    </div>
   </div>
   
   <div id="age-container">

@@ -1,6 +1,7 @@
 .background {
   background-color: #182140;
   overflow: scroll;
+  color: white;
 }
 
 #top-flower {
@@ -13,7 +14,6 @@
   font-family: 'Zhizn';
   font-size: 50px;
   line-height: 130%;
-  color: #FFFFFF;
   width: 100%;
   text-align:center;
 }
@@ -22,20 +22,18 @@
 }
 
 #subtitle {
-text-align: center;
-color: #ffffff; 
-font-family: 'Zhizn';
-font-size: 50px;
-padding-top:55px;
+  text-align: center;
+  font-family: 'Zhizn';
+  font-size: 50px;
+  padding-top:55px;
 }
 
 #body-container {
   width: 100%;
-  text-align:center;
-  color: #FFFFFF;
+  text-align: center;
   font-family: 'Helvetica';
   font-weight: 400;
-  font-size:30px;
+  font-size: 30px;
   line-height: 54px;
   letter-spacing: 0.04em;
 }
@@ -52,7 +50,6 @@ padding-top:55px;
 }
 
 #text-after-schedule {
-  color: white;
   width: 100%;
   text-align: center;
   font-family: 'Roboto';
@@ -82,53 +79,52 @@ padding-top:55px;
 
 
 body:after {
-display: none;
-content: url('https://tardigradaschool.com/wp-content/uploads/channel-hover.png');
+  display: none;
+  content: url('https://tardigradaschool.com/wp-content/uploads/channel-hover.png');
 }
 
 #bottom-container {
-padding: 0 9.5% 215px 9.5%;
-display:flex;
-flex-direction: row-reverse;
-justify-content:space-between;
-flex-wrap: wrap;
+  padding: 0 9.5% 215px 9.5%;
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content:space-between;
+  flex-wrap: wrap;
 }
 
 #right-circle {
-width:250px;
-height:250px;
+  width:250px;
+  height:250px;
 }
 #third-text {
-display:flex;
-flex-direction: column;
-justify-content: center;
-max-width:60%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width:60%;
 }
 
 #third-title {
-font-family: 'Zhizn';
-font-size:50px;
-font-weight: 400;
-line-height: 80px;
-color: #D8D7E1;
+  font-family: 'Zhizn';
+  font-size:50px;
+  font-weight: 400;
+  line-height: 80px;
+  color: #D8D7E1;
 }
 
 #third-passage {
-font-family: 'Ubuntu';
-font-size:30px;
-font-weight: 300;
-line-height: 48px;
-color: #FFFFFF;
-padding-top:20px;
+  font-family: 'Ubuntu';
+  font-size:30px;
+  font-weight: 300;
+  line-height: 48px;
+  padding-top:20px;
 }
 
 #circle-container {
-display:flex;
-justify-content:center;
-align-items:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 #m-third-title {
-display:none;
+  display:none;
 }
 
 @media screen and (max-width: 767px){
@@ -141,7 +137,7 @@ display:none;
   #bottom-container {flex-direction:column;align-items:center;}
   #third-title {display:none;}
   #third-passage {text-align:center;}
- #m-third-title {display:block;text-align:center;font-family: 'Zhizn';font-size:50px;font-weight: 400;line-height: 80px;color: #D8D7E1;}
+  #m-third-title {display:block;text-align:center;font-family: 'Zhizn';font-size:50px;font-weight: 400;line-height: 80px;color: #D8D7E1;}
   #third-text {width:100%;max-width:100%;}
 }
 
@@ -150,10 +146,10 @@ display:none;
 .toggle.radius .toggle-handle { background-color:white; border-radius:20px; width:60px;}
 
 .lesson-top {
-display:flex;
-justify-content:space-between;
-width:90%;
-padding-top:6px;
+  display:flex;
+  justify-content:space-between;
+  width:90%;
+  padding-top:6px;
 }
 
 .lesson-top > img {
@@ -161,47 +157,55 @@ padding-top:6px;
 }
 
 .lesson-title, .lesson-subtitle, .lesson-teacher, .lesson-hour {
-font-family: 'Ubuntu';
-font-weight:500;
+  font-family: 'Ubuntu';
+  font-weight:500;
 }
+
 .lesson-title {
-color: #DFDEE7;
-font-size: 18px;
+  color: #DFDEE7;
+  font-size: 18px;
 }
 .lesson-subtitle, .lesson-teacher, .lesson-hour {
-color: white;
-font-size:12px;
+  font-size:12px;
 }
+
 .lesson-teacher {
-padding-top: 15px;
-font-weight: 300;
+  padding-top: 15px;
+  font-weight: 300;
 }
+
 .lesson-title {
-padding:0 5px;
+  padding:0 5px;
 }
 
 #daysDropdown {
-width:100%;
-display:flex;
-justify-content:center;
-font-size:18px;
-font-family: 'Ubuntu';
-padding-bottom:10px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  font-size:18px;
+  font-family: 'Ubuntu';
+  padding-bottom:10px;
 }
 
 #select-day {
-border-radius:10px;
+  border-radius:10px;
 }
 
 #age-container {
-display:flex;
-flex-wrap:wrap;
-width:100%;
-align-items:center;
-justify-content:center;
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+  align-items:center;
+  justify-content:center;
 }
 
 .age-box {
-color:white;
-padding:5px;
+  color:white;
+  padding: 5px;
+}
+
+#days-radio {
+  display:flex;
+  width:100%;
+  justify-content:center;
 }
