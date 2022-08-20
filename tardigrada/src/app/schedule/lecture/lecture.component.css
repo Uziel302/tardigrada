@@ -1,6 +1,8 @@
 * {
   font-weight:500;
   font-size:12px;
+  text-decoration: none;
+  color: white;
 }
 
 #title {
@@ -35,4 +37,16 @@
   width: 100%;
   margin: 4px;
   border-radius: 10px;
+}
+
+
+.lesson-top {
+  display:flex;
+  justify-content:space-between;
+  width:90%;
+  padding-top:6px;
+}
+
+.lesson-top > img {
+  height:25px;
 }

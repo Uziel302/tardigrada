@@ -1,9 +1,12 @@
 
 <div id="container">
   <a id="clickable-box" [href]="data.url" [style.background]="data.background">
+    <div class="lesson-top">
+      <div id="hour">{{data.hour}}</div>
+      <img src="https://tardigradaschool.com/wp-content/uploads/telegram-icon.png">
+    </div>
     <div id="title">{{data.content.title}}</div>
     <div id="subtitle">{{data.content.subtitle}}</div>
     <div id="teacher">{{data.content.teacher}}</div>
-    <div id="hour">{{data.content.hour}}</div>
   </a>
 </div>

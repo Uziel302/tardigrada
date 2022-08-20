@@ -33,7 +33,9 @@
   <div id='weekly-container' style="width:100%;overflow-x: scroll;">
     <div class="daily-container" style="display:flex;flex-direction: column;align-items: center;">  
       <div *ngFor="let slot of lessonsArray[selectedDay]" class="row-container">
-        <app-lecture [data]="slot"></app-lecture>  
+        <div *ngIf="slot.content.title">
+          <app-lecture [data]="slot"></app-lecture>  
+        </div>
       </div>
     </div>
   </div>
