@@ -210,14 +210,14 @@ body:after {
   justify-content:center;
 }
 
-#separator {
+.separator {
   width:100%;
   display:flex;
   justify-content:center;
   padding:10px;
 }
 
-#line {
+.separator-line {
   background-size:4px;
   border-top:2px solid #FFF0F2;
   border-color: #FFF0F2;
