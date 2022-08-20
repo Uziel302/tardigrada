@@ -14,7 +14,7 @@
   <div id="days-radio">
     Select day:
     <div *ngFor="let day of weekDays">
-      <input type="radio" name="day" [value]="day" [(ngModel)]="weekRadio"/>{{day}}
+      <input type="radio" name="day" [value]="day" [(ngModel)]="selectedDay"/>{{weekMap.get(day)}}
     </div>
   </div>
   
@@ -30,7 +30,13 @@
     <div class="separator-line"></div>
   </div>
   
-  <div id='weekly-container' style="width:100%;overflow-x: scroll;"></div>
+  <div id='weekly-container' style="width:100%;overflow-x: scroll;">
+    <div class="daily-container" style="display:flex;justify-content: center;">  
+      <div *ngFor="let slot of lessonsArray[selectedDay]">
+        
+      </div>
+    </div>
+  </div>
 
   
   <div class="separator">
