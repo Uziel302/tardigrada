@@ -1,0 +1,116 @@
+#background {
+  background-color: #380623;
+  position: absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  overflow: scroll;
+}
+#top-flower {
+  position: absolute;
+  top:0;
+  left:4%;
+  height:80vh;
+  max-height:800px;
+}
+.contact-title {
+  font-family: 'Zhizn';
+  font-size: 50px;
+  line-height: 130%;
+  color: #FFFFFF;
+  width: 100%;
+  text-align:center;
+}
+
+#top-title {
+  position: absolute;
+  top: 115px;
+}
+
+#contact-container {
+  width: 100%;
+  position: absolute;
+  top: 180px;
+  text-align:center;
+  color: #FFFFFF;
+  font-family: 'Helvetica';
+  font-weight: 400;
+  font-size:30px;
+  line-height: 54px;
+  letter-spacing: 0.04em;
+}
+
+#faces-container {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  width: 100%;
+}
+.face-container {
+  width:470px;
+  line-height:1;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+}
+.subtitle {
+  font-size:20px;
+  line-height:1;
+}
+.telegram-button {
+ background-image: url("https://tardigradaschool.com/wp-content/uploads/telegram-button.png");
+ width:70px;
+ height:70px;
+}
+
+.telegram-button:hover {
+ background-image: url("https://tardigradaschool.com/wp-content/uploads/telegram-full.png");
+}
+
+#telegram-container {
+  width:100%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+#main-telegram-button {
+  background-image: url("https://tardigradaschool.com/wp-content/uploads/channel-button.png");
+  height:178px;
+  width:180px;
+}
+#main-telegram-button:hover {
+  background-image: url("https://tardigradaschool.com/wp-content/uploads/channel-hover.png");
+}
+.zoom-out {
+  transform: scale(0.9, 0.9);
+}
+
+@media screen and (max-width: 1260px){
+#top-title {font-size: 40px;}
+.contact-title {font-size: 30px;}
+.separator {display:none;}
+#faces-container {flex-direction: column;}
+.mobile-sparator {border:1px solid;color:white;margin: 73px 45px;width:100%}
+#contact-container {top:160px;}
+}
+
+body:after {
+display: none;
+content: url('https://tardigradaschool.com/wp-content/uploads/channel-hover.png');
+}
+
+
+
+@media screen and (max-width: 1260px){
+	.mobile-none{
+		display:none;
+	}
+}
+
+@media screen and (min-width: 1260px){
+	.desktop-none{
+		display:none;
+	}
+}

@@ -13,6 +13,8 @@ import { StudentAreaComponent } from './student-area/student-area.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LoginScreenComponent } from './login-screen/login-screen.component';
     StudentAreaComponent,
     HeaderComponent,
     FooterComponent,
-    LoginScreenComponent
+    LoginScreenComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
