@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { ILecture } from 'src/app/models/lecture';
+
 @Component({
   selector: 'app-lecture',
   templateUrl: './lecture.component.html',
@@ -7,7 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LectureComponent implements OnInit {
 
-  @Input() data:any = {};
+  @Input() data: ILecture = {
+    title: '',
+    subtitle: '',
+    teacher: '',
+    hour: '',
+    minAge: '',
+    maxAge: '',
+    background: '',
+    url: '',
+  };
 
   constructor() { }
 
