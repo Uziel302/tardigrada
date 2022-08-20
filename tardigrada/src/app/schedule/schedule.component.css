@@ -69,18 +69,18 @@
 }
 
 #main-telegram-button {
-  background-image: url("https://tardigradaschool.com/wp-content/uploads/channel-button.png");
+  background-image: url("/assets/images/channel-button.png");
   height:178px;
   width:180px;
 }
 #main-telegram-button:hover {
-  background-image: url("https://tardigradaschool.com/wp-content/uploads/channel-hover.png");
+  background-image: url("/assets/images/channel-hover.png");
 }
 
 
 body:after {
   display: none;
-  content: url('https://tardigradaschool.com/wp-content/uploads/channel-hover.png');
+  content: url('/assets/images/channel-hover.png');
 }
 
 #bottom-container {

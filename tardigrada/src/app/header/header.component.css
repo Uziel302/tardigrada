@@ -55,7 +55,7 @@ button, img {
 
 body:after {
  display: none;
- content: url('https://tardigradaschool.com/wp-content/uploads/tent.png') url('https://tardigradaschool.com/wp-content/uploads/muscari.png');
+ content: url('/assets/images/tent.png') url('/assets/images/muscari.png');
 }
 #bottomMenuLine, #topMenuLine, #toggle-nav {
 	position: fixed;

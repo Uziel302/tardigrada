@@ -60,13 +60,13 @@
   line-height:1;
 }
 .telegram-button {
- background-image: url("https://tardigradaschool.com/wp-content/uploads/telegram-button.png");
+ background-image: url("/assets/images/telegram-button.png");
  width:70px;
  height:70px;
 }
 
 .telegram-button:hover {
- background-image: url("https://tardigradaschool.com/wp-content/uploads/telegram-full.png");
+ background-image: url("/assets/images/telegram-full.png");
 }
 
 #telegram-container {
@@ -76,12 +76,12 @@
   align-items:center;
 }
 #main-telegram-button {
-  background-image: url("https://tardigradaschool.com/wp-content/uploads/channel-button.png");
+  background-image: url("/assets/images/channel-button.png");
   height:178px;
   width:180px;
 }
 #main-telegram-button:hover {
-  background-image: url("https://tardigradaschool.com/wp-content/uploads/channel-hover.png");
+  background-image: url("/assets/images/channel-hover.png");
 }
 .zoom-out {
   transform: scale(0.9, 0.9);
@@ -98,7 +98,7 @@
 
 body:after {
 display: none;
-content: url('https://tardigradaschool.com/wp-content/uploads/channel-hover.png');
+content: url('/assets/images/channel-hover.png');
 }
 
 
