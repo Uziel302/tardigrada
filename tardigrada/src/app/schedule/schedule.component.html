@@ -20,7 +20,7 @@
   
   <div id="age-container">
     <div class="age-box" *ngFor="let age of ageList">
-      <input type="checkbox" id="age" value="age" [(ngModel)]="checkedNames">
+      <input type="checkbox" [id]="age" [value]="age" [checked]="checkedAges.includes(age)" (change)="checkboxChanged(age)">
       <label *ngIf="age !== 19">{{age}}</label>
       <label *ngIf="age === 19">19+</label>
     </div>
@@ -34,7 +34,7 @@
     <div class="daily-container" style="display:flex;flex-direction: column;align-items: center;">  
       <div *ngFor="let hourGroup of lessonsArray[selectedDay]" class="row-container" [style.display]="hourGroup[0].title && hourGroup[1].title ? 'flex' : 'block'">
         <div *ngFor="let slot of hourGroup" [class.half]="hourGroup[0].title && hourGroup[1].title">
-          <div *ngIf="slot.title">
+          <div *ngIf="slot.title && checkAge(+slot.minAge, +slot.maxAge)">
             <app-lecture [data]="slot"></app-lecture> 
           </div>
         </div>
