@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +40,7 @@ import { HomepageComponent } from './homepage/homepage.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFullpageModule,
     MatDialogModule,
     BrowserAnimationsModule,
     FormsModule,

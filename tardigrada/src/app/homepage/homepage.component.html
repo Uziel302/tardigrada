@@ -1,7 +1,4 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.extensions.min.js"></script>
-<div id="fullpage">
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
   <div class="section" style="background: #1d0a22; color: white;">
     photos will be here
   </div>
@@ -136,11 +133,3 @@
     <br>Дети с удовольствием идут на уроки, иногда жертвуя игрой!»
   </div>
 </div>
-
-<script>
-  new fullpage('#fullpage', {
-    //options here
-    autoScrolling:true,
-    scrollHorizontally: true
-  });
-  </script>
