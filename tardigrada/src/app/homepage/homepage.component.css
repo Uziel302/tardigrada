@@ -1,0 +1,15 @@
+.section {
+  height: 100vh;
+}
+
+.quote {
+font-size: 50px;
+font-family: Zhizn;
+text-align: center;
+}
+
+@media screen and (max-width: 1420px){
+  .narrow-none {
+    display:none;
+}
+}
