@@ -20,5 +20,15 @@
 @media screen and (max-width: 1420px){
   .narrow-none {
     display:none;
+  }
 }
+
+#hiding-block {
+  left: 10%;
+  position: absolute;
+  bottom: 0;
+  height: 550px;
+  width: 300px;
+  background: #d8d7e1;
+  z-index: 1;
 }
