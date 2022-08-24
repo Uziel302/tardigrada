@@ -1,0 +1,12 @@
+#container {
+  color: white;
+  padding: 100px;
+}
+#profile-image {
+  height: 150px;
+  width: 150px;
+}
+
+#name {
+  padding-left: 40px;
+}
