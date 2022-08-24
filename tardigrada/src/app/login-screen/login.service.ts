@@ -29,15 +29,23 @@ export class LoginService {
   }
 
   createUser(name: string, password: string, isStudent: boolean): void {
+    //DOTO: make it work with backend
+    if(1){
+      this.router.navigate([isStudent ? '/student' : '/teacher']);
+    } else {
     const authData: INameAndPass = { name, password };
     this.http
       .post(environment.apiEndPoint + 'signup', authData)
       .subscribe(response => {
         this.login(name, password, isStudent);
       });
+    }
   }
 
   login(name: string, password: string, isStudent: boolean): void {
+    if(1){
+      this.router.navigate([isStudent ? '/student' : '/teacher']);
+    } else {
     const authData: INameAndPass = { name, password };
     this.http
       .post<{ token: string; expiresIn: number }>(
@@ -58,6 +66,7 @@ export class LoginService {
           this.router.navigate(['/timer']);
         }
       });
+    }
   }
 
   autoAuthUser():void {

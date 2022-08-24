@@ -17,8 +17,8 @@ const routes: Routes = [
   { path: 'donate', component: DonateComponent },
   { path: 'schedule', component: ScheduleComponent },
   { path: 'login', component: LoginScreenComponent },
-  { path: 'student/:name', component: StudentAreaComponent },
-  { path: 'teacher/:name', component: TeacherAreaComponent },
+  { path: 'student', component: StudentAreaComponent },
+  { path: 'teacher', component: TeacherAreaComponent },
 ];
 
 @NgModule({
