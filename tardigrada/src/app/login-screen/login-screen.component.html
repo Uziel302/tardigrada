@@ -1,7 +1,7 @@
 <div style="height:100vh;display:flex;justify-content: center;align-items:center;">
   <div style="background: white;padding: 10px;border-radius:10px;display: flex; flex-direction: column;justify-content: center;align-items: center;">
     <div mat-dialog-title>
-      Welcome {{type}}, please {{login ? 'login': 'register'}}
+      Welcome {{isStudent ? 'student' : 'teacher'}}, please {{login ? 'login': 'register'}}
     </div>
     <div mat-dialog-content>
       <input placeholder="name" [(ngModel)]="name">
@@ -11,11 +11,12 @@
       <button mat-button [mat-dialog-close]="[name, password]" cdkFocusInitial>Submit</button>
     </div>
     <div style="display: flex;">
-      <button mat-button (click)="login = false">
-        I don't have account yet
+      <button mat-button (click)="login = !login">
+        <div *ngIf="login">I don't have an account yet</div>
+        <div *ngIf="!login">I already have an account</div>
       </button>
-      <button mat-button (click)="type = 'teacher'">
-        I am a teacher
+      <button mat-button (click)="isStudent = !isStudent">
+        I am a {{!isStudent ? 'student' : 'teacher'}}
       </button>
     </div>
   </div>

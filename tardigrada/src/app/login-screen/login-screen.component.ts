@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 })
 export class LoginScreenComponent implements OnInit {
 
-  public type = 'student';
+  public isStudent: boolean = true;
   public login: boolean = true;
   public name: string = '';
   public password: string = '';
