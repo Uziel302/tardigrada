@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router } from "@angular/router";
 
+import { LoginService } from './login.service';
+
 @Component({
   selector: 'app-login-screen',
   templateUrl: './login-screen.component.html',
@@ -16,8 +18,17 @@ export class LoginScreenComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private loginService: LoginService,
   ) { }
 
   ngOnInit(): void {
+  }
+
+  submit(){
+    if(this.login){
+      this.loginService.login(this.name, this.password, this.isStudent);
+    } else {
+      this.loginService.createUser(this.name, this.password, this.isStudent);
+    }
   }
 }

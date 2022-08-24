@@ -1,15 +1,9 @@
-<div style="height:100vh;display:flex;justify-content: center;align-items:center;">
-  <div style="background: white;padding: 10px;border-radius:10px;display: flex; flex-direction: column;justify-content: center;align-items: center;">
-    <div mat-dialog-title>
-      Welcome {{isStudent ? 'student' : 'teacher'}}, please {{login ? 'login': 'register'}}
-    </div>
-    <div mat-dialog-content>
-      <input placeholder="name" [(ngModel)]="name">
-      <input placeholder="password" [(ngModel)]="password">
-    </div>
-    <div mat-dialog-actions>
-      <button mat-button [mat-dialog-close]="[name, password]" cdkFocusInitial>Submit</button>
-    </div>
+<div style="height:100vh; display:flex; justify-content: center; align-items:center;">
+  <div style="background: white; padding: 10px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top:-100px;">
+    Welcome {{isStudent ? 'student' : 'teacher'}}, please {{login ? 'login': 'register'}}
+    <input placeholder="name" [(ngModel)]="name">
+    <input placeholder="password" [(ngModel)]="password">
+    <button (click)="submit()">Submit</button>
     <div style="display: flex;">
       <button mat-button (click)="login = !login">
         <div *ngIf="login">I don't have an account yet</div>
