@@ -1,0 +1,21 @@
+#weekly-container {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.daily-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-container {
+  width: 90%;
+  height: 140px;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+.half {
+  width: 50%;
+}

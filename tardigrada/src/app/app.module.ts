@@ -20,6 +20,7 @@ import { DonateComponent } from './donate/donate.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { LectureComponent } from './schedule/lecture/lecture.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ScheduleTableComponent } from './schedule/schedule-table/schedule-table.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     DonateComponent,
     ScheduleComponent,
     LectureComponent,
-    HomepageComponent
+    HomepageComponent,
+    ScheduleTableComponent
   ],
   imports: [
     BrowserModule,
