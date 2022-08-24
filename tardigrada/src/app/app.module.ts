@@ -4,6 +4,7 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS, MAT_DIALOG_DATA, MatDialog
 import { FormsModule } from '@angular/forms';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -46,6 +47,7 @@ import { ScheduleTableComponent } from './schedule/schedule-table/schedule-table
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MatIconModule,
   ],
   providers: [
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true, direction: 'ltr', autoFocus: 'first-tabbable'} },

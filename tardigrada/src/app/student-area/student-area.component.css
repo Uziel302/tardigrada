@@ -2,6 +2,10 @@
   color: white;
   padding: 100px;
 }
+
+#image-container {
+  display: flex;
+}
 #profile-image {
   height: 150px;
   width: 150px;
