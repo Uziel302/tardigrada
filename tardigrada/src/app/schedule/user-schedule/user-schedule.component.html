@@ -1,4 +1,4 @@
-<div style="display: flex;">
+<div id="container">
   <div *ngFor="let day of [0,1,2,3,4,5,6]">
     <app-user-schedule-day [dailySchedule]="scheduleService.lessonsArray[day]"></app-user-schedule-day>
   </div>

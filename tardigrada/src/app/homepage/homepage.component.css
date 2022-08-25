@@ -1,7 +1,8 @@
-@import '~fullpage.js/dist/fullpage.min.css';
+@import "~fullpage.js/dist/fullpage.min.css";
 
 .section {
   height: 100vh;
+  color: white;
 }
 
 .quote {
@@ -17,9 +18,9 @@
   height: 100%;
 }
 
-@media screen and (max-width: 1420px){
+@media screen and (max-width: 1420px) {
   .narrow-none {
-    display:none;
+    display: none;
   }
 }
 
@@ -31,4 +32,33 @@
   width: 300px;
   background: #d8d7e1;
   z-index: 1;
+}
+
+.first-section {
+  background: #1d0a22;
+}
+
+.second-section {
+  background: #d8d7e1;
+  color: #46313d;
+}
+
+.third-section {
+  background: #72274b;
+}
+
+.fourth-section {
+  background: #987682;
+}
+
+.fifth-section {
+  background: #d8d7e1;
+}
+
+.sixth-section {
+  background: #59385b;
+}
+
+.seventh-section {
+  background: #661e4b;
 }
