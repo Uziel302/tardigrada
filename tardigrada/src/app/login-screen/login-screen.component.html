@@ -1,16 +1,17 @@
-<div style="height:100vh; display:flex; justify-content: center; align-items:center;">
-  <div style="background: white; padding: 10px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top:-100px;">
-    Welcome {{isStudent ? 'student' : 'teacher'}}, please {{login ? 'login': 'register'}}
-    <input placeholder="name" [(ngModel)]="name">
-    <input placeholder="password" [(ngModel)]="password">
+<div id="container">
+  <div id="wrapper">
+    Welcome {{ isStudent ? "student" : "teacher" }}, please
+    {{ login ? "login" : "register" }}
+    <input placeholder="name" [(ngModel)]="name" />
+    <input placeholder="password" [(ngModel)]="password" />
     <button (click)="submit()">Submit</button>
-    <div style="display: flex;">
+    <div id="buttons">
       <button mat-button (click)="login = !login">
         <div *ngIf="login">I don't have an account yet</div>
         <div *ngIf="!login">I already have an account</div>
       </button>
       <button mat-button (click)="isStudent = !isStudent">
-        I am a {{!isStudent ? 'student' : 'teacher'}}
+        I am a {{ !isStudent ? "student" : "teacher" }}
       </button>
     </div>
   </div>
