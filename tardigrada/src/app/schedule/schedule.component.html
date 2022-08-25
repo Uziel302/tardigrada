@@ -1,78 +1,95 @@
 <div class="background">
-	<div class="mobile-none">
-		<img id="top-flower" src="/assets/images/flower2.png">
-	</div>
-  
+  <div class="mobile-none">
+    <img id="top-flower" src="/assets/images/flower2.png" />
+  </div>
+
   <div id="space3"></div>
 
-	<div class="contact-title" id="top-title">
-		<p>расписание</p>
-	</div>
+  <div class="contact-title" id="top-title">
+    <p>расписание</p>
+  </div>
 
-	<div id="subtitle">
-		<p>GMT+3 (Киев, Москва, Иерусалим)</p>
-	</div>
-  
+  <div id="subtitle">
+    <p>GMT+3 (Киев, Москва, Иерусалим)</p>
+  </div>
+
   <div id="days-radio">
     Select day:
     <div *ngFor="let day of weekDays">
-      <input type="radio" name="day" [value]="day" [(ngModel)]="selectedDay"/>{{weekMap.get(day)}}
+      <input
+        type="radio"
+        name="day"
+        [value]="day"
+        [(ngModel)]="selectedDay"
+      />{{ weekMap.get(day) }}
     </div>
   </div>
-  
+
   <div id="age-container">
     <div class="age-box" *ngFor="let age of ageList">
-      <input type="checkbox" [id]="age" [value]="age" [checked]="checkedAges.includes(age)" (change)="checkboxChanged(age)">
-      <label *ngIf="age !== 19">{{age}}</label>
+      <input
+        type="checkbox"
+        [id]="age"
+        [value]="age"
+        [checked]="checkedAges.includes(age)"
+        (change)="checkboxChanged(age)"
+      />
+      <label *ngIf="age !== 19">{{ age }}</label>
       <label *ngIf="age === 19">19+</label>
     </div>
   </div>
-  
+
   <div class="separator">
     <div class="separator-line"></div>
   </div>
 
-  <app-schedule-table [selectedDay]="selectedDay" [checkedAges]="checkedAges"></app-schedule-table>
-  
+  <app-schedule-table
+    [selectedDay]="selectedDay"
+    [checkedAges]="checkedAges"
+  ></app-schedule-table>
+
   <div class="separator">
     <div class="separator-line"></div>
   </div>
 
   <div id="space2"></div>
 
-  <div class="wpb_text_column wpb_content_element " id="text-after-schedule">
-    <div class="wpb_wrapper">
-      <p>Все ссылки на группы в телеграм канале школы</p>
-      <p>@nomadic_tardigrade</p>
-    </div>
+  <div id="text-after-schedule">
+    <p>Все ссылки на группы в телеграм канале школы</p>
+    <p>@nomadic_tardigrade</p>
   </div>
 
-  <div class="wpb_raw_code wpb_content_element wpb_raw_html">
-    <div class="wpb_wrapper">
-      <div id="flower-container">
-        <img id="left-flower" src="/assets/images/left-flower-e1656139455356.png">
-        <a target="_blank" href="https://t.me/nomadic_tardigrade" id="telegram-container">
-          <div id="main-telegram-button"></div>
-        </a>
-      </div>
-    </div>
+  <div id="flower-container">
+    <img id="left-flower" src="/assets/images/left-flower-e1656139455356.png" />
+    <a
+      target="_blank"
+      href="https://t.me/nomadic_tardigrade"
+      id="telegram-container"
+    >
+      <div id="main-telegram-button"></div>
+    </a>
   </div>
 
   <div id="space1"></div>
 
-  <div class="wpb_raw_code wpb_content_element wpb_raw_html">
-    <div class="wpb_wrapper">
-      <div id="bottom-container">
-        <div id="m-third-title">нужно ли платить?</div>
-        <div id="circle-container">
-          <a routerLink="/donate">
-            <img id="right-circle" src="/assets/images/rightcircle.png">
-          </a>
-        </div>
+  <div id="bottom-container">
+    <div id="m-third-title">нужно ли платить?</div>
+    <div id="circle-container">
+      <a routerLink="/donate">
+        <img id="right-circle" src="/assets/images/rightcircle.png" />
+      </a>
+    </div>
 
-  <div id="third-text">
-  <div id="third-title">нужно ли платить?</div>
-  <div id="third-passage">Если вы находитесь в сложной ситуации и ваши дети не могут ходить в школу - все занятия  бесплатны.<br><br>
-  Мы работаем не только для беженцев. Мы будем рады стать для вас онлайн-школой дополнительного образования. Пока ваши донаты для нас - единственный источник финансирования, и мы ожидаем от вас оплаты в приемлемом для вас объеме. 
+    <div id="third-text">
+      <div id="third-title">нужно ли платить?</div>
+      <div id="third-passage">
+        Если вы находитесь в сложной ситуации и ваши дети не могут ходить в
+        школу - все занятия бесплатны.<br /><br />
+        Мы работаем не только для беженцев. Мы будем рады стать для вас
+        онлайн-школой дополнительного образования. Пока ваши донаты для нас -
+        единственный источник финансирования, и мы ожидаем от вас оплаты в
+        приемлемом для вас объеме.
+      </div>
+    </div>
   </div>
 </div>
