@@ -135,6 +135,7 @@ body:after {
     display: none;
   }
 }
+
 .space14{
   height: 14px;
 }
@@ -148,9 +149,9 @@ body:after {
 }
 
 .space100{
-  height: 85px;
+  height: 100px;
 }
 
 .space145{
-  height: 85px;
+  height: 145px;
 }
