@@ -48,20 +48,52 @@
     </div>
   </div>
 
-  <div id="profile-teacher">
-    <div id="image-container-teacher">
-      <div id="profile-image-border-teacher">
-        <div id="profile-image-teacher">
-          <img src="/assets/images/profile-default.jpg" />
+  <div id="buttons-container">
+    <div id="profile-teacher">
+      <div id="image-container-teacher">
+        <div id="profile-image-border-teacher">
+          <div id="profile-image-teacher">
+            <img src="/assets/images/profile-default.jpg" />
+          </div>
         </div>
       </div>
+      <div id="name-teacher">
+        {{scheduleService.selectedLecture.teacher}}
+      </div>
     </div>
-    <div id="name-teacher">
-      {{scheduleService.selectedLecture.teacher}}
+
+    <div id="center-button-container">
+      <div id="center-button">
+        взять на урок
+      </div>
+    </div>
+  
+    <div id="black-circle">
+      на урок
     </div>
   </div>
 
-  <div class="separating-line">
+  <div class="separating-space"></div>
+
+  <div id="form-container">
+    <div id="form-first-line">
+      <div class="buttom-cont">о курсе</div>
+      <div class="buttom-cont">чат с преподавателем</div>
+      <div class="buttom-cont">воркбук</div>
+    </div>
+  
+    <div id="form-text-container">
+      <div id="inner-part">
+        <div id="placeholder">
+          дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз
+          з дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз з дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз дз
+        </div>
+        <input id="form-text">
+        <div id="black-button-container">
+          <div id="black-button">отправить</div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
