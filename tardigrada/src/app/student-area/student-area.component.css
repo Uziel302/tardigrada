@@ -52,3 +52,9 @@
   border: 2px solid white;
   border-radius: 50%;
 }
+
+#schedule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
