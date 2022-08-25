@@ -26,5 +26,7 @@ export class UserScheduleLectureComponent implements OnInit {
 
   selectLecture() {
     this.scheduleService.selectedLecture = this.data;
+    let element = document.getElementById('subject') as HTMLElement;
+    element.scrollIntoView({behavior: 'smooth'});
   }
 }
