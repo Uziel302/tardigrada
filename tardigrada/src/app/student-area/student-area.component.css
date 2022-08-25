@@ -58,3 +58,21 @@
   align-items: center;
   justify-content: center;
 }
+
+#under-schedule-buttons { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px 200px;
+}
+
+.button-under-schedule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 60px;
+  background: white;
+  border-radius: 10px;
+  font-size: 20px;
+}
