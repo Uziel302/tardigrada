@@ -5,9 +5,11 @@
   height: 60px;
   width: 100%;
 }
+
 #footer img{
   margin:0 5px;
 }
+
 #footer-container {
   display: flex;
   justify-content:center;
