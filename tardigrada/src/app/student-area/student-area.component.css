@@ -1,22 +1,6 @@
 #container {
   background: #d8d7e1;
-}
-
-#profile {
-  display: flex;
-  align-items: flex-end;
-  margin-top: -180px;
-  margin-left: 100px;
-}
-
-#image-container {
-  display: flex;
-}
-
-#name {
-  font-size: 60px;
-  padding-left: 40px;
-  padding-bottom: 80px;
+  padding: 0 5%;
 }
 
 #cover {
@@ -32,9 +16,39 @@
   padding-bottom: 200px;
 }
 
+#profile {
+  display: flex;
+  align-items: flex-end;
+  margin-top: -130px;
+  margin-left: 100px;
+}
+
+#profile-teacher {
+  display: flex;
+  flex-direction: column;
+}
+
+#image-container {
+  display: flex;
+}
+
+#image-container-teacher {
+  display: flex;
+}
+
+#name {
+  font-size: 60px;
+  padding-left: 40px;
+  padding-bottom: 50px;
+}
+
+#name-teacher {
+  font-size: 40px;
+}
+
 #profile-image {
-  height: 350px;
-  width: 350px;
+  height: 250px;
+  width: 250px;
   overflow: hidden;
   border: 2px solid black;
   border-radius: 50%;
@@ -43,9 +57,19 @@
   justify-content: center;
 }
 
-#profile-image > img {
-  transform: scale(0.6, 0.6);
+#profile-image-teacher {
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#profile-image > img, #profile-image-teacher > img {
+  transform: scale(0.6, 0.6);
 }
 
 #profile-image-border {
@@ -63,7 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 100px 200px;
+  margin: 100px 0;
 }
 
 .button-under-schedule {
@@ -79,10 +103,15 @@
 
 .separating-line {
   height:100px;
-  border: 1px solid white;
+  border-top: 1px solid white;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
+}
+
+#subject {
+  text-align: center;
+  font-size: 48px;
 }
