@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { ScheduleService } from '../schedule.service';
+
 @Component({
   selector: 'app-user-schedule',
   templateUrl: './user-schedule.component.html',
@@ -9,7 +11,9 @@ export class UserScheduleComponent implements OnInit {
 
   @Input() userId: number = 0;
 
-  constructor() { }
+  constructor(
+    public scheduleService: ScheduleService,
+  ) { }
 
   ngOnInit(): void {
   }

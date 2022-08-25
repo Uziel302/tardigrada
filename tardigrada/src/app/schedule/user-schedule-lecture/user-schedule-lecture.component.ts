@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { ILecture } from 'src/app/models/lecture';
 
 @Component({
   selector: 'app-user-schedule-lecture',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserScheduleLectureComponent implements OnInit {
 
-  constructor() { }
+  @Input() data: ILecture = {title:'',subtitle:'',teacher:'',hour:'',minAge:'',maxAge:'',background:'',url:''};
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

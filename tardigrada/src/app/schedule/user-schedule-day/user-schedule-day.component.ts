@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { ILecture } from 'src/app/models/lecture';
 
 @Component({
   selector: 'app-user-schedule-day',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-schedule-day.component.css']
 })
 export class UserScheduleDayComponent implements OnInit {
+
+  @Input() dailySchedule: ILecture[][] = [];
 
   constructor() { }
 
