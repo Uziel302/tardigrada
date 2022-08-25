@@ -1,11 +1,8 @@
 <div id="container">
   <div id="header">
-    <img
-      id="cover-image"
-      src="/assets/images/default-cover.jpeg"
-    />
-  </div>
-  <div id="main">
+    <div id="cover">
+      <img id="cover-image" src="/assets/images/default-cover.jpeg"/>
+    </div>
     <div id="profile">
       <div id="image-container">
         <div id="profile-image-border">
@@ -13,17 +10,16 @@
             <img src="/assets/images/profile-default.jpg" />
           </div>
         </div>
-        <mat-icon style="font-size: 14px">edit</mat-icon>
       </div>
       <div id="name">
-        Asaf Malin
-        <mat-icon style="font-size: 14px">edit</mat-icon>
+        Имя Фамилия
       </div>
     </div>
-    <div id="schedule">
-      <div>
-        <app-user-schedule [userId]="userId"></app-user-schedule>
-      </div>
+  </div>
+
+  <div id="schedule">
+    <div>
+      <app-user-schedule [userId]="userId"></app-user-schedule>
     </div>
   </div>
 
