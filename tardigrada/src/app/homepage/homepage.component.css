@@ -3,12 +3,17 @@
 .section {
   height: 100vh;
   color: white;
+  font-family: Zhizn;
 }
 
 .quote {
   font-size: 50px;
-  font-family: Zhizn;
   text-align: center;
+}
+
+.quotee {
+  text-align: right;
+  font-size: 25px;
 }
 
 .first-quote {
@@ -61,4 +66,131 @@
 
 .section7 {
   background: #661e4b;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+#inner2 {
+  width: 60%;
+  padding-left: 10%;
+  padding-bottom: 10%;
+  padding-top: 10%;
+}
+
+#inner3 {
+  color: white;
+}
+
+.gray-inner {
+  color: #d8d7e1;
+}
+
+#inner5 {
+  color: #46313d;
+}
+
+#wrapper3 {
+  width: 50%;
+  padding-left: 40%;
+  padding-bottom: 20%;
+  padding-top: 10%;
+}
+
+#wrapper4 {
+  width: 50%;
+  padding-left: 40%;
+  padding-bottom: 5%;
+  padding-top: 10%;
+}
+
+#wrapper5 {
+  width: 70%;
+  padding-left: 20%;
+  padding-bottom: 20%;
+  padding-top: 10%;
+}
+
+#wrapper6 {
+  width: 70%;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 10%;
+  padding-top: 10%;
+  line-height: 1.8;
+}
+
+#wrapper7 {
+  width: 80%;
+  padding-left: 10%;
+  padding-bottom: 20%;
+  padding-top: 8%;
+}
+
+#quotewrap4 {
+  width: 50%;
+  padding-left: 10%;
+  padding-right: 40%;
+  padding-bottom: 20%;
+}
+
+#image1 {
+  right: 10%;
+  position: absolute;
+  bottom: 0;
+}
+
+#image3 {
+  left: 10%;
+  position: absolute;
+  bottom: 0;
+  height: 57%;
+}
+
+#image4 {
+  right: 10%;
+  position: absolute;
+  bottom: 0;
+  height: 40%;
+}
+
+#image5 {
+  left: 10%;
+  position: absolute;
+  bottom: 0;
+  height: 57%;
+}
+
+#image6 {
+  right: 4%;
+  position: absolute;
+  bottom: 20%;
+  height: 20%;
+}
+
+#image7 {
+  left: 5%;
+  position: absolute;
+  bottom: 60px;
+  height: 40%;
+}
+
+.width10 {
+  width: 10px;
+}
+
+.font15 {
+  font-size: 15px;
+}
+
+.font45 {
+  font-size: 45px;
+}
+
+.quote-note {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
