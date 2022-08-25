@@ -22,6 +22,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { LectureComponent } from './schedule/lecture/lecture.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ScheduleTableComponent } from './schedule/schedule-table/schedule-table.component';
+import { UserScheduleComponent } from './schedule/user-schedule/user-schedule.component';
+import { UserScheduleLectureComponent } from './schedule/user-schedule-lecture/user-schedule-lecture.component';
+import { UserScheduleDayComponent } from './schedule/user-schedule-day/user-schedule-day.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { ScheduleTableComponent } from './schedule/schedule-table/schedule-table
     ScheduleComponent,
     LectureComponent,
     HomepageComponent,
-    ScheduleTableComponent
+    ScheduleTableComponent,
+    UserScheduleComponent,
+    UserScheduleLectureComponent,
+    UserScheduleDayComponent
   ],
   imports: [
     BrowserModule,

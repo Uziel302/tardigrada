@@ -1,19 +1,24 @@
 <div id="container">
   <div id="header">
-    <div id="image-container">
-      <div id="profile-image">
-        <img src="/assets/images/tardigrada.svg">
-      </div>
-      <mat-icon style="font-size:14px;">edit</mat-icon>
-    </div>
-    <div id="name">
-      Asaf Malin
-      <mat-icon style="font-size:14px;">edit</mat-icon>
-    </div>
+    <img id="cover-image" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Sal_plage.jpg">
   </div>
-  <div id="schedule">
-    <div>
-      <app-schedule-table [selectedDay]="selectedDay" [checkedAges]="checkedAges"></app-schedule-table>
+  <div id="main">
+    <div id="profile">
+      <div id="image-container">
+        <div id="profile-image">
+          <img src="/assets/images/tardigrada.svg">
+        </div>
+        <mat-icon style="font-size:14px;">edit</mat-icon>
+      </div>
+      <div id="name">
+        Asaf Malin
+        <mat-icon style="font-size:14px;">edit</mat-icon>
+      </div>
+    </div>
+    <div id="schedule">
+      <div>
+        <app-user-schedule [userId]="userId"></app-user-schedule>
+      </div>
     </div>
   </div>
 </div>
