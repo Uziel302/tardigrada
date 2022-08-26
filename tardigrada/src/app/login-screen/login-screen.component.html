@@ -2,9 +2,25 @@
   <div id="wrapper">
     Welcome {{ isStudent ? "student" : "teacher" }}, please
     {{ login ? "login" : "register" }}
-    <input placeholder="name" [(ngModel)]="name" />
-    <input placeholder="password" [(ngModel)]="password" />
+    <input placeholder="name" [(ngModel)]="name" required minlength="3" #nameRef="ngModel"/>
+    <input placeholder="password" [(ngModel)]="password" required minlength="3" #passwordRef="ngModel"/>
     <button (click)="submit()">Submit</button>
+    <div *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)" class="alert">
+      <div *ngIf="nameRef.errors?.['required']">
+        Name is required.
+      </div>
+      <div *ngIf="nameRef.errors?.['minlength']">
+        Name must be at least 3 characters long.
+      </div>
+    </div>
+    <div *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)" class="alert">
+      <div *ngIf="passwordRef.errors?.['required']">
+        Password is required.
+      </div>
+      <div *ngIf="passwordRef.errors?.['minlength']">
+        Password must be at least 3 characters long.
+      </div>
+    </div>
     <div>{{loginService.currentError}}</div>
     <div id="buttons">
       <button mat-button (click)="login = !login">
