@@ -45,7 +45,7 @@ export class LoginService {
   login(name: string, password: string, isStudent: boolean): void {
     const authData: INameAndPass = { name, password };
     this.http
-      .post<any>(
+      .post<{ token: string; expiresIn: number }>(
         environment.apiEndPoint + 'login',
         authData
       )
