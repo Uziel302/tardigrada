@@ -5,6 +5,7 @@
     <input placeholder="name" [(ngModel)]="name" />
     <input placeholder="password" [(ngModel)]="password" />
     <button (click)="submit()">Submit</button>
+    <div>{{loginService.currentError}}</div>
     <div id="buttons">
       <button mat-button (click)="login = !login">
         <div *ngIf="login">I don't have an account yet</div>

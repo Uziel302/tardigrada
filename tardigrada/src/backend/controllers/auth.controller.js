@@ -12,7 +12,7 @@ exports.login = async (req, res) => {
     .then((user) => {
       if (!user) {
         res.status(401).json({
-          error: 'Wrong name or password', // wrong name
+          message: 'Wrong name or password', // wrong name
         });
       } else {
         return bcrypt
@@ -20,7 +20,7 @@ exports.login = async (req, res) => {
           .then((isAuthenticated) => {
             if (!isAuthenticated) {
               res.status(401).json({
-                error: 'Wrong password or name', // wrong password
+                message: 'Wrong name or password', // wrong password
               });
             } else {
               const token = jwt.sign(

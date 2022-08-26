@@ -8,19 +8,20 @@ import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {
-  private isAuthenticated:boolean = false;
+  public currentError: string = '';
+
+  private isAuthenticated: boolean = false;
   private token: string = '';
   private tokenTimer: any;
-  private authStatusListener:Subject<boolean> = new Subject<boolean>();
-
+  private authStatusListener: Subject<boolean> = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  getToken():string {
+  getToken(): string {
     return this.token;
   }
 
-  getIsAuth():boolean {
+  getIsAuth(): boolean {
     return this.isAuthenticated;
   }
 
@@ -32,35 +33,47 @@ export class LoginService {
     const authData: INameAndPass = { name, password };
     this.http
       .post(environment.apiEndPoint + 'signup', authData)
-      .subscribe(response => {
+      .subscribe(data => {
         this.login(name, password, isStudent);
-      });
+      },
+      error => {
+        this.currentError = error.error.message;
+      }
+      );
   }
 
   login(name: string, password: string, isStudent: boolean): void {
     const authData: INameAndPass = { name, password };
     this.http
-      .post<{ token: string; expiresIn: number }>(
+      .post<any>(
         environment.apiEndPoint + 'login',
         authData
       )
-      .subscribe(response => {
-        const token:string = response.token;
-        this.token = token;
-        if (token) {
-          const expiresInDuration:number = response.expiresIn;
-          this.setAuthTimer(expiresInDuration);
-          this.isAuthenticated = true;
-          this.authStatusListener.next(true);
-          const now: Date = new Date();
-          const expirationDate: Date = new Date(now.getTime() + expiresInDuration * 1000);
-          this.saveAuthData(token, expirationDate);
-          this.router.navigate(['/timer']);
+      .subscribe(
+        data => {
+        const token: string = data.token;
+          this.token = token;
+          if (token) {
+            const expiresInDuration: number = data.expiresIn;
+            this.setAuthTimer(expiresInDuration);
+            this.isAuthenticated = true;
+            this.authStatusListener.next(true);
+            const now: Date = new Date();
+            const expirationDate: Date = new Date(
+              now.getTime() + expiresInDuration * 1000
+            );
+            this.saveAuthData(token, expirationDate);
+            this.currentError = '';
+            let target = isStudent ? '/student' : '/teacher';
+            this.router.navigate([target]);
         }
+      },
+      error => {
+        this.currentError = error.error.message;
       });
   }
 
-  autoAuthUser():void {
+  autoAuthUser(): void {
     const authInformation: void | {
       token: string;
       expirationDate: Date;
@@ -68,8 +81,9 @@ export class LoginService {
     if (!authInformation) {
       return;
     }
-    const now:Date = new Date();
-    const expiresIn:number = authInformation.expirationDate.getTime() - now.getTime();
+    const now: Date = new Date();
+    const expiresIn: number =
+      authInformation.expirationDate.getTime() - now.getTime();
     if (expiresIn > 0) {
       this.token = authInformation.token;
       this.isAuthenticated = true;
@@ -103,7 +117,7 @@ export class LoginService {
     localStorage.removeItem('expiration');
   }
 
-  private getAuthData(): { token: string; expirationDate: Date; } | void {
+  private getAuthData(): { token: string; expirationDate: Date } | void {
     const token: string | null = localStorage.getItem('token');
     const expirationDate: string | null = localStorage.getItem('expiration');
     if (!token || !expirationDate) {
@@ -111,7 +125,7 @@ export class LoginService {
     }
     return {
       token: token,
-      expirationDate: new Date(expirationDate)
-    }
+      expirationDate: new Date(expirationDate),
+    };
   }
 }
