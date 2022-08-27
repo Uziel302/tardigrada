@@ -12,7 +12,7 @@ export class LoginService {
 
   private isAuthenticated: boolean = false;
   private token: string = '';
-  private tokenTimer: number;
+  private tokenTimer: number = 0;
   private authStatusListener: Subject<boolean> = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router) {}
