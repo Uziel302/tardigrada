@@ -24,3 +24,8 @@ button {
 #buttons {
   display: flex;
 }
+
+#terms-note {
+  text-align: center;
+  font-size: 13px;
+}
