@@ -3,7 +3,7 @@
     Привет {{ isParent ? "родитель" : "учитель" }}, 
     {{ login ? "вход" : "регистр" }} пожалуйста
     <input
-      [placeholder]="login ? 'name or email' : 'name'"
+      [placeholder]="login ? 'Имя Фамилия / Email' : 'Имя Фамилия'"
       [(ngModel)]="name"
       required
       minlength="3"
@@ -11,14 +11,14 @@
     />
     <input
       *ngIf="!login"
-      placeholder="email"
+      placeholder="Email"
       [(ngModel)]="email"
       required
       minlength="3"
       #emailRef="ngModel"
     />
     <input
-      placeholder="password"
+      placeholder="Пароль"
       [(ngModel)]="password"
       required
       minlength="3"
