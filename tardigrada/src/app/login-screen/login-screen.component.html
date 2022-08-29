@@ -29,7 +29,7 @@
       персональных данных и соглашаетесь <br>
       с политикой конфиденциальности
     </div>
-    <button (click)="submit()">Submit</button>
+    <button (click)="submit()">{{login ? 'вход' : 'Присоединиться'}}</button>
     <div
       *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)"
       class="alert"
