@@ -41,7 +41,7 @@ exports.login = async (req, res) => {
 
 exports.signUp = async (req, res) => {
   knex(tableName)
-    .where({ name: req.body.name })
+    .where({ email: req.body.email })
     .first()
     .then((user) => {
       if (user) {

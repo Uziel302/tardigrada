@@ -1,7 +1,7 @@
 <div id="container">
   <div id="wrapper">
-    Welcome {{ isParent ? "parent" : "teacher" }}, please
-    {{ login ? "login" : "register" }}
+    Привет {{ isParent ? "родитель" : "учитель" }}, 
+    {{ login ? "вход" : "регистр" }} пожалуйста
     <input
       [placeholder]="login ? 'name or email' : 'name'"
       [(ngModel)]="name"
@@ -29,7 +29,7 @@
       персональных данных и соглашаетесь <br>
       с <a href="#">политикой конфиденциальности</a>
     </div>
-    <button (click)="submit()">{{login ? 'вход' : 'Присоединиться'}}</button>
+    <button (click)="submit()">{{login ? 'Вход' : 'Присоединиться'}}</button>
     <div
       *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)"
       class="alert"
@@ -51,11 +51,11 @@
     <div>{{ loginService.currentError }}</div>
     <div id="buttons">
       <button mat-button (click)="login = !login">
-        <div *ngIf="login">I don't have an account yet</div>
-        <div *ngIf="!login">I already have an account</div>
+        <div *ngIf="login">Регистрация</div>
+        <div *ngIf="!login">Вход</div>
       </button>
       <button mat-button (click)="isParent = !isParent">
-        I am a {{ !isParent ? "parent" : "teacher" }}
+        Я {{ !isParent ? "родитель" : "учитель" }}
       </button>
     </div>
   </div>
