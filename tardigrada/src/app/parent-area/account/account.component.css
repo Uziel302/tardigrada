@@ -3,3 +3,13 @@
   padding: 20px 5%;
   height: 100vh;
 }
+
+button {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#reason-for-free {
+  margin-top: 20px;
+  font-size: 18px;
+}

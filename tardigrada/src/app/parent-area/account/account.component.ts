@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-account',
@@ -7,9 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
-  constructor() { }
+  public freeClicked: boolean = false;
+  public freeText: string = '';
+  public successMessage: any;
+  public currentError: string = '';
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  submitRequest (): void {
+    let data = {text: this.freeText};
+    this.http.post(environment.apiEndPoint + 'freeRequest', data).subscribe(
+      (data) => {
+        this.successMessage = data;
+      },
+      (error) => {
+        this.currentError = error.error.message;
+      }
+    );
+  }
+
+  stringi(n: any){
+    return JSON.stringify(n);
   }
 
 }
