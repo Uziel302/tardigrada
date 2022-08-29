@@ -1,0 +1,15 @@
+#container {
+  background: #d8d7e1;
+  padding: 0 5%;
+}
+
+#menu {
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+}
+
+a {
+  margin: 0 10px;
+  font-size: 20px;
+}
