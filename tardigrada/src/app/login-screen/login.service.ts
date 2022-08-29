@@ -29,20 +29,19 @@ export class LoginService {
     return this.authStatusListener.asObservable();
   }
 
-  createUser(name: string, password: string, isStudent: boolean): void {
+  createUser(name: string, email: string, password: string, isParent: boolean): void {
     const authData: INameAndPass = { name, password };
-    this.http
-      .post(environment.apiEndPoint + 'signup', authData)
-      .subscribe(data => {
-        this.login(name, password, isStudent);
+    this.http.post(environment.apiEndPoint + 'signup', authData).subscribe(
+      (data) => {
+        this.login(name, password, isParent);
       },
-      error => {
+      (error) => {
         this.currentError = error.error.message;
       }
-      );
+    );
   }
 
-  login(name: string, password: string, isStudent: boolean): void {
+  login(name: string, password: string, isParent: boolean): void {
     const authData: INameAndPass = { name, password };
     this.http
       .post<{ token: string; expiresIn: number }>(
@@ -50,8 +49,8 @@ export class LoginService {
         authData
       )
       .subscribe(
-        data => {
-        const token: string = data.token;
+        (data) => {
+          const token: string = data.token;
           this.token = token;
           if (token) {
             const expiresInDuration: number = data.expiresIn;
@@ -64,13 +63,14 @@ export class LoginService {
             );
             this.saveAuthData(token, expirationDate);
             this.currentError = '';
-            let target = isStudent ? '/student' : '/teacher';
+            let target = isParent ? '/student' : '/teacher';
             this.router.navigate([target]);
+          }
+        },
+        (error) => {
+          this.currentError = error.error.message;
         }
-      },
-      error => {
-        this.currentError = error.error.message;
-      });
+      );
   }
 
   autoAuthUser(): void {

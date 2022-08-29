@@ -1,33 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login-screen',
   templateUrl: './login-screen.component.html',
-  styleUrls: ['./login-screen.component.css']
+  styleUrls: ['./login-screen.component.css'],
 })
 export class LoginScreenComponent implements OnInit {
-
-  public isStudent: boolean = true;
+  public isParent: boolean = true;
   public login: boolean = true;
   public name: string = '';
+  public email: string = '';
   public password: string = '';
 
   constructor(
     private router: Router,
-    public loginService: LoginService,
-  ) { }
+    public loginService: LoginService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  submit(){
-    if(this.login){
-      this.loginService.login(this.name, this.password, this.isStudent);
+  submit() {
+    if (this.login) {
+      this.loginService.login(this.name, this.password, this.isParent);
     } else {
-      this.loginService.createUser(this.name, this.password, this.isStudent);
+      this.loginService.createUser(this.name, this.email, this.password, this.isParent);
     }
   }
 }

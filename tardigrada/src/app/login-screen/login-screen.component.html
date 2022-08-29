@@ -1,34 +1,56 @@
 <div id="container">
   <div id="wrapper">
-    Welcome {{ isStudent ? "student" : "teacher" }}, please
+    Welcome {{ isParent ? "parent" : "teacher" }}, please
     {{ login ? "login" : "register" }}
-    <input placeholder="name" [(ngModel)]="name" required minlength="3" #nameRef="ngModel"/>
-    <input placeholder="password" [(ngModel)]="password" required minlength="3" #passwordRef="ngModel"/>
+    <input
+      [placeholder]="login ? 'name or email' : 'name'"
+      [(ngModel)]="name"
+      required
+      minlength="3"
+      #nameRef="ngModel"
+    />
+    <input
+      *ngIf="!login"
+      placeholder="email"
+      [(ngModel)]="email"
+      required
+      minlength="3"
+      #emailRef="ngModel"
+    />
+    <input
+      placeholder="password"
+      [(ngModel)]="password"
+      required
+      minlength="3"
+      #passwordRef="ngModel"
+    />
     <button (click)="submit()">Submit</button>
-    <div *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)" class="alert">
-      <div *ngIf="nameRef.errors?.['required']">
-        Name is required.
-      </div>
+    <div
+      *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)"
+      class="alert"
+    >
+      <div *ngIf="nameRef.errors?.['required']">Name is required.</div>
       <div *ngIf="nameRef.errors?.['minlength']">
         Name must be at least 3 characters long.
       </div>
     </div>
-    <div *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)" class="alert">
-      <div *ngIf="passwordRef.errors?.['required']">
-        Password is required.
-      </div>
+    <div
+      *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)"
+      class="alert"
+    >
+      <div *ngIf="passwordRef.errors?.['required']">Password is required.</div>
       <div *ngIf="passwordRef.errors?.['minlength']">
         Password must be at least 3 characters long.
       </div>
     </div>
-    <div>{{loginService.currentError}}</div>
+    <div>{{ loginService.currentError }}</div>
     <div id="buttons">
       <button mat-button (click)="login = !login">
         <div *ngIf="login">I don't have an account yet</div>
         <div *ngIf="!login">I already have an account</div>
       </button>
-      <button mat-button (click)="isStudent = !isStudent">
-        I am a {{ !isStudent ? "student" : "teacher" }}
+      <button mat-button (click)="isParent = !isParent">
+        I am a {{ !isParent ? "student" : "teacher" }}
       </button>
     </div>
   </div>
