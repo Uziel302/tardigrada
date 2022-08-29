@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Subject, Subscription, Observable } from 'rxjs';
 
 import { INameAndPass } from '../models/name-and-pass';
+import { INameEmailPass } from '../models/name-email-pass';
 import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -30,7 +31,7 @@ export class LoginService {
   }
 
   createUser(name: string, email: string, password: string, isParent: boolean): void {
-    const authData: INameAndPass = { name, password };
+    const authData: INameEmailPass = { name, email, password };
     this.http.post(environment.apiEndPoint + 'signup', authData).subscribe(
       (data) => {
         this.login(name, password, isParent);
