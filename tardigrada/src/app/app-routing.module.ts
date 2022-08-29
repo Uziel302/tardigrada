@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { StudentAreaComponent } from './student-area/student-area.component';
+import { ParentAreaComponent } from './parent-area/parent-area.component';
 import { TeacherAreaComponent } from './teacher-area/teacher-area.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
 import { AboutComponent } from './about/about.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
   { path: 'login', component: LoginScreenComponent },
   { path: 'student', component: StudentAreaComponent },
+  { path: 'parent', component: ParentAreaComponent },
   { path: 'teacher', component: TeacherAreaComponent },
 ];
 

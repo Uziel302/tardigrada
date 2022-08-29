@@ -25,6 +25,7 @@ import { ScheduleTableComponent } from './schedule/schedule-table/schedule-table
 import { UserScheduleComponent } from './schedule/user-schedule/user-schedule.component';
 import { UserScheduleLectureComponent } from './schedule/user-schedule-lecture/user-schedule-lecture.component';
 import { UserScheduleDayComponent } from './schedule/user-schedule-day/user-schedule-day.component';
+import { ParentAreaComponent } from './parent-area/parent-area.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { UserScheduleDayComponent } from './schedule/user-schedule-day/user-sche
     ScheduleTableComponent,
     UserScheduleComponent,
     UserScheduleLectureComponent,
-    UserScheduleDayComponent
+    UserScheduleDayComponent,
+    ParentAreaComponent
   ],
   imports: [
     BrowserModule,
