@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken');
 exports.login = async (req, res) => {
   knex(tableName)
     .where({ name: req.body.name })
+    .orWhere({ email: req.body.name })
     .first()
     .then((user) => {
       if (!user) {
@@ -24,7 +25,7 @@ exports.login = async (req, res) => {
               });
             } else {
               const token = jwt.sign(
-                { name: user.name, userId: user.id },
+                { email: user.email, userId: user.id },
                 'secret_this_should_be_longer',
                 { expiresIn: '1h' }
               );
