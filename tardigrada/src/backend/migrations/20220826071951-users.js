@@ -25,13 +25,21 @@ exports.up = function(db, callback) {
       type: 'string',
       length: 40
     },
+    email: {
+      type: 'string',
+      length: 100
+    },
     password: {
       type: 'string',
       length: 100
     },
-    pic: {
-      type: 'string',
-      length: 100
+    isFree: {
+      type: 'int',
+      defaultValue: 0
+    },
+    creation: {
+      type: 'timestamp',
+      defaultValue: new String('CURRENT_TIMESTAMP')
     }
   }, function(err) {
     if (err) return callback(err);
