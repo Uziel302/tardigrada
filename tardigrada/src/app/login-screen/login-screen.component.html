@@ -27,7 +27,7 @@
     <div *ngIf="!login" id="terms-note">
       Нажимая Присоединиться, вы даете согласие на обработку<br>
       персональных данных и соглашаетесь <br>
-      с политикой конфиденциальности
+      с <a href="#">политикой конфиденциальности</a>
     </div>
     <button (click)="submit()">{{login ? 'вход' : 'Присоединиться'}}</button>
     <div
@@ -55,7 +55,7 @@
         <div *ngIf="!login">I already have an account</div>
       </button>
       <button mat-button (click)="isParent = !isParent">
-        I am a {{ !isParent ? "student" : "teacher" }}
+        I am a {{ !isParent ? "parent" : "teacher" }}
       </button>
     </div>
   </div>
