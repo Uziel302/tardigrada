@@ -8,8 +8,8 @@ exports.sendFreeRequest = async (req, res) => {
     port: 587,
     secure: false,
     auth: {
-      user: 'asafmalin@gmail.com',
-      pass: 'BK5zDqMChb6V173t',
+      user: process.env.SMTP_EMAIL,
+      pass: process.env.SMTP_PASS,
     },
   });
 
