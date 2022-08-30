@@ -5,8 +5,7 @@
   "main": "backend/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "export PORT=80 && node ./backend/index.js",
-    "dev": "export PORT=3000 && node ./backend/index.js"
+    "start": "export PORT=3000 && node ./backend/index.js"
   },
   "author": "Asaf Malin",
   "license": "MIT",
