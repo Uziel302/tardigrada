@@ -64,7 +64,7 @@ export class LoginService {
             );
             this.saveAuthData(token, expirationDate);
             this.currentError = '';
-            let target = isParent ? '/parent/account' : '/teacher';
+            let target = isParent ? '/parent/children' : '/teacher';
             this.router.navigate([target]);
           }
         },

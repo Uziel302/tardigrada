@@ -1,5 +1,5 @@
 <app-parent-area></app-parent-area>
-<div id="wrapper">
+<div id="wrapper" style="display:none;">
   <button routerLink="../children">Хочу оплачивать</button>
   <button (click)="freeClicked = !freeClicked">Не могу оплачивать</button>
   <div *ngIf="freeClicked">
