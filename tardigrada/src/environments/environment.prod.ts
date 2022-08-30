@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiEndPoint: 'https://new.tardigradaschool.com/api/',
+  apiEndPoint: 'https://api.tardigradaschool.com/',
 };
