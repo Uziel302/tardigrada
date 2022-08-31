@@ -1,8 +1,8 @@
 #!/usr/bin/env nodejs
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
-var cors = require('cors');
+const cors = require('cors');
 const indexRouter = require('./router.js');
 app.use(cors());
 
