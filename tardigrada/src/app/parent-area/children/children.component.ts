@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildrenComponent implements OnInit {
   public children = [];
-  public editMode: boolean = false;
+  public editMode: boolean = true;
   public firstName: string = '';
   public lastName: string = '';
   public fatherName: string = '';

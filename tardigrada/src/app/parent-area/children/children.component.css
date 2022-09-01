@@ -2,7 +2,7 @@
   background: #d8d7e1;
   height: 100%;
   min-height: 100vh;
-  padding: 20px 5%;
+  padding: 20px 5% 120px 5%; 
 }
 
 input {
