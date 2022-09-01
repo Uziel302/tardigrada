@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+
+
+import { IChild } from 'src/app/models/child';
 
 @Component({
   selector: 'app-children',
@@ -8,13 +13,62 @@ import { Component, OnInit } from '@angular/core';
 export class ChildrenComponent implements OnInit {
   public children = [];
   public editMode: boolean = true;
-  public firstName: string = '';
-  public lastName: string = '';
-  public fatherName: string = '';
+  public saveSuccess: string = '';
+  public saveError: string = '';
+  
+  public childData: IChild = {
+    firstName: '',
+    lastName: '',
+    fatherName: '',
+    dateOfBirth: '',
+    className: '',
+    subjects: '',
+    timezone: '',
+    zoom: '',
+    device: '',
+    language: '',
+    limits: '',
+    telegram: '',
+    note: '',
+};
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   ngOnInit(): void {
   }
+
+  saveChild(){
+    this.http
+      .post<{message: string}>(
+        environment.apiEndPoint + 'saveChild',
+        this.childData
+      )
+      .subscribe(
+        (data) => {
+          this.saveSuccess = data.message;
+          this.childData = {
+            firstName: '',
+            lastName: '',
+            fatherName: '',
+            dateOfBirth: '',
+            className: '',
+            subjects: '',
+            timezone: '',
+            zoom: '',
+            device: '',
+            language: '',
+            limits: '',
+            telegram: '',
+            note: '',
+        };
+        },
+        (error) => {
+          this.saveError = error.message;    
+        }
+    );
+  }
+
 
 }
