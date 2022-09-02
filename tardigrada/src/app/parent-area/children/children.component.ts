@@ -11,7 +11,6 @@ import { IChild } from 'src/app/models/child';
 })
 export class ChildrenComponent implements OnInit {
   public children = [];
-  public editMode: boolean = true;
   public saveSuccess: string = '';
   public saveError: string = '';
 

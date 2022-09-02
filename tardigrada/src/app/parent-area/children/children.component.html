@@ -1,11 +1,7 @@
-<app-parent-area></app-parent-area>
 <div id="wrapper">
-  <div *ngFor="let child of children">TODO</div>
-  <div>
-    <button (click)="editMode = !editMode">Добавьте ученика</button>
-  </div>
-  <div *ngIf="editMode" id="form">
+  <div id="form">
     <div id="inner-form">
+      Please fill in details of first child, you will later have an option to add more children.
       <br />Имя: <input [(ngModel)]="childData.firstName" required minlength="3" #firstName="ngModel"/>
       <br />Фамилия: <input [(ngModel)]="childData.lastName" required minlength="3" #lastName="ngModel"/>
       <br />Отчество: <input [(ngModel)]="childData.fatherName" required minlength="3" #fatherName="ngModel"/>
