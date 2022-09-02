@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ScheduleService } from '../schedule/schedule.service';
-
+import { LoginService } from '../login-screen/login.service';
 
 @Component({
   selector: 'app-student-area',
@@ -14,6 +14,7 @@ export class StudentAreaComponent implements OnInit {
 
   constructor(
     public scheduleService: ScheduleService,
+    public loginService: LoginService,
   ) { }
 
   ngOnInit(): void {

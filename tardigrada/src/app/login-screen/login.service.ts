@@ -7,9 +7,26 @@ import { INameAndPass } from '../models/name-and-pass';
 import { INameEmailPass } from '../models/name-email-pass';
 import { environment } from '../../environments/environment';
 
+import { IChild } from '../models/child';
+
 @Injectable({ providedIn: 'root' })
 export class LoginService {
   public currentError: string = '';
+  public currentChild: IChild = {
+    firstName: '',
+    lastName: '',
+    fatherName: '',
+    dateOfBirth: '',
+    className: '',
+    subjects: '',
+    timezone: '',
+    zoom: '',
+    device: '',
+    language: '',
+    limits: '',
+    telegram: '',
+    note: '',
+  };
 
   private isAuthenticated: boolean = false;
   private token: string = '';
@@ -30,7 +47,12 @@ export class LoginService {
     return this.authStatusListener.asObservable();
   }
 
-  createUser(name: string, email: string, password: string, isParent: boolean): void {
+  createUser(
+    name: string,
+    email: string,
+    password: string,
+    isParent: boolean
+  ): void {
     const authData: INameEmailPass = { name, email, password };
     this.http.post(environment.apiEndPoint + 'signup', authData).subscribe(
       (data) => {

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
 
+import { environment } from '../../../environments/environment';
 import { IChild } from 'src/app/models/child';
+import { LoginService } from 'src/app/login-screen/login.service';
 
 @Component({
   selector: 'app-children',
@@ -30,7 +32,11 @@ export class ChildrenComponent implements OnInit {
     note: '',
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private loginService: LoginService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {}
 
@@ -47,21 +53,8 @@ export class ChildrenComponent implements OnInit {
         (data) => {
           this.saveError = '';
           this.saveSuccess = data.message;
-          this.childData = {
-            firstName: '',
-            lastName: '',
-            fatherName: '',
-            dateOfBirth: '',
-            className: '',
-            subjects: '',
-            timezone: '',
-            zoom: '',
-            device: '',
-            language: '',
-            limits: '',
-            telegram: '',
-            note: '',
-          };
+          this.loginService.currentChild = this.childData;
+          this.router.navigate(['/student']);
         },
         (error) => {
           this.saveError = error.message;
