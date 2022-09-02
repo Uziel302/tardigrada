@@ -36,6 +36,9 @@ export class ChildrenComponent implements OnInit {
   ngOnInit(): void {}
 
   saveChild() {
+    if(!this.childData.firstName){
+      return;
+    }
     this.http
       .post<{ message: string }>(
         environment.apiEndPoint + 'saveChild',
