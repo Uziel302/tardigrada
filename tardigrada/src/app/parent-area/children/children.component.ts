@@ -47,6 +47,7 @@ export class ChildrenComponent implements OnInit {
       )
       .subscribe(
         (data) => {
+          this.saveError = '';
           this.saveSuccess = data.message;
           this.childData = {
             firstName: '',
