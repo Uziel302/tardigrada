@@ -6,37 +6,37 @@
   </div>
   <div *ngIf="editMode" id="form">
     <div id="inner-form">
-      <br />Имя: <input [(ngModel)]="firstName" required minlength="3" />
-      <br />Фамилия: <input [(ngModel)]="lastName" required minlength="3" />
-      <br />Отчество: <input [(ngModel)]="fatherName" required minlength="3" />
+      <br />Имя: <input [(ngModel)]="childData.firstName" required minlength="3" />
+      <br />Фамилия: <input [(ngModel)]="childData.lastName" required minlength="3" />
+      <br />Отчество: <input [(ngModel)]="childData.fatherName" required minlength="3" />
       <br />Дата рождения:
-      <input [(ngModel)]="fatherName" required minlength="3" /> 
+      <input [(ngModel)]="childData.dateOfBirth" required minlength="3" /> 
       <br />
       Класс:
-      <input [(ngModel)]="fatherName" required minlength="3" />
+      <input [(ngModel)]="childData.className" required minlength="3" />
       <br />
       Предметы, которые вы хотели бы изучать:
-      <input [(ngModel)]="fatherName" required minlength="3" />
+      <input [(ngModel)]="childData.subjects" required minlength="3" />
       <br />Часовой пояс:
-      <input [(ngModel)]="fatherName" required minlength="3" /> 
+      <input [(ngModel)]="childData.timezone" required minlength="3" /> 
       <br />
       Опыт обучения в ZOOM:
-      <input [(ngModel)]="fatherName" required minlength="3" />
+      <input [(ngModel)]="childData.zoom" required minlength="3" />
       <br />девайс для занятия:
-      <input [(ngModel)]="fatherName" required minlength="3" /> 
+      <input [(ngModel)]="childData.device" required minlength="3" /> 
       <br />
       уровень знания языков:
-      <input [(ngModel)]="fatherName" required minlength="3" />
+      <input [(ngModel)]="childData.language" required minlength="3" />
       <br />Есть ли жесткие ограничения по времени?
-      <input [(ngModel)]="fatherName" required minlength="3" />
+      <input [(ngModel)]="childData.limits" required minlength="3" />
       <br />Телеграм ребенка (для самостоятельных детей):
-      <input [(ngModel)]="fatherName" required minlength="3" />
-      <br />Нужны ли оффлайн занятия в Израиле (скорее всего Иерусалим):
-      <input [(ngModel)]="fatherName" required minlength="3" />
+      <input [(ngModel)]="childData.telegram" required minlength="3" />
       <br />Что-то еще, что нам надо знать:
-      <input [(ngModel)]="fatherName" required minlength="3" />
+      <input [(ngModel)]="childData.note" required minlength="3" />
       <br />
-      <button>Submit</button>
+      <button (click)="saveChild()">Submit</button>
+      <div>{{saveSuccess}}</div>
+      <div>{{saveError}}</div>
     </div>
   </div>
 </div>

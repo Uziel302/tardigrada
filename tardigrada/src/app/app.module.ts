@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 
 
@@ -15,6 +15,7 @@ import { StudentAreaComponent } from './student-area/student-area.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
+import { AuthInterceptor } from './login-screen/login-interceptor';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
@@ -65,6 +66,7 @@ import { ChildrenComponent } from './parent-area/children/children.component';
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true, direction: 'ltr', autoFocus: 'first-tabbable'} },
     { provide: MAT_DIALOG_DATA, useValue: {} },
     { provide: MatDialogRef, useValue: {} },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
