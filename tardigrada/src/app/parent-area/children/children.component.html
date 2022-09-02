@@ -6,11 +6,11 @@
   </div>
   <div *ngIf="editMode" id="form">
     <div id="inner-form">
-      <br />Имя: <input [(ngModel)]="childData.firstName" required minlength="3" />
-      <br />Фамилия: <input [(ngModel)]="childData.lastName" required minlength="3" />
-      <br />Отчество: <input [(ngModel)]="childData.fatherName" required minlength="3" />
+      <br />Имя: <input [(ngModel)]="childData.firstName" required minlength="3" #firstName="ngModel"/>
+      <br />Фамилия: <input [(ngModel)]="childData.lastName" required minlength="3" #lastName="ngModel"/>
+      <br />Отчество: <input [(ngModel)]="childData.fatherName" required minlength="3" #fatherName="ngModel"/>
       <br />Дата рождения:
-      <input [(ngModel)]="childData.dateOfBirth" required minlength="3" /> 
+      <input [(ngModel)]="childData.dateOfBirth" required minlength="6" #dateOfBirth="ngModel"/> 
       <br />
       Класс:
       <input [(ngModel)]="childData.className" required minlength="3" />
@@ -35,6 +35,44 @@
       <input [(ngModel)]="childData.note" required minlength="3" />
       <br />
       <button (click)="saveChild()">Submit</button>
+
+      <div
+        *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+        class="alert">
+        <div *ngIf="firstName.errors?.['required']">First name is required.</div>
+        <div *ngIf="firstName.errors?.['minlength']">
+          Name must be at least 3 characters long.
+        </div>
+      </div>
+
+      <div
+        *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+        class="alert">
+        <div *ngIf="lastName.errors?.['required']">Last name is required.</div>
+        <div *ngIf="lastName.errors?.['minlength']">
+          Last name must be at least 3 characters long.
+        </div>
+      </div>
+
+      <div
+        *ngIf="fatherName.invalid && (fatherName.dirty || fatherName.touched)"
+        class="alert">
+        <div *ngIf="fatherName.errors?.['required']">Father name is required.</div>
+        <div *ngIf="fatherName.errors?.['minlength']">
+          Father name must be at least 3 characters long.
+        </div>
+      </div>
+
+      <div
+        *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)"
+        class="alert">
+        <div *ngIf="dateOfBirth.errors?.['required']">dateOfBirth is required.</div>
+        <div *ngIf="dateOfBirth.errors?.['minlength']">
+          dateOfBirth must be at least 6 characters long.
+        </div>
+      </div>      
+
+
       <div>{{saveSuccess}}</div>
       <div>{{saveError}}</div>
     </div>
