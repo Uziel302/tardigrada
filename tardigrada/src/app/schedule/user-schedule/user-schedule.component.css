@@ -12,6 +12,10 @@
   justify-content: center;
 }
 
+.day {
+  flex: 1 1 0px
+}
+
 .hour {
   height: 61px;
   width: 60px;
