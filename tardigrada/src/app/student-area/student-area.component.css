@@ -31,8 +31,8 @@
 }
 
 #profile-teacher {
+  padding-top: 75px;
   display: flex;
-  flex-direction: column;
   flex: 1 1 0px;
 }
 
@@ -52,7 +52,16 @@
 }
 
 #name-teacher {
-  font-size: 40px;
+  font-size: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 87px;
+}
+
+#name-title {
+  font-size: 28px;
+  font-weight: 300;
 }
 
 #profile-image {
@@ -75,6 +84,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#profile-image-border-teacher {
+  border: 2px solid white;
+  border-radius: 50%;
 }
 
 #profile-image > img,
@@ -122,7 +136,7 @@
   cursor: pointer;
 }
 
-.separating-line {
+#instruction-container {
   height: 110px;
   border-top: 1px solid white;
   text-align: center;
@@ -130,6 +144,10 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
+}
+
+#separating-line {
+  border-top: 1px solid white;
 }
 
 #instruction-line {
@@ -141,6 +159,7 @@
 #course-details {
   display: flex;
   justify-content: flex-start;
+  padding-bottom: 144px;
 }
 
 #subject-wrapper {
@@ -148,7 +167,7 @@
 }
 
 #subject {
-  padding-top: 26px;
+  padding-top: 136px;
   font-size: 70px;
   font-family: 'Zhizn';
 }
