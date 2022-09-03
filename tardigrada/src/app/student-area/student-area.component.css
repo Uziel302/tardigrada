@@ -266,3 +266,18 @@
 #form-container {
   display: flex;
 }
+
+#last-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#last-button {
+  font-family: 'Zhizn';
+  margin-left: 30px;
+}
+
+#bottom-purple {
+  margin: 0;
+}
