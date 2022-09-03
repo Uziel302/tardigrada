@@ -33,6 +33,7 @@
 #profile-teacher {
   display: flex;
   flex-direction: column;
+  flex: 1 1 0px;
 }
 
 #image-container {
@@ -137,14 +138,24 @@
   font-weight: 300;
 }
 
+#course-details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#subject-wrapper {
+  flex: 1 1 0px;
+}
+
 #subject {
-  text-align: center;
-  font-size: 48px;
+  font-size: 70px;
+  font-family: 'Zhizn';
 }
 
 #hour {
   line-height: 50px;
-  text-align: center;
+  font-size: 35px;
 }
 
 #buttons-container {

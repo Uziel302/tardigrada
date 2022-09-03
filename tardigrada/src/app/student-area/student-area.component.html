@@ -51,19 +51,17 @@
   <div class="separating-line">
   </div>
 
-  <div class="separating-line">
-  </div>
-
   <div id="course-details">
-    <div id="subject">
-      {{scheduleService.selectedLecture.title}}
+    <div id="subject-wrapper">
+      <div id="subject">
+        {{scheduleService.selectedLecture.title}}
+      </div>
+      <div id="hour">
+        {{scheduleService.selectedLecture.hour}}
+      </div>
     </div>
-    <div id="hour">
-      {{scheduleService.selectedLecture.hour}}
-    </div>
-  </div>
 
-  <div id="buttons-container">
+    
     <div id="profile-teacher">
       <div id="image-container-teacher">
         <div id="profile-image-border-teacher">
@@ -76,6 +74,9 @@
         {{scheduleService.selectedLecture.teacher}}
       </div>
     </div>
+  </div>
+
+  <div id="buttons-container">
 
     <div id="center-button-container">
       <div id="center-button">
