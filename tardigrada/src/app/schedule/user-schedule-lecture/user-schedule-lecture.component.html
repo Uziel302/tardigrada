@@ -1,4 +1,4 @@
-<div id="lecture-container" (click)="selectLecture()" [style.background]="data.background ? data.background : (rowNumber % 2 ? '#d8def2' : 'auto' )">
+<div id="lecture-container" (click)="selectLecture()" [style.cursor]="data.title ? 'pointer' : ''" [style.background]="data.background ? data.background : (rowNumber % 2 ? '#d8def2' : 'auto' )">
   <div id="lecture-title">
     {{data.title}}
   </div>
