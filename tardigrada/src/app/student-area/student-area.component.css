@@ -105,12 +105,12 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  width: 146px;
-  height: 146px;
+  width: 136px;
+  height: 136px;
   background: white;
   border-radius: 50%;
-  font-size: 22px;
-  line-height: 110%;
+  font-size: 24px;
+  line-height: 120%;
   padding: 10px;
   border: 5px solid #d8d7e1;
 }
