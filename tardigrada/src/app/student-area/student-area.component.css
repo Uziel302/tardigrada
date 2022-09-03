@@ -223,6 +223,17 @@
   padding: 10px;
 }
 
+.bottom-form {
+  width: 740px;
+  height: 390px;
+  border: 1.5px solid white;
+  background: #d8d7e1;
+  border-radius: 20px;
+  margin-top: 24px;
+  padding: 10px;
+  margin-right: 40px;
+}
+
 #circle-container {
   border: 1px solid white;
   border-radius: 50%;
@@ -231,7 +242,12 @@
   margin-right: 150px;
 }
 
-#telegram {
+#form-title {
+  font-family: 'Zhizn';
+  font-size: 24px;
+}
+
+.telegram {
   background: #690f46;
   border-radius: 50%;
   border: 1px solid white;
@@ -240,64 +256,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .separating-space {
   height: 100px;
 }
 
-#form-first-line {
+#form-container {
   display: flex;
-  justify-content: space-between;
-}
-
-.buttom-cont {
-  background: white;
-  height: 200px;
-  width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  font-size: 20px;
-}
-
-#form-text {
-  border: 1px solid black;
-  margin: 20px 0;
-  width: 100%;
-  height: 200px;
-  border-radius: 10px;
-}
-
-#form-text-container {
-  background: white;
-  height: 1000px;
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-#inner-part {
-  padding:100px;
-}
-
-#placeholder {
-  font-size: 40px;
-}
-
-#black-button-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-#black-button {
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  width: 300px;
-  height: 100px
 }
