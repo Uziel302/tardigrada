@@ -5,7 +5,8 @@
   </div>
   
   <div *ngFor="let day of week; let i=index;">
-    <div class="decor">{{day}}</div>
+    <div class="decor" [class.last]="i===6">{{day}}</div>
     <app-user-schedule-day [dailySchedule]="scheduleService.lessonsArray[i]"></app-user-schedule-day>
   </div>
+  <div id="right-line"></div>
 </div>

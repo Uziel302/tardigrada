@@ -16,3 +16,12 @@
   height: 61px;
   width: 60px;
 }
+
+.last {
+  border-right: none;
+}
+
+#right-line {
+  border: 1px solid white;
+  border-top: 0.5px solid #d8d7e1;
+}
