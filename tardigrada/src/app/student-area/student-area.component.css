@@ -179,39 +179,32 @@
 
 #buttons-container {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  font-family: 'Zhizn';
 }
 
-#center-button-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.half-container {
+  flex: 1 1 0px;
 }
 
-#center-button {
-  font-size: 30px;
-  text-align: center;
+#white-circle {
   background: white;
-  border-radius: 10px;
-  width: 400px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#black-circle {
-  background: black;
-  color: white;
-  font-size: 30px;
+  color: black;
+  font-size: 50px;
   text-align: center;
-  width: 300px;
-  height: 300px;
+  width: 355px;
+  height: 355px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 5px solid #d8d7e1;
+}
+
+#circle-container {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 365px;
+  height: 365px;
 }
 
 .separating-space {
