@@ -1,5 +1,7 @@
 <div id="container">
-  <div *ngFor="let day of [0,1,2,3,4,5,6]">
-    <app-user-schedule-day [dailySchedule]="scheduleService.lessonsArray[day]"></app-user-schedule-day>
+  
+  <div *ngFor="let day of week; let i=index;">
+    <div class="decor">{{day}}</div>
+    <app-user-schedule-day [dailySchedule]="scheduleService.lessonsArray[i]"></app-user-schedule-day>
   </div>
 </div>

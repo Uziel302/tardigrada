@@ -8,7 +8,7 @@ import { ScheduleService } from '../schedule.service';
   styleUrls: ['./user-schedule.component.css']
 })
 export class UserScheduleComponent implements OnInit {
-
+  public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
   @Input() userId: number = 0;
 
   constructor(
