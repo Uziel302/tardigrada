@@ -19,6 +19,7 @@ export class UserScheduleLectureComponent implements OnInit {
     background: '',
     url: '',
   };
+  @Input () rowNumber: number = 0;
 
   constructor(public scheduleService: ScheduleService) {}
 
