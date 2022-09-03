@@ -1,4 +1,8 @@
 <div id="container">
+  <div id="hour-column">
+    <div class="decor"></div>
+    <div class="decor hour" *ngFor="let hour of hourColumn">{{hour}}</div>
+  </div>
   
   <div *ngFor="let day of week; let i=index;">
     <div class="decor">{{day}}</div>

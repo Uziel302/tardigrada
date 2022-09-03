@@ -11,3 +11,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.hour {
+  height: 61px;
+  width: 60px;
+}
