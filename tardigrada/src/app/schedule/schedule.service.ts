@@ -14,6 +14,9 @@ export class ScheduleService {
     background: '',
     url: '',
   };
+  public dayNumber: number = 0;
+  public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+
 
   public lessonsArray: ILecture[][][] = [
     [

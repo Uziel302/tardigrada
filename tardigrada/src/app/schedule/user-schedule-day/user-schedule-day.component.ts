@@ -10,6 +10,7 @@ import { ILecture } from 'src/app/models/lecture';
 export class UserScheduleDayComponent implements OnInit {
 
   @Input() dailySchedule: ILecture[][] = [];
+  @Input() dayNumber: number = 0;
 
   constructor() { }
 

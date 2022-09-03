@@ -8,7 +8,6 @@ import { ScheduleService } from '../schedule.service';
   styleUrls: ['./user-schedule.component.css']
 })
 export class UserScheduleComponent implements OnInit {
-  public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
   public hourColumn: string[] = [
     '09:00',
     '10:00',

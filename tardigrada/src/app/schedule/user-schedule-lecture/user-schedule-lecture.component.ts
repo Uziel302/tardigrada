@@ -20,6 +20,7 @@ export class UserScheduleLectureComponent implements OnInit {
     url: '',
   };
   @Input () rowNumber: number = 0;
+  @Input () dayNumber: number = 0;
 
   constructor(public scheduleService: ScheduleService) {}
 
@@ -27,6 +28,7 @@ export class UserScheduleLectureComponent implements OnInit {
 
   selectLecture() {
     this.scheduleService.selectedLecture = this.data;
+    this.scheduleService.dayNumber = this.dayNumber;
     let element = document.getElementById('subject') as HTMLElement;
     element.scrollIntoView({behavior: 'smooth'});
   }

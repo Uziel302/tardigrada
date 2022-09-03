@@ -141,7 +141,6 @@
 #course-details {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
 }
 
 #subject-wrapper {
@@ -149,6 +148,7 @@
 }
 
 #subject {
+  padding-top: 26px;
   font-size: 70px;
   font-family: 'Zhizn';
 }
