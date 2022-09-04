@@ -214,7 +214,7 @@
 }
 
 #first-form {
-  width: 740px;
+  width: 90%;
   height: 200px;
   border: 1.5px solid white;
   background: #d8d7e1;
@@ -224,7 +224,7 @@
 }
 
 .bottom-form {
-  width: 740px;
+  width: 90%;
   height: 390px;
   border: 1.5px solid white;
   background: #d8d7e1;
