@@ -1,4 +1,3 @@
-const express = require('express');
 const knex = require('../dbConnection');
 const tableName = 'children';
 const { Client } = require("@notionhq/client");
@@ -8,21 +7,75 @@ exports.saveChild = async (req, res) => {
   notion.pages.create({
     parent: { database_id: process.env.NOTION_DATABASE_ID },
     properties: {
-      Name: {
-        title: [{ type: "text", text: { content: 'ff' } }],
+      "Имя ребенка": {
+        "rich_text": [
+          {
+            "text": {
+              "content": req.body.firstName
+            }
+          }
+        ]
       },
-      "Issue Number": {
-        number: 3,
+      "Фамилия ребенка": {
+        "rich_text": [{"text": {"content": req.body.lastName}}]
       },
-      State: {
-        select: { name: 'eee' },
+      //Возраст на данный момент
+      "Класс": {
+        "select": {
+          "name": "3",
+          "id":"1"
+        }
       },
-      "Number of Comments": {
-        number: 33,
+      "Предметы, которые вы хотели бы изучать": {
+        "object": "property_item",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "name": "subjects: "+req.body.subjects,
+          }
+        ]
       },
-      "Issue URL": {
-        url: 'http://google.com',
+      /*
+        Предметы
+        школа
+        Уроки 
+      */
+      "Дата рождения": {
+        "rich_text": [{"text": {"content": req.body.dateOfBirth}}]
       },
+      "уровень знания языков": {
+        "rich_text": [{"text": {"content": req.body.language}}]
+      },
+      "Что-то еще, что нам надо знать": {
+        "rich_text": [{"text": {"content": req.body.note}}]
+      },
+      "Часовой пояс ": {
+        "rich_text": [{"text": {"content": req.body.timezone}}]
+      },
+      "Опыт обучения в ZOOM": {
+        "select": {
+          "name": req.body.zoom
+        }
+      },
+      "девайс для занятия": {
+        "rich_text": [{"text": {"content": req.body.device}}]
+      },
+      "Есть ли жесткие ограничения по времени?": {
+        "rich_text": [{"text": {"content": req.body.limits}}]
+      },
+      "Телеграм ребенка (для самостоятельных детей)": {
+        "rich_text": [{"text": {"content": req.body.telegram}}]
+      },
+      /*
+        Нужны ли оффлайн занятия в Израиле (скорее всего Иерусалим)
+        Имя
+        Фамилия
+        Контакт в телеграмме
+        Другие контакты
+        "Что-то, что мы забыли спросить"
+        Отметка времени
+        Вы присоединились к каналу?
+      */
     },
   });
   knex(tableName)
