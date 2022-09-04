@@ -1,6 +1,7 @@
 const { check, validationResult } = require("express-validator");
+const { login, signUp } = require("./controllers/auth.controller");
 
-exports.signupValidation = [
+exports.signupAndValidation = [
   check("name", "Name should have at least 3 letters").isLength({ min: 3 }),
   check("email", "Please include a valid email").isEmail(),
   check("password", "Password must be 6 or more characters").isLength({
@@ -14,10 +15,11 @@ exports.signupValidation = [
         message: errors.errors[0].msg,
       });
     }
+    return signUp(req, res);
   },
 ];
 
-exports.loginValidation = [
+exports.loginAndValidation = [
   check("name", "Name should have at least 3 letters").isLength({ min: 3 }),
   check("password", "Password must be 6 or more characters").isLength({
     min: 6,
@@ -30,5 +32,6 @@ exports.loginValidation = [
         message: errors.errors[0].msg,
       });
     }
+    return login(req, res);
   },
 ];
