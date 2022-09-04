@@ -1,10 +1,18 @@
+<div *ngIf="showSettings" id="settings-screen" (click)="showSettings = false">
+  <div id="settings-box" (click)="stopProp($event)">
+    <div>upload cover photo</div>
+    <div>upload profile photo</div>
+    <div>add student</div>
+    <div>logout</div>
+  </div>
+</div>
 <div id="cover">
   <img id="cover-image" src="/assets/images/default-cover.jpeg"/>
 </div>
 <div id="container">
   <div id="header">
     <div id="account-settings">
-      <div id="settings-button">
+      <div id="settings-button" (click)="showSettings = true">
         <mat-icon>edit</mat-icon>
         Account settings
       </div>

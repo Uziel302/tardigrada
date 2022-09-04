@@ -11,6 +11,7 @@ import { LoginService } from '../login-screen/login.service';
 export class StudentAreaComponent implements OnInit {
 
   public userId: number = 0;
+  public showSettings: boolean = false;
 
   constructor(
     public scheduleService: ScheduleService,
@@ -18,6 +19,10 @@ export class StudentAreaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  stopProp(event: any){
+    event.stopPropagation();
   }
 
 }
