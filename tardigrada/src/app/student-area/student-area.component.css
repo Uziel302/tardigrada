@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 #cover-image {
@@ -17,10 +18,26 @@
   height: 378px;
 }
 
+#account-settings {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#settings-button {
+  border: 1.3px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 30px;
+}
+
 #profile {
   display: flex;
   margin-left: 70px;
-  padding-top: 70px;
+  padding-top: 15px;
 }
 
 #profile-white-line {
@@ -111,7 +128,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 72px 22%;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
 }
 
 .button-under-schedule {
@@ -169,7 +186,7 @@
 #subject {
   padding-top: 136px;
   font-size: 70px;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
 }
 
 #hour {
@@ -179,7 +196,7 @@
 
 #buttons-container {
   display: flex;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
 }
 
 .half-container {
@@ -243,7 +260,7 @@
 }
 
 #form-title {
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
   font-size: 24px;
 }
 
@@ -274,7 +291,7 @@
 }
 
 #last-button {
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
   margin-left: 30px;
 }
 
