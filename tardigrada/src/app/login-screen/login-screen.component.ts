@@ -13,6 +13,7 @@ export class LoginScreenComponent implements OnInit {
   public login: boolean = true;
   public name: string = '';
   public email: string = '';
+  public telegram: string = '';
   public password: string = '';
 
   constructor(
@@ -26,7 +27,7 @@ export class LoginScreenComponent implements OnInit {
     if (this.login) {
       this.loginService.login(this.name, this.password, this.isParent);
     } else {
-      this.loginService.createUser(this.name, this.email, this.password, this.isParent);
+      this.loginService.createUser(this.name, this.email, this.telegram, this.password, this.isParent);
     }
   }
 }

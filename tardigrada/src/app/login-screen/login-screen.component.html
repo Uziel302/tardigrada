@@ -18,6 +18,14 @@
       #emailRef="ngModel"
     />
     <input
+      *ngIf="!login"
+      placeholder="Телеграм"
+      [(ngModel)]="telegram"
+      required
+      minlength="3"
+      #emailRef="ngModel"
+    />
+    <input
       placeholder="Пароль"
       [(ngModel)]="password"
       required

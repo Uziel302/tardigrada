@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 
 import { INameAndPass } from '../models/name-and-pass';
-import { INameEmailPass } from '../models/name-email-pass';
+import { INewUser } from '../models/new-user';
 import { environment } from '../../environments/environment';
 
 import { IChild } from '../models/child';
@@ -50,10 +50,11 @@ export class LoginService {
   createUser(
     name: string,
     email: string,
+    telegram: string,
     password: string,
     isParent: boolean
   ): void {
-    const authData: INameEmailPass = { name, email, password };
+    const authData: INewUser = { name, email, telegram, password };
     this.http.post(environment.apiEndPoint + 'signup', authData).subscribe(
       (data) => {
         this.login(name, password, isParent);
