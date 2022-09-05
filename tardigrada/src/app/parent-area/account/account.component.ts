@@ -25,7 +25,7 @@ export class AccountComponent implements OnInit {
 
   submitRequest (): void {
     let data = {text: this.freeText};
-    this.http.post(environment.apiEndPoint + 'freeRequest', data).subscribe(
+    this.http.post<string>(environment.apiEndPoint + 'freeRequest', data).subscribe(
       (data) => {
         this.successMessage = data;
       },
@@ -33,10 +33,6 @@ export class AccountComponent implements OnInit {
         this.currentError = error.error.message;
       }
     );
-  }
-
-  stringi(n: any){
-    return JSON.stringify(n);
   }
 
 }

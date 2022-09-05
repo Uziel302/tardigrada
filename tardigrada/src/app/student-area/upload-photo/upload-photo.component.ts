@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
@@ -9,7 +9,9 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./upload-photo.component.css']
 })
 export class UploadPhotoComponent {
-    fileName = '';
+    public fileName = '';
+    @Output() upload = new EventEmitter<string>;
+
     constructor(
       private http: HttpClient
     ) {}
@@ -21,7 +23,11 @@ export class UploadPhotoComponent {
             const formData = new FormData();
             formData.append("upfile", file);
             const upload$ = this.http.post(environment.apiEndPoint + 'upload', formData);
-            upload$.subscribe();
+            upload$.subscribe(
+              (data) => {
+                this.upload.emit('/assets/uploads/'+file.name);
+              }
+            );
         }
     }
 }

@@ -2,7 +2,7 @@
   <div id="settings-box" (click)="stopProp($event)">
     <div class="upload-container">
       <div class="settings-button">upload cover photo</div>
-      <app-upload-photo></app-upload-photo>
+      <app-upload-photo (upload)="changeCover($event)"></app-upload-photo>
     </div>
     <div class="upload-container">
       <div class="settings-button">upload profile photo</div>
@@ -13,7 +13,7 @@
   </div>
 </div>
 <div id="cover">
-  <img id="cover-image" src="/assets/images/default-cover.jpeg"/>
+  <img id="cover-image" [src]="cover ? cover : '/assets/images/default-cover.jpeg'"/>
 </div>
 <div id="container">
   <div id="header">
