@@ -1,11 +1,13 @@
 <div *ngIf="showSettings" id="settings-screen" (click)="showSettings = false">
   <div id="settings-box" (click)="stopProp($event)">
-    <div class="settings-button">upload cover photo</div>
-    <form ngNoForm action="http://localhost:3000/upload" method="POST" enctype="multipart/form-data">
-      <input type="file" name="upfile" required/>
-      <input type="submit" value="Upload!"/>
-    </form>
-    <div class="settings-button">upload profile photo</div>
+    <div class="upload-container">
+      <div class="settings-button">upload cover photo</div>
+      <app-upload-photo></app-upload-photo>
+    </div>
+    <div class="upload-container">
+      <div class="settings-button">upload profile photo</div>
+      <app-upload-photo></app-upload-photo>
+    </div>
     <div class="settings-button" routerLink="../parent/children">+ add student</div>
     <div class="settings-button" (click)="loginService.logout()">logout</div>
   </div>
@@ -16,7 +18,7 @@
 <div id="container">
   <div id="header">
     <div id="account-settings">
-      <div id="settings-button" (click)="showSettings = true">
+      <div id="open-settings-button" (click)="showSettings = true">
         <mat-icon>edit</mat-icon>
         Account settings
       </div>

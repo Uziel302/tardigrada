@@ -29,6 +29,7 @@ import { UserScheduleDayComponent } from './schedule/user-schedule-day/user-sche
 import { ParentAreaComponent } from './parent-area/parent-area.component';
 import { AccountComponent } from './parent-area/account/account.component';
 import { ChildrenComponent } from './parent-area/children/children.component';
+import { UploadPhotoComponent } from './student-area/upload-photo/upload-photo.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ChildrenComponent } from './parent-area/children/children.component';
     UserScheduleDayComponent,
     ParentAreaComponent,
     AccountComponent,
-    ChildrenComponent
+    ChildrenComponent,
+    UploadPhotoComponent
   ],
   imports: [
     BrowserModule,

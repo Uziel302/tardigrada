@@ -15,7 +15,7 @@ router.post('/api/saveChild', (req, res) => {
   }
 });
 router.use(fileUpload());
-router.post("/upload", (req, res) => {
+router.post("/api/upload", (req, res) => {
     let upfile = req.files.upfile,
         updest = __dirname + "/uploads/" + upfile.name;
     upfile.mv(updest, (err) => {

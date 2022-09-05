@@ -31,11 +31,16 @@
   opacity: 1;
   border-radius: 20px;
   line-height: 150%;
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .settings-button {
   cursor: pointer;
+  padding: 5px;
+}
+
+.upload-container {
+  display: flex;
 }
 
 #cover {
@@ -59,7 +64,7 @@
   padding: 10px;
 }
 
-#settings-button {
+#open-settings-button {
   border: 1.3px solid black;
   border-radius: 10px;
   display: flex;
