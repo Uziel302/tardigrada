@@ -69,7 +69,7 @@ export class LoginService {
   login(name: string, password: string, isParent: boolean): void {
     const authData: INameAndPass = { name, password };
     this.http
-      .post<{ token: string; expiresIn: number }>(
+      .post<{ token: string; expiresIn: number; childId: number; }>(
         environment.apiEndPoint + 'login',
         authData
       )
@@ -89,6 +89,10 @@ export class LoginService {
             this.saveAuthData(token, expirationDate);
             this.currentError = '';
             let target = isParent ? '/parent/children' : '/teacher';
+            if(data.childId !== 0){
+              this.currentChildId = data.childId;
+              target = '/student'
+            }
             this.router.navigate([target]);
           }
         },
