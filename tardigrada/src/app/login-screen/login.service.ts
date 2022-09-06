@@ -86,13 +86,13 @@ export class LoginService {
             const expirationDate: Date = new Date(
               now.getTime() + expiresInDuration * 1000
             );
-            this.saveAuthData(token, expirationDate);
             this.currentError = '';
             let target = isParent ? '/parent/children' : '/teacher';
             if(data.childId){
               this.currentChildId = data.childId;
               target = '/student'
             }
+            this.saveAuthData(token, expirationDate, this.currentChildId);
             this.router.navigate([target]);
           }
         },
@@ -106,6 +106,7 @@ export class LoginService {
     const authInformation: void | {
       token: string;
       expirationDate: Date;
+      childId: number;
     } = this.getAuthData();
     if (!authInformation) {
       return;
@@ -115,6 +116,7 @@ export class LoginService {
       authInformation.expirationDate.getTime() - now.getTime();
     if (expiresIn > 0) {
       this.token = authInformation.token;
+      this.currentChildId = authInformation.childId;
       this.isAuthenticated = true;
       this.setAuthTimer(expiresIn / 1000);
       this.authStatusListener.next(true);
@@ -136,25 +138,35 @@ export class LoginService {
     }, duration * 1000);
   }
 
-  private saveAuthData(token: string, expirationDate: Date): void {
+  private saveAuthData(token: string, expirationDate: Date, childId: number): void {
     localStorage.setItem('token', token);
     localStorage.setItem('expiration', expirationDate.toISOString());
+    localStorage.setItem('childId', ''+childId);
   }
 
   private clearAuthData(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('expiration');
+    localStorage.removeItem('childId');
   }
 
-  private getAuthData(): { token: string; expirationDate: Date } | void {
+  private getAuthData(): { token: string; expirationDate: Date; childId: number; } | void {
     const token: string | null = localStorage.getItem('token');
     const expirationDate: string | null = localStorage.getItem('expiration');
+    let savedChildId = localStorage.getItem('childId');
+    let childId: number;
+    if(savedChildId){
+      childId = +savedChildId;
+    } else {
+      childId = 0;
+    }
     if (!token || !expirationDate) {
       return;
     }
     return {
       token: token,
       expirationDate: new Date(expirationDate),
+      childId,
     };
   }
 }
