@@ -194,3 +194,77 @@
   justify-content: flex-end;
   align-items: flex-end;
 }
+
+#photos-containter {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+#main-right {
+  height: 85vh;
+}
+
+#main-left {
+  height: 95vh;
+  padding-bottom: 60px;
+}
+
+#main-center {
+  height: 550px;
+  width: 450px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+#animal {
+  height: 150px;
+  width: 150px;
+  margin-right: -28%;
+  margin-bottom: 40%;
+  transform: translateY(3px) rotate(45deg);
+}
+
+#logo {
+  height: 80px;
+  width: 80px;
+}
+
+#logo-wrapper {
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  margin-bottom: 20px;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+}
+
+.box:first-child {
+  justify-content: flex-end;
+}
+
+.box:last-child {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.box:first-child > img {
+  margin-left: auto;
+}
+
+.box:last-child > img {
+  margin-right: auto;
+}
+
+#center-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
