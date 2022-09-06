@@ -85,7 +85,7 @@ exports.getChildrenById = async (userId) => {
   .orderBy([{column:'id',order:'desc'}])
   .limit(1)
   .then((child) => {
-    if (child>0) {
+    if (child[0]) {
       return child[0].id;
     }
     return 0;
