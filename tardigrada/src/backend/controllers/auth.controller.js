@@ -86,7 +86,7 @@ exports.getChildrenById = async (userId) => {
   .limit(1)
   .then((child) => {
     if (child) {
-      return child.id;
+      return child[0].id;
     }
     return 0;
   });

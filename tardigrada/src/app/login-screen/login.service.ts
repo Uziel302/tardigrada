@@ -89,7 +89,7 @@ export class LoginService {
             this.saveAuthData(token, expirationDate);
             this.currentError = '';
             let target = isParent ? '/parent/children' : '/teacher';
-            if(data.childId !== 0){
+            if(data.childId){
               this.currentChildId = data.childId;
               target = '/student'
             }
