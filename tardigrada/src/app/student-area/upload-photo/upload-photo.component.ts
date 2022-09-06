@@ -22,10 +22,13 @@ export class UploadPhotoComponent {
             this.fileName = file.name;
             const formData = new FormData();
             formData.append("upfile", file);
-            const upload$ = this.http.post(environment.apiEndPoint + 'upload', formData);
+            const upload$ = this.http.post<{filename: string}>(environment.apiEndPoint + 'upload', formData);
             upload$.subscribe(
               (data) => {
-                this.upload.emit('/assets/uploads/'+file.name);
+                //this timeout is needed to prevent trying access the photo that was just saved before it's ready
+                setTimeout(() => {
+                  this.upload.emit('/assets/uploads/'+data.filename);
+                }, 5)
               }
             );
         }
