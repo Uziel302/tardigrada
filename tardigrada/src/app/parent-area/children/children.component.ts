@@ -13,7 +13,6 @@ import { LoginService } from 'src/app/login-screen/login.service';
 })
 export class ChildrenComponent implements OnInit {
   public children = [];
-  public saveSuccess: string = '';
   public saveError: string = '';
 
   public childData: IChild = {
@@ -45,15 +44,15 @@ export class ChildrenComponent implements OnInit {
       return;
     }
     this.http
-      .post<{ message: string }>(
+      .post<{ createId: number }>(
         environment.apiEndPoint + 'saveChild',
         this.childData
       )
       .subscribe(
         (data) => {
           this.saveError = '';
-          this.saveSuccess = data.message;
           this.loginService.currentChild = this.childData;
+          this.loginService.currentChildId = data.createId;
           this.router.navigate(['/student']);
         },
         (error) => {

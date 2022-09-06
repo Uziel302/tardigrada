@@ -13,6 +13,7 @@ export class StudentAreaComponent implements OnInit {
   public userId: number = 0;
   public showSettings: boolean = false;
   public cover: string = '';
+  public profile: string = '';
 
   constructor(
     public scheduleService: ScheduleService,
@@ -26,7 +27,11 @@ export class StudentAreaComponent implements OnInit {
     event.stopPropagation();
   }
 
-  changeCover (event: string ) {
+  changeCover (event: string) {
     this.cover = event;
+  }
+
+  changeProfile (event: string) {
+    this.profile = event;
   }
 }

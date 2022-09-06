@@ -50,16 +50,15 @@ exports.saveChild = async (req, res) => {
       },
     });
   } catch(error) {
-    res.status(401).send({ message: "Sending details to notion failed!" });
-    return false;
+
   }
   knex(tableName)
   .insert(req.body)
   .then((row) => {
     if (row > 0) {
-    return res
-      .status(200)
-      .send({message: 'New child was saved'});
+      return res
+        .status(200)
+        .send({createId: row[0]});
     } else {
       return res.status(400).send({message: 'failed saving child'});
     }

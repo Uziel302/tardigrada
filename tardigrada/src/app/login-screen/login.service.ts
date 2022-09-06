@@ -12,6 +12,7 @@ import { IChild } from '../models/child';
 @Injectable({ providedIn: 'root' })
 export class LoginService {
   public currentError: string = '';
+  public currentChildId: number = 0;
   public currentChild: IChild = {
     firstName: '',
     lastName: '',

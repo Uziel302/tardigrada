@@ -1,6 +1,8 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { environment } from '../../../environments/environment';
+import { LoginService } from 'src/app/login-screen/login.service';
 
 
 @Component({
@@ -11,9 +13,11 @@ import { environment } from '../../../environments/environment';
 export class UploadPhotoComponent {
     public fileName = '';
     @Output() upload = new EventEmitter<string>;
+    @Input() uploadType: string = '';
 
     constructor(
-      private http: HttpClient
+      private http: HttpClient,
+      public loginService: LoginService,
     ) {}
 
     onFileSelected(event: any) {
@@ -22,6 +26,8 @@ export class UploadPhotoComponent {
             this.fileName = file.name;
             const formData = new FormData();
             formData.append("upfile", file);
+            formData.append("childId", ''+this.loginService.currentChildId);
+            formData.append("uploadType", this.uploadType);
             const upload$ = this.http.post<{filename: string}>(environment.apiEndPoint + 'upload', formData);
             upload$.subscribe(
               (data) => {
