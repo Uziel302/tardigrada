@@ -33,7 +33,7 @@ export class UploadPhotoComponent {
               (data) => {
                 //this timeout is needed to prevent trying access the photo that was just saved before it's ready
                 setTimeout(() => {
-                  this.upload.emit('/assets/uploads/'+data.filename);
+                  this.upload.emit(environment.uploadsFolder+data.filename);
                 }, 5)
               }
             );
