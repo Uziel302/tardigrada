@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -59,6 +61,8 @@ import { UploadPhotoComponent } from './student-area/upload-photo/upload-photo.c
     AppRoutingModule,
     AngularFullpageModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
@@ -69,6 +73,7 @@ import { UploadPhotoComponent } from './student-area/upload-photo/upload-photo.c
     { provide: MAT_DIALOG_DATA, useValue: {} },
     { provide: MatDialogRef, useValue: {} },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
   ],
   bootstrap: [AppComponent]
 })
