@@ -1,0 +1,18 @@
+<div *ngIf="showSettings" id="settings-screen" (click)="showSettings = false">
+  <div id="settings-box" (click)="stopProp($event)">
+    <div class="upload-container">
+      <app-upload-photo [uploadType]="'cover'"></app-upload-photo>
+      <div>upload cover photo</div>
+    </div>
+    <div class="upload-container">
+      <app-upload-photo [uploadType]="'profile'"></app-upload-photo>
+      <div>upload profile photo</div>
+    </div>
+    <div *ngIf="isStudent">
+      <div>Choose child:</div>
+      <div class="settings-button" (click)="changeChild(child)" *ngFor="let child of loginService.children">{{child.firstName + ' ' + child.lastName}}</div>
+      <div class="settings-button" routerLink="../parent/children">+ add student</div>  
+    </div>
+    <div class="settings-button" (click)="loginService.logout()">logout</div>
+  </div>
+</div>

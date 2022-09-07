@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../../environments/environment';
@@ -12,7 +12,6 @@ import { LoginService } from 'src/app/login-screen/login.service';
 })
 export class UploadPhotoComponent {
     public fileName = '';
-    @Output() upload = new EventEmitter<string>;
     @Input() uploadType: string = '';
 
     constructor(
@@ -33,7 +32,12 @@ export class UploadPhotoComponent {
               (data) => {
                 //this timeout is needed to prevent trying access the photo that was just saved before it's ready
                 setTimeout(() => {
-                  this.upload.emit(environment.uploadsFolder+data.filename);
+                  if(this.uploadType === 'cover'){
+                    this.loginService.currentChild.cover = environment.uploadsFolder+data.filename;
+                  }
+                  if(this.uploadType === 'profile'){
+                    this.loginService.currentChild.profile = environment.uploadsFolder+data.filename;
+                  }
                 }, 5)
               }
             );

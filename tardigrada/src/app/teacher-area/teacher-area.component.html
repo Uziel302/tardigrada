@@ -1,16 +1,4 @@
-<div *ngIf="showSettings" id="settings-screen" (click)="showSettings = false">
-  <div id="settings-box" (click)="stopProp($event)">
-    <div class="upload-container">
-      <app-upload-photo [uploadType]="'cover'" (upload)="changeCover($event)"></app-upload-photo>
-      <div>upload cover photo</div>
-    </div>
-    <div class="upload-container">
-      <app-upload-photo [uploadType]="'profile'" (upload)="changeProfile($event)"></app-upload-photo>
-      <div>upload profile photo</div>
-    </div>
-    <div class="settings-button" (click)="loginService.logout()">logout</div>
-  </div>
-</div>
+<app-settings-popup [showSettings]="showSettings" [isStudent]="false"></app-settings-popup>
 <div id="cover">
   <img id="cover-image" [src]="cover ? cover : '/assets/images/default-cover.jpeg'"/>
 </div>

@@ -32,6 +32,7 @@ import { ParentAreaComponent } from './parent-area/parent-area.component';
 import { AccountComponent } from './parent-area/account/account.component';
 import { ChildrenComponent } from './parent-area/children/children.component';
 import { UploadPhotoComponent } from './student-area/upload-photo/upload-photo.component';
+import { SettingsPopupComponent } from './student-area/settings-popup/settings-popup.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UploadPhotoComponent } from './student-area/upload-photo/upload-photo.c
     ParentAreaComponent,
     AccountComponent,
     ChildrenComponent,
-    UploadPhotoComponent
+    UploadPhotoComponent,
+    SettingsPopupComponent
   ],
   imports: [
     BrowserModule,

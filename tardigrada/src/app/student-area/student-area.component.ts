@@ -9,14 +9,15 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-student-area',
   templateUrl: './student-area.component.html',
-  styleUrls: ['./student-area.component.css']
+  styleUrls: [
+    './shared-user-area.css',
+    './student-area.component.css'
+  ]
 })
 export class StudentAreaComponent implements OnInit, OnDestroy {
 
   public userId: number = 0;
   public showSettings: boolean = false;
-  public cover: string = '';
-  public profile: string = '';
 
   private subscriptions: Subscription[] = [];
 
@@ -29,8 +30,9 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.loginService.getChildData().subscribe((childData: IChild) => {
         this.loginService.currentChild = childData;
-        this.cover = childData.cover ? environment.uploadsFolder + childData.cover : '';
-        this.profile = childData.profile ? environment.uploadsFolder + childData.profile : '';
+        //TODO - get rid of these lines, get full path from backend
+        this.loginService.currentChild.cover = childData.cover ? environment.uploadsFolder + childData.cover : null;
+        this.loginService.currentChild.profile = childData.profile ? environment.uploadsFolder + childData.profile : null;
       })
     );
 
@@ -49,24 +51,13 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     }
   }
 
-  stopProp(event: any){
-    event.stopPropagation();
-  }
-
-  changeCover (event: string) {
-    this.cover = event;
-  }
-
-  changeProfile (event: string) {
-    this.profile = event;
-  }
-
   switchChild(child: IChild) {
     this.loginService.currentChild = child;
     this.loginService.currentChildId = child.id;
     localStorage.setItem('childId', ''+child.id);
-    this.profile = child.profile ?? '';
-    this.cover = child.cover ?? '';
+    //TODO - get rid of these lines, get full path from backend
+    this.loginService.currentChild.profile = child.profile ? environment.uploadsFolder + child.profile: null;
+    this.loginService.currentChild.cover = child.cover ? environment.uploadsFolder + child.cover : null;
     this.showSettings = false;
   }
 }

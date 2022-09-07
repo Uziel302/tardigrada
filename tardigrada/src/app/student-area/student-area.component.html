@@ -1,21 +1,6 @@
-<div *ngIf="showSettings" id="settings-screen" (click)="showSettings = false">
-  <div id="settings-box" (click)="stopProp($event)">
-    <div class="upload-container">
-      <app-upload-photo [uploadType]="'cover'" (upload)="changeCover($event)"></app-upload-photo>
-      <div>upload cover photo</div>
-    </div>
-    <div class="upload-container">
-      <app-upload-photo [uploadType]="'profile'" (upload)="changeProfile($event)"></app-upload-photo>
-      <div>upload profile photo</div>
-    </div>
-    <div>Choose child:</div>
-    <div class="settings-button" (click)="switchChild(child)" *ngFor="let child of loginService.children">{{child.firstName + ' ' + child.lastName}}</div>
-    <div class="settings-button" routerLink="../parent/children">+ add student</div>
-    <div class="settings-button" (click)="loginService.logout()">logout</div>
-  </div>
-</div>
+<app-settings-popup [showSettings]="showSettings" [isStudent]="true" (switchChild)="switchChild($event)"></app-settings-popup>
 <div id="cover">
-  <img id="cover-image" [src]="cover ? cover : '/assets/images/default-cover.jpeg'"/>
+  <img id="cover-image" [src]="loginService.currentChild.cover ?? '/assets/images/default-cover.jpeg'"/>
 </div>
 <div id="container">
   <div id="header">
@@ -29,7 +14,7 @@
       <div id="image-container">
         <div id="profile-image-border">
           <div id="profile-image">
-            <img [src]="profile ? profile : '/assets/images/profile-default.jpg'" />
+            <img [src]="loginService.currentChild.profile ?? '/assets/images/profile-default.jpg'" />
           </div>
         </div>
       </div>

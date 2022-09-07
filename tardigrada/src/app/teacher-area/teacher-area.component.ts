@@ -6,7 +6,10 @@ import { LoginService } from '../login-screen/login.service';
 @Component({
   selector: 'app-teacher-area',
   templateUrl: './teacher-area.component.html',
-  styleUrls: ['./teacher-area.component.css']
+  styleUrls: [
+    './teacher-area.component.css',
+    '../student-area/shared-user-area.css',
+  ]
 })
 export class TeacherAreaComponent implements OnInit {
 
@@ -25,14 +28,6 @@ export class TeacherAreaComponent implements OnInit {
 
   stopProp(event: any){
     event.stopPropagation();
-  }
-
-  changeCover (event: string) {
-    this.cover = event;
-  }
-
-  changeProfile (event: string) {
-    this.profile = event;
   }
 
 }
