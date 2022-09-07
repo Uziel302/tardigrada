@@ -170,9 +170,16 @@ app-upload-photo {
 #under-schedule-buttons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 72px 22%;
   font-family: "Zhizn";
+}
+
+.button-wrapper {
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 30px;
 }
 
 .button-under-schedule {
@@ -181,20 +188,14 @@ app-upload-photo {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  width: 136px;
-  height: 136px;
+  width: 120px;
+  height: 120px;
   background: white;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 120%;
   padding: 10px;
   border: 5px solid #d8d7e1;
-}
-
-.button-wrapper {
-  border: 1px solid white;
-  border-radius: 50%;
-  cursor: pointer;
 }
 
 #instruction-container {
@@ -247,13 +248,21 @@ app-upload-photo {
   flex: 1 1 0px;
 }
 
+#circle-container {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  margin-right: 100px;
+}
+
 #white-circle {
   background: white;
   color: black;
   font-size: 65px;
   text-align: center;
-  width: 355px;
-  height: 355px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -286,21 +295,13 @@ app-upload-photo {
 
 .bottom-form {
   width: 90%;
-  height: 390px;
+  height: 200px;
   border: 1.5px solid white;
   background: #d8d7e1;
   border-radius: 20px;
   margin-top: 24px;
   padding: 10px;
   margin-right: 40px;
-}
-
-#circle-container {
-  border: 1px solid white;
-  border-radius: 50%;
-  width: 375px;
-  height: 375px;
-  margin-right: 150px;
 }
 
 #form-title {
