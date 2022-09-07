@@ -30,3 +30,32 @@
       <app-user-schedule [userId]="userId"></app-user-schedule>
     </div>
   </div>
+
+  <div id="under-schedule-buttons">
+    <div class="button-wrapper">
+      <div class="button-under-schedule">
+        <div style="font-size:16px;">добавить</div>
+        свои дела
+      </div>
+    </div>
+  </div>
+
+
+  <div id="instruction-container">
+    <div id="instruction-line">
+      чтобы перейти на страницу предмета, кликните на расписание
+    </div>
+  </div>
+
+  <div id="separating-line"></div>
+
+  <div id="course-details">
+    <div id="subject-wrapper">
+      <div id="subject">
+        {{scheduleService.selectedLecture.title}}
+      </div>
+      <div id="hour">
+        {{scheduleService.week[scheduleService.dayNumber]}}. чт. 
+        {{scheduleService.selectedLecture.hour}}
+      </div>
+    </div>

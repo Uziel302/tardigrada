@@ -78,3 +78,77 @@
   padding-top: 25px;
   transform: scale(0.4, 0.4);
 }
+
+
+#under-schedule-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 72px 22%;
+  font-family: "Zhizn";
+}
+
+.button-wrapper {
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.button-under-schedule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 120%;
+  padding: 10px;
+  border: 5px solid #d8d7e1;
+}
+
+
+#instruction-container {
+  height: 110px;
+  border-top: 1px solid white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+#separating-line {
+  border-top: 1px solid white;
+}
+
+#instruction-line {
+  color: white;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+#course-details {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 144px;
+}
+
+#subject-wrapper {
+  flex: 1 1 0px;
+}
+
+#subject {
+  padding-top: 136px;
+  font-size: 70px;
+  font-family: "Zhizn";
+}
+
+#hour {
+  line-height: 50px;
+  font-size: 35px;
+}

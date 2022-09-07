@@ -7,8 +7,8 @@ import { LoginService } from '../login-screen/login.service';
   selector: 'app-teacher-area',
   templateUrl: './teacher-area.component.html',
   styleUrls: [
-    './teacher-area.component.css',
     '../student-area/shared-user-area.css',
+    './teacher-area.component.css',
   ]
 })
 export class TeacherAreaComponent implements OnInit {
