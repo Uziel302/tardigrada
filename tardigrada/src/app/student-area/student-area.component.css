@@ -1,24 +1,7 @@
-
-
 #profile-teacher {
   padding-top: 75px;
   display: flex;
   flex: 1 1 0px;
-}
-
-#image-container {
-  display: flex;
-}
-
-#image-container-teacher {
-  display: flex;
-}
-
-#name {
-  font-size: 45px;
-  font-weight: 300;
-  padding-left: 80px;
-  padding-top: 30px;
 }
 
 #name-teacher {
@@ -32,17 +15,6 @@
 #name-title {
   font-size: 28px;
   font-weight: 300;
-}
-
-#profile-image {
-  height: 220px;
-  width: 220px;
-  overflow: hidden;
-  border: 2px solid black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #profile-image-teacher {
@@ -59,12 +31,6 @@
 #profile-image-border-teacher {
   border: 2px solid white;
   border-radius: 50%;
-}
-
-#profile-image > img,
-#profile-image-teacher > img {
-  padding-top: 25px;
-  transform: scale(0.4, 0.4);
 }
 
 #profile-image-border {
