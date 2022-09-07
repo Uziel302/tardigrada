@@ -24,6 +24,29 @@ export class TeacherAreaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //TODO remove
+    for(let i of [0,1,2,3,4]){
+      this.scheduleService.currentChildren.push(
+        {
+          id: 0,
+          firstName: 'Имя',
+          lastName: 'Фамилия',
+          fatherName: '',
+          dateOfBirth: '',
+          className: '',
+          subjects: '',
+          timezone: '',
+          zoom: '',
+          device: '',
+          language: '',
+          limits: '',
+          telegram: '',
+          note: '',
+          cover: '/assets/images/default-cover.jpeg',
+          profile: '/assets/images/default-profile.jpeg',
+        }
+      );
+    }
   }
 
   stopProp(event: any){

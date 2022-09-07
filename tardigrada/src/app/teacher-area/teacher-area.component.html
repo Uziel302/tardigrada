@@ -116,7 +116,11 @@
   <div class="two-column">
     <div class="half-container" id="form-half">
       <div>вероятно к вам придут вот эти дети:</div>
-      <input id="first-form" />
+      <div id="child-list">
+        <div *ngFor="let child of scheduleService.currentChildren">
+          {{child.firstName + ' ' + child.lastName}}
+        </div>
+      </div>
     </div>
 
     <div class="half-container" id="form-half">
