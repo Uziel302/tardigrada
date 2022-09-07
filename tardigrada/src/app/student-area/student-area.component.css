@@ -42,61 +42,6 @@
   width: 100%;
 }
 
-
-#buttons-container {
-  display: flex;
-  font-family: "Zhizn";
-}
-
-.half-container {
-  flex: 1 1 0px;
-}
-
-#circle-container {
-  border: 1px solid white;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  margin-right: 100px;
-}
-
-#white-circle {
-  background: white;
-  color: black;
-  font-size: 65px;
-  text-align: center;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-}
-
-#telegram-half {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#form-half {
-  display: flex;
-  justify-content: center;
-  font-size: 26px;
-  flex-direction: column;
-}
-
-#first-form {
-  width: 90%;
-  height: 200px;
-  border: 1.5px solid white;
-  background: #d8d7e1;
-  border-radius: 20px;
-  margin-top: 24px;
-  padding: 10px;
-}
-
 .bottom-form {
   width: 90%;
   height: 200px;
@@ -111,18 +56,6 @@
 #form-title {
   font-family: "Zhizn";
   font-size: 24px;
-}
-
-.purple-button {
-  background: #690f46;
-  border-radius: 50%;
-  border: 1px solid white;
-  width: 84px;
-  height: 84px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
 }
 
 .separating-space {
