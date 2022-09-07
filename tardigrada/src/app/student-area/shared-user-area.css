@@ -79,7 +79,6 @@
   transform: scale(0.4, 0.4);
 }
 
-
 #under-schedule-buttons {
   display: flex;
   align-items: center;
@@ -110,7 +109,6 @@
   padding: 10px;
   border: 5px solid #d8d7e1;
 }
-
 
 .instruction-container {
   height: 110px;
@@ -154,7 +152,7 @@
   font-size: 35px;
 }
 
-#buttons-container {
+.two-column {
   display: flex;
   font-family: "Zhizn";
 }

@@ -60,19 +60,19 @@
 
   <div class="separating-line"></div>
 
-  <div id="course-details">
-    <div id="subject-wrapper">
-      <div id="subject">
-        {{ scheduleService.selectedLecture.title }}
-      </div>
-      <div id="hour">
-        {{ scheduleService.week[scheduleService.dayNumber] }}. чт.
-        {{ scheduleService.selectedLecture.hour }}
+  <div class="two-column">
+    <div class="half-container" id="course-details">
+      <div id="subject-wrapper">
+        <div id="subject">
+          {{ scheduleService.selectedLecture.title }}
+        </div>
+        <div id="hour">
+          {{ scheduleService.week[scheduleService.dayNumber] }}. чт.
+          {{ scheduleService.selectedLecture.hour }}
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="buttons-container">
     <div class="half-container" id="telegram-half">
       <div id="buttons-conatainer">
         <a
@@ -111,6 +111,13 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="two-column">
+    <div class="half-container" id="form-half">
+      <div>вероятно к вам придут вот эти дети:</div>
+      <input id="first-form" />
+    </div>
 
     <div class="half-container" id="form-half">
       <div>взять с собой</div>
@@ -119,14 +126,12 @@
   </div>
 
   <div class="separating-space"></div>
-  
+
   <div class="instruction-container">
-    <div class="instruction-line">
-      домашку проверить чтобы ученика на к
-    </div>
+    <div class="instruction-line">кликните на ученика чтобы проверить домашку</div>
   </div>
   <div class="separating-line"></div>
 
-
   <div class="separating-space"></div>
   <div class="separating-space"></div>
+</div>
