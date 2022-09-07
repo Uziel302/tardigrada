@@ -29,6 +29,8 @@ export class ChildrenComponent implements OnInit {
     limits: '',
     telegram: '',
     note: '',
+    cover: null,
+    profile: null,
   };
 
   constructor(

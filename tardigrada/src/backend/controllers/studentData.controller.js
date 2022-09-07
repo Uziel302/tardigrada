@@ -64,3 +64,18 @@ exports.saveChild = async (req, res) => {
     }
   });
 }
+
+exports.getChild = async (req, res) => {
+  knex(tableName)
+  .where({ id: req.query.id })
+  .first()
+  .then((child) => {
+    if (!child) {
+      res.status(401).json({
+        message: 'failed getting child from db',
+      });
+    } else {
+      res.status(200).json(child);
+    }
+  });
+}

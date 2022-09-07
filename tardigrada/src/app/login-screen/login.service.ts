@@ -27,6 +27,8 @@ export class LoginService {
     limits: '',
     telegram: '',
     note: '',
+    cover: null,
+    profile: null,
   };
 
   private isAuthenticated: boolean = false;
@@ -168,5 +170,9 @@ export class LoginService {
       expirationDate: new Date(expirationDate),
       childId,
     };
+  }
+
+  public getChildData(){
+    return this.http.get<IChild>(environment.apiEndPoint + 'getChild/?id=' + this.currentChildId);
   }
 }

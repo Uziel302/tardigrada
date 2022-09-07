@@ -12,5 +12,7 @@ export interface IChild {
   limits: string;
   telegram: string;
   note: string;
+  cover: string | null;
+  profile: string | null;
 }
   
