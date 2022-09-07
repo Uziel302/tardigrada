@@ -13,7 +13,9 @@ import { IChild } from '../models/child';
 export class LoginService {
   public currentError: string = '';
   public currentChildId: number = 0;
+  public children: IChild[] = [];
   public currentChild: IChild = {
+    id: 0,
     firstName: '',
     lastName: '',
     fatherName: '',
@@ -174,5 +176,9 @@ export class LoginService {
 
   public getChildData(){
     return this.http.get<IChild>(environment.apiEndPoint + 'getChild/?id=' + this.currentChildId);
+  }
+
+  public getChildren(){
+    return this.http.get<IChild[]>(environment.apiEndPoint + 'getChildren');
   }
 }

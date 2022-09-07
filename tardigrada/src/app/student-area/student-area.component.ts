@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { ScheduleService } from '../schedule/schedule.service';
@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './student-area.component.html',
   styleUrls: ['./student-area.component.css']
 })
-export class StudentAreaComponent implements OnInit {
+export class StudentAreaComponent implements OnInit, OnDestroy {
 
   public userId: number = 0;
   public showSettings: boolean = false;
@@ -33,6 +33,20 @@ export class StudentAreaComponent implements OnInit {
         this.profile = childData.profile ? environment.uploadsFolder + childData.profile : '';
       })
     );
+
+    if(this.loginService.children.length === 0){
+      this.subscriptions.push(
+        this.loginService.getChildren().subscribe((children: IChild[]) => {
+          this.loginService.children = children;
+        })
+      );
+    }
+  }
+
+  ngOnDestroy(): void {
+    for (let item of this.subscriptions) {
+      item.unsubscribe();
+    }
   }
 
   stopProp(event: any){
@@ -45,5 +59,14 @@ export class StudentAreaComponent implements OnInit {
 
   changeProfile (event: string) {
     this.profile = event;
+  }
+
+  switchChild(child: IChild) {
+    this.loginService.currentChild = child;
+    this.loginService.currentChildId = child.id;
+    localStorage.setItem('childId', ''+child.id);
+    this.profile = child.profile ?? '';
+    this.cover = child.cover ?? '';
+    this.showSettings = false;
   }
 }

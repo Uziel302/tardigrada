@@ -8,6 +8,8 @@
       <app-upload-photo [uploadType]="'profile'" (upload)="changeProfile($event)"></app-upload-photo>
       <div>upload profile photo</div>
     </div>
+    <div>Choose child:</div>
+    <div class="settings-button" (click)="switchChild(child)" *ngFor="let child of loginService.children">{{child.firstName + ' ' + child.lastName}}</div>
     <div class="settings-button" routerLink="../parent/children">+ add student</div>
     <div class="settings-button" (click)="loginService.logout()">logout</div>
   </div>

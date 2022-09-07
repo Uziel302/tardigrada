@@ -79,3 +79,17 @@ exports.getChild = async (req, res) => {
     }
   });
 }
+
+exports.getChildren = async (req, res) => {
+  knex(tableName)
+  .where({ userId: req.body.userId })
+  .then((children) => {
+    if (!children) {
+      res.status(401).json({
+        message: 'failed getting child from db',
+      });
+    } else {
+      res.status(200).json(children);
+    }
+  });
+}

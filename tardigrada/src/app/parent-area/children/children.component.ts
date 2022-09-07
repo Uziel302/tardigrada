@@ -16,6 +16,7 @@ export class ChildrenComponent implements OnInit {
   public saveError: string = '';
 
   public childData: IChild = {
+    id: 0,
     firstName: '',
     lastName: '',
     fatherName: '',
