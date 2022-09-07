@@ -112,7 +112,7 @@
 }
 
 
-#instruction-container {
+.instruction-container {
   height: 110px;
   border-top: 1px solid white;
   text-align: center;
@@ -122,11 +122,11 @@
   font-size: 12px;
 }
 
-#separating-line {
+.separating-line {
   border-top: 1px solid white;
 }
 
-#instruction-line {
+.instruction-line {
   color: white;
   font-size: 32px;
   font-weight: 300;
@@ -218,4 +218,8 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+}
+
+.separating-space {
+  height: 100px;
 }
