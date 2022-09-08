@@ -17,6 +17,7 @@ export class TeacherAreaComponent implements OnInit {
   public showSettings: boolean = false;
   public cover: string = '';
   public profile: string = '';
+  public chosenChild: number = -1;
 
   constructor(
     public scheduleService: ScheduleService,
@@ -29,7 +30,7 @@ export class TeacherAreaComponent implements OnInit {
       this.scheduleService.currentChildren.push(
         {
           id: 0,
-          firstName: 'Имя',
+          firstName: 'Имя ' + i,
           lastName: 'Фамилия',
           fatherName: '',
           dateOfBirth: '',

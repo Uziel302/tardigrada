@@ -117,15 +117,23 @@
     <div class="half-container" id="children-half">
       <div>вероятно к вам придут вот эти дети:</div>
       <div id="child-list">
-        <div class="child-container" *ngFor="let child of scheduleService.currentChildren">
+        <div
+          class="child-container"
+          *ngFor="let child of scheduleService.currentChildren; let i = index"
+          (click)="chosenChild = i"
+        >
           <div class="profile-image-border-children">
             <div class="profile-image-children">
               <img
-                [src]="child.profile ? child.profile : '/assets/images/profile-default.jpg'"
+                [src]="
+                  child.profile
+                    ? child.profile
+                    : '/assets/images/profile-default.jpg'
+                "
               />
             </div>
           </div>
-          {{child.firstName + ' ' + child.lastName}}
+          {{ child.firstName + " " + child.lastName }}
         </div>
       </div>
     </div>
@@ -139,9 +147,44 @@
   <div class="separating-space"></div>
 
   <div class="instruction-container">
-    <div class="instruction-line">кликните на ученика чтобы проверить домашку</div>
+    <div class="instruction-line">
+      кликните на ученика чтобы проверить домашку
+    </div>
   </div>
   <div class="separating-line"></div>
+
+  <div class="separating-space"></div>
+
+  <div *ngFor="let child of scheduleService.currentChildren; let i = index;">
+    <div *ngIf="chosenChild === i">
+      <div class="separating-line"></div>
+      <div class="separating-space"></div>
+
+      <div class="two-column">
+        <div class="half-container">
+  
+        </div>
+    
+        <div class="half-container">
+          <div class="profile-image-border-children">
+            <div class="profile-image-children">
+              <img
+                [src]="
+                child.profile
+                    ? child.profile
+                    : '/assets/images/profile-default.jpg'
+                "
+              />
+            </div>
+          </div>
+          <div id="chosen-child-name">
+            {{child.firstName}}
+            {{child.lastName}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="separating-space"></div>
   <div class="separating-space"></div>

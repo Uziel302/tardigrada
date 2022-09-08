@@ -17,4 +17,21 @@
   padding: 30px 15px;
   font-size: 18px;
   text-align: center;
+  cursor: pointer;
+}
+
+#chosen-child-name {
+  font-size: 40px;
+  padding-left: 70px;
+  font-family: 'Ubuntu';
+}
+
+.profile-image-border-children {
+  width: 124px;
+  height: 124px;
+}
+
+.half-container {
+  display: flex;
+  align-items: center;
 }
