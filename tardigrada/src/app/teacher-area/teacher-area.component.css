@@ -20,6 +20,11 @@
   cursor: pointer;
 }
 
+#child-name {
+  padding-left: 10px;
+  font-size: 26px;
+}
+
 #chosen-child-name {
   font-size: 40px;
   padding-top: 50px;
