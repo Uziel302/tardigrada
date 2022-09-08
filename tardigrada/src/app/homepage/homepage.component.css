@@ -208,14 +208,14 @@
 
 #main-left {
   height: 95vh;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
 }
 
 #main-center {
   height: 550px;
-  width: 450px;
-  margin-right: 100px;
-  margin-left: 100px;
+  width: 500px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 #animal {
@@ -241,7 +241,7 @@
 }
 
 .box {
-  flex: 1;
+  flex: 1 1 0%;
   display: flex;
 }
 
