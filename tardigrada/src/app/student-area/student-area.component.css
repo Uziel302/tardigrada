@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 87px;
+  line-height: 120%;
 }
 
 #name-title {
@@ -31,6 +32,8 @@
 #profile-image-border-teacher {
   border: 2px solid white;
   border-radius: 50%;
+  height: 224px;
+  width: 224px;
 }
 
 #form-title {
