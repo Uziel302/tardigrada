@@ -35,7 +35,10 @@
 }
 
 #child-profile-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .under-form-buttons {
