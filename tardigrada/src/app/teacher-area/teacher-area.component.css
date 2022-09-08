@@ -13,7 +13,8 @@
 .child-container {
   height: 128px;
   width: 128px;
-  padding: 30px 15px;
+  padding: 20px;
+  margin: 20px;
   font-size: 18px;
   text-align: center;
   cursor: pointer;
@@ -21,13 +22,13 @@
 
 #chosen-child-name {
   font-size: 40px;
-  padding-left: 70px;
+  padding-top: 50px;
   font-family: "Ubuntu";
 }
 
 .profile-image-border-children {
-  width: 124px;
-  height: 124px;
+  width: 153px;
+  height: 153px;
 }
 
 .half-container {
