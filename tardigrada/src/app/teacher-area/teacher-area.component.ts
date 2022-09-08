@@ -9,10 +9,9 @@ import { LoginService } from '../login-screen/login.service';
   styleUrls: [
     '../student-area/shared-user-area.css',
     './teacher-area.component.css',
-  ]
+  ],
 })
 export class TeacherAreaComponent implements OnInit {
-
   public userId: number = 0;
   public showSettings: boolean = false;
   public cover: string = '';
@@ -21,37 +20,34 @@ export class TeacherAreaComponent implements OnInit {
 
   constructor(
     public scheduleService: ScheduleService,
-    public loginService: LoginService,
-  ) { }
+    public loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     //TODO remove
-    for(let i of [0,1,2,3,4]){
-      this.scheduleService.currentChildren.push(
-        {
-          id: 0,
-          firstName: 'Имя ' + i,
-          lastName: 'Фамилия',
-          fatherName: '',
-          dateOfBirth: '',
-          className: '',
-          subjects: '',
-          timezone: '',
-          zoom: '',
-          device: '',
-          language: '',
-          limits: '',
-          telegram: '',
-          note: '',
-          cover: '/assets/images/default-cover.jpeg',
-          profile: '/assets/images/profile-default.jpg',
-        }
-      );
+    for (let i of [0, 1, 2, 3, 4]) {
+      this.scheduleService.currentChildren.push({
+        id: 0,
+        firstName: 'Имя ' + i,
+        lastName: 'Фамилия',
+        fatherName: '',
+        dateOfBirth: '',
+        className: '',
+        subjects: '',
+        timezone: '',
+        zoom: '',
+        device: '',
+        language: '',
+        limits: '',
+        telegram: '',
+        note: '',
+        cover: '/assets/images/default-cover.jpeg',
+        profile: '/assets/images/profile-default.jpg',
+      });
     }
   }
 
-  stopProp(event: any){
+  stopProp(event: any) {
     event.stopPropagation();
   }
-
 }

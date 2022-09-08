@@ -134,13 +134,11 @@
       <input class="first-form" />
       <div class="under-form-buttons">
         <div class="purple-button attach-button">
-          <img class="attach-image" src="/assets/images/attach.jpg"/>
+          <img class="attach-image" src="/assets/images/attach.jpg" />
         </div>
         <div class="under-schedule-buttons">
           <div class="button-wrapper">
-            <div class="button-under-schedule">
-              отправить
-            </div>
+            <div class="button-under-schedule">отправить</div>
           </div>
         </div>
       </div>
@@ -148,18 +146,15 @@
       <input class="first-form" />
       <div class="under-form-buttons">
         <div class="purple-button attach-button">
-          <img class="attach-image" src="/assets/images/attach.jpg"/>
+          <img class="attach-image" src="/assets/images/attach.jpg" />
         </div>
         <div class="under-schedule-buttons">
           <div class="button-wrapper">
-            <div class="button-under-schedule">
-              отправить
-            </div>
+            <div class="button-under-schedule">отправить</div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="instruction-container">
@@ -171,21 +166,20 @@
 
   <div class="separating-space"></div>
 
-  <div *ngFor="let child of scheduleService.currentChildren; let i = index;">
+  <div *ngFor="let child of scheduleService.currentChildren; let i = index">
     <div *ngIf="chosenChild === i">
       <div class="separating-line"></div>
       <div class="separating-space"></div>
 
       <div class="two-column">
-        <div class="half-container">
-        </div>
-    
+        <div class="half-container"></div>
+
         <div class="half-container" id="child-profile-container">
           <div class="profile-image-border-children">
             <div class="profile-image-children">
               <img
                 [src]="
-                child.profile
+                  child.profile
                     ? child.profile
                     : '/assets/images/profile-default.jpg'
                 "
@@ -193,8 +187,8 @@
             </div>
           </div>
           <div id="chosen-child-name">
-            {{child.firstName}}
-            {{child.lastName}}
+            {{ child.firstName }}
+            {{ child.lastName }}
           </div>
         </div>
       </div>
@@ -202,7 +196,7 @@
       <div class="two-column" id="last-forms">
         <div class="half-container" id="column-dates">
           <div *ngFor="let date of ['01.10', '11.10', '15.10']">
-            <div style="text-align:right;">{{date}}</div>
+            <div style="text-align: right">{{ date }}</div>
             <div class="form-with-button">
               <input class="first-form" />
               <div class="purple-button"></div>
@@ -211,12 +205,11 @@
         </div>
         <div class="half-container" id="column-dates">
           <div *ngFor="let date of ['feedback']">
-            <div style="text-align:right;">{{date}}</div>
+            <div style="text-align: right">{{ date }}</div>
             <div class="form-with-button">
               <input class="first-form" />
               <div class="purple-button"></div>
             </div>
-
           </div>
         </div>
       </div>

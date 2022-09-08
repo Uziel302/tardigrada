@@ -1,11 +1,10 @@
-
 .under-schedule-buttons {
   justify-content: flex-end;
   margin: 0;
 }
 
 #child-list {
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
   font-weight: 300;
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +22,7 @@
 #chosen-child-name {
   font-size: 40px;
   padding-left: 70px;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
 }
 
 .profile-image-border-children {
@@ -72,5 +71,5 @@
 }
 
 #last-forms {
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
 }
