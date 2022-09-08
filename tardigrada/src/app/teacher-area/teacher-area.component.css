@@ -13,8 +13,8 @@
 .child-container {
   height: 128px;
   width: 128px;
-  padding: 20px;
-  margin: 20px;
+  padding: 40px 40px 40px 0;
+  margin: 40px 40px 40px 0;
   font-size: 18px;
   text-align: center;
   cursor: pointer;
@@ -29,6 +29,7 @@
 .profile-image-border-children {
   width: 153px;
   height: 153px;
+  margin-bottom: 25px;
 }
 
 .half-container {
