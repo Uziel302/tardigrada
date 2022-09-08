@@ -189,7 +189,7 @@
   justify-content: space-between;
 }
 
-#form-half {
+#form-half, #children-half {
   display: flex;
   justify-content: flex-start;
   font-size: 24px;
