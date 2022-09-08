@@ -90,7 +90,7 @@
   transform: scale(0.4, 0.4);
 }
 
-#under-schedule-buttons {
+.under-schedule-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,7 +208,7 @@
   flex-direction: column;
 }
 
-#first-form {
+.first-form {
   width: 90%;
   height: 200px;
   border: 1.5px solid white;

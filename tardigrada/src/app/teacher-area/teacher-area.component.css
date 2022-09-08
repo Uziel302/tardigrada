@@ -1,5 +1,5 @@
 
-#under-schedule-buttons {
+.under-schedule-buttons {
   justify-content: flex-end;
   margin: 0;
 }
@@ -37,4 +37,18 @@
 
 #child-profile-container {
   align-items: center;
+}
+
+.under-form-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.attach-button {
+  margin-top: 30px;
+}
+
+.attach-image {
+  transform: scale(0.1, 0.1);
 }
