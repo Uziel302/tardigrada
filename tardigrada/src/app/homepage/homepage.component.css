@@ -228,17 +228,17 @@
 }
 
 #logo {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
 }
 
 #logo-wrapper {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
   overflow: hidden;
   border-radius: 50%;
   position: absolute;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 #box-left, #box-center, #box-right {
