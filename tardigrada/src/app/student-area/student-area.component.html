@@ -61,12 +61,11 @@
     </div>
   </div>
 
-  <div class="instruction-container">
+  <div *ngIf="!scheduleService.selectedLecture.title" class="instruction-container">
     <div class="instruction-line">
       чтобы перейти на страницу предмета, кликните на расписание
     </div>
   </div>
-
   <div class="separating-line"></div>
 
   <div *ngIf="scheduleService.selectedLecture.title">
