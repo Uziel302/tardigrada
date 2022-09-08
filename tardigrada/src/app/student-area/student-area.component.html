@@ -61,7 +61,10 @@
     </div>
   </div>
 
-  <div *ngIf="!scheduleService.selectedLecture.title" class="instruction-container">
+  <div
+    *ngIf="!scheduleService.selectedLecture.title"
+    class="instruction-container"
+  >
     <div class="instruction-line">
       чтобы перейти на страницу предмета, кликните на расписание
     </div>
@@ -79,7 +82,7 @@
           {{ scheduleService.selectedLecture.hour }}
         </div>
       </div>
-  
+
       <div id="profile-teacher">
         <div id="image-container-teacher">
           <div id="profile-image-border-teacher">
@@ -94,7 +97,7 @@
         </div>
       </div>
     </div>
-  
+
     <div class="two-column">
       <div class="half-container" id="telegram-half">
         <div id="buttons-conatainer">
@@ -127,38 +130,38 @@
           </a>
           <div class="purple-button"></div>
         </div>
-  
+
         <div>
           <div id="circle-container">
             <div id="white-circle">на урок</div>
           </div>
         </div>
       </div>
-  
+
       <div class="half-container" id="form-half">
         <div>взять с собой</div>
-        <input class="first-form" />
+        <textarea class="user-textarea"></textarea>
       </div>
     </div>
-  
+
     <div class="separating-space"></div>
-  
+
     <div id="form-title">домашка</div>
-  
+
     <div id="form-container">
       <div class="half-container">
-        <input class="bottom-form" />
+        <textarea class="user-textarea"></textarea>
       </div>
       <div class="half-container">
-        <input class="bottom-form" />
+        <textarea class="user-textarea"></textarea>
       </div>
     </div>
-  
+
     <div class="separating-space"></div>
-  
+
     <div id="last-row">
       <div class="purple-button" id="bottom-purple"></div>
-  
+
       <div class="button-wrapper" id="last-button">
         <div class="button-under-schedule">отправить</div>
       </div>

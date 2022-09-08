@@ -215,7 +215,7 @@
   flex-direction: column;
 }
 
-.first-form {
+.user-textarea {
   width: 90%;
   height: 200px;
   border: 1.5px solid white;
@@ -223,6 +223,7 @@
   border-radius: 20px;
   margin-top: 24px;
   padding: 10px;
+  font-size: 20px;
 }
 
 .purple-button {
