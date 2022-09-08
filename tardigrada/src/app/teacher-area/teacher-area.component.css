@@ -3,3 +3,8 @@
   justify-content: flex-end;
   margin: 0;
 }
+
+#child-list {
+  font-family: 'Ubuntu';
+  font-weight: 300;
+}

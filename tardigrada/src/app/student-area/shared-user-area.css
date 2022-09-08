@@ -191,7 +191,7 @@
 
 #form-half {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: 26px;
   flex-direction: column;
 }
