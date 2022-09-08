@@ -42,7 +42,7 @@
 
 #profile-white-line {
   width: 100%;
-  border-top: 1.3px solid white;
+  border-top: 1.5px solid white;
   margin-top: -115px;
   margin-bottom: 185px;
 }
@@ -128,8 +128,8 @@
 
 .instruction-container {
   height: 110px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1.5px solid white;
+  border-bottom: 1.5px solid white;
   text-align: center;
   display: flex;
   align-items: center;
@@ -138,7 +138,7 @@
 }
 
 .separating-line {
-  border-top: 1px solid white;
+  border-top: 1.5px solid white;
 }
 
 .instruction-line {
@@ -158,15 +158,13 @@
 
 #subject {
   padding-top: 136px;
-  padding-bottom: 25px;
   font-size: 70px;
-  font-family: "Zhizn";
   line-height: 120%;
 }
 
 #hour {
-  line-height: 50px;
   font-size: 35px;
+  font-family: 'Ubuntu';
 }
 
 .two-column {
@@ -211,7 +209,7 @@
 #children-half {
   display: flex;
   justify-content: flex-start;
-  font-size: 24px;
+  font-size: 28px;
   flex-direction: column;
 }
 
