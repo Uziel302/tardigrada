@@ -7,4 +7,14 @@
 #child-list {
   font-family: 'Ubuntu';
   font-weight: 300;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.child-container {
+  height: 128px;
+  width: 128px;
+  padding: 30px 15px;
+  font-size: 18px;
+  text-align: center;
 }

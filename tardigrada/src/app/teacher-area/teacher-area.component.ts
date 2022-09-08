@@ -43,7 +43,7 @@ export class TeacherAreaComponent implements OnInit {
           telegram: '',
           note: '',
           cover: '/assets/images/default-cover.jpeg',
-          profile: '/assets/images/default-profile.jpeg',
+          profile: '/assets/images/profile-default.jpg',
         }
       );
     }

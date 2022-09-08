@@ -117,7 +117,14 @@
     <div class="half-container" id="children-half">
       <div>вероятно к вам придут вот эти дети:</div>
       <div id="child-list">
-        <div *ngFor="let child of scheduleService.currentChildren">
+        <div class="child-container" *ngFor="let child of scheduleService.currentChildren">
+          <div class="profile-image-border-children">
+            <div class="profile-image-children">
+              <img
+                [src]="child.profile ? child.profile : '/assets/images/profile-default.jpg'"
+              />
+            </div>
+          </div>
           {{child.firstName + ' ' + child.lastName}}
         </div>
       </div>
