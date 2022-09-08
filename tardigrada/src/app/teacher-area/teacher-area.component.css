@@ -52,3 +52,25 @@
 .attach-image {
   transform: scale(0.1, 0.1);
 }
+
+#column-dates {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-with-button {
+  display: flex;
+  align-items: flex-end;
+}
+
+.form-with-button .purple-button {
+  margin: 10px;
+}
+
+.form-with-button .first-form {
+  width: 80%;
+}
+
+#last-forms {
+  font-family: 'Ubuntu';
+}

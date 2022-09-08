@@ -189,7 +189,6 @@
 
       <div class="two-column">
         <div class="half-container">
-  
         </div>
     
         <div class="half-container" id="child-profile-container">
@@ -207,6 +206,28 @@
           <div id="chosen-child-name">
             {{child.firstName}}
             {{child.lastName}}
+          </div>
+        </div>
+      </div>
+
+      <div class="two-column" id="last-forms">
+        <div class="half-container" id="column-dates">
+          <div *ngFor="let date of ['01.10', '11.10', '15.10']">
+            <div style="text-align:right;">{{date}}</div>
+            <div class="form-with-button">
+              <input class="first-form" />
+              <div class="purple-button"></div>
+            </div>
+          </div>
+        </div>
+        <div class="half-container" id="column-dates">
+          <div *ngFor="let date of ['feedback']">
+            <div style="text-align:right;">{{date}}</div>
+            <div class="form-with-button">
+              <input class="first-form" />
+              <div class="purple-button"></div>
+            </div>
+
           </div>
         </div>
       </div>
