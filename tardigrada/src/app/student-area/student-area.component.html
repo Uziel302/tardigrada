@@ -70,6 +70,10 @@
     </div>
   </div>
 
+  <div class="anchor-container">
+    <div id="course-anchor"></div>
+  </div>
+  
   <div *ngIf="scheduleService.selectedLecture.title">
     <div class="separating-line"></div>
     <div id="course-details">
@@ -100,7 +104,7 @@
 
     <div class="two-column">
       <div class="half-container" id="telegram-half">
-        <div id="buttons-conatainer">
+        <div id="buttons-container">
           <a
             class="purple-button"
             [attr.href]="scheduleService.selectedLecture.url"

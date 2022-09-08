@@ -26,7 +26,7 @@
 }
 
 #chosen-child-name {
-  font-size: 40px;
+  font-size: 55px;
   padding-top: 50px;
   font-family: "Ubuntu";
 }
@@ -35,6 +35,12 @@
   width: 153px;
   height: 153px;
   margin-bottom: 25px;
+}
+
+.profile-image-border-child {
+  width: 223px;
+  height: 223px;
+  margin-top: 40px;
 }
 
 .half-container {
@@ -82,4 +88,9 @@
 
 #last-forms {
   font-family: "Ubuntu";
+}
+
+.form-title {
+  font-family: 'Zhizn';
+  font-size: 20px;
 }

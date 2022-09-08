@@ -50,4 +50,10 @@ export class TeacherAreaComponent implements OnInit {
   stopProp(event: any) {
     event.stopPropagation();
   }
+
+  selectChild(index: number) {
+    this.chosenChild = index;
+    let element = document.getElementById('child-anchor') as HTMLElement;
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
 }
