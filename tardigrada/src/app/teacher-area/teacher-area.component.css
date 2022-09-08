@@ -28,7 +28,7 @@
 #chosen-child-name {
   font-size: 55px;
   padding-top: 50px;
-  font-family: "Ubuntu";
+  font-family: "helvetica", "Ubuntu";
 }
 
 .profile-image-border-children {
@@ -91,6 +91,6 @@
 }
 
 .form-title {
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
   font-size: 20px;
 }
