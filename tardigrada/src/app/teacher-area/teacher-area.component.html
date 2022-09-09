@@ -175,7 +175,6 @@
     <div class="anchor-container">
       <div id="child-anchor"></div>
     </div>
-    
 
     <div *ngFor="let child of scheduleService.currentChildren; let i = index">
       <div *ngIf="chosenChild === i">
@@ -201,13 +200,15 @@
           </div>
         </div>
 
+        <div class="separating-space"></div>
+
         <div class="two-column" id="last-forms">
           <div class="half-container" id="column-dates">
-            <div *ngFor="let date of ['01.10', '11.10', '15.10']">
-              <div class="form-title">домашка</div>
-              <div class="form-title">{{ date }}</div>
-              <div class="form-with-button">
-                <textarea class="user-textarea"></textarea>
+            <div class="form-title">домашка</div>
+            <div *ngFor="let date of ['01.10.22', '11.10.22', 'new homework']">
+              <div class="form-date">{{ date }}</div>
+              <textarea class="user-textarea"></textarea>
+              <div class="purple-under">
                 <div class="purple-button"></div>
               </div>
             </div>
@@ -215,10 +216,14 @@
           <div class="half-container" id="column-dates">
             <div *ngFor="let date of ['feedback']">
               <div class="form-title">{{ date }}</div>
-              <div class="form-with-button">
-                <textarea class="user-textarea"></textarea>
+              <div class="form-date">&nbsp;</div>
+              <textarea class="user-textarea"></textarea>
+              <div class="purple-under">
                 <div class="purple-button"></div>
               </div>
+            </div>
+            <div id="umbrella-container">
+              <img id="umbrella" src="/assets/images/reading-in-the-rain.jpg"/>
             </div>
           </div>
         </div>

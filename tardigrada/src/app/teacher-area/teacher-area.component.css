@@ -73,24 +73,26 @@
   flex-direction: column;
 }
 
-.form-with-button {
-  display: flex;
-  align-items: flex-end;
-}
-
-.form-with-button .purple-button {
-  margin: 10px;
-}
-
-.form-with-button .user-textarea {
-  width: 80%;
-}
-
 #last-forms {
   font-family: "Ubuntu";
 }
 
 .form-title {
   font-family: "Zhizn";
-  font-size: 20px;
+  font-size: 26px;
+  padding-bottom: 45px;
+}
+
+.form-date {
+  font-family: "Zhizn";
+  font-size: 18px;
+}
+
+#umbrella-container {
+  display: flex;
+  justify-content: center;
+}
+
+#umbrella {
+  max-width: 70%;
 }
