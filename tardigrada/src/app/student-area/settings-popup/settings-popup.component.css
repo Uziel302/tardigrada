@@ -37,6 +37,7 @@
 
 .upload-container {
   display: flex;
+  align-items: center;
 }
 
 app-upload-photo {

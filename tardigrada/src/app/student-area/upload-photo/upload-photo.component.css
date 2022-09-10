@@ -1,3 +1,18 @@
 .file-input {
   display: none;
 }
+
+.purple-button {
+  background: #690f46;
+  border-radius: 50%;
+  border: 1px solid white;
+  width: 84px;
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.attach-image {
+  transform: scale(0.1, 0.1);
+}

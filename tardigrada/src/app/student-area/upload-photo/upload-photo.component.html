@@ -2,8 +2,7 @@
        (change)="onFileSelected($event)" #fileUpload>
 
 <div class="file-upload">
-    <button mat-mini-fab color="primary" class="upload-btn"
-      (click)="fileUpload.click()">
-        <mat-icon>attach_file</mat-icon>
-    </button>
+    <div class="purple-button" (click)="fileUpload.click()">
+      <img class="attach-image" src="/assets/images/attach.jpg" />
+    </div>
 </div>
