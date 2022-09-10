@@ -1,11 +1,12 @@
 <app-settings-popup
   [showSettings]="showSettings"
   [isStudent]="false"
+  (settingsChange)="showSettings = $event"
 ></app-settings-popup>
 <div id="cover">
   <img
     id="cover-image"
-    [src]="cover ? cover : '/assets/images/default-cover.jpeg'"
+    [src]="loginService.teacher.cover ? loginService.teacher.cover : '/assets/images/default-cover.jpeg'"
   />
 </div>
 <div id="container">
@@ -21,17 +22,13 @@
         <div id="profile-image-border">
           <div id="profile-image">
             <img
-              [src]="profile ? profile : '/assets/images/profile-default.jpg'"
+              [src]="loginService.teacher.profile ? loginService.teacher.profile : '/assets/images/profile-default.jpg'"
             />
           </div>
         </div>
       </div>
       <div id="name">
-        {{
-          loginService.currentChild.firstName +
-            " " +
-            loginService.currentChild.lastName
-        }}
+        {{loginService.teacher.name}}
       </div>
     </div>
     <div id="profile-white-line"></div>

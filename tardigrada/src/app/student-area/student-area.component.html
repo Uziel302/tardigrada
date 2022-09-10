@@ -2,6 +2,7 @@
   [showSettings]="showSettings"
   [isStudent]="true"
   (switchChild)="switchChild($event)"
+  (settingsChange)="showSettings = $event"
 ></app-settings-popup>
 <div id="cover">
   <img

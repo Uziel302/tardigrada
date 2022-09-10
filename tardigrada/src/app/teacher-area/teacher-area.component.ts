@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 import { ScheduleService } from '../schedule/schedule.service';
 import { LoginService } from '../login-screen/login.service';
 import { INote } from '../models/note';
+import { ITeacher } from '../models/teacher';
 
 @Component({
   selector: 'app-teacher-area',
@@ -17,8 +18,6 @@ import { INote } from '../models/note';
 export class TeacherAreaComponent implements OnInit {
   public userId: number = 0;
   public showSettings: boolean = false;
-  public cover: string = '';
-  public profile: string = '';
   public chosenChild: number = -1;
   public noteList: INote[] = [];
   public currentNote: string = '';
@@ -26,10 +25,11 @@ export class TeacherAreaComponent implements OnInit {
   constructor(
     public scheduleService: ScheduleService,
     public loginService: LoginService,
-    private http: HttpClient,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
+    this.loadOrCreateTeacher();
     this.getNotes();
     //TODO remove
     for (let i of [0, 1, 2, 3, 4]) {
@@ -65,39 +65,55 @@ export class TeacherAreaComponent implements OnInit {
   }
 
   handleKeyUp(e: any) {
-    if(e.keyCode === 13){
+    if (e.keyCode === 13) {
       this.saveNote(this.currentNote);
     }
   }
 
-  getNotes(){
+  getNotes() {
     this.http.get<INote[]>(environment.apiEndPoint + 'notes').subscribe(
       (data) => {
         this.noteList = data;
       },
-      (error) => {
-      }
+      (error) => {}
     );
   }
 
   deleteNote(i: number) {
-    this.http.post(environment.apiEndPoint + 'deleteNote', {id: this.noteList[i].id}).subscribe(
-      (data) => {
-        this.noteList.splice(i, 1);
-      },
-      (error) => {
-      }
-    );
+    this.http
+      .post(environment.apiEndPoint + 'deleteNote', { id: this.noteList[i].id })
+      .subscribe(
+        (data) => {
+          this.noteList.splice(i, 1);
+        },
+        (error) => {}
+      );
   }
 
-  saveNote(note: string){
-    this.http.post<{id: number}>(environment.apiEndPoint + 'saveNote', {note}).subscribe(
-      (data) => {
-        this.noteList.unshift({id: data.id, note: this.currentNote, link: ''});
-        this.currentNote = '';
-      },
-      (error) => {
-      }
-    );
+  saveNote(note: string) {
+    this.http
+      .post<{ id: number }>(environment.apiEndPoint + 'saveNote', { note })
+      .subscribe(
+        (data) => {
+          this.noteList.unshift({
+            id: data.id,
+            note: this.currentNote,
+            link: '',
+          });
+          this.currentNote = '';
+        },
+        (error) => {}
+      );
+  }
+
+  loadOrCreateTeacher() {
+    this.http
+      .get<ITeacher>(environment.apiEndPoint + 'loadOrCreateTeacher')
+      .subscribe(
+        (data) => {
+          this.loginService.teacher = data;
+        },
+        (error) => {}
+      );
   }
 }

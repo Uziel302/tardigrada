@@ -13,6 +13,7 @@ export class SettingsPopupComponent implements OnInit {
   @Input() isStudent: boolean = true;
   @Input() showSettings: boolean = true;
   @Output() switchChild = new EventEmitter<IChild>;
+  @Output() settingsChange = new EventEmitter<boolean>;
 
   constructor(
     public loginService: LoginService,
@@ -27,6 +28,11 @@ export class SettingsPopupComponent implements OnInit {
 
   changeChild(child: IChild){
     this.switchChild.emit(child);
+  }
+
+  backgroundClick() {
+    this.showSettings = false;
+    this.settingsChange.emit(false);
   }
 
 }

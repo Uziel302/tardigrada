@@ -2,11 +2,20 @@ const knex = require('../dbConnection');
 
 exports.saveToDb = async (req, res, filename) => {
   const newData = {};
-  newData[req.body.uploadType] = filename;
-  knex("children")
+  newData[req.body.uploadType] = req.body.uploadsFolder + filename;
+  const whereObj =  {};
+  if(req.body.tableName === 'children'){
+    whereObj.id = req.body.childId;
+  } else if(req.body.tableName === 'teachers'){
+    whereObj.userId = req.body.userId;
+  } else {
+    return res.status(500).send({error: 'wrong table name'})
+  }
+
+  knex(req.body.tableName)
   .update(newData)
-  .where({ id: req.body.childId })
-  .then(u => res.status(!!u?200:404).send({filename}))
+  .where(whereObj)
+  .then(u => res.status(!!u?200:404).send({filename: req.body.uploadsFolder + filename}))
   .catch(e => res.status(500).json(e));
 }
 

@@ -13,6 +13,7 @@ import { LoginService } from 'src/app/login-screen/login.service';
 export class UploadPhotoComponent {
     public fileName = '';
     @Input() uploadType: string = '';
+    @Input() isStudent: boolean = true;
 
     constructor(
       private http: HttpClient,
@@ -27,16 +28,19 @@ export class UploadPhotoComponent {
             formData.append("upfile", file);
             formData.append("childId", ''+this.loginService.currentChildId);
             formData.append("uploadType", this.uploadType);
+            formData.append("tableName", this.isStudent ? 'children' : 'teachers');
+            formData.append("uploadsFolder", environment.uploadsFolder);
             const upload$ = this.http.post<{filename: string}>(environment.apiEndPoint + 'upload', formData);
             upload$.subscribe(
               (data) => {
                 //this timeout is needed to prevent trying access the photo that was just saved before it's ready
                 setTimeout(() => {
+                  const currentUser = this.isStudent ? 'currentChild' : 'teacher';
                   if(this.uploadType === 'cover'){
-                    this.loginService.currentChild.cover = environment.uploadsFolder+data.filename;
+                    this.loginService[currentUser].cover = data.filename;
                   }
                   if(this.uploadType === 'profile'){
-                    this.loginService.currentChild.profile = environment.uploadsFolder+data.filename;
+                    this.loginService[currentUser].profile = data.filename;
                   }
                 }, 5)
               }

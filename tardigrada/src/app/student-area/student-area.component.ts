@@ -30,9 +30,6 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.loginService.getChildData().subscribe((childData: IChild) => {
         this.loginService.currentChild = childData;
-        //TODO - get rid of these lines, get full path from backend
-        this.loginService.currentChild.cover = childData.cover ? environment.uploadsFolder + childData.cover : null;
-        this.loginService.currentChild.profile = childData.profile ? environment.uploadsFolder + childData.profile : null;
       })
     );
 
@@ -55,9 +52,6 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     this.loginService.currentChild = child;
     this.loginService.currentChildId = child.id;
     localStorage.setItem('childId', ''+child.id);
-    //TODO - get rid of these lines, get full path from backend
-    this.loginService.currentChild.profile = child.profile ? environment.uploadsFolder + child.profile: null;
-    this.loginService.currentChild.cover = child.cover ? environment.uploadsFolder + child.cover : null;
     this.showSettings = false;
   }
 }

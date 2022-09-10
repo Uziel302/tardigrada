@@ -8,6 +8,8 @@ import { INewUser } from '../models/new-user';
 import { environment } from '../../environments/environment';
 
 import { IChild } from '../models/child';
+import { ITeacher } from '../models/teacher';
+
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {
@@ -29,6 +31,12 @@ export class LoginService {
     limits: '',
     telegram: '',
     note: '',
+    cover: null,
+    profile: null,
+  };
+  public teacher: ITeacher = {
+    userId: 0,
+    name: '',
     cover: null,
     profile: null,
   };

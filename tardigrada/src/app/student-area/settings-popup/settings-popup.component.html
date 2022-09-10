@@ -1,11 +1,11 @@
-<div *ngIf="showSettings" id="settings-screen" (click)="showSettings = false">
+<div *ngIf="showSettings" id="settings-screen" (click)="backgroundClick()">
   <div id="settings-box" (click)="stopProp($event)">
     <div class="upload-container">
-      <app-upload-photo [uploadType]="'cover'"></app-upload-photo>
+      <app-upload-photo [uploadType]="'cover'" [isStudent]="isStudent"></app-upload-photo>
       <div>upload cover photo</div>
     </div>
     <div class="upload-container">
-      <app-upload-photo [uploadType]="'profile'"></app-upload-photo>
+      <app-upload-photo [uploadType]="'profile'" [isStudent]="isStudent"></app-upload-photo>
       <div>upload profile photo</div>
     </div>
     <div *ngIf="isStudent">

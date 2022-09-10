@@ -7,6 +7,7 @@ const { getChild, getChildren, saveChild } = require('./controllers/studentData.
 const checkAuth = require('./middleware/check-auth');
 const { upload } = require('./controllers/upload.controller');
 const { saveNote, getNotes, deleteNote } = require('./controllers/notes.controller');
+const { loadOrCreateTeacher } = require('./controllers/teacherData.controller');
 
 router.post('/api/login', loginAndValidation);
 router.post('/api/signup', signupAndValidation);
@@ -47,6 +48,17 @@ router.get('/api/getChildren', (req, res) => {
   }
 });
 
+router.get('/api/loadOrCreateTeacher', (req, res) => { 
+  if(checkAuth(req, res)){
+    return loadOrCreateTeacher(req, res); 
+  }
+});
+
 router.use(fileUpload());
-router.post("/api/upload", (req, res) => { return upload(req, res);});
+router.post("/api/upload", (req, res) => { 
+  if(checkAuth(req, res)){
+    return upload(req, res);
+  }
+});
+
 module.exports = router;
