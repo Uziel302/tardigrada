@@ -205,11 +205,13 @@
         <div class="two-column" id="last-forms">
           <div class="half-container" id="column-dates">
             <div class="form-title">домашка</div>
-            <div *ngFor="let date of ['01.10.22', '11.10.22', 'new homework']">
+            <div *ngFor="let date of ['01.10.22', '11.10.22']">
               <div class="form-date">{{ date }}</div>
               <textarea class="user-textarea"></textarea>
               <div class="purple-under">
-                <div class="purple-button"></div>
+                <div class="purple-button download-button">
+                  <mat-icon>file_download</mat-icon>
+                </div>
               </div>
             </div>
           </div>
@@ -219,18 +221,62 @@
               <div class="form-date">&nbsp;</div>
               <textarea class="user-textarea"></textarea>
               <div class="purple-under">
-                <div class="purple-button"></div>
+                <div class="purple-button attach-button">
+                  <img class="attach-image" src="/assets/images/attach.jpg" />
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="two-column">
+          <div class="half-container" id="weird-half">
+            <textarea class="user-textarea"></textarea>
+            <div class="under-form-buttons">
+              <div class="purple-button attach-button">
+                <img class="attach-image" src="/assets/images/attach.jpg" />
+              </div>
+              <div class="under-schedule-buttons">
+                <div class="button-wrapper">
+                  <div class="button-under-schedule">отправить</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="half-container">
             <div id="umbrella-container">
-              <img id="umbrella" src="/assets/images/reading-in-the-rain.jpg"/>
+              <img id="umbrella" src="/assets/images/reading-in-the-rain.jpg" />
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="separating-line"></div>
+    <div class="separating-space"></div>
+    <div class="separating-space"></div>
+    <div id="last-title">Подготовка к урокам</div>
+    <div class="separating-space"></div>
+    <div id="note-line">
+      <textarea
+        class="user-textarea"
+        id="small-textarea"
+        [(ngModel)]="currentNote"
+        (keyup)="handleKeyUp($event)"
+      ></textarea>
+      <div class="purple-button attach-button">
+        <img class="attach-image" src="/assets/images/attach.jpg" />
+      </div>
+    </div>
+    <div class="note-container">
+      <div class="single-note" *ngFor="let note of noteList">
+        <div class="note-text">{{ note }}</div>
+        <div class="delete-note">
+          <mat-icon>close</mat-icon>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="separating-space"></div>
   <div class="separating-space"></div>
 </div>

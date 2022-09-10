@@ -17,6 +17,8 @@ export class TeacherAreaComponent implements OnInit {
   public cover: string = '';
   public profile: string = '';
   public chosenChild: number = -1;
+  public noteList: string[] = [];
+  public currentNote: string = '';
 
   constructor(
     public scheduleService: ScheduleService,
@@ -55,5 +57,12 @@ export class TeacherAreaComponent implements OnInit {
     this.chosenChild = index;
     let element = document.getElementById('child-anchor') as HTMLElement;
     element.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  handleKeyUp(e: any) {
+    if(e.keyCode === 13){
+      this.noteList.push(this.currentNote);
+      this.currentNote = '';
+    }
   }
 }

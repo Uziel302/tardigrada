@@ -215,7 +215,8 @@
 }
 
 #form-half,
-#children-half {
+#children-half,
+#weird-half {
   display: flex;
   justify-content: flex-start;
   font-size: 28px;
@@ -242,6 +243,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#telegram-half .purple-button {
   margin-bottom: 30px;
 }
 
@@ -266,7 +270,8 @@
   border-radius: 50%;
 }
 
-#child-anchor, #course-anchor {
+#child-anchor,
+#course-anchor {
   position: absolute;
   top: 100px;
 }
