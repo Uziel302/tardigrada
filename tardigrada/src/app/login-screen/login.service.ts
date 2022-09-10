@@ -92,7 +92,7 @@ export class LoginService {
             );
             this.currentError = '';
             let target = isParent ? '/parent/children' : '/teacher';
-            if(data.childId){
+            if(data.childId && isParent){
               this.currentChildId = data.childId;
               target = '/student'
             }

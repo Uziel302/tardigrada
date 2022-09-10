@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
+import { environment } from '../../environments/environment';
 import { ScheduleService } from '../schedule/schedule.service';
 import { LoginService } from '../login-screen/login.service';
+import { INote } from '../models/note';
 
 @Component({
   selector: 'app-teacher-area',
@@ -17,15 +20,17 @@ export class TeacherAreaComponent implements OnInit {
   public cover: string = '';
   public profile: string = '';
   public chosenChild: number = -1;
-  public noteList: string[] = [];
+  public noteList: INote[] = [];
   public currentNote: string = '';
 
   constructor(
     public scheduleService: ScheduleService,
-    public loginService: LoginService
+    public loginService: LoginService,
+    private http: HttpClient,
   ) {}
 
   ngOnInit(): void {
+    this.getNotes();
     //TODO remove
     for (let i of [0, 1, 2, 3, 4]) {
       this.scheduleService.currentChildren.push({
@@ -61,12 +66,38 @@ export class TeacherAreaComponent implements OnInit {
 
   handleKeyUp(e: any) {
     if(e.keyCode === 13){
-      this.noteList.push(this.currentNote);
-      this.currentNote = '';
+      this.saveNote(this.currentNote);
     }
   }
 
+  getNotes(){
+    this.http.get<INote[]>(environment.apiEndPoint + 'notes').subscribe(
+      (data) => {
+        this.noteList = data;
+      },
+      (error) => {
+      }
+    );
+  }
+
   deleteNote(i: number) {
-    this.noteList.splice(i, 1);
+    this.http.post(environment.apiEndPoint + 'deleteNote', {id: this.noteList[i].id}).subscribe(
+      (data) => {
+        this.noteList.splice(i, 1);
+      },
+      (error) => {
+      }
+    );
+  }
+
+  saveNote(note: string){
+    this.http.post<{id: number}>(environment.apiEndPoint + 'saveNote', {note}).subscribe(
+      (data) => {
+        this.noteList.unshift({id: data.id, note: this.currentNote, link: ''});
+        this.currentNote = '';
+      },
+      (error) => {
+      }
+    );
   }
 }
