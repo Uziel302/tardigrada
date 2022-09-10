@@ -261,10 +261,24 @@
         [(ngModel)]="currentNote"
         (keyup)="handleKeyUp($event)"
       ></textarea>
+      <div class="purple-button link-icon" (click)="showLinkInput = !showLinkInput">
+        <mat-icon>link</mat-icon>
+      </div>
       <div class="purple-button">
         <img class="attach-image" src="/assets/images/attach.jpg" />
       </div>
     </div>
+    <div id="link-line">
+      <textarea 
+        *ngIf="showLinkInput"
+        class="user-textarea"
+        id="small-textarea"
+        [(ngModel)]="currentLink"
+        (keyup)="handleKeyUp($event)"
+      ></textarea>
+    </div>
+
+    <div class="separating-space"></div>
     <div class="note-container">
       <div class="single-note" *ngFor="let note of noteList; let i = index;">
         <a *ngIf="note.link" class="note-text" [attr.href]="note.link" target="_blank">{{ note.note }}</a>

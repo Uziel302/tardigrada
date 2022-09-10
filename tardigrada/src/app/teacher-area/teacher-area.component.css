@@ -64,6 +64,10 @@
   transform: scale(0.1, 0.1);
 }
 
+.link-icon {
+  color: white;
+}
+
 #column-dates {
   display: flex;
   flex-direction: column;
@@ -114,11 +118,14 @@
   width: 46%;
 }
 
-#note-line {
+#note-line, #link-line {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 150px;
+}
+
+#link-line > textarea {
+  margin-right: 250px;
 }
 
 #note-line .purple-button {

@@ -21,6 +21,8 @@ export class TeacherAreaComponent implements OnInit {
   public chosenChild: number = -1;
   public noteList: INote[] = [];
   public currentNote: string = '';
+  public currentLink: string = '';
+  public showLinkInput: boolean = false;
 
   constructor(
     public scheduleService: ScheduleService,
@@ -66,7 +68,7 @@ export class TeacherAreaComponent implements OnInit {
 
   handleKeyUp(e: any) {
     if (e.keyCode === 13) {
-      this.saveNote(this.currentNote);
+      this.saveNote();
     }
   }
 
@@ -90,17 +92,18 @@ export class TeacherAreaComponent implements OnInit {
       );
   }
 
-  saveNote(note: string) {
+  saveNote() {
     this.http
-      .post<{ id: number }>(environment.apiEndPoint + 'saveNote', { note })
+      .post<{ id: number }>(environment.apiEndPoint + 'saveNote', { note: this.currentNote, link: this.currentLink })
       .subscribe(
         (data) => {
           this.noteList.unshift({
             id: data.id,
             note: this.currentNote,
-            link: '',
+            link: this.currentLink,
           });
           this.currentNote = '';
+          this.currentLink = '';
         },
         (error) => {}
       );
