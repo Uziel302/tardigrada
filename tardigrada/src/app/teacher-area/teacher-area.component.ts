@@ -65,4 +65,8 @@ export class TeacherAreaComponent implements OnInit {
       this.currentNote = '';
     }
   }
+
+  deleteNote(i: number) {
+    this.noteList.splice(i, 1);
+  }
 }
