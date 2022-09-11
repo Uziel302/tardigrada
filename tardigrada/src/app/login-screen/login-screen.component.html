@@ -1,43 +1,45 @@
 <div id="container">
   <div id="wrapper">
-    Привет {{ isParent ? "родитель" : "учитель" }}, 
-    {{ login ? "вход" : "регистр" }} пожалуйста
-    <input
-      [placeholder]="login ? 'Имя Фамилия / Email' : 'Имя Фамилия'"
-      [(ngModel)]="name"
-      required
-      minlength="3"
-      #nameRef="ngModel"
-    />
-    <input
-      *ngIf="!login"
-      placeholder="Email"
-      [(ngModel)]="email"
-      required
-      minlength="3"
-      #emailRef="ngModel"
-    />
-    <input
-      *ngIf="!login"
-      placeholder="Телеграм"
-      [(ngModel)]="telegram"
-      required
-      minlength="3"
-      #emailRef="ngModel"
-    />
-    <input
-      placeholder="Пароль"
-      [(ngModel)]="password"
-      required
-      minlength="3"
-      #passwordRef="ngModel"
-    />
-    <div *ngIf="!login" id="terms-note">
-      Нажимая Присоединиться, вы даете согласие на обработку<br>
-      персональных данных и соглашаетесь <br>
-      с <a href="#">политикой конфиденциальности</a>
+    <div id="names-column">
+      EMAIL<br>Пароль
     </div>
-    <button (click)="submit()">{{login ? 'Вход' : 'Присоединиться'}}</button>
+    <div id="inputs-column">
+      <input [(ngModel)]="name" required minlength="3" #nameRef="ngModel" />
+      <input
+        *ngIf="!login"
+        placeholder="Email"
+        [(ngModel)]="email"
+        required
+        minlength="3"
+        #emailRef="ngModel"
+      />
+      <input
+        *ngIf="!login"
+        placeholder="Телеграм"
+        [(ngModel)]="telegram"
+        required
+        minlength="3"
+        #emailRef="ngModel"
+      />
+      <input
+        [(ngModel)]="password"
+        type="password"
+        required
+        minlength="3"
+        #passwordRef="ngModel"
+      />
+      <div *ngIf="!login" id="terms-note">
+        Нажимая Присоединиться, вы даете согласие на обработку<br />
+        персональных данных и соглашаетесь <br />
+        с <a href="#">политикой конфиденциальности</a>
+      </div>
+    </div>
+
+
+
+    <div class="button-wrapper">
+      <div (click)="submit()" class="button-submit">{{ login ? "Вход" : "Присоединиться" }}</div>
+    </div>
     <div
       *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)"
       class="alert"
@@ -57,14 +59,10 @@
       </div>
     </div>
     <div>{{ loginService.currentError }}</div>
-    <div id="buttons">
-      <button mat-button (click)="login = !login">
-        <div *ngIf="login">Регистрация</div>
-        <div *ngIf="!login">Вход</div>
-      </button>
-      <button mat-button (click)="isParent = !isParent">
-        Я {{ !isParent ? "родитель" : "учитель" }}
-      </button>
-    </div>
+    <button mat-button (click)="login = !login">
+      <div *ngIf="login">Регистрация</div>
+      <div *ngIf="!login">Вход</div>
+    </button>
   </div>
+  <img id="right-flower" src="/assets/images/Ryabchik.png" />
 </div>

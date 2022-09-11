@@ -1,6 +1,14 @@
-input,
-button {
+input {
   margin: 10px;
+  background-color: #220315!important;
+  color: white;
+  font-family: 'Zhizn';
+  font-size: 30px;
+  height: 62px;
+  border: 1.5px solid white;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  margin-left: 40px;
 }
 
 #container {
@@ -8,24 +16,60 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #220315;
 }
 
 #wrapper {
-  background: white;
   padding: 20px;
-  border-radius: 10px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -100px;
-}
-
-#buttons {
-  display: flex;
+  color: white;
+  font-family: 'Zhizn';
+  font-size: 30px;
 }
 
 #terms-note {
   text-align: center;
   font-size: 13px;
+}
+
+#right-flower {
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+}
+
+#names-column {
+  line-height: 300%;
+}
+
+#inputs-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-wrapper {
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.button-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 120%;
+  padding: 10px;
+  border: 5px solid #220315;
+  color: #220315;
 }

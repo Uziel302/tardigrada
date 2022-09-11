@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { LoginService } from './login.service';
 
@@ -9,7 +8,6 @@ import { LoginService } from './login.service';
   styleUrls: ['./login-screen.component.css'],
 })
 export class LoginScreenComponent implements OnInit {
-  public isParent: boolean = true;
   public login: boolean = true;
   public name: string = '';
   public email: string = '';
@@ -17,7 +15,6 @@ export class LoginScreenComponent implements OnInit {
   public password: string = '';
 
   constructor(
-    private router: Router,
     public loginService: LoginService
   ) {}
 
@@ -25,9 +22,9 @@ export class LoginScreenComponent implements OnInit {
 
   submit() {
     if (this.login) {
-      this.loginService.login(this.name, this.password, this.isParent);
+      this.loginService.login(this.name, this.password, true);
     } else {
-      this.loginService.createUser(this.name, this.email, this.telegram, this.password, this.isParent);
+      this.loginService.createUser(this.name, this.email, this.telegram, this.password, true);
     }
   }
 }
