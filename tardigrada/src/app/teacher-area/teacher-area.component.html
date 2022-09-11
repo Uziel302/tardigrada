@@ -6,7 +6,11 @@
 <div id="cover">
   <img
     id="cover-image"
-    [src]="loginService.teacher.cover ? loginService.teacher.cover : '/assets/images/default-cover.jpeg'"
+    [src]="
+      loginService.teacher.cover
+        ? loginService.teacher.cover
+        : '/assets/images/default-cover.jpeg'
+    "
   />
 </div>
 <div id="container">
@@ -22,13 +26,17 @@
         <div id="profile-image-border">
           <div id="profile-image">
             <img
-              [src]="loginService.teacher.profile ? loginService.teacher.profile : '/assets/images/profile-default.jpg'"
+              [src]="
+                loginService.teacher.profile
+                  ? loginService.teacher.profile
+                  : '/assets/images/profile-default.jpg'
+              "
             />
           </div>
         </div>
       </div>
       <div id="name">
-        {{loginService.teacher.name}}
+        {{ loginService.teacher.name }}
       </div>
     </div>
     <div id="profile-white-line"></div>
@@ -256,23 +264,27 @@
     <div class="separating-space"></div>
     <div id="note-line">
       <textarea
-        class="user-textarea"
-        id="small-textarea"
+        class="user-textarea small-textarea"
         [(ngModel)]="currentNote"
         (keyup)="handleKeyUp($event)"
       ></textarea>
-      <div class="purple-button link-icon" (click)="showLinkInput = !showLinkInput">
+      <div
+        class="purple-button link-icon"
+        (click)="showLinkInput = !showLinkInput"
+      >
         <mat-icon>link</mat-icon>
       </div>
-      <div class="purple-button">
-        <img class="attach-image" src="/assets/images/attach.jpg" />
-      </div>
+      <app-upload-photo
+        [uploadColumn]="'link'"
+        [uploadTable]="'teachersNotes'"
+        [additionalColumn]="'note'"
+        [additionalContent]="currentNote"
+      ></app-upload-photo>
     </div>
     <div id="link-line">
-      <textarea 
+      <textarea
         *ngIf="showLinkInput"
-        class="user-textarea"
-        id="small-textarea"
+        class="user-textarea small-textarea"
         [(ngModel)]="currentLink"
         (keyup)="handleKeyUp($event)"
       ></textarea>
@@ -280,8 +292,14 @@
 
     <div class="separating-space"></div>
     <div class="note-container">
-      <div class="single-note" *ngFor="let note of noteList; let i = index;">
-        <a *ngIf="note.link" class="note-text" [attr.href]="note.link" target="_blank">{{ note.note }}</a>
+      <div class="single-note" *ngFor="let note of noteList; let i = index">
+        <a
+          *ngIf="note.link"
+          class="note-text"
+          [attr.href]="note.link"
+          target="_blank"
+          >{{ note.note }}</a
+        >
         <a *ngIf="!note.link" class="note-text">{{ note.note }}</a>
         <div class="delete-note" (click)="deleteNote(i)">
           <mat-icon>close</mat-icon>

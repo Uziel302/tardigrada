@@ -113,9 +113,9 @@
   text-align: center;
 }
 
-#small-textarea {
+.small-textarea {
   height: 43px;
-  width: 46%;
+  width: 38%;
 }
 
 #note-line, #link-line {
@@ -128,7 +128,7 @@
   margin-right: 250px;
 }
 
-#note-line .purple-button {
+#note-line .purple-button, #note-line app-upload-photo {
   margin-left: 40px;
 }
 
