@@ -44,12 +44,19 @@
         </div>
       </div>
       <div id="bottom-line">
-        <div class="button-wrapper">
-          <div (click)="login = !login" class="button-submit">
-            <div *ngIf="login" class="smaller-button">Регистрация</div>
-            <div *ngIf="!login">Вход</div>
+        <div id="white-line"></div>
+        <div style="display:flex;">
+          <img id="animal" src="/assets/images/Animal.png"/>
+          <div id="dark-wrapper">
+            <div class="button-wrapper">
+              <div (click)="login = !login" class="button-submit">
+                <div *ngIf="login" class="smaller-button">Регистрация</div>
+                <div *ngIf="!login">Вход</div>
+              </div>
+            </div>
           </div>
         </div>
+        
         <div>{{ loginService.currentError }}</div>
       </div>      
     </div>
