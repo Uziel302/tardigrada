@@ -1,68 +1,59 @@
 <div id="container">
   <div id="wrapper">
-    <div id="names-column">
-      EMAIL<br>Пароль
-    </div>
-    <div id="inputs-column">
-      <input [(ngModel)]="name" required minlength="3" #nameRef="ngModel" />
-      <input
-        *ngIf="!login"
-        placeholder="Email"
-        [(ngModel)]="email"
-        required
-        minlength="3"
-        #emailRef="ngModel"
-      />
-      <input
-        *ngIf="!login"
-        placeholder="Телеграм"
-        [(ngModel)]="telegram"
-        required
-        minlength="3"
-        #emailRef="ngModel"
-      />
-      <input
-        [(ngModel)]="password"
-        type="password"
-        required
-        minlength="3"
-        #passwordRef="ngModel"
-      />
-      <div *ngIf="!login" id="terms-note">
-        Нажимая Присоединиться, вы даете согласие на обработку<br />
-        персональных данных и соглашаетесь <br />
-        с <a href="#">политикой конфиденциальности</a>
+    <div id="rows">
+      <div id="columns">
+        <div id="names-column">
+          EMAIL<br>Пароль
+        </div>
+        <div id="inputs-column">
+          <input [(ngModel)]="name" required minlength="3" #nameRef="ngModel" />
+          <input
+            *ngIf="!login"
+            placeholder="Email"
+            [(ngModel)]="email"
+            required
+            minlength="3"
+            #emailRef="ngModel"
+          />
+          <input
+            *ngIf="!login"
+            placeholder="Телеграм"
+            [(ngModel)]="telegram"
+            required
+            minlength="3"
+            #emailRef="ngModel"
+          />
+          <input
+            [(ngModel)]="password"
+            type="password"
+            required
+            minlength="3"
+            #passwordRef="ngModel"
+          />
+          <div *ngIf="!login" id="terms-note">
+            Нажимая Присоединиться, вы даете согласие на обработку<br />
+            персональных данных и соглашаетесь <br />
+            с <a href="#">политикой конфиденциальности</a>
+          </div>
+        </div>
+    
+    
+    
+        <div class="button-wrapper">
+          <div (click)="submit()" class="button-submit" [class.smaller-button]="!login">{{ login ? "Вход" : "Присоединиться" }}</div>
+        </div>
       </div>
+      <div id="bottom-line">
+        <div class="button-wrapper">
+          <div (click)="login = !login" class="button-submit">
+            <div *ngIf="login" class="smaller-button">Регистрация</div>
+            <div *ngIf="!login">Вход</div>
+          </div>
+        </div>
+        <div>{{ loginService.currentError }}</div>
+      </div>      
     </div>
-
-
-
-    <div class="button-wrapper">
-      <div (click)="submit()" class="button-submit">{{ login ? "Вход" : "Присоединиться" }}</div>
-    </div>
-    <div
-      *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)"
-      class="alert"
-    >
-      <div *ngIf="nameRef.errors?.['required']">Name is required.</div>
-      <div *ngIf="nameRef.errors?.['minlength']">
-        Name must be at least 3 characters long.
-      </div>
-    </div>
-    <div
-      *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)"
-      class="alert"
-    >
-      <div *ngIf="passwordRef.errors?.['required']">Password is required.</div>
-      <div *ngIf="passwordRef.errors?.['minlength']">
-        Password must be at least 3 characters long.
-      </div>
-    </div>
-    <div>{{ loginService.currentError }}</div>
-    <button mat-button (click)="login = !login">
-      <div *ngIf="login">Регистрация</div>
-      <div *ngIf="!login">Вход</div>
-    </button>
   </div>
+
   <img id="right-flower" src="/assets/images/Ryabchik.png" />
 </div>
