@@ -163,7 +163,10 @@
     </div>
 
     <div id="last-row">
-      <div class="purple-button" id="bottom-purple"></div>
+      <app-upload-photo
+        [uploadColumn]="'link'"
+        [uploadTable]="'teachersNotes'"
+      ></app-upload-photo>
 
       <div class="button-wrapper" id="last-button">
         <div class="button-under-schedule">отправить</div>
