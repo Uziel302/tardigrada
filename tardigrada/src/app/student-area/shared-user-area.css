@@ -280,3 +280,13 @@
 .anchor-container {
   position: relative;
 }
+
+.download-button {
+  color: white;
+}
+
+.material-icons::ng-deep {
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
