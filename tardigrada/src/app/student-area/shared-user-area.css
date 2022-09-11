@@ -214,12 +214,13 @@
   justify-content: space-between;
 }
 
-#form-half,
+.form-half,
 #children-half,
 #weird-half {
   display: flex;
   justify-content: flex-start;
   font-size: 28px;
+  font-family: "Zhizn";
   flex-direction: column;
 }
 
