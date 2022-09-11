@@ -109,6 +109,16 @@ export class TeacherAreaComponent implements OnInit {
       );
   }
 
+  saveUpload(event: {filename: string; id: number;}){
+    this.noteList.unshift({
+      id: event.id,
+      note: this.currentNote,
+      link: event.filename,
+    });
+    this.currentNote = '';
+    this.currentLink = '';
+  }
+
   loadOrCreateTeacher() {
     this.http
       .get<ITeacher>(environment.apiEndPoint + 'loadOrCreateTeacher')

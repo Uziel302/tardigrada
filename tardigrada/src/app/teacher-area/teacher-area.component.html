@@ -275,6 +275,7 @@
         <mat-icon>link</mat-icon>
       </div>
       <app-upload-photo
+        (uploaded)="saveUpload($event)"
         [uploadColumn]="'link'"
         [uploadTable]="'teachersNotes'"
         [additionalColumn]="'note'"

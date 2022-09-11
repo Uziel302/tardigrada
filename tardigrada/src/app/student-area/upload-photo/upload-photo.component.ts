@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../../environments/environment';
@@ -15,6 +15,7 @@ export class UploadPhotoComponent {
   @Input() uploadTable: string = '';
   @Input() additionalColumn: string = '';
   @Input() additionalContent: string = '';
+  @Output() uploaded = new EventEmitter<{filename: string; id: number;}>;
 
   constructor(private http: HttpClient, public loginService: LoginService) {}
 
@@ -30,7 +31,7 @@ export class UploadPhotoComponent {
       formData.append('uploadsFolder', environment.uploadsFolder);
       formData.append('additionalColumn', this.additionalColumn);
       formData.append('additionalContent', this.additionalContent);
-      const upload$ = this.http.post<{ filename: string }>(
+      const upload$ = this.http.post<{ filename: string; id: number; }>(
         environment.apiEndPoint + 'upload',
         formData
       );
@@ -43,6 +44,9 @@ export class UploadPhotoComponent {
           }
           if (this.uploadColumn === 'profile') {
             this.loginService[currentUser].profile = data.filename;
+          }
+          if(this.uploadTable === 'teachersNotes'){
+            this.uploaded.emit({filename: data.filename, id: data.id });
           }
         }, 5);
       });

@@ -29,9 +29,10 @@ exports.saveNoteWithFile = async (req, res, filename) => {
   const newData = {};
   newData[req.body.uploadColumn] = req.body.uploadsFolder + filename;
   newData[req.body.additionalColumn] = req.body.additionalContent;
+  newData.userId = req.body.userId;
   knex(req.body.uploadTable)
   .insert(newData)
-  .then(u => res.status(!!u?200:404).json({id:u[0]}))
+  .then(u => res.status(!!u?200:404).json({id:u[0], filename: req.body.uploadsFolder + filename}))
   .catch(e => res.status(500).json(e));
 }
 
