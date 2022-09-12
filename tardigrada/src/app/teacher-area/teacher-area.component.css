@@ -114,6 +114,10 @@
   align-items: center;
 }
 
+#note-error {
+  text-align: center;
+}
+
 #link-line > textarea {
   margin-right: 250px;
 }
