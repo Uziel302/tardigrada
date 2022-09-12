@@ -263,6 +263,10 @@
   height: 100px;
 }
 
+.separating-space-70 {
+  height: 70px;
+}
+
 #profile-image-border,
 .profile-image-border-children {
   border: 1px solid white;
