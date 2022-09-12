@@ -38,8 +38,13 @@ exports.up = function(db, callback) {
       type: 'int'
     },
     hour: {
-      type: 'string',
-      length: 40
+      type: 'int'
+    },
+    minutes: {
+      type: 'int'
+    },
+    day: {
+      type: 'int'
     },
     minAge: {
       type: 'int'
