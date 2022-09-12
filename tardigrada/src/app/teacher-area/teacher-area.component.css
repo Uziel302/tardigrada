@@ -99,7 +99,8 @@
 }
 
 #umbrella {
-  max-width: 70%;
+  width: 550px;
+  height: 550px;
 }
 
 #last-title {

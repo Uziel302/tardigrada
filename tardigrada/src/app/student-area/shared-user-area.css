@@ -223,6 +223,10 @@
   flex-direction: column;
 }
 
+#weird-half {
+  margin-top: 100px;
+}
+
 .user-textarea {
   height: 140px;
   width: 92%;
