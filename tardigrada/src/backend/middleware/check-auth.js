@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
     req.body.userId = decoded.userId; // session
     return true;
   } catch (error) {
-    res.status(401).send({ message: "Auth failed!" });
+    res.status(401).send({ message: "You are not logged in!" });
     return false;
   }
 };

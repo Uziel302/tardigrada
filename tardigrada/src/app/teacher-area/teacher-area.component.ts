@@ -22,6 +22,7 @@ export class TeacherAreaComponent implements OnInit {
   public noteList: INote[] = [];
   public currentNote: string = '';
   public currentLink: string = '';
+  public currentError: string = '';
   public showLinkInput: boolean = false;
 
   constructor(
@@ -77,7 +78,9 @@ export class TeacherAreaComponent implements OnInit {
       (data) => {
         this.noteList = data;
       },
-      (error) => {}
+      (error) => {
+        this.currentError = error.error.message;
+      }
     );
   }
 
@@ -88,7 +91,9 @@ export class TeacherAreaComponent implements OnInit {
         (data) => {
           this.noteList.splice(i, 1);
         },
-        (error) => {}
+        (error) => {
+          this.currentError = error.error.message;
+        }
       );
   }
 
@@ -105,7 +110,9 @@ export class TeacherAreaComponent implements OnInit {
           this.currentNote = '';
           this.currentLink = '';
         },
-        (error) => {}
+        (error) => {
+          this.currentError = error.error.message;
+        }
       );
   }
 
