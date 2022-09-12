@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { ScheduleService } from '../schedule.service';
+import { ILecture } from '../../models/lecture';
 
 @Component({
   selector: 'app-user-schedule',
@@ -24,6 +25,7 @@ export class UserScheduleComponent implements OnInit {
     '21:00'
   ];
   @Input() userId: number = 0;
+  public lessonsArray: ILecture[][][];
 
   constructor(
     public scheduleService: ScheduleService,

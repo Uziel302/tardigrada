@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { IChild } from '../models/child';
+import { HttpClient } from '@angular/common/http';
 
+import { environment } from '../../environments/environment';
+import { IChild } from '../models/child';
 import { ILecture } from '../models/lecture';
 
 @Injectable({ providedIn: 'root' })
@@ -18,9 +20,12 @@ export class ScheduleService {
   public currentChildren: IChild[] = [];
   public dayNumber: number = 0;
   public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-
-
-
-  public lessonsArray: ILecture[][][];
   
+  public getLecturesData(){
+    return this.http.get(environment.apiEndPoint + 'getLectures');
+  }
+  
+  constructor(
+    private http: HttpClient,
+  ){}
 }

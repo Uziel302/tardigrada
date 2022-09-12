@@ -8,9 +8,11 @@ const checkAuth = require('./middleware/check-auth');
 const { upload } = require('./controllers/upload.controller');
 const { saveNote, getNotes, deleteNote } = require('./controllers/notes.controller');
 const { loadOrCreateTeacher } = require('./controllers/teacherData.controller');
+const { getLectures } = require('./controllers/lecturesData.controller');
 
 router.post('/api/login', loginAndValidation);
 router.post('/api/signup', signupAndValidation);
+router.get('/api/getLectures', getLectures);
 router.post('/api/freeRequest', (req, res) => { return sendFreeRequest(req, res); });
 router.get('/api/notes', (req, res) => { 
   if(checkAuth(req, res)){
