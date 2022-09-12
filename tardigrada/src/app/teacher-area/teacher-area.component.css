@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.feedback-button {
+  justify-content: center;
+}
+
 #child-list {
   font-family: "Ubuntu";
   font-weight: 300;
@@ -80,13 +84,13 @@
 
 .form-title {
   font-family: "Zhizn";
-  font-size: 26px;
-  padding-bottom: 45px;
+  font-size: 21px;
+  padding-bottom: 32px;
 }
 
 .form-date {
   font-family: "Zhizn";
-  font-size: 18px;
+  font-size: 14px;
 }
 
 #umbrella-container {
