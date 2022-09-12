@@ -49,8 +49,9 @@ input {
   
 }
 
-#names-column {
-  line-height: 300%;
+#names-column div {
+  margin-bottom: 55px;
+  margin-top: 15px;
 }
 
 #inputs-column {
@@ -84,7 +85,7 @@ input {
   height: 100px;
   background: white;
   border-radius: 50%;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 120%;
   padding: 10px;
   border: 4px solid #220315;
@@ -97,7 +98,7 @@ input {
 }
 
 .smaller-button {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #white-line {

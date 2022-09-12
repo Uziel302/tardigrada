@@ -2,14 +2,20 @@
   <div id="wrapper">
     <div id="rows">
       <div id="columns">
-        <div id="names-column">
-          EMAIL<br>Пароль
+        <div *ngIf="login" id="names-column">
+          <div>EMAIL</div>
+          <div>Пароль</div>
+        </div>
+        <div *ngIf="!login" id="names-column">
+          <div>Имя Фамилия</div>
+          <div>EMAIL</div>
+          <div>Телеграм</div>
+          <div>Пароль</div>
         </div>
         <div id="inputs-column">
           <input [(ngModel)]="name" required minlength="3" #nameRef="ngModel" />
           <input
             *ngIf="!login"
-            placeholder="Email"
             [(ngModel)]="email"
             required
             minlength="3"
@@ -17,7 +23,6 @@
           />
           <input
             *ngIf="!login"
-            placeholder="Телеграм"
             [(ngModel)]="telegram"
             required
             minlength="3"
