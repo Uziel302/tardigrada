@@ -56,15 +56,16 @@
 }
 
 #name {
-  font-size: 45px;
+  font-size: 34px;
   font-weight: 300;
   padding-left: 80px;
-  padding-top: 30px;
+  padding-top: 24px;
 }
 
 #profile-image,
 .profile-image-children,
-.profile-image-child {
+.profile-image-child,
+#profile-image-teacher {
   overflow: hidden;
   border: 1px solid black;
   border-radius: 50%;
@@ -84,7 +85,8 @@
   margin: 0;
 }
 
-.profile-image-child {
+.profile-image-child,
+#profile-image-teacher {
   height: 176px;
   width: 176px;
 }
@@ -105,7 +107,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 72px 22%;
+  margin: 0 22%;
   font-family: "Zhizn";
 }
 
@@ -113,7 +115,7 @@
   border: 1px solid white;
   border-radius: 50%;
   cursor: pointer;
-  margin: 30px;
+  margin: 0 30px;
 }
 
 .button-under-schedule {
@@ -157,7 +159,7 @@
 #course-details {
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 144px;
+  padding-bottom: 60px;
 }
 
 #subject-wrapper {
@@ -168,6 +170,7 @@
   padding-top: 136px;
   font-size: 55px;
   line-height: 120%;
+  font-family: "Zhizn";
 }
 
 #hour {
@@ -273,9 +276,13 @@
   border-radius: 50%;
 }
 
-.profile-image-border-child {
+.profile-image-border-child,
+#profile-image-border-teacher {
   border: 1px solid white;
   border-radius: 50%;
+  width: 178px;
+  height: 178px;
+  margin-top: 10px;
 }
 
 #child-anchor,

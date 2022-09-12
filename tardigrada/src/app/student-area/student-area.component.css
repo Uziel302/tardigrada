@@ -5,35 +5,16 @@
 }
 
 #name-teacher {
-  font-size: 56px;
+  font-size: 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 87px;
+  padding-left: 65px;
   line-height: 120%;
 }
 
 #name-title {
-  font-size: 28px;
-  font-weight: 300;
-}
-
-#profile-image-teacher {
-  height: 220px;
-  width: 220px;
-  overflow: hidden;
-  border: 1px solid black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#profile-image-border-teacher {
-  border: 1px solid white;
-  border-radius: 50%;
-  height: 224px;
-  width: 224px;
+  font-size: 20px;
 }
 
 #form-container {
@@ -53,4 +34,10 @@
 
 #bottom-purple {
   margin: 0;
+}
+
+#center-circle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

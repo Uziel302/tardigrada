@@ -5,33 +5,33 @@
 }
 
 #top-flower {
-  position:absolute;
-  right:0;
+  position: absolute;
+  right: 0;
   top: 74px;
   width: 18%;
 }
 .contact-title {
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
   font-size: 50px;
   line-height: 130%;
   width: 100%;
-  text-align:center;
+  text-align: center;
 }
 #top-title {
-  margin-top:-45px;
+  margin-top: -45px;
 }
 
 #subtitle {
   text-align: center;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
   font-size: 50px;
-  padding-top:55px;
+  padding-top: 55px;
 }
 
 #body-container {
   width: 100%;
   text-align: center;
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
   font-weight: 400;
   font-size: 30px;
   line-height: 54px;
@@ -46,172 +46,185 @@
 }
 #flower-container {
   display: flex;
-  margin-top:-30px;
+  margin-top: -30px;
 }
 
 #text-after-schedule {
   width: 100%;
   text-align: center;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 30px;
 }
 
 #left-flower {
-  width:40%;
+  width: 40%;
 }
 
 #telegram-container {
-  width:60%;
+  width: 60%;
   display: flex;
-  align-items:flex-end;
-  padding-left: 5%; 
+  align-items: flex-end;
+  padding-left: 5%;
   padding-bottom: 100px;
 }
 
 #main-telegram-button {
   background-image: url("/assets/images/channel-button.png");
-  height:178px;
-  width:180px;
+  height: 178px;
+  width: 180px;
 }
 #main-telegram-button:hover {
   background-image: url("/assets/images/channel-hover.png");
 }
 
-
 body:after {
   display: none;
-  content: url('/assets/images/channel-hover.png');
+  content: url("/assets/images/channel-hover.png");
 }
 
 #bottom-container {
   padding: 0 9.5% 215px 9.5%;
-  display:flex;
+  display: flex;
   flex-direction: row-reverse;
-  justify-content:space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 #right-circle {
-  width:250px;
-  height:250px;
+  width: 250px;
+  height: 250px;
 }
 #third-text {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width:60%;
+  max-width: 60%;
 }
 
 #third-title {
-  font-family: 'Zhizn';
-  font-size:50px;
+  font-family: "Zhizn";
+  font-size: 50px;
   font-weight: 400;
   line-height: 80px;
-  color: #D8D7E1;
+  color: #d8d7e1;
 }
 
 #third-passage {
-  font-family: 'Ubuntu';
-  font-size:30px;
+  font-family: "Ubuntu";
+  font-size: 30px;
   font-weight: 300;
   line-height: 48px;
-  padding-top:20px;
+  padding-top: 20px;
 }
 
 #circle-container {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-#m-third-title {
-  display:none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media screen and (max-width: 767px){
- #third-passage, #subtitle {font-size: 25px;}
-  #text-after-schedule {font-size:20px;}
-  #left-flower {display:none}
-  #telegram-container {width:100%;justify-content:center;padding:100px 0 0 0;}
+#m-third-title {
+  display: none;
 }
-@media screen and (max-width: 1420px){
+
+@media screen and (max-width: 767px) {
+  #third-passage,
+  #subtitle {
+    font-size: 25px;
+  }
+  #text-after-schedule {
+    font-size: 20px;
+  }
+  #left-flower {
+    display: none;
+  }
+  #telegram-container {
+    width: 100%;
+    justify-content: center;
+    padding: 100px 0 0 0;
+  }
+}
+@media screen and (max-width: 1420px) {
   #bottom-container {
-    flex-direction:column;
-    align-items:center;
+    flex-direction: column;
+    align-items: center;
   }
 
   #third-title {
-    display:none;
+    display: none;
   }
 
   #third-passage {
-    text-align:center;
+    text-align: center;
   }
 
   #m-third-title {
-    display:block;
-    text-align:center;
-    font-family: 'Zhizn';
-    font-size:50px;
+    display: block;
+    text-align: center;
+    font-family: "Zhizn";
+    font-size: 50px;
     font-weight: 400;
     line-height: 80px;
-    color: #D8D7E1;
+    color: #d8d7e1;
   }
 
   #third-text {
-    width:100%;
-    max-width:100%;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
-.toggle.radius, .toggle-on.radius, .toggle-off.radius {
+.toggle.radius,
+.toggle-on.radius,
+.toggle-off.radius {
   border-radius: 20px;
 }
 
 .btn {
-  font-size:1.6rem!important;
+  font-size: 1.6rem !important;
 }
 
 .toggle.radius .toggle-handle {
-  background-color:white;
-  border-radius:20px;
-  width:60px;
+  background-color: white;
+  border-radius: 20px;
+  width: 60px;
 }
 
 #select-day {
-  border-radius:10px;
+  border-radius: 10px;
 }
 
 #age-container {
-  display:flex;
-  flex-wrap:wrap;
-  width:100%;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .age-box {
-  color:white;
+  color: white;
   padding: 5px;
 }
 
 #days-radio {
-  display:flex;
-  width:100%;
-  justify-content:center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .separator {
-  width:100%;
-  display:flex;
-  justify-content:center;
-  padding:10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
 .separator-line {
-  background-size:4px;
-  border-top:2px solid #FFF0F2;
-  border-color: #FFF0F2;
-  width:300px;
+  background-size: 4px;
+  border-top: 2px solid #fff0f2;
+  border-color: #fff0f2;
+  width: 300px;
 }
 
 #space1 {
