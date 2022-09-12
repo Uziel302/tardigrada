@@ -22,7 +22,7 @@
   height: 220px;
   width: 220px;
   overflow: hidden;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@
 }
 
 #profile-image-border-teacher {
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 50%;
   height: 224px;
   width: 224px;
