@@ -1,8 +1,12 @@
-<input type="file" class="file-input"
-       (change)="onFileSelected($event)" #fileUpload>
+<input
+  type="file"
+  class="file-input"
+  (change)="onFileSelected($event)"
+  #fileUpload
+/>
 
 <div class="file-upload">
-    <div class="purple-button" (click)="fileUpload.click()">
-      <img class="attach-image" src="/assets/images/attach.jpg" />
-    </div>
+  <div class="purple-button" (click)="fileUpload.click()">
+    <img class="attach-image" src="/assets/images/attach.png" />
+  </div>
 </div>
