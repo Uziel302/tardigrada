@@ -12,7 +12,6 @@ import { ILecture } from '../../models/lecture';
 export class ScheduleTableComponent implements OnInit, OnDestroy {
   @Input() selectedDay: number = 0;
   @Input() checkedAges: number[] = [];
-  public lessonsArray: ILecture[][][] = this.scheduleService.getEmptyWeek();
 
   private subscriptions: Subscription[] = [];
 
@@ -21,28 +20,9 @@ export class ScheduleTableComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.push(
       this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {        
-        for (let lectureData of lecturesData) {
-          const whichHalf = this.lessonsArray[lectureData.day][lectureData.hour-9][0]['id'] ? 1 : 0;
-          this.lessonsArray[lectureData.day][lectureData.hour-9][whichHalf] = {
-            id: lectureData.id,
-            title: lectureData.title,
-            subtitle: lectureData.subtitle,
-            teacher: lectureData.teacherName,
-            hour: this.getTimeFormatted(lectureData.hour, lectureData.minutes),
-            minAge: lectureData.minAge,
-            maxAge: lectureData.maxAge,
-            background: lectureData.background,
-            url: lectureData.telegram,
-          };
-        }
+        this.scheduleService.processLecturesData(lecturesData);
       })
     );
-  }
-
-  getTimeFormatted(hour: number, minutes: number){
-    let formatted = hour < 10 ? '0'+hour : ''+hour;
-    formatted += minutes < 10 ? ':0'+minutes : ':'+minutes;
-    return formatted;
   }
 
   ngOnDestroy(): void {

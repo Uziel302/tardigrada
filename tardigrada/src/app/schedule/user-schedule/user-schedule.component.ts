@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { ScheduleService } from '../schedule.service';
+import { LoginService } from '../../login-screen/login.service';
 import { ILecture } from '../../models/lecture';
 
 @Component({
@@ -9,6 +11,10 @@ import { ILecture } from '../../models/lecture';
   styleUrls: ['./user-schedule.component.css']
 })
 export class UserScheduleComponent implements OnInit {
+
+  @Input() userId: number = 0;
+
+  public childLectures: boolean[] = [];
   public hourColumn: string[] = [
     '09:00',
     '10:00',
@@ -24,14 +30,29 @@ export class UserScheduleComponent implements OnInit {
     '20:00',
     '21:00'
   ];
-  @Input() userId: number = 0;
-  public lessonsArray: ILecture[][][] = this.scheduleService.getEmptyWeek();
+
+  private subscriptions: Subscription[] = [];
 
   constructor(
     public scheduleService: ScheduleService,
+    public loginService: LoginService,
   ) { }
 
   ngOnInit(): void {
+    //TODO - get from db only details of the current child's lectures
+    this.subscriptions.push(
+      this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
+        this.scheduleService.processLecturesData(lecturesData);
+      })
+    );
+
+    this.subscriptions.push(
+      this.scheduleService.getChildLectures(this.loginService.currentChildId).subscribe((childLectures: any) => {
+        for(let childLecture of childLectures){
+          this.childLectures[childLecture.lectureId] = true;
+        }
+      })
+    );
   }
 
 }
