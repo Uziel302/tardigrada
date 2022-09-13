@@ -30,20 +30,18 @@ export class CourseListComponent implements OnInit {
 
     this.subscriptions.push(
       this.scheduleService.getChildLectures(this.loginService.currentChildId).subscribe((childLectures: any) => {
-        for(let childLecture of childLectures){
-          this.childLectures[childLecture.lectureId] = true;
-        }
+        this.scheduleService.processChildLectures(childLectures);
       })
     );
   }
 
   toggleAttendance(lectureId: number) {
-    if(this.childLectures[lectureId]){
+    if(this.scheduleService.childLectures[lectureId]){
       this.scheduleService.leaveLecture(lectureId, this.loginService.currentChildId);
-      this.childLectures[lectureId] = false;
+      this.scheduleService.childLectures[lectureId] = false;
     } else {
       this.scheduleService.joinLecture(lectureId, this.loginService.currentChildId);
-      this.childLectures[lectureId] = true;
+      this.scheduleService.childLectures[lectureId] = true;
     }
   }
 }

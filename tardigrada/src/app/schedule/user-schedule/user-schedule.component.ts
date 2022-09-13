@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs';
 
 import { ScheduleService } from '../schedule.service';
 import { LoginService } from '../../login-screen/login.service';
-import { ILecture } from '../../models/lecture';
 
 @Component({
   selector: 'app-user-schedule',
@@ -14,7 +13,6 @@ export class UserScheduleComponent implements OnInit {
 
   @Input() userId: number = 0;
 
-  public childLectures: boolean[] = [];
   public hourColumn: string[] = [
     '09:00',
     '10:00',
@@ -49,7 +47,7 @@ export class UserScheduleComponent implements OnInit {
     this.subscriptions.push(
       this.scheduleService.getChildLectures(this.loginService.currentChildId).subscribe((childLectures: any) => {
         for(let childLecture of childLectures){
-          this.childLectures[childLecture.lectureId] = true;
+          this.scheduleService.processChildLectures(childLectures);
         }
       })
     );

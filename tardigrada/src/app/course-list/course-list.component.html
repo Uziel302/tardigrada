@@ -5,7 +5,7 @@
     </div>
     <div class="lecture" *ngFor="let lecture of lectures">
       {{lecture.title}}
-      <button (click)="toggleAttendance(lecture.id)">{{childLectures[lecture.id] ? 'LEAVE' : 'JOIN'}}</button>
+      <button (click)="toggleAttendance(lecture.id)">{{scheduleService.childLectures[lecture.id] ? 'LEAVE' : 'JOIN'}}</button>
     </div>
   </div>
 </div>

@@ -7,7 +7,9 @@ import { ILecture } from '../models/lecture';
 
 @Injectable({ providedIn: 'root' })
 export class ScheduleService {
+
   public lessonsArray: ILecture[][][] = this.getEmptyWeek();
+  public childLectures: boolean[] = [];
   public selectedLecture: ILecture = {
     id: 0,
     title: '',
@@ -92,8 +94,14 @@ export class ScheduleService {
         url: lectureData.telegram,
       };
     }
-
   }
+
+  public processChildLectures(childLectures: any){
+    for(let childLecture of childLectures){
+      this.childLectures[childLecture.lectureId] = true;
+    }
+  }
+
 
   private getTimeFormatted(hour: number, minutes: number){
     let formatted = hour < 10 ? '0'+hour : ''+hour;
