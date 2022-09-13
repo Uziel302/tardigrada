@@ -1,0 +1,30 @@
+<div id="container">
+  Hello admin!
+  <br />
+  <br />
+  Actions:
+  <br />
+  <br />
+  <div id="annoying">
+    Annoying notification to all teachers:&nbsp; &nbsp;
+    <input type="text" [(ngModel)]="annoyingText" />
+    &nbsp; color: &nbsp;
+    <input type="text" [(ngModel)]="annoyingColor" />
+    &nbsp; font-size: &nbsp;
+    <input type="text" [(ngModel)]="annoyingSize" />
+    <button (click)="submit()">Save</button>
+  </div>
+
+  <br />
+  Preview:
+  <div [style.color]="annoyingColor" [style.font-size]="annoyingSize">
+    &nbsp;{{ annoyingText }}
+  </div>
+  <a routerLink="/teacher"><u>Go to teacher page</u></a>
+  <br />
+  <br />
+  Stats:
+  <br />
+  <br />
+  Courses on the site: {{lecturesCount}}
+</div>

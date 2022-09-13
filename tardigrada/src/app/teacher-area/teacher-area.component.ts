@@ -24,6 +24,9 @@ export class TeacherAreaComponent implements OnInit {
   public currentLink: string = '';
   public currentError: string = '';
   public showLinkInput: boolean = false;
+  public annoyingText: string = '';
+  public annoyingSize: string = '20px';
+  public annoyingColor: string = 'red';
 
   constructor(
     public scheduleService: ScheduleService,
@@ -34,6 +37,7 @@ export class TeacherAreaComponent implements OnInit {
   ngOnInit(): void {
     this.loadOrCreateTeacher();
     this.getNotes();
+    this.getAnnoying();
     //TODO remove
     for (let i of [0, 1, 2, 3, 4]) {
       this.scheduleService.currentChildren.push({
@@ -71,6 +75,18 @@ export class TeacherAreaComponent implements OnInit {
     if (e.keyCode === 13) {
       this.saveNote();
     }
+  }
+
+  getAnnoying() {
+    this.http.get<{text: string; size: string; color: string;}>(environment.apiEndPoint + 'getAnnoying').subscribe(
+      (data) => {
+        this.annoyingText = data.text;
+        this.annoyingSize = data.size;
+        this.annoyingColor = data.color;
+      },
+      (error) => {
+      }
+    );
   }
 
   getNotes() {

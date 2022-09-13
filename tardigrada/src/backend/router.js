@@ -22,11 +22,17 @@ const {
   leaveLecture,
   getChildLectures,
 } = require("./controllers/lectures.controller");
+const { saveAnnoying, getAnnoying } = require("./controllers/admin-changes.controller")
 
 router.post("/api/login", loginAndValidation);
 router.post("/api/signup", signupAndValidation);
 router.get("/api/getLectures", getLectures);
 router.post("/api/getChildLectures", getChildLectures);
+
+//TODO - authenticate before saving annoying message
+router.post("/api/saveAnnoying", saveAnnoying);
+router.get("/api/getAnnoying", getAnnoying);
+
 router.post("/api/joinLecture", joinLecture);
 router.post("/api/leaveLecture", leaveLecture);
 router.post("/api/freeRequest", (req, res) => {

@@ -60,6 +60,8 @@
   font-weight: 300;
   padding-left: 80px;
   padding-top: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 #profile-image,

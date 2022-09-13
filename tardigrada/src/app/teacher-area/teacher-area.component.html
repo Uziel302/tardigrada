@@ -36,7 +36,11 @@
         </div>
       </div>
       <div id="name">
-        {{ loginService.teacher.name }}
+        <div>{{ loginService.teacher.name }}</div>
+        <br>
+        <div id="annoying" [style.font-size]="annoyingSize" [style.color]="annoyingColor">
+          {{ annoyingText }}
+        </div>
       </div>
     </div>
     <div id="profile-white-line"></div>
