@@ -1,5 +1,5 @@
 <div>
   <div *ngFor="let hourGroup of dailySchedule; let i=index;">
-    <app-user-schedule-lecture [data]="hourGroup[0]" [rowNumber]="i" [dayNumber]="dayNumber"></app-user-schedule-lecture>
+    <app-user-schedule-lecture [data]="hourGroup" [rowNumber]="i" [dayNumber]="dayNumber"></app-user-schedule-lecture>
   </div>
 </div>

@@ -39,16 +39,14 @@ export class UserScheduleComponent implements OnInit {
   ngOnInit(): void {
     //TODO - get from db only details of the current child's lectures
     this.subscriptions.push(
-      this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
-        this.scheduleService.processLecturesData(lecturesData);
-      })
-    );
-
-    this.subscriptions.push(
       this.scheduleService.getChildLectures(this.loginService.currentChildId).subscribe((childLectures: any) => {
-        for(let childLecture of childLectures){
-          this.scheduleService.processChildLectures(childLectures);
-        }
+        this.scheduleService.processChildLectures(childLectures);
+        //only get list of lectures after getting child lectures, to ensure childLectures data is valid on initiation
+        this.subscriptions.push(
+          this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
+            this.scheduleService.processLecturesData(lecturesData);
+          })
+        );
       })
     );
   }

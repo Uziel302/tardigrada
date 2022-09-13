@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { ScheduleService } from '../schedule.service';
-import { ILecture } from '../../models/lecture';
 
 @Component({
   selector: 'app-schedule-table',

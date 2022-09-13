@@ -9,7 +9,7 @@ import { ScheduleService } from '../schedule.service';
   styleUrls: ['./user-schedule-lecture.component.css'],
 })
 export class UserScheduleLectureComponent implements OnInit {
-  @Input() data: ILecture = {
+  public emptyLecture = {
     id: 0,
     title: '',
     subtitle: '',
@@ -20,17 +20,33 @@ export class UserScheduleLectureComponent implements OnInit {
     background: '',
     url: '',
   };
+  public selected: number = 0;
+  @Input() data: ILecture[] = [this.emptyLecture];
   @Input() rowNumber: number = 0;
   @Input() dayNumber: number = 0;
 
-  constructor(public scheduleService: ScheduleService) {}
+  constructor(
+    public scheduleService: ScheduleService
+  ) {}
 
   ngOnInit(): void {}
 
   selectLecture() {
-    this.scheduleService.selectedLecture = this.data;
+    this.scheduleService.selectedLecture = this.data[this.selected];
     this.scheduleService.dayNumber = this.dayNumber;
     let element = document.getElementById('course-anchor') as HTMLElement;
     element.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  belongs(): boolean {
+    //empty data if the lecture doesn't belong to the child
+    if(!this.scheduleService.childLectures[this.data[0].id]){
+      if(this.scheduleService.childLectures[this.data[1].id]){
+        this.selected = 1;
+      } else {
+        this.data = [this.emptyLecture];
+      }
+    }
+    return true;
   }
 }
