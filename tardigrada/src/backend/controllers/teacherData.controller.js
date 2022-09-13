@@ -9,11 +9,11 @@ exports.loadOrCreateTeacher = async (req, res) => {
   .then((teacher) => {
     if (!teacher) {
       knex('users')
-      .select('name')
+      .select('firstName', 'lastName')
       .where({ id: req.body.userId })
       .first()
       .then((teacher) => {
-        const newTeacher = {userId: req.body.userId, name: teacher.name, cover: '', profile: ''};
+        const newTeacher = {userId: req.body.userId, name: teacher.firstName + ' ' + teacher.lastName, cover: '', profile: ''};
         knex(tableName)
         .insert(newTeacher)
         .then((row) => {

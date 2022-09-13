@@ -1,5 +1,6 @@
 export interface INewUser {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   telegram: string;
   password: string;

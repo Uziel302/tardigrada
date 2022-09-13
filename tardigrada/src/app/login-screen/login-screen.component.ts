@@ -9,7 +9,8 @@ import { LoginService } from './login.service';
 })
 export class LoginScreenComponent implements OnInit {
   public login: boolean = true;
-  public name: string = '';
+  public firstName: string = '';
+  public lastName: string = '';
   public email: string = '';
   public telegram: string = '';
   public password: string = '';
@@ -21,10 +22,14 @@ export class LoginScreenComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
-    if (this.login) {
-      this.loginService.login(this.name, this.password, true);
+    this.loginService.login(this.email, this.password);
+  }
+
+  registrationClick(){
+    if(this.login){
+      this.login = !this.login;
     } else {
-      this.loginService.createUser(this.name, this.email, this.telegram, this.password, true);
+      this.loginService.createUser(this.firstName, this.lastName, this.email, this.telegram, this.password);
     }
   }
 }

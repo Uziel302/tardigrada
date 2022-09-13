@@ -7,15 +7,28 @@
           <div>Пароль</div>
         </div>
         <div *ngIf="!login" id="names-column">
-          <div>Имя Фамилия</div>
+          <div>Имя</div>
+          <div>Фамилия</div>
           <div>EMAIL</div>
           <div>Телеграм</div>
           <div>Пароль</div>
         </div>
         <div id="inputs-column">
-          <input [(ngModel)]="name" required minlength="3" #nameRef="ngModel" />
           <input
             *ngIf="!login"
+            [(ngModel)]="firstName"
+            required
+            minlength="3"
+            #nameRef="ngModel"
+          />
+          <input
+            *ngIf="!login"
+            [(ngModel)]="lastName"
+            required
+            minlength="3"
+            #nameRef="ngModel"
+          />
+          <input
             [(ngModel)]="email"
             required
             minlength="3"
@@ -41,29 +54,32 @@
             с <a href="#">политикой конфиденциальности</a>
           </div>
         </div>
-    
-    
-    
-        <div class="button-wrapper">
-          <div (click)="submit()" class="button-submit" [class.smaller-button]="!login">{{ login ? "Вход" : "Присоединиться" }}</div>
+
+        <div *ngIf="login" class="button-wrapper">
+          <div
+            (click)="submit()"
+            class="button-submit"
+            [class.smaller-button]="!login"
+          >
+            Вход
+          </div>
         </div>
       </div>
       <div id="bottom-line">
         <div id="white-line"></div>
-        <div style="display:flex;">
-          <img id="animal" src="/assets/images/Animal.png"/>
+        <div style="display: flex">
+          <img id="animal" src="/assets/images/Animal.png" />
           <div id="dark-wrapper">
             <div class="button-wrapper">
-              <div (click)="login = !login" class="button-submit">
-                <div *ngIf="login" class="smaller-button">Регистрация</div>
-                <div *ngIf="!login">Вход</div>
+              <div (click)="registrationClick()" class="button-submit">
+                <div class="smaller-button">Регистрация</div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div>{{ loginService.currentError }}</div>
-      </div>      
+      </div>
     </div>
   </div>
 

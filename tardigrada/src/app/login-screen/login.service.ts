@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 
-import { INameAndPass } from '../models/name-and-pass';
+import { IEmailAndPass } from '../models/email-and-pass';
 import { INewUser } from '../models/new-user';
 import { environment } from '../../environments/environment';
 
@@ -60,16 +60,16 @@ export class LoginService {
   }
 
   createUser(
-    name: string,
+    firstName: string,
+    lastName: string,
     email: string,
     telegram: string,
     password: string,
-    isParent: boolean
   ): void {
-    const authData: INewUser = { name, email, telegram, password };
+    const authData: INewUser = { firstName, lastName, email, telegram, password };
     this.http.post(environment.apiEndPoint + 'signup', authData).subscribe(
       (data) => {
-        this.login(name, password, isParent);
+        this.login(email, password);
       },
       (error) => {
         this.currentError = error.error.message;
@@ -77,8 +77,8 @@ export class LoginService {
     );
   }
 
-  login(name: string, password: string, isParent: boolean): void {
-    const authData: INameAndPass = { name, password };
+  login(email: string, password: string): void {
+    const authData: IEmailAndPass = { email, password };
     this.http
       .post<{ token: string; expiresIn: number; childId: number }>(
         environment.apiEndPoint + 'login',
@@ -98,8 +98,8 @@ export class LoginService {
               now.getTime() + expiresInDuration * 1000
             );
             this.currentError = '';
-            let target = isParent ? '/parent/children' : '/teacher';
-            if (data.childId && isParent) {
+            let target = '/parent/children';
+            if (data.childId) {
               this.currentChildId = data.childId;
               target = '/student';
             }

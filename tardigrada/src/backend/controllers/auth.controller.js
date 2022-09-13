@@ -7,13 +7,12 @@ const jwt = require('jsonwebtoken');
 
 exports.login = async (req, res) => {
   knex(tableName)
-    .where({ name: req.body.name })
-    .orWhere({ email: req.body.name })
+    .where({ email: req.body.email })
     .first()
     .then((user) => {
       if (!user) {
         res.status(401).json({
-          message: 'Wrong name or password', // wrong name
+          message: 'Wrong email or password',
         });
       } else {
         //get child of the logged in user
@@ -24,7 +23,7 @@ exports.login = async (req, res) => {
             .then((isAuthenticated) => {
               if (!isAuthenticated) {
                 res.status(401).json({
-                  message: 'Wrong name or password', // wrong password
+                  message: 'Wrong email or password', // wrong password
                 });
               } else {
                 const token = jwt.sign(
