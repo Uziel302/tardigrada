@@ -37,8 +37,13 @@ export class CourseListComponent implements OnInit {
     );
   }
 
-  join(lectureId: number) {
-    this.scheduleService.joinLecture(lectureId, this.loginService.currentChildId);
-    this.childLectures[lectureId] = true;
+  toggleAttendance(lectureId: number) {
+    if(this.childLectures[lectureId]){
+      this.scheduleService.leaveLecture(lectureId, this.loginService.currentChildId);
+      this.childLectures[lectureId] = false;
+    } else {
+      this.scheduleService.joinLecture(lectureId, this.loginService.currentChildId);
+      this.childLectures[lectureId] = true;
+    }
   }
 }

@@ -59,8 +59,16 @@ export class ScheduleService {
   }
 
   public joinLecture(lectureId: number, childId: number){
-    
     this.http.post(environment.apiEndPoint + 'joinLecture', {lectureId, childId}).subscribe(
+      (data) => {
+      },
+      (error) => {
+      }
+    );
+  }
+
+  public leaveLecture(lectureId: number, childId: number){
+    this.http.post(environment.apiEndPoint + 'leaveLecture', {lectureId, childId}).subscribe(
       (data) => {
       },
       (error) => {

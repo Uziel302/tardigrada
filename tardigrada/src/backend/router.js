@@ -19,6 +19,7 @@ const { loadOrCreateTeacher } = require("./controllers/teacherData.controller");
 const {
   getLectures,
   joinLecture,
+  leaveLecture,
   getChildLectures,
 } = require("./controllers/lectures.controller");
 
@@ -27,6 +28,7 @@ router.post("/api/signup", signupAndValidation);
 router.get("/api/getLectures", getLectures);
 router.post("/api/getChildLectures", getChildLectures);
 router.post("/api/joinLecture", joinLecture);
+router.post("/api/leaveLecture", leaveLecture);
 router.post("/api/freeRequest", (req, res) => {
   return sendFreeRequest(req, res);
 });

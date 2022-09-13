@@ -40,3 +40,19 @@ exports.joinLecture = async (req, res) => {
       }
     });
 };
+
+exports.leaveLecture = async (req, res) => {
+  knex("lecturesChildren")
+  .where({ childId: req.body.childId,
+           lectureId: req.body.lectureId })
+  .del()
+  .then((lecturesChild) => {
+    if (!lecturesChild) {
+      res.status(401).json({
+        message: "failed deleting lecturesChild from db",
+      });
+    } else {
+      res.status(200).json({ success: true });
+    }
+  });
+};
