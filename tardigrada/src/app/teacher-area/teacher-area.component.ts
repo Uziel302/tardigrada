@@ -104,7 +104,7 @@ export class TeacherAreaComponent implements OnInit {
         (data) => {
           this.noteList.unshift({
             id: data.id,
-            note: this.currentNote,
+            note: this.currentNote ? this.currentNote : this.currentLink,
             link: this.currentLink,
           });
           this.currentNote = '';
@@ -119,7 +119,7 @@ export class TeacherAreaComponent implements OnInit {
   saveUpload(event: {filename: string; id: number;}){
     this.noteList.unshift({
       id: event.id,
-      note: this.currentNote,
+      note: this.currentNote ? this.currentNote : event.filename,
       link: event.filename,
     });
     this.currentNote = '';

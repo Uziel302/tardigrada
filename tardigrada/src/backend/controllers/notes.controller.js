@@ -3,6 +3,9 @@ const tableName = 'teachersNotes';
 
 
 exports.saveNote = async (req, res) => {
+  if(req.body.note === ''){
+    req.body.note = req.body.link;
+  }
   knex(tableName)
   .insert(req.body)
   .then(u => res.status(!!u?200:404).json({id:u[0]}))

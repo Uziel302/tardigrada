@@ -27,12 +27,13 @@ exports.saveToDb = async (req, res, filename) => {
 
 exports.saveNoteWithFile = async (req, res, filename) => {
   const newData = {};
-  newData[req.body.uploadColumn] = req.body.uploadsFolder + filename;
-  newData[req.body.additionalColumn] = req.body.additionalContent;
+  const fullPath = req.body.uploadsFolder + filename;
+  newData[req.body.uploadColumn] = fullPath;
+  newData[req.body.additionalColumn] = req.body.additionalContent ? req.body.additionalContent : fullPath;
   newData.userId = req.body.userId;
   knex(req.body.uploadTable)
   .insert(newData)
-  .then(u => res.status(!!u?200:404).json({id:u[0], filename: req.body.uploadsFolder + filename}))
+  .then(u => res.status(!!u?200:404).json({id:u[0], filename: fullPath}))
   .catch(e => res.status(500).json(e));
 }
 
