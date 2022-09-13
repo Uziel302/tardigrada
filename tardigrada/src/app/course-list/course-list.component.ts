@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 
 import { ILecture } from '../models/lecture';
 import { ScheduleService } from '../schedule/schedule.service';
+import { LoginService } from '../login-screen/login.service';
 
 @Component({
   selector: 'app-course-list',
@@ -14,7 +15,10 @@ export class CourseListComponent implements OnInit {
 
   private subscriptions: Subscription[] = [];
 
-  constructor(public scheduleService: ScheduleService) {}
+  constructor(
+    public scheduleService: ScheduleService,
+    public loginService: LoginService,
+  ) {}
 
   ngOnInit(): void {
     this.subscriptions.push(
@@ -24,8 +28,7 @@ export class CourseListComponent implements OnInit {
     );
   }
 
-  join(lecture: ILecture) {
-    let a = lecture.id;
-    debugger;
+  join(lectureId: number) {
+    this.scheduleService.joinLecture(lectureId, this.loginService.currentChildId);
   }
 }

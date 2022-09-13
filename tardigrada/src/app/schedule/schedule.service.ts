@@ -53,4 +53,14 @@ export class ScheduleService {
     }
     return lessonsArray;
   }
+
+  public joinLecture(lectureId: number, childId: number){
+    
+    this.http.post(environment.apiEndPoint + 'joinLecture', {lectureId, childId}).subscribe(
+      (data) => {
+      },
+      (error) => {
+      }
+    );
+  }
 }

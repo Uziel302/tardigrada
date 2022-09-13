@@ -5,7 +5,7 @@
     </div>
     <div class="lecture" *ngFor="let lecture of lectures">
       {{lecture.title}}
-      <button (click)="join(lecture)">JOIN</button>
+      <button (click)="join(lecture.id)">JOIN</button>
     </div>
   </div>
 </div>

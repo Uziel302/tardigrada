@@ -13,3 +13,17 @@ exports.getLectures = async (req, res) => {
     }
   });
 }
+
+exports.joinLecture = async (req, res) => {
+  knex('lecturesChildren')
+  .insert(req.body)
+  .then((lecturesChild) => {
+    if (!lecturesChild) {
+      res.status(401).json({
+        message: 'failed saving lecturesChild to db',
+      });
+    } else {
+      res.status(200).json({success: true});
+    }
+  });
+}
