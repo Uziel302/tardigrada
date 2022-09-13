@@ -10,7 +10,6 @@ import { environment } from '../../environments/environment';
 import { IChild } from '../models/child';
 import { ITeacher } from '../models/teacher';
 
-
 @Injectable({ providedIn: 'root' })
 export class LoginService {
   public currentError: string = '';
@@ -81,7 +80,7 @@ export class LoginService {
   login(name: string, password: string, isParent: boolean): void {
     const authData: INameAndPass = { name, password };
     this.http
-      .post<{ token: string; expiresIn: number; childId: number; }>(
+      .post<{ token: string; expiresIn: number; childId: number }>(
         environment.apiEndPoint + 'login',
         authData
       )
@@ -100,9 +99,9 @@ export class LoginService {
             );
             this.currentError = '';
             let target = isParent ? '/parent/children' : '/teacher';
-            if(data.childId && isParent){
+            if (data.childId && isParent) {
               this.currentChildId = data.childId;
-              target = '/student'
+              target = '/student';
             }
             this.saveAuthData(token, expirationDate, this.currentChildId);
             this.router.navigate([target]);
@@ -150,10 +149,14 @@ export class LoginService {
     }, duration * 1000);
   }
 
-  private saveAuthData(token: string, expirationDate: Date, childId: number): void {
+  private saveAuthData(
+    token: string,
+    expirationDate: Date,
+    childId: number
+  ): void {
     localStorage.setItem('token', token);
     localStorage.setItem('expiration', expirationDate.toISOString());
-    localStorage.setItem('childId', ''+childId);
+    localStorage.setItem('childId', '' + childId);
   }
 
   private clearAuthData(): void {
@@ -162,12 +165,16 @@ export class LoginService {
     localStorage.removeItem('childId');
   }
 
-  private getAuthData(): { token: string; expirationDate: Date; childId: number; } | void {
+  private getAuthData(): {
+    token: string;
+    expirationDate: Date;
+    childId: number;
+  } | void {
     const token: string | null = localStorage.getItem('token');
     const expirationDate: string | null = localStorage.getItem('expiration');
     let savedChildId = localStorage.getItem('childId');
     let childId: number;
-    if(savedChildId){
+    if (savedChildId) {
       childId = +savedChildId;
     } else {
       childId = 0;
@@ -182,11 +189,13 @@ export class LoginService {
     };
   }
 
-  public getChildData(){
-    return this.http.get<IChild>(environment.apiEndPoint + 'getChild/?id=' + this.currentChildId);
+  public getChildData() {
+    return this.http.get<IChild>(
+      environment.apiEndPoint + 'getChild/?id=' + this.currentChildId
+    );
   }
 
-  public getChildren(){
+  public getChildren() {
     return this.http.get<IChild[]>(environment.apiEndPoint + 'getChildren');
   }
 }
