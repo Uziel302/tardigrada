@@ -25,6 +25,10 @@ export class ScheduleService {
   public getLecturesData(){
     return this.http.get(environment.apiEndPoint + 'getLectures');
   }
+
+  public getChildLectures(childId: number){
+    return this.http.post(environment.apiEndPoint + 'getChildLectures', {childId});
+  }
   
   constructor(
     private http: HttpClient,

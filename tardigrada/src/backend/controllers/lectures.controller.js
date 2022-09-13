@@ -1,29 +1,42 @@
-const knex = require('../dbConnection');
-const tableName = 'lectures';
+const knex = require("../dbConnection");
+const tableName = "lectures";
 
 exports.getLectures = async (req, res) => {
-  knex(tableName)
-  .then((lectures) => {
+  knex(tableName).then((lectures) => {
     if (!lectures) {
       res.status(401).json({
-        message: 'failed getting lectures from db',
+        message: "failed getting lectures from db",
       });
     } else {
       res.status(200).json(lectures);
     }
   });
-}
+};
+
+exports.getChildLectures = async (req, res) => {
+  knex("lecturesChildren")
+    .where({ childId: req.body.childId })
+    .then((childLectures) => {
+      if (!childLectures) {
+        res.status(401).json({
+          message: "failed getting lectures of child from db",
+        });
+      } else {
+        res.status(200).json(childLectures);
+      }
+    });
+};
 
 exports.joinLecture = async (req, res) => {
-  knex('lecturesChildren')
-  .insert(req.body)
-  .then((lecturesChild) => {
-    if (!lecturesChild) {
-      res.status(401).json({
-        message: 'failed saving lecturesChild to db',
-      });
-    } else {
-      res.status(200).json({success: true});
-    }
-  });
-}
+  knex("lecturesChildren")
+    .insert(req.body)
+    .then((lecturesChild) => {
+      if (!lecturesChild) {
+        res.status(401).json({
+          message: "failed saving lecturesChild to db",
+        });
+      } else {
+        res.status(200).json({ success: true });
+      }
+    });
+};

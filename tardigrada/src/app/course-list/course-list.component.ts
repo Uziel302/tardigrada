@@ -12,6 +12,7 @@ import { LoginService } from '../login-screen/login.service';
 })
 export class CourseListComponent implements OnInit {
   public lectures: ILecture[] = [];
+  public childLectures: boolean[] = [];
 
   private subscriptions: Subscription[] = [];
 
@@ -26,9 +27,18 @@ export class CourseListComponent implements OnInit {
         this.lectures = lecturesData;
       })
     );
+
+    this.subscriptions.push(
+      this.scheduleService.getChildLectures(this.loginService.currentChildId).subscribe((childLectures: any) => {
+        for(let childLecture of childLectures){
+          this.childLectures[childLecture.lectureId] = true;
+        }
+      })
+    );
   }
 
   join(lectureId: number) {
     this.scheduleService.joinLecture(lectureId, this.loginService.currentChildId);
+    this.childLectures[lectureId] = true;
   }
 }
