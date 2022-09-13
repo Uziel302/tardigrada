@@ -10,6 +10,7 @@ import { ILecture } from 'src/app/models/lecture';
 export class LectureComponent implements OnInit {
 
   @Input() data: ILecture = {
+    id: 0,
     title: '',
     subtitle: '',
     teacher: '',

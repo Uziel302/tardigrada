@@ -1,0 +1,11 @@
+<div id="container">
+  <div id="wrapper">
+    <div id="title">
+      Here is the list of available courses:
+    </div>
+    <div class="lecture" *ngFor="let lecture of lectures">
+      {{lecture.title}}
+      <button (click)="join(lecture)">JOIN</button>
+    </div>
+  </div>
+</div>

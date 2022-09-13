@@ -10,6 +10,7 @@ import { ScheduleService } from '../schedule.service';
 })
 export class UserScheduleLectureComponent implements OnInit {
   @Input() data: ILecture = {
+    id: 0,
     title: '',
     subtitle: '',
     teacher: '',

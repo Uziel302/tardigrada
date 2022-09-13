@@ -23,6 +23,7 @@ export class ScheduleTableComponent implements OnInit, OnDestroy {
       this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {        
         for (let lectureData of lecturesData) {
           this.lessonsArray[lectureData.day][lectureData.hour-9][0] = {
+            id: lectureData.id,
             title: lectureData.title,
             subtitle: lectureData.subtitle,
             teacher: lectureData.teacherName,

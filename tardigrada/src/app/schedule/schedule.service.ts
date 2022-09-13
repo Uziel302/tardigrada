@@ -8,6 +8,7 @@ import { ILecture } from '../models/lecture';
 @Injectable({ providedIn: 'root' })
 export class ScheduleService {
   public selectedLecture: ILecture = {
+    id: 0,
     title: '',
     subtitle: '',
     teacher: '',
@@ -37,6 +38,7 @@ export class ScheduleService {
         lessonsArray[i][j] = [];
         for(let k of [0, 1]){
           lessonsArray[i][j][k] = {
+            id: 0,
             title: '',
             subtitle: '',
             teacher: '',

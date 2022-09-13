@@ -32,6 +32,7 @@ import { AccountComponent } from './parent-area/account/account.component';
 import { ChildrenComponent } from './parent-area/children/children.component';
 import { UploadPhotoComponent } from './student-area/upload-photo/upload-photo.component';
 import { SettingsPopupComponent } from './student-area/settings-popup/settings-popup.component';
+import { CourseListComponent } from './course-list/course-list.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { SettingsPopupComponent } from './student-area/settings-popup/settings-p
     AccountComponent,
     ChildrenComponent,
     UploadPhotoComponent,
-    SettingsPopupComponent
+    SettingsPopupComponent,
+    CourseListComponent
   ],
   imports: [
     BrowserModule,

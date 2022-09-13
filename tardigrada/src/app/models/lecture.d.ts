@@ -1,4 +1,5 @@
 export interface ILecture {
+  id: number;
   title: string;
   subtitle: string;
   teacher: string;

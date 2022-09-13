@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { CourseListComponent } from './course-list/course-list.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'donate', component: DonateComponent },
   { path: 'schedule', component: ScheduleComponent },
+  { path: 'courses', component: CourseListComponent },
   { path: 'login', component: LoginScreenComponent },
   { path: 'student', component: StudentAreaComponent },
   { path: 'parent', children:
