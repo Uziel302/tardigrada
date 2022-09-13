@@ -25,7 +25,7 @@ export class UserScheduleComponent implements OnInit {
     '21:00'
   ];
   @Input() userId: number = 0;
-  public lessonsArray: ILecture[][][];
+  public lessonsArray: ILecture[][][] = this.scheduleService.getEmptyWeek();
 
   constructor(
     public scheduleService: ScheduleService,
