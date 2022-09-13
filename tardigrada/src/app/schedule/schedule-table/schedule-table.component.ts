@@ -21,7 +21,7 @@ export class ScheduleTableComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.push(
       this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
-        for(let i of [0, 1, 2, 3, 4, 5]){
+        for(let i of [0, 1, 2, 3, 4, 5, 6]){
           this.lessonsArray[i] = [];
           for(let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]){
             this.lessonsArray[i][j] = [];
@@ -39,21 +39,26 @@ export class ScheduleTableComponent implements OnInit, OnDestroy {
             }
           } 
         }
-        debugger;
         for (let lectureData of lecturesData) {
           this.lessonsArray[lectureData.day][lectureData.hour-9][0] = {
-            title: 'jjj',
-            subtitle: 'kkk',
-            teacher: 'lll',
-            hour: '12:00',
-            minAge: '1',
-            maxAge: '14',
-            background: 'red',
-            url: '',
+            title: lectureData.title,
+            subtitle: lectureData.subtitle,
+            teacher: lectureData.teacherName,
+            hour: this.getTimeFormatted(lectureData.hour, lectureData.minutes),
+            minAge: lectureData.minAge,
+            maxAge: lectureData.maxAge,
+            background: lectureData.background,
+            url: lectureData.telegram,
           };
         }
       })
     );
+  }
+
+  getTimeFormatted(hour: number, minutes: number){
+    let formatted = hour < 10 ? '0'+hour : ''+hour;
+    formatted += minutes < 10 ? ':0'+minutes : ':'+minutes;
+    return formatted;
   }
 
   ngOnDestroy(): void {
