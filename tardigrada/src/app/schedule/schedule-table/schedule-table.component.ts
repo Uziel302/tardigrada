@@ -22,7 +22,8 @@ export class ScheduleTableComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {        
         for (let lectureData of lecturesData) {
-          this.lessonsArray[lectureData.day][lectureData.hour-9][0] = {
+          const whichHalf = this.lessonsArray[lectureData.day][lectureData.hour-9][0]['id'] ? 1 : 0;
+          this.lessonsArray[lectureData.day][lectureData.hour-9][whichHalf] = {
             id: lectureData.id,
             title: lectureData.title,
             subtitle: lectureData.subtitle,
