@@ -170,6 +170,7 @@
 
 #subject {
   padding-top: 136px;
+  padding-right: 20px;
   font-size: 55px;
   line-height: 120%;
   font-family: "Zhizn";
@@ -318,6 +319,7 @@
   align-items: center;
 }
 
-#stationery-container div, #stationery-container a {
+#stationery-container div,
+#stationery-container a {
   margin-right: 20px;
 }
