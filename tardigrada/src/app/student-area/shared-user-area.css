@@ -312,3 +312,12 @@
   height: 66px;
   width: 66px;
 }
+
+#stationery-container {
+  display: flex;
+  align-items: center;
+}
+
+#stationery-container div, #stationery-container a {
+  margin-right: 20px;
+}

@@ -56,7 +56,10 @@ export class UploadPhotoComponent {
             this.scheduleService.selectedLecture.book = data.filename;
           }
           if (this.uploadColumn === 'stationeryFile') {
-            this.scheduleService.selectedLecture.stationeryFile = data.filename;
+            let files = JSON.parse(this.scheduleService.selectedLecture.stationeryFile);
+            files = files ?? [];
+            files.push(data.filename);
+            this.scheduleService.selectedLecture.stationeryFile = JSON.stringify(files);
           }
           if (this.uploadTable === 'teachersNotes') {
             this.uploaded.emit({ filename: data.filename, id: data.id });

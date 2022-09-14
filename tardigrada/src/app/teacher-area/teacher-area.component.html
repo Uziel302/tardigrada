@@ -163,12 +163,14 @@
         <br>
         <div id="stationery-container">
           <div>{{ scheduleService.selectedLecture.stationeryText }}</div>
-          <a *ngIf="scheduleService.selectedLecture.stationeryFile" class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.stationeryFile" download>
-            <mat-icon>file_download</mat-icon>
-          </a>
-          <a *ngIf="isImage(scheduleService.selectedLecture.stationeryFile)" [attr.href]="scheduleService.selectedLecture.stationeryFile" target="_blank">
-            <img [attr.src]="scheduleService.selectedLecture.stationeryFile" id="photoPreview" />  
-          </a>
+          <ng-container *ngFor="let file of scheduleService.stationeryFiles()">
+            <a class="purple-button download-button" [attr.href]="file" download>
+              <mat-icon>file_download</mat-icon>
+            </a>
+            <a *ngIf="isImage(file)" [attr.href]="file" target="_blank">
+              <img [attr.src]="file" id="photoPreview" />  
+            </a>
+          </ng-container>
         </div>
         <textarea class="user-textarea" [(ngModel)]="stationeryText"></textarea>
         <div class="under-form-buttons">

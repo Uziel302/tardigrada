@@ -2,14 +2,15 @@ const knex = require("../dbConnection");
 
 exports.saveToDb = async (req, res, filename) => {
   const newData = {};
-  newData[req.body.uploadColumn] = req.body.uploadsFolder + filename;
+  const fullPath = req.body.uploadsFolder + filename;
+  newData[req.body.uploadColumn] = fullPath;
   const whereObj = {};
   if (req.body.uploadTable === "children") {
     whereObj.id = req.body.childId;
   } else if (req.body.uploadTable === "teachers") {
     whereObj.userId = req.body.userId;
   } else if (req.body.uploadTable === "lectures") {
-    whereObj.id = req.body.lectureId;
+    return res.status(200).json({filename: fullPath});
   } else if (req.body.uploadTable === "teachersNotes") {
     return this.saveNoteWithFile(req, res, filename);
   } else {

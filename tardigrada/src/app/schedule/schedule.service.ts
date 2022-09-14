@@ -118,4 +118,8 @@ export class ScheduleService {
     return formatted;
   }
 
+  public stationeryFiles(){
+    return JSON.parse(this.selectedLecture.stationeryFile);
+  }
+
 }

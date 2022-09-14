@@ -43,28 +43,26 @@ exports.joinLecture = async (req, res) => {
 
 exports.leaveLecture = async (req, res) => {
   knex("lecturesChildren")
-  .where({ childId: req.body.childId,
-           lectureId: req.body.lectureId })
-  .del()
-  .then((lecturesChild) => {
-    if (!lecturesChild) {
-      res.status(401).json({
-        message: "failed deleting lecturesChild from db",
-      });
-    } else {
-      res.status(200).json({ success: true });
-    }
-  });
+    .where({ childId: req.body.childId, lectureId: req.body.lectureId })
+    .del()
+    .then((lecturesChild) => {
+      if (!lecturesChild) {
+        res.status(401).json({
+          message: "failed deleting lecturesChild from db",
+        });
+      } else {
+        res.status(200).json({ success: true });
+      }
+    });
 };
 
 exports.saveStationery = async (req, res) => {
   knex(tableName)
-  .update({stationeryText: req.body.stationeryText})
-  .where({id: req.body.lectureId})
-  .then((u) =>
-    res
-      .status(!!u ? 200 : 404)
-      .send({ success: true })
-  )
-  .catch((e) => res.status(500).json(e));
-}
+    .update({
+      stationeryText: req.body.stationeryText,
+      stationeryFile: req.body.stationeryFile,
+    })
+    .where({ id: req.body.lectureId })
+    .then((u) => res.status(!!u ? 200 : 404).send({ success: true }))
+    .catch((e) => res.status(500).json(e));
+};

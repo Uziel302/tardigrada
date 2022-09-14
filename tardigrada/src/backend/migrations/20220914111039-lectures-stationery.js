@@ -21,7 +21,7 @@ exports.up = function (db, callback) {
   }, callback);
   db.addColumn('lectures', 'stationeryFile', {
     type: 'string',
-    length: 100
+    length: 1000
   }, callback);
   db.addColumn('lectures', 'book', {
     type: 'string',

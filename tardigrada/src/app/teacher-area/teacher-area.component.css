@@ -151,12 +151,3 @@
   width: 100%;
   margin-bottom: 50px;
 }
-
-#stationery-container {
-  display: flex;
-  align-items: center;
-}
-
-#stationery-container div {
-  padding-right: 20px;
-}
