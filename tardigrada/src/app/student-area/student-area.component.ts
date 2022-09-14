@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs';
 import { ScheduleService } from '../schedule/schedule.service';
 import { LoginService } from '../login-screen/login.service';
 import { IChild } from '../models/child';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-student-area',
@@ -57,5 +56,9 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
 
   isImage(filename: string){
     return (filename.match(/\.(jpeg|jpg|gif|png)$/) != null);
+  }
+
+  onLectureChange(event: number){
+    this.scheduleService.getHomework(event);
   }
 }

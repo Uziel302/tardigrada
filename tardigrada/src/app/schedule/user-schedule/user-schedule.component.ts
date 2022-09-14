@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { ScheduleService } from '../schedule.service';
@@ -12,6 +12,7 @@ import { LoginService } from '../../login-screen/login.service';
 export class UserScheduleComponent implements OnInit {
 
   @Input() userId: number = 0;
+  @Output() lectureChange = new EventEmitter<number>;
 
   public hourColumn: string[] = [
     '09:00',
@@ -49,6 +50,10 @@ export class UserScheduleComponent implements OnInit {
         );
       })
     );
+  }
+
+  onLectureChange(event: number){
+    this.lectureChange.emit(event);
   }
 
 }

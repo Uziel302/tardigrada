@@ -7,7 +7,6 @@ import { ILecture } from '../models/lecture';
 
 @Injectable({ providedIn: 'root' })
 export class ScheduleService {
-
   public lessonsArray: ILecture[][][] = this.getEmptyWeek();
   public childLectures: boolean[] = [];
   public selectedLecture: ILecture = {
@@ -27,26 +26,28 @@ export class ScheduleService {
   public currentChildren: IChild[] = [];
   public dayNumber: number = 0;
   public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-  
-  public getLecturesData(){
+  public savedHomeworkText: string = '';
+  public savedHomeworkFile: string = '';
+
+  public getLecturesData() {
     return this.http.get(environment.apiEndPoint + 'getLectures');
   }
 
-  public getChildLectures(childId: number){
-    return this.http.post(environment.apiEndPoint + 'getChildLectures', {childId});
+  public getChildLectures(childId: number) {
+    return this.http.post(environment.apiEndPoint + 'getChildLectures', {
+      childId,
+    });
   }
-  
-  constructor(
-    private http: HttpClient,
-  ){}
 
-  public getEmptyWeek(){
+  constructor(private http: HttpClient) {}
+
+  public getEmptyWeek() {
     let lessonsArray: ILecture[][][] = [];
-    for(let i of [0, 1, 2, 3, 4, 5, 6]){
+    for (let i of [0, 1, 2, 3, 4, 5, 6]) {
       lessonsArray[i] = [];
-      for(let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]){
+      for (let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) {
         lessonsArray[i][j] = [];
-        for(let k of [0, 1]){
+        for (let k of [0, 1]) {
           lessonsArray[i][j][k] = {
             id: 0,
             title: '',
@@ -67,28 +68,32 @@ export class ScheduleService {
     return lessonsArray;
   }
 
-  public joinLecture(lectureId: number, childId: number){
-    this.http.post(environment.apiEndPoint + 'joinLecture', {lectureId, childId}).subscribe(
-      (data) => {
-      },
-      (error) => {
-      }
-    );
+  public joinLecture(lectureId: number, childId: number) {
+    this.http
+      .post(environment.apiEndPoint + 'joinLecture', { lectureId, childId })
+      .subscribe(
+        (data) => {},
+        (error) => {}
+      );
   }
 
-  public leaveLecture(lectureId: number, childId: number){
-    this.http.post(environment.apiEndPoint + 'leaveLecture', {lectureId, childId}).subscribe(
-      (data) => {
-      },
-      (error) => {
-      }
-    );
+  public leaveLecture(lectureId: number, childId: number) {
+    this.http
+      .post(environment.apiEndPoint + 'leaveLecture', { lectureId, childId })
+      .subscribe(
+        (data) => {},
+        (error) => {}
+      );
   }
 
-  public processLecturesData(lecturesData: any){
+  public processLecturesData(lecturesData: any) {
     for (let lectureData of lecturesData) {
-      const whichHalf = this.lessonsArray[lectureData.day][lectureData.hour-9][0]['id'] ? 1 : 0;
-      this.lessonsArray[lectureData.day][lectureData.hour-9][whichHalf] = {
+      const whichHalf = this.lessonsArray[lectureData.day][
+        lectureData.hour - 9
+      ][0]['id']
+        ? 1
+        : 0;
+      this.lessonsArray[lectureData.day][lectureData.hour - 9][whichHalf] = {
         id: lectureData.id,
         title: lectureData.title,
         subtitle: lectureData.subtitle,
@@ -105,21 +110,33 @@ export class ScheduleService {
     }
   }
 
-  public processChildLectures(childLectures: any){
-    for(let childLecture of childLectures){
+  public processChildLectures(childLectures: any) {
+    for (let childLecture of childLectures) {
       this.childLectures[childLecture.lectureId] = true;
     }
   }
 
-
-  private getTimeFormatted(hour: number, minutes: number){
-    let formatted = hour < 10 ? '0'+hour : ''+hour;
-    formatted += minutes < 10 ? ':0'+minutes : ':'+minutes;
+  private getTimeFormatted(hour: number, minutes: number) {
+    let formatted = hour < 10 ? '0' + hour : '' + hour;
+    formatted += minutes < 10 ? ':0' + minutes : ':' + minutes;
     return formatted;
   }
 
-  public stationeryFiles(){
+  public stationeryFiles() {
     return JSON.parse(this.selectedLecture.stationeryFile);
   }
 
+  getHomework(id: number) {
+    this.http
+      .get<{ text: string; file: string }>(
+        environment.apiEndPoint + 'homework/?id=' + id
+      )
+      .subscribe(
+        (data) => {
+          this.savedHomeworkText = data.text;
+          this.savedHomeworkFile = data.file;
+        },
+        (error) => {}
+      );
+  }
 }

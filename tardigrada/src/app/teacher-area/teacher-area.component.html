@@ -52,7 +52,10 @@
 
   <div id="schedule">
     <div>
-      <app-user-schedule [userId]="userId"></app-user-schedule>
+      <app-user-schedule
+        [userId]="userId"
+        (lectureChange)="onLectureChange($event)"
+      ></app-user-schedule>
     </div>
   </div>
 
@@ -113,9 +116,20 @@
               />
             </svg>
           </a>
-          <a class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.book" download>
-            <mat-icon *ngIf="scheduleService.selectedLecture.book">menu_book</mat-icon>
-            <div *ngIf="!scheduleService.selectedLecture.book" style="text-align:center;padding:5px;">no book yet</div>
+          <a
+            class="purple-button download-button"
+            [attr.href]="scheduleService.selectedLecture.book"
+            download
+          >
+            <mat-icon *ngIf="scheduleService.selectedLecture.book"
+              >menu_book</mat-icon
+            >
+            <div
+              *ngIf="!scheduleService.selectedLecture.book"
+              style="text-align: center; padding: 5px"
+            >
+              no book yet
+            </div>
           </a>
           <app-upload-photo
             [uploadColumn]="'book'"
@@ -160,15 +174,19 @@
 
       <div class="half-container form-half">
         <div>взять на урок</div>
-        <br>
+        <br />
         <div id="stationery-container">
           <div>{{ scheduleService.selectedLecture.stationeryText }}</div>
           <ng-container *ngFor="let file of scheduleService.stationeryFiles()">
-            <a class="purple-button download-button" [attr.href]="file" download>
+            <a
+              class="purple-button download-button"
+              [attr.href]="file"
+              download
+            >
               <mat-icon>file_download</mat-icon>
             </a>
             <a *ngIf="isImage(file)" [attr.href]="file" target="_blank">
-              <img [attr.src]="file" id="photoPreview" />  
+              <img [attr.src]="file" id="photoPreview" />
             </a>
           </ng-container>
         </div>
@@ -184,12 +202,20 @@
             </div>
           </div>
         </div>
+
         <div>домашка</div>
-        <textarea 
-          class="user-textarea"
-          [(ngModel)]="homeworkText"
+        <div id="savedHomework">
+          {{ scheduleService.savedHomeworkText }}&nbsp;
+        </div>
+        <a
+          id="savedHomeworkFile"
+          [attr.href]="scheduleService.savedHomeworkFile"
+          class="purple-button download-button"
+          download
         >
-        </textarea>
+          <mat-icon>file_download</mat-icon>
+        </a>
+        <textarea class="user-textarea" [(ngModel)]="homeworkText"> </textarea>
         <div class="under-form-buttons">
           <app-upload-photo
             (uploaded)="updateHwFile($event)"
@@ -311,13 +337,8 @@
       >
         <mat-icon>link</mat-icon>
       </div>
-      <app-upload-photo
-        (uploaded)="updateNoteFile($event)"
-      ></app-upload-photo>
-      <div
-        class="purple-button link-icon"
-        (click)="saveNote()"
-      >
+      <app-upload-photo (uploaded)="updateNoteFile($event)"></app-upload-photo>
+      <div class="purple-button link-icon" (click)="saveNote()">
         <mat-icon>save</mat-icon>
       </div>
     </div>

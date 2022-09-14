@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ILecture } from 'src/app/models/lecture';
 
@@ -11,10 +11,16 @@ export class UserScheduleDayComponent implements OnInit {
 
   @Input() dailySchedule: ILecture[][] = [];
   @Input() dayNumber: number = 0;
+  @Output() lectureChange = new EventEmitter<number>;
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onLectureChange(event: number){
+    this.lectureChange.emit(event);
   }
 
 }

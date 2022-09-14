@@ -27,7 +27,7 @@ exports.getHomework = async (req, res) => {
           message: "failed getting homework from db",
         });
       } else {
-        res.status(200).json(homework);
+        res.status(200).json(homework[0]);
       }
     });
 };

@@ -30,8 +30,6 @@ export class TeacherAreaComponent implements OnInit {
   public stationeryText: string = '';
   public homeworkText: string = '';
   public homeworkFile: string = '';
-  public savedHomeworkText: string = '';
-  public savedHomeworkFile: string = '';
 
   constructor(
     public scheduleService: ScheduleService,
@@ -173,23 +171,6 @@ export class TeacherAreaComponent implements OnInit {
       );
   }
 
-  getHomework() {
-    this.http
-      .get<{ text: string; file: string }>(
-        environment.apiEndPoint +
-          'homework/?id=' +
-          this.scheduleService.selectedLecture.id
-      )
-      .subscribe(
-        (data) => {
-          this.savedHomeworkText = data.text;
-          this.savedHomeworkFile = data.file;
-        },
-        (error) => {
-        }
-      );
-  }
-
   saveHomework() {
     this.http
       .post(environment.apiEndPoint + 'saveHomework', {
@@ -199,8 +180,8 @@ export class TeacherAreaComponent implements OnInit {
       })
       .subscribe(
         (data) => {
-          this.savedHomeworkText = this.homeworkText;
-          this.savedHomeworkFile = this.homeworkFile;
+          this.scheduleService.savedHomeworkText = this.homeworkText;
+          this.scheduleService.savedHomeworkFile = this.homeworkFile;
         },
         (error) => {}
       );
@@ -208,5 +189,9 @@ export class TeacherAreaComponent implements OnInit {
 
   isImage(filename: string) {
     return filename.match(/\.(jpeg|jpg|gif|png)$/) != null;
+  }
+
+  onLectureChange(event: number){
+    this.scheduleService.getHomework(event);
   }
 }

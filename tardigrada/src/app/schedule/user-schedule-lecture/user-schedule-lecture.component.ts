@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ILecture } from 'src/app/models/lecture';
 import { ScheduleService } from '../schedule.service';
@@ -27,6 +27,7 @@ export class UserScheduleLectureComponent implements OnInit {
   @Input() data: ILecture[] = [this.emptyLecture];
   @Input() rowNumber: number = 0;
   @Input() dayNumber: number = 0;
+  @Output() lectureChange = new EventEmitter<number>;
 
   constructor(
     public scheduleService: ScheduleService
@@ -36,6 +37,7 @@ export class UserScheduleLectureComponent implements OnInit {
 
   selectLecture() {
     this.scheduleService.selectedLecture = this.data[this.selected];
+    this.lectureChange.emit(this.data[this.selected].id);
     this.scheduleService.dayNumber = this.dayNumber;
     let element = document.getElementById('course-anchor') as HTMLElement;
     element.scrollIntoView({ behavior: 'smooth' });

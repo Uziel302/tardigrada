@@ -1,12 +1,16 @@
 <div id="container">
   <div id="hour-column">
     <div class="decor"></div>
-    <div class="decor hour" *ngFor="let hour of hourColumn">{{hour}}</div>
+    <div class="decor hour" *ngFor="let hour of hourColumn">{{ hour }}</div>
   </div>
-  
-  <div *ngFor="let day of scheduleService.week; let i=index;" class="day">
-    <div class="decor" [class.last]="i===6">{{day}}</div>
-    <app-user-schedule-day [dailySchedule]="scheduleService.lessonsArray[i]" [dayNumber]="i"></app-user-schedule-day>
+
+  <div *ngFor="let day of scheduleService.week; let i = index" class="day">
+    <div class="decor" [class.last]="i === 6">{{ day }}</div>
+    <app-user-schedule-day
+      [dailySchedule]="scheduleService.lessonsArray[i]"
+      [dayNumber]="i"
+      (lectureChange)="onLectureChange($event)"
+    ></app-user-schedule-day>
   </div>
   <div id="right-line"></div>
 </div>
