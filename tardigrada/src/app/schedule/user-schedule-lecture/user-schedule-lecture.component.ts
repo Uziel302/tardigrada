@@ -19,6 +19,8 @@ export class UserScheduleLectureComponent implements OnInit {
     maxAge: '',
     background: '',
     url: '',
+    stationeryText: '',
+    stationeryFile: '', 
   };
   public selected: number = 0;
   @Input() data: ILecture[] = [this.emptyLecture];

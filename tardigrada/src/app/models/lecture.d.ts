@@ -8,4 +8,6 @@ export interface ILecture {
   maxAge: string;
   background: string;
   url: string;
+  stationeryText: string;
+  stationeryFile: string;  
 }

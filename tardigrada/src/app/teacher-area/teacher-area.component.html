@@ -37,8 +37,12 @@
       </div>
       <div id="name">
         <div>{{ loginService.teacher.name }}</div>
-        <br>
-        <div id="annoying" [style.font-size]="annoyingSize" [style.color]="annoyingColor">
+        <br />
+        <div
+          id="annoying"
+          [style.font-size]="annoyingSize"
+          [style.color]="annoyingColor"
+        >
           {{ annoyingText }}
         </div>
       </div>
@@ -151,13 +155,20 @@
 
       <div class="half-container form-half">
         <div>взять на урок</div>
-        <textarea class="user-textarea"></textarea>
+        <br>
+        <div id="stationery-container">
+          <div>{{ scheduleService.selectedLecture.stationeryText }}</div>
+          <a class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.stationeryFile" download>
+            <mat-icon>file_download</mat-icon>
+          </a>
+        </div>
+        <textarea class="user-textarea" [(ngModel)]="stationeryText"></textarea>
         <div class="under-form-buttons">
           <div class="purple-button">
             <img class="attach-image" src="/assets/images/attach.png" />
           </div>
           <div class="under-schedule-buttons">
-            <div class="button-wrapper">
+            <div class="button-wrapper" (click)="saveStationery()">
               <div class="button-under-schedule">отправить</div>
             </div>
           </div>

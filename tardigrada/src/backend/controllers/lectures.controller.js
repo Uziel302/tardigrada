@@ -56,3 +56,15 @@ exports.leaveLecture = async (req, res) => {
     }
   });
 };
+
+exports.saveStationery = async (req, res) => {
+  knex(tableName)
+  .update({stationeryText: req.body.stationeryText})
+  .where({id: req.body.lectureId})
+  .then((u) =>
+    res
+      .status(!!u ? 200 : 404)
+      .send({ success: true })
+  )
+  .catch((e) => res.status(500).json(e));
+}

@@ -27,6 +27,7 @@ export class TeacherAreaComponent implements OnInit {
   public annoyingText: string = '';
   public annoyingSize: string = '20px';
   public annoyingColor: string = 'red';
+  public stationeryText: string = '';
 
   constructor(
     public scheduleService: ScheduleService,
@@ -79,15 +80,18 @@ export class TeacherAreaComponent implements OnInit {
   }
 
   getAnnoying() {
-    this.http.get<{text: string; size: string; color: string;}>(environment.apiEndPoint + 'getAnnoying').subscribe(
-      (data) => {
-        this.annoyingText = data.text;
-        this.annoyingSize = data.size;
-        this.annoyingColor = data.color;
-      },
-      (error) => {
-      }
-    );
+    this.http
+      .get<{ text: string; size: string; color: string }>(
+        environment.apiEndPoint + 'getAnnoying'
+      )
+      .subscribe(
+        (data) => {
+          this.annoyingText = data.text;
+          this.annoyingSize = data.size;
+          this.annoyingColor = data.color;
+        },
+        (error) => {}
+      );
   }
 
   getNotes() {
@@ -116,7 +120,10 @@ export class TeacherAreaComponent implements OnInit {
 
   saveNote() {
     this.http
-      .post<{ id: number }>(environment.apiEndPoint + 'saveNote', { note: this.currentNote, link: this.currentLink })
+      .post<{ id: number }>(environment.apiEndPoint + 'saveNote', {
+        note: this.currentNote,
+        link: this.currentLink,
+      })
       .subscribe(
         (data) => {
           this.noteList.unshift({
@@ -133,7 +140,7 @@ export class TeacherAreaComponent implements OnInit {
       );
   }
 
-  saveUpload(event: {filename: string; id: number;}){
+  saveUpload(event: { filename: string; id: number }) {
     this.noteList.unshift({
       id: event.id,
       note: this.currentNote ? this.currentNote : event.filename,
@@ -151,6 +158,22 @@ export class TeacherAreaComponent implements OnInit {
           this.loginService.teacher = data;
         },
         (error) => {}
+      );
+  }
+
+  saveStationery(){
+    this.http
+      .post(environment.apiEndPoint + 'saveStationery', {
+        lectureId: this.scheduleService.selectedLecture.id,
+        stationeryText: this.stationeryText,
+
+      })
+      .subscribe(
+        (data) => {
+          this.scheduleService.selectedLecture.stationeryText = this.stationeryText;
+        },
+        (error) => {
+        }
       );
   }
 }

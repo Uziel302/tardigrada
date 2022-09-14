@@ -19,6 +19,8 @@ export class LectureComponent implements OnInit {
     maxAge: '',
     background: '',
     url: '',
+    stationeryText: '',
+    stationeryFile: '',
   };
 
   constructor() { }

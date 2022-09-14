@@ -20,6 +20,8 @@ export class ScheduleService {
     maxAge: '',
     background: '',
     url: '',
+    stationeryText: '',
+    stationeryFile: '', 
   };
   public currentChildren: IChild[] = [];
   public dayNumber: number = 0;
@@ -54,6 +56,8 @@ export class ScheduleService {
             maxAge: '',
             background: '',
             url: '',
+            stationeryText: '',
+            stationeryFile: '',
           };
         }
       }
@@ -92,6 +96,8 @@ export class ScheduleService {
         maxAge: lectureData.maxAge,
         background: lectureData.background,
         url: lectureData.telegram,
+        stationeryText: lectureData.stationeryText,
+        stationeryFile: lectureData.stationeryFile,
       };
     }
   }
