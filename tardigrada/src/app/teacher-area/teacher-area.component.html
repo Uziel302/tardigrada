@@ -208,6 +208,7 @@
           {{ scheduleService.savedHomeworkText }}&nbsp;
         </div>
         <a
+          *ngIf="scheduleService.savedHomeworkFile"
           id="savedHomeworkFile"
           [attr.href]="scheduleService.savedHomeworkFile"
           class="purple-button download-button"

@@ -127,6 +127,8 @@ export class ScheduleService {
   }
 
   getHomework(id: number) {
+    this.savedHomeworkText = '';
+    this.savedHomeworkFile = '';
     this.http
       .get<{ text: string; file: string }>(
         environment.apiEndPoint + 'homework/?id=' + id
