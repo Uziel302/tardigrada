@@ -19,9 +19,9 @@ export class UploadPhotoComponent {
   @Output() uploaded = new EventEmitter<string>();
 
   constructor(
-    private http: HttpClient, 
+    private http: HttpClient,
     public loginService: LoginService,
-    public scheduleService: ScheduleService,
+    public scheduleService: ScheduleService
   ) {}
 
   onFileSelected(event: any) {
@@ -31,11 +31,14 @@ export class UploadPhotoComponent {
       const formData = new FormData();
       formData.append('upfile', file);
       formData.append('childId', '' + this.loginService.currentChildId);
-      formData.append('lectureId', '' + this.scheduleService.selectedLecture.id);
+      formData.append(
+        'lectureId',
+        '' + this.scheduleService.selectedLecture.id
+      );
       formData.append('uploadColumn', this.uploadColumn);
       formData.append('uploadTable', this.uploadTable);
       formData.append('uploadsFolder', environment.uploadsFolder);
-      const upload$ = this.http.post<{filename: string}>(
+      const upload$ = this.http.post<{ filename: string }>(
         environment.apiEndPoint + 'upload',
         formData
       );
@@ -57,10 +60,13 @@ export class UploadPhotoComponent {
             this.scheduleService.selectedLecture.book = filename;
           }
           if (this.uploadColumn === 'stationeryFile') {
-            let files = JSON.parse(this.scheduleService.selectedLecture.stationeryFile);
+            let files = JSON.parse(
+              this.scheduleService.selectedLecture.stationeryFile
+            );
             files = files ?? [];
             files.push(filename);
-            this.scheduleService.selectedLecture.stationeryFile = JSON.stringify(files);
+            this.scheduleService.selectedLecture.stationeryFile =
+              JSON.stringify(files);
           }
         }, 5);
       });
