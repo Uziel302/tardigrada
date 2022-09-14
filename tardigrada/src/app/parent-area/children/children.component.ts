@@ -26,6 +26,7 @@ export class ChildrenComponent implements OnInit {
     timezone: '',
     zoom: '',
     device: '',
+    country: '',
     language: '',
     limits: '',
     telegram: '',

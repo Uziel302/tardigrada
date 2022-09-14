@@ -51,6 +51,7 @@ export class TeacherAreaComponent implements OnInit {
         timezone: '',
         zoom: '',
         device: '',
+        country: '',
         language: '',
         limits: '',
         telegram: '',

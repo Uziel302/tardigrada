@@ -26,6 +26,7 @@ export class LoginService {
     timezone: '',
     zoom: '',
     device: '',
+    country: '',
     language: '',
     limits: '',
     telegram: '',

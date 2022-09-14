@@ -9,6 +9,7 @@ export interface IChild {
   timezone: string;
   zoom: string;
   device: string;
+  country: string;
   language: string;
   limits: string;
   telegram: string;
