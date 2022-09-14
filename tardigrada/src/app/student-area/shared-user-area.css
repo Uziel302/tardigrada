@@ -306,3 +306,9 @@
   height: 30px;
   width: 30px;
 }
+
+#photoPreview {
+  margin-left: 20px;
+  height: 66px;
+  width: 66px;
+}

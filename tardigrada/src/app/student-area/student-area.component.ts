@@ -54,4 +54,8 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     localStorage.setItem('childId', ''+child.id);
     this.showSettings = false;
   }
+
+  isImage(filename: string){
+    return (filename.match(/\.(jpeg|jpg|gif|png)$/) != null);
+  }
 }

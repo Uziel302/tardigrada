@@ -148,9 +148,14 @@
         <div class="user-textarea">
           {{ scheduleService.selectedLecture.stationeryText }}
         </div>
-        <a *ngIf="scheduleService.selectedLecture.stationeryFile" class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.stationeryFile" download>
-          <mat-icon>file_download</mat-icon>
-        </a>
+        <div style="display: flex;">
+          <a *ngIf="scheduleService.selectedLecture.stationeryFile" class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.stationeryFile" download>
+            <mat-icon>file_download</mat-icon>
+          </a>
+          <a *ngIf="isImage(scheduleService.selectedLecture.stationeryFile)" [attr.href]="scheduleService.selectedLecture.stationeryFile" target="_blank">
+            <img [attr.src]="scheduleService.selectedLecture.stationeryFile" id="photoPreview" />  
+          </a>
+        </div>
       </div>
     </div>
 

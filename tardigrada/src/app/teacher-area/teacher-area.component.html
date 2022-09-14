@@ -166,6 +166,9 @@
           <a *ngIf="scheduleService.selectedLecture.stationeryFile" class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.stationeryFile" download>
             <mat-icon>file_download</mat-icon>
           </a>
+          <a *ngIf="isImage(scheduleService.selectedLecture.stationeryFile)" [attr.href]="scheduleService.selectedLecture.stationeryFile" target="_blank">
+            <img [attr.src]="scheduleService.selectedLecture.stationeryFile" id="photoPreview" />  
+          </a>
         </div>
         <textarea class="user-textarea" [(ngModel)]="stationeryText"></textarea>
         <div class="under-form-buttons">

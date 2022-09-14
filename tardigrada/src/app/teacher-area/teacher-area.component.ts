@@ -176,4 +176,8 @@ export class TeacherAreaComponent implements OnInit {
         (error) => {}
       );
   }
+
+  isImage(filename: string){
+    return (filename.match(/\.(jpeg|jpg|gif|png)$/) != null);
+  }
 }
