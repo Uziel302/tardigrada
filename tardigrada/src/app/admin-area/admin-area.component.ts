@@ -14,6 +14,7 @@ export class AdminAreaComponent implements OnInit {
   public annoyingText: string = '';
   public annoyingColor: string = 'red';
   public annoyingSize: string = '20px';
+  public saved: boolean = false;
 
   public lecturesCount: number = 0;
 
@@ -40,6 +41,7 @@ export class AdminAreaComponent implements OnInit {
       size: this.annoyingSize,
     }).subscribe(
       (data) => {
+        this.saved = true;
       },
       (error) => {
       }

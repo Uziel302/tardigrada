@@ -5,14 +5,22 @@
   Actions:
   <br />
   <br />
+  Annoying notification to all teachers:&nbsp; &nbsp;
   <div id="annoying">
-    Annoying notification to all teachers:&nbsp; &nbsp;
-    <input type="text" [(ngModel)]="annoyingText" />
-    &nbsp; color: &nbsp;
-    <input type="text" [(ngModel)]="annoyingColor" />
-    &nbsp; font-size: &nbsp;
-    <input type="text" [(ngModel)]="annoyingSize" />
+    <div>
+      text:
+      <input type="text" [(ngModel)]="annoyingText" />
+    </div>
+    <div>
+      color:
+      <input type="text" [(ngModel)]="annoyingColor" />
+    </div>
+    <div>
+      font size:
+      <input type="text" [(ngModel)]="annoyingSize" />
+    </div>
     <button (click)="submit()">Save</button>
+    <div *ngIf="saved">Saved!</div>
   </div>
 
   <br />
@@ -26,5 +34,5 @@
   Stats:
   <br />
   <br />
-  Courses on the site: {{lecturesCount}}
+  Courses on the site: {{ lecturesCount }}
 </div>
