@@ -34,6 +34,7 @@ import { UploadPhotoComponent } from './student-area/upload-photo/upload-photo.c
 import { SettingsPopupComponent } from './student-area/settings-popup/settings-popup.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { AdminAreaComponent } from './admin-area/admin-area.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { AdminAreaComponent } from './admin-area/admin-area.component';
     UploadPhotoComponent,
     SettingsPopupComponent,
     CourseListComponent,
-    AdminAreaComponent
+    AdminAreaComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

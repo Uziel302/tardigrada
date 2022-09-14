@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { StudentAreaComponent } from './student-area/student-area.component';
-import { ParentAreaComponent } from './parent-area/parent-area.component';
 import { ChildrenComponent } from './parent-area/children/children.component';
 import { AccountComponent } from './parent-area/account/account.component';
 import { TeacherAreaComponent } from './teacher-area/teacher-area.component';
@@ -14,6 +13,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { AdminAreaComponent } from './admin-area/admin-area.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'login', component: LoginScreenComponent },
   { path: 'student', component: StudentAreaComponent },
   { path: 'admin', component: AdminAreaComponent },
+  { path: 'privacy', component: PrivacyComponent },
   { path: 'parent', children:
   [ { path: '', redirectTo: 'children', pathMatch: 'full' },
     { path: 'children', component: ChildrenComponent },
