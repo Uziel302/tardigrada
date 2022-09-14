@@ -30,6 +30,8 @@ export class TeacherAreaComponent implements OnInit {
   public stationeryText: string = '';
   public homeworkText: string = '';
   public homeworkFile: string = '';
+  public savedHomeworkText: string = '';
+  public savedHomeworkFile: string = '';
 
   constructor(
     public scheduleService: ScheduleService,
@@ -140,6 +142,10 @@ export class TeacherAreaComponent implements OnInit {
     this.currentLink = event;
   }
 
+  updateHwFile(event: string) {
+    this.homeworkFile = event;
+  }
+
   loadOrCreateTeacher() {
     this.http
       .get<ITeacher>(environment.apiEndPoint + 'loadOrCreateTeacher')
@@ -162,6 +168,39 @@ export class TeacherAreaComponent implements OnInit {
         (data) => {
           this.scheduleService.selectedLecture.stationeryText =
             this.stationeryText;
+        },
+        (error) => {}
+      );
+  }
+
+  getHomework() {
+    this.http
+      .get<{ text: string; file: string }>(
+        environment.apiEndPoint +
+          'homework/?id=' +
+          this.scheduleService.selectedLecture.id
+      )
+      .subscribe(
+        (data) => {
+          this.savedHomeworkText = data.text;
+          this.savedHomeworkFile = data.file;
+        },
+        (error) => {
+        }
+      );
+  }
+
+  saveHomework() {
+    this.http
+      .post(environment.apiEndPoint + 'saveHomework', {
+        text: this.homeworkText,
+        file: this.homeworkFile,
+        lectureId: this.scheduleService.selectedLecture.id,
+      })
+      .subscribe(
+        (data) => {
+          this.savedHomeworkText = this.homeworkText;
+          this.savedHomeworkFile = this.homeworkFile;
         },
         (error) => {}
       );

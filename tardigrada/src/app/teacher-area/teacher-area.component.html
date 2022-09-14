@@ -192,11 +192,10 @@
         </textarea>
         <div class="under-form-buttons">
           <app-upload-photo
-            [uploadColumn]="'file'"
-            [uploadTable]="'homework'"
+            (uploaded)="updateHwFile($event)"
           ></app-upload-photo>
           <div class="under-schedule-buttons">
-            <div class="button-wrapper">
+            <div class="button-wrapper" (click)="saveHomework()">
               <div class="button-under-schedule">отправить</div>
             </div>
           </div>

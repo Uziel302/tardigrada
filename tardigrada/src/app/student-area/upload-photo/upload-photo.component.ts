@@ -46,7 +46,6 @@ export class UploadPhotoComponent {
         const filename: string = data.filename;
         //this timeout is needed to prevent trying access the photo that was just saved before it's ready
         setTimeout(() => {
-          debugger;
           this.uploaded.emit(filename);
           const currentUser =
             this.uploadTable === 'children' ? 'currentChild' : 'teacher';

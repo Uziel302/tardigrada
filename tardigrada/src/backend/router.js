@@ -23,13 +23,16 @@ const {
   getChildLectures,
   saveStationery,
 } = require("./controllers/lectures.controller");
-const { saveAnnoying, getAnnoying } = require("./controllers/admin-changes.controller")
+const { saveAnnoying, getAnnoying } = require("./controllers/admin-changes.controller");
+const { getHomework, saveHomework } = require("./controllers/homework.controller");
 
 router.post("/api/login", loginAndValidation);
 router.post("/api/signup", signupAndValidation);
 router.get("/api/getLectures", getLectures);
 router.post("/api/getChildLectures", getChildLectures);
 router.post("/api/saveStationery", saveStationery);
+router.get("/api/homework", getHomework);
+router.post("/api/saveHomework", saveHomework);
 
 //TODO - authenticate before saving annoying message
 router.post("/api/saveAnnoying", saveAnnoying);
