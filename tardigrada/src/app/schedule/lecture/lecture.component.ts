@@ -21,6 +21,7 @@ export class LectureComponent implements OnInit {
     url: '',
     stationeryText: '',
     stationeryFile: '',
+    book: '',
   };
 
   constructor() { }

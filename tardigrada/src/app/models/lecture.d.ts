@@ -9,5 +9,6 @@ export interface ILecture {
   background: string;
   url: string;
   stationeryText: string;
-  stationeryFile: string;  
+  stationeryFile: string;
+  book: string;
 }

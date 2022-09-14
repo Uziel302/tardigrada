@@ -21,7 +21,8 @@ export class ScheduleService {
     background: '',
     url: '',
     stationeryText: '',
-    stationeryFile: '', 
+    stationeryFile: '',
+    book: '',
   };
   public currentChildren: IChild[] = [];
   public dayNumber: number = 0;
@@ -58,6 +59,7 @@ export class ScheduleService {
             url: '',
             stationeryText: '',
             stationeryFile: '',
+            book: '',
           };
         }
       }
@@ -98,6 +100,7 @@ export class ScheduleService {
         url: lectureData.telegram,
         stationeryText: lectureData.stationeryText,
         stationeryFile: lectureData.stationeryFile,
+        book: lectureData.book,
       };
     }
   }

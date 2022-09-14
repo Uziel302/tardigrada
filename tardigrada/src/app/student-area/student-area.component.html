@@ -131,9 +131,9 @@
               />
             </svg>
           </a>
-          <div class="purple-button download-button">
-            <mat-icon>file_download</mat-icon>
-          </div>
+          <a *ngIf="scheduleService.selectedLecture.book" class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.book" download>
+            <mat-icon>menu_book</mat-icon>
+          </a>
         </div>
 
         <div id="center-circle">

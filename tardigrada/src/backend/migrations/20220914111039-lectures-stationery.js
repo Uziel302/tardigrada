@@ -23,11 +23,16 @@ exports.up = function (db, callback) {
     type: 'string',
     length: 100
   }, callback);
+  db.addColumn('lectures', 'book', {
+    type: 'string',
+    length: 100
+  }, callback);
 };
 
 exports.down = function(db, callback) {
   db.removeColumn('lectures', 'stationeryText', callback);
   db.removeColumn('lectures', 'stationeryFile', callback);
+  db.removeColumn('lectures', 'book', callback);
 };
 
 exports._meta = {

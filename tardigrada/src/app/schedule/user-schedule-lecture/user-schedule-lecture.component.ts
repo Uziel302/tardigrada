@@ -20,7 +20,8 @@ export class UserScheduleLectureComponent implements OnInit {
     background: '',
     url: '',
     stationeryText: '',
-    stationeryFile: '', 
+    stationeryFile: '',
+    book: '',
   };
   public selected: number = 0;
   @Input() data: ILecture[] = [this.emptyLecture];

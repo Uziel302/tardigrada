@@ -8,6 +8,8 @@ exports.saveToDb = async (req, res, filename) => {
     whereObj.id = req.body.childId;
   } else if (req.body.uploadTable === "teachers") {
     whereObj.userId = req.body.userId;
+  } else if (req.body.uploadTable === "lectures") {
+    whereObj.id = req.body.lectureId;
   } else if (req.body.uploadTable === "teachersNotes") {
     return this.saveNoteWithFile(req, res, filename);
   } else {

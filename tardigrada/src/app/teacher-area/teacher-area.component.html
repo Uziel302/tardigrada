@@ -113,9 +113,14 @@
               />
             </svg>
           </a>
-          <div class="purple-button download-button">
-            <mat-icon>file_download</mat-icon>
-          </div>
+          <a class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.book" download>
+            <mat-icon *ngIf="scheduleService.selectedLecture.book">menu_book</mat-icon>
+            <div *ngIf="!scheduleService.selectedLecture.book" style="text-align:center;padding:5px;">no book yet</div>
+          </a>
+          <app-upload-photo
+            [uploadColumn]="'book'"
+            [uploadTable]="'lectures'"
+          ></app-upload-photo>
         </div>
 
         <div>
