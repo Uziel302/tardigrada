@@ -1,4 +1,5 @@
-<div *ngIf="showSettings" id="settings-screen" (click)="backgroundClick()">
+<div *ngIf="showSettings" id="settings-container" (click)="backgroundClick()">
+  <div id="settings-screen"></div>
   <div id="settings-box" (click)="stopProp($event)">
     <div class="upload-container">
       <app-upload-photo
