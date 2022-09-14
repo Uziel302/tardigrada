@@ -145,7 +145,12 @@
 
       <div class="half-container form-half">
         <div>взять на урок</div>
-        <textarea class="user-textarea"></textarea>
+        <div class="user-textarea">
+          {{ scheduleService.selectedLecture.stationeryText }}
+        </div>
+        <a *ngIf="scheduleService.selectedLecture.stationeryFile" class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.stationeryFile" download>
+          <mat-icon>file_download</mat-icon>
+        </a>
       </div>
     </div>
 

@@ -163,15 +163,16 @@
         <br>
         <div id="stationery-container">
           <div>{{ scheduleService.selectedLecture.stationeryText }}</div>
-          <a class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.stationeryFile" download>
+          <a *ngIf="scheduleService.selectedLecture.stationeryFile" class="purple-button download-button" [attr.href]="scheduleService.selectedLecture.stationeryFile" download>
             <mat-icon>file_download</mat-icon>
           </a>
         </div>
         <textarea class="user-textarea" [(ngModel)]="stationeryText"></textarea>
         <div class="under-form-buttons">
-          <div class="purple-button">
-            <img class="attach-image" src="/assets/images/attach.png" />
-          </div>
+          <app-upload-photo
+            [uploadColumn]="'stationeryFile'"
+            [uploadTable]="'lectures'"
+          ></app-upload-photo>
           <div class="under-schedule-buttons">
             <div class="button-wrapper" (click)="saveStationery()">
               <div class="button-under-schedule">отправить</div>

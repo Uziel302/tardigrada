@@ -161,19 +161,19 @@ export class TeacherAreaComponent implements OnInit {
       );
   }
 
-  saveStationery(){
+  saveStationery() {
     this.http
       .post(environment.apiEndPoint + 'saveStationery', {
         lectureId: this.scheduleService.selectedLecture.id,
         stationeryText: this.stationeryText,
-
+        stationeryFile: this.scheduleService.selectedLecture.stationeryFile,
       })
       .subscribe(
         (data) => {
-          this.scheduleService.selectedLecture.stationeryText = this.stationeryText;
+          this.scheduleService.selectedLecture.stationeryText =
+            this.stationeryText;
         },
-        (error) => {
-        }
+        (error) => {}
       );
   }
 }
