@@ -110,16 +110,13 @@
 
 #note-line, #link-line {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-left: 20%;
 }
 
 #note-error {
   text-align: center;
-}
-
-#link-line > textarea {
-  margin-right: 211px;
 }
 
 #note-line .purple-button, #note-line app-upload-photo {

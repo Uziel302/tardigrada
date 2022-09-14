@@ -28,6 +28,8 @@ export class TeacherAreaComponent implements OnInit {
   public annoyingSize: string = '20px';
   public annoyingColor: string = 'red';
   public stationeryText: string = '';
+  public homeworkText: string = '';
+  public homeworkFile: string = '';
 
   constructor(
     public scheduleService: ScheduleService,
@@ -71,12 +73,6 @@ export class TeacherAreaComponent implements OnInit {
     this.chosenChild = index;
     let element = document.getElementById('child-anchor') as HTMLElement;
     element.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  handleKeyUp(e: any) {
-    if (e.keyCode === 13) {
-      this.saveNote();
-    }
   }
 
   getAnnoying() {
@@ -140,14 +136,8 @@ export class TeacherAreaComponent implements OnInit {
       );
   }
 
-  saveUpload(event: { filename: string; id: number }) {
-    this.noteList.unshift({
-      id: event.id,
-      note: this.currentNote ? this.currentNote : event.filename,
-      link: event.filename,
-    });
-    this.currentNote = '';
-    this.currentLink = '';
+  updateNoteFile(event: string) {
+    this.currentLink = event;
   }
 
   loadOrCreateTeacher() {

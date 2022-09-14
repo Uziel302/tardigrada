@@ -185,11 +185,16 @@
           </div>
         </div>
         <div>домашка</div>
-        <textarea class="user-textarea"></textarea>
+        <textarea 
+          class="user-textarea"
+          [(ngModel)]="homeworkText"
+        >
+        </textarea>
         <div class="under-form-buttons">
-          <div class="purple-button">
-            <img class="attach-image" src="/assets/images/attach.png" />
-          </div>
+          <app-upload-photo
+            [uploadColumn]="'file'"
+            [uploadTable]="'homework'"
+          ></app-upload-photo>
           <div class="under-schedule-buttons">
             <div class="button-wrapper">
               <div class="button-under-schedule">отправить</div>
@@ -299,7 +304,6 @@
       <textarea
         class="user-textarea small-textarea"
         [(ngModel)]="currentNote"
-        (keyup)="handleKeyUp($event)"
         placeholder="note text"
       ></textarea>
       <div
@@ -309,19 +313,20 @@
         <mat-icon>link</mat-icon>
       </div>
       <app-upload-photo
-        (uploaded)="saveUpload($event)"
-        [uploadColumn]="'link'"
-        [uploadTable]="'teachersNotes'"
-        [additionalColumn]="'note'"
-        [additionalContent]="currentNote"
+        (uploaded)="updateNoteFile($event)"
       ></app-upload-photo>
+      <div
+        class="purple-button link-icon"
+        (click)="saveNote()"
+      >
+        <mat-icon>save</mat-icon>
+      </div>
     </div>
     <div id="link-line">
       <textarea
         *ngIf="showLinkInput"
         class="user-textarea small-textarea"
         [(ngModel)]="currentLink"
-        (keyup)="handleKeyUp($event)"
         placeholder="note link"
       ></textarea>
     </div>

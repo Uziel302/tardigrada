@@ -9,12 +9,8 @@ exports.saveToDb = async (req, res, filename) => {
     whereObj.id = req.body.childId;
   } else if (req.body.uploadTable === "teachers") {
     whereObj.userId = req.body.userId;
-  } else if (req.body.uploadTable === "lectures") {
-    return res.status(200).json({filename: fullPath});
-  } else if (req.body.uploadTable === "teachersNotes") {
-    return this.saveNoteWithFile(req, res, filename);
   } else {
-    return res.status(500).send({ error: "wrong table name" });
+    return res.status(200).send({ filename: fullPath });
   }
 
   knex(req.body.uploadTable)
@@ -27,18 +23,6 @@ exports.saveToDb = async (req, res, filename) => {
     )
     .catch((e) => res.status(500).json(e));
 };
-
-exports.saveNoteWithFile = async (req, res, filename) => {
-  const newData = {};
-  const fullPath = req.body.uploadsFolder + filename;
-  newData[req.body.uploadColumn] = fullPath;
-  newData[req.body.additionalColumn] = req.body.additionalContent ? req.body.additionalContent : fullPath;
-  newData.userId = req.body.userId;
-  knex(req.body.uploadTable)
-  .insert(newData)
-  .then(u => res.status(!!u?200:404).json({id:u[0], filename: fullPath}))
-  .catch(e => res.status(500).json(e));
-}
 
 exports.upload = async (req, res) => {
   const upfile = req.files.upfile;

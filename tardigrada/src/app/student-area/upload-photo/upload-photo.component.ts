@@ -16,7 +16,7 @@ export class UploadPhotoComponent {
   @Input() uploadTable: string = '';
   @Input() additionalColumn: string = '';
   @Input() additionalContent: string = '';
-  @Output() uploaded = new EventEmitter<{ filename: string; id: number }>();
+  @Output() uploaded = new EventEmitter<string>();
 
   constructor(
     private http: HttpClient, 
@@ -35,34 +35,32 @@ export class UploadPhotoComponent {
       formData.append('uploadColumn', this.uploadColumn);
       formData.append('uploadTable', this.uploadTable);
       formData.append('uploadsFolder', environment.uploadsFolder);
-      formData.append('additionalColumn', this.additionalColumn);
-      formData.append('additionalContent', this.additionalContent);
-      const upload$ = this.http.post<{ filename: string; id: number }>(
+      const upload$ = this.http.post<{filename: string}>(
         environment.apiEndPoint + 'upload',
         formData
       );
       upload$.subscribe((data) => {
+        const filename: string = data.filename;
         //this timeout is needed to prevent trying access the photo that was just saved before it's ready
         setTimeout(() => {
+          debugger;
+          this.uploaded.emit(filename);
           const currentUser =
             this.uploadTable === 'children' ? 'currentChild' : 'teacher';
           if (this.uploadColumn === 'cover') {
-            this.loginService[currentUser].cover = data.filename;
+            this.loginService[currentUser].cover = filename;
           }
           if (this.uploadColumn === 'profile') {
-            this.loginService[currentUser].profile = data.filename;
+            this.loginService[currentUser].profile = filename;
           }
           if (this.uploadColumn === 'book') {
-            this.scheduleService.selectedLecture.book = data.filename;
+            this.scheduleService.selectedLecture.book = filename;
           }
           if (this.uploadColumn === 'stationeryFile') {
             let files = JSON.parse(this.scheduleService.selectedLecture.stationeryFile);
             files = files ?? [];
-            files.push(data.filename);
+            files.push(filename);
             this.scheduleService.selectedLecture.stationeryFile = JSON.stringify(files);
-          }
-          if (this.uploadTable === 'teachersNotes') {
-            this.uploaded.emit({ filename: data.filename, id: data.id });
           }
         }, 5);
       });
