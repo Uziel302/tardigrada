@@ -6,6 +6,7 @@ import { ScheduleService } from '../schedule/schedule.service';
 import { LoginService } from '../login-screen/login.service';
 import { INote } from '../models/note';
 import { ITeacher } from '../models/teacher';
+import { IChild } from '../models/child';
 import { ParsingService } from '../general/parser.service';
 
 @Component({
@@ -43,28 +44,6 @@ export class TeacherAreaComponent implements OnInit {
     this.loadOrCreateTeacher();
     this.getNotes();
     this.getAnnoying();
-    //TODO remove
-    for (let i of [0, 1, 2, 3, 4]) {
-      this.scheduleService.currentChildren.push({
-        id: 10,
-        firstName: 'Имя ' + i,
-        lastName: 'Фамилия',
-        fatherName: '',
-        dateOfBirth: '',
-        className: '',
-        subjects: '',
-        timezone: '',
-        zoom: '',
-        device: '',
-        country: '',
-        language: '',
-        limits: '',
-        telegram: '',
-        note: '',
-        cover: '/assets/images/default-cover.jpeg',
-        profile: '/assets/images/profile-default.jpg',
-      });
-    }
   }
 
   stopProp(event: any) {
@@ -96,6 +75,19 @@ export class TeacherAreaComponent implements OnInit {
         },
         (error) => {}
       );
+  }
+
+  getLectureChildren(lectureId: number){
+    this.http
+    .get<IChild[]>(
+      environment.apiEndPoint + 'getLectureChildren' + '/?lectureId=' + lectureId
+    )
+    .subscribe(
+      (data) => {
+        this.scheduleService.currentChildren = data;
+      },
+      (error) => {}
+    );
   }
 
   getNotes() {
@@ -195,7 +187,8 @@ export class TeacherAreaComponent implements OnInit {
       );
   }
 
-  onLectureChange(event: number) {
-    this.scheduleService.getHomework(event);
+  onLectureChange(lectureId: number) {
+    this.getLectureChildren(lectureId);
+    this.scheduleService.getHomework(lectureId);
   }
 }

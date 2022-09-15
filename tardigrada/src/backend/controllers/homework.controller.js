@@ -61,7 +61,7 @@ exports.saveHwFeedback = async (req, res) => {
 exports.getHomework = async (req, res) => {
   knex(tableName)
     .select("text", "file")
-    .where("lectureId", req.query.id)
+    .where("lectureId", req.query.lectureId)
     .orderBy([{ column: "id", order: "desc" }])
     .limit(1)
     .then((homework) => {
@@ -88,7 +88,7 @@ exports.getHomeworks = async (req, res) => {
       "chw.feedbackFile as fhwFile"
     )
     .leftJoin("childrenHomework as chw", "hw.id", "chw.homeworkId")
-    .where({ "hw.lectureId": req.query.id, "chw.childId": req.query.childId })
+    .where({ "hw.lectureId": req.query.lectureId, "chw.childId": req.query.childId })
     .orderBy([{ column: "hw.id", order: "desc" }])
     .then((homeworks) => {
       if (!homeworks) {

@@ -125,12 +125,12 @@ export class ScheduleService {
     return formatted;
   }
 
-  getHomework(id: number) {
+  public getHomework(lectureId: number) {
     this.savedHomeworkText = '';
     this.savedHomeworkFile = '';
     this.http
       .get<{ text: string; file: string }>(
-        environment.apiEndPoint + 'homework/?id=' + id
+        environment.apiEndPoint + 'homework/?lectureId=' + lectureId
       )
       .subscribe(
         (data) => {
@@ -143,10 +143,10 @@ export class ScheduleService {
       );
   }
 
-  getHomeworks(id: number, childId: number) {
+  getHomeworks(lectureId: number, childId: number) {
     this.http
       .get<IHomeWork[]>(
-        environment.apiEndPoint + 'homeworks/?id=' + id + '&childId=' + childId
+        environment.apiEndPoint + 'homeworks/?lectureId=' + lectureId + '&childId=' + childId
       )
       .subscribe(
         (data) => {

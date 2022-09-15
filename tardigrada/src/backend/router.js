@@ -21,6 +21,7 @@ const {
   joinLecture,
   leaveLecture,
   getChildLectures,
+  getLectureChildren,
   saveStationery,
 } = require("./controllers/lectures.controller");
 const {
@@ -38,6 +39,7 @@ const {
 router.post("/api/login", loginAndValidation);
 router.post("/api/signup", signupAndValidation);
 router.get("/api/getLectures", getLectures);
+router.get("/api/getLectureChildren", getLectureChildren);
 router.post("/api/getChildLectures", getChildLectures);
 router.post("/api/saveStationery", saveStationery);
 router.get("/api/homework", getHomework);
