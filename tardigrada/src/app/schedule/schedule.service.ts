@@ -30,6 +30,7 @@ export class ScheduleService {
   public savedHomeworkText: string = '';
   public savedHomeworkFile: string = '';
   public currentHomeworks: IHomeWork[] = [];
+  public openHwResponse: boolean[] = [];
 
   public getLecturesData() {
     return this.http.get(environment.apiEndPoint + 'getLectures');
@@ -124,22 +125,6 @@ export class ScheduleService {
     return formatted;
   }
 
-  public parse(files: string) {
-    if(!files){
-      return [];
-    }
-    return JSON.parse(files);
-  }
-
-  public pushToString(origin: string, addition: string){
-    let files = JSON.parse(origin);
-    if(!files.length){
-      files = [];
-    }
-    files.push(addition);
-    return JSON.stringify(files);
-  }
-
   getHomework(id: number) {
     this.savedHomeworkText = '';
     this.savedHomeworkFile = '';
@@ -159,10 +144,10 @@ export class ScheduleService {
   }
 
 
-  getHomeworks(id: number) {
+  getHomeworks(id: number, childId: number) {
     this.http
       .get<IHomeWork[]>(
-        environment.apiEndPoint + 'homeworks/?id=' + id
+        environment.apiEndPoint + 'homeworks/?id=' + id + '&childId=' + childId
       )
       .subscribe(
         (data) => {

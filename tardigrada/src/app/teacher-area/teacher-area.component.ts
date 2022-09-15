@@ -6,6 +6,7 @@ import { ScheduleService } from '../schedule/schedule.service';
 import { LoginService } from '../login-screen/login.service';
 import { INote } from '../models/note';
 import { ITeacher } from '../models/teacher';
+import { ParsingService } from '../general/parser.service';
 
 @Component({
   selector: 'app-teacher-area',
@@ -34,6 +35,7 @@ export class TeacherAreaComponent implements OnInit {
   constructor(
     public scheduleService: ScheduleService,
     public loginService: LoginService,
+    public parsing: ParsingService,
     private http: HttpClient
   ) {}
 
@@ -44,7 +46,7 @@ export class TeacherAreaComponent implements OnInit {
     //TODO remove
     for (let i of [0, 1, 2, 3, 4]) {
       this.scheduleService.currentChildren.push({
-        id: 0,
+        id: 10,
         firstName: 'Имя ' + i,
         lastName: 'Фамилия',
         fatherName: '',
@@ -71,6 +73,12 @@ export class TeacherAreaComponent implements OnInit {
 
   selectChild(index: number) {
     this.chosenChild = index;
+    this.loginService.currentChildId =
+      this.scheduleService.currentChildren[index].id;
+    this.scheduleService.getHomeworks(
+      this.scheduleService.selectedLecture.id,
+      this.loginService.currentChildId
+    );
     let element = document.getElementById('child-anchor') as HTMLElement;
     element.scrollIntoView({ behavior: 'smooth' });
   }
@@ -187,11 +195,7 @@ export class TeacherAreaComponent implements OnInit {
       );
   }
 
-  isImage(filename: string) {
-    return filename.match(/\.(jpeg|jpg|gif|png)$/) != null;
-  }
-
-  onLectureChange(event: number){
+  onLectureChange(event: number) {
     this.scheduleService.getHomework(event);
   }
 }

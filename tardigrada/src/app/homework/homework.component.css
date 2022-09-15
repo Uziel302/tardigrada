@@ -1,0 +1,21 @@
+#container {
+  font-size: 22px;
+  font-family: "Zhizn";
+}
+
+.hwActions {
+  display: flex;
+}
+
+.hwActions > * {
+  margin-right: 20px;
+}
+
+.response-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.response-title {
+  margin-top: 20px;
+}

@@ -159,15 +159,15 @@
         <div id="stationery-container">
           <ng-container
             *ngFor="
-              let file of scheduleService.parse(
+              let file of parsing.parse(
                 scheduleService.selectedLecture.stationeryFile
               )
             "
           >
-            <a *ngIf="isImage(file)" [attr.href]="file" target="_blank">
+            <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">
               <img [attr.src]="file" class="photoPreview" />
             </a>
-            <a *ngIf="!isImage(file)" [attr.href]="file" target="_blank">
+            <a *ngIf="!parsing.isImage(file)" [attr.href]="file" target="_blank">
               <img src="/assets/images/pdf-icon.png" class="photoPreview" />
             </a>
             <a
@@ -183,84 +183,7 @@
     </div>
 
     <div class="separating-space"></div>
-
-    <div id="form-container">
-      <div class="half-container form-half">
-        <div>домашка</div>
-        <div *ngIf="!scheduleService.currentHomeworks.length">-</div>
-        <div
-          *ngFor="
-            let homework of scheduleService.currentHomeworks;
-            let i = index
-          "
-        >
-          <textarea class="user-textarea">{{ homework.hwText }}</textarea>
-          <div class="hwActions">
-            <a
-              *ngIf="homework.hwFile"
-              id="savedHomeworkFile"
-              [attr.href]="homework.hwFile"
-              class="purple-button download-button"
-              download
-            >
-              <mat-icon>file_download</mat-icon>
-            </a>
-            <div
-              class="purple-button"
-              (click)="openHwResponse[i] = !openHwResponse[i]"
-            >
-              <svg
-                aria-label="Comment"
-                class="_ab6-"
-                color="white"
-                fill="#8e8e8e"
-                height="24"
-                role="img"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <path
-                  d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="half-container form-half" *ngIf="openHwResponse[i]">
-            <div>Your response</div>
-            <textarea
-              class="user-textarea"
-              [(ngModel)]="homework.chwText"
-            ></textarea>
-            <div class="response-buttons">
-              <ng-container
-                *ngFor="let file of scheduleService.parse(homework.chwFile)"
-              >
-                <a *ngIf="isImage(file)" [attr.href]="file" target="_blank">
-                  <img [attr.src]="file" class="photoPreview" />
-                </a>
-                <a *ngIf="!isImage(file)" [attr.href]="file" target="_blank">
-                  <img src="/assets/images/pdf-icon.png" class="photoPreview" />
-                </a>
-              </ng-container>
-
-              <app-upload-photo
-                (uploaded)="updateHwResponseFile($event, i)"
-              ></app-upload-photo>
-              <div class="button-wrapper">
-                <div class="button-under-schedule" (click)="submitResponse(i)">
-                  отправить
-                </div>
-              </div>
-              <div *ngIf="responseSuccess[i]">Saved!</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-homework [isStudent]="true"></app-homework>
   </div>
 
   <div class="separating-space"></div>

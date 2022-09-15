@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { LoginService } from 'src/app/login-screen/login.service';
 import { ScheduleService } from 'src/app/schedule/schedule.service';
+import { ParsingService } from 'src/app/general/parser.service';
 
 @Component({
   selector: 'app-upload-photo',
@@ -21,7 +22,8 @@ export class UploadPhotoComponent {
   constructor(
     private http: HttpClient,
     public loginService: LoginService,
-    public scheduleService: ScheduleService
+    public scheduleService: ScheduleService,
+    public parsing: ParsingService,
   ) {}
 
   onFileSelected(event: any) {
@@ -60,7 +62,7 @@ export class UploadPhotoComponent {
           }
           if (this.uploadColumn === 'stationeryFile') {
             this.scheduleService.selectedLecture.stationeryFile =
-              this.scheduleService.pushToString(
+              this.parsing.pushToString(
                 this.scheduleService.selectedLecture.stationeryFile,
                 filename
               );

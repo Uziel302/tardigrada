@@ -35,6 +35,7 @@ import { SettingsPopupComponent } from './student-area/settings-popup/settings-p
 import { CourseListComponent } from './course-list/course-list.component';
 import { AdminAreaComponent } from './admin-area/admin-area.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { HomeworkComponent } from './homework/homework.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
     SettingsPopupComponent,
     CourseListComponent,
     AdminAreaComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    HomeworkComponent
   ],
   imports: [
     BrowserModule,

@@ -31,16 +31,3 @@
   display: flex;
   justify-content: center;
 }
-
-.hwActions {
-  display: flex;
-}
-
-.hwActions > * {
-  margin-right: 20px;
-}
-
-.response-buttons {
-  display: flex;
-  align-items: center;
-}

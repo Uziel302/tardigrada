@@ -16,32 +16,46 @@ exports.saveHomework = async (req, res) => {
 };
 
 exports.saveHwResponse = async (req, res) => {
-  if(req.body.chwId){
+  if (req.body.chwId) {
     delete req.body.chwId;
     knex("childrenHomework")
-    .update(req.body)
-    .then((hwResponse) => {
-      if (!hwResponse) {
-        res.status(401).json({
-          message: "failed saving hwResponse to db",
-        });
-      } else {
-        res.status(200).json(hwResponse);
-      }
-    });
-  } else{
+      .update(req.body)
+      .then((hwResponse) => {
+        if (!hwResponse) {
+          res.status(401).json({
+            message: "failed saving hwResponse to db",
+          });
+        } else {
+          res.status(200).json(hwResponse);
+        }
+      });
+  } else {
     knex("childrenHomework")
-    .insert(req.body)
-    .then((hwResponse) => {
-      if (!hwResponse) {
+      .insert(req.body)
+      .then((hwResponse) => {
+        if (!hwResponse) {
+          res.status(401).json({
+            message: "failed saving hwResponse to db",
+          });
+        } else {
+          res.status(200).json(hwResponse);
+        }
+      });
+  }
+};
+
+exports.saveHwFeedback = async (req, res) => {
+  knex("childrenHomework")
+    .update({ feedbackText: req.body.text, feedbackFile: req.body.file })
+    .then((hwFeedback) => {
+      if (!hwFeedback) {
         res.status(401).json({
-          message: "failed saving hwResponse to db",
+          message: "failed saving feedback to db",
         });
       } else {
-        res.status(200).json(hwResponse);
+        res.status(200).json(hwFeedback);
       }
     });
-  }
 };
 
 exports.getHomework = async (req, res) => {
@@ -74,7 +88,7 @@ exports.getHomeworks = async (req, res) => {
       "chw.feedbackFile as fhwFile"
     )
     .leftJoin("childrenHomework as chw", "hw.id", "chw.homeworkId")
-    .where("hw.lectureId", req.query.id)
+    .where({ "hw.lectureId": req.query.id, "chw.childId": req.query.childId })
     .orderBy([{ column: "hw.id", order: "desc" }])
     .then((homeworks) => {
       if (!homeworks) {
