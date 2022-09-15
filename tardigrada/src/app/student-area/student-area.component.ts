@@ -91,7 +91,9 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
       .subscribe(
         (data) => {
           this.responseSuccess[i] = true;
-          setTimeout(() => { this.responseSuccess[i] = false; }, 3000)
+          setTimeout(() => {
+            this.responseSuccess[i] = false;
+          }, 3000);
         },
         (error) => {}
       );
