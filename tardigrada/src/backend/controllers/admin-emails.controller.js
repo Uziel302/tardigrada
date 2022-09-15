@@ -2,7 +2,6 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 
 exports.sendFreeRequest = async (req, res) => {
-
   let transporter = nodemailer.createTransport({
     host: "smtp-relay.sendinblue.com",
     port: 587,
@@ -23,6 +22,6 @@ exports.sendFreeRequest = async (req, res) => {
   console.log("Message sent: %s", info.messageId);
 
   res.status(200).json({
-    msg: 'Request sent!',
+    msg: "Request sent!",
   });
 };

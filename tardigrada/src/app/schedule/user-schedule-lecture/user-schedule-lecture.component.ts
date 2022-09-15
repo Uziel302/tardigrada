@@ -27,11 +27,9 @@ export class UserScheduleLectureComponent implements OnInit {
   @Input() data: ILecture[] = [this.emptyLecture];
   @Input() rowNumber: number = 0;
   @Input() dayNumber: number = 0;
-  @Output() lectureChange = new EventEmitter<number>;
+  @Output() lectureChange = new EventEmitter<number>();
 
-  constructor(
-    public scheduleService: ScheduleService
-  ) {}
+  constructor(public scheduleService: ScheduleService) {}
 
   ngOnInit(): void {}
 
@@ -45,8 +43,8 @@ export class UserScheduleLectureComponent implements OnInit {
 
   belongs(): boolean {
     //empty data if the lecture doesn't belong to the child
-    if(!this.scheduleService.childLectures[this.data[0].id]){
-      if(this.scheduleService.childLectures[this.data[1].id]){
+    if (!this.scheduleService.childLectures[this.data[0].id]) {
+      if (this.scheduleService.childLectures[this.data[1].id]) {
         this.selected = 1;
       } else {
         this.data = [this.emptyLecture];

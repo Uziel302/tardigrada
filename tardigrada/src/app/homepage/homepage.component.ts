@@ -4,27 +4,24 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent {
-
   config: any;
   fullpage_api: any;
 
-  constructor(
-    private router: Router
-  ) {
+  constructor(private router: Router) {
     this.config = {
       licenseKey: 'YOUR LICENSE KEY HERE',
-      anchors: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+      anchors: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
       menu: '#menu',
 
       afterResize: () => {
-        console.log("After resize");
+        console.log('After resize');
       },
       afterLoad: (origin: any, destination: any, direction: any) => {
         console.log(origin.index);
-      }
+      },
     };
   }
 
@@ -32,7 +29,7 @@ export class HomepageComponent {
     this.fullpage_api = fullPageRef;
   }
 
-  logoClick(){
+  logoClick() {
     this.router.navigate(['/login']);
   }
 }

@@ -1,12 +1,15 @@
-
 <div id="container">
-  <a id="clickable-box" [attr.href]="data.url" [style.background]="data.background">
+  <a
+    id="clickable-box"
+    [attr.href]="data.url"
+    [style.background]="data.background"
+  >
     <div class="lesson-top">
-      <div id="hour">{{data.hour}}</div>
-      <img src="/assets/images/telegram-icon.png">
+      <div id="hour">{{ data.hour }}</div>
+      <img src="/assets/images/telegram-icon.png" />
     </div>
-    <div id="title">{{data.title}}</div>
-    <div id="subtitle">{{data.subtitle}}</div>
-    <div id="teacher">{{data.teacher}}</div>
+    <div id="title">{{ data.title }}</div>
+    <div id="subtitle">{{ data.subtitle }}</div>
+    <div id="teacher">{{ data.teacher }}</div>
   </a>
 </div>

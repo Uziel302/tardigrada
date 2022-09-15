@@ -167,7 +167,11 @@
             <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">
               <img [attr.src]="file" class="photoPreview" />
             </a>
-            <a *ngIf="!parsing.isImage(file)" [attr.href]="file" target="_blank">
+            <a
+              *ngIf="!parsing.isImage(file)"
+              [attr.href]="file"
+              target="_blank"
+            >
               <img src="/assets/images/pdf-icon.png" class="photoPreview" />
             </a>
             <a

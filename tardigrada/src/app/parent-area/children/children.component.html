@@ -1,12 +1,35 @@
 <div id="wrapper">
   <div id="form">
     <div id="inner-form">
-      Please fill in details of your child, you will later have an option to add more children.
-      <br />Имя: <input [(ngModel)]="childData.firstName" required minlength="3" #firstName="ngModel"/>
-      <br />Фамилия: <input [(ngModel)]="childData.lastName" required minlength="3" #lastName="ngModel"/>
-      <br />Отчество: <input [(ngModel)]="childData.fatherName" required minlength="3" #fatherName="ngModel"/>
+      Please fill in details of your child, you will later have an option to add
+      more children.
+      <br />Имя:
+      <input
+        [(ngModel)]="childData.firstName"
+        required
+        minlength="3"
+        #firstName="ngModel"
+      />
+      <br />Фамилия:
+      <input
+        [(ngModel)]="childData.lastName"
+        required
+        minlength="3"
+        #lastName="ngModel"
+      />
+      <br />Отчество:
+      <input
+        [(ngModel)]="childData.fatherName"
+        required
+        minlength="3"
+        #fatherName="ngModel"
+      />
       <br />Дата рождения:
-      <input [(ngModel)]="childData.dateOfBirth" required #dateOfBirth="ngModel"/>(дд.мм.гггг)
+      <input
+        [(ngModel)]="childData.dateOfBirth"
+        required
+        #dateOfBirth="ngModel"
+      />(дд.мм.гггг)
       <br />
       Класс:
       <input [(ngModel)]="childData.className" required minlength="3" />
@@ -14,12 +37,12 @@
       Предметы, которые вы хотели бы изучать:
       <input [(ngModel)]="childData.subjects" required minlength="3" />
       <br />Часовой пояс:
-      <input [(ngModel)]="childData.timezone" required minlength="3" /> 
+      <input [(ngModel)]="childData.timezone" required minlength="3" />
       <br />
       Опыт обучения в ZOOM:
       <input [(ngModel)]="childData.zoom" required minlength="3" />
       <br />девайс для занятия:
-      <input [(ngModel)]="childData.device" required minlength="3" /> 
+      <input [(ngModel)]="childData.device" required minlength="3" />
       <br />
       Страна, в которой вы сейчас находитесь:
       <input [(ngModel)]="childData.country" required minlength="3" />
@@ -37,8 +60,11 @@
 
       <div
         *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
-        class="alert">
-        <div *ngIf="firstName.errors?.['required']">First name is required.</div>
+        class="alert"
+      >
+        <div *ngIf="firstName.errors?.['required']">
+          First name is required.
+        </div>
         <div *ngIf="firstName.errors?.['minlength']">
           Name must be at least 3 characters long.
         </div>
@@ -46,7 +72,8 @@
 
       <div
         *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
-        class="alert">
+        class="alert"
+      >
         <div *ngIf="lastName.errors?.['required']">Last name is required.</div>
         <div *ngIf="lastName.errors?.['minlength']">
           Last name must be at least 3 characters long.
@@ -55,20 +82,28 @@
 
       <div
         *ngIf="fatherName.invalid && (fatherName.dirty || fatherName.touched)"
-        class="alert">
-        <div *ngIf="fatherName.errors?.['required']">Father name is required.</div>
+        class="alert"
+      >
+        <div *ngIf="fatherName.errors?.['required']">
+          Father name is required.
+        </div>
         <div *ngIf="fatherName.errors?.['minlength']">
           Father name must be at least 3 characters long.
         </div>
       </div>
 
       <div
-        *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)"
-        class="alert">
-        <div *ngIf="dateOfBirth.errors?.['required']">dateOfBirth is required.</div>
-      </div>      
+        *ngIf="
+          dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="dateOfBirth.errors?.['required']">
+          dateOfBirth is required.
+        </div>
+      </div>
 
-      <div>{{saveError}}</div>
+      <div>{{ saveError }}</div>
     </div>
   </div>
 </div>

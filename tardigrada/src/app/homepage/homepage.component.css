@@ -242,7 +242,9 @@
   margin-bottom: 30px;
 }
 
-#box-left, #box-center, #box-right {
+#box-left,
+#box-center,
+#box-right {
   display: flex;
   width: 25%;
 }
@@ -250,19 +252,17 @@
 #box-left {
   flex-basis: 0;
   flex-grow: 1;
-} 
+}
 
-#box-center{
+#box-center {
   flex-basis: 0;
   flex-grow: 1;
-
 }
 
 #box-right {
   flex-basis: 0;
   flex-grow: 1;
 }
-
 
 #box-left {
   justify-content: flex-end;

@@ -47,9 +47,7 @@
       <div>Your response</div>
       <textarea class="user-textarea" [(ngModel)]="homework.chwText"></textarea>
       <div class="response-buttons">
-        <ng-container
-          *ngFor="let file of parsing.parse(homework.chwFile)"
-        >
+        <ng-container *ngFor="let file of parsing.parse(homework.chwFile)">
           <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">
             <img [attr.src]="file" class="photoPreview" />
           </a>
@@ -73,9 +71,7 @@
       <div class="response-title">Student's response:</div>
       <textarea class="user-textarea">{{ homework.chwText }}</textarea>
       <div class="response-buttons">
-        <ng-container
-          *ngFor="let file of parsing.parse(homework.chwFile)"
-        >
+        <ng-container *ngFor="let file of parsing.parse(homework.chwFile)">
           <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">
             <img [attr.src]="file" class="photoPreview" />
           </a>
@@ -86,19 +82,24 @@
       </div>
       <div class="half-container form-half" *ngIf="!isStudent">
         <div class="response-title">Teacher's feedback</div>
-        <textarea class="user-textarea" [(ngModel)]="homework.fhwText"></textarea>
+        <textarea
+          class="user-textarea"
+          [(ngModel)]="homework.fhwText"
+        ></textarea>
         <div class="response-buttons">
-          <ng-container
-            *ngFor="let file of parsing.parse(homework.fhwFile)"
-          >
+          <ng-container *ngFor="let file of parsing.parse(homework.fhwFile)">
             <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">
               <img [attr.src]="file" class="photoPreview" />
             </a>
-            <a *ngIf="!parsing.isImage(file)" [attr.href]="file" target="_blank">
+            <a
+              *ngIf="!parsing.isImage(file)"
+              [attr.href]="file"
+              target="_blank"
+            >
               <img src="/assets/images/pdf-icon.png" class="photoPreview" />
             </a>
           </ng-container>
-  
+
           <app-upload-photo
             (uploaded)="updateHwFeedbackFile($event, i)"
           ></app-upload-photo>

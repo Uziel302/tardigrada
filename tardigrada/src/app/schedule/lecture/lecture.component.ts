@@ -5,10 +5,9 @@ import { ILecture } from 'src/app/models/lecture';
 @Component({
   selector: 'app-lecture',
   templateUrl: './lecture.component.html',
-  styleUrls: ['./lecture.component.css']
+  styleUrls: ['./lecture.component.css'],
 })
 export class LectureComponent implements OnInit {
-
   @Input() data: ILecture = {
     id: 0,
     title: '',
@@ -24,9 +23,7 @@ export class LectureComponent implements OnInit {
     book: '',
   };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

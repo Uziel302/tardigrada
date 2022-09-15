@@ -65,9 +65,15 @@ export class LoginService {
     lastName: string,
     email: string,
     telegram: string,
-    password: string,
+    password: string
   ): void {
-    const authData: INewUser = { firstName, lastName, email, telegram, password };
+    const authData: INewUser = {
+      firstName,
+      lastName,
+      email,
+      telegram,
+      password,
+    };
     this.http.post(environment.apiEndPoint + 'signup', authData).subscribe(
       (data) => {
         this.login(email, password);

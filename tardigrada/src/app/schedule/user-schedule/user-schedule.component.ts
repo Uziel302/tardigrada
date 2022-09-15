@@ -7,12 +7,11 @@ import { LoginService } from '../../login-screen/login.service';
 @Component({
   selector: 'app-user-schedule',
   templateUrl: './user-schedule.component.html',
-  styleUrls: ['./user-schedule.component.css']
+  styleUrls: ['./user-schedule.component.css'],
 })
 export class UserScheduleComponent implements OnInit {
-
   @Input() userId: number = 0;
-  @Output() lectureChange = new EventEmitter<number>;
+  @Output() lectureChange = new EventEmitter<number>();
 
   public hourColumn: string[] = [
     '09:00',
@@ -27,33 +26,36 @@ export class UserScheduleComponent implements OnInit {
     '18:00',
     '19:00',
     '20:00',
-    '21:00'
+    '21:00',
   ];
 
   private subscriptions: Subscription[] = [];
 
   constructor(
     public scheduleService: ScheduleService,
-    public loginService: LoginService,
-  ) { }
+    public loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     //TODO - get from db only details of the current child's lectures
     this.subscriptions.push(
-      this.scheduleService.getChildLectures(this.loginService.currentChildId).subscribe((childLectures: any) => {
-        this.scheduleService.processChildLectures(childLectures);
-        //only get list of lectures after getting child lectures, to ensure childLectures data is valid on initiation
-        this.subscriptions.push(
-          this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
-            this.scheduleService.processLecturesData(lecturesData);
-          })
-        );
-      })
+      this.scheduleService
+        .getChildLectures(this.loginService.currentChildId)
+        .subscribe((childLectures: any) => {
+          this.scheduleService.processChildLectures(childLectures);
+          //only get list of lectures after getting child lectures, to ensure childLectures data is valid on initiation
+          this.subscriptions.push(
+            this.scheduleService
+              .getLecturesData()
+              .subscribe((lecturesData: any) => {
+                this.scheduleService.processLecturesData(lecturesData);
+              })
+          );
+        })
     );
   }
 
-  onLectureChange(event: number){
+  onLectureChange(event: number) {
     this.lectureChange.emit(event);
   }
-
 }

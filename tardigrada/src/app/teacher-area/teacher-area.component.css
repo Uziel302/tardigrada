@@ -108,7 +108,8 @@
   width: 38%;
 }
 
-#note-line, #link-line {
+#note-line,
+#link-line {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -119,7 +120,8 @@
   text-align: center;
 }
 
-#note-line .purple-button, #note-line app-upload-photo {
+#note-line .purple-button,
+#note-line app-upload-photo {
   margin-left: 40px;
 }
 

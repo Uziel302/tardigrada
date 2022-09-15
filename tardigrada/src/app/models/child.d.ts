@@ -17,4 +17,3 @@ export interface IChild {
   cover: string | null;
   profile: string | null;
 }
-  

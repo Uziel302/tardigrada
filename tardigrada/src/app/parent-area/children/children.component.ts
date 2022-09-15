@@ -38,13 +38,13 @@ export class ChildrenComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private loginService: LoginService,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
 
   saveChild() {
-    if(!this.childData.firstName){
+    if (!this.childData.firstName) {
       return;
     }
     this.http

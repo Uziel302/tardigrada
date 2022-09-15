@@ -1,5 +1,16 @@
-<div id="lecture-container" (click)="selectLecture()" [style.cursor]="data[selected].title && belongs() ? 'pointer' : ''" [style.background]="data[selected].background ? data[selected].background : (rowNumber % 2 ? '#d8def2' : '#d8d7e1' )">
+<div
+  id="lecture-container"
+  (click)="selectLecture()"
+  [style.cursor]="data[selected].title && belongs() ? 'pointer' : ''"
+  [style.background]="
+    data[selected].background
+      ? data[selected].background
+      : rowNumber % 2
+      ? '#d8def2'
+      : '#d8d7e1'
+  "
+>
   <div id="lecture-title">
-    {{data[selected].title}}
+    {{ data[selected].title }}
   </div>
 </div>

@@ -23,8 +23,17 @@ const {
   getChildLectures,
   saveStationery,
 } = require("./controllers/lectures.controller");
-const { saveAnnoying, getAnnoying } = require("./controllers/admin-changes.controller");
-const { getHomework, getHomeworks, saveHomework, saveHwResponse, saveHwFeedback } = require("./controllers/homework.controller");
+const {
+  saveAnnoying,
+  getAnnoying,
+} = require("./controllers/admin-changes.controller");
+const {
+  getHomework,
+  getHomeworks,
+  saveHomework,
+  saveHwResponse,
+  saveHwFeedback,
+} = require("./controllers/homework.controller");
 
 router.post("/api/login", loginAndValidation);
 router.post("/api/signup", signupAndValidation);

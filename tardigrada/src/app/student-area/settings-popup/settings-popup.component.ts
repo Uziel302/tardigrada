@@ -6,27 +6,23 @@ import { IChild } from 'src/app/models/child';
 @Component({
   selector: 'app-settings-popup',
   templateUrl: './settings-popup.component.html',
-  styleUrls: ['./settings-popup.component.css']
+  styleUrls: ['./settings-popup.component.css'],
 })
 export class SettingsPopupComponent implements OnInit {
-
   @Input() isStudent: boolean = true;
   @Input() showSettings: boolean = true;
-  @Output() switchChild = new EventEmitter<IChild>;
-  @Output() settingsChange = new EventEmitter<boolean>;
+  @Output() switchChild = new EventEmitter<IChild>();
+  @Output() settingsChange = new EventEmitter<boolean>();
 
-  constructor(
-    public loginService: LoginService,
-  ) { }
+  constructor(public loginService: LoginService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  stopProp(event: any){
+  stopProp(event: any) {
     event.stopPropagation();
   }
 
-  changeChild(child: IChild){
+  changeChild(child: IChild) {
     this.switchChild.emit(child);
   }
 
@@ -34,5 +30,4 @@ export class SettingsPopupComponent implements OnInit {
     this.showSettings = false;
     this.settingsChange.emit(false);
   }
-
 }

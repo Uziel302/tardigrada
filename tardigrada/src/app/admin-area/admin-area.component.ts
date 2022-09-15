@@ -8,7 +8,7 @@ import { ScheduleService } from '../schedule/schedule.service';
 @Component({
   selector: 'app-admin-area',
   templateUrl: './admin-area.component.html',
-  styleUrls: ['./admin-area.component.css']
+  styleUrls: ['./admin-area.component.css'],
 })
 export class AdminAreaComponent implements OnInit {
   public annoyingText: string = '';
@@ -20,11 +20,10 @@ export class AdminAreaComponent implements OnInit {
 
   private subscriptions: Subscription[] = [];
 
-
   constructor(
     private http: HttpClient,
-    public scheduleService: ScheduleService,
-  ) { }
+    public scheduleService: ScheduleService
+  ) {}
 
   ngOnInit(): void {
     this.subscriptions.push(
@@ -34,18 +33,18 @@ export class AdminAreaComponent implements OnInit {
     );
   }
 
-  submit(){
-    this.http.post(environment.apiEndPoint + 'saveAnnoying', {
-      text: this.annoyingText,
-      color: this.annoyingColor,
-      size: this.annoyingSize,
-    }).subscribe(
-      (data) => {
-        this.saved = true;
-      },
-      (error) => {
-      }
-    );
+  submit() {
+    this.http
+      .post(environment.apiEndPoint + 'saveAnnoying', {
+        text: this.annoyingText,
+        color: this.annoyingColor,
+        size: this.annoyingSize,
+      })
+      .subscribe(
+        (data) => {
+          this.saved = true;
+        },
+        (error) => {}
+      );
   }
-
 }

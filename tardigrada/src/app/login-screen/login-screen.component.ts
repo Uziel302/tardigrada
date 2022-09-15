@@ -15,9 +15,7 @@ export class LoginScreenComponent implements OnInit {
   public telegram: string = '';
   public password: string = '';
 
-  constructor(
-    public loginService: LoginService
-  ) {}
+  constructor(public loginService: LoginService) {}
 
   ngOnInit(): void {}
 
@@ -25,11 +23,17 @@ export class LoginScreenComponent implements OnInit {
     this.loginService.login(this.email, this.password);
   }
 
-  registrationClick(){
-    if(this.login){
+  registrationClick() {
+    if (this.login) {
       this.login = !this.login;
     } else {
-      this.loginService.createUser(this.firstName, this.lastName, this.email, this.telegram, this.password);
+      this.loginService.createUser(
+        this.firstName,
+        this.lastName,
+        this.email,
+        this.telegram,
+        this.password
+      );
     }
   }
 }

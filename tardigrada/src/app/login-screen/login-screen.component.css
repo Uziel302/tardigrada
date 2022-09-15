@@ -1,5 +1,5 @@
 input {
-  background-color: #220315!important;
+  background-color: #220315 !important;
   color: white;
   font-size: 21px;
   height: 45px;
@@ -24,7 +24,7 @@ input {
   justify-content: center;
   align-items: center;
   color: white;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
   font-size: 21px;
 }
 

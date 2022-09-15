@@ -18,7 +18,7 @@ export class ScheduleTableComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {        
+      this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
         this.scheduleService.processLecturesData(lecturesData);
       })
     );
@@ -35,5 +35,4 @@ export class ScheduleTableComponent implements OnInit, OnDestroy {
       ? this.checkedAges.some((x) => x >= min && x <= max)
       : false;
   }
-
 }

@@ -134,7 +134,7 @@ export class ScheduleService {
       )
       .subscribe(
         (data) => {
-          if(data){
+          if (data) {
             this.savedHomeworkText = data.text;
             this.savedHomeworkFile = data.file;
           }
@@ -143,7 +143,6 @@ export class ScheduleService {
       );
   }
 
-
   getHomeworks(id: number, childId: number) {
     this.http
       .get<IHomeWork[]>(
@@ -151,7 +150,7 @@ export class ScheduleService {
       )
       .subscribe(
         (data) => {
-          if(data){
+          if (data) {
             this.currentHomeworks = data;
           }
         },

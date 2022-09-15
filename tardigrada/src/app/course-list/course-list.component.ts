@@ -18,7 +18,7 @@ export class CourseListComponent implements OnInit {
 
   constructor(
     public scheduleService: ScheduleService,
-    public loginService: LoginService,
+    public loginService: LoginService
   ) {}
 
   ngOnInit(): void {
@@ -29,18 +29,26 @@ export class CourseListComponent implements OnInit {
     );
 
     this.subscriptions.push(
-      this.scheduleService.getChildLectures(this.loginService.currentChildId).subscribe((childLectures: any) => {
-        this.scheduleService.processChildLectures(childLectures);
-      })
+      this.scheduleService
+        .getChildLectures(this.loginService.currentChildId)
+        .subscribe((childLectures: any) => {
+          this.scheduleService.processChildLectures(childLectures);
+        })
     );
   }
 
   toggleAttendance(lectureId: number) {
-    if(this.scheduleService.childLectures[lectureId]){
-      this.scheduleService.leaveLecture(lectureId, this.loginService.currentChildId);
+    if (this.scheduleService.childLectures[lectureId]) {
+      this.scheduleService.leaveLecture(
+        lectureId,
+        this.loginService.currentChildId
+      );
       this.scheduleService.childLectures[lectureId] = false;
     } else {
-      this.scheduleService.joinLecture(lectureId, this.loginService.currentChildId);
+      this.scheduleService.joinLecture(
+        lectureId,
+        this.loginService.currentChildId
+      );
       this.scheduleService.childLectures[lectureId] = true;
     }
   }

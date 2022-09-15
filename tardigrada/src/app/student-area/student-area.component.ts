@@ -19,8 +19,7 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
   constructor(
     public scheduleService: ScheduleService,
     public loginService: LoginService,
-    public parsing: ParsingService,
-
+    public parsing: ParsingService
   ) {}
 
   ngOnInit(): void {
@@ -59,5 +58,4 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     this.scheduleService.openHwResponse = [];
     this.scheduleService.getHomeworks(event, this.loginService.currentChildId);
   }
-
 }

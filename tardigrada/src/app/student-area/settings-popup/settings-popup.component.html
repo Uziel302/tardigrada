@@ -4,14 +4,14 @@
     <div class="upload-container">
       <app-upload-photo
         [uploadColumn]="'cover'"
-        [uploadTable]="isStudent ? 'children': 'teachers'"
+        [uploadTable]="isStudent ? 'children' : 'teachers'"
       ></app-upload-photo>
       <div>upload cover photo</div>
     </div>
     <div class="upload-container">
       <app-upload-photo
         [uploadColumn]="'profile'"
-        [uploadTable]="isStudent ? 'children': 'teachers'"
+        [uploadTable]="isStudent ? 'children' : 'teachers'"
       ></app-upload-photo>
       <div>upload profile photo</div>
     </div>

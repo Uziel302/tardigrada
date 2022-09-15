@@ -23,7 +23,7 @@ export class UploadPhotoComponent {
     private http: HttpClient,
     public loginService: LoginService,
     public scheduleService: ScheduleService,
-    public parsing: ParsingService,
+    public parsing: ParsingService
   ) {}
 
   onFileSelected(event: any) {

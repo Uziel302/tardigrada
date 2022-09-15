@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.css']
+  styleUrls: ['./schedule.component.css'],
 })
 export class ScheduleComponent implements OnInit {
   public selectedDay: number = 0;
@@ -18,20 +18,20 @@ export class ScheduleComponent implements OnInit {
     [6, 'Воскресенье'],
     [7, 'Все'],
   ]);
-  public ageList: number[] = [4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+  public ageList: number[] = [
+    4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+  ];
   public checkedAges: number[] = [...this.ageList];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  checkboxChanged(age: number){
-    if(this.checkedAges.includes(age)){
-      this.checkedAges.splice(this.checkedAges.indexOf(age),1);
+  checkboxChanged(age: number) {
+    if (this.checkedAges.includes(age)) {
+      this.checkedAges.splice(this.checkedAges.indexOf(age), 1);
     } else {
       this.checkedAges.push(age);
     }
   }
-
 }

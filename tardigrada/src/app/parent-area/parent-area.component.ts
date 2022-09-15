@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-parent-area',
   templateUrl: './parent-area.component.html',
-  styleUrls: ['./parent-area.component.css']
+  styleUrls: ['./parent-area.component.css'],
 })
 export class ParentAreaComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

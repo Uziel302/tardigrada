@@ -26,16 +26,21 @@ const routes: Routes = [
   { path: 'student', component: StudentAreaComponent },
   { path: 'admin', component: AdminAreaComponent },
   { path: 'privacy', component: PrivacyComponent },
-  { path: 'parent', children:
-  [ { path: '', redirectTo: 'children', pathMatch: 'full' },
-    { path: 'children', component: ChildrenComponent },
-    { path: 'account', component: AccountComponent },
-  ]},
+  {
+    path: 'parent',
+    children: [
+      { path: '', redirectTo: 'children', pathMatch: 'full' },
+      { path: 'children', component: ChildrenComponent },
+      { path: 'account', component: AccountComponent },
+    ],
+  },
   { path: 'teacher', component: TeacherAreaComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
