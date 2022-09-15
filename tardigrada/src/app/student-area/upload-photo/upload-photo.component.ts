@@ -59,13 +59,11 @@ export class UploadPhotoComponent {
             this.scheduleService.selectedLecture.book = filename;
           }
           if (this.uploadColumn === 'stationeryFile') {
-            let files = JSON.parse(
-              this.scheduleService.selectedLecture.stationeryFile
-            );
-            files = files ?? [];
-            files.push(filename);
             this.scheduleService.selectedLecture.stationeryFile =
-              JSON.stringify(files);
+              this.scheduleService.pushToString(
+                this.scheduleService.selectedLecture.stationeryFile,
+                filename
+              );
           }
         }, 5);
       });

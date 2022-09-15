@@ -177,7 +177,13 @@
         <br />
         <div id="stationery-container">
           <div>{{ scheduleService.selectedLecture.stationeryText }}</div>
-          <ng-container *ngFor="let file of scheduleService.stationeryFiles()">
+          <ng-container
+            *ngFor="
+              let file of scheduleService.parse(
+                scheduleService.selectedLecture.stationeryFile
+              )
+            "
+          >
             <a
               class="purple-button download-button"
               [attr.href]="file"
@@ -186,7 +192,7 @@
               <mat-icon>file_download</mat-icon>
             </a>
             <a *ngIf="isImage(file)" [attr.href]="file" target="_blank">
-              <img [attr.src]="file" id="photoPreview" />
+              <img [attr.src]="file" class="photoPreview" />
             </a>
           </ng-container>
         </div>

@@ -4,4 +4,3 @@ export interface ITeacher {
   cover: string | null;
   profile: string | null;
 }
-  

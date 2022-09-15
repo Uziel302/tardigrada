@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { IChild } from '../models/child';
 import { ILecture } from '../models/lecture';
+import { IHomeWork } from '../models/homework';
 
 @Injectable({ providedIn: 'root' })
 export class ScheduleService {
@@ -28,6 +29,7 @@ export class ScheduleService {
   public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
   public savedHomeworkText: string = '';
   public savedHomeworkFile: string = '';
+  public currentHomeworks: IHomeWork[] = [];
 
   public getLecturesData() {
     return this.http.get(environment.apiEndPoint + 'getLectures');
@@ -122,8 +124,20 @@ export class ScheduleService {
     return formatted;
   }
 
-  public stationeryFiles() {
-    return JSON.parse(this.selectedLecture.stationeryFile);
+  public parse(files: string) {
+    if(!files){
+      return [];
+    }
+    return JSON.parse(files);
+  }
+
+  public pushToString(origin: string, addition: string){
+    let files = JSON.parse(origin);
+    if(!files.length){
+      files = [];
+    }
+    files.push(addition);
+    return JSON.stringify(files);
   }
 
   getHomework(id: number) {
@@ -135,8 +149,26 @@ export class ScheduleService {
       )
       .subscribe(
         (data) => {
-          this.savedHomeworkText = data.text;
-          this.savedHomeworkFile = data.file;
+          if(data){
+            this.savedHomeworkText = data.text;
+            this.savedHomeworkFile = data.file;
+          }
+        },
+        (error) => {}
+      );
+  }
+
+
+  getHomeworks(id: number) {
+    this.http
+      .get<IHomeWork[]>(
+        environment.apiEndPoint + 'homeworks/?id=' + id
+      )
+      .subscribe(
+        (data) => {
+          if(data){
+            this.currentHomeworks = data;
+          }
         },
         (error) => {}
       );

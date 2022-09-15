@@ -118,6 +118,8 @@
   border-radius: 50%;
   cursor: pointer;
   margin: 0 30px;
+  height: 130px;
+  width: 130px;
 }
 
 .button-under-schedule {
@@ -190,6 +192,7 @@
 
 .half-container {
   flex: 1 1 0px;
+  margin: 20px 0;
 }
 
 #circle-container {
@@ -253,6 +256,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 #telegram-half .purple-button {
@@ -308,8 +312,8 @@
   width: 30px;
 }
 
-#photoPreview {
-  margin-left: 20px;
+.photoPreview {
+  margin-right: 20px;
   height: 66px;
   width: 66px;
 }
