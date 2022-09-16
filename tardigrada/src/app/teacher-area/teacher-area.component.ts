@@ -125,6 +125,7 @@ export class TeacherAreaComponent implements OnInit {
         (data) => {
           this.noteList.unshift({
             id: data.id,
+            lectureId: this.scheduleService.selectedLecture.id,
             note: this.currentNote ? this.currentNote : this.currentLink,
             link: this.currentLink,
           });

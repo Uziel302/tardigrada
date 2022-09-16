@@ -13,7 +13,7 @@ exports.saveNote = async (req, res) => {
 
 exports.getNotes = async (req, res) => {
   knex(tableName)
-    .select("id", "note", "link")
+    .select("id", "lectureId", "note", "link")
     .where({ userId: req.body.userId })
     .orderBy([{ column: "id", order: "desc" }])
     .then((u) => res.status(!!u ? 200 : 404).json(u))

@@ -312,16 +312,18 @@
     <div id="note-error">&nbsp;{{ currentError }}</div>
     <div class="note-container">
       <div class="single-note" *ngFor="let note of noteList; let i = index">
-        <a
-          *ngIf="note.link"
-          class="note-text"
-          [attr.href]="note.link"
-          target="_blank"
-          >{{ note.note }}</a
-        >
-        <a *ngIf="!note.link" class="note-text">{{ note.note }}</a>
-        <div class="delete-note" (click)="deleteNote(i)">
-          <mat-icon>close</mat-icon>
+        <div *ngIf="note.lectureId === scheduleService.selectedLecture.id">
+          <a
+            *ngIf="note.link"
+            class="note-text"
+            [attr.href]="note.link"
+            target="_blank"
+            >{{ note.note }}</a
+          >
+          <a *ngIf="!note.link" class="note-text">{{ note.note }}</a>
+          <div class="delete-note" (click)="deleteNote(i)">
+            <mat-icon>close</mat-icon>
+          </div>
         </div>
       </div>
     </div>
