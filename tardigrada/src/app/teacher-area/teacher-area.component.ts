@@ -190,7 +190,9 @@ export class TeacherAreaComponent implements OnInit {
   }
 
   onLectureChange(lectureId: number) {
-    this.getLectureChildren(lectureId);
-    this.scheduleService.getHomework(lectureId);
+    if(lectureId){
+      this.getLectureChildren(lectureId);
+      this.scheduleService.getHomework(lectureId);
+    }
   }
 }
