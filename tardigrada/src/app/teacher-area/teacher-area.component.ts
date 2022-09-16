@@ -41,6 +41,7 @@ export class TeacherAreaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loginService.currentChildId = 0;
     this.loadOrCreateTeacher();
     this.getNotes();
     this.getAnnoying();
@@ -150,6 +151,7 @@ export class TeacherAreaComponent implements OnInit {
       .subscribe(
         (data) => {
           this.loginService.teacher = data;
+          this.scheduleService.getPersonalSlots(0, this.loginService.teacher.userId);
         },
         (error) => {}
       );

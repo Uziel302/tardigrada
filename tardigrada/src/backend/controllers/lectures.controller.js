@@ -15,18 +15,18 @@ exports.getLectures = async (req, res) => {
 
 exports.getLectureChildren = async (req, res) => {
   knex("lecturesChildren as lc")
-  .select("c.*")
-  .where({ lectureId: req.query.lectureId })
-  .join("children as c", "c.id", "lc.childId")
-  .then((lectureChildren) => {
-    if (!lectureChildren) {
-      res.status(401).json({
-        message: "failed getting lectures of children from db",
-      });
-    } else {
-      res.status(200).json(lectureChildren);
-    }
-  });
+    .select("c.*")
+    .where({ lectureId: req.query.lectureId })
+    .join("children as c", "c.id", "lc.childId")
+    .then((lectureChildren) => {
+      if (!lectureChildren) {
+        res.status(401).json({
+          message: "failed getting lectures of children from db",
+        });
+      } else {
+        res.status(200).json(lectureChildren);
+      }
+    });
 };
 
 exports.getChildLectures = async (req, res) => {
@@ -81,4 +81,43 @@ exports.saveStationery = async (req, res) => {
     .where({ id: req.body.lectureId })
     .then((u) => res.status(!!u ? 200 : 404).send({ success: true }))
     .catch((e) => res.status(500).json(e));
+};
+
+exports.savePersonalSlot = async (req, res) => {
+  if(req.body.userId){
+    req.body.childId = 0;
+  }
+  if(req.body.isUpdate){
+    delete req.body.isUpdate;
+    knex("personalSlots")
+    .update(req.body)
+    .then((u) => res.status(!!u ? 200 : 404).send({ success: true }))
+    .catch((e) => res.status(500).json(e));
+  } else {
+    delete req.body.isUpdate;
+    knex("personalSlots")
+    .insert(req.body)
+    .then((u) => res.status(!!u ? 200 : 404).send({ success: true }))
+    .catch((e) => res.status(500).json(e));
+  }
+};
+
+exports.getPersonalSlots = async (req, res) => {
+  let whereObj = {};
+  if (req.query.childId) {
+    whereObj.childId = req.query.childId;
+  } else {
+    whereObj.userId = req.query.userId;
+  }
+  knex("personalSlots")
+    .where(whereObj)
+    .then((personalSlots) => {
+      if (!personalSlots) {
+        res.status(401).json({
+          message: "failed getting lectures of child from db",
+        });
+      } else {
+        res.status(200).json(personalSlots);
+      }
+    });
 };

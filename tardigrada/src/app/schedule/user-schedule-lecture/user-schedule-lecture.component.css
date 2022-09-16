@@ -12,3 +12,12 @@
 #lecture-title {
   padding: 5px;
 }
+
+#personalSlot {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 40px;
+  width: 100%;
+  padding-left: 10px;
+}

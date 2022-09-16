@@ -1,7 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { ILecture } from 'src/app/models/lecture';
 import { ScheduleService } from '../schedule.service';
+import { environment } from '../../../environments/environment';
+import { LoginService } from 'src/app/login-screen/login.service';
 
 @Component({
   selector: 'app-user-schedule-lecture',
@@ -29,7 +32,11 @@ export class UserScheduleLectureComponent implements OnInit {
   @Input() dayNumber: number = 0;
   @Output() lectureChange = new EventEmitter<number>();
 
-  constructor(public scheduleService: ScheduleService) {}
+  constructor(
+    public scheduleService: ScheduleService,
+    private http: HttpClient,
+    public loginService: LoginService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -37,8 +44,10 @@ export class UserScheduleLectureComponent implements OnInit {
     this.scheduleService.selectedLecture = this.data[this.selected];
     this.lectureChange.emit(this.data[this.selected].id);
     this.scheduleService.dayNumber = this.dayNumber;
-    let element = document.getElementById('course-anchor') as HTMLElement;
-    element.scrollIntoView({ behavior: 'smooth' });
+    if (this.data[this.selected].id) {
+      let element = document.getElementById('course-anchor') as HTMLElement;
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   belongs(): boolean {
@@ -51,5 +60,28 @@ export class UserScheduleLectureComponent implements OnInit {
       }
     }
     return true;
+  }
+
+  savePersonalSlot() {
+    let newText = this.scheduleService.personalSlots[this.dayNumber][this.rowNumber];
+    let oldText = this.scheduleService.personalSlotsOrig[this.dayNumber][this.rowNumber];
+    if(newText === oldText){
+      return;
+    }
+    
+    this.http
+      .post(environment.apiEndPoint + 'savePersonalSlot', {
+        childId: this.loginService.currentChildId,
+        userId: this.loginService.teacher.userId,
+        day: this.dayNumber,
+        hour: this.rowNumber,
+        text: newText,
+        isUpdate: oldText !== '',
+      })
+      .subscribe(
+        (data) => {
+        },
+        (error) => {}
+      );
   }
 }

@@ -23,6 +23,8 @@ const {
   getChildLectures,
   getLectureChildren,
   saveStationery,
+  getPersonalSlots,
+  savePersonalSlot,
 } = require("./controllers/lectures.controller");
 const {
   saveAnnoying,
@@ -42,6 +44,8 @@ router.get("/api/getLectures", getLectures);
 router.get("/api/getLectureChildren", getLectureChildren);
 router.post("/api/getChildLectures", getChildLectures);
 router.post("/api/saveStationery", saveStationery);
+router.post("/api/savePersonalSlot", savePersonalSlot);
+router.get("/api/getPersonalSlots", getPersonalSlots);
 router.get("/api/homework", getHomework);
 router.get("/api/homeworks", getHomeworks);
 router.post("/api/saveHomework", saveHomework);

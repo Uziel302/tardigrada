@@ -36,6 +36,8 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
         })
       );
     }
+
+    this.scheduleService.getPersonalSlots(this.loginService.currentChildId, 0);
   }
 
   ngOnDestroy(): void {
@@ -52,6 +54,7 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     this.scheduleService.savedHomeworkText = '';
     this.scheduleService.savedHomeworkFile = '';
     this.scheduleService.openHwResponse = [];
+    this.scheduleService.personalSlots = this.scheduleService.getEmptyPersonalSlots();
   }
 
   onLectureChange(event: number) {

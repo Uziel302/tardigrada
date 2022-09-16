@@ -31,6 +31,29 @@ export class ScheduleService {
   public savedHomeworkFile: string = '';
   public currentHomeworks: IHomeWork[] = [];
   public openHwResponse: boolean[] = [];
+  public personalSlots: string[][] = this.getEmptyPersonalSlots();
+  public personalSlotsOrig: string[][] = [];
+
+  constructor(private http: HttpClient) {}
+
+  public getPersonalSlots(childId: number, userId: number) {
+    let queryString = childId ? '/?childId=' + childId : '/?userId=' + userId
+    this.http
+      .get<{ day: number; hour: number; text: string }[]>(
+        environment.apiEndPoint + 'getPersonalSlots' + queryString
+      )
+      .subscribe(
+        (data) => {
+          this.personalSlots = this.getEmptyPersonalSlots();
+          this.personalSlotsOrig = this.getEmptyPersonalSlots();
+          for (let slot of data) {
+            this.personalSlots[slot.day][slot.hour] = slot.text;
+            this.personalSlotsOrig[slot.day][slot.hour] = slot.text;
+          }
+        },
+        (error) => {}
+      );
+  }
 
   public getLecturesData() {
     return this.http.get(environment.apiEndPoint + 'getLectures');
@@ -41,8 +64,6 @@ export class ScheduleService {
       childId,
     });
   }
-
-  constructor(private http: HttpClient) {}
 
   public getEmptyWeek() {
     let lessonsArray: ILecture[][][] = [];
@@ -69,6 +90,17 @@ export class ScheduleService {
       }
     }
     return lessonsArray;
+  }
+
+  public getEmptyPersonalSlots() {
+    let personalSlots: string[][] = [];
+    for (let i of [0, 1, 2, 3, 4, 5, 6]) {
+      personalSlots[i] = [];
+      for (let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) {
+        personalSlots[i][j] = '';
+      }
+    }
+    return personalSlots;
   }
 
   public joinLecture(lectureId: number, childId: number) {
@@ -146,7 +178,11 @@ export class ScheduleService {
   getHomeworks(lectureId: number, childId: number) {
     this.http
       .get<IHomeWork[]>(
-        environment.apiEndPoint + 'homeworks/?lectureId=' + lectureId + '&childId=' + childId
+        environment.apiEndPoint +
+          'homeworks/?lectureId=' +
+          lectureId +
+          '&childId=' +
+          childId
       )
       .subscribe(
         (data) => {
