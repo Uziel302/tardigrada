@@ -60,9 +60,7 @@ export class ScheduleService {
   }
 
   public getChildLectures(childId: number) {
-    return this.http.post(environment.apiEndPoint + 'getChildLectures', {
-      childId,
-    });
+    return this.http.get(environment.apiEndPoint + 'getChildLectures/?childId='+childId);
   }
 
   public getEmptyWeek() {
@@ -122,7 +120,11 @@ export class ScheduleService {
   }
 
   public processLecturesData(lecturesData: any) {
+    this.lessonsArray = this.getEmptyWeek();
     for (let lectureData of lecturesData) {
+      if(lectureData.lectureId){
+        this.childLectures[lectureData.lectureId] = true;
+      }
       const whichHalf = this.lessonsArray[lectureData.day][
         lectureData.hour - 9
       ][0]['id']
@@ -142,12 +144,6 @@ export class ScheduleService {
         stationeryFile: lectureData.stationeryFile,
         book: lectureData.book,
       };
-    }
-  }
-
-  public processChildLectures(childLectures: any) {
-    for (let childLecture of childLectures) {
-      this.childLectures[childLecture.lectureId] = true;
     }
   }
 

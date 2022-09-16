@@ -50,18 +50,6 @@ export class UserScheduleLectureComponent implements OnInit {
     }
   }
 
-  belongs(): boolean {
-    //empty data if the lecture doesn't belong to the child
-    if (!this.scheduleService.childLectures[this.data[0].id]) {
-      if (this.scheduleService.childLectures[this.data[1].id]) {
-        this.selected = 1;
-      } else {
-        this.data = [this.emptyLecture];
-      }
-    }
-    return true;
-  }
-
   savePersonalSlot() {
     let newText = this.scheduleService.personalSlots[this.dayNumber][this.rowNumber];
     let oldText = this.scheduleService.personalSlotsOrig[this.dayNumber][this.rowNumber];

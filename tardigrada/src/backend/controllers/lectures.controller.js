@@ -30,8 +30,9 @@ exports.getLectureChildren = async (req, res) => {
 };
 
 exports.getChildLectures = async (req, res) => {
-  knex("lecturesChildren")
-    .where({ childId: req.body.childId })
+  knex("lecturesChildren as lc")
+    .join("lectures as l", "l.id", "lc.lectureId")
+    .where({ childId: req.query.childId })
     .then((childLectures) => {
       if (!childLectures) {
         res.status(401).json({
@@ -84,21 +85,27 @@ exports.saveStationery = async (req, res) => {
 };
 
 exports.savePersonalSlot = async (req, res) => {
-  if(req.body.userId){
+  if (req.body.userId) {
     req.body.childId = 0;
   }
-  if(req.body.isUpdate){
+  if (req.body.isUpdate) {
     delete req.body.isUpdate;
     knex("personalSlots")
-    .update(req.body)
-    .then((u) => res.status(!!u ? 200 : 404).send({ success: true }))
-    .catch((e) => res.status(500).json(e));
+      .update(req.body)
+      .where({
+        childId: req.body.childId,
+        userId: req.body.userId,
+        day: req.body.day,
+        hour: req.body.hour,
+      })
+      .then((u) => res.status(!!u ? 200 : 404).send({ success: true }))
+      .catch((e) => res.status(500).json(e));
   } else {
     delete req.body.isUpdate;
     knex("personalSlots")
-    .insert(req.body)
-    .then((u) => res.status(!!u ? 200 : 404).send({ success: true }))
-    .catch((e) => res.status(500).json(e));
+      .insert(req.body)
+      .then((u) => res.status(!!u ? 200 : 404).send({ success: true }))
+      .catch((e) => res.status(500).json(e));
   }
 };
 

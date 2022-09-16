@@ -32,7 +32,7 @@ export class CourseListComponent implements OnInit {
       this.scheduleService
         .getChildLectures(this.loginService.currentChildId)
         .subscribe((childLectures: any) => {
-          this.scheduleService.processChildLectures(childLectures);
+          this.scheduleService.processLecturesData(childLectures);
         })
     );
   }

@@ -42,7 +42,7 @@ router.post("/api/login", loginAndValidation);
 router.post("/api/signup", signupAndValidation);
 router.get("/api/getLectures", getLectures);
 router.get("/api/getLectureChildren", getLectureChildren);
-router.post("/api/getChildLectures", getChildLectures);
+router.get("/api/getChildLectures", getChildLectures);
 router.post("/api/saveStationery", saveStationery);
 router.post("/api/savePersonalSlot", savePersonalSlot);
 router.get("/api/getPersonalSlots", getPersonalSlots);
