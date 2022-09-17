@@ -11,7 +11,7 @@ export class ScheduleService {
   public lecturesArray: ILecture[][][] = this.getEmptyWeek();
   public lecturesData: any[] = [];
   public childLectures: boolean[] = [];
-  public selectedLecture: ILecture = {
+  public emptyLecture: ILecture = {
     id: 0,
     title: '',
     subtitle: '',
@@ -25,6 +25,7 @@ export class ScheduleService {
     stationeryFile: '',
     book: '',
   };
+  public selectedLecture: ILecture = this.emptyLecture;
   public currentChildren: IChild[] = [];
   public dayNumber: number = 0;
   public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
@@ -86,20 +87,7 @@ export class ScheduleService {
       for (let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) {
         lecturesArray[i][j] = [];
         for (let k of [0, 1]) {
-          lecturesArray[i][j][k] = {
-            id: 0,
-            title: '',
-            subtitle: '',
-            teacher: '',
-            hour: '',
-            minAge: '',
-            maxAge: '',
-            background: '',
-            url: '',
-            stationeryText: '',
-            stationeryFile: '',
-            book: '',
-          };
+          lecturesArray[i][j][k] = this.emptyLecture;
         }
       }
     }

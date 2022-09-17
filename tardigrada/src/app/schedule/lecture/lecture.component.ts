@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { ILecture } from 'src/app/models/lecture';
+import { ScheduleService } from '../schedule.service';
 
 @Component({
   selector: 'app-lecture',
@@ -8,22 +9,11 @@ import { ILecture } from 'src/app/models/lecture';
   styleUrls: ['./lecture.component.css'],
 })
 export class LectureComponent implements OnInit {
-  @Input() data: ILecture = {
-    id: 0,
-    title: '',
-    subtitle: '',
-    teacher: '',
-    hour: '',
-    minAge: '',
-    maxAge: '',
-    background: '',
-    url: '',
-    stationeryText: '',
-    stationeryFile: '',
-    book: '',
-  };
+  @Input() data: ILecture = this.scheduleService.emptyLecture;
 
-  constructor() {}
+  constructor(
+    public scheduleService: ScheduleService,
+  ) {}
 
   ngOnInit(): void {}
 }

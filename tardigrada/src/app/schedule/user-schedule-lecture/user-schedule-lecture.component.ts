@@ -12,22 +12,8 @@ import { LoginService } from 'src/app/login-screen/login.service';
   styleUrls: ['./user-schedule-lecture.component.css'],
 })
 export class UserScheduleLectureComponent implements OnInit {
-  public emptyLecture = {
-    id: 0,
-    title: '',
-    subtitle: '',
-    teacher: '',
-    hour: '',
-    minAge: '',
-    maxAge: '',
-    background: '',
-    url: '',
-    stationeryText: '',
-    stationeryFile: '',
-    book: '',
-  };
   public selected: number = 0;
-  @Input() data: ILecture[] = [this.emptyLecture];
+  @Input() data: ILecture[] = [this.scheduleService.emptyLecture];
   @Input() rowNumber: number = 0;
   @Input() dayNumber: number = 0;
   @Output() lectureChange = new EventEmitter<number>();
