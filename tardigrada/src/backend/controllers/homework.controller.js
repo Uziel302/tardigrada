@@ -79,6 +79,7 @@ exports.getHomeworks = async (req, res) => {
   knex("homework as hw")
     .select(
       "hw.id as id",
+      "hw.lectureId as lectureId",
       "hw.text as hwText",
       "hw.file as hwFile",
       "chw.id as chwId",

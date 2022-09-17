@@ -2,6 +2,7 @@
   <div>домашка</div>
   <div *ngIf="!scheduleService.currentHomeworks.length">-</div>
   <div *ngFor="let homework of scheduleService.currentHomeworks; let i = index">
+    <div>{{ homework.lectureId }}</div>
     <textarea class="user-textarea">{{ homework.hwText }}</textarea>
     <div class="hwActions">
       <a
