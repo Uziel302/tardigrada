@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 120px;
   height: 30px;
 }
 
@@ -40,6 +40,12 @@
   padding-top: 5px;
 }
 
+#profile-teacher {
+  padding-top: 75px;
+  display: flex;
+  flex: 1 1 0px;
+}
+
 #profile-white-line {
   width: 100%;
   border-top: 1px solid white;
@@ -47,10 +53,7 @@
   margin-bottom: 150px;
 }
 
-#image-container {
-  display: flex;
-}
-
+#image-container,
 #image-container-teacher {
   display: flex;
 }
@@ -62,6 +65,15 @@
   padding-top: 24px;
   display: flex;
   flex-direction: column;
+}
+
+#name-teacher {
+  font-size: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 65px;
+  line-height: 120%;
 }
 
 #profile-image,
@@ -328,4 +340,103 @@
 #stationery-container div,
 #stationery-container .download-button {
   margin-right: 20px;
+}
+
+@media screen and (max-width: 1420px) {
+  .profile-image-border-child,
+  #profile-image-border-teacher {
+    width: 128px;
+    height: 128px;
+  }
+
+  #profile-image {
+    height: 122px;
+    width: 122px;
+  }
+
+  .profile-image-children {
+    height: 68px;
+    width: 68px;
+    margin: 0;
+  }
+
+  .profile-image-child,
+  #profile-image-teacher {
+    height: 126px;
+    width: 126px;
+  }
+
+  #name {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+
+  #profile {
+    margin-left: 20px;
+  }
+
+  #profile-white-line {
+    margin-top: -65px;
+    margin-bottom: 100px;
+  }
+
+  .instruction-line {
+    font-size: 20px;
+  }
+
+  #course-details,
+  #profile-teacher,
+  .two-column {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #subject {
+    font-size: 30px;
+    padding-right: 0;
+  }
+
+  #hour {
+    font-size: 20px;
+  }
+
+  #name-teacher {
+    padding-left: 0;
+    font-size: 30px;
+  }
+
+  #white-circle {
+    height: 180px;
+    width: 180px;
+  }
+
+  #circle-container {
+    height: 200px;
+    width: 200px;
+  }
+  #course-details {
+    padding-bottom: 0;
+  }
+
+  .two-column{
+    margin-top:10px
+  }
+
+  #telegram-half {
+    flex-direction: column-reverse;
+  }
+
+  #telegram-half .purple-button{
+    margin-top:25px;
+  }
+
+  #subject{
+    padding-top: 86px;
+  }
+
+  #profile-teacher {
+    padding-top: 25px;
+  }
 }

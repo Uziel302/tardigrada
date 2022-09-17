@@ -1,17 +1,4 @@
-#profile-teacher {
-  padding-top: 75px;
-  display: flex;
-  flex: 1 1 0px;
-}
 
-#name-teacher {
-  font-size: 44px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 65px;
-  line-height: 120%;
-}
 
 #name-title {
   font-size: 20px;

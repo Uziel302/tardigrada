@@ -28,6 +28,8 @@ export class UserScheduleComponent implements OnInit {
     '20:00',
     '21:00',
   ];
+  public innerWidth: number;
+  public mobileDay: number = new Date().getDay() === 0 ? 6 : new Date().getDay()-1;//make monday first day
 
   private subscriptions: Subscription[] = [];
 
@@ -37,6 +39,7 @@ export class UserScheduleComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
     if(this.loginService.currentChildId){
       this.subscriptions.push(
         this.scheduleService
@@ -50,5 +53,9 @@ export class UserScheduleComponent implements OnInit {
 
   onLectureChange(event: number) {
     this.lectureChange.emit(event);
+  }
+
+  onDayChange(day: any){
+    this.mobileDay = +day.target.value;
   }
 }

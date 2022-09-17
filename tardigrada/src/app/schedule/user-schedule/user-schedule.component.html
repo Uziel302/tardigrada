@@ -1,16 +1,25 @@
+<div id="day-select-container" *ngIf="innerWidth<1421">
+  <select id="day-select" (change)="onDayChange($event)">
+    <option *ngFor="let day of scheduleService.week; let i=index" [value]="i" [selected]="i===mobileDay">{{day}}</option>
+  </select>
+</div>
+
 <div id="container">
   <div id="hour-column">
     <div class="decor"></div>
     <div class="decor hour" *ngFor="let hour of hourColumn">{{ hour }}</div>
   </div>
 
-  <div *ngFor="let day of scheduleService.week; let i = index" class="day">
-    <div class="decor" [class.last]="i === 6">{{ day }}</div>
-    <app-user-schedule-day
-      [dailySchedule]="scheduleService.lecturesArray[i]"
-      [dayNumber]="i"
-      (lectureChange)="onLectureChange($event)"
-    ></app-user-schedule-day>
-  </div>
+  <ng-container *ngFor="let day of scheduleService.week; let i = index">
+    <div class="day" *ngIf="(innerWidth<1421 && i===mobileDay) || innerWidth>1419">
+      <div *ngIf="innerWidth>1420" class="decor" [class.last]="i === 6">{{ day }}</div>
+      <div *ngIf="innerWidth<1421" class="decor last">{{ day }}</div>
+      <app-user-schedule-day
+        [dailySchedule]="scheduleService.lecturesArray[i]"
+        [dayNumber]="i"
+        (lectureChange)="onLectureChange($event)"
+      ></app-user-schedule-day>
+    </div>
+  </ng-container>
   <div id="right-line"></div>
 </div>
