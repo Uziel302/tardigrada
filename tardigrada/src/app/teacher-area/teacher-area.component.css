@@ -81,16 +81,6 @@
   font-size: 14px;
 }
 
-#umbrella-container {
-  display: flex;
-  justify-content: center;
-}
-
-#umbrella {
-  width: 550px;
-  height: 550px;
-}
-
 #last-title {
   font-size: 55px;
   font-family: "Zhizn";
@@ -178,5 +168,7 @@
   .single-note{
     width: 100%;
   }
-
+  #chosen-child-name{
+    font-size: 30px;
+  }
 }
