@@ -67,6 +67,30 @@
         </div>
         <div *ngIf="responseSuccess[i]">Saved!</div>
       </div>
+
+      <div *ngIf="homework.fhwText">
+        <div class="half-container form-half">
+          <div class="response-title">Teacher's feedback</div>
+          <textarea
+            class="user-textarea"
+            [(ngModel)]="homework.fhwText"
+          ></textarea>
+          <div class="response-buttons">
+            <ng-container *ngFor="let file of parsing.parse(homework.fhwFile)">
+              <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">
+                <img [attr.src]="file" class="photoPreview" />
+              </a>
+              <a
+                *ngIf="!parsing.isImage(file)"
+                [attr.href]="file"
+                target="_blank"
+              >
+                <img src="/assets/images/pdf-icon.png" class="photoPreview" />
+              </a>
+            </ng-container>
+          </div>
+        </div>
+      </div>
     </div>
     <div *ngIf="location === 'teacher'">
       <div class="response-title">Student's response:</div>
@@ -81,7 +105,7 @@
           </a>
         </ng-container>
       </div>
-      <div class="half-container form-half" *ngIf="location === 'teacher'">
+      <div class="half-container form-half">
         <div class="response-title">Teacher's feedback</div>
         <textarea
           class="user-textarea"
