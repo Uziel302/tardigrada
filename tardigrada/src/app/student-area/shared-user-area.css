@@ -112,6 +112,10 @@
   padding-top: 25px;
 }
 
+.profile-image-children > img {
+  max-width: 150px;
+}
+
 #schedule {
   width: 100%;
   margin-bottom: 60px;
@@ -289,6 +293,12 @@
   height: 70px;
 }
 
+.profile-image-border-children {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 25px;
+}
+
 #profile-image-border,
 .profile-image-border-children {
   border: 1px solid white;
@@ -360,6 +370,11 @@
     margin: 0;
   }
 
+  .profile-image-border-children {
+    width: 70px;
+    height: 70px;
+  }
+
   .profile-image-child,
   #profile-image-teacher {
     height: 126px;
@@ -420,23 +435,35 @@
     padding-bottom: 0;
   }
 
-  .two-column{
-    margin-top:10px
+  .two-column {
+    margin-top: 10px;
+  }
+
+  .form-half {
+    width: 100%;
   }
 
   #telegram-half {
     flex-direction: column-reverse;
   }
 
-  #telegram-half .purple-button{
-    margin-top:25px;
+  #telegram-half .purple-button {
+    margin-top: 25px;
   }
 
-  #subject{
+  #subject {
     padding-top: 86px;
   }
 
   #profile-teacher {
     padding-top: 25px;
+  }
+
+  #stationery-container {
+    flex-wrap: wrap;
+  }
+
+  .child-name {
+    text-align: left;
   }
 }

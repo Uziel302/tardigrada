@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-#child-name {
+.child-name {
   padding-left: 10px;
   font-size: 20px;
 }
@@ -33,12 +33,6 @@
   font-size: 40px;
   padding-top: 30px;
   font-family: "helvetica", "Ubuntu";
-}
-
-.profile-image-border-children {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 25px;
 }
 
 .half-container {
@@ -153,4 +147,36 @@
 
 #savedHomework {
   margin: 15px 0;
+}
+
+#note-buttons{
+  display: flex;
+}
+
+@media screen and (max-width: 1420px) {
+  .child-container {
+    margin: 0;
+  }
+
+  #create-homework{
+    margin-top: 100px;
+  }
+
+  #last-title {
+    font-size: 30px;
+  }
+
+  #note-line, #link-line {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .small-textarea {
+    width: 100%;
+  }
+
+  .single-note{
+    width: 100%;
+  }
+
 }

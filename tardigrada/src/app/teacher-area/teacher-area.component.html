@@ -165,7 +165,7 @@
                 />
               </div>
             </div>
-            <div id="child-name">
+            <div class="child-name">
               {{ child.firstName + " " + child.lastName }}
             </div>
           </div>
@@ -184,15 +184,15 @@
               )
             "
           >
-            <a
-              class="purple-button download-button"
-              [attr.href]="file"
-              download
-            >
-              <mat-icon>file_download</mat-icon>
-            </a>
             <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">
               <img [attr.src]="file" class="photoPreview" />
+            </a>
+            <a
+              *ngIf="!parsing.isImage(file)"
+              [attr.href]="file"
+              target="_blank"
+            >
+              <img src="/assets/images/pdf-icon.png" class="photoPreview" />
             </a>
           </ng-container>
         </div>
@@ -209,7 +209,7 @@
           </div>
         </div>
 
-        <div>домашка</div>
+        <div id="create-homework">домашка</div>
         <div id="savedHomework">
           {{ scheduleService.savedHomeworkText }}&nbsp;
         </div>
@@ -288,15 +288,17 @@
         [(ngModel)]="currentNote"
         placeholder="note text"
       ></textarea>
-      <div
-        class="purple-button link-icon"
-        (click)="showLinkInput = !showLinkInput"
-      >
-        <mat-icon>link</mat-icon>
-      </div>
-      <app-upload-photo (uploaded)="updateNoteFile($event)"></app-upload-photo>
-      <div class="purple-button link-icon" (click)="saveNote()">
-        <mat-icon>save</mat-icon>
+      <div id="note-buttons">
+        <div
+          class="purple-button link-icon"
+          (click)="showLinkInput = !showLinkInput"
+        >
+          <mat-icon>link</mat-icon>
+        </div>
+        <app-upload-photo (uploaded)="updateNoteFile($event)"></app-upload-photo>
+        <div class="purple-button link-icon" (click)="saveNote()">
+          <mat-icon>save</mat-icon>
+        </div>
       </div>
     </div>
     <div id="link-line">
@@ -311,7 +313,7 @@
     <div class="separating-space"></div>
     <div id="note-error">&nbsp;{{ currentError }}</div>
     <div class="note-container">
-      <div class="single-note" *ngFor="let note of noteList; let i = index">
+      <ng-container class="single-note" *ngFor="let note of noteList; let i = index">
         <div *ngIf="note.lectureId === scheduleService.selectedLecture.id">
           <a
             *ngIf="note.link"
@@ -325,7 +327,7 @@
             <mat-icon>close</mat-icon>
           </div>
         </div>
-      </div>
+      </ng-container>
     </div>
   </div>
 

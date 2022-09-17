@@ -120,6 +120,7 @@ export class TeacherAreaComponent implements OnInit {
       .post<{ id: number }>(environment.apiEndPoint + 'saveNote', {
         note: this.currentNote,
         link: this.currentLink,
+        lectureId: this.scheduleService.selectedLecture.id,
       })
       .subscribe(
         (data) => {
