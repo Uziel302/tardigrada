@@ -65,7 +65,9 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
 
   showHomeworks(){
     this.scheduleService.selectedLecture = this.scheduleService.emptyLecture;
-    this.showHomework = !this.showHomeworks;
-    this.scheduleService.getHomeworks(0, this.loginService.currentChildId);
+    this.showHomework = !this.showHomework;
+    if(this.showHomework){
+      this.scheduleService.getHomeworks(0, this.loginService.currentChildId);
+    }
   }
 }
