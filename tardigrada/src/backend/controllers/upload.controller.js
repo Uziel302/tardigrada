@@ -9,6 +9,8 @@ exports.saveToDb = async (req, res, filename) => {
     whereObj.id = req.body.childId;
   } else if (req.body.uploadTable === "teachers") {
     whereObj.userId = req.body.userId;
+  } else if (req.body.uploadColumn === "book") {
+    whereObj.id = req.body.lectureId;
   } else {
     return res.status(200).send({ filename: fullPath });
   }
