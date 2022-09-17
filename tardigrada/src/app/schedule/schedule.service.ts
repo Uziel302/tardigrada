@@ -8,7 +8,8 @@ import { IHomeWork } from '../models/homework';
 
 @Injectable({ providedIn: 'root' })
 export class ScheduleService {
-  public lessonsArray: ILecture[][][] = this.getEmptyWeek();
+  public lecturesArray: ILecture[][][] = this.getEmptyWeek();
+  public lecturesData: any[] = [];
   public childLectures: boolean[] = [];
   public selectedLecture: ILecture = {
     id: 0,
@@ -66,7 +67,6 @@ export class ScheduleService {
   }
 
   public getTeacherLectures(teacherId: number) {
-    debugger;
     this.http
       .get(
         environment.apiEndPoint + 'getTeacherLectures/?teacherId=' + teacherId
@@ -80,13 +80,13 @@ export class ScheduleService {
   }
 
   public getEmptyWeek() {
-    let lessonsArray: ILecture[][][] = [];
+    let lecturesArray: ILecture[][][] = [];
     for (let i of [0, 1, 2, 3, 4, 5, 6]) {
-      lessonsArray[i] = [];
+      lecturesArray[i] = [];
       for (let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) {
-        lessonsArray[i][j] = [];
+        lecturesArray[i][j] = [];
         for (let k of [0, 1]) {
-          lessonsArray[i][j][k] = {
+          lecturesArray[i][j][k] = {
             id: 0,
             title: '',
             subtitle: '',
@@ -103,7 +103,7 @@ export class ScheduleService {
         }
       }
     }
-    return lessonsArray;
+    return lecturesArray;
   }
 
   public getEmptyPersonalSlots() {
@@ -136,17 +136,18 @@ export class ScheduleService {
   }
 
   public processLecturesData(lecturesData: any) {
-    this.lessonsArray = this.getEmptyWeek();
+    this.lecturesArray = this.getEmptyWeek();
+    this.lecturesData = lecturesData;
     for (let lectureData of lecturesData) {
       if (lectureData.lectureId) {
         this.childLectures[lectureData.lectureId] = true;
       }
-      const whichHalf = this.lessonsArray[lectureData.day][
+      const whichHalf = this.lecturesArray[lectureData.day][
         lectureData.hour - 9
       ][0]['id']
         ? 1
         : 0;
-      this.lessonsArray[lectureData.day][lectureData.hour - 9][whichHalf] = {
+      this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] = {
         id: lectureData.id,
         title: lectureData.title,
         subtitle: lectureData.subtitle,
@@ -188,11 +189,18 @@ export class ScheduleService {
   }
 
   getHomeworks(lectureId: number, childId: number) {
+    let lectures = '';
+    if (!lectureId) {
+      for(let lecture of this.lecturesData){
+        lectures = lectures ? lectures + ',' : lectures;
+        lectures += lecture.id;
+      }
+    }
     this.http
       .get<IHomeWork[]>(
         environment.apiEndPoint +
           'homeworks/?lectureId=' +
-          lectureId +
+          (lectureId ? lectureId : lectures) +
           '&childId=' +
           childId
       )

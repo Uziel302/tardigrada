@@ -91,7 +91,7 @@ exports.getHomeworks = async (req, res) => {
       "hw.id": "chw.homeworkId",
       "chw.childId":  knex.raw('?', [req.query.childId]),
     })
-    .where({ "hw.lectureId": req.query.lectureId })
+    .whereIn("hw.lectureId", JSON.parse("[" + req.query.lectureId + "]"))
     .orderBy([{ column: "hw.id", order: "desc" }])
     .then((homeworks) => {
       if (!homeworks) {

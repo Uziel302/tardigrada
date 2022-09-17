@@ -7,7 +7,7 @@
   <div *ngFor="let day of scheduleService.week; let i = index" class="day">
     <div class="decor" [class.last]="i === 6">{{ day }}</div>
     <app-user-schedule-day
-      [dailySchedule]="scheduleService.lessonsArray[i]"
+      [dailySchedule]="scheduleService.lecturesArray[i]"
       [dayNumber]="i"
       (lectureChange)="onLectureChange($event)"
     ></app-user-schedule-day>
