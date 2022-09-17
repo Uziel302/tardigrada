@@ -30,6 +30,7 @@ exports.saveHwResponse = async (req, res) => {
         }
       });
   } else {
+    delete req.body.chwId;
     knex("childrenHomework")
       .insert(req.body)
       .then((hwResponse) => {
