@@ -44,6 +44,10 @@ input {
   display: flex;
 }
 
+#form-column {
+  display: flex;
+}
+
 #names-column div {
   margin-bottom: 55px;
   margin-top: 15px;
@@ -110,4 +114,39 @@ input {
   margin-top: 30px;
   width: 80px;
   height: 80px;
+}
+
+@media screen and (max-width: 1420px) {
+  #animal,
+  #right-flower,
+  #white-line {
+    display: none;
+  }
+
+  #columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input {
+    width: 200px;
+    margin-left: 10px;
+  }
+
+  #columns {
+    margin-top: 50px;
+  }
+
+  .button-wrapper {
+    margin-left: 0;
+  }
+
+  #bottom-line {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  #dark-wrapper{
+    border: none;
+  }
 }
