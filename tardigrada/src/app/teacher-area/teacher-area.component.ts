@@ -152,7 +152,8 @@ export class TeacherAreaComponent implements OnInit {
       .subscribe(
         (data) => {
           this.loginService.teacher = data;
-          this.scheduleService.getPersonalSlots(0, this.loginService.teacher.userId);
+          this.scheduleService.getTeacherLectures(data.userId);
+          this.scheduleService.getPersonalSlots(0, data.userId);
         },
         (error) => {}
       );

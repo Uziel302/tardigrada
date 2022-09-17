@@ -37,7 +37,7 @@ export class ScheduleService {
   constructor(private http: HttpClient) {}
 
   public getPersonalSlots(childId: number, userId: number) {
-    let queryString = childId ? '/?childId=' + childId : '/?userId=' + userId
+    let queryString = childId ? '/?childId=' + childId : '/?userId=' + userId;
     this.http
       .get<{ day: number; hour: number; text: string }[]>(
         environment.apiEndPoint + 'getPersonalSlots' + queryString
@@ -60,7 +60,23 @@ export class ScheduleService {
   }
 
   public getChildLectures(childId: number) {
-    return this.http.get(environment.apiEndPoint + 'getChildLectures/?childId='+childId);
+    return this.http.get(
+      environment.apiEndPoint + 'getChildLectures/?childId=' + childId
+    );
+  }
+
+  public getTeacherLectures(teacherId: number) {
+    debugger;
+    this.http
+      .get(
+        environment.apiEndPoint + 'getTeacherLectures/?teacherId=' + teacherId
+      )
+      .subscribe(
+        (data) => {
+          this.processLecturesData(data);
+        },
+        (error) => {}
+      );
   }
 
   public getEmptyWeek() {
@@ -122,7 +138,7 @@ export class ScheduleService {
   public processLecturesData(lecturesData: any) {
     this.lessonsArray = this.getEmptyWeek();
     for (let lectureData of lecturesData) {
-      if(lectureData.lectureId){
+      if (lectureData.lectureId) {
         this.childLectures[lectureData.lectureId] = true;
       }
       const whichHalf = this.lessonsArray[lectureData.day][

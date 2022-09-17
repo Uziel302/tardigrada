@@ -22,6 +22,7 @@ const {
   leaveLecture,
   getChildLectures,
   getLectureChildren,
+  getTeacherLectures,
   saveStationery,
   getPersonalSlots,
   savePersonalSlot,
@@ -42,6 +43,7 @@ router.post("/api/login", loginAndValidation);
 router.post("/api/signup", signupAndValidation);
 router.get("/api/getLectures", getLectures);
 router.get("/api/getLectureChildren", getLectureChildren);
+router.get("/api/getTeacherLectures", getTeacherLectures);
 router.get("/api/getChildLectures", getChildLectures);
 router.post("/api/saveStationery", saveStationery);
 router.post("/api/savePersonalSlot", savePersonalSlot);

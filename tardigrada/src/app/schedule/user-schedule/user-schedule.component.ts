@@ -37,13 +37,15 @@ export class UserScheduleComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.subscriptions.push(
-      this.scheduleService
-        .getChildLectures(this.loginService.currentChildId)
-        .subscribe((childLectures: any) => {
-          this.scheduleService.processLecturesData(childLectures);
-        })
-    );
+    if(this.loginService.currentChildId){
+      this.subscriptions.push(
+        this.scheduleService
+          .getChildLectures(this.loginService.currentChildId)
+          .subscribe((childLectures: any) => {
+            this.scheduleService.processLecturesData(childLectures);
+          })
+      );
+    }
   }
 
   onLectureChange(event: number) {
