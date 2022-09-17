@@ -133,6 +133,10 @@
   width: 40%;
 }
 
+#bottom-flower {
+  width: 100%;
+}
+
 #last-passage {
   font-family: "Ubuntu";
   font-style: normal;
