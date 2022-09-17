@@ -16,7 +16,7 @@ import { ParsingService } from '../general/parser.service';
 })
 export class HomeworkComponent implements OnInit {
   public responseSuccess: boolean[] = [];
-  @Input() isStudent: boolean = true;
+  @Input() location: string = 'student';
 
   constructor(
     public scheduleService: ScheduleService,
@@ -91,5 +91,15 @@ export class HomeworkComponent implements OnInit {
           event
         );
     }, 5);
+  }
+
+  getLectureName(lectureId: number) {
+    let lectureName = '';
+    for(let lecture of this.scheduleService.lecturesData){
+      if(lecture.lectureId === lectureId){
+        lectureName = lecture.title;
+      }
+    }
+    return lectureName;
   }
 }

@@ -187,10 +187,10 @@
     </div>
 
     <div class="separating-space"></div>
-    <app-homework [isStudent]="true"></app-homework>
+    <app-homework [location]="'student'"></app-homework>
   </div>
 
   <div class="separating-space"></div>
-  <app-homework *ngIf="showHomework" [isStudent]="true"></app-homework>
+  <app-homework *ngIf="showHomework" [location]="'all'"></app-homework>
 
 </div>

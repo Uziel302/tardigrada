@@ -16,6 +16,6 @@
   align-items: center;
 }
 
-.response-title {
+.response-title, #lecture-name {
   margin-top: 20px;
 }

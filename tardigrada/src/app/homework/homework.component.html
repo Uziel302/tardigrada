@@ -2,7 +2,7 @@
   <div>домашка</div>
   <div *ngIf="!scheduleService.currentHomeworks.length">-</div>
   <div *ngFor="let homework of scheduleService.currentHomeworks; let i = index">
-    <div>{{ homework.lectureId }}</div>
+    <div *ngIf="location === 'all'" id="lecture-name">{{ getLectureName(homework.lectureId) }}</div>
     <textarea class="user-textarea">{{ homework.hwText }}</textarea>
     <div class="hwActions">
       <a
@@ -15,7 +15,7 @@
         <mat-icon>file_download</mat-icon>
       </a>
       <div
-        *ngIf="isStudent"
+        *ngIf="location !== 'teacher'"
         class="purple-button"
         (click)="
           scheduleService.openHwResponse[i] = !scheduleService.openHwResponse[i]
@@ -43,7 +43,7 @@
     </div>
     <div
       class="half-container form-half"
-      *ngIf="isStudent && scheduleService.openHwResponse[i]"
+      *ngIf="location !== 'teacher' && scheduleService.openHwResponse[i]"
     >
       <div>Your response</div>
       <textarea class="user-textarea" [(ngModel)]="homework.chwText"></textarea>
@@ -68,7 +68,7 @@
         <div *ngIf="responseSuccess[i]">Saved!</div>
       </div>
     </div>
-    <div *ngIf="!isStudent">
+    <div *ngIf="location === 'teacher'">
       <div class="response-title">Student's response:</div>
       <textarea class="user-textarea">{{ homework.chwText }}</textarea>
       <div class="response-buttons">
@@ -81,7 +81,7 @@
           </a>
         </ng-container>
       </div>
-      <div class="half-container form-half" *ngIf="!isStudent">
+      <div class="half-container form-half" *ngIf="location === 'teacher'">
         <div class="response-title">Teacher's feedback</div>
         <textarea
           class="user-textarea"
