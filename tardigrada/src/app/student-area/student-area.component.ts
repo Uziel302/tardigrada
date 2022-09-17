@@ -14,6 +14,7 @@ import { ParsingService } from '../general/parser.service';
 export class StudentAreaComponent implements OnInit, OnDestroy {
   public userId: number = 0;
   public showSettings: boolean = false;
+  public showHomework: boolean = false;
   private subscriptions: Subscription[] = [];
 
   constructor(
@@ -60,5 +61,10 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
   onLectureChange(event: number) {
     this.scheduleService.openHwResponse = [];
     this.scheduleService.getHomeworks(event, this.loginService.currentChildId);
+  }
+
+  showHomeworks(){
+    this.showHomework = !this.showHomeworks;
+    this.scheduleService.getHomeworks(0, this.loginService.currentChildId);
   }
 }

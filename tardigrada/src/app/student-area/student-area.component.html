@@ -54,7 +54,7 @@
   </div>
 
   <div class="under-schedule-buttons">
-    <div class="button-wrapper">
+    <div class="button-wrapper" (click)="showHomeworks()">
       <div class="button-under-schedule">домашка</div>
     </div>
     <div class="button-wrapper" routerLink="/courses">
@@ -191,4 +191,6 @@
   </div>
 
   <div class="separating-space"></div>
+  <app-homework *ngIf="showHomework" [isStudent]="true"></app-homework>
+
 </div>
