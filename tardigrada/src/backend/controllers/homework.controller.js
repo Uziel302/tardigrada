@@ -87,8 +87,11 @@ exports.getHomeworks = async (req, res) => {
       "chw.feedbackText as fhwText",
       "chw.feedbackFile as fhwFile"
     )
-    .leftJoin("childrenHomework as chw", "hw.id", "chw.homeworkId")
-    .where({ "hw.lectureId": req.query.lectureId, "chw.childId": req.query.childId })
+    .leftJoin("childrenHomework as chw", {
+      "hw.id": "chw.homeworkId",
+      "chw.childId":  knex.raw('?', [req.query.childId]),
+    })
+    .where({ "hw.lectureId": req.query.lectureId })
     .orderBy([{ column: "hw.id", order: "desc" }])
     .then((homeworks) => {
       if (!homeworks) {
