@@ -13,9 +13,11 @@
 }
 
 .quotee {
-  text-align: right;
   font-size: 15px;
   padding-right: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .first-quote {
@@ -79,10 +81,15 @@
 }
 
 #wrapper3 {
-  width: 50%;
-  padding-left: 40%;
+  width: 60%;
+  padding-left: 9%;
   padding-bottom: 20%;
   padding-top: 10%;
+  color: #d1cad7;
+}
+
+#wrapper3 .quotee {
+  padding-right: 50px;
 }
 
 #wrapper4 {
@@ -129,10 +136,10 @@
 }
 
 #image3 {
-  left: 10%;
+  right: 10.6%;
   position: absolute;
-  bottom: 0;
-  height: 57%;
+  bottom: 60px;
+  height: 27%;
 }
 
 #image4 {
@@ -161,20 +168,6 @@
   position: absolute;
   bottom: 60px;
   height: 40%;
-}
-
-.width10 {
-  width: 10px;
-}
-
-.font15 {
-  font-size: 15px;
-}
-
-.quote-note {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
 #photos-containter {
