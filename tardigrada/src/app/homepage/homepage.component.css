@@ -97,6 +97,10 @@
   padding-right: 75px;
 }
 
+#wrapper7 .quotee {
+  padding-right: 90px;
+}
+
 #inner2 .quote {
   line-height: 150%;
 }
@@ -131,10 +135,10 @@
 }
 
 #wrapper7 {
-  width: 80%;
-  padding-left: 10%;
+  width: 70%;
+  padding-left: 7%;
   padding-bottom: 20%;
-  padding-top: 8%;
+  padding-top: 10%;
 }
 
 #image1 {
@@ -174,10 +178,10 @@
 }
 
 #image7 {
-  left: 5%;
+  right: 7%;
   position: absolute;
   bottom: 60px;
-  height: 40%;
+  height: 34%;
 }
 
 #photos-containter {
