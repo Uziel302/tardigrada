@@ -13,6 +13,8 @@ export class SettingsPopupComponent implements OnInit {
   @Input() showSettings: boolean = true;
   @Output() switchChild = new EventEmitter<IChild>();
   @Output() settingsChange = new EventEmitter<boolean>();
+  public adminView: number = -3;
+  public adminChild: string = '';
 
   constructor(public loginService: LoginService) {}
 
@@ -29,5 +31,12 @@ export class SettingsPopupComponent implements OnInit {
   backgroundClick() {
     this.showSettings = false;
     this.settingsChange.emit(false);
+  }
+
+  titleClick(){
+    if(!this.adminView){
+      localStorage.setItem('childId', this.adminChild);
+    }
+    this.adminView++;
   }
 }
