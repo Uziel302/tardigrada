@@ -352,6 +352,11 @@
   margin-right: 20px;
 }
 
+.telegram {
+  width: 35px;
+  height: 35px;
+}
+
 @media screen and (max-width: 1420px) {
   .profile-image-border-child,
   #profile-image-border-teacher {
