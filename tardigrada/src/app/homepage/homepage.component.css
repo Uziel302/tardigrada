@@ -99,6 +99,7 @@
 
 #wrapper7 .quotee {
   padding-right: 90px;
+  padding-top: 10px;
 }
 
 #inner2 .quote {
@@ -137,7 +138,6 @@
 #wrapper7 {
   width: 70%;
   padding-left: 7%;
-  padding-bottom: 20%;
   padding-top: 10%;
 }
 
