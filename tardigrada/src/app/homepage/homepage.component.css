@@ -117,7 +117,7 @@
   width: 70%;
   padding-left: 26.5%;
   padding-bottom: 20%;
-  padding-top: 11%;
+  padding-top: 9%;
 }
 
 #wrapper6 {
@@ -162,8 +162,8 @@
 #image5 {
   left: 15%;
   position: absolute;
-  bottom: 0;
-  height: 35%;
+  bottom: 60px;
+  height: 30%;
 }
 
 #image6 {
