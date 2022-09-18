@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const fileUpload = require("express-fileupload");
 const { signupAndValidation, loginAndValidation } = require("./validation");
-const { sendFreeRequest } = require("./controllers/admin-emails.controller");
 const {
   getChild,
   getChildren,
@@ -60,9 +59,6 @@ router.get("/api/getAnnoying", getAnnoying);
 
 router.post("/api/joinLecture", joinLecture);
 router.post("/api/leaveLecture", leaveLecture);
-router.post("/api/freeRequest", (req, res) => {
-  return sendFreeRequest(req, res);
-});
 router.get("/api/notes", (req, res) => {
   if (checkAuth(req, res)) {
     return getNotes(req, res);
