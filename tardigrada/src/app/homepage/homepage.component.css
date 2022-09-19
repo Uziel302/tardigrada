@@ -99,6 +99,7 @@
 
 #wrapper3 .quotee {
   padding-right: 50px;
+  line-height: 140%;
 }
 
 #wrapper6 .quotee {
@@ -210,8 +211,9 @@
 #image6 {
   right: 4%;
   position: absolute;
-  bottom: 20%;
-  height: 20%;
+  bottom: 4px;
+  height: 30%;
+  transform: scaleX(-1);
 }
 
 #image7 {
@@ -465,4 +467,8 @@
     padding:5px;
     font-size: 25px;
   }
+}
+
+#button-text {
+  margin-top: 10px;
 }
