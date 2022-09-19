@@ -366,6 +366,11 @@
   color: black;
 }
 
+.button-under-schedule:hover {
+  background: #661e4b;
+  color: white;
+}
+
 @media screen and (max-width: 1420px) {
   .narrow-none {
     display: none !important;
