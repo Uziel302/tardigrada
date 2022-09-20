@@ -373,6 +373,16 @@
   color: white;
 }
 
+#button-text {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 1421px) {
+  .wide-none {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 1420px) {
   .narrow-none {
     display: none !important;
@@ -394,7 +404,7 @@
   }
 
   .quote {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .quotee {
@@ -403,6 +413,26 @@
 
   #image5 {
     left: 5%;
+  }
+
+  #wrapper3 {
+    width: 100%;
+    padding-top: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  #wrapper3 .quote {
+    color: white;
+  }
+
+  #wrapper3 .quotee {
+    font-size: 12px;
+    line-height: 150%;
+    padding-right: 0;
+    padding-left: 130px;
   }
 
   #wrapper5 {
@@ -415,7 +445,7 @@
   }
 
   .space25 {
-    height: 10px;
+    height: 14px;
   }
 
   #wrapper6 {
@@ -442,6 +472,13 @@
     height: 200px;
   }
 
+  #image3 {
+    left: 5%;
+    position: absolute;
+    bottom: 60px;
+    height: 23%;
+  }
+
   #image7 {
     right: 0;
     height: 25%;
@@ -449,26 +486,22 @@
 
   #wrapper8 {
     padding-top: 50px;
-    padding-right:8px;
-    padding-left:8px;
+    padding-right: 8px;
+    padding-left: 8px;
   }
 
   #image8 {
-    left:0;
-    height:160px;
+    left: 0;
+    height: 160px;
   }
 
-  #image9{
-    padding-left:100px;
-    top:14%;
+  #image9 {
+    padding-left: 100px;
+    top: 14%;
   }
 
   #last-text {
-    padding:5px;
+    padding: 5px;
     font-size: 25px;
   }
-}
-
-#button-text {
-  margin-top: 10px;
 }
