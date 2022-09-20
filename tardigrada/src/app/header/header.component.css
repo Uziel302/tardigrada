@@ -86,3 +86,18 @@ body:after {
   transition: 0.5s;
   transform: translateY(-3px) rotate(-45deg);
 }
+
+@media screen and (max-width: 1260px) {
+  #bottomMenuLine,
+  #topMenuLine,
+  #toggle-nav {
+    right: 30px;
+  }
+
+  #topMenuLine {
+    top: 30px;
+  }
+  #bottomMenuLine {
+    top: 36px;
+  }
+}
