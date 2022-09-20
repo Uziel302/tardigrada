@@ -435,6 +435,14 @@
     padding-left: 130px;
   }
 
+
+  #wrapper6 .quotee {
+    font-size: 12px;
+    line-height: 150%;
+    padding-left: 160px;
+
+  }
+
   #wrapper5 {
     padding-top: 20%;
   }
@@ -449,12 +457,15 @@
   }
 
   #wrapper6 {
-    width: 97%;
+    width: 100%;
     padding-right: 0;
     padding-left: 0;
-    padding-top: 50px;
+    padding-top: 68px;
     padding-bottom: 0;
     line-height: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   #wrapper6 .quotee {
