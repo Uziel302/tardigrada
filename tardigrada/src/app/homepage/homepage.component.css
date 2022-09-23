@@ -205,10 +205,10 @@
 }
 
 #image4 {
-  right: 4%;
+  right: 1%;
   position: absolute;
-  bottom: 4px;
-  height: 30%;
+  bottom: -10px;
+  height: 300px;
   transform: scaleX(-1);
 }
 
