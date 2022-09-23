@@ -70,26 +70,22 @@
   height: 100%;
 }
 
-#inner2 {
+#wrapper5 {
   width: 50%;
   padding-left: 38%;
   padding-bottom: 10%;
   padding-top: 9%;
 }
 
-#inner3 {
-  color: white;
-}
-
 .gray-inner {
   color: #d8d7e1;
 }
 
-#inner5 {
+.dark-text {
   color: #46313d;
 }
 
-#wrapper3 {
+#wrapper2 {
   width: 60%;
   padding-left: 9%;
   padding-bottom: 20%;
@@ -97,44 +93,44 @@
   color: #d1cad7;
 }
 
-#wrapper3 .quotee {
+#wrapper2 .quotee {
   padding-right: 50px;
   line-height: 140%;
 }
 
-#wrapper6 .quotee {
+#wrapper4 .quotee {
   padding-right: 75px;
 }
 
-#wrapper7 .quotee {
+#wrapper6 .quotee {
   padding-right: 90px;
   padding-top: 10px;
 }
 
-#inner2 .quote {
+#wrapper5 .quote {
   line-height: 150%;
 }
 
-#inner2 .quotee {
+#wrapper5 .quotee {
   padding-right: 14px;
   padding-top: 33px;
 }
 
-#wrapper4 {
+#wrapper3 {
   width: 60%;
   padding-bottom: 3%;
   padding-top: 10%;
   padding-left: 32.5%;
 }
 
-#wrapper5 {
+#wrapper1 {
   width: 70%;
   padding-left: 26.5%;
   padding-bottom: 20%;
   padding-top: 9%;
 }
 
-#wrapper6 {
+#wrapper4 {
   color: #46313c;
   width: 70%;
   padding-left: 15%;
@@ -144,20 +140,20 @@
   line-height: 1.8;
 }
 
-#wrapper7 {
+#wrapper6 {
   width: 70%;
   padding-left: 7%;
   padding-top: 10%;
 }
 
-#wrapper8 {
+#wrapper7 {
   color: #46313c;
   padding-bottom: 10%;
   padding-top: 8%;
   line-height: 1.8;
 }
 
-#wrapper9 {
+#wrapper8 {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -179,7 +175,7 @@
   padding-bottom: 50px;
 }
 
-#image1 {
+#image5 {
   left: 12%;
   position: absolute;
   bottom: 60px;
@@ -187,28 +183,28 @@
   transform: scaleX(-1);
 }
 
-#image3 {
+#image2 {
   right: 10.6%;
   position: absolute;
   bottom: 60px;
   height: 27%;
 }
 
-#image4 {
+#image3 {
   left: 10%;
   position: absolute;
   bottom: 60px;
   height: 30%;
 }
 
-#image5 {
+#image1 {
   left: 15%;
   position: absolute;
   bottom: 60px;
   height: 30%;
 }
 
-#image6 {
+#image4 {
   right: 4%;
   position: absolute;
   bottom: 4px;
@@ -216,14 +212,14 @@
   transform: scaleX(-1);
 }
 
-#image7 {
+#image6 {
   right: 7%;
   position: absolute;
   bottom: 60px;
   height: 34%;
 }
 
-#image8 {
+#image7 {
   left: 7%;
   position: absolute;
   transform: scaleX(-1) rotate(160deg);
@@ -231,7 +227,7 @@
   height: 240px;
 }
 
-#image9 {
+#image8 {
   position: absolute;
   top: 9%;
   transform: scaleX(-1) rotate(20deg);
@@ -412,11 +408,11 @@
     line-height: 150%;
   }
 
-  #image5 {
+  #image1 {
     left: 5%;
   }
 
-  #wrapper3 {
+  #wrapper2 {
     width: 100%;
     padding-top: 29%;
     display: flex;
@@ -425,34 +421,34 @@
     padding-left: 0;
   }
 
-  #wrapper3 .quotee {
+  #wrapper2 .quotee {
     padding-right: 0;
     padding-left: 130px;
   }
 
-  #wrapper6 .quotee {
+  #wrapper4 .quotee {
     padding-left: 160px;
   }
 
-  #wrapper5 .quotee {
+  #wrapper1 .quotee {
     padding-right: 45px;
     padding-top: 7px;
   }
 
-  #wrapper5 {
+  #wrapper1 {
     padding-top: 20%;
     width: 100%;
     padding-right: 0;
     padding-left: 0;
   }
 
-  #wrapper4 {
+  #wrapper3 {
     padding-left: 0;
     width: 100%;
     padding-top: 85px;
   }
 
-  #wrapper4 .quotee {
+  #wrapper3 .quotee {
     padding-right: 50px;
     padding-top: 22px;
   }
@@ -461,7 +457,7 @@
     height: 14px;
   }
 
-  #wrapper6 {
+  #wrapper4 {
     width: 100%;
     padding-right: 0;
     padding-left: 0;
@@ -473,63 +469,63 @@
     align-items: center;
   }
 
-  #wrapper6 .quotee {
+  #wrapper4 .quotee {
     padding-right: 0;
   }
 
-  #inner2 {
+  #wrapper5 {
     width: 100%;
     padding-left: 0;
     padding-top: 50px;
   }
 
-  #image1 {
+  #image5 {
     left: 0;
     height: 200px;
   }
 
-  #image3 {
+  #image2 {
     left: 2%;
     position: absolute;
     bottom: 60px;
     height: 24%;
   }
 
-  #image4 {
+  #image3 {
     height: 25%;
     left: 5%;
   }
 
-  #image5a,
-  #image5b {
+  #image1a,
+  #image1b {
     left: 9%;
     position: absolute;
     bottom: -6px;
     height: 40%;
   }
 
-  #image5a {
+  #image1a {
     left: 21.5%;
     bottom: -30px;
   }
 
-  #image7 {
+  #image6 {
     right: 0;
     height: 25%;
   }
 
-  #wrapper8 {
+  #wrapper7 {
     padding-top: 50px;
     padding-right: 8px;
     padding-left: 8px;
   }
 
-  #image8 {
+  #image7 {
     left: 0;
     height: 160px;
   }
 
-  #image9 {
+  #image8 {
     padding-left: 100px;
     top: 14%;
   }
