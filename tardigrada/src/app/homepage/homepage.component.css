@@ -483,22 +483,20 @@
     padding-right: 60px;
   }
 
-  #image5 {
-    left: 14%;
-    height: 170px;
-    bottom:55px;
+  #wrapper6 {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 95px;
   }
 
-  #image2 {
-    left: 2%;
-    position: absolute;
-    bottom: 60px;
-    height: 24%;
+  #wrapper6 .quotee {
+    padding-right: 41px;
   }
 
-  #image3 {
-    height: 25%;
-    left: 5%;
+  #wrapper7 {
+    padding-top: 50px;
+    padding-right: 8px;
+    padding-left: 8px;
   }
 
   #image1a,
@@ -514,15 +512,27 @@
     bottom: -30px;
   }
 
-  #image6 {
-    right: 0;
-    height: 25%;
+  #image2 {
+    left: 2%;
+    position: absolute;
+    bottom: 60px;
+    height: 24%;
   }
 
-  #wrapper7 {
-    padding-top: 50px;
-    padding-right: 8px;
-    padding-left: 8px;
+  #image3 {
+    height: 25%;
+    left: 5%;
+  }
+
+  #image5 {
+    left: 14%;
+    height: 170px;
+    bottom: 55px;
+  }
+
+  #image6 {
+    left: 22px;
+    height: 26%;
   }
 
   #image7 {
