@@ -93,6 +93,11 @@ input {
   color: #220315;
 }
 
+.button-submit:hover {
+  background: #220315;
+  color: white;
+}
+
 #bottom-line {
   color: white;
   margin-top: 100px;
