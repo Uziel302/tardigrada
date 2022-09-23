@@ -64,7 +64,7 @@
               персональных данных и соглашаетесь <br />
               с <a routerLink="/privacy">политикой конфиденциальности</a>
             </div>
-            <div class="wide-none error-message">{{loginService.currentError ? 'неверный емейл или пароль' : '&nbsp;'}}</div>
+            <div class="error-message">{{loginService.currentError ? 'неверный емейл или пароль' : '&nbsp;'}}</div>
           </div>
         </div>
 
@@ -90,7 +90,6 @@
             </div>
           </div>
         </div>
-        <div class="narrow-none">{{ loginService.currentError }}</div>
       </div>
     </div>
   </div>

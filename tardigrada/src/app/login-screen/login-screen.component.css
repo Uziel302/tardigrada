@@ -41,7 +41,8 @@ input {
   right: 5%;
 }
 
-#columns, #animal-button {
+#columns,
+#animal-button {
   display: flex;
 }
 
@@ -117,9 +118,20 @@ input {
   height: 80px;
 }
 
+.error-message {
+  font-size: 12px;
+  font-family: "Ubuntu";
+  font-weight: 300;
+}
+
 @media screen and (min-width: 1421px) {
   .wide-none {
     display: none !important;
+  }
+
+  .error-message {
+    margin-top: -15px;
+    margin-left: 40px;
   }
 }
 
@@ -180,7 +192,7 @@ input {
     border-top: 1px solid white;
   }
 
-  #animal-button{
+  #animal-button {
     flex-direction: row-reverse;
     margin-left: 9px;
     z-index: 1;
@@ -189,12 +201,6 @@ input {
   #dark-wrapper {
     border: 5px solid #220315;
     height: 122px;
-  }
-
-  .error-message {
-    font-size: 12px;
-    font-family: "Ubuntu";
-    font-weight: 300;
   }
 
   #animal {
