@@ -408,7 +408,8 @@
   }
 
   .quotee {
-    padding-right: 10px;
+    font-size: 12px;
+    line-height: 150%;
   }
 
   #image5 {
@@ -425,25 +426,16 @@
   }
 
   #wrapper3 .quotee {
-    line-height: 150%;
     padding-right: 0;
     padding-left: 130px;
   }
 
-  #wrapper3 .quotee,
-  #wrapper5 .quotee,
   #wrapper6 .quotee {
-    font-size: 12px;
-  }
-
-  #wrapper6 .quotee {
-    line-height: 150%;
     padding-left: 160px;
   }
 
   #wrapper5 .quotee {
     padding-right: 45px;
-    line-height: 150%;
     padding-top: 7px;
   }
 
@@ -455,8 +447,14 @@
   }
 
   #wrapper4 {
-    padding-left: 10%;
-    width: 80%;
+    padding-left: 0;
+    width: 100%;
+    padding-top: 85px;
+  }
+
+  #wrapper4 .quotee {
+    padding-right: 50px;
+    padding-top: 22px;
   }
 
   .space25 {
@@ -495,6 +493,11 @@
     position: absolute;
     bottom: 60px;
     height: 24%;
+  }
+
+  #image4 {
+    height: 25%;
+    left: 5%;
   }
 
   #image5a,
