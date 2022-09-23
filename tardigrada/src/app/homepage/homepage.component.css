@@ -476,12 +476,17 @@
   #wrapper5 {
     width: 100%;
     padding-left: 0;
-    padding-top: 50px;
+    padding-top: 80px;
+  }
+
+  #wrapper5 .quotee {
+    padding-right: 60px;
   }
 
   #image5 {
-    left: 0;
-    height: 200px;
+    left: 14%;
+    height: 170px;
+    bottom:55px;
   }
 
   #image2 {
