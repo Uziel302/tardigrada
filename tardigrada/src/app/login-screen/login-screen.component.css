@@ -41,7 +41,7 @@ input {
   right: 5%;
 }
 
-#columns {
+#columns, #animal-button {
   display: flex;
 }
 
@@ -49,7 +49,7 @@ input {
   display: flex;
 }
 
-#names-column div {
+.names-column div {
   margin-bottom: 55px;
   margin-top: 15px;
 }
@@ -117,8 +117,17 @@ input {
   height: 80px;
 }
 
+@media screen and (min-width: 1421px) {
+  .wide-none {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 1420px) {
-  #animal,
+  .narrow-none {
+    display: none !important;
+  }
+
   #right-flower,
   #white-line {
     display: none;
@@ -127,27 +136,72 @@ input {
   #columns {
     flex-direction: column;
     align-items: center;
+    margin-top: -115px;
   }
 
   input {
-    width: 200px;
-    margin-left: 10px;
+    width: 250px;
+    margin-left: 0;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    height: 40px;
+    border-radius: 10px;
   }
 
-  #columns {
-    margin-top: 50px;
+  #wrapper {
+    margin-top: 0;
   }
 
   .button-wrapper {
-    margin-left: 0;
+    margin-left: 140px;
+    margin-top: 10px;
+    height: 120px;
+    width: 120px;
+  }
+
+  .button-submit {
+    height: 92px;
+    width: 92px;
+    font-size: 24px;
   }
 
   #bottom-line {
-    margin-top: 20px;
+    position: absolute;
     display: flex;
     justify-content: center;
+    margin-top: 0;
+    bottom: 20px;
   }
-  #dark-wrapper{
-    border: none;
+
+  #mobile-white-line {
+    position: absolute;
+    width: 100%;
+    bottom: 63px;
+    border-top: 1px solid white;
+  }
+
+  #animal-button{
+    flex-direction: row-reverse;
+    margin-left: 9px;
+    z-index: 1;
+  }
+
+  #dark-wrapper {
+    border: 5px solid #220315;
+    height: 122px;
+  }
+
+  .error-message {
+    font-size: 12px;
+    font-family: "Ubuntu";
+    font-weight: 300;
+  }
+
+  #animal {
+    transform: scaleX(1) rotate(40deg);
+    margin-top: 3px;
+    margin-left: -12px;
+    width: 90px;
+    height: 90px;
   }
 }

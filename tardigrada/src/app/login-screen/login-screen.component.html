@@ -3,11 +3,11 @@
     <div id="rows">
       <div id="columns">
         <div id="form-column">
-          <div *ngIf="login" id="names-column">
+          <div *ngIf="login" class="names-column narrow-none">
             <div>EMAIL</div>
             <div>Пароль</div>
           </div>
-          <div *ngIf="!login" id="names-column">
+          <div *ngIf="!login" class="names-column narrow-none">
             <div>Имя</div>
             <div>Фамилия</div>
             <div>EMAIL</div>
@@ -15,6 +15,7 @@
             <div>Пароль</div>
           </div>
           <div id="inputs-column">
+            <div *ngIf="!login" class="wide-none">Имя</div>
             <input
               *ngIf="!login"
               [(ngModel)]="firstName"
@@ -22,6 +23,7 @@
               minlength="3"
               #nameRef="ngModel"
             />
+            <div *ngIf="!login" class="wide-none">Фамилия</div>
             <input
               *ngIf="!login"
               [(ngModel)]="lastName"
@@ -29,12 +31,14 @@
               minlength="3"
               #nameRef="ngModel"
             />
+            <div class="wide-none">EMAIL</div>
             <input
               [(ngModel)]="email"
               required
               minlength="3"
               #emailRef="ngModel"
             />
+            <div *ngIf="!login" class="wide-none">Телеграм</div>
             <input
               *ngIf="!login"
               [(ngModel)]="telegram"
@@ -42,6 +46,10 @@
               minlength="3"
               #emailRef="ngModel"
             />
+            <div class="wide-none">
+              <br *ngIf="login"/>
+              Пароль
+            </div>
             <input
               [(ngModel)]="password"
               type="password"
@@ -50,10 +58,13 @@
               #passwordRef="ngModel"
             />
             <div *ngIf="!login" id="terms-note">
-              Нажимая Присоединиться, вы даете согласие на обработку<br />
+              Нажимая Присоединиться,
+              <br class="wide-none"/>
+              вы даете согласие на обработку<br />
               персональных данных и соглашаетесь <br />
               с <a routerLink="/privacy">политикой конфиденциальности</a>
             </div>
+            <div class="wide-none error-message">{{loginService.currentError ? 'неверный емейл или пароль' : '&nbsp;'}}</div>
           </div>
         </div>
 
@@ -69,7 +80,7 @@
       </div>
       <div id="bottom-line">
         <div id="white-line"></div>
-        <div style="display: flex">
+        <div id="animal-button">
           <img id="animal" src="/assets/images/Animal.png" />
           <div id="dark-wrapper">
             <div class="button-wrapper">
@@ -79,11 +90,12 @@
             </div>
           </div>
         </div>
-
-        <div>{{ loginService.currentError }}</div>
+        <div class="narrow-none">{{ loginService.currentError }}</div>
       </div>
     </div>
   </div>
+
+  <div id="mobile-white-line"></div>
 
   <img id="right-flower" src="/assets/images/Ryabchik.png" />
 </div>
