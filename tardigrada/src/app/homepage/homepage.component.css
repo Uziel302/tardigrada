@@ -227,15 +227,14 @@
   height: 240px;
 }
 
-#image8 {
-  position: absolute;
-  top: 9%;
+.image8 {
   transform: scaleX(-1) rotate(20deg);
   padding-left: 420px;
   width: 80px;
+  margin-top: -130px;
 }
 
-#last-animal-container {
+.last-animal-container {
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -549,9 +548,10 @@
     height: 160px;
   }
 
-  #image8 {
-    padding-left: 100px;
-    top: 14%;
+  .image8 {
+    transform: scaleX(-1) rotate(70deg);
+    width: 80px;
+    margin-top: -230px;
   }
 
   #last-text, #last-title {
@@ -562,14 +562,6 @@
   .button-wrapper {
     position: absolute;
     top:255px;
-  }
-
-  #image8 {
-    position: absolute;
-    top: 276px;
-    left: 13%;
-    transform: scaleX(-1) rotate(70deg);
-    width: 80px;
   }
 
   .height20 {
