@@ -504,6 +504,10 @@
     padding-top: 17px;
   }
 
+  #wrapper8{
+    top:16.5%;
+  }
+
   #image1a,
   #image1b {
     left: 9%;
@@ -550,8 +554,25 @@
     top: 14%;
   }
 
-  #last-text {
+  #last-text, #last-title {
     padding: 5px;
-    font-size: 25px;
+    font-size: 22px;
+  }
+
+  .button-wrapper {
+    position: absolute;
+    top:255px;
+  }
+
+  #image8 {
+    position: absolute;
+    top: 276px;
+    left: 13%;
+    transform: scaleX(-1) rotate(70deg);
+    width: 80px;
+  }
+
+  .height20 {
+    height: 20px;
   }
 }
