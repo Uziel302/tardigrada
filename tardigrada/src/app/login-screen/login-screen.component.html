@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-      <div id="bottom-line" *ngIf="showRegistration">
+      <div id="bottom-line" [class.narrow-none]="!showRegistration">
         <div id="white-line"></div>
         <div id="animal-button">
           <img id="animal" src="/assets/images/Animal.png" />
