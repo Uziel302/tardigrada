@@ -14,21 +14,10 @@ export class LoginScreenComponent implements OnInit {
   public email: string = '';
   public telegram: string = '';
   public password: string = '';
-  public showRegistration: boolean = true;
 
   constructor(public loginService: LoginService) {}
 
   ngOnInit(): void {}
-
-  @HostListener("focusin")
-  onFocus() {
-    this.showRegistration = false;
-  }
-
-  @HostListener("focusout")
-  onBlur() {
-    this.showRegistration = true;
-  }
 
   submit() {
     this.loginService.login(this.email, this.password);
