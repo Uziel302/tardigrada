@@ -190,7 +190,7 @@
 #image5 {
   left: 12%;
   position: absolute;
-  bottom: 60px;
+  bottom: 50px;
   height: 270px;
   transform: scaleX(-1);
 }
@@ -198,21 +198,21 @@
 #image2 {
   right: 10.6%;
   position: absolute;
-  bottom: 60px;
+  bottom: 50px;
   height: 27%;
 }
 
 #image3 {
   left: 10%;
   position: absolute;
-  bottom: 60px;
+  bottom: 50px;
   height: 30%;
 }
 
 #image1 {
   left: 15%;
   position: absolute;
-  bottom: 60px;
+  bottom: 50px;
   height: 30%;
 }
 
@@ -227,7 +227,7 @@
 #image6 {
   right: 7%;
   position: absolute;
-  bottom: 60px;
+  bottom: 50px;
   height: 34%;
 }
 
@@ -545,7 +545,7 @@
   #image2 {
     left: 2%;
     position: absolute;
-    bottom: 60px;
+    bottom: 50px;
     height: 24%;
   }
 
