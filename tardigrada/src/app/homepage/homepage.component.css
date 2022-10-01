@@ -161,6 +161,10 @@
   padding: 8% 50px 10% 50px;
 }
 
+#wrapper7 .quotee {
+  padding-right: 160px;
+}
+
 #wrapper8 {
   position: absolute;
   width: 100%;
@@ -216,7 +220,7 @@
   right: 1%;
   position: absolute;
   bottom: -10px;
-  height: 300px;
+  height: 250px;
   transform: scaleX(-1);
 }
 
@@ -392,7 +396,7 @@
   }
 
   #image4{
-    right: -10%;
+    right: -5%;
   }
 }
 
