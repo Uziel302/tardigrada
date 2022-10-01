@@ -196,13 +196,13 @@ input {
     display: flex;
     justify-content: center;
     margin-top: 0;
-    bottom: 20px;
+    top: 500px;
   }
 
   #mobile-white-line {
     position: absolute;
     width: 100%;
-    bottom: 63px;
+    top: 587px;
     border-top: 1px solid white;
   }
 
