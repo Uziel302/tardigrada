@@ -19,11 +19,11 @@ input {
 }
 
 #container {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #220315;
+  padding-bottom: 600px;
 }
 
 #wrapper {
@@ -162,7 +162,7 @@ input {
   #columns {
     flex-direction: column;
     align-items: center;
-    margin-top: -175px;
+    margin-top: 75px;
   }
 
   input {
