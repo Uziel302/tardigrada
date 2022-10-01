@@ -149,7 +149,7 @@
   padding-left: 14%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1260px) {
   #second-container,
   #third-container,
   #fourth-container {
@@ -187,9 +187,7 @@
     font-size: 30px;
     line-height: 40px;
   }
-}
 
-@media screen and (max-width: 767px) {
   #opening-passage,
   #second-passage,
   #third-passage,
