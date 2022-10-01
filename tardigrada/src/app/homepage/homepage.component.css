@@ -14,7 +14,6 @@
 
 .quotee {
   font-size: 15px;
-  padding-right: 170px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -98,6 +97,11 @@
   line-height: 140%;
 }
 
+#wrapper3 .quotee {
+  padding-top: 40px;
+  padding-right: 70px;
+}
+
 #wrapper4 .quotee {
   padding-right: 75px;
 }
@@ -148,9 +152,8 @@
 
 #wrapper7 {
   color: #46313c;
-  padding-bottom: 10%;
-  padding-top: 8%;
   line-height: 1.8;
+  padding: 8% 50px 10% 50px;
 }
 
 #wrapper8 {
@@ -372,13 +375,23 @@
   margin-top: 10px;
 }
 
-@media screen and (min-width: 1421px) {
+@media screen and (min-width: 801px) {
   .wide-none {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 1420px) {
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+  .ipad-none {
+    display: none !important;
+  }
+
+  #image4{
+    right: -10%;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .narrow-none {
     display: none !important;
   }
@@ -503,8 +516,8 @@
     padding-top: 17px;
   }
 
-  #wrapper8{
-    top:16.5%;
+  #wrapper8 {
+    top: 16.5%;
   }
 
   #image1a,
@@ -554,14 +567,15 @@
     margin-top: -230px;
   }
 
-  #last-text, #last-title {
+  #last-text,
+  #last-title {
     padding: 5px;
     font-size: 22px;
   }
 
   .button-wrapper {
     position: absolute;
-    top:255px;
+    top: 255px;
   }
 
   .height20 {
