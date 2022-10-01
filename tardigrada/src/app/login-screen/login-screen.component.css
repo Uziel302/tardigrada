@@ -8,6 +8,12 @@ input {
   border-radius: 15px;
   margin-bottom: 27px;
   margin-left: 40px;
+  padding-left: 10px;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1;
 }
 
 #container {
@@ -127,6 +133,7 @@ input {
   font-size: 12px;
   font-family: "Ubuntu";
   font-weight: 300;
+  color: #d8d7e1;
 }
 
 @media screen and (min-width: 1261px) {
@@ -157,7 +164,7 @@ input {
   }
 
   input {
-    width: 250px;
+    width: 240px;
     margin-left: 0;
     margin-top: 3px;
     margin-bottom: 10px;
