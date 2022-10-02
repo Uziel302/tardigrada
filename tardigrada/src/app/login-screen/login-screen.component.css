@@ -21,7 +21,7 @@ input {
 #container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background: #220315;
   padding-bottom: 600px;
 }
@@ -52,6 +52,10 @@ input {
 #columns,
 #animal-button {
   display: flex;
+}
+
+#columns {
+  margin-top: 150px;
 }
 
 #form-column {
