@@ -16,7 +16,7 @@
   font-size: 15px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .first-quote {
@@ -80,9 +80,9 @@
 #wrapper1 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   padding-top: 9%;
-  padding-right: 10%;
+  padding-right: 12%;
 }
 
 #wrapper1 .quotee {
@@ -91,9 +91,9 @@
 
 #wrapper2 {
   width: 60%;
-  padding-left: 9%;
+  padding-left: 9.5%;
   padding-bottom: 20%;
-  padding-top: 10%;
+  padding-top: 9%;
   color: #d1cad7;
 }
 
@@ -405,6 +405,16 @@
     display: none !important;
   }
 
+  .quote {
+    font-size: 18px;
+  }
+
+  .quotee {
+    font-size: 12px;
+    line-height: 150%;
+    justify-content: center;
+  }
+
   #main-center {
     width: 400px;
     height: 400px;
@@ -425,7 +435,7 @@
   }
 
   #wrapper1 {
-    padding-top: 20%;
+    align-items: center;
     width: 100%;
     padding-right: 0;
     padding-left: 0;
@@ -433,12 +443,10 @@
 
   #wrapper1 .quotee {
     padding-left: 190px;
-    padding-top: 7px;
   }
 
   #wrapper2 {
     width: 100%;
-    padding-top: 29%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -453,7 +461,6 @@
   #wrapper3 {
     padding-left: 0;
     width: 100%;
-    padding-top: 23.5%;
   }
 
   #wrapper3 .quotee {
@@ -466,7 +473,6 @@
     width: 100%;
     padding-right: 0;
     padding-left: 0;
-    padding-top: 19%;
     padding-bottom: 0;
     line-height: 1;
     display: flex;
@@ -482,7 +488,6 @@
   #wrapper5 {
     width: 100%;
     padding-left: 0;
-    padding-top: 22%;
   }
 
   #wrapper5 .quotee {
@@ -493,7 +498,6 @@
   #wrapper6 {
     width: 100%;
     padding-left: 0;
-    padding-top: 26%;
   }
 
   #wrapper6 .quotee {
@@ -502,7 +506,6 @@
   }
 
   #wrapper7 {
-    padding-top: 17%;
     padding-right: 8px;
     padding-left: 8px;
   }
@@ -585,12 +588,32 @@
 }
 
 @media screen and (max-width: 800px) {
-  .quote {
-    font-size: 18px;
+  #wrapper1 {
+    padding-top: 20%;
   }
 
-  .quotee {
-    font-size: 12px;
-    line-height: 150%;
+  #wrapper2 {
+    padding-top: 29%;
   }
+
+  #wrapper3 {
+    padding-top: 23.5%;
+  }
+
+  #wrapper4 {
+    padding-top: 19%;
+  }
+
+  #wrapper5 {
+    padding-top: 22%;
+  }
+
+  #wrapper6 {
+    padding-top: 26%;
+  }
+
+  #wrapper7 {
+    padding-top: 17%;
+  }
+
 }
