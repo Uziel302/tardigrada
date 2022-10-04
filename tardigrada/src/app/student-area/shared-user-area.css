@@ -357,7 +357,7 @@
   height: 35px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1260px) {
   .profile-image-border-child,
   #profile-image-border-teacher {
     width: 128px;
