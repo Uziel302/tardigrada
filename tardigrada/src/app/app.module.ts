@@ -40,6 +40,7 @@ import { CourseListComponent } from './course-list/course-list.component';
 import { AdminAreaComponent } from './admin-area/admin-area.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { HomeworkComponent } from './homework/homework.component';
+import { DonationComponent } from './donation/donation.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { HomeworkComponent } from './homework/homework.component';
     AdminAreaComponent,
     PrivacyComponent,
     HomeworkComponent,
+    DonationComponent,
   ],
   imports: [
     BrowserModule,

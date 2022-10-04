@@ -14,12 +14,14 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { AdminAreaComponent } from './admin-area/admin-area.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { DonationComponent } from './donation/donation.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'donate', component: DonateComponent },
+  { path: 'donation', component: DonationComponent },
   { path: 'schedule', component: ScheduleComponent },
   { path: 'courses', component: CourseListComponent },
   { path: 'login', component: LoginScreenComponent },

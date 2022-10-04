@@ -1,0 +1,237 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #280d2c;
+  color: #d8d7e1;
+  font-family: "Ubuntu";
+  padding-bottom: 400px;
+}
+
+#top-title {
+  font-size: 34px;
+  margin-top: 105px;
+  text-align: center;
+  line-height: 150%;
+  width: 100%;
+  font-family: "Zhizn";
+}
+
+#first-block {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 65px;
+}
+
+#square-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#square {
+  width: 81%;
+  background: #d8d7e1;
+  color: #59385b;
+  border-radius: 10px;
+  margin-right: 17px;
+  font-weight: 300;
+}
+
+#square-side {
+  width: 100%;
+  padding-top: 40px;
+}
+
+#square-title {
+  font-size: 35px;
+  font-family: "Zhizn";
+  padding-bottom: 2px;
+}
+
+#square-inner {
+  padding: 40px;
+}
+
+#subtitle {
+  padding-bottom: 33px;
+}
+
+#big-buttons,
+#small-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.big-button,
+.small-button {
+  background: white;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-button {
+  width: 48%;
+}
+
+.small-button {
+  width: 17%;
+}
+
+.selected {
+  background: #71284b;
+  cursor: pointer;
+  color: #d8d7e1;
+}
+
+#small-buttons {
+  padding-top: 15px;
+}
+
+#otherSum {
+  width: 65px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  padding-left: 15px;
+}
+
+.selected #otherSum {
+  background-color: #71284b;
+  color: #d8d7e1;
+}
+
+.selected ::placeholder {
+  color: #d8d7e1;
+  font-weight: 300;
+}
+
+::placeholder {
+  font-family: "Ubuntu";
+  color: #59385b;
+  font-weight: 300;
+}
+
+.details-fields {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.details-field {
+  width: 48.1%;
+}
+
+.details-field input {
+  background-color: inherit;
+  border: none;
+  border-bottom: 0.5px solid #59385b;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+#terms-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#terms {
+  font-size: 11px;
+}
+
+.button-wrapper {
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 30px;
+  width: 98px;
+  height: 98px;
+}
+
+.button-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 72px;
+  height: 72px;
+  background: white;
+  border-radius: 50%;
+  font-size: 28px;
+  padding: 10px;
+  border: 3px solid #d8d7e1;
+  color: #220315;
+  font-size: 20px;
+  font-family: "Zhizn";
+}
+
+.button-submit:hover {
+  background: #d8d7e1;
+}
+
+#bottom-line {
+  line-height: 120%;
+}
+
+#side-inner {
+  padding-left: 60px;
+  color: #d8d7e0;
+}
+
+#side-title {
+  font-size: 24px;
+  font-family: "Zhizn";
+}
+
+#bullets {
+  padding-inline-start: 13px;
+  font-weight: 300;
+  line-height: 120%;
+}
+
+li {
+  padding-bottom: 16px;
+  list-style-type: none;
+  position: relative;
+}
+
+li::before {
+  content: "•";
+  position: absolute;
+  left: -0.8em;
+  font-size: 0.9em;
+}
+
+#orange-note {
+  padding-top: 45px;
+  font-size: 28px;
+  font-family: "Zhizn";
+  color: #c57e32;
+  line-height: 150%;
+}
+
+#orange1 {
+  padding-left: 160px;
+}
+
+#orange2 {
+  padding-left: 51px;
+}
+
+#orange3 {
+  padding-left: 212px;
+}

@@ -1,0 +1,119 @@
+<div id="container">
+  <div id="top-title">
+    Спасибо, что помогаете нашим детям адаптироваться<br />
+    к новой жизни и найти в ней смысл!
+  </div>
+  <div id="first-block">
+    <div id="square-wrapper">
+      <div id="square">
+        <div id="square-inner">
+          <div id="square-title">сделать пожертвование</div>
+          <div id="subtitle">c международных счетов</div>
+          <div id="big-buttons">
+            <div
+              class="big-button"
+              [class.selected]="repeat"
+              (click)="repeat = true"
+            >
+              Ежемесячно
+            </div>
+            <div
+              class="big-button"
+              [class.selected]="!repeat"
+              (click)="repeat = false"
+            >
+              Разово
+            </div>
+          </div>
+
+          <div id="small-buttons">
+            <div
+              class="small-button"
+              [class.selected]="sum === 5"
+              (click)="sum = 5"
+            >
+              5€
+            </div>
+            <div
+              class="small-button"
+              [class.selected]="sum === 10"
+              (click)="sum = 10"
+            >
+              10€
+            </div>
+            <div
+              class="small-button"
+              [class.selected]="sum === 20"
+              (click)="sum = 20"
+            >
+              20€
+            </div>
+            <div
+              class="small-button"
+              [class.selected]="sum === 30"
+              (click)="sum = 30"
+            >
+              30€
+            </div>
+            <div
+              class="small-button"
+              [class.selected]="sum !== 5 && sum !== 10 && sum !== 30"
+            >
+              <input
+                id="otherSum"
+                [(ngModel)]="otherSum"
+                placeholder="Другая"
+                type="number"
+                (input)="sum = otherSum"
+              />
+            </div>
+          </div>
+          <div class="details-fields">
+            <div class="details-field">
+              <input [(ngModel)]="myName" placeholder="Ваше имя" />
+            </div>
+            <div class="details-field">
+              <input [(ngModel)]="myEmail" placeholder="Ваш email" />
+            </div>
+          </div>
+          <div id="terms-line">
+            <div id="terms">
+              Нажимая на кнопку «Помочь», вы соглашаетесь <br />
+              с условиями оферты, политики в отношении <br />
+              и защиты персональных данных и даёте согласие <br />
+              на обработку своих персональных данных.
+            </div>
+            <div>
+              <div class="button-wrapper">
+                <div class="button-submit">помочь</div>
+              </div>
+            </div>
+          </div>
+          <div id="bottom-line">
+            Вы так же можете помочь намс российских счетов:<br>
+            на карту Тинькофф по телефону +7 931 224 41 43
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="square-side">
+      <div id="side-inner">
+        <div id="side-title">
+          зачем нам деньги?
+        </div>
+        <ul id="bullets">
+          <li>На зарплату преподавателей.</li>
+          <li>На поддержку разных онлайн сервисов<br> вроде зума, сайта и т.д.</li>
+          <li>На регистрацию организации<br> и сопутствующие расходы.</li>
+          <li>На организацию оффлайн-сессий.</li>
+        </ul>
+        <div id="orange-note">
+          <div id="orange1">Ваша помощь для нас –</div>
+          <div id="orange2">единственный источник</div>
+          <div id="orange3">финансирования!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="second-block"></div>
+</div>
