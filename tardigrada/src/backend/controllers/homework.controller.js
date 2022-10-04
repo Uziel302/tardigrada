@@ -91,7 +91,7 @@ exports.getHomeworks = async (req, res) => {
     )
     .leftJoin("childrenHomework as chw", {
       "hw.id": "chw.homeworkId",
-      "chw.childId":  knex.raw('?', [req.query.childId]),
+      "chw.childId": knex.raw("?", [req.query.childId]),
     })
     .whereIn("hw.lectureId", JSON.parse("[" + req.query.lectureId + "]"))
     .orderBy([{ column: "hw.id", order: "desc" }])

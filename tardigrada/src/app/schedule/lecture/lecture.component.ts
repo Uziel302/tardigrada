@@ -11,9 +11,7 @@ import { ScheduleService } from '../schedule.service';
 export class LectureComponent implements OnInit {
   @Input() data: ILecture = this.scheduleService.emptyLecture;
 
-  constructor(
-    public scheduleService: ScheduleService,
-  ) {}
+  constructor(public scheduleService: ScheduleService) {}
 
   ngOnInit(): void {}
 }

@@ -78,17 +78,20 @@ export class TeacherAreaComponent implements OnInit {
       );
   }
 
-  getLectureChildren(lectureId: number){
+  getLectureChildren(lectureId: number) {
     this.http
-    .get<IChild[]>(
-      environment.apiEndPoint + 'getLectureChildren' + '/?lectureId=' + lectureId
-    )
-    .subscribe(
-      (data) => {
-        this.scheduleService.currentChildren = data;
-      },
-      (error) => {}
-    );
+      .get<IChild[]>(
+        environment.apiEndPoint +
+          'getLectureChildren' +
+          '/?lectureId=' +
+          lectureId
+      )
+      .subscribe(
+        (data) => {
+          this.scheduleService.currentChildren = data;
+        },
+        (error) => {}
+      );
   }
 
   getNotes() {
@@ -193,7 +196,7 @@ export class TeacherAreaComponent implements OnInit {
   }
 
   onLectureChange(lectureId: number) {
-    if(lectureId){
+    if (lectureId) {
       this.getLectureChildren(lectureId);
       this.scheduleService.getHomework(lectureId);
     }

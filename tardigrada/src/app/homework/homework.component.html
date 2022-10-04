@@ -2,10 +2,16 @@
   <div>домашка</div>
   <div *ngIf="!scheduleService.currentHomeworks.length">-</div>
   <div *ngFor="let homework of scheduleService.currentHomeworks; let i = index">
-    <div *ngIf="location === 'all'" id="lecture-name">{{ getLectureName(homework.lectureId) }}</div>
+    <div *ngIf="location === 'all'" id="lecture-name">
+      {{ getLectureName(homework.lectureId) }}
+    </div>
     <textarea class="user-textarea">{{ homework.hwText }}</textarea>
     <div class="hwActions">
-      <a *ngIf="parsing.isImage(homework.hwFile)" [attr.href]="homework.hwFile" target="_blank">
+      <a
+        *ngIf="parsing.isImage(homework.hwFile)"
+        [attr.href]="homework.hwFile"
+        target="_blank"
+      >
         <img [attr.src]="homework.hwFile" class="photoPreview" />
       </a>
       <a
@@ -78,7 +84,11 @@
           ></textarea>
           <div class="response-buttons">
             <ng-container *ngFor="let file of parsing.parse(homework.fhwFile)">
-              <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">
+              <a
+                *ngIf="parsing.isImage(file)"
+                [attr.href]="file"
+                target="_blank"
+              >
                 <img [attr.src]="file" class="photoPreview" />
               </a>
               <a

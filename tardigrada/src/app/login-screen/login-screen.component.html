@@ -57,10 +57,16 @@
               minlength="3"
               #passwordRef="ngModel"
             />
-            <div class="error-message">{{loginService.currentError ? 'неверный емейл или пароль' : '&nbsp;'}}</div>
+            <div class="error-message">
+              {{
+                loginService.currentError
+                  ? "неверный емейл или пароль"
+                  : "&nbsp;"
+              }}
+            </div>
             <div *ngIf="!login" id="terms-note">
               Нажимая Присоединиться,
-              <br class="wide-none"/>
+              <br class="wide-none" />
               вы даете согласие на обработку<br />
               персональных данных и соглашаетесь <br />
               с <a routerLink="/privacy">политикой конфиденциальности</a>

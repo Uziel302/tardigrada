@@ -112,7 +112,7 @@
             [attr.href]="scheduleService.selectedLecture.url"
             target="_blank"
           >
-            <img class="telegram" src="/assets/images/Telegram.png">
+            <img class="telegram" src="/assets/images/Telegram.png" />
           </a>
           <a
             *ngIf="scheduleService.selectedLecture.book"
@@ -165,5 +165,4 @@
 
   <div class="separating-space"></div>
   <app-homework *ngIf="showHomework" [location]="'all'"></app-homework>
-
 </div>

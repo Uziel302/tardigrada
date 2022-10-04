@@ -37,12 +37,14 @@ export class UserScheduleLectureComponent implements OnInit {
   }
 
   savePersonalSlot() {
-    let newText = this.scheduleService.personalSlots[this.dayNumber][this.rowNumber];
-    let oldText = this.scheduleService.personalSlotsOrig[this.dayNumber][this.rowNumber];
-    if(newText === oldText){
+    let newText =
+      this.scheduleService.personalSlots[this.dayNumber][this.rowNumber];
+    let oldText =
+      this.scheduleService.personalSlotsOrig[this.dayNumber][this.rowNumber];
+    if (newText === oldText) {
       return;
     }
-    
+
     this.http
       .post(environment.apiEndPoint + 'savePersonalSlot', {
         childId: this.loginService.currentChildId,
@@ -53,8 +55,7 @@ export class UserScheduleLectureComponent implements OnInit {
         isUpdate: oldText !== '',
       })
       .subscribe(
-        (data) => {
-        },
+        (data) => {},
         (error) => {}
       );
   }

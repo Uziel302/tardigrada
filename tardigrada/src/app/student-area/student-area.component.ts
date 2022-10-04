@@ -55,7 +55,8 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     this.scheduleService.savedHomeworkText = '';
     this.scheduleService.savedHomeworkFile = '';
     this.scheduleService.openHwResponse = [];
-    this.scheduleService.personalSlots = this.scheduleService.getEmptyPersonalSlots();
+    this.scheduleService.personalSlots =
+      this.scheduleService.getEmptyPersonalSlots();
   }
 
   onLectureChange(event: number) {
@@ -63,10 +64,10 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     this.scheduleService.getHomeworks(event, this.loginService.currentChildId);
   }
 
-  showHomeworks(){
+  showHomeworks() {
     this.scheduleService.selectedLecture = this.scheduleService.emptyLecture;
     this.showHomework = !this.showHomework;
-    if(this.showHomework){
+    if (this.showHomework) {
       this.scheduleService.getHomeworks(0, this.loginService.currentChildId);
     }
   }

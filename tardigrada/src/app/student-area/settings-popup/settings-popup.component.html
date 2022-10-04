@@ -17,7 +17,7 @@
     </div>
     <div *ngIf="isStudent">
       <div (click)="titleClick()">Choose child:</div>
-      <input [(ngModel)]="adminChild" *ngIf="!adminView"/>
+      <input [(ngModel)]="adminChild" *ngIf="!adminView" />
       <div
         class="settings-button"
         (click)="changeChild(child)"

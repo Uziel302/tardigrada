@@ -94,7 +94,7 @@
             [attr.href]="scheduleService.selectedLecture.url"
             target="_blank"
           >
-            <img class="telegram" src="/assets/images/Telegram.png">
+            <img class="telegram" src="/assets/images/Telegram.png" />
           </a>
           <a
             class="purple-button download-button"
@@ -272,7 +272,9 @@
         >
           <mat-icon>link</mat-icon>
         </div>
-        <app-upload-photo (uploaded)="updateNoteFile($event)"></app-upload-photo>
+        <app-upload-photo
+          (uploaded)="updateNoteFile($event)"
+        ></app-upload-photo>
         <div class="purple-button link-icon" (click)="saveNote()">
           <mat-icon>save</mat-icon>
         </div>
@@ -291,7 +293,9 @@
     <div id="note-error">&nbsp;{{ currentError }}</div>
     <div class="note-container">
       <div class="single-note" *ngFor="let note of noteList; let i = index">
-        <ng-container *ngIf="note.lectureId === scheduleService.selectedLecture.id">
+        <ng-container
+          *ngIf="note.lectureId === scheduleService.selectedLecture.id"
+        >
           <a
             *ngIf="note.link"
             class="note-text"

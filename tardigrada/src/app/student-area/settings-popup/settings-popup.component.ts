@@ -33,8 +33,8 @@ export class SettingsPopupComponent implements OnInit {
     this.settingsChange.emit(false);
   }
 
-  titleClick(){
-    if(!this.adminView){
+  titleClick() {
+    if (!this.adminView) {
       localStorage.setItem('childId', this.adminChild);
     }
     this.adminView++;
