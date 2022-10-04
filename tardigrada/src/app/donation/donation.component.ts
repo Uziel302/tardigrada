@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DonationComponent implements OnInit {
   public repeat: boolean = true;
   public sum: number = 30;
+  public prices: number[] = [5,10,20,30];
   public otherSum: number;
   public myName: string = '';
   public myEmail: string = '';

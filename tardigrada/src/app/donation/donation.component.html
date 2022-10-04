@@ -28,36 +28,16 @@
 
           <div id="small-buttons">
             <div
+              *ngFor="let price of prices"
               class="small-button"
-              [class.selected]="sum === 5"
-              (click)="sum = 5"
+              [class.selected]="sum === price"
+              (click)="sum = price"
             >
-              5€
+              {{price}}€
             </div>
             <div
               class="small-button"
-              [class.selected]="sum === 10"
-              (click)="sum = 10"
-            >
-              10€
-            </div>
-            <div
-              class="small-button"
-              [class.selected]="sum === 20"
-              (click)="sum = 20"
-            >
-              20€
-            </div>
-            <div
-              class="small-button"
-              [class.selected]="sum === 30"
-              (click)="sum = 30"
-            >
-              30€
-            </div>
-            <div
-              class="small-button"
-              [class.selected]="sum !== 5 && sum !== 10 && sum !== 30"
+              [class.selected]="!prices.includes(sum)"
             >
               <input
                 id="otherSum"
