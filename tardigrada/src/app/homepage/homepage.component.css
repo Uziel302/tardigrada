@@ -80,7 +80,7 @@
 #wrapper1 {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   padding-top: 9%;
   padding-right: 10%;
 }
@@ -452,7 +452,7 @@
   }
 
   #wrapper1 .quotee {
-    padding-right: 45px;
+    padding-left: 190px;
     padding-top: 7px;
   }
 
