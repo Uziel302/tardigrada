@@ -150,6 +150,7 @@
 
 #terms {
   font-size: 11px;
+  width: 55%;
 }
 
 .button-wrapper {
@@ -200,7 +201,7 @@
 #bullets {
   padding-inline-start: 13px;
   font-weight: 300;
-  line-height: 120%;
+  line-height: 130%;
 }
 
 li {
@@ -251,7 +252,8 @@ li::before {
 }
 
 #text-wrapper {
-  width: 83.5%;
+  width: 81%;
+  padding-right: 20px;
 }
 
 #image-column {
