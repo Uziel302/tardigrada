@@ -1,7 +1,7 @@
 <div id="container">
   <div id="wrapper">
     <div id="rows">
-      <div id="columns">
+      <div id="columns" [class.columns]="login">
         <div id="form-column">
           <div *ngIf="login" class="names-column narrow-none">
             <div>EMAIL</div>

@@ -23,7 +23,6 @@ input {
   justify-content: center;
   align-items: flex-start;
   background: #220315;
-  padding-bottom: 600px;
 }
 
 #wrapper {
@@ -54,7 +53,7 @@ input {
   display: flex;
 }
 
-#columns {
+.columns {
   margin-top: 150px;
 }
 
@@ -151,9 +150,18 @@ input {
     margin-top: -15px;
     margin-left: 40px;
   }
+
+  #container {
+    height: 101vh;
+  }
+
 }
 
 @media screen and (max-width: 1260px) {
+  #container {
+    padding-bottom: 600px;
+  }
+
   .narrow-none {
     display: none !important;
   }
