@@ -18,7 +18,7 @@ export class LoginScreenComponent implements OnInit {
 
   constructor(
     public loginService: LoginService,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
