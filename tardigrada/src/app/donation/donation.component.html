@@ -66,9 +66,12 @@
               на обработку своих персональных данных.
             </div>
             <div class="button-wrapper">
-              <div class="button-submit">помочь</div>
+              <div class="button-submit" (click)="showPayment = true">помочь</div>
             </div>
           </div>
+          <div id="paypal-button" [style.display]="showPayment ? 'block' : 'none'"></div>
+          <div id="paypal-sum" style="display:none;">{{sum}}</div>
+
           <div id="bottom-line">
             Вы так же можете помочь намс российских счетов:<br />
             на карту Тинькофф по телефону +7 931 224 41 43

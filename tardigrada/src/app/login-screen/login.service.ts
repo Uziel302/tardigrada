@@ -97,7 +97,6 @@ export class LoginService {
           this.token = token;
           if (token) {
             const expiresInDuration: number = data.expiresIn;
-            this.setAuthTimer(expiresInDuration);
             this.isAuthenticated = true;
             this.authStatusListener.next(true);
             const now: Date = new Date();
@@ -136,7 +135,6 @@ export class LoginService {
       this.token = authInformation.token;
       this.currentChildId = authInformation.childId;
       this.isAuthenticated = true;
-      this.setAuthTimer(expiresIn / 1000);
       this.authStatusListener.next(true);
     }
   }
@@ -148,12 +146,6 @@ export class LoginService {
     clearTimeout(this.tokenTimer);
     this.clearAuthData();
     this.router.navigate(['/login']);
-  }
-
-  private setAuthTimer(duration: number): void {
-    this.tokenTimer = setTimeout(() => {
-      this.logout();
-    }, duration * 1000);
   }
 
   private saveAuthData(
