@@ -129,6 +129,10 @@ input[type=number] {
   font-weight: 300;
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
 .details-fields {
   display: flex;
   justify-content: space-between;
