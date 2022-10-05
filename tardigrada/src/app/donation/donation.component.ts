@@ -54,7 +54,7 @@ export class DonationComponent implements OnInit, AfterViewChecked {
     this.didPaypalScriptLoad = true;
     return new Promise((resolve, reject) => {
       const scriptElement = document.createElement('script');
-      scriptElement.src = 'https://www.paypal.com/sdk/js?client-id='+this.paypalId+'&currency=EUR';
+      scriptElement.src = 'https://www.paypal.com/sdk/js?client-id='+this.paypalId+'&currency=EUR&locale=en_IL';
       scriptElement.onload = resolve;
       document.body.appendChild(scriptElement);
     });

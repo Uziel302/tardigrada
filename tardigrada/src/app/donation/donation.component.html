@@ -72,6 +72,11 @@
           <div id="paypal-button" [style.display]="showPayment ? 'block' : 'none'"></div>
           <div id="paypal-sum" style="display:none;">{{sum}}</div>
 
+          <form ngNoForm action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="BKVDZTFGBSSMQ" />
+            <input type="image" src="https://pics.paypal.com/00/s/YTdkZDc3YzEtYjk3Yi00ZDYxLTkzNjMtMGY0YzQxMDE0ZGU4/file.PNG" border="0" name="submit" title="помочь" alt="Кнопка «Пожертвовать через PayPal»" />
+          </form>
+
           <div id="bottom-line">
             Вы так же можете помочь намс российских счетов:<br />
             на карту Тинькофф по телефону +7 931 224 41 43
