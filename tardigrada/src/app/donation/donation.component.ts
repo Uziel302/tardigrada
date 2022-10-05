@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-donation',
@@ -13,7 +16,16 @@ export class DonationComponent implements OnInit {
   public myName: string = '';
   public myEmail: string = '';
 
-  constructor() {}
+  constructor(
+    private http: HttpClient
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.http.post(environment.apiEndPoint + 'paymentLink', {sum: 1}).subscribe(
+      (data) => {
+      },
+      (error) => {
+      }
+    );
+  }
 }

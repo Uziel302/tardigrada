@@ -37,9 +37,11 @@ const {
   saveHwResponse,
   saveHwFeedback,
 } = require("./controllers/homework.controller");
+const { paymentLink } = require("./controllers/payment.controller");
 
 router.post("/login", loginAndValidation);
 router.post("/signup", signupAndValidation);
+router.post("/paymentLink", paymentLink);
 router.get("/getLectures", getLectures);
 router.get("/getLectureChildren", getLectureChildren);
 router.get("/getTeacherLectures", getTeacherLectures);
