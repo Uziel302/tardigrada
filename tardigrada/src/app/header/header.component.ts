@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +9,7 @@ export class HeaderComponent implements OnInit {
   public tilted: boolean = false;
   public hidden: boolean = true;
 
-  constructor(public dialog: MatDialog) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
