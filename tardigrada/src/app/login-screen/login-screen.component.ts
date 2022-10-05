@@ -1,4 +1,5 @@
-import { HostListener, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { LoginService } from './login.service';
 
@@ -15,9 +16,14 @@ export class LoginScreenComponent implements OnInit {
   public telegram: string = '';
   public password: string = '';
 
-  constructor(public loginService: LoginService) {}
+  constructor(
+    public loginService: LoginService,
+    private route: ActivatedRoute,
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.login = !this.route.snapshot.paramMap.get('type');
+  }
 
   submit() {
     this.loginService.login(this.email, this.password);
