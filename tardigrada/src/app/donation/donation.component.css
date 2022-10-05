@@ -331,18 +331,19 @@ li::before {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 190px;
-  top: 100%;
+  width: 180px;
+  top: 140%;
   left: 50%;
-  margin-left: -95px;
+  margin-left: -90px;
   background-color: white;
-  color: black;
+  color: #59385b;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 10px 0;
   position: absolute;
   z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  opacity: 0.9;
 }
 
 .tooltip:hover .tooltiptext {
