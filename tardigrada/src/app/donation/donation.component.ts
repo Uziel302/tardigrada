@@ -21,11 +21,5 @@ export class DonationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.http.post(environment.apiEndPoint + 'paymentLink', {sum: 1}).subscribe(
-      (data) => {
-      },
-      (error) => {
-      }
-    );
   }
 }
