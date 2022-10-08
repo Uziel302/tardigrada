@@ -1,32 +1,45 @@
 <div class="background">
   <div id="right-part">
-    <div id="title-container">
-      <div id="top-title">
-        расписание
+    <div id="inner-right">
+      <div id="title-container">
+        <div id="top-title">
+          расписание
+        </div>
+        <img id="animal" src="/assets/images/Animal.png" />
       </div>
-      <img id="animal" src="/assets/images/Animal.png" />
-    </div>
-    <div id="search-container">
-      <input id="search"/>
-      <div id="search-icon">
-        <div id="circle"></div>
-        <div id="line"></div>
+      <div id="search-container">
+        <input id="search"/>
+        <div id="search-icon">
+          <div id="circle"></div>
+          <div id="line"></div>
+        </div>
       </div>
-    </div>
-    <div id="ages-title">
-      возраст
-    </div>
-    <div id="ages">
-      <div *ngFor="let age of ageList" class="age-button">{{age}}{{age === 18 ? '+': ''}}</div>
-    </div>
-    <div id="subjects-title">
-      предметы
-    </div>
-    <div *ngFor="let subject of scheduleService.getSubjectList()" class="subject">
-      {{subject}}
+      <div id="ages-title">
+        возраст
+      </div>
+      <div id="ages">
+        <div *ngFor="let age of ageList" class="age-button">{{age}}{{age === 18 ? '+': ''}}</div>
+      </div>
+      <div id="subjects-title">
+        предметы
+      </div>
+      <div *ngFor="let subject of scheduleService.getSubjectList()" class="subject">
+        {{subject}}
+      </div>
     </div>
   </div>
   <div id="left-part">
-    
+    <div id="inner-left">
+      <div id="left-title">время указанное в расписании GMT +3</div>
+      <div id="week-buttons">
+        <div *ngFor="let day of weekMapShort | keyvalue" class="day-button">
+          {{day.value}}
+        </div>
+      </div>
+      <div *ngFor="let day of weekMap | keyvalue" class="day-title">
+        {{day.value}}
+      </div>
+    </div>
+
   </div>
 </div>

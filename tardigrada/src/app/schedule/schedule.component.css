@@ -5,14 +5,20 @@
 }
 
 #right-part {
-  width: 490px;
-  padding-bottom: 400px;
-  padding-left: 113px;
+  width: 515px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#inner-right {
+  width: 392px;
 }
 
 #left-part {
   width: calc(100% - 490px);
   background-color: #cbcedd;
+  display: flex;
+  justify-content: center;
 }
 
 #top-title {
@@ -109,4 +115,43 @@
   font-size: 22px;
   line-height: 150%;
   font-weight: 300;
+}
+
+#inner-left {
+  width: calc(100% - 220px);
+}
+
+#left-title {
+  font-family: "Zhizn";
+  color: rgb(75, 96, 133);
+  font-size: 22px;
+  padding-top: 130px;
+  padding-bottom: 15px;
+}
+
+#week-buttons {
+  display: flex;
+  padding-bottom: 70px;
+}
+
+.day-button {
+  color: rgb(75, 96, 133);
+  font-weight: 300;
+  height: 53px;
+  width: 53px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 18px;
+}
+
+.day-title {
+  color: rgb(26, 34, 62);
+  font-family: "Zhizn";
+  font-size: 26px;
+  width: 100%;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgb(26, 34, 62);
 }

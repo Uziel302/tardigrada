@@ -21,6 +21,15 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     [6, 'Воскресенье'],
     [7, 'Все'],
   ]);
+  public weekMapShort = new Map([
+    [0, 'пн'],
+    [1, 'вт'],
+    [2, 'ср'],
+    [3, 'чт'],
+    [4, 'пт'],
+    [5, 'сб'],
+    [6, 'вс'],
+  ]);
   public ageList: number[] = [
     4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
   ];
