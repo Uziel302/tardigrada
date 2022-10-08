@@ -11,4 +11,5 @@ export interface ILecture {
   stationeryText: string;
   stationeryFile: string;
   book: string;
+  category: string;
 }

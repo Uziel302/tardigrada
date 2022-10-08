@@ -96,7 +96,7 @@ export class HomeworkComponent implements OnInit {
   getLectureName(lectureId: number) {
     let lectureName = '';
     for (let lecture of this.scheduleService.lecturesData) {
-      if (lecture.lectureId === lectureId) {
+      if (lecture.id === lectureId) {
         lectureName = lecture.title;
       }
     }

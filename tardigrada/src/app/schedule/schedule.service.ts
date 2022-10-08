@@ -9,7 +9,7 @@ import { IHomeWork } from '../models/homework';
 @Injectable({ providedIn: 'root' })
 export class ScheduleService {
   public lecturesArray: ILecture[][][] = this.getEmptyWeek();
-  public lecturesData: any[] = [];
+  public lecturesData: ILecture[] = [];
   public childLectures: boolean[] = [];
   public emptyLecture: ILecture = {
     id: 0,
@@ -24,6 +24,7 @@ export class ScheduleService {
     stationeryText: '',
     stationeryFile: '',
     book: '',
+    category: '',
   };
   public selectedLecture: ILecture = this.emptyLecture;
   public currentChildren: IChild[] = [];
@@ -148,6 +149,7 @@ export class ScheduleService {
         stationeryText: lectureData.stationeryText,
         stationeryFile: lectureData.stationeryFile,
         book: lectureData.book,
+        category: lectureData.category,
       };
     }
   }
@@ -200,5 +202,15 @@ export class ScheduleService {
         },
         (error) => {}
       );
+  }
+
+  getSubjectList(): string[]{
+    let subjects: string[] = [];
+    for(let lecture of this.lecturesData){
+      if(lecture.category && !subjects.includes(lecture.category)){
+        subjects.push(lecture.category);
+      }
+    }
+    return subjects;
   }
 }

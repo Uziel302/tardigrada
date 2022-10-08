@@ -1,12 +1,105 @@
 .background {
   background-color: #182240;
-  color: rgb(216, 215, 224);
+  color: rgb(204, 206, 220);
+  display: flex;
 }
 
 #right-part {
   width: 490px;
+  padding-bottom: 400px;
+  padding-left: 113px;
 }
 
 #left-part {
-  width: 100%;
+  width: calc(100% - 490px);
+  background-color: #cbcedd;
+}
+
+#top-title {
+  font-family: "Zhizn";
+  font-size: 35px;
+}
+
+#animal {
+  height: 90px;
+  width: 90px;
+  transform: translateY(3px) rotate(20deg);
+  padding-left: 30px;
+  margin-top: -35px;
+}
+
+#title-container {
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+}
+
+#search-container {
+  display: flex;
+  padding-bottom: 75px;
+}
+
+#search {
+  width: 330px;
+  height: 35px;
+  background-color: inherit;
+  outline: none;
+  border: 1px solid rgb(204, 206, 220);
+  border-radius: 12px;
+}
+
+#search-icon {
+  position: relative;
+  margin-left: -40px;
+  width: 40px;
+  height: 40px;
+}
+
+#line {
+  border-top: 1px solid rgb(204, 206, 220);
+  width: 13px;
+  transform: rotate(135deg);
+  position: absolute;
+  bottom: 11px;
+  left: 5px
+}
+
+#circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 10px;
+  left: 10px;
+  border-radius: 50%;
+  border: 1px solid rgb(204, 206, 220);
+}
+
+#ages-title, #subjects-title {
+  font-family: "Zhizn";
+  font-size: 26px;
+}
+
+#ages {
+  margin-top: 18px;
+  margin-left: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  max-width: 370px;
+}
+
+.age-button {
+  height: 33px;
+  width: 33px;
+  border-radius: 50%;
+  background-color: rgb(75, 96, 133);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 11px;
+  margin-bottom: 16px;
+}
+
+#subjects-title {
+  padding-top: 50px;
 }
