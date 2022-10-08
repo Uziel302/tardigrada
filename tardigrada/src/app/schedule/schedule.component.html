@@ -22,7 +22,7 @@
     <div id="subjects-title">
       предметы
     </div>
-    <div *ngFor="let subject of scheduleService.getSubjectList()">
+    <div *ngFor="let subject of scheduleService.getSubjectList()" class="subject">
       {{subject}}
     </div>
   </div>

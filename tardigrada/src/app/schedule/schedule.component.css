@@ -101,5 +101,12 @@
 }
 
 #subjects-title {
-  padding-top: 50px;
+  padding-top: 52px;
+  padding-bottom: 14px;
+}
+
+.subject {
+  font-size: 22px;
+  line-height: 150%;
+  font-weight: 300;
 }
