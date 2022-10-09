@@ -107,6 +107,12 @@
   margin-bottom: 16px;
 }
 
+.selectedAge {
+  background-color: rgb(197, 125, 50);
+  color: #182240;
+  font-weight: 700;
+}
+
 #subjects-title {
   padding-top: 52px;
   padding-bottom: 14px;

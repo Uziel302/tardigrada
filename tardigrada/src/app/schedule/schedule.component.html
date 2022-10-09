@@ -14,7 +14,12 @@
       </div>
       <div id="ages-title">возраст</div>
       <div id="ages">
-        <div *ngFor="let age of ageList" class="age-button">
+        <div
+          *ngFor="let age of ageList"
+          class="age-button"
+          [class.selectedAge]="checkedAges.includes(age)"
+          (click)="toggleAge(age)"
+        >
           {{ age }}{{ age === 18 ? "+" : "" }}
         </div>
       </div>
@@ -43,9 +48,10 @@
         <div *ngFor="let lecture of scheduleService.lecturesData">
           <div
             *ngIf="
-              !search ||
-              lecture.title.includes(search) ||
-              lecture.teacher.includes(search)
+              filterAge(lecture) &&
+              (!search ||
+                lecture.title.includes(search) ||
+                lecture.teacher.includes(search))
             "
             class="lecture-line"
           >
