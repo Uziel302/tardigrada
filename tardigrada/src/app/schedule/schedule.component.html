@@ -37,7 +37,10 @@
         </div>
       </div>
       <div *ngFor="let day of weekMap | keyvalue">
-        <div class="day-title">{{day.value}}</div>
+        <div class="day-title">
+          <div class="day-name">{{day.value}}</div>
+          <div class="day-date">{{weekDates[day.key]}}</div>
+        </div>
         <div *ngFor="let lecture of scheduleService.lecturesData" class="lecture-line">
           <div class="lecture-time">{{scheduleService.getTimeFormatted(lecture, false)}}-{{scheduleService.getTimeFormatted(lecture, true)}}</div>
           <div class="lecture-title">{{lecture.title}}</div>

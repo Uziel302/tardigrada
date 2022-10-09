@@ -137,7 +137,8 @@ export class ScheduleService {
       ][0]['id']
         ? 1
         : 0;
-      this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] = lectureData;
+      this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] =
+        lectureData;
     }
   }
 

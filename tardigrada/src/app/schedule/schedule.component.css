@@ -149,13 +149,23 @@
 
 .day-title {
   color: rgb(26, 34, 62);
-  font-family: "Zhizn";
-  font-size: 26px;
   width: 100%;
-  padding-bottom: 4px;
   border-bottom: 1px solid rgb(26, 34, 62);
   margin-top: 44px;
   margin-bottom: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 4px;
+}
+
+.day-name {
+  font-family: "Zhizn";
+  font-size: 26px;
+}
+
+.day-date {
+  font-weight: 300;
 }
 
 .lecture-line {
