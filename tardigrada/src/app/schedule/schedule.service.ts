@@ -16,6 +16,7 @@ export class ScheduleService {
     title: '',
     subtitle: '',
     teacher: '',
+    day: 0,
     hour: 0,
     minutes: 0,
     minAge: 0,

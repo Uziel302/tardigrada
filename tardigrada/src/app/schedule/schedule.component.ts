@@ -52,6 +52,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   ];
   public selectedAges: number[] = [];
   public selectedCategories: string[] = [];
+  public selectedDays: number[] = [];
   public search: string = '';
 
   private subscriptions: Subscription[] = [];
@@ -129,5 +130,25 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     }
 
     return false;
+  }
+
+  filterday(day: number): boolean {
+    if (!this.selectedDays.length) {
+      return true;
+    }
+
+    if (this.selectedDays.includes(day)) {
+      return true;
+    }
+
+    return false;
+  }
+
+  toggleDay(day: number){
+    if (this.selectedDays.includes(day)) {
+      this.selectedDays.splice(this.selectedDays.indexOf(day), 1);
+    } else {
+      this.selectedDays.push(day);
+    }
   }
 }

@@ -8,6 +8,7 @@
   width: 515px;
   display: flex;
   justify-content: flex-end;
+  padding-bottom: 500px;
 }
 
 #inner-right {
@@ -160,6 +161,11 @@
   align-items: center;
   justify-content: center;
   margin-right: 18px;
+}
+
+.selectedDay {
+  background-color: rgb(75, 96, 133);
+  color: rgb(216,215,224);
 }
 
 .day-title {
