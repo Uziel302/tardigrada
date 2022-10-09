@@ -11,7 +11,7 @@
         *ngFor="let slot of hourGroup"
         [class.half]="hourGroup[0].title && hourGroup[1].title"
       >
-        <div *ngIf="slot.title && checkAge(+slot.minAge, +slot.maxAge)">
+        <div *ngIf="slot.title && checkAge(slot.minAge, slot.maxAge)">
           <app-lecture [data]="slot"></app-lecture>
         </div>
       </div>

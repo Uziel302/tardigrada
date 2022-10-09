@@ -131,7 +131,7 @@
 
 #week-buttons {
   display: flex;
-  padding-bottom: 70px;
+  padding-bottom: 26px;
 }
 
 .day-button {
@@ -154,4 +154,38 @@
   width: 100%;
   padding-bottom: 4px;
   border-bottom: 1px solid rgb(26, 34, 62);
+  margin-top: 44px;
+  margin-bottom: 42px;
+}
+
+.lecture-line {
+  display: flex;
+  padding-bottom: 14px;
+  color: rgb(75, 96, 133);
+}
+
+.lecture-time {
+  font-size: 20px;
+}
+
+.lecture-title {
+  color: rgb(26, 34, 62);
+  padding-left: 49px;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.lecture-teacher {
+  padding-left: 6px;
+  font-size: 21px;
+}
+
+.lecture-age {
+  font-style: italic;
+  font-size: 21px;
+  padding-left: 6px;
+}
+
+.lecture-link {
+  padding-left: 6px;
 }

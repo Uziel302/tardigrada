@@ -3,9 +3,10 @@ export interface ILecture {
   title: string;
   subtitle: string;
   teacher: string;
-  hour: string;
-  minAge: string;
-  maxAge: string;
+  hour: number;
+  minutes: number;
+  minAge: number;
+  maxAge: number;
   background: string;
   url: string;
   stationeryText: string;

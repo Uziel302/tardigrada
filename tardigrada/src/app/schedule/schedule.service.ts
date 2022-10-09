@@ -16,9 +16,10 @@ export class ScheduleService {
     title: '',
     subtitle: '',
     teacher: '',
-    hour: '',
-    minAge: '',
-    maxAge: '',
+    hour: 0,
+    minutes: 0,
+    minAge: 0,
+    maxAge: 0,
     background: '',
     url: '',
     stationeryText: '',
@@ -136,25 +137,13 @@ export class ScheduleService {
       ][0]['id']
         ? 1
         : 0;
-      this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] = {
-        id: lectureData.id,
-        title: lectureData.title,
-        subtitle: lectureData.subtitle,
-        teacher: lectureData.teacherName,
-        hour: this.getTimeFormatted(lectureData.hour, lectureData.minutes),
-        minAge: lectureData.minAge,
-        maxAge: lectureData.maxAge,
-        background: lectureData.background,
-        url: lectureData.telegram,
-        stationeryText: lectureData.stationeryText,
-        stationeryFile: lectureData.stationeryFile,
-        book: lectureData.book,
-        category: lectureData.category,
-      };
+      this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] = lectureData;
     }
   }
 
-  private getTimeFormatted(hour: number, minutes: number) {
+  public getTimeFormatted(lecture: ILecture, end: boolean) {
+    let hour = lecture.hour + (end ? 1 : 0);
+    let minutes = lecture.minutes;
     let formatted = hour < 10 ? '0' + hour : '' + hour;
     formatted += minutes < 10 ? ':0' + minutes : ':' + minutes;
     return formatted;
@@ -204,10 +193,10 @@ export class ScheduleService {
       );
   }
 
-  getSubjectList(): string[]{
+  getSubjectList(): string[] {
     let subjects: string[] = [];
-    for(let lecture of this.lecturesData){
-      if(lecture.category && !subjects.includes(lecture.category)){
+    for (let lecture of this.lecturesData) {
+      if (lecture.category && !subjects.includes(lecture.category)) {
         subjects.push(lecture.category);
       }
     }
