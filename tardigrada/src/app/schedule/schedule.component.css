@@ -98,6 +98,7 @@
   height: 33px;
   width: 33px;
   border-radius: 50%;
+  cursor: pointer;
   background-color: rgb(75, 96, 133);
   display: flex;
   justify-content: center;
@@ -115,6 +116,7 @@
   font-size: 22px;
   line-height: 150%;
   font-weight: 300;
+  cursor: pointer;
 }
 
 #inner-left {
@@ -140,6 +142,7 @@
   height: 53px;
   width: 53px;
   border-radius: 50%;
+  cursor: pointer;
   background-color: white;
   display: flex;
   align-items: center;
