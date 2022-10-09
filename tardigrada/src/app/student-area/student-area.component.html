@@ -85,7 +85,12 @@
         </div>
         <div id="hour">
           {{ scheduleService.week[scheduleService.dayNumber] }}. чт.
-          {{ scheduleService.getTimeFormatted(scheduleService.selectedLecture, false) }}
+          {{
+            scheduleService.getTimeFormatted(
+              scheduleService.selectedLecture,
+              false
+            )
+          }}
         </div>
       </div>
 

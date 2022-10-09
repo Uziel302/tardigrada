@@ -144,7 +144,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     return false;
   }
 
-  toggleDay(day: number){
+  toggleDay(day: number) {
     if (this.selectedDays.includes(day)) {
       this.selectedDays.splice(this.selectedDays.indexOf(day), 1);
     } else {

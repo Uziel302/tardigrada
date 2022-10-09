@@ -69,9 +69,15 @@
               <div class="button-submit" (click)="showForm()">помочь</div>
             </div>
           </div>
-          <div id="paypal-button" [style.display]="showPayment && !repeat ? 'block' : 'none'"></div>
-          <div id="paypal-subscribe" [style.display]="showPayment && repeat ? 'block' : 'none'"></div>
-          <div id="paypal-sum" style="display:none;">{{sum}}</div>
+          <div
+            id="paypal-button"
+            [style.display]="showPayment && !repeat ? 'block' : 'none'"
+          ></div>
+          <div
+            id="paypal-subscribe"
+            [style.display]="showPayment && repeat ? 'block' : 'none'"
+          ></div>
+          <div id="paypal-sum" style="display: none">{{ sum }}</div>
           <div id="bottom-line">
             Вы так же можете помочь нам с российских счетов:<br />
             на карту Тинькофф по телефону +7 931 224 41 43
@@ -128,10 +134,18 @@
       </div>
       <div id="buttons-wrapper">
         <div class="button-wrapper">
-          <a class="button-submit" href="https://docs.google.com/forms/d/e/1FAIpQLScJsdbLkx6VMweVbJPZ4eJ67zlJEHYEQWVDjLjOLmSxoJSbKQ/viewform">стать волонтером</a>
+          <a
+            class="button-submit"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScJsdbLkx6VMweVbJPZ4eJ67zlJEHYEQWVDjLjOLmSxoJSbKQ/viewform"
+            >стать волонтером</a
+          >
         </div>
         <div class="button-wrapper">
-          <a class="button-submit" href="https://docs.google.com/forms/d/e/1FAIpQLSfl3KpL1UmPqqpMuxrP8AfBn3Zh9TCKO2-zUzL0qs5RYM_uEw/viewform">стать учителем</a>
+          <a
+            class="button-submit"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfl3KpL1UmPqqpMuxrP8AfBn3Zh9TCKO2-zUzL0qs5RYM_uEw/viewform"
+            >стать учителем</a
+          >
         </div>
       </div>
     </div>

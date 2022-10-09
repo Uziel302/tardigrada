@@ -30,4 +30,4 @@ exports.doRequest = async (options) => {
       }
     });
   });
-}
+};
