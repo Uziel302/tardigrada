@@ -50,7 +50,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   public ageList: number[] = [
     4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
   ];
-  public checkedAges: number[] = [];
+  public selectedAges: number[] = [];
   public selectedCategories: string[] = [];
   public search: string = '';
 
@@ -87,27 +87,30 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   }
 
   toggleAge(age: number) {
-    if (this.checkedAges.includes(age)) {
-      this.checkedAges.splice(this.checkedAges.indexOf(age), 1);
+    if (this.selectedAges.includes(age)) {
+      this.selectedAges.splice(this.selectedAges.indexOf(age), 1);
     } else {
-      this.checkedAges.push(age);
+      this.selectedAges.push(age);
     }
   }
 
-  toggleCategory(category: string){
+  toggleCategory(category: string) {
     if (this.selectedCategories.includes(category)) {
-      this.selectedCategories.splice(this.selectedCategories.indexOf(category), 1);
+      this.selectedCategories.splice(
+        this.selectedCategories.indexOf(category),
+        1
+      );
     } else {
       this.selectedCategories.push(category);
     }
   }
 
   filterAge(lecture: ILecture): boolean {
-    if (!this.checkedAges.length) {
+    if (!this.selectedAges.length) {
       return true;
     }
 
-    for (let age of this.checkedAges) {
+    for (let age of this.selectedAges) {
       if (age <= lecture.maxAge && age >= lecture.minAge) {
         return true;
       }

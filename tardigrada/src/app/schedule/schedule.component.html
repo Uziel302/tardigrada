@@ -17,7 +17,7 @@
         <div
           *ngFor="let age of ageList"
           class="age-button"
-          [class.selectedAge]="checkedAges.includes(age)"
+          [class.selectedAge]="selectedAges.includes(age)"
           (click)="toggleAge(age)"
         >
           {{ age }}{{ age === 18 ? "+" : "" }}

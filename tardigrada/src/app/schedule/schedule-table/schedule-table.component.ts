@@ -9,15 +9,15 @@ import { ScheduleService } from '../schedule.service';
 })
 export class ScheduleTableComponent implements OnInit {
   @Input() selectedDay: number = 0;
-  @Input() checkedAges: number[] = [];
+  @Input() selectedAges: number[] = [];
 
   constructor(public scheduleService: ScheduleService) {}
 
   ngOnInit(): void {}
 
   checkAge(min: number, max: number) {
-    return this.checkedAges
-      ? this.checkedAges.some((x) => x >= min && x <= max)
+    return this.selectedAges
+      ? this.selectedAges.some((x) => x >= min && x <= max)
       : false;
   }
 }
