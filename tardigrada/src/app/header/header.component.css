@@ -43,7 +43,9 @@ img {
   position: fixed;
   bottom: 0;
   right: 1px;
+  height: 70vh;
 }
+
 #tent {
   position: fixed;
   bottom: 100px;
