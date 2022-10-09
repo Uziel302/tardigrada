@@ -390,6 +390,12 @@
   }
 }
 
+@media screen and (min-width: 1500px) {
+  .quote {
+    font-size: 38px;
+  }
+}
+
 @media screen and (min-width: 1261px) and (max-width: 1200px) {
   .ipad-none {
     display: none !important;
