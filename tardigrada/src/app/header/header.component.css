@@ -35,6 +35,10 @@ img {
   padding: 32px;
 }
 
+.menu-item:hover {
+  color: #AD84A9;
+}
+
 #muscari {
   position: fixed;
   bottom: 0;
