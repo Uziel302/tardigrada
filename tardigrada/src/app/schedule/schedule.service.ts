@@ -194,7 +194,7 @@ export class ScheduleService {
       );
   }
 
-  getSubjectList(): string[] {
+  getCategoriesList(): string[] {
     let subjects: string[] = [];
     for (let lecture of this.lecturesData) {
       if (lecture.category && !subjects.includes(lecture.category)) {

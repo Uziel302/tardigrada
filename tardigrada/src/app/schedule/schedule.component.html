@@ -23,12 +23,14 @@
           {{ age }}{{ age === 18 ? "+" : "" }}
         </div>
       </div>
-      <div id="subjects-title">предметы</div>
+      <div id="categories-title">предметы</div>
       <div
-        *ngFor="let subject of scheduleService.getSubjectList()"
-        class="subject"
+        *ngFor="let category of scheduleService.getCategoriesList()"
+        class="category"
+        [class.selectedCategory]="selectedCategories.includes(category)"
+        (click)="toggleCategory(category)"
       >
-        {{ subject }}
+        {{ category }}
       </div>
     </div>
   </div>
@@ -49,6 +51,7 @@
           <div
             *ngIf="
               filterAge(lecture) &&
+              filterCategory(lecture) &&
               (!search ||
                 lecture.title.includes(search) ||
                 lecture.teacher.includes(search))

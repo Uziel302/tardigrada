@@ -51,6 +51,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
   ];
   public checkedAges: number[] = [];
+  public selectedCategories: string[] = [];
   public search: string = '';
 
   private subscriptions: Subscription[] = [];
@@ -93,17 +94,37 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     }
   }
 
-  filterAge(lecture: ILecture):boolean {
-    if(!this.checkedAges.length){
+  toggleCategory(category: string){
+    if (this.selectedCategories.includes(category)) {
+      this.selectedCategories.splice(this.selectedCategories.indexOf(category), 1);
+    } else {
+      this.selectedCategories.push(category);
+    }
+  }
+
+  filterAge(lecture: ILecture): boolean {
+    if (!this.checkedAges.length) {
       return true;
     }
 
-    for(let age of this.checkedAges){
-      if(age <= lecture.maxAge && age >= lecture.minAge){
+    for (let age of this.checkedAges) {
+      if (age <= lecture.maxAge && age >= lecture.minAge) {
         return true;
       }
     }
-    
+
+    return false;
+  }
+
+  filterCategory(lecture: ILecture): boolean {
+    if (!this.selectedCategories.length) {
+      return true;
+    }
+
+    if (this.selectedCategories.includes(lecture.category)) {
+      return true;
+    }
+
     return false;
   }
 }
