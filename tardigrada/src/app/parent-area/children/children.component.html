@@ -26,10 +26,15 @@
       />
       <br />Дата рождения:
       <input
+        class="date"
+        matInput
+        [matDatepicker]="picker"
         [(ngModel)]="childData.dateOfBirth"
-        required
+        name="date"
         #dateOfBirth="ngModel"
-      />(дд.мм.гггг)
+        (click)="picker.open()"
+      />
+      <mat-datepicker #picker></mat-datepicker>
       <br />
       Класс:
       <input [(ngModel)]="childData.className" required minlength="3" />
