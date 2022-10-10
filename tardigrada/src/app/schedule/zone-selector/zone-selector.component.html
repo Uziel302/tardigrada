@@ -1,0 +1,16 @@
+<div id="title">выберите свой часовой пояс</div>
+<div id="zone-container">
+  <select id="zone-select" (change)="onZoneChange($event)">
+    <option *ngFor="let timezone of timeZones"
+    [value]="timezone.offset"
+    >
+      {{
+        timezone.text +
+          " (GMT " +
+          (timezone.offset > 0 ? "+" : "") +
+          timezone.offset +
+          ")"
+      }}
+    </option>
+  </select>
+</div>

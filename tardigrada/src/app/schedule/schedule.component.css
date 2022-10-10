@@ -46,16 +46,6 @@
   padding-bottom: 75px;
 }
 
-#zone-container {
-  width: 330px;
-  height: 35px;
-  border: 1px solid rgb(75, 96, 133);
-  border-radius: 12px;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-}
-
 #search {
   width: 330px;
   height: 35px;
@@ -146,38 +136,6 @@
   width: calc(100% - 220px);
 }
 
-#left-title {
-  font-family: "Zhizn";
-  color: rgb(75, 96, 133);
-  font-size: 26px;
-  padding-top: 139px;
-  padding-bottom: 15px;
-}
-
-#zone-select {
-  border: none;
-  font-size: 19px;
-  display: flex;
-  align-items: center;
-  margin-left: 17px;
-  font-weight: 300;
-  font-family: "Ubuntu";
-  color: #182240;
-  padding: 5px 0;
-  width: 305px;
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(75, 96, 133)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  background-repeat: no-repeat;
-  background-position-x: 101%;
-  background-position-y: 1px;
-  background-size: contain;
-}
-
 #week-buttons {
   display: flex;
   padding-bottom: 39px;
@@ -206,4 +164,20 @@ select {
 input {
   color: rgb(204, 206, 220);
   font-size: 20px;
+}
+
+@media screen and (max-width: 1261px) {
+  .background {
+    flex-direction: column;
+  }
+
+  #left-part, #right-part {
+    width: 100%;
+  }
+
+  #animal, #search-container {
+    display: none;
+  }
+
+  
 }

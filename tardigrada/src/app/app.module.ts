@@ -43,6 +43,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { HomeworkComponent } from './homework/homework.component';
 import { DonationComponent } from './donation/donation.component';
 import { ScheduleDayComponent } from './schedule/schedule-day/schedule-day.component';
+import { ZoneSelectorComponent } from './schedule/zone-selector/zone-selector.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { ScheduleDayComponent } from './schedule/schedule-day/schedule-day.compo
     HomeworkComponent,
     DonationComponent,
     ScheduleDayComponent,
+    ZoneSelectorComponent,
   ],
   imports: [
     BrowserModule,
