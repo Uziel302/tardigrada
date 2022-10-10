@@ -169,59 +169,6 @@
   color: rgb(216, 215, 224);
 }
 
-.day-title {
-  color: rgb(26, 34, 62);
-  width: 100%;
-  border-bottom: 1px solid rgb(26, 34, 62);
-  margin-top: 44px;
-  margin-bottom: 42px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding-bottom: 4px;
-}
-
-.day-name {
-  font-family: "Zhizn";
-  font-size: 26px;
-}
-
-.day-date {
-  font-weight: 300;
-}
-
-.lecture-line {
-  display: flex;
-  padding-bottom: 14px;
-  color: rgb(75, 96, 133);
-}
-
-.lecture-time {
-  font-size: 20px;
-}
-
-.lecture-title {
-  color: rgb(26, 34, 62);
-  padding-left: 49px;
-  font-size: 21px;
-  font-weight: 500;
-}
-
-.lecture-teacher {
-  padding-left: 6px;
-  font-size: 21px;
-}
-
-.lecture-age {
-  font-style: italic;
-  font-size: 21px;
-  padding-left: 6px;
-}
-
-.lecture-link {
-  padding-left: 6px;
-}
-
 input {
   color: rgb(204, 206, 220);
   font-size: 20px;

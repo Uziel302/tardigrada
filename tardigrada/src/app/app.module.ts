@@ -42,6 +42,7 @@ import { AdminAreaComponent } from './admin-area/admin-area.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { HomeworkComponent } from './homework/homework.component';
 import { DonationComponent } from './donation/donation.component';
+import { ScheduleDayComponent } from './schedule/schedule-day/schedule-day.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { DonationComponent } from './donation/donation.component';
     PrivacyComponent,
     HomeworkComponent,
     DonationComponent,
+    ScheduleDayComponent,
   ],
   imports: [
     BrowserModule,
