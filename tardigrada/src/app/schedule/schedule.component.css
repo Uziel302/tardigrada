@@ -199,4 +199,13 @@ input {
   #top-title {
     font-size: 32px;
   }
+
+  #ages-title {
+    color: rgb(75, 96, 133);
+    font-size: 18px;
+  }
+
+  #ages {
+    margin-top: 8px;
+  }
 }
