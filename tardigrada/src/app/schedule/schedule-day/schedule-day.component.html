@@ -2,16 +2,9 @@
   <div class="day-name">{{ dayNames[day] }}</div>
   <div class="day-date">{{ weekDates[day] }}</div>
 </div>
-<div *ngFor="let lecture of scheduleService.lecturesData">
+<div *ngFor="let lecture of scheduleService.lecturesData; let i = index">
   <div
-    *ngIf="
-      day === lecture.day &&
-      filterAge(lecture) &&
-      filterCategory(lecture) &&
-      (!search ||
-        lecture.title.includes(search) ||
-        lecture.teacher.includes(search))
-    "
+    *ngIf="checkFilters(lecture, i)"
     class="lecture-line"
   >
     <div class="lecture-time">

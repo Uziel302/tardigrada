@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ScheduleService } from '../../schedule/schedule.service';
 import { ILecture } from '../../models/lecture';
@@ -14,6 +14,7 @@ export class ScheduleDayComponent implements OnInit {
   @Input() selectedCategories: string[] = [];
   @Input() selectedDays: number[] = [];
   @Input() selectedAges: number[] = [];
+  @Output() makeVisible = new EventEmitter<boolean>();
   public weekDates: string[] = [];
   public weekDays = [0, 1, 2, 3, 4, 5, 6];
   public months: string[] = [
@@ -39,6 +40,8 @@ export class ScheduleDayComponent implements OnInit {
     'Суббота',
     'Воскресенье',
   ];
+  public madeVisibleOnce: boolean = false;
+  public madeVisibleNow: boolean = false;
 
   constructor(public scheduleService: ScheduleService) {}
 
@@ -82,5 +85,31 @@ export class ScheduleDayComponent implements OnInit {
       );
       this.weekDates.push(date.getDate() + ' ' + this.months[date.getMonth()]);
     }
+  }
+
+  checkFilters(lecture: ILecture, index: number): boolean {
+    if(!index){
+      this.madeVisibleNow = false;
+    }
+
+    if (
+      this.day === lecture.day &&
+      this.filterAge(lecture) &&
+      this.filterCategory(lecture) &&
+      (!this.search ||
+        lecture.title.includes(this.search) ||
+        lecture.teacher.includes(this.search))
+    ) {
+      this.makeVisible.emit(true);
+      this.madeVisibleOnce = true;
+      this.madeVisibleNow = true;
+      return true;
+    }
+
+    //make unvisible if all lectures are filtered
+    if(this.madeVisibleOnce && !this.madeVisibleNow && (index+1) === this.scheduleService.lecturesData.length){
+      this.makeVisible.emit(false);
+    }
+    return false;
   }
 }

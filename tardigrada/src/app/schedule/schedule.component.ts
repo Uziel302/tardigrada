@@ -33,6 +33,11 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   constructor(public scheduleService: ScheduleService) {}
 
+  onMakeVisible(event: boolean, selector: string) {
+    let element = document.getElementById(selector) as HTMLElement;
+    element.style.display = event ? 'block': 'none';
+  }
+
   ngOnInit(): void {
     this.subscriptions.push(
       this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {

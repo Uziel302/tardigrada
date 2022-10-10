@@ -49,7 +49,16 @@
       </div>
       <div *ngFor="let day of weekDays">
         <div *ngIf="filterday(day)">
-          <app-schedule-day [day]="day" [search]="search" [selectedAges]="selectedAges" [selectedDays]="selectedDays" [selectedCategories]="selectedCategories"></app-schedule-day>
+          <app-schedule-day
+            [attr.id]="'schedule-day'+day"
+            [day]="day"
+            [search]="search"
+            [selectedAges]="selectedAges"
+            [selectedDays]="selectedDays"
+            [selectedCategories]="selectedCategories"
+            style="display:none"
+            (makeVisible)="onMakeVisible($event, 'schedule-day'+day)"
+          ></app-schedule-day>
         </div>
       </div>
     </div>
