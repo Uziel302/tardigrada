@@ -29,7 +29,7 @@ export class ZoneSelectorComponent implements OnInit {
 
   onZoneChange(event: any) {
     //ignore default timezones
-    if(+event.target.value === 3){
+    if(+event.target.value === 3 && this.scheduleService.offsetFromMoscow === 0){
       return;
     };
     this.scheduleService.offsetFromMoscow = +event.target.value - 3;

@@ -208,11 +208,26 @@ input {
   #ages {
     margin-top: 8px;
     align-items: center;
+    margin-left: -6px;
   }
 
   .age-button {
     height: 38px;
     width: 38px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
+    margin-right: 17px;
+    margin-left: 0;
+  }
+
+  #left-triangle {
+    margin-right: 17px;
+  }
+
+  #right-triangle {
+    transform: rotate(270deg);
+  }
+
+  #left-triangle {
+    transform: rotate(90deg);
   }
 }

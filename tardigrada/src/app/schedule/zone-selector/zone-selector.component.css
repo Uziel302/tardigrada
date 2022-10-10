@@ -61,7 +61,7 @@ select:focus-visible {
   #zone-select {
     color: rgb(204, 206, 220);
     font-size: 14px;
-    width: 290px;
+    width: 270px;
     margin-left: 15px;
   }
 }
