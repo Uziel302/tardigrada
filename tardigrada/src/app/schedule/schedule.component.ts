@@ -92,4 +92,19 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     return false;
   }
 
+  lowerAge() {
+    if (this.ageShortList[0] !== 4) {
+      [...Array(5)].forEach((_, i) => {
+        this.ageShortList[i]-=5;
+      });
+    }
+  }
+
+  higherAge() {
+    if (this.ageShortList[4] !== 18) {
+      [...Array(5)].forEach((_, i) => {
+        this.ageShortList[i]+=5;
+      });
+    }
+  }
 }
