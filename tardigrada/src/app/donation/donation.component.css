@@ -165,6 +165,7 @@ input:focus::placeholder {
 #terms {
   font-size: 11px;
   width: 55%;
+  line-height: 120%;
 }
 
 .button-wrapper {
