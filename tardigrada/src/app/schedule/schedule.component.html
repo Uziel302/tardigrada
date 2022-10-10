@@ -12,6 +12,7 @@
           <div id="line"></div>
         </div>
       </div>
+      <app-zone-selector class="wide-none"></app-zone-selector>
       <div id="ages-title">возраст</div>
       <div id="ages">
         <div
@@ -36,7 +37,7 @@
   </div>
   <div id="left-part">
     <div id="inner-left">
-      <app-zone-selector></app-zone-selector>
+      <app-zone-selector class="narrow-none"></app-zone-selector>
       <div id="week-buttons">
         <div
           *ngFor="let day of weekMapShort | keyvalue"

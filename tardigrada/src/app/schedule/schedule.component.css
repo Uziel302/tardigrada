@@ -166,18 +166,37 @@ input {
   font-size: 20px;
 }
 
-@media screen and (max-width: 1261px) {
+@media screen and (min-width: 1261px) {
+  .wide-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .narrow-none {
+    display: none;
+  }
+
   .background {
     flex-direction: column;
   }
 
-  #left-part, #right-part {
+  #left-part,
+  #right-part {
     width: 100%;
+    padding: 38px;
   }
 
-  #animal, #search-container {
+  #animal,
+  #search-container {
     display: none;
   }
 
-  
+  #title-container {
+    padding-top: 54px;
+  }
+
+  #top-title {
+    font-size: 32px;
+  }
 }

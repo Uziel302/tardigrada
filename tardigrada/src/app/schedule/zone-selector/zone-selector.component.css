@@ -40,3 +40,15 @@ select {
   background-position-y: 1px;
   background-size: contain;
 }
+
+@media screen and (max-width: 1260px) {
+  #title {
+    padding-top: 30px;
+    font-size: 18px;
+  }
+
+  #zone-select {
+    color: rgb(204, 206, 220);
+    font-size: 14px;
+  }
+}
