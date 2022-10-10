@@ -254,4 +254,14 @@ input {
     line-height: 100%;
     font-size: 18px;
   }
+
+  .day-button {
+    height: 38px;
+    width: 38px;
+    margin-right: 12px;
+  }
+
+  #week-buttons {
+    margin-left: -16px;
+  }
 }

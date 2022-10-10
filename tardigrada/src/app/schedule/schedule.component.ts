@@ -21,6 +21,23 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     [6, 'вс'],
   ]);
 
+  public weekFirstHalf = new Map([
+    [0, 'пн'],
+    [1, 'вт'],
+    [2, 'ср'],
+    [3, 'чт'],
+    [4, 'пт'],
+  ]);
+
+  public weekSecondHalf = new Map([
+    [2, 'ср'],
+    [3, 'чт'],
+    [4, 'пт'],
+    [5, 'сб'],
+    [6, 'вс'],
+  ]);
+  public secondHalf: boolean = false;
+
   public ageList: number[] = [
     4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
   ];
@@ -95,7 +112,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   lowerAge() {
     if (this.ageShortList[0] !== 4) {
       [...Array(5)].forEach((_, i) => {
-        this.ageShortList[i]-=5;
+        this.ageShortList[i] -= 5;
       });
     }
   }
@@ -103,7 +120,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   higherAge() {
     if (this.ageShortList[4] !== 18) {
       [...Array(5)].forEach((_, i) => {
-        this.ageShortList[i]+=5;
+        this.ageShortList[i] += 5;
       });
     }
   }

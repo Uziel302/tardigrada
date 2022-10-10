@@ -57,18 +57,27 @@
     <div id="inner-left">
       <app-zone-selector class="narrow-none"></app-zone-selector>
       <div id="week-buttons">
-        <div class="left-triangle wide-none" (click)="lowerAge()">
-          <img src="/assets/images/triangle.svg">
-        </div>
         <div
           *ngFor="let day of weekMapShort | keyvalue"
-          class="day-button"
+          class="day-button narrow-none"
           [class.selectedDay]="selectedDays.includes(day.key)"
           (click)="toggleDay(day.key)"
         >
           {{ day.value }}
         </div>
-        <div class="right-triangle wide-none" (click)="higherAge()">
+
+        <div class="left-triangle wide-none" (click)="secondHalf = false">
+          <img src="/assets/images/triangle.svg">
+        </div>
+        <div
+          *ngFor="let day of (secondHalf ? weekSecondHalf : weekFirstHalf) | keyvalue"
+          class="day-button wide-none"
+          [class.selectedDay]="selectedDays.includes(day.key)"
+          (click)="toggleDay(day.key)"
+        >
+          {{ day.value }}
+        </div>
+        <div class="right-triangle wide-none" (click)="secondHalf = true">
           <img src="/assets/images/triangle.svg">
         </div>
       </div>
