@@ -24,7 +24,7 @@
           {{ age }}{{ age === 18 ? "+" : "" }}
         </div>
 
-        <div id="left-triangle" class="wide-none" (click)="lowerAge()">
+        <div class="left-triangle wide-none" (click)="lowerAge()">
           <img src="/assets/images/triangle.svg">
         </div>
         <div
@@ -35,7 +35,7 @@
         >
           {{ age }}{{ age === 18 ? "+" : "" }}
         </div>
-        <div id="right-triangle" class="wide-none" (click)="higherAge()">
+        <div class="right-triangle wide-none" (click)="higherAge()">
           <img src="/assets/images/triangle.svg">
         </div>
 
@@ -57,6 +57,9 @@
     <div id="inner-left">
       <app-zone-selector class="narrow-none"></app-zone-selector>
       <div id="week-buttons">
+        <div class="left-triangle wide-none" (click)="lowerAge()">
+          <img src="/assets/images/triangle.svg">
+        </div>
         <div
           *ngFor="let day of weekMapShort | keyvalue"
           class="day-button"
@@ -64,6 +67,9 @@
           (click)="toggleDay(day.key)"
         >
           {{ day.value }}
+        </div>
+        <div class="right-triangle wide-none" (click)="higherAge()">
+          <img src="/assets/images/triangle.svg">
         </div>
       </div>
       <div *ngFor="let day of weekDays">
