@@ -207,5 +207,12 @@ input {
 
   #ages {
     margin-top: 8px;
+    align-items: center;
+  }
+
+  .age-button {
+    height: 38px;
+    width: 38px;
+    margin-bottom: 0px;
   }
 }

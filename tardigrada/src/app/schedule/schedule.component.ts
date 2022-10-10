@@ -24,6 +24,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   public ageList: number[] = [
     4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
   ];
+  public ageShortList: number[] = [4, 5, 6, 7, 8];
   public selectedAges: number[] = [];
   public selectedCategories: string[] = [];
   public selectedDays: number[] = [];

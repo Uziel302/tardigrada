@@ -17,12 +17,24 @@
       <div id="ages">
         <div
           *ngFor="let age of ageList"
-          class="age-button"
+          class="age-button narrow-none "
           [class.selectedAge]="selectedAges.includes(age)"
           (click)="toggleAge(age)"
         >
           {{ age }}{{ age === 18 ? "+" : "" }}
         </div>
+
+        <div><</div>
+        <div
+          *ngFor="let age of ageShortList"
+          class="age-button wide-none"
+          [class.selectedAge]="selectedAges.includes(age)"
+          (click)="toggleAge(age)"
+        >
+          {{ age }}{{ age === 18 ? "+" : "" }}
+        </div>
+        <div>></div>
+
       </div>
       <div id="categories-title">предметы</div>
       <div
