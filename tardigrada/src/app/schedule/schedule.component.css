@@ -234,4 +234,20 @@ input {
   #right-triangle, #left-triangle {
     cursor: pointer;
   }
+
+  #categories-container {
+    border: 1px solid rgb(75, 96, 133);
+    width: 292px;
+    height: 115px;
+    margin-top: 34px;
+    border-radius: 12px;
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+  }
+
+  .category {
+    padding: 15px 20px 0 20px;
+    line-height: 100%;
+    font-size: 18px;
+  }
 }

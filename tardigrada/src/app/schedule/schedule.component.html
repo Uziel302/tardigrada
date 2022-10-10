@@ -40,14 +40,16 @@
         </div>
 
       </div>
-      <div id="categories-title">предметы</div>
-      <div
-        *ngFor="let category of scheduleService.getCategoriesList()"
-        class="category"
-        [class.selectedCategory]="selectedCategories.includes(category)"
-        (click)="toggleCategory(category)"
-      >
-        {{ category }}
+      <div id="categories-title" class="narrow-none">предметы</div>
+      <div id="categories-container">
+        <div
+          *ngFor="let category of scheduleService.getCategoriesList()"
+          class="category"
+          [class.selectedCategory]="selectedCategories.includes(category)"
+          (click)="toggleCategory(category)"
+        >
+          {{ category }}
+        </div>
       </div>
     </div>
   </div>
