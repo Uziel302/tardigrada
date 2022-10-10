@@ -37,6 +37,21 @@
   <div id="left-part">
     <div id="inner-left">
       <div id="left-title">выберите свой часовой пояс</div>
+      <div id="zone-container">
+        <select id="zone-select" (change)="onZoneChange($event)">
+          <option *ngFor="let timezone of timeZones"
+          [value]="timezone.offset"
+          >
+            {{
+              timezone.text +
+                " (GMT " +
+                (timezone.offset > 0 ? "+" : "") +
+                timezone.offset +
+                ")"
+            }}
+          </option>
+        </select>
+      </div>
       <div id="week-buttons">
         <div
           *ngFor="let day of weekMapShort | keyvalue"
@@ -50,14 +65,14 @@
       <div *ngFor="let day of weekDays">
         <div *ngIf="filterday(day)">
           <app-schedule-day
-            [attr.id]="'schedule-day'+day"
+            [attr.id]="'schedule-day' + day"
             [day]="day"
             [search]="search"
             [selectedAges]="selectedAges"
             [selectedDays]="selectedDays"
             [selectedCategories]="selectedCategories"
-            style="display:none"
-            (makeVisible)="onMakeVisible($event, 'schedule-day'+day)"
+            style="display: none"
+            (makeVisible)="onMakeVisible($event, 'schedule-day' + day)"
           ></app-schedule-day>
         </div>
       </div>

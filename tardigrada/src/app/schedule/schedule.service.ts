@@ -38,6 +38,7 @@ export class ScheduleService {
   public openHwResponse: boolean[] = [];
   public personalSlots: string[][] = this.getEmptyPersonalSlots();
   public personalSlotsOrig: string[][] = [];
+  public offsetFromMoscow: number = 0;
 
   constructor(private http: HttpClient) {}
 
@@ -144,7 +145,7 @@ export class ScheduleService {
   }
 
   public getTimeFormatted(lecture: ILecture, end: boolean) {
-    let hour = lecture.hour + (end ? 1 : 0);
+    let hour = lecture.hour+this.offsetFromMoscow + (end ? 1 : 0);
     let minutes = lecture.minutes;
     let formatted = hour < 10 ? '0' + hour : '' + hour;
     formatted += minutes < 10 ? ':0' + minutes : ':' + minutes;
