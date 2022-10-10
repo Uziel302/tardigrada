@@ -34,10 +34,10 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(75, 96, 133)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='body_1' width='17' height='15' fill='rgb(75, 96, 133)'><g transform='matrix(0.017 0 0 0.017 0 0)'><path d='M530.874 0.5L265.87 459.5L0.866 0.5L530.874 0.5' stroke-width='1' fill-rule='nonzero'/></g></svg>");
   background-repeat: no-repeat;
-  background-position-x: 101%;
-  background-position-y: 1px;
+  background-position-x: 100%;
+  background-position-y: 7px;
   background-size: contain;
 }
 
@@ -62,7 +62,7 @@ select:focus-visible {
   #zone-select {
     color: rgb(204, 206, 220);
     font-size: 14px;
-    width: 250px;
+    width: 290px;
     margin-left: 15px;
   }
 }
