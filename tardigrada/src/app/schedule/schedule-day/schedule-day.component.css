@@ -51,3 +51,24 @@
 .lecture-link {
   padding-left: 6px;
 }
+
+@media screen and (min-width: 1261px) {
+  .wide-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .day-name {
+    font-size: 20px;
+  }
+
+  .lecture-line {
+    flex-direction: column;
+  }
+
+  .lecture-title {
+    padding-left: 0;
+  }
+
+}

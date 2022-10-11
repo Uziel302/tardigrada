@@ -183,7 +183,7 @@ input {
 
   #left-part,
   #right-part {
-    width: 100%;
+    width: calc(100% - 76px);
     padding: 38px 38px 30px 38px;
   }
 
@@ -263,5 +263,6 @@ input {
 
   #week-buttons {
     margin-left: -16px;
+    padding-bottom: 6px;
   }
 }
