@@ -53,7 +53,7 @@
       *ngIf="location !== 'teacher' && scheduleService.openHwResponse[i]"
     >
       <div>Your response</div>
-      <textarea class="user-textarea" [(ngModel)]="homework.chwText"></textarea>
+      <textarea class="user-textarea" [class.purple-border]="responseSuccess[i]" [(ngModel)]="homework.chwText"></textarea>
       <div class="response-buttons">
         <ng-container *ngFor="let file of parsing.parse(homework.chwFile)">
           <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">
@@ -72,7 +72,6 @@
             отправить
           </div>
         </div>
-        <div *ngIf="responseSuccess[i]">Saved!</div>
       </div>
 
       <div *ngIf="homework.fhwText">
@@ -121,6 +120,7 @@
         <textarea
           class="user-textarea"
           [(ngModel)]="homework.fhwText"
+          [class.purple-border]="responseSuccess[i]"
         ></textarea>
         <div class="response-buttons">
           <ng-container *ngFor="let file of parsing.parse(homework.fhwFile)">
@@ -144,7 +144,6 @@
               отправить
             </div>
           </div>
-          <div *ngIf="responseSuccess[i]">Saved!</div>
         </div>
       </div>
     </div>

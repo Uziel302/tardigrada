@@ -40,9 +40,6 @@ export class HomeworkComponent implements OnInit {
       .subscribe(
         (data) => {
           this.responseSuccess[i] = true;
-          setTimeout(() => {
-            this.responseSuccess[i] = false;
-          }, 3000);
         },
         (error) => {}
       );
@@ -61,9 +58,6 @@ export class HomeworkComponent implements OnInit {
       .subscribe(
         (data) => {
           this.responseSuccess[i] = true;
-          setTimeout(() => {
-            this.responseSuccess[i] = false;
-          }, 3000);
         },
         (error) => {}
       );

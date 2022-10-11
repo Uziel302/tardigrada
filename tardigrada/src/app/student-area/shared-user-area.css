@@ -357,6 +357,10 @@
   height: 35px;
 }
 
+.purple-border {
+  border: 1px solid #690f46;
+}
+
 @media screen and (max-width: 1260px) {
   .profile-image-border-child,
   #profile-image-border-teacher {
