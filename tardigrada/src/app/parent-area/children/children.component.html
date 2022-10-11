@@ -1,27 +1,27 @@
 <div id="wrapper">
-  <div id="form">
+  <form id="form" #addChild="ngForm">
     <div id="inner-form">
       Please fill in details of your child, you will later have an option to add
       more children.
       <br />Имя:
       <input
         [(ngModel)]="childData.firstName"
+        name="1"
         required
-        minlength="3"
         #firstName="ngModel"
       />
       <br />Отчество:
       <input
         [(ngModel)]="childData.fatherName"
+        name="2"
         required
-        minlength="3"
         #fatherName="ngModel"
       />
       <br />Фамилия:
       <input
         [(ngModel)]="childData.lastName"
+        name="3"
         required
-        minlength="3"
         #lastName="ngModel"
       />
       <br />Дата рождения:
@@ -30,6 +30,7 @@
         matInput
         [matDatepicker]="picker"
         [(ngModel)]="childData.dateOfBirth"
+        name="4"
         required
         name="date"
         #dateOfBirth="ngModel"
@@ -38,78 +39,34 @@
       <mat-datepicker #picker></mat-datepicker>
       <br />
       Класс:
-      <input [(ngModel)]="childData.className" required minlength="3" />
+      <input [(ngModel)]="childData.className"  name="5" required />
       <br />
       Предметы, которые вы хотели бы изучать:
-      <input [(ngModel)]="childData.subjects" required minlength="3" />
+      <input [(ngModel)]="childData.subjects"  name="6" required />
       <br />Часовой пояс:
-      <input [(ngModel)]="childData.timezone" required minlength="3" />
+      <input [(ngModel)]="childData.timezone"  name="7" required />
       <br />
       Опыт обучения в ZOOM:
-      <input [(ngModel)]="childData.zoom" required minlength="3" />
+      <input [(ngModel)]="childData.zoom"  name="8" required />
       <br />девайс для занятия:
-      <input [(ngModel)]="childData.device" required minlength="3" />
+      <input [(ngModel)]="childData.device"  name="9" required />
       <br />
       Страна, в которой вы сейчас находитесь:
-      <input [(ngModel)]="childData.country" required minlength="3" />
+      <input [(ngModel)]="childData.country" name="10" required />
       <br />
       уровень знания языков:
-      <input [(ngModel)]="childData.language" required minlength="3" />
+      <input [(ngModel)]="childData.language" name="11" required />
       <br />Есть ли жесткие ограничения по времени?
-      <input [(ngModel)]="childData.limits" required minlength="3" />
+      <input [(ngModel)]="childData.limits" name="12" required />
       <br />Телеграм ребенка (для самостоятельных детей):
-      <input [(ngModel)]="childData.telegram" required minlength="3" />
+      <input [(ngModel)]="childData.telegram" name="13" required />
       <br />Что-то еще, что нам надо знать:
-      <input [(ngModel)]="childData.note" required minlength="3" />
+      <input [(ngModel)]="childData.note" name="14" required />
       <br />
-      <button (click)="saveChild()">Submit</button>
+      <button type="submit" (click)="saveChild()" [disabled]="!addChild.valid">Submit</button>
 
-      <div
-        *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
-        class="alert"
-      >
-        <div *ngIf="firstName.errors?.['required']">
-          First name is required.
-        </div>
-        <div *ngIf="firstName.errors?.['minlength']">
-          Name must be at least 3 characters long.
-        </div>
-      </div>
-
-      <div
-        *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
-        class="alert"
-      >
-        <div *ngIf="lastName.errors?.['required']">Last name is required.</div>
-        <div *ngIf="lastName.errors?.['minlength']">
-          Last name must be at least 3 characters long.
-        </div>
-      </div>
-
-      <div
-        *ngIf="fatherName.invalid && (fatherName.dirty || fatherName.touched)"
-        class="alert"
-      >
-        <div *ngIf="fatherName.errors?.['required']">
-          Father name is required.
-        </div>
-        <div *ngIf="fatherName.errors?.['minlength']">
-          Father name must be at least 3 characters long.
-        </div>
-      </div>
-
-      <div
-        *ngIf="
-          dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)
-        "
-        class="alert"
-      >
-        <div *ngIf="dateOfBirth.errors?.['required']">
-          dateOfBirth is required.
-        </div>
-      </div>
 
       <div>{{ saveError }}</div>
     </div>
-  </div>
+  </form>
 </div>
