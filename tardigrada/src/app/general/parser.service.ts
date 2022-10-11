@@ -15,7 +15,7 @@ export class ParsingService {
 
   public pushToString(origin: string, addition: string) {
     let files = JSON.parse(origin);
-    if (!files.length) {
+    if (!files || !files.length) {
       files = [];
     }
     files.push(addition);
