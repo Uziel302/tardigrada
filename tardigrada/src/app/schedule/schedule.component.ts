@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { LoginService } from '../login-screen/login.service';
 
 import { ScheduleService } from '../schedule/schedule.service';
 
@@ -49,7 +50,10 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   private subscriptions: Subscription[] = [];
 
-  constructor(public scheduleService: ScheduleService) {}
+  constructor(
+    public scheduleService: ScheduleService,
+    private loginService: LoginService
+  ) {}
 
   onMakeVisible(event: boolean, selector: string) {
     let element = document.getElementById(selector) as HTMLElement;
@@ -61,6 +65,14 @@ export class ScheduleComponent implements OnInit, OnDestroy {
       this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
         this.scheduleService.processLecturesData(lecturesData);
       })
+    );
+
+    this.subscriptions.push(
+      this.scheduleService
+        .getChildLectures(this.loginService.currentChildId)
+        .subscribe((childLectures: any) => {
+          this.scheduleService.processLecturesData(childLectures);
+        })
     );
   }
 

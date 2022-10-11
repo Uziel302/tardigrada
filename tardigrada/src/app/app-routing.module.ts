@@ -11,7 +11,6 @@ import { ContactComponent } from './contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { CourseListComponent } from './course-list/course-list.component';
 import { AdminAreaComponent } from './admin-area/admin-area.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { DonationComponent } from './donation/donation.component';
@@ -23,7 +22,6 @@ const routes: Routes = [
   { path: 'donate', component: DonateComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'schedule', component: ScheduleComponent },
-  { path: 'courses', component: CourseListComponent },
   { path: 'login/:type', component: LoginScreenComponent },
   { path: 'login', component: LoginScreenComponent, pathMatch: 'full' },
   { path: 'student', component: StudentAreaComponent },

@@ -39,5 +39,8 @@
     <a [attr.href]="lecture.url" target="_blank" class="lecture-link narrow-none">
       <img src="/assets/images/telegram.svg"/>
     </a>
+    <button (click)="toggleAttendance(lecture.id)">
+      {{ scheduleService.childLectures[lecture.id] ? "-" : "+" }}
+    </button>
   </div>
 </div>

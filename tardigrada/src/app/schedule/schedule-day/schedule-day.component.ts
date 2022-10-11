@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ScheduleService } from '../../schedule/schedule.service';
 import { ILecture } from '../../models/lecture';
+import { LoginService } from 'src/app/login-screen/login.service';
 
 @Component({
   selector: 'app-schedule-day',
@@ -43,7 +44,10 @@ export class ScheduleDayComponent implements OnInit {
   public madeVisibleOnce: boolean = false;
   public madeVisibleNow: boolean = false;
 
-  constructor(public scheduleService: ScheduleService) {}
+  constructor(
+    public scheduleService: ScheduleService,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     this.calculateWeekDates();
@@ -88,7 +92,7 @@ export class ScheduleDayComponent implements OnInit {
   }
 
   checkFilters(lecture: ILecture, index: number): boolean {
-    if(!index){
+    if (!index) {
       this.madeVisibleNow = false;
     }
 
@@ -107,9 +111,29 @@ export class ScheduleDayComponent implements OnInit {
     }
 
     //make unvisible if all lectures are filtered
-    if(this.madeVisibleOnce && !this.madeVisibleNow && (index+1) === this.scheduleService.lecturesData.length){
+    if (
+      this.madeVisibleOnce &&
+      !this.madeVisibleNow &&
+      index + 1 === this.scheduleService.lecturesData.length
+    ) {
       this.makeVisible.emit(false);
     }
     return false;
+  }
+
+  toggleAttendance(lectureId: number) {
+    if (this.scheduleService.childLectures[lectureId]) {
+      this.scheduleService.leaveLecture(
+        lectureId,
+        this.loginService.currentChildId
+      );
+      this.scheduleService.childLectures[lectureId] = false;
+    } else {
+      this.scheduleService.joinLecture(
+        lectureId,
+        this.loginService.currentChildId
+      );
+      this.scheduleService.childLectures[lectureId] = true;
+    }
   }
 }

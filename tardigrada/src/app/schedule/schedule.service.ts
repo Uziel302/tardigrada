@@ -129,7 +129,9 @@ export class ScheduleService {
 
   public processLecturesData(lecturesData: any) {
     this.lecturesArray = this.getEmptyWeek();
-    this.lecturesData = lecturesData;
+    if(!lecturesData[0].lectureId){
+      this.lecturesData = lecturesData;
+    }
     for (let lectureData of lecturesData) {
       if (lectureData.lectureId) {
         this.childLectures[lectureData.lectureId] = true;
