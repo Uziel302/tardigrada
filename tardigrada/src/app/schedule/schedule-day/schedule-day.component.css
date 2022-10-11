@@ -51,6 +51,21 @@
   padding-left: 6px;
 }
 
+.attendance {
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 75%;
+  width: 28px;
+  height: 28px;
+  background-color: rgb(75, 96, 133);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 50%;
+  margin-left: 6px;
+}
+
 @media screen and (min-width: 1261px) {
   .wide-none {
     display: none;
