@@ -234,7 +234,7 @@ input {
 
   #animal {
     transform: scaleX(1) rotate(40deg);
-    margin-top: 3px;
+    margin-top: -33px;
     margin-left: -12px;
     width: 90px;
     height: 90px;
