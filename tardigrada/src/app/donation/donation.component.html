@@ -41,7 +41,10 @@
                 с 10 детьми
               </span>
             </div>
-            <div class="small-button" [class.selected]="!prices.includes(sum)">
+            <div
+              class="small-button other-sum"
+              [class.selected]="!prices.includes(sum)"
+            >
               <input
                 id="otherSum"
                 [(ngModel)]="otherSum"
@@ -50,6 +53,9 @@
                 (input)="sum = otherSum"
               />
             </div>
+          </div>
+          <div class="mobile-note wide-none">
+            отправляя 30 евро вы оплачиваете час работы учителя с 10 детьми
           </div>
           <div class="details-fields">
             <div class="details-field">
@@ -80,7 +86,7 @@
           <div id="paypal-sum" style="display: none">{{ sum }}</div>
           <div id="bottom-line">
             Вы так же можете помочь нам с российских счетов:<br />
-            на карту Тинькофф по телефону +7 931 224 41 43
+            <div id="last-line">на карту Тинькофф по телефону +79312244143</div>
           </div>
         </div>
       </div>

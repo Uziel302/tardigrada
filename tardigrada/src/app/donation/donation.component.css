@@ -350,3 +350,159 @@ li::before {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+@media screen and (min-width: 1261px) {
+  .wide-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .narrow-none {
+    display: none;
+  }
+
+  #top-title {
+    font-size: 20px;
+    width: 250px;
+    margin-top: 100px;
+  }
+
+  #first-block {
+    flex-direction: column;
+    margin-top: 47px;
+  }
+
+  #square-wrapper {
+    justify-content: center;
+  }
+
+  #square {
+    margin-right: 0;
+    width: 90%;
+  }
+
+  #square-inner {
+    padding: 30px 18px 21px 18px;
+  }
+
+  #square-title {
+    font-size: 32px;
+    line-height: 130%;
+    padding-bottom: 0;
+  }
+
+  #subtitle {
+    padding-bottom: 28px;
+  }
+
+  #big-buttons {
+    flex-direction: column;
+  }
+
+  .big-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #small-buttons {
+    padding-top: 0;
+    flex-wrap: wrap;
+  }
+
+  .small-button {
+    width: 30%;
+    margin-bottom: 15px;
+  }
+
+  .other-sum {
+    width: 65%;
+  }
+
+  .mobile-note {
+    font-style: italic;
+  }
+
+  .details-fields {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .details-field {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  #terms {
+    width: 57%;
+  }
+
+  #bottom-line {
+    width: 76%;
+  }
+
+  #last-line {
+    font-weight: 500;
+    padding-top: 10px;
+  }
+
+  #square-side {
+    padding-top: 72px;
+  }
+
+  #side-inner {
+    padding-left: 33px;
+  }
+
+  #side-title {
+    font-size: 21px;
+  }
+
+  #bullets {
+    font-size: 15px;
+  }
+
+  li {
+    padding-bottom: 12px;
+  }
+
+  #orange-note {
+    font-size: 19px;
+    padding-top: 5px;
+  }
+
+  #orange1 {
+    padding-left: 65px;
+  }
+
+  #orange2 {
+    padding-left: 0;
+  }
+
+  #orange3 {
+    padding-left: 108px;
+  }
+
+  #bottom-title {
+    font-size: 32px;
+  }
+
+  #second-block {
+    padding-top: 90px;
+    flex-direction: column;
+  }
+
+  #text-column {
+    display: flex;
+    align-items: center;
+  }
+
+  #text-wrapper {
+    width: 83%;
+    padding-right: 0;
+  }
+
+  #painting-tardigrada {
+    height: 360px;
+  }
+
+}

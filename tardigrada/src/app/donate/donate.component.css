@@ -71,6 +71,7 @@
 #umbrella {
   max-width: 40%;
 }
+
 #third-container {
   display: flex;
   flex-direction: row-reverse;
@@ -151,6 +152,27 @@
   padding-bottom: 40px;
 }
 
+.space18 {
+  height: 18px;
+}
+
+.space100 {
+  height: 100px;
+}
+
+.space124 {
+  height: 124px;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+#bottom-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 767px) {
   #opening-passage,
   #second-passage,
@@ -204,25 +226,4 @@
     font-size: 30px;
     line-height: 40px;
   }
-}
-
-.space18 {
-  height: 18px;
-}
-
-.space100 {
-  height: 100px;
-}
-
-.space124 {
-  height: 124px;
-}
-
-.text-centered {
-  text-align: center;
-}
-
-#bottom-button-wrapper {
-  display: flex;
-  justify-content: center;
 }
