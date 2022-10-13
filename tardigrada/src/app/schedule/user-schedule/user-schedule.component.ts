@@ -13,21 +13,7 @@ export class UserScheduleComponent implements OnInit {
   @Input() userId: number = 0;
   @Output() lectureChange = new EventEmitter<number>();
 
-  public hourColumn: string[] = [
-    '09:00',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-    '16:00',
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-  ];
+  public hourColumn: number[] = [9,10,11,12,13,14,15,16,17,18,19,20,21]
 
   public weekFirstHalf = new Map([
     [0, 'пн'],
@@ -45,7 +31,7 @@ export class UserScheduleComponent implements OnInit {
     [6, 'вс'],
   ]);
   public secondHalf: boolean = false;
-  
+
   public innerWidth: number;
   public mobileDay: number =
     new Date().getDay() === 0 ? 6 : new Date().getDay() - 1; //make monday first day

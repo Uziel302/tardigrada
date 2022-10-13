@@ -128,11 +128,11 @@ export class ScheduleService {
   }
 
   public processLecturesData(lecturesData: any) {
-    if(!lecturesData.length){
+    if (!lecturesData.length) {
       return;
     }
     this.lecturesArray = this.getEmptyWeek();
-    if(!lecturesData[0].lectureId){
+    if (!lecturesData[0].lectureId) {
       this.lecturesData = lecturesData;
     }
     for (let lectureData of lecturesData) {
@@ -150,7 +150,7 @@ export class ScheduleService {
   }
 
   public getTimeFormatted(lecture: ILecture, end: boolean) {
-    let hour = lecture.hour+this.offsetFromMoscow + (end ? 1 : 0);
+    let hour = lecture.hour + this.offsetFromMoscow + (end ? 1 : 0);
     let minutes = lecture.minutes;
     let formatted = hour < 10 ? '0' + hour : '' + hour;
     formatted += minutes < 10 ? ':0' + minutes : ':' + minutes;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { ITimeZone } from '../../models/timezone';
 import { ScheduleService } from '../../schedule/schedule.service';
@@ -10,6 +10,7 @@ import { ScheduleService } from '../../schedule/schedule.service';
 })
 export class ZoneSelectorComponent implements OnInit {
   public moscowOffset: number = 3;
+  @Input() userpage: boolean = false;
 
   public timeZones: ITimeZone[] = [
     { text: 'Иерусалим - Израиль', name: 'Asia/Jerusalem', offset: 0 },

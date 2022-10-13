@@ -1,7 +1,7 @@
-<div id="title">выберите свой часовой пояс</div>
+<div *ngIf="!userpage" id="title">выберите свой часовой пояс</div>
 
 <div id="zone-container">
-  <mat-select id="zone-select" [(ngModel)]="scheduleService.offsetFromMoscow">
+  <mat-select id="zone-select" [class.notuserpage]="!userpage" [(ngModel)]="scheduleService.offsetFromMoscow">
     <mat-option *ngFor="let timezone of timeZones" [value]="timezone.offset">
       {{
         timezone.text +
