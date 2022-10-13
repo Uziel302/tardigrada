@@ -60,10 +60,10 @@
   cursor: pointer;
   font-size: 28px;
   line-height: 75%;
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   background-color: rgb(75, 96, 133);
-  color: white;
+  color: rgb(204, 206, 220);
   display: flex;
   justify-content: center;
   align-items: flex-start;
