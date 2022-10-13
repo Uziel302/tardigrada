@@ -65,7 +65,8 @@ export class LoginService {
     lastName: string,
     email: string,
     telegram: string,
-    password: string
+    password: string,
+    isStudent: boolean
   ): void {
     const authData: INewUser = {
       firstName,
@@ -76,7 +77,7 @@ export class LoginService {
     };
     this.http.post(environment.apiEndPoint + 'signup', authData).subscribe(
       (data) => {
-        this.login(email, password);
+        this.login(email, password, isStudent);
       },
       (error) => {
         this.currentError = error.error.message;
@@ -84,7 +85,7 @@ export class LoginService {
     );
   }
 
-  login(email: string, password: string): void {
+  login(email: string, password: string, isStudent: boolean): void {
     const authData: IEmailAndPass = { email, password };
     this.http
       .post<{ token: string; expiresIn: number; childId: number }>(
@@ -108,6 +109,9 @@ export class LoginService {
             if (data.childId) {
               this.currentChildId = data.childId;
               target = '/student';
+            }
+            if(!isStudent){
+              target = '/teacher';
             }
             this.saveAuthData(token, expirationDate, this.currentChildId);
             this.router.navigate([target]);

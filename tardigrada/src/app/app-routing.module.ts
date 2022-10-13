@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'donate', component: DonateComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'schedule', component: ScheduleComponent },
-  { path: 'login/:type', component: LoginScreenComponent },
+  { path: 'login/:teacher', component: LoginScreenComponent },
   { path: 'login', component: LoginScreenComponent, pathMatch: 'full' },
   { path: 'student', component: StudentAreaComponent },
   { path: 'admin', component: AdminAreaComponent },

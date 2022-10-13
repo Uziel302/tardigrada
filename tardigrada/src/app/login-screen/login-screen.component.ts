@@ -10,6 +10,7 @@ import { LoginService } from './login.service';
 })
 export class LoginScreenComponent implements OnInit {
   public login: boolean = true;
+  public isStudent: boolean = true;
   public firstName: string = '';
   public lastName: string = '';
   public email: string = '';
@@ -22,11 +23,11 @@ export class LoginScreenComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.login = !this.route.snapshot.paramMap.get('type');
+    this.isStudent = !this.route.snapshot.paramMap.get('teacher');
   }
 
   submit() {
-    this.loginService.login(this.email, this.password);
+    this.loginService.login(this.email, this.password, this.isStudent);
   }
 
   registrationClick() {
@@ -38,7 +39,8 @@ export class LoginScreenComponent implements OnInit {
         this.lastName,
         this.email,
         this.telegram,
-        this.password
+        this.password,
+        this.isStudent
       );
     }
   }
