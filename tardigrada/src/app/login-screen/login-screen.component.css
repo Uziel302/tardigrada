@@ -23,6 +23,7 @@ input {
   justify-content: center;
   align-items: center;
   background: #220315;
+  height: 100vh;
 }
 
 #wrapper {
@@ -154,15 +155,15 @@ input {
     margin-left: 40px;
   }
 
-  #container {
-    height: 100vh;
-  }
 }
 
 @media screen and (max-width: 1260px) {
   #container {
-    padding-bottom: 600px;
     align-items: flex-start;
+  }
+
+  .percent {
+    height: 100%;
   }
 
   .narrow-none {
