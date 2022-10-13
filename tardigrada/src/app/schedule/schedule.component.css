@@ -160,6 +160,7 @@
 .selectedDay {
   background-color: rgb(75, 96, 133);
   color: rgb(216, 215, 224);
+  font-weight: 500;
 }
 
 input {
