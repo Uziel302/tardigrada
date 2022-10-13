@@ -54,10 +54,6 @@ select:focus-visible {
   border-radius: 12px!important;
 }
 
-::ng-deep .mat-select-value {
-  color: rgb(204, 206, 220);
-}
-
 @media screen and (max-width: 1260px) {
   #title {
     padding-top: 30px;
@@ -76,5 +72,9 @@ select:focus-visible {
     font-size: 14px;
     width: 270px;
     margin-left: 15px;
+  }
+
+  ::ng-deep .mat-select-value {
+    color: rgb(204, 206, 220);
   }
 }
