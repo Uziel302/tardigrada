@@ -20,6 +20,7 @@
   background-color: #cbcedd;
   display: flex;
   justify-content: center;
+  padding-bottom: 250px;
 }
 
 #top-title {
@@ -228,7 +229,7 @@ input {
     margin-right: 0;
     margin-left: 0;
     font-size: 16px;
-    font-family: 'Ubuntu';
+    font-family: "Ubuntu";
   }
 
   .right-triangle {
@@ -239,7 +240,8 @@ input {
     transform: rotate(90deg);
   }
 
-  .right-triangle, .left-triangle {
+  .right-triangle,
+  .left-triangle {
     cursor: pointer;
   }
 
@@ -249,7 +251,7 @@ input {
     height: 115px;
     margin-top: 34px;
     border-radius: 12px;
-    overflow: -moz-scrollbars-vertical; 
+    overflow: -moz-scrollbars-vertical;
     overflow-y: scroll;
   }
 
