@@ -21,6 +21,7 @@
 
 .lecture-line {
   display: flex;
+  flex-wrap: wrap;
   padding-bottom: 14px;
   color: rgb(75, 96, 133);
 }
