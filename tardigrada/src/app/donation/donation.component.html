@@ -29,7 +29,7 @@
           <div id="small-buttons">
             <div
               *ngFor="let price of prices"
-              class="small-button tooltip"
+              class="small-button tooltip narrow-none"
               [class.selected]="sum === price"
               (click)="sum = price"
             >
