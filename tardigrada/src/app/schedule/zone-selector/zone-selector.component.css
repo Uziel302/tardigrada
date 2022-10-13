@@ -4,12 +4,12 @@
   color: rgb(75, 96, 133);
   font-size: 26px;
   padding-top: 139px;
-  padding-bottom: 15px;
+  padding-bottom: 16px;
 }
 
 #zone-container {
   width: 330px;
-  height: 35px;
+  height: 37px;
   border: 1px solid rgb(75, 96, 133);
   border-radius: 12px;
   margin-bottom: 40px;
@@ -37,7 +37,7 @@ select {
   background-image: url("/assets/images/triangle.svg");
   background-repeat: no-repeat;
   background-position-x: 100%;
-  background-position-y: 7px;
+  background-position-y: 10px;
 }
 
 select:focus-visible {
