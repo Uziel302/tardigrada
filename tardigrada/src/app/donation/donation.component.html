@@ -29,11 +29,26 @@
           <div id="small-buttons">
             <div
               *ngFor="let price of prices"
-              class="small-button tooltip narrow-none"
+              class="small-button tooltip"
               [class.selected]="sum === price"
               (click)="sum = price"
             >
               {{ price }}€
+              <span *ngIf="price === 5" class="tooltiptext">
+                Отправляя 5 евро<br />
+                вы делаете<br />
+                нас немного счастливее :)
+              </span>
+              <span *ngIf="price === 10" class="tooltiptext">
+                Отправляя 10 евро<br />
+                вы оплачиваете<br />
+                один урок ученика
+              </span>
+              <span *ngIf="price === 20" class="tooltiptext">
+                Отправляя 20 евро<br />
+                вы оплачиваете<br />
+                один месяц работы zoom
+              </span>
               <span *ngIf="price === 30" class="tooltiptext">
                 отправляя 30 евро<br />
                 вы оплачиваете<br />
@@ -54,9 +69,19 @@
               />
             </div>
           </div>
-          <div class="mobile-note wide-none">
+          <div *ngIf="sum === 5" class="mobile-note wide-none">
+            Отправляя 5 евро вы делаете нас немного счастливее :)
+          </div>
+          <div *ngIf="sum === 10" class="mobile-note wide-none">
+            Отправляя 10 евро вы оплачиваете один урок ученика
+          </div>
+          <div *ngIf="sum === 20" class="mobile-note wide-none">
+            Отправляя 20 евро вы оплачиваете один месяц работы zoom
+          </div>
+          <div *ngIf="sum === 30" class="mobile-note wide-none">
             отправляя 30 евро вы оплачиваете час работы учителя с 10 детьми
           </div>
+
           <div class="details-fields">
             <div class="details-field">
               <input [(ngModel)]="myName" placeholder="Ваше имя" />
