@@ -70,7 +70,7 @@
 .big-button,
 .small-button {
   background: white;
-  height: 42px;
+  height: 43px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -402,7 +402,7 @@ li::before {
 
   .big-button {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 11px;
   }
 
   #small-buttons {
@@ -411,12 +411,12 @@ li::before {
   }
 
   .small-button {
-    width: 30%;
-    margin-bottom: 15px;
+    width: 31%;
+    margin-bottom: 11px;
   }
 
   .other-sum {
-    width: 65%;
+    width: 65.5%;
   }
 
   .mobile-note {
