@@ -19,7 +19,7 @@
   <ng-container *ngFor="let day of scheduleService.week; let i = index">
     <div
       class="day"
-      *ngIf="(innerWidth < 801 && i === mobileDay) || innerWidth > 1419"
+      *ngIf="(innerWidth < 801 && i === mobileDay) || innerWidth > 800"
     >
       <div *ngIf="innerWidth > 800" class="decor" [class.last]="i === 6">
         {{ day }}
