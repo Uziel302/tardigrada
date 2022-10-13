@@ -1,16 +1,15 @@
 <div id="title">выберите свой часовой пояс</div>
+
 <div id="zone-container">
-  <select id="zone-select" (change)="onZoneChange($event)">
-    <option *ngFor="let timezone of timeZones"
-    [value]="timezone.offset"
-    >
+  <mat-select id="zone-select" [(ngModel)]="scheduleService.offsetFromMoscow">
+    <mat-option *ngFor="let timezone of timeZones" [value]="timezone.offset">
       {{
         timezone.text +
           " (GMT " +
-          (timezone.offset > 0 ? "+" : "") +
-          timezone.offset +
+          ((timezone.offset+3) > 0 ? "+" : "") +
+          (timezone.offset+3) +
           ")"
       }}
-    </option>
-  </select>
+    </mat-option>
+  </mat-select>
 </div>

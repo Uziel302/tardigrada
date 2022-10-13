@@ -9,6 +9,7 @@ import { ScheduleService } from '../../schedule/schedule.service';
   styleUrls: ['./zone-selector.component.css']
 })
 export class ZoneSelectorComponent implements OnInit {
+  public moscowOffset: number = 3;
 
   public timeZones: ITimeZone[] = [
     { text: 'Иерусалим - Израиль', name: 'Asia/Jerusalem', offset: 0 },
@@ -26,15 +27,6 @@ export class ZoneSelectorComponent implements OnInit {
     this.calculateOffsets();
   }
 
-
-  onZoneChange(event: any) {
-    //ignore default timezones
-    if(+event.target.value === 3 && this.scheduleService.offsetFromMoscow === 0){
-      return;
-    };
-    this.scheduleService.offsetFromMoscow = +event.target.value - 3;
-  }
-
   getOffset(tz: string) {
     let d: any = new Date();
     const a = d.toLocaleString('ja', { timeZone: tz }).split(/[/\s:]/);
@@ -46,7 +38,7 @@ export class ZoneSelectorComponent implements OnInit {
 
   calculateOffsets(){
     for(let timezone of this.timeZones){
-      timezone.offset = this.getOffset(timezone.name);
+      timezone.offset = this.getOffset(timezone.name) - this.moscowOffset;
     }
   }
 

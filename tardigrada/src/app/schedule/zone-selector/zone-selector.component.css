@@ -45,6 +45,15 @@ select:focus-visible {
   outline: none;
 }
 
+::ng-deep .cdk-overlay-container {
+  top: 60px;
+  opacity: 0.95;
+}
+
+::ng-deep .mat-select-panel {
+  border-radius: 12px!important;
+}
+
 @media screen and (max-width: 1260px) {
   #title {
     padding-top: 30px;

@@ -7,6 +7,7 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
@@ -85,6 +86,7 @@ import { ZoneSelectorComponent } from './schedule/zone-selector/zone-selector.co
     FormsModule,
     HttpClientModule,
     MatIconModule,
+    MatSelectModule,
   ],
   providers: [
     {
