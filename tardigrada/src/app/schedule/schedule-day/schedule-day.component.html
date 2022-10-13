@@ -27,7 +27,7 @@
         }}
       </div>
       <a [attr.href]="lecture.url" target="_blank" class="lecture-link">
-        <img src="/assets/images/telegram.svg"/>
+        <img src="/assets/images/telegram-blue.png"/>
       </a>
       <div class="attendance" (click)="toggleAttendance(lecture.id)">
         {{ scheduleService.childLectures[lecture.id] ? "-" : "+" }}
@@ -40,7 +40,7 @@
       }})
     </div>
     <a [attr.href]="lecture.url" target="_blank" class="lecture-link narrow-none">
-      <img src="/assets/images/telegram.svg"/>
+      <img src="/assets/images/telegram-blue.png"/>
     </a>
     <div class="attendance narrow-none" (click)="toggleAttendance(lecture.id)">
       {{ scheduleService.childLectures[lecture.id] ? "-" : "+" }}

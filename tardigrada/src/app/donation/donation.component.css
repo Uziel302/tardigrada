@@ -153,6 +153,7 @@ input:focus::placeholder {
   outline: none;
   width: 100%;
   font-size: 16px;
+  padding: 0;
 }
 
 #terms-line {

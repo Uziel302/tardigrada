@@ -51,6 +51,10 @@
   padding-left: 6px;
 }
 
+.lecture-link img {
+  height: 25px;
+}
+
 .attendance {
   cursor: pointer;
   font-size: 28px;
