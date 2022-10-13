@@ -32,19 +32,46 @@
   border-top: 0.5px solid #d8d7e1;
 }
 
-@media screen and (max-width: 1260px) {
-  #day-select {
-    width: 40px;
-    height: 20px;
-    border: none;
-    outline: none;
-    border-radius: 10%;
+@media screen and (min-width: 801px) {
+  .wide-none {
+    display: none;
   }
+}
 
-  #day-select-container {
+@media screen and (max-width: 800px) {
+  #week-buttons {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-between;
+  }
+  
+  .day-button {
+    color: rgb(75, 96, 133);
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 20px 20px 80px;
+    height: 36px;
+    width: 36px;
   }
+
+  .selectedDay {
+    background-color: rgb(75, 96, 133);
+    color: rgb(216, 215, 224);
+    font-weight: 500;
+  }
+
+  .right-triangle {
+    transform: rotate(270deg);
+  }
+
+  .left-triangle {
+    transform: rotate(90deg);
+  }
+
+
 }

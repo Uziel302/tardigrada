@@ -1,13 +1,18 @@
-<div id="day-select-container" *ngIf="innerWidth < 801">
-  <select id="day-select" (change)="onDayChange($event)">
-    <option
-      *ngFor="let day of scheduleService.week; let i = index"
-      [value]="i"
-      [selected]="i === mobileDay"
-    >
-      {{ day }}
-    </option>
-  </select>
+<div id="week-buttons" class="wide-none">
+  <div class="left-triangle wide-none" (click)="secondHalf = !secondHalf">
+    <img src="/assets/images/triangle.svg">
+  </div>
+  <div
+    *ngFor="let day of (secondHalf ? weekSecondHalf : weekFirstHalf) | keyvalue"
+    class="day-button wide-none"
+    [class.selectedDay]="mobileDay === day.key"
+    (click)="mobileDay = day.key"
+  >
+    {{ day.value }}
+  </div>
+  <div class="right-triangle wide-none" (click)="secondHalf = !secondHalf">
+    <img src="/assets/images/triangle.svg">
+  </div>
 </div>
 
 <div id="container">

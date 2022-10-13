@@ -28,6 +28,24 @@ export class UserScheduleComponent implements OnInit {
     '20:00',
     '21:00',
   ];
+
+  public weekFirstHalf = new Map([
+    [0, 'пн'],
+    [1, 'вт'],
+    [2, 'ср'],
+    [3, 'чт'],
+    [4, 'пт'],
+  ]);
+
+  public weekSecondHalf = new Map([
+    [2, 'ср'],
+    [3, 'чт'],
+    [4, 'пт'],
+    [5, 'сб'],
+    [6, 'вс'],
+  ]);
+  public secondHalf: boolean = false;
+  
   public innerWidth: number;
   public mobileDay: number =
     new Date().getDay() === 0 ? 6 : new Date().getDay() - 1; //make monday first day
