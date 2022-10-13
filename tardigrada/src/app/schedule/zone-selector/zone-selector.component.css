@@ -30,14 +30,13 @@
   width: 305px;
 }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  background-image: url("/assets/images/triangle.svg");
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 10px;
+::ng-deep .mat-select-arrow {
+  border-left: 15px solid transparent !important;
+  border-right: none !important;
+  border-top: 15px solid transparent !important;
+  border-image-source: url("/assets/images/triangle.svg") !important;
+  border-image-repeat: stretch !important;
+  margin-top: 3px!important;
 }
 
 select:focus-visible {
