@@ -187,6 +187,7 @@ input {
   #right-part {
     width: calc(100% - 76px);
     padding: 38px 38px 30px 38px;
+    justify-content: flex-start;
   }
 
   #left-part {
@@ -273,5 +274,6 @@ input {
     margin-right: -16px;
     padding-bottom: 6px;
     justify-content: space-between;
+    max-width: 385px;
   }
 }
