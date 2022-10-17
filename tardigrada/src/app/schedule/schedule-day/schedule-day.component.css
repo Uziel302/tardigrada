@@ -21,7 +21,7 @@
 
 .lecture-line {
   display: flex;
-  padding-bottom: 14px;
+  padding-bottom: 12px;
   color: rgb(75, 96, 133);
 }
 
@@ -101,7 +101,7 @@
 
   .lecture-title {
     font-size: 25px;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
   }
 
   .day-date {
