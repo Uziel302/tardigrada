@@ -52,6 +52,10 @@ select:focus-visible {
   border-radius: 12px !important;
 }
 
+::ng-deep .mat-select-panel .mat-option {
+  height: 2em !important;
+}
+
 @media screen and (max-width: 1260px) {
   #title {
     padding-top: 30px;
