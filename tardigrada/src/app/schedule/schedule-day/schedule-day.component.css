@@ -129,4 +129,8 @@
   .lecture-time {
     padding-right: 6px;
   }
+
+  .wrapped-part {
+    padding-left: 0;
+  }
 }
