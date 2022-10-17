@@ -185,8 +185,8 @@ input {
 
   #left-part,
   #right-part {
-    width: calc(100% - 76px);
-    padding: 38px 38px 30px 38px;
+    width: calc(100% - 60px);
+    padding: 38px 30px 30px 30px;
     justify-content: flex-start;
   }
 
@@ -220,6 +220,7 @@ input {
     margin-top: 8px;
     align-items: center;
     margin-left: -6px;
+    margin-right: -6px;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
@@ -249,7 +250,6 @@ input {
 
   #categories-container {
     border: 1px solid rgb(75, 96, 133);
-    width: 292px;
     height: 115px;
     margin-top: 34px;
     border-radius: 12px;
@@ -270,8 +270,8 @@ input {
   }
 
   #week-buttons {
-    margin-left: -16px;
-    margin-right: -16px;
+    margin-left: -12px;
+    margin-right: -12px;
     padding-bottom: 6px;
     justify-content: space-between;
     max-width: 385px;

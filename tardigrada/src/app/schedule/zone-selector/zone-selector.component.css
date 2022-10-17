@@ -64,7 +64,8 @@ select:focus-visible {
   }
 
   #zone-container {
-    width: 292px;
+    width: calc(100% - 2px);
+    max-width: 400px;
     height: 42.5px;
     margin-bottom: 30px;
   }
