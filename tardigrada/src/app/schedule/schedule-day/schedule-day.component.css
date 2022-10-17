@@ -21,18 +21,23 @@
 
 .lecture-line {
   display: flex;
-  flex-wrap: wrap;
   padding-bottom: 14px;
   color: rgb(75, 96, 133);
 }
 
+.wrapped-part {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 49px;
+}
+
 .lecture-time {
   font-size: 20px;
+  min-width: 110px;
 }
 
 .lecture-title {
   color: rgb(26, 34, 62);
-  padding-left: 49px;
   font-size: 21px;
   font-weight: 500;
 }

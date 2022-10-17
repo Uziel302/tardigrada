@@ -3,47 +3,49 @@
   <div class="day-date">{{ weekDates[day] }}</div>
 </div>
 <div *ngFor="let lecture of scheduleService.lecturesData; let i = index">
-  <div
-    *ngIf="checkFilters(lecture, i)"
-    class="lecture-line"
-  >
+  <div *ngIf="checkFilters(lecture, i)" class="lecture-line">
     <div class="lecture-time narrow-none">
       {{ scheduleService.getTimeFormatted(lecture, false) }}-{{
         scheduleService.getTimeFormatted(lecture, true)
       }}
     </div>
-    <div class="lecture-title">{{ lecture.title }}</div>
-    <div class="lecture-teacher">{{ lecture.teacher }}</div>
-    <div class="mobile-last wide-none">
-      <div class="lecture-time">
-        {{ scheduleService.getTimeFormatted(lecture, false) }}-{{
-          scheduleService.getTimeFormatted(lecture, true)
-        }}
+    <div class="wrapped-part">
+      <div class="lecture-title">{{ lecture.title }}</div>
+      <div class="lecture-teacher">{{ lecture.teacher }}</div>
+      <div class="mobile-last wide-none">
+        <div class="lecture-time">
+          {{ scheduleService.getTimeFormatted(lecture, false) }}-{{
+            scheduleService.getTimeFormatted(lecture, true)
+          }}
+        </div>
+        <div class="lecture-age">
+          / {{ lecture.minAge
+          }}{{ lecture.maxAge === 99 ? "+" : "-" + lecture.maxAge + " лет" }}
+        </div>
+        <div class="attendance" (click)="toggleAttendance(lecture.id)">
+          {{ scheduleService.childLectures[lecture.id] ? "-" : "+" }}
+        </div>
+        <a [attr.href]="lecture.url" target="_blank" class="lecture-link">
+          <img src="/assets/images/telegram-blue.png" />
+        </a>
       </div>
-      <div class="lecture-age">
-        / {{ lecture.minAge
-        }}{{
-          lecture.maxAge === 99 ? "+" : "-" + lecture.maxAge + " лет"
-        }}
+      <div class="lecture-age narrow-none">
+        ({{ lecture.minAge
+        }}{{ lecture.maxAge === 99 ? "+" : "-" + lecture.maxAge + " лет" }})
       </div>
-      <div class="attendance" (click)="toggleAttendance(lecture.id)">
+      <div
+        class="attendance narrow-none"
+        (click)="toggleAttendance(lecture.id)"
+      >
         {{ scheduleService.childLectures[lecture.id] ? "-" : "+" }}
       </div>
-      <a [attr.href]="lecture.url" target="_blank" class="lecture-link">
-        <img src="/assets/images/telegram-blue.png"/>
+      <a
+        [attr.href]="lecture.url"
+        target="_blank"
+        class="lecture-link narrow-none"
+      >
+        <img src="/assets/images/telegram-blue.png" />
       </a>
     </div>
-    <div class="lecture-age narrow-none">
-      ({{ lecture.minAge
-      }}{{
-        lecture.maxAge === 99 ? "+" : "-" + lecture.maxAge + " лет"
-      }})
-    </div>
-    <div class="attendance narrow-none" (click)="toggleAttendance(lecture.id)">
-      {{ scheduleService.childLectures[lecture.id] ? "-" : "+" }}
-    </div>
-    <a [attr.href]="lecture.url" target="_blank" class="lecture-link narrow-none">
-      <img src="/assets/images/telegram-blue.png"/>
-    </a>
   </div>
 </div>
