@@ -99,10 +99,29 @@
   font-size: 30px;
   font-family: 'Zhizn';
   line-height: 150%;
-  padding-bottom: 72px;
+  padding-bottom: 55px;
 }
 
 #right-subtitle {
+  margin-top: 103px;
   font-size: 20px;
   font-family: 'Zhizn';
+}
+
+.oval {
+  background: rgb(181, 154, 137);
+  color: rgb(37, 16, 43);
+  width: 170px;
+  height: 24px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#bullets {
+  padding-top: 18px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 190%;
 }
