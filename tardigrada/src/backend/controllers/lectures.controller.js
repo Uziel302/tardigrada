@@ -13,6 +13,21 @@ exports.getLectures = async (req, res) => {
   });
 };
 
+exports.getCourse = async (req, res) => {
+  knex(tableName)
+    .where({ lectureId: req.query.id })
+    .first()
+    .then((course) =>  {
+    if (!course) {
+      res.status(401).json({
+        message: "failed getting lectures from db",
+      });
+    } else {
+      res.status(200).json(course);
+    }
+  });
+};
+
 exports.getLectureChildren = async (req, res) => {
   knex("lecturesChildren as lc")
     .select("c.*")

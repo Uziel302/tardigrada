@@ -17,6 +17,7 @@ const {
 const { loadOrCreateTeacher } = require("./controllers/teacherData.controller");
 const {
   getLectures,
+  getCourse,
   joinLecture,
   leaveLecture,
   getChildLectures,
@@ -42,6 +43,7 @@ const { paymentLink } = require("./controllers/payment.controller");
 router.post("/login", loginAndValidation);
 router.post("/signup", signupAndValidation);
 router.post("/paymentLink", paymentLink);
+router.get("/course", getCourse);
 router.get("/getLectures", getLectures);
 router.get("/getLectureChildren", getLectureChildren);
 router.get("/getTeacherLectures", getTeacherLectures);
