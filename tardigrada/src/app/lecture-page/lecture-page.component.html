@@ -2,8 +2,8 @@
   <div id="left-part">
     <div id="inner-left">
       <div id="top-line">
-        <img src="/assets/images/spanish-logo.png" id="course-logo" />
-        <div id="left-title">испанский</div>
+        <img [src]="course.image" id="course-logo" />
+        <div id="left-title">{{ course.title }}</div>
       </div>
       <div id="animal-line">
         <div class="subtitle">запись на курс</div>
@@ -20,31 +20,19 @@
       </div>
 
       <div class="passage">
-        Курс испанского для начинающих позволит овладеть базовыми знаниями и
-        научит ориентироваться в языке. Дети познакомятся с актуальной испанской
-        лексикой и необходимой грамматикой.
-        <br /><br />Обучающая среда погрузит учеников в испанский язык, а
-        коммуникативная методика позволит детям играть, двигаться и привыкать к
-        новому языку естесственно и задорно. <br /><br />Курс также предполагает
-        много творчества: мы будем делать поделки и использовать их в обучении.
-        <br /><br />В конце курса возможна реализаация совместного проекта (по
-        желанию студентов).
+        {{ course.description }}
       </div>
       <div id="profile-line">
         <div class="subtitle">преподаватель</div>
         <div id="teacher-container">
-          <img id="teacher-image" src="/assets/images/valeria.png" />
+          <img id="teacher-image" [src]="course.profile" />
         </div>
         <div class="white-line"></div>
       </div>
 
       <div class="passage">
-        <div id="teacher-name">валерия сонникова</div>
-        Валерия Сонникова, учитель с 12+ летним стажем. Работает с детьми по
-        коммуникативному методу с 2011 года.
-        <br /><br />На своих занятиях старается уделять особое внимание развитию
-        у студентов навыков общения и взаимодействия. Дипломированный специалист
-        по использованию современных технологий в обучении.
+        <div id="teacher-name">{{ course.teacher }}</div>
+        {{ course.about }}
       </div>
       <div id="reviews">
         <div class="subtitle">ваши отзывы</div>
@@ -55,15 +43,15 @@
   <div id="right-part">
     <div id="inner-right">
       <div id="right-title">
-        уроки проходят<br />по пятницам<br />С 13:00 до 14:00
+        уроки проходят<br />по пятницам<br />С
+        {{ scheduleService.getTimeFormatted(course, false) }} до
+        {{ scheduleService.getTimeFormatted(course, true) }}
       </div>
-      <div class="oval">xx - xx лет</div>
-      <div class="oval">для начинающих</div>
+      <div class="oval">{{course.subtitle}}</div>
+      <div class="oval">{{course.level}}</div>
       <div id="right-subtitle">краткая программа курса</div>
       <div id="bullets">
-        - Приветствие и знакомство <br />- Род и число существительных <br />-
-        Цвета. Глагол ser <br />- Прилагательные <br />- Числительные <br />-
-        Глагол soy <br />- Семья <br />- Природа <br />- Еда <br />- Путешествия
+        {{ course.bullets }}
       </div>
     </div>
   </div>

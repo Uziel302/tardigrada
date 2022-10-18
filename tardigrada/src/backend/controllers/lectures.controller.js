@@ -14,8 +14,9 @@ exports.getLectures = async (req, res) => {
 };
 
 exports.getCourse = async (req, res) => {
-  knex(tableName)
-    .where({ lectureId: req.query.id })
+  knex("lectures as l")
+    .join("teachers as t", "l.teacherId", "t.userId")
+    .where({ id: req.query.id })
     .first()
     .then((course) =>  {
     if (!course) {

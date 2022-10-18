@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 import { IChild } from '../models/child';
 import { ILecture } from '../models/lecture';
 import { IHomeWork } from '../models/homework';
+import { ICourse } from '../models/course';
 
 @Injectable({ providedIn: 'root' })
 export class ScheduleService {
@@ -149,7 +150,7 @@ export class ScheduleService {
     }
   }
 
-  public getTimeFormatted(lecture: ILecture, end: boolean) {
+  public getTimeFormatted(lecture: ILecture | ICourse, end: boolean) {
     let hour = lecture.hour + this.offsetFromMoscow + (end ? 1 : 0);
     let minutes = lecture.minutes;
     let formatted = hour < 10 ? '0' + hour : '' + hour;

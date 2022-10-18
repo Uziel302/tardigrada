@@ -58,6 +58,7 @@
   font-weight: 300;
   line-height: 150%;
   padding-right: 20px;
+  white-space: pre-line; 
 }
 
 .white-line {
@@ -117,6 +118,7 @@
   margin-bottom: 14px;
   text-align: center;
   font-size: 16px;
+  line-height: 140%;
 }
 
 #bullets {
@@ -124,6 +126,7 @@
   font-size: 16px;
   font-weight: 300;
   line-height: 190%;
+  white-space: pre-line;
 }
 
 #circles {
