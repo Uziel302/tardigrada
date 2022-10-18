@@ -32,13 +32,13 @@
   font-size: 55px;
   padding-left: 35px;
   padding-bottom: 18px;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
 }
 
 .subtitle {
   color: rgb(173, 91, 97);
   font-size: 34px;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
 }
 
 #animal-line {
@@ -74,7 +74,7 @@
 #teacher-name {
   color: rgb(67, 50, 60);
   font-size: 34px;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
   padding-bottom: 18px;
 }
 
@@ -97,7 +97,7 @@
 
 #right-title {
   font-size: 30px;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
   line-height: 150%;
   padding-bottom: 55px;
 }
@@ -105,7 +105,7 @@
 #right-subtitle {
   margin-top: 103px;
   font-size: 20px;
-  font-family: 'Zhizn';
+  font-family: "Zhizn";
 }
 
 .oval {
