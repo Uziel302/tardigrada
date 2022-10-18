@@ -110,7 +110,7 @@ export class LoginService {
               this.currentChildId = data.childId;
               target = '/student';
             }
-            if(!isStudent){
+            if (!isStudent) {
               target = '/teacher';
             }
             this.saveAuthData(token, expirationDate, this.currentChildId);

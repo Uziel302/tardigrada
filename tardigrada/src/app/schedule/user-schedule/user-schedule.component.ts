@@ -13,7 +13,9 @@ export class UserScheduleComponent implements OnInit {
   @Input() userId: number = 0;
   @Output() lectureChange = new EventEmitter<number>();
 
-  public hourColumn: number[] = [9,10,11,12,13,14,15,16,17,18,19,20,21]
+  public hourColumn: number[] = [
+    9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+  ];
 
   public weekFirstHalf = new Map([
     [0, 'пн'],

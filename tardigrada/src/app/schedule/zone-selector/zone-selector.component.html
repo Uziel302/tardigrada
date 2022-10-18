@@ -1,13 +1,18 @@
 <div *ngIf="!userpage" id="title">выберите свой часовой пояс</div>
 
 <div id="zone-container">
-  <mat-select disableOptionCentering id="zone-select" [class.notuserpage]="!userpage" [(ngModel)]="scheduleService.offsetFromMoscow">
+  <mat-select
+    disableOptionCentering
+    id="zone-select"
+    [class.notuserpage]="!userpage"
+    [(ngModel)]="scheduleService.offsetFromMoscow"
+  >
     <mat-option *ngFor="let timezone of timeZones" [value]="timezone.offset">
       {{
         timezone.text +
           " (GMT " +
-          ((timezone.offset+3) > 0 ? "+" : "") +
-          (timezone.offset+3) +
+          (timezone.offset + 3 > 0 ? "+" : "") +
+          (timezone.offset + 3) +
           ")"
       }}
     </mat-option>

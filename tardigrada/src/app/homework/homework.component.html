@@ -50,10 +50,17 @@
     </div>
     <div
       class="half-container form-half"
-      *ngIf="location !== 'teacher' && (scheduleService.openHwResponse[i] || homework.chwText)"
+      *ngIf="
+        location !== 'teacher' &&
+        (scheduleService.openHwResponse[i] || homework.chwText)
+      "
     >
       <div>Your response</div>
-      <textarea class="user-textarea" [class.purple-border]="responseSuccess[i]" [(ngModel)]="homework.chwText"></textarea>
+      <textarea
+        class="user-textarea"
+        [class.purple-border]="responseSuccess[i]"
+        [(ngModel)]="homework.chwText"
+      ></textarea>
       <div class="response-buttons">
         <ng-container *ngFor="let file of parsing.parse(homework.chwFile)">
           <a *ngIf="parsing.isImage(file)" [attr.href]="file" target="_blank">

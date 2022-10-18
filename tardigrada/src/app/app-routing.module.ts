@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'login/:teacher', component: LoginScreenComponent },
   { path: 'login', component: LoginScreenComponent, pathMatch: 'full' },
   { path: 'student', component: StudentAreaComponent },
-  { path: 'course/:id', component: LecturePageComponent },  
+  { path: 'course/:id', component: LecturePageComponent },
   { path: 'admin', component: AdminAreaComponent },
   { path: 'privacy', component: PrivacyComponent },
   {

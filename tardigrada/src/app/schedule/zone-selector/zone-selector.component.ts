@@ -6,7 +6,7 @@ import { ScheduleService } from '../../schedule/schedule.service';
 @Component({
   selector: 'app-zone-selector',
   templateUrl: './zone-selector.component.html',
-  styleUrls: ['./zone-selector.component.css']
+  styleUrls: ['./zone-selector.component.css'],
 })
 export class ZoneSelectorComponent implements OnInit {
   public moscowOffset: number = 3;
@@ -20,9 +20,7 @@ export class ZoneSelectorComponent implements OnInit {
     { text: 'Стамбул - Турция', name: 'Europe/Istanbul', offset: 0 },
   ];
 
-  constructor(
-    public scheduleService: ScheduleService
-  ) { }
+  constructor(public scheduleService: ScheduleService) {}
 
   ngOnInit(): void {
     this.calculateOffsets();
@@ -37,10 +35,9 @@ export class ZoneSelectorComponent implements OnInit {
     return (t1 - t2) / 60 / 60 / 1000;
   }
 
-  calculateOffsets(){
-    for(let timezone of this.timeZones){
+  calculateOffsets() {
+    for (let timezone of this.timeZones) {
       timezone.offset = this.getOffset(timezone.name) - this.moscowOffset;
     }
   }
-
 }

@@ -39,17 +39,17 @@
       <mat-datepicker #picker></mat-datepicker>
       <br />
       Класс:
-      <input [(ngModel)]="childData.className"  name="5" required />
+      <input [(ngModel)]="childData.className" name="5" required />
       <br />
       Предметы, которые вы хотели бы изучать:
-      <input [(ngModel)]="childData.subjects"  name="6" required />
+      <input [(ngModel)]="childData.subjects" name="6" required />
       <br />Часовой пояс:
-      <input [(ngModel)]="childData.timezone"  name="7" required />
+      <input [(ngModel)]="childData.timezone" name="7" required />
       <br />
       Опыт обучения в ZOOM:
-      <input [(ngModel)]="childData.zoom"  name="8" required />
+      <input [(ngModel)]="childData.zoom" name="8" required />
       <br />девайс для занятия:
-      <input [(ngModel)]="childData.device"  name="9" required />
+      <input [(ngModel)]="childData.device" name="9" required />
       <br />
       Страна, в которой вы сейчас находитесь:
       <input [(ngModel)]="childData.country" name="10" required />
@@ -63,8 +63,9 @@
       <br />Что-то еще, что нам надо знать:
       <input [(ngModel)]="childData.note" name="14" required />
       <br />
-      <button type="submit" (click)="saveChild()" [disabled]="!addChild.valid">Submit</button>
-
+      <button type="submit" (click)="saveChild()" [disabled]="!addChild.valid">
+        Submit
+      </button>
 
       <div>{{ saveError }}</div>
     </div>

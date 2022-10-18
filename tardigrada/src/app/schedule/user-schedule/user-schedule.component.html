@@ -2,7 +2,7 @@
 
 <div id="week-buttons" class="wide-none">
   <div class="left-triangle wide-none" (click)="secondHalf = !secondHalf">
-    <img src="/assets/images/triangle.svg">
+    <img src="/assets/images/triangle.svg" />
   </div>
   <div
     *ngFor="let day of (secondHalf ? weekSecondHalf : weekFirstHalf) | keyvalue"
@@ -13,14 +13,16 @@
     {{ day.value }}
   </div>
   <div class="right-triangle wide-none" (click)="secondHalf = !secondHalf">
-    <img src="/assets/images/triangle.svg">
+    <img src="/assets/images/triangle.svg" />
   </div>
 </div>
 
 <div id="container">
   <div id="hour-column">
     <div class="decor"></div>
-    <div class="decor hour" *ngFor="let hour of hourColumn">{{ hour + scheduleService.offsetFromMoscow + ':00' }}</div>
+    <div class="decor hour" *ngFor="let hour of hourColumn">
+      {{ hour + scheduleService.offsetFromMoscow + ":00" }}
+    </div>
   </div>
 
   <ng-container *ngFor="let day of scheduleService.week; let i = index">
