@@ -4,23 +4,27 @@
   display: flex;
 }
 
-#right-part {
+#left-part {
   width: 515px;
   display: flex;
   justify-content: flex-end;
   padding-bottom: 500px;
 }
 
-#inner-right {
+#inner-left {
   width: 392px;
 }
 
-#left-part {
+#right-part {
   width: calc(100% - 490px);
   background-color: #cbcedd;
   display: flex;
   justify-content: center;
   padding-bottom: 250px;
+}
+
+#inner-right {
+  width: calc(100% - 220px);
 }
 
 #top-title {
@@ -133,10 +137,6 @@
   padding-bottom: 12px;
 }
 
-#inner-left {
-  width: calc(100% - 220px);
-}
-
 #week-buttons {
   display: flex;
   padding-bottom: 39px;
@@ -184,7 +184,7 @@ input {
   }
 
   #left-part,
-  #right-part {
+  #left-part {
     width: calc(100% - 60px);
     padding: 38px 30px 30px 30px;
     justify-content: flex-start;
@@ -194,7 +194,7 @@ input {
     padding-bottom: 250px;
   }
 
-  #inner-left {
+  #inner-right {
     width: 100%;
   }
 

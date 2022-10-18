@@ -1,0 +1,108 @@
+.background {
+  background-color: rgb(216, 215, 224);
+  color: rgb(216, 215, 224);
+  display: flex;
+}
+
+#left-part {
+  width: calc(100% - 468px);
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 500px;
+}
+
+#inner-left {
+  margin-left: 112px;
+  margin-right: 145px;
+}
+
+#course-logo {
+  height: 142px;
+}
+
+#top-line {
+  display: flex;
+  align-items: center;
+  padding-top: 122px;
+  padding-bottom: 73px;
+}
+
+#left-title {
+  color: rgb(22, 10, 26);
+  font-size: 55px;
+  padding-left: 35px;
+  padding-bottom: 18px;
+  font-family: 'Zhizn';
+}
+
+.subtitle {
+  color: rgb(173, 91, 97);
+  font-size: 34px;
+  font-family: 'Zhizn';
+}
+
+#animal-line {
+  padding-bottom: 80px;
+}
+
+#animal {
+  height: 55px;
+  transform: translateY(3px) rotate(200deg);
+  margin-top: -10px;
+  margin-left: 170px;
+}
+
+.passage {
+  color: rgb(67, 50, 60);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 150%;
+  padding-right: 20px;
+}
+
+.white-line {
+  border-bottom: 1px solid white;
+  width: 100%;
+  padding-top: 14px;
+}
+
+#profile-line {
+  padding-top: 160px;
+  padding-bottom: 120px;
+}
+
+#teacher-name {
+  color: rgb(67, 50, 60);
+  font-size: 34px;
+  font-family: 'Zhizn';
+  padding-bottom: 18px;
+}
+
+#reviews {
+  padding-top: 160px;
+}
+
+#right-part {
+  width: 468px;
+  background-color: rgb(37, 16, 43);
+  color: rgb(181, 154, 137);
+  display: flex;
+  padding-bottom: 250px;
+}
+
+#inner-right {
+  padding: 150px 110px 0 50px;
+  width: 100%;
+}
+
+#right-title {
+  font-size: 30px;
+  font-family: 'Zhizn';
+  line-height: 150%;
+  padding-bottom: 72px;
+}
+
+#right-subtitle {
+  font-size: 20px;
+  font-family: 'Zhizn';
+}

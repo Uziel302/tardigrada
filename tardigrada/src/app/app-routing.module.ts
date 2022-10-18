@@ -14,6 +14,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AdminAreaComponent } from './admin-area/admin-area.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { DonationComponent } from './donation/donation.component';
+import { LecturePageComponent } from './lecture-page/lecture-page.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'login/:teacher', component: LoginScreenComponent },
   { path: 'login', component: LoginScreenComponent, pathMatch: 'full' },
   { path: 'student', component: StudentAreaComponent },
+  { path: 'course/:id', component: LecturePageComponent },  
   { path: 'admin', component: AdminAreaComponent },
   { path: 'privacy', component: PrivacyComponent },
   {

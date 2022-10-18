@@ -44,6 +44,7 @@ import { HomeworkComponent } from './homework/homework.component';
 import { DonationComponent } from './donation/donation.component';
 import { ScheduleDayComponent } from './schedule/schedule-day/schedule-day.component';
 import { ZoneSelectorComponent } from './schedule/zone-selector/zone-selector.component';
+import { LecturePageComponent } from './lecture-page/lecture-page.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ZoneSelectorComponent } from './schedule/zone-selector/zone-selector.co
     DonationComponent,
     ScheduleDayComponent,
     ZoneSelectorComponent,
+    LecturePageComponent,
   ],
   imports: [
     BrowserModule,

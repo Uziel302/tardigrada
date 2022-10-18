@@ -1,6 +1,6 @@
 <div class="background">
-  <div id="right-part">
-    <div id="inner-right">
+  <div id="left-part">
+    <div id="inner-left">
       <div id="title-container">
         <div id="top-title">расписание</div>
         <img id="animal" src="/assets/images/Animal.png" />
@@ -17,7 +17,7 @@
       <div id="ages">
         <div
           *ngFor="let age of ageList"
-          class="age-button narrow-none "
+          class="age-button narrow-none"
           [class.selectedAge]="selectedAges.includes(age)"
           (click)="toggleAge(age)"
         >
@@ -25,7 +25,7 @@
         </div>
 
         <div class="left-triangle wide-none" (click)="lowerAge()">
-          <img src="/assets/images/triangle.svg">
+          <img src="/assets/images/triangle.svg" />
         </div>
         <div
           *ngFor="let age of ageShortList"
@@ -36,9 +36,8 @@
           {{ age }}{{ age === 18 ? "+" : "" }}
         </div>
         <div class="right-triangle wide-none" (click)="higherAge()">
-          <img src="/assets/images/triangle.svg">
+          <img src="/assets/images/triangle.svg" />
         </div>
-
       </div>
       <div id="categories-title" class="narrow-none">предметы</div>
       <div id="categories-container">
@@ -53,8 +52,8 @@
       </div>
     </div>
   </div>
-  <div id="left-part">
-    <div id="inner-left">
+  <div id="right-part">
+    <div id="inner-right">
       <app-zone-selector class="narrow-none"></app-zone-selector>
       <div id="week-buttons">
         <div
@@ -67,18 +66,23 @@
         </div>
 
         <div class="left-triangle wide-none" (click)="secondHalf = !secondHalf">
-          <img src="/assets/images/triangle.svg">
+          <img src="/assets/images/triangle.svg" />
         </div>
         <div
-          *ngFor="let day of (secondHalf ? weekSecondHalf : weekFirstHalf) | keyvalue"
+          *ngFor="
+            let day of (secondHalf ? weekSecondHalf : weekFirstHalf) | keyvalue
+          "
           class="day-button wide-none"
           [class.selectedDay]="selectedDays.includes(day.key)"
           (click)="toggleDay(day.key)"
         >
           {{ day.value }}
         </div>
-        <div class="right-triangle wide-none" (click)="secondHalf = !secondHalf">
-          <img src="/assets/images/triangle.svg">
+        <div
+          class="right-triangle wide-none"
+          (click)="secondHalf = !secondHalf"
+        >
+          <img src="/assets/images/triangle.svg" />
         </div>
       </div>
       <div *ngFor="let day of weekDays">
