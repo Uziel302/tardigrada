@@ -1,18 +1,18 @@
-<div class="background">
+<div id="desktop">
   <div id="left-part">
     <div id="inner-left">
       <div id="top-line">
-        <img [src]="course.image" id="course-logo" />
-        <div id="left-title">{{ course.title }}</div>
+        <img [src]="course.image" class="course-logo" />
+        <div class="course-title">{{ course.title }}</div>
       </div>
       <div id="animal-line">
         <div class="subtitle">запись на курс</div>
-        <div id="circles">
-          <div id="circle-container">
-            <div id="white-circle">хочу оплатить</div>
+        <div class="circles">
+          <div class="circle-container">
+            <div class="white-circle">хочу оплатить</div>
           </div>
-          <div id="circle-container">
-            <div id="white-circle">не могу оплачивать</div>
+          <div class="circle-container">
+            <div class="white-circle">не могу оплачивать</div>
           </div>
         </div>
         <div class="white-line"></div>
@@ -24,14 +24,16 @@
       </div>
       <div id="profile-line">
         <div class="subtitle">преподаватель</div>
-        <div id="teacher-container">
-          <img id="teacher-image" [src]="course.profile" />
+        <div class="teacher-container">
+          <div class="teacher-image-container">
+            <img class="teacher-image" [src]="course.profile" />
+          </div>
         </div>
         <div class="white-line"></div>
       </div>
 
       <div class="passage">
-        <div id="teacher-name">{{ course.teacher }}</div>
+        <div class="teacher-name">{{ course.teacher }}</div>
         {{ course.about }}
       </div>
       <div id="reviews">
@@ -42,17 +44,66 @@
   </div>
   <div id="right-part">
     <div id="inner-right">
-      <div id="right-title">
+      <div class="time-title">
         уроки проходят<br />по пятницам<br />С
         {{ scheduleService.getTimeFormatted(course, false) }} до
         {{ scheduleService.getTimeFormatted(course, true) }}
       </div>
-      <div class="oval">{{course.subtitle}}</div>
-      <div class="oval">{{course.level}}</div>
-      <div id="right-subtitle">краткая программа курса</div>
-      <div id="bullets">
+      <div class="oval">{{ course.subtitle }}</div>
+      <div class="oval">{{ course.level }}</div>
+      <div class="bullets-title">краткая программа курса</div>
+      <div class="bullets">
         {{ course.bullets }}
       </div>
+    </div>
+  </div>
+</div>
+
+<div id="mobile">
+  <div id="purple-block"></div>
+  <div class="mobile-inner">
+    <img [src]="course.image" class="course-logo" />
+    <div class="course-title">{{ course.title }}</div>
+    <div class="subtitle">запись на курс</div>
+    <div class="white-line"></div>
+    <div class="circles">
+      <div class="circle-container left-circle">
+        <div class="white-circle">хочу оплатить</div>
+      </div>
+      <div class="circle-container">
+        <div class="white-circle">не могу оплачивать</div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-inner purple-second">
+    <div class="time-title">
+      уроки проходят<br />по пятницам<br />С
+      {{ scheduleService.getTimeFormatted(course, false) }} до
+      {{ scheduleService.getTimeFormatted(course, true) }}
+    </div>
+    <div class="oval">{{ course.subtitle }}</div>
+    <div class="oval">{{ course.level }}</div>
+  </div>
+  <div class="mobile-inner">
+    <div class="passage description-passage">
+      {{ course.description }}
+    </div>
+    <div class="subtitle subtitle-mobile">краткая программа</div>
+    <div class="white-line"></div>
+    <div class="bullets">
+      <div>{{ course.bullets }}</div>
+    </div>
+    <div class="subtitle subtitle-mobile subtitle-teacher">преподаватель</div>
+    <div class="white-line"></div>
+    <div class="teacher-container">
+      <div class="teacher-image-container">
+        <img class="teacher-image" [src]="course.profile" />
+      </div>
+    </div>
+    <div class="passage">
+      <div class="teacher-name">{{ course.teacher }}</div>
+      {{ course.about }}
+      <div id="padding"></div>
     </div>
   </div>
 </div>

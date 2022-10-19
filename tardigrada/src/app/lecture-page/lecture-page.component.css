@@ -1,4 +1,4 @@
-.background {
+#desktop {
   background-color: rgb(216, 215, 224);
   color: rgb(216, 215, 224);
   display: flex;
@@ -16,7 +16,7 @@
   margin-right: 145px;
 }
 
-#course-logo {
+.course-logo {
   height: 142px;
 }
 
@@ -27,7 +27,7 @@
   padding-bottom: 73px;
 }
 
-#left-title {
+.course-title {
   color: rgb(22, 10, 26);
   font-size: 55px;
   padding-left: 35px;
@@ -58,7 +58,7 @@
   font-weight: 300;
   line-height: 150%;
   padding-right: 20px;
-  white-space: pre-line; 
+  white-space: pre-line;
 }
 
 .white-line {
@@ -72,7 +72,7 @@
   padding-bottom: 120px;
 }
 
-#teacher-name {
+.teacher-name {
   color: rgb(67, 50, 60);
   font-size: 34px;
   font-family: "Zhizn";
@@ -96,17 +96,11 @@
   width: 100%;
 }
 
-#right-title {
+.time-title {
   font-size: 30px;
   font-family: "Zhizn";
   line-height: 150%;
   padding-bottom: 55px;
-}
-
-#right-subtitle {
-  margin-top: 103px;
-  font-size: 20px;
-  font-family: "Zhizn";
 }
 
 .oval {
@@ -121,7 +115,13 @@
   line-height: 140%;
 }
 
-#bullets {
+.bullets-title {
+  margin-top: 103px;
+  font-size: 20px;
+  font-family: "Zhizn";
+}
+
+.bullets {
   padding-top: 18px;
   font-size: 16px;
   font-weight: 300;
@@ -129,7 +129,7 @@
   white-space: pre-line;
 }
 
-#circles {
+.circles {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -137,7 +137,7 @@
   margin-top: -50px;
 }
 
-#circle-container {
+.circle-container {
   border: 1px solid white;
   border-radius: 50%;
   width: 128px;
@@ -145,7 +145,7 @@
   margin-right: 20px;
 }
 
-#white-circle {
+.white-circle {
   font-family: "Zhizn";
   background: white;
   color: black;
@@ -160,15 +160,163 @@
   border: 4px solid rgb(216, 215, 224);
 }
 
-#teacher-container {
-  width: 100%;
+.teacher-container {
+  width: calc(100% - 20px);
   display: flex;
   justify-content: flex-end;
   margin-top: -85px;
   margin-bottom: -115px;
 }
 
-#teacher-image {
-  padding-right: 20px;
-  height: 200px;
+.teacher-image-container {
+  border: 1px solid white;
+  height: 210px;
+  width: 210px;
+  border-radius: 50%;
+}
+
+.teacher-image {
+  height: 192px;
+  width: 192px;
+  border: 9px solid rgb(216, 215, 224);
+  border-radius: 50%;
+
+}
+
+@media screen and (min-width: 1261px) {
+  #mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  #desktop {
+    display: none;
+  }
+
+  #mobile {
+    background-color: rgb(216, 215, 224);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mobile-inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 33px;
+    padding-right: 33px;
+    width: calc(100% - 66px);
+  }
+
+  #purple-block {
+    background-color: rgb(37, 16, 43);
+    height: 163px;
+    width: 100%;
+  }
+
+  .course-logo {
+    height: 162px;
+    margin-top: -102px;
+  }
+
+  .course-title {
+    font-size: 42px;
+    margin-top: 50px;
+    padding-left: 0;
+    padding-bottom: 92px;
+  }
+
+  .subtitle {
+    font-size: 28px;
+  }
+
+  .circles {
+    padding-top: 82px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .white-line {
+    padding-top: 5px;
+  }
+
+  .circle-container {
+    width: 116px;
+    height: 116px;
+    margin-right: 0;
+    margin-left: 16px;
+  }
+
+  .left-circle {
+    margin-left: 0;
+  }
+
+  .white-circle {
+    width: 108px;
+    height: 108px;
+    font-size: 16px;
+    border: 4px solid rgb(216, 215, 224);
+  }
+
+  .purple-second {
+    background-color: rgb(37, 16, 43);
+    margin-top: 118px;
+    width: 100%;
+    padding-bottom: 43px;
+  }
+
+  .time-title {
+    text-align: center;
+    color: rgb(181, 154, 137);
+    padding-top: 52px;
+  }
+
+  .description-passage {
+    padding-top: 40px;
+  }
+
+  .passage {
+    font-size: 16px;
+    padding-right: 0;
+  }
+
+  .subtitle-mobile {
+    padding-top: 77px;
+    width: 100%;
+  }
+
+  .bullets {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .teacher-container {
+    margin: 0;
+    padding-top: 28px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .teacher-image {
+    padding-right: 0;
+  }
+
+  .subtitle-teacher {
+    font-size: 30px;
+  }
+
+  .teacher-name {
+    font-size: 21px;
+    padding-top: 40px;
+  }
+
+  #padding {
+    padding-bottom: 200px;
+  }
+
 }
