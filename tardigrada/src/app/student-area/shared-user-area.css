@@ -81,7 +81,7 @@
 .profile-image-child,
 #profile-image-teacher {
   overflow: hidden;
-  border: 1px solid black;
+  border: 9px solid rgb(216, 215, 224);
   border-radius: 50%;
   display: flex;
   align-items: center;
