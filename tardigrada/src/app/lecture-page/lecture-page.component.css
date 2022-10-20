@@ -180,7 +180,6 @@
   width: 192px;
   border: 9px solid rgb(216, 215, 224);
   border-radius: 50%;
-
 }
 
 @media screen and (min-width: 1261px) {
@@ -226,6 +225,9 @@
     font-size: 42px;
     margin-top: 50px;
     padding-left: 0;
+  }
+
+  .reviews-sum {
     padding-bottom: 92px;
   }
 
@@ -318,5 +320,4 @@
   #padding {
     padding-bottom: 200px;
   }
-
 }

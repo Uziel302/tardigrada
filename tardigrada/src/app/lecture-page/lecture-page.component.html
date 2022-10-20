@@ -64,6 +64,20 @@
   <div class="mobile-inner">
     <img [src]="course.image" class="course-logo" />
     <div class="course-title">{{ course.title }}</div>
+    <div class="reviews-sum">
+      <span
+        class="material-icons filled iconRatingStar"
+        *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
+      >
+        {{
+          i + 1 <= stars
+            ? "star_rate"
+            : stars % 1 !== 0 && (stars | round) === i + 1
+            ? "star_half"
+            : "star_outline"
+        }}
+      </span>
+    </div>
     <div class="subtitle">запись на курс</div>
     <div class="white-line"></div>
     <div class="circles">
