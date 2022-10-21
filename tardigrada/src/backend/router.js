@@ -18,6 +18,7 @@ const { loadOrCreateTeacher } = require("./controllers/teacherData.controller");
 const {
   getLectures,
   getCourse,
+  getCourseReviews,
   joinLecture,
   leaveLecture,
   getChildLectures,
@@ -44,6 +45,7 @@ router.post("/login", loginAndValidation);
 router.post("/signup", signupAndValidation);
 router.post("/paymentLink", paymentLink);
 router.get("/course", getCourse);
+router.get("/reviews", getCourseReviews);
 router.get("/getLectures", getLectures);
 router.get("/getLectureChildren", getLectureChildren);
 router.get("/getTeacherLectures", getTeacherLectures);

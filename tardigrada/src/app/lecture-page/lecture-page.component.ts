@@ -34,10 +34,7 @@ export class LecturePageComponent implements OnInit {
     bullets: '',
   };
   //TODO create model
-  public reviews: IReview[] = [
-    {name: 'Ваня Васечкин',stars: 3.5,date:'20.10.2022',content: 'bla', count: 10, likers: [8,9]},
-    {name: 'asaf malin',stars:4,date:'20.10.2029',content: 'bla hjj', count: 11, likers: [8,9]}
-  ];
+  public reviews: IReview[] = [];
   public newReview: string = '';
 
   constructor(
@@ -49,6 +46,7 @@ export class LecturePageComponent implements OnInit {
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id')) ?? 0;
     this.getCourseDetails();
+    this.getReviews();
   }
 
   getCourseDetails() {
@@ -62,8 +60,40 @@ export class LecturePageComponent implements OnInit {
       );
   }
 
-  submitReview(){
-    //TODO 
+  getReviews() {
+    this.http
+      .get<any[]>(environment.apiEndPoint + 'reviews/?id=' + this.id)
+      .subscribe(
+        (data) => {
+          for (let review of data) {
+            let likers = JSON.parse(review.likers);
+            this.reviews.push({
+              name: review.name,
+              stars: review.stars,
+              date: this.formatDate(review.creation),
+              content: review.content,
+              count: likers.length,
+              likers: likers,
+            });
+          }
+        },
+        (error) => {}
+      );
+  }
+
+  formatDate(date: string): string {
+    let dateObj = new Date(date);
+    return (
+      dateObj.getDate() +
+      '.' +
+      (dateObj.getMonth() + 1) +
+      '.' +
+      dateObj.getFullYear()
+    );
+  }
+
+  submitReview() {
+    //TODO
     this.newReview;
   }
 }

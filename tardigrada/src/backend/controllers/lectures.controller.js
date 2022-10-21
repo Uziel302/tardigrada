@@ -29,6 +29,20 @@ exports.getCourse = async (req, res) => {
   });
 };
 
+exports.getCourseReviews = async (req, res) => {
+  knex("reviews")
+    .where({ lectureId: req.query.id })
+    .then((reviews) =>  {
+    if (!reviews) {
+      res.status(401).json({
+        message: "failed getting lectures from db",
+      });
+    } else {
+      res.status(200).json(reviews);
+    }
+  });
+};
+
 exports.getLectureChildren = async (req, res) => {
   knex("lecturesChildren as lc")
     .select("c.*")

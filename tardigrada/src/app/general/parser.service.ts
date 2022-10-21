@@ -6,6 +6,7 @@ export class ParsingService {
     return filename.match(/\.(jpeg|jpg|gif|png)$/) != null;
   }
 
+  //TODO make it a pipe
   public parse(files: string) {
     if (!files) {
       return [];
