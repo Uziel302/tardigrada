@@ -175,11 +175,27 @@
   border-radius: 50%;
 }
 
-.teacher-image {
+.teacher-wrapper, .teacher-image, .image-shade {
   height: 192px;
   width: 192px;
-  border: 9px solid rgb(216, 215, 224);
   border-radius: 50%;
+}
+
+.teacher-wrapper {
+  border: 9px solid rgb(216, 215, 224);
+  position: relative;
+}
+
+.teacher-image {
+  position: absolute;
+  z-index: 10;
+}
+
+.image-shade {
+  background: radial-gradient(transparent 62%, #000) 50% calc(90% + 3px);
+  transform: rotate(-45deg);
+  position: absolute;
+  z-index: 20;
 }
 
 @media screen and (min-width: 1261px) {

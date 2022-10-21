@@ -26,7 +26,10 @@
         <div class="subtitle">преподаватель</div>
         <div class="teacher-container">
           <div class="teacher-image-container">
-            <img class="teacher-image" [src]="course.profile" />
+            <div class="teacher-wrapper">
+              <div class="image-shade"></div>
+              <img class="teacher-image" [src]="course.profile" />
+            </div>
           </div>
         </div>
         <div class="white-line"></div>
@@ -111,7 +114,10 @@
     <div class="white-line"></div>
     <div class="teacher-container">
       <div class="teacher-image-container">
-        <img class="teacher-image" [src]="course.profile" />
+        <div class="teacher-wrapper">
+          <div class="image-shade"></div>
+          <img class="teacher-image" [src]="course.profile" />
+        </div>
       </div>
     </div>
     <div class="passage">
