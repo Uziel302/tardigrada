@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ICourse } from '../models/course';
 import { environment } from '../../environments/environment';
 import { ScheduleService } from '../schedule/schedule.service';
+import { IReview } from '../models/review';
 
 @Component({
   selector: 'app-lecture-page',
@@ -15,7 +16,7 @@ export class LecturePageComponent implements OnInit {
   public stars: number = 0;
   public totalReviews: number = 0;
   public id: number = 0;
-  public heartClicked: boolean[] = Array(10).fill(false);//TODO change size
+  public heartClicked: boolean[] = [];
   public course: ICourse = {
     title: '',
     subtitle: '',
@@ -33,9 +34,9 @@ export class LecturePageComponent implements OnInit {
     bullets: '',
   };
   //TODO create model
-  public reviews: any = [
-    {name: 'Ваня Васечкин',stars: 3.5,date:'20.10.2022',content: 'bla', count: 10},
-    {name: 'asaf malin',stars:4,date:'20.10.2029',content: 'bla hjj', count: 11}
+  public reviews: IReview[] = [
+    {name: 'Ваня Васечкин',stars: 3.5,date:'20.10.2022',content: 'bla', count: 10, likers: [8,9]},
+    {name: 'asaf malin',stars:4,date:'20.10.2029',content: 'bla hjj', count: 11, likers: [8,9]}
   ];
   public newReview: string = '';
 
