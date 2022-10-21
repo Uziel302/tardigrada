@@ -27,11 +27,15 @@
   padding-bottom: 73px;
 }
 
-.course-title {
-  color: rgb(22, 10, 26);
-  font-size: 55px;
+.title-and-reviews {
+  color: rgb(37, 16, 43);
   padding-left: 35px;
-  padding-bottom: 18px;
+
+}
+
+.course-title {
+  font-size: 55px;
+  padding-bottom: 23px;
   font-family: "Zhizn";
 }
 
