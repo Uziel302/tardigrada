@@ -27,12 +27,12 @@
 }
 
 .title-and-reviews {
-  color: rgb(37, 16, 43);
   padding-left: 35px;
   padding-top: 53px;
 }
 
 .course-title {
+  color: rgb(37, 16, 43);
   font-size: 55px;
   padding-bottom: 22px;
   font-family: "Zhizn";
@@ -45,6 +45,7 @@
 
 .reviews-sum {
   display: flex;
+  color: rgb(37, 16, 43);
 }
 
 .review-text {
@@ -194,7 +195,9 @@
   border-radius: 50%;
 }
 
-.teacher-wrapper, .teacher-image, .image-shade {
+.teacher-wrapper,
+.teacher-image,
+.image-shade {
   height: 192px;
   width: 192px;
   border-radius: 50%;
@@ -258,10 +261,20 @@
     font-size: 42px;
     margin-top: 50px;
     padding-left: 0;
+    padding-bottom: 15px;
   }
 
   .reviews-sum {
     padding-bottom: 92px;
+    align-items: center;
+  }
+
+  .iconRatingStar {
+    font-size: 14px;
+  }
+
+  .review-text {
+    font-size: 12px;
   }
 
   .subtitle {

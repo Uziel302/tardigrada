@@ -12,7 +12,8 @@ import { ScheduleService } from '../schedule/schedule.service';
   styleUrls: ['./lecture-page.component.css'],
 })
 export class LecturePageComponent implements OnInit {
-  public stars = 4.5;
+  public stars: number = 0;
+  public totalReviews: number = 0;
   public id: number = 0;
   public course: ICourse = {
     title: '',

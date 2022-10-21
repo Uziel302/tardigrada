@@ -19,7 +19,7 @@
               }}
             </span>
             <div class="review-text">
-              {{stars}} &nbsp;|&nbsp; Оценки: 23
+              {{ stars }} &nbsp;|&nbsp; Оценки: {{ totalReviews }}
             </div>
           </div>
         </div>
@@ -99,6 +99,9 @@
             : "star_outline"
         }}
       </span>
+      <div class="review-text">
+        {{ stars }} &nbsp;|&nbsp; Оценки: {{ totalReviews }}
+      </div>
     </div>
     <div class="subtitle">запись на курс</div>
     <div class="white-line"></div>
