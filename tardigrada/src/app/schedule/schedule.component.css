@@ -184,13 +184,13 @@ input {
   }
 
   #left-part,
-  #left-part {
+  #right-part {
     width: calc(100% - 60px);
     padding: 38px 30px 30px 30px;
     justify-content: flex-start;
   }
 
-  #left-part {
+  #right-part {
     padding-bottom: 250px;
   }
 
