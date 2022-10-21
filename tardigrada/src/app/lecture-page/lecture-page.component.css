@@ -54,6 +54,37 @@
   font-weight: 300;
 }
 
+.heart-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-top: 15px;
+}
+
+.heart {
+  height: 35px;
+}
+
+.heart-counter {
+  font-size: 11px;
+  font-weight: 400;
+  margin-left: -9px;
+}
+
+.user-textarea {
+  height: 105px;
+  width: 92%;
+  border: 1px solid rgb(37, 16, 43);
+  background: #d8d7e1;
+  border-radius: 20px;
+  margin: 15px 0;
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+
 .subtitle {
   color: rgb(173, 91, 97);
   font-size: 34px;
@@ -98,7 +129,7 @@
   padding-bottom: 18px;
 }
 
-#reviews {
+.reviews {
   padding-top: 160px;
 }
 
@@ -218,6 +249,13 @@
   transform: rotate(-45deg);
   position: absolute;
   z-index: 20;
+}
+
+.review-form {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  padding-top: 12px;
 }
 
 @media screen and (min-width: 1261px) {
@@ -363,7 +401,42 @@
     padding-top: 40px;
   }
 
+  .reviews {
+    padding-top: 75px;
+  }
+  
+  .review {
+    padding-top: 40px;
+  }
+
+  .reviewer-name {
+    font-family: "Zhizn";
+    font-size: 22px;
+  }
+
+  .rating-line {
+    display: flex;
+    align-items: center;
+  }
+
+  .review-date {
+    font-size: 12px;
+    padding-left: 10px;
+  }
+
+  .review-content {
+    font-size: 15px;
+    padding-top: 14px;
+  }
+
   #padding {
-    padding-bottom: 200px;
+    padding-bottom: 70px;
+  }
+
+  #mobile-animal {
+    transform: scaleX(-1) rotate(20deg);
+    height: 100px;
+    margin-left: -160px;
+    margin-bottom: -20px;
   }
 }

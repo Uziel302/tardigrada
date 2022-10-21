@@ -15,6 +15,7 @@ export class LecturePageComponent implements OnInit {
   public stars: number = 0;
   public totalReviews: number = 0;
   public id: number = 0;
+  public heartClicked: boolean[] = Array(10).fill(false);//TODO change size
   public course: ICourse = {
     title: '',
     subtitle: '',
@@ -31,6 +32,12 @@ export class LecturePageComponent implements OnInit {
     description: '',
     bullets: '',
   };
+  //TODO create model
+  public reviews: any = [
+    {name: 'Ваня Васечкин',stars: 3.5,date:'20.10.2022',content: 'bla', count: 10},
+    {name: 'asaf malin',stars:4,date:'20.10.2029',content: 'bla hjj', count: 11}
+  ];
+  public newReview: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -52,5 +59,10 @@ export class LecturePageComponent implements OnInit {
         },
         (error) => {}
       );
+  }
+
+  submitReview(){
+    //TODO 
+    this.newReview;
   }
 }

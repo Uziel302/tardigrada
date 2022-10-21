@@ -58,7 +58,7 @@
         <div class="teacher-name">{{ course.teacher }}</div>
         {{ course.about }}
       </div>
-      <div id="reviews">
+      <div class="reviews">
         <div class="subtitle">ваши отзывы</div>
         <div class="white-line"></div>
       </div>
@@ -145,7 +145,56 @@
     <div class="passage">
       <div class="teacher-name">{{ course.teacher }}</div>
       {{ course.about }}
-      <div id="padding"></div>
+      <div class="reviews">
+        <div class="subtitle">ваши отзывы</div>
+        <div class="white-line"></div>
+        <div *ngFor="let review of reviews; let ind = index" class="review">
+          <div class="reviewer-name">{{ review.name }}</div>
+          <div class="rating-line">
+            <span
+              class="material-icons filled iconRatingStar"
+              *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
+            >
+              {{
+                i + 1 <= review.stars
+                  ? "star_rate"
+                  : review.stars % 1 !== 0 && (review.stars | round) === i + 1
+                  ? "star_half"
+                  : "star_outline"
+              }}
+            </span>
+            <div class="review-date">{{ review.date }}</div>
+          </div>
+          <div class="review-content">{{ review.content }}</div>
+          <div class="heart-container">
+            <img
+              class="heart"
+              (click)="heartClicked[ind] = !heartClicked[ind]"
+              [src]="
+                heartClicked[ind]
+                  ? '/assets/images/red-heart.png'
+                  : '/assets/images/white-heart.png'
+              "
+            />
+            <div class="heart-counter">
+              {{ heartClicked[ind] ? review.count + 1 : review.count }}
+            </div>
+          </div>
+          <div class="white-line"></div>
+        </div>
+        <div class="review-form">
+          <textarea
+            class="user-textarea"
+            [(ngModel)]="newReview"
+          ></textarea>
+          <div class="circle-container">
+            <div class="white-circle">отправить</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <img id="mobile-animal" src="/assets/images/Animal.png" />
+  <div class="white-line"></div>
+  <div id="padding"></div>
 </div>
