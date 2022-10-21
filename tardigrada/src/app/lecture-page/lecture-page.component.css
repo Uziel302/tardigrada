@@ -221,8 +221,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-left: 33px;
-    padding-right: 33px;
     width: calc(100% - 66px);
   }
 
