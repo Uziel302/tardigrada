@@ -332,10 +332,9 @@ li::before {
 }
 
 .tooltip .tooltiptext {
-  visibility: hidden;
   width: 180px;
   top: 140%;
-  left: 50%;
+  left: -5000%;
   margin-left: -90px;
   background-color: white;
   color: #59385b;
@@ -354,7 +353,7 @@ li::before {
   }
 
   .tooltip:hover .tooltiptext {
-    visibility: visible;
+    left: 50%;
   }
 }
 
