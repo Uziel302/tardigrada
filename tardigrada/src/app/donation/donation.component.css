@@ -504,5 +504,6 @@ li::before {
 
   #painting-tardigrada {
     height: 360px;
+    max-width: 100%;
   }
 }
