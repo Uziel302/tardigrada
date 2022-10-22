@@ -20,6 +20,7 @@ const {
   getCourse,
   getCourseReviews,
   submitReview,
+  submitLike,
   joinLecture,
   leaveLecture,
   getChildLectures,
@@ -48,6 +49,7 @@ router.post("/paymentLink", paymentLink);
 router.get("/course", getCourse);
 router.get("/reviews", getCourseReviews);
 router.post("/submitReview", submitReview);
+router.post("/submitLike", submitLike);
 router.get("/getLectures", getLectures);
 router.get("/getLectureChildren", getLectureChildren);
 router.get("/getTeacherLectures", getTeacherLectures);

@@ -70,6 +70,7 @@ export class LecturePageComponent implements OnInit {
           for (let review of data) {
             let likers = JSON.parse(review.likers);
             this.reviews.push({
+              id: review.id,
               name: review.name,
               stars: review.stars,
               date: this.formatDate(review.creation),
@@ -77,6 +78,7 @@ export class LecturePageComponent implements OnInit {
               count: likers.length,
               likers: likers,
             });
+            this.heartClicked[this.reviews.length-1] = likers.includes(this.loginService.currentChildId);
           }
         },
         (error) => {}
@@ -105,13 +107,14 @@ export class LecturePageComponent implements OnInit {
       stars: this.newStars,
     };
     this.http
-      .post<{ name: string }>(
+      .post<{ id: number; name: string }>(
         environment.apiEndPoint + 'submitReview',
         reviewData
       )
       .subscribe(
         (data) => {
           this.reviews.push({
+            id: data.id,
             name: data.name,
             stars: this.newStars,
             date: this.formatDate(new Date() + ''),
@@ -122,6 +125,30 @@ export class LecturePageComponent implements OnInit {
           this.newReview = '';
           this.newStars = 0;
         },
+        (error) => {}
+      );
+  }
+
+  changeHeart(index: number) {
+    if (!this.loginService.currentChildId) {
+      return;
+    }
+    this.heartClicked[index] = !this.heartClicked[index];
+    if (this.reviews[index].likers.includes(this.loginService.currentChildId)) {
+      this.reviews[index].likers.splice(
+        this.reviews[index].likers.indexOf(this.loginService.currentChildId),
+        1
+      );
+      this.reviews[index].count--;
+    } else {
+      this.reviews[index].likers.push(this.loginService.currentChildId);
+      this.reviews[index].count++;
+    }
+    let likeData = {id: this.reviews[index].id, likers: JSON.stringify(this.reviews[index].likers)};
+    this.http
+      .post(environment.apiEndPoint + 'submitLike', likeData)
+      .subscribe(
+        (data) => {},
         (error) => {}
       );
   }

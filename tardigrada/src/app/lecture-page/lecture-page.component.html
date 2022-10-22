@@ -169,7 +169,7 @@
           <div class="heart-container">
             <img
               class="heart"
-              (click)="heartClicked[ind] = !heartClicked[ind]"
+              (click)="changeHeart(ind)"
               [src]="
                 heartClicked[ind]
                   ? '/assets/images/red-heart.png'
@@ -177,7 +177,7 @@
               "
             />
             <div class="heart-counter">
-              {{ heartClicked[ind] ? review.count + 1 : review.count }}
+              {{ review.count }}
             </div>
           </div>
           <div class="white-line"></div>

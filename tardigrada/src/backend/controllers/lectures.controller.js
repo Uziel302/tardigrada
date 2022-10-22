@@ -52,7 +52,7 @@ exports.submitReview = async (req, res) => {
       name,
       stars: req.body.stars,
       content: req.body.content,
-      likers: '[]',
+      likers: "[]",
     })
     .then((review) => {
       if (!review) {
@@ -60,25 +60,46 @@ exports.submitReview = async (req, res) => {
           message: "failed saving review to db",
         });
       } else {
-        res.status(200).json({ name: name });
+        res.status(200).json({ id: review.id, name: name });
       }
     });
-}
+};
+
+exports.submitLike = async (req, res) => {
+  try {
+    knex("reviews")
+      .update({
+        likers: req.body.likers,
+      })
+      .where({ id: req.body.id })
+      .then((review) => {
+        if (!review) {
+          res.status(401).json({
+            message: "failed saving review to db",
+          });
+        } else {
+          res.status(200).json({ success: true });
+        }
+      });
+  } catch (error) {
+    res.status(401).json(error);
+  }
+};
 
 exports.getChildName = async (req, res) => {
   return new Promise((resolve, reject) => {
     knex("children")
-    .where({ id: req.body.childId })
-    .first()
-    .then((child) => {
-      if (!child) {
-        reject();
-      } else {
-        resolve(child.firstName + ' ' + child.lastName);
-      }
-    });
+      .where({ id: req.body.childId })
+      .first()
+      .then((child) => {
+        if (!child) {
+          reject();
+        } else {
+          resolve(child.firstName + " " + child.lastName);
+        }
+      });
   });
-}
+};
 
 exports.getLectureChildren = async (req, res) => {
   knex("lecturesChildren as lc")
