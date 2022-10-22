@@ -6,6 +6,7 @@ import { ICourse } from '../models/course';
 import { environment } from '../../environments/environment';
 import { ScheduleService } from '../schedule/schedule.service';
 import { IReview } from '../models/review';
+import { LoginService } from '../login-screen/login.service';
 
 @Component({
   selector: 'app-lecture-page',
@@ -14,6 +15,7 @@ import { IReview } from '../models/review';
 })
 export class LecturePageComponent implements OnInit {
   public stars: number = 0;
+  public newStars: number = 0;
   public totalReviews: number = 0;
   public id: number = 0;
   public heartClicked: boolean[] = [];
@@ -40,7 +42,8 @@ export class LecturePageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
-    public scheduleService: ScheduleService
+    public scheduleService: ScheduleService,
+    private loginService: LoginService,
   ) {}
 
   ngOnInit(): void {
@@ -93,7 +96,30 @@ export class LecturePageComponent implements OnInit {
   }
 
   submitReview() {
-    //TODO
-    this.newReview;
+    if(!this.newStars){
+      return;
+    }
+    const reviewData: any = {
+      childId: this.loginService.currentChildId,
+      lectureId: this.id,
+      content: this.newReview,
+      stars: this.newStars,
+    };
+    this.http.post<{name: string}>(environment.apiEndPoint + 'submitReview', reviewData).subscribe(
+      (data) => {
+        this.reviews.push({
+          name: data.name,
+          stars: this.newStars,
+          date: this.formatDate(new Date()+''),
+          content: this.newReview,
+          count: 0,
+          likers: [],
+        });
+        this.newReview = '';
+        this.newStars = 0;
+      },
+      (error) => {
+      }
+    );
   }
 }

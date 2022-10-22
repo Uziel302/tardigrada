@@ -19,6 +19,7 @@ const {
   getLectures,
   getCourse,
   getCourseReviews,
+  submitReview,
   joinLecture,
   leaveLecture,
   getChildLectures,
@@ -46,6 +47,7 @@ router.post("/signup", signupAndValidation);
 router.post("/paymentLink", paymentLink);
 router.get("/course", getCourse);
 router.get("/reviews", getCourseReviews);
+router.post("/submitReview", submitReview);
 router.get("/getLectures", getLectures);
 router.get("/getLectureChildren", getLectureChildren);
 router.get("/getTeacherLectures", getTeacherLectures);

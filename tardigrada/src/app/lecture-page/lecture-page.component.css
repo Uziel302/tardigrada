@@ -83,8 +83,6 @@
   font-size: 20px;
 }
 
-
-
 .subtitle {
   color: rgb(173, 91, 97);
   font-size: 34px;
@@ -404,7 +402,7 @@
   .reviews {
     padding-top: 75px;
   }
-  
+
   .review {
     padding-top: 40px;
   }
@@ -438,5 +436,16 @@
     height: 100px;
     margin-left: -160px;
     margin-bottom: -20px;
+  }
+
+  .new-stars {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .new-stars .iconRatingStar {
+    font-size: 50px;
   }
 }

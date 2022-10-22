@@ -18,30 +18,67 @@ exports.getCourse = async (req, res) => {
     .join("teachers as t", "l.teacherId", "t.userId")
     .where({ id: req.query.id })
     .first()
-    .then((course) =>  {
-    if (!course) {
-      res.status(401).json({
-        message: "failed getting lectures from db",
-      });
-    } else {
-      res.status(200).json(course);
-    }
-  });
+    .then((course) => {
+      if (!course) {
+        res.status(401).json({
+          message: "failed getting lectures from db",
+        });
+      } else {
+        res.status(200).json(course);
+      }
+    });
 };
 
 exports.getCourseReviews = async (req, res) => {
   knex("reviews")
     .where({ lectureId: req.query.id })
-    .then((reviews) =>  {
-    if (!reviews) {
-      res.status(401).json({
-        message: "failed getting lectures from db",
-      });
-    } else {
-      res.status(200).json(reviews);
-    }
-  });
+    .then((reviews) => {
+      if (!reviews) {
+        res.status(401).json({
+          message: "failed getting lectures from db",
+        });
+      } else {
+        res.status(200).json(reviews);
+      }
+    });
 };
+
+exports.submitReview = async (req, res) => {
+  let name = await this.getChildName(req, res);
+  knex("reviews")
+    .insert({
+      lectureId: req.body.lectureId,
+      childId: req.body.childId,
+      name,
+      stars: req.body.stars,
+      content: req.body.content,
+      likers: '[]',
+    })
+    .then((review) => {
+      if (!review) {
+        res.status(401).json({
+          message: "failed saving review to db",
+        });
+      } else {
+        res.status(200).json({ name: name });
+      }
+    });
+}
+
+exports.getChildName = async (req, res) => {
+  return new Promise((resolve, reject) => {
+    knex("children")
+    .where({ id: req.body.childId })
+    .first()
+    .then((child) => {
+      if (!child) {
+        reject();
+      } else {
+        resolve(child.firstName + ' ' + child.lastName);
+      }
+    });
+  });
+}
 
 exports.getLectureChildren = async (req, res) => {
   knex("lecturesChildren as lc")

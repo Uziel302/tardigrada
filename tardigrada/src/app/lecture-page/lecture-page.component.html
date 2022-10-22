@@ -183,11 +183,17 @@
           <div class="white-line"></div>
         </div>
         <div class="review-form">
-          <textarea
-            class="user-textarea"
-            [(ngModel)]="newReview"
-          ></textarea>
-          <div class="circle-container">
+          <textarea class="user-textarea" [(ngModel)]="newReview"></textarea>
+          <div *ngIf="newReview" class="new-stars">
+            <span
+              class="material-icons filled iconRatingStar"
+              *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
+              (click)="newStars = i + 1"
+            >
+              {{ i + 1 <= newStars ? "star_rate" : "star_outline" }}
+            </span>
+          </div>
+          <div class="circle-container" (click)="submitReview()">
             <div class="white-circle">отправить</div>
           </div>
         </div>
