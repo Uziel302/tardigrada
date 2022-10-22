@@ -35,7 +35,6 @@ export class LecturePageComponent implements OnInit {
     description: '',
     bullets: '',
   };
-  //TODO create model
   public reviews: IReview[] = [];
   public newReview: string = '';
 
@@ -43,7 +42,7 @@ export class LecturePageComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient,
     public scheduleService: ScheduleService,
-    private loginService: LoginService,
+    private loginService: LoginService
   ) {}
 
   ngOnInit(): void {
@@ -96,7 +95,7 @@ export class LecturePageComponent implements OnInit {
   }
 
   submitReview() {
-    if(!this.newStars){
+    if (!this.newStars) {
       return;
     }
     const reviewData: any = {
@@ -105,21 +104,25 @@ export class LecturePageComponent implements OnInit {
       content: this.newReview,
       stars: this.newStars,
     };
-    this.http.post<{name: string}>(environment.apiEndPoint + 'submitReview', reviewData).subscribe(
-      (data) => {
-        this.reviews.push({
-          name: data.name,
-          stars: this.newStars,
-          date: this.formatDate(new Date()+''),
-          content: this.newReview,
-          count: 0,
-          likers: [],
-        });
-        this.newReview = '';
-        this.newStars = 0;
-      },
-      (error) => {
-      }
-    );
+    this.http
+      .post<{ name: string }>(
+        environment.apiEndPoint + 'submitReview',
+        reviewData
+      )
+      .subscribe(
+        (data) => {
+          this.reviews.push({
+            name: data.name,
+            stars: this.newStars,
+            date: this.formatDate(new Date() + ''),
+            content: this.newReview,
+            count: 0,
+            likers: [],
+          });
+          this.newReview = '';
+          this.newStars = 0;
+        },
+        (error) => {}
+      );
   }
 }
