@@ -57,10 +57,62 @@
       <div class="passage">
         <div class="teacher-name">{{ course.teacher }}</div>
         {{ course.about }}
-      </div>
-      <div class="reviews">
-        <div class="subtitle">ваши отзывы</div>
-        <div class="white-line"></div>
+        <div class="reviews">
+          <div class="subtitle">ваши отзывы</div>
+          <div class="white-line"></div>
+          <div *ngFor="let review of reviews; let ind = index" class="review">
+            <div class="review-inner">
+              <div class="reviewer-name">{{ review.name }}</div>
+              <div class="rating-line">
+                <span
+                  class="material-icons filled iconRatingStar"
+                  *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
+                >
+                  {{
+                    i + 1 <= review.stars
+                      ? "star_rate"
+                      : review.stars % 1 !== 0 &&
+                        (review.stars | round) === i + 1
+                      ? "star_half"
+                      : "star_outline"
+                  }}
+                </span>
+                <div class="review-date">{{ review.date }}</div>
+              </div>
+              <div class="review-content">{{ review.content }}</div>
+              <div class="heart-container">
+                <img
+                  class="heart"
+                  (click)="changeHeart(ind)"
+                  [src]="
+                    heartClicked[ind]
+                      ? '/assets/images/red-heart.png'
+                      : '/assets/images/white-heart.png'
+                  "
+                />
+                <div class="heart-counter">
+                  {{ review.count }}
+                </div>
+              </div>
+            </div>
+            <div class="white-line"></div>
+          </div>
+          <div class="review-form">
+            <textarea class="user-textarea" [(ngModel)]="newReview"></textarea>
+            <div *ngIf="newReview" class="new-stars">
+              <span
+                class="material-icons filled iconRatingStar"
+                *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
+                (click)="newStars = i + 1"
+              >
+                {{ i + 1 <= newStars ? "star_rate" : "star_outline" }}
+              </span>
+            </div>
+            <div class="circle-container" (click)="submitReview()">
+              <div class="white-circle">отправить</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
