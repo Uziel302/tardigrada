@@ -246,6 +246,10 @@
   margin-right: 20px;
 }
 
+.review-form .circle-container {
+  margin-right: 0;
+}
+
 .white-circle {
   font-family: "Zhizn";
   background: white;
@@ -383,7 +387,6 @@
   .circle-container {
     width: 116px;
     height: 116px;
-    margin-right: 0;
     margin-left: 16px;
   }
 
