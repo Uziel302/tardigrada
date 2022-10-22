@@ -99,7 +99,7 @@
             </div>
             <div class="white-line"></div>
           </div>
-          <div class="review-form">
+          <div *ngIf="this.loginService.currentChildId" class="review-form">
             <textarea class="user-textarea" [(ngModel)]="newReview"></textarea>
             <div *ngIf="newReview" class="new-stars">
               <span
@@ -113,6 +113,9 @@
             <div class="circle-container" (click)="submitReview()">
               <div class="white-circle">отправить</div>
             </div>
+          </div>
+          <div *ngIf="!this.loginService.currentChildId" class="not-signed">
+            Оставлять комментарии и ставить отметки могут только зарегистрированные пользователи
           </div>
         </div>
       </div>
@@ -238,7 +241,7 @@
           </div>
           <div class="white-line"></div>
         </div>
-        <div class="review-form">
+        <div *ngIf="this.loginService.currentChildId" class="review-form">
           <textarea class="user-textarea" [(ngModel)]="newReview"></textarea>
           <div *ngIf="newReview" class="new-stars">
             <span
@@ -252,6 +255,9 @@
           <div class="circle-container" (click)="submitReview()">
             <div class="white-circle">отправить</div>
           </div>
+        </div>
+        <div *ngIf="!this.loginService.currentChildId" class="not-signed">
+          Оставлять комментарии и ставить отметки могут только зарегистрированные пользователи
         </div>
       </div>
     </div>

@@ -91,6 +91,12 @@
   font-size: 20px;
 }
 
+.not-signed {
+  color: rgb(107, 47, 46);
+  padding-top: 12px;
+  font-size: 14px;
+}
+
 .subtitle {
   color: rgb(173, 91, 97);
   font-size: 34px;

@@ -43,7 +43,7 @@ export class LecturePageComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient,
     public scheduleService: ScheduleService,
-    private loginService: LoginService
+    public loginService: LoginService
   ) {}
 
   ngOnInit(): void {
