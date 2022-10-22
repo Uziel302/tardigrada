@@ -7,8 +7,9 @@
           <div class="course-title">{{ course.title }}</div>
           <div class="reviews-sum">
             <span
-              class="material-icons filled iconRatingStar"
+              class="material-icons iconRatingStar"
               *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
+              [class.empty-star]="i + 1 > stars"
             >
               {{
                 i + 1 <= stars
@@ -65,8 +66,9 @@
               <div class="reviewer-name">{{ review.name }}</div>
               <div class="rating-line">
                 <span
-                  class="material-icons filled iconRatingStar"
+                  class="material-icons iconRatingStar"
                   *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
+                  [class.empty-star]="i + 1 > review.stars"
                 >
                   {{
                     i + 1 <= review.stars
@@ -101,9 +103,9 @@
             <textarea class="user-textarea" [(ngModel)]="newReview"></textarea>
             <div *ngIf="newReview" class="new-stars">
               <span
-                class="material-icons filled iconRatingStar"
+                class="material-icons iconRatingStar"
                 *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
-                (click)="newStars = i + 1"
+                [class.empty-star]="i + 1 > newStars"
               >
                 {{ i + 1 <= newStars ? "star_rate" : "star_outline" }}
               </span>
@@ -140,8 +142,9 @@
     <div class="course-title">{{ course.title }}</div>
     <div class="reviews-sum">
       <span
-        class="material-icons filled iconRatingStar"
+        class="material-icons iconRatingStar"
         *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
+        [class.empty-star]="i + 1 > stars"
       >
         {{
           i + 1 <= stars
@@ -204,8 +207,9 @@
           <div class="reviewer-name">{{ review.name }}</div>
           <div class="rating-line">
             <span
-              class="material-icons filled iconRatingStar"
+              class="material-icons iconRatingStar"
               *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
+              [class.empty-star]="i + 1 > review.stars"
             >
               {{
                 i + 1 <= review.stars
@@ -238,9 +242,9 @@
           <textarea class="user-textarea" [(ngModel)]="newReview"></textarea>
           <div *ngIf="newReview" class="new-stars">
             <span
-              class="material-icons filled iconRatingStar"
+              class="material-icons iconRatingStar"
               *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
-              (click)="newStars = i + 1"
+              [class.empty-star]="i + 1 > newStars"
             >
               {{ i + 1 <= newStars ? "star_rate" : "star_outline" }}
             </span>

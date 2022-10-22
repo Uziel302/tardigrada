@@ -44,6 +44,11 @@
   font-family: 'Material Icons Round';
 }
 
+.empty-star {
+  margin-top: 1px;
+  font-size: 17.5px;
+}
+
 .reviews-sum {
   display: flex;
   color: rgb(37, 16, 43);
