@@ -80,3 +80,7 @@ textarea {
   margin-right: -4px;
   font-size: 25px;
 }
+
+input.ng-invalid.ng-touched {
+  border: red 1px solid;
+}
