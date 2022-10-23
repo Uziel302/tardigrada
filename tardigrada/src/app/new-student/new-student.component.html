@@ -41,8 +41,7 @@
         Ваш часовой пояс
         <div class="red-asterisk">*</div>
       </div>
-      <app-zone-selector [userpage]="true" [newstudent]="true"></app-zone-selector>
-      <input [(ngModel)]="childData.timezone" name="4" required />
+      <app-zone-selector name="4" [userpage]="true" [newstudent]="true" (changeTz)="onChangeTz($event)"></app-zone-selector>
       <div class="required-field">
         В какой стране вы находитесь?
         <div class="red-asterisk">*</div>

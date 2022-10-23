@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/login-screen/login.service';
 @Component({
   selector: 'app-new-student',
   templateUrl: './new-student.component.html',
-  styleUrls: ['./new-student.component.css']
+  styleUrls: ['./new-student.component.css'],
 })
 export class NewStudentComponent implements OnInit {
   public children = [];
@@ -44,6 +44,10 @@ export class NewStudentComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onChangeTz(event: string){
+    this.childData.timezone = event;
+  }
+
   saveChild() {
     if (!this.childData.firstName) {
       return;
@@ -65,5 +69,4 @@ export class NewStudentComponent implements OnInit {
         }
       );
   }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ITimeZone } from '../../models/timezone';
 import { ScheduleService } from '../../schedule/schedule.service';
@@ -12,6 +12,7 @@ export class ZoneSelectorComponent implements OnInit {
   public moscowOffset: number = 3;
   @Input() userpage: boolean = false;
   @Input() newstudent: boolean = false;
+  @Output() changeTz = new EventEmitter();
 
   public timeZones: ITimeZone[] = [
     { text: 'Иерусалим - Израиль', name: 'Asia/Jerusalem', offset: 0 },
@@ -40,5 +41,9 @@ export class ZoneSelectorComponent implements OnInit {
     for (let timezone of this.timeZones) {
       timezone.offset = this.getOffset(timezone.name) - this.moscowOffset;
     }
+  }
+
+  changeTime(time: string){
+    this.changeTz.emit(time);
   }
 }
