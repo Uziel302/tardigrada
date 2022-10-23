@@ -105,7 +105,7 @@ export class LoginService {
               now.getTime() + expiresInDuration * 1000
             );
             this.currentError = '';
-            let target = '/parent/children';
+            let target = '/new-student';
             if (data.childId) {
               this.currentChildId = data.childId;
               target = '/student';

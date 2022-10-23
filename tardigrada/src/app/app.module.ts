@@ -46,6 +46,7 @@ import { ScheduleDayComponent } from './schedule/schedule-day/schedule-day.compo
 import { ZoneSelectorComponent } from './schedule/zone-selector/zone-selector.component';
 import { LecturePageComponent } from './lecture-page/lecture-page.component';
 import { RoundPipe } from './pipes/round';
+import { NewStudentComponent } from './new-student/new-student.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { RoundPipe } from './pipes/round';
     ZoneSelectorComponent,
     LecturePageComponent,
     RoundPipe,
+    NewStudentComponent,
   ],
   imports: [
     BrowserModule,

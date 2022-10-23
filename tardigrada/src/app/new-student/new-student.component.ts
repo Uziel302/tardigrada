@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '../../environments/environment';
 import { IChild } from 'src/app/models/child';
 import { LoginService } from 'src/app/login-screen/login.service';
 
 @Component({
-  selector: 'app-children',
-  templateUrl: './children.component.html',
-  styleUrls: ['./children.component.css'],
+  selector: 'app-new-student',
+  templateUrl: './new-student.component.html',
+  styleUrls: ['./new-student.component.css']
 })
-export class ChildrenComponent implements OnInit {
+export class NewStudentComponent implements OnInit {
   public children = [];
   public saveError: string = '';
 
@@ -64,4 +64,5 @@ export class ChildrenComponent implements OnInit {
         }
       );
   }
+
 }

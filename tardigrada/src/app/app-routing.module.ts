@@ -15,6 +15,7 @@ import { AdminAreaComponent } from './admin-area/admin-area.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { DonationComponent } from './donation/donation.component';
 import { LecturePageComponent } from './lecture-page/lecture-page.component';
+import { NewStudentComponent } from './new-student/new-student.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -29,14 +30,7 @@ const routes: Routes = [
   { path: 'course/:id', component: LecturePageComponent },
   { path: 'admin', component: AdminAreaComponent },
   { path: 'privacy', component: PrivacyComponent },
-  {
-    path: 'parent',
-    children: [
-      { path: '', redirectTo: 'children', pathMatch: 'full' },
-      { path: 'children', component: ChildrenComponent },
-      { path: 'account', component: AccountComponent },
-    ],
-  },
+  { path: 'new-student', component: NewStudentComponent },
   { path: 'teacher', component: TeacherAreaComponent },
 ];
 
