@@ -6,18 +6,19 @@
   padding: 65px 30px 0 30px;
   font-size: 16px;
   font-weight: 300;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
 
-input, textarea {
-  width:calc(100% - 26px);
+input,
+textarea {
+  width: calc(100% - 26px);
   margin: 5px 0 24px 0;
   padding: 0 10px;
   font-size: 14px;
   font-weight: 300;
-  background: rgb(215,215,224);
+  background: rgb(215, 215, 224);
   border: 1px solid white;
   outline: none;
   height: 42px;
@@ -64,4 +65,18 @@ textarea {
 
 .high-input {
   height: 84px;
+}
+
+.required-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.red-asterisk {
+  color: red;
+  margin-bottom: -14px;
+  margin-top: 14px;
+  margin-right: -4px;
+  font-size: 25px;
 }

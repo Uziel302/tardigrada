@@ -1,21 +1,30 @@
 <div id="wrapper">
   <form id="form" #addChild="ngForm">
     <div id="inner-form">
-      Имя
+      <div class="required-field">
+        Имя
+        <div class="red-asterisk">*</div>
+      </div>
       <input
         [(ngModel)]="childData.firstName"
         name="1"
         required
         #firstName="ngModel"
       />
-      Фамилия
+      <div class="required-field">
+        Фамилия
+        <div class="red-asterisk">*</div>
+      </div>
       <input
         [(ngModel)]="childData.lastName"
         name="2"
         required
         #lastName="ngModel"
       />
-      Дата рождения
+      <div class="required-field">
+        Дата рождения
+        <div class="red-asterisk">*</div>
+      </div>
       <input
         class="date"
         matInput
@@ -28,18 +37,24 @@
         (click)="picker.open()"
       />
       <mat-datepicker #picker></mat-datepicker>
-      Ваш часовой пояс
+      <div class="required-field">
+        Ваш часовой пояс
+        <div class="red-asterisk">*</div>
+      </div>
       <input [(ngModel)]="childData.timezone" name="4" required />
-      В какой стране вы находитесь?
+      <div class="required-field">
+        В какой стране вы находитесь?
+        <div class="red-asterisk">*</div>
+      </div>
       <input [(ngModel)]="childData.country" name="5" required />
       e-mail если есть
-      <input [(ngModel)]="childData.email" name="6" required />
+      <input [(ngModel)]="childData.email" name="6" />
       Телеграм если есть
-      <input [(ngModel)]="childData.telegram" name="7" required />
+      <input [(ngModel)]="childData.telegram" name="7" />
       Какие предметы, которые вам нужны, вы не нашли их в нашем расписании?
-      <textarea [(ngModel)]="childData.subjects" name="8" required class="high-input"></textarea>
+      <textarea [(ngModel)]="childData.subjects" name="8" class="high-input"></textarea>
       Что-то, что мы забыли спросить
-      <textarea [(ngModel)]="childData.note" name="9" required class="high-input"></textarea>
+      <textarea [(ngModel)]="childData.note" name="9" class="high-input"></textarea>
       <div id="submit-row">
         <div
           class="circle-container"
