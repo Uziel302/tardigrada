@@ -3,9 +3,12 @@
   color: rgb(152, 169, 190);
   height: 100%;
   min-height: 100vh;
-  padding: 65px 30px 160px 30px;
+  padding: 65px 30px 0 30px;
   font-size: 16px;
   font-weight: 300;
+  display:flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 input, textarea {
@@ -54,10 +57,9 @@ textarea {
 }
 
 #bottom-flowers {
-  position: absolute;
-  bottom: -230px;
-  left: -20px;
+  margin: -50px 0 50px -50px;
   height: 190px;
+  width: 200px;
 }
 
 .high-input {
