@@ -80,3 +80,16 @@ select:focus-visible {
     color: rgb(204, 206, 220);
   }
 }
+
+.new-student {
+  width: calc(100% - 26px)!important;
+  margin: 5px 0 24px 0;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 300;
+  background: rgb(215, 215, 224);
+  border: 1px solid white;
+  outline: none;
+  height: 42px;
+  border-radius: 10px;
+}

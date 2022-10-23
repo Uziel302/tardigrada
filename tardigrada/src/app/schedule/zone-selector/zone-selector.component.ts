@@ -11,6 +11,7 @@ import { ScheduleService } from '../../schedule/schedule.service';
 export class ZoneSelectorComponent implements OnInit {
   public moscowOffset: number = 3;
   @Input() userpage: boolean = false;
+  @Input() newstudent: boolean = false;
 
   public timeZones: ITimeZone[] = [
     { text: 'Иерусалим - Израиль', name: 'Asia/Jerusalem', offset: 0 },

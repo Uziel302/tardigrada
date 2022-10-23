@@ -1,6 +1,6 @@
 <div *ngIf="!userpage" id="title">выберите свой часовой пояс</div>
 
-<div id="zone-container">
+<div id="zone-container" [class.new-student]="newstudent">
   <mat-select
     disableOptionCentering
     id="zone-select"
