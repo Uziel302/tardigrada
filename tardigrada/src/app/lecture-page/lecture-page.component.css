@@ -1,3 +1,7 @@
+textarea {
+  resize: none;
+}
+
 #desktop {
   background-color: rgb(216, 215, 224);
   color: rgb(216, 215, 224);

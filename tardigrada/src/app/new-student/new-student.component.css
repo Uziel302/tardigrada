@@ -21,6 +21,10 @@ input, textarea {
   border-radius: 10px;
 }
 
+textarea {
+  resize: none;
+}
+
 #submit-row {
   width: 100%;
   display: flex;
