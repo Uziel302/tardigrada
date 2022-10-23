@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { StudentAreaComponent } from './student-area/student-area.component';
-import { ChildrenComponent } from './parent-area/children/children.component';
-import { AccountComponent } from './parent-area/account/account.component';
 import { TeacherAreaComponent } from './teacher-area/teacher-area.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
 import { AboutComponent } from './about/about.component';

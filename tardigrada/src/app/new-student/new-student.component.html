@@ -1,73 +1,57 @@
 <div id="wrapper">
   <form id="form" #addChild="ngForm">
     <div id="inner-form">
-      Please fill in details of your child, you will later have an option to add
-      more children.
-      <br />Имя:
+      Имя
       <input
         [(ngModel)]="childData.firstName"
         name="1"
         required
         #firstName="ngModel"
       />
-      <br />Отчество:
-      <input
-        [(ngModel)]="childData.fatherName"
-        name="2"
-        required
-        #fatherName="ngModel"
-      />
-      <br />Фамилия:
+      Фамилия
       <input
         [(ngModel)]="childData.lastName"
-        name="3"
+        name="2"
         required
         #lastName="ngModel"
       />
-      <br />Дата рождения:
+      Дата рождения
       <input
         class="date"
         matInput
         [matDatepicker]="picker"
         [(ngModel)]="childData.dateOfBirth"
-        name="4"
+        name="3"
         required
         name="date"
         #dateOfBirth="ngModel"
         (click)="picker.open()"
       />
       <mat-datepicker #picker></mat-datepicker>
-      <br />
-      Класс:
-      <input [(ngModel)]="childData.className" name="5" required />
-      <br />
-      Предметы, которые вы хотели бы изучать:
-      <input [(ngModel)]="childData.subjects" name="6" required />
-      <br />Часовой пояс:
-      <input [(ngModel)]="childData.timezone" name="7" required />
-      <br />
-      Опыт обучения в ZOOM:
-      <input [(ngModel)]="childData.zoom" name="8" required />
-      <br />девайс для занятия:
-      <input [(ngModel)]="childData.device" name="9" required />
-      <br />
-      Страна, в которой вы сейчас находитесь:
-      <input [(ngModel)]="childData.country" name="10" required />
-      <br />
-      уровень знания языков:
-      <input [(ngModel)]="childData.language" name="11" required />
-      <br />Есть ли жесткие ограничения по времени?
-      <input [(ngModel)]="childData.limits" name="12" required />
-      <br />Телеграм ребенка (для самостоятельных детей):
-      <input [(ngModel)]="childData.telegram" name="13" required />
-      <br />Что-то еще, что нам надо знать:
-      <input [(ngModel)]="childData.note" name="14" required />
-      <br />
-      <button type="submit" (click)="saveChild()" [disabled]="!addChild.valid">
-        Submit
-      </button>
+      Ваш часовой пояс
+      <input [(ngModel)]="childData.timezone" name="4" required />
+      В какой стране вы находитесь?
+      <input [(ngModel)]="childData.country" name="5" required />
+      e-mail если есть
+      <input [(ngModel)]="childData.email" name="6" required />
+      Телеграм если есть
+      <input [(ngModel)]="childData.telegram" name="7" required />
+      Какие предметы, которые вам нужны, вы не нашли их в нашем расписании?
+      <textarea [(ngModel)]="childData.subjects" name="8" required class="high-input"></textarea>
+      Что-то, что мы забыли спросить
+      <textarea [(ngModel)]="childData.note" name="9" required class="high-input"></textarea>
+      <div id="submit-row">
+        <div
+          class="circle-container"
+          (click)="saveChild()"
+          [class.disabled]="!addChild.valid"
+        >
+          <div class="white-circle">далее</div>
+        </div>
+      </div>
 
       <div>{{ saveError }}</div>
     </div>
   </form>
 </div>
+<img id="bottom-flowers" src="/assets/images/manyellow.png" />

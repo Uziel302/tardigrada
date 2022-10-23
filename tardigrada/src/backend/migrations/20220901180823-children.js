@@ -31,6 +31,9 @@ exports.up = function (db, callback) {
         type: "string",
         length: 40,
       },
+      //TODO remove fatherName, class, zoom, device, language, limits from db
+      //TODO add email field to db
+
       fatherName: {
         type: "string",
         length: 40,

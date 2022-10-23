@@ -16,6 +16,6 @@ body {
 }
 
 @font-face {
-  font-family: Zhizn;
+  font-family: "Zhizn";
   src: url("src/assets/Zhizn.otf") format("opentype");
 }

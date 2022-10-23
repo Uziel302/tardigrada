@@ -2,7 +2,6 @@ export interface IChild {
   id: number;
   firstName: string;
   lastName: string;
-  fatherName: string;
   dateOfBirth: string;
   className: string;
   subjects: string;
@@ -13,6 +12,7 @@ export interface IChild {
   language: string;
   limits: string;
   telegram: string;
+  email: string;
   note: string;
   cover: string | null;
   profile: string | null;

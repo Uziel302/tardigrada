@@ -33,9 +33,6 @@ import { ScheduleTableComponent } from './schedule/schedule-table/schedule-table
 import { UserScheduleComponent } from './schedule/user-schedule/user-schedule.component';
 import { UserScheduleLectureComponent } from './schedule/user-schedule-lecture/user-schedule-lecture.component';
 import { UserScheduleDayComponent } from './schedule/user-schedule-day/user-schedule-day.component';
-import { ParentAreaComponent } from './parent-area/parent-area.component';
-import { AccountComponent } from './parent-area/account/account.component';
-import { ChildrenComponent } from './parent-area/children/children.component';
 import { UploadPhotoComponent } from './student-area/upload-photo/upload-photo.component';
 import { SettingsPopupComponent } from './student-area/settings-popup/settings-popup.component';
 import { AdminAreaComponent } from './admin-area/admin-area.component';
@@ -66,9 +63,6 @@ import { NewStudentComponent } from './new-student/new-student.component';
     UserScheduleComponent,
     UserScheduleLectureComponent,
     UserScheduleDayComponent,
-    ParentAreaComponent,
-    AccountComponent,
-    ChildrenComponent,
     UploadPhotoComponent,
     SettingsPopupComponent,
     AdminAreaComponent,

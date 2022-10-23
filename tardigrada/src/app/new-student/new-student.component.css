@@ -1,11 +1,61 @@
 #wrapper {
-  background: #d8d7e1;
+  background: rgb(28, 57, 77);
+  color: rgb(152, 169, 190);
   height: 100%;
   min-height: 100vh;
-  padding: 20px 5% 120px 5%;
+  padding: 65px 30px 160px 30px;
+  font-size: 16px;
+  font-weight: 300;
 }
 
-input {
-  margin: 10px;
-  font-size: 18px;
+input, textarea {
+  width:calc(100% - 26px);
+  margin: 5px 0 24px 0;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 300;
+  background: rgb(215,215,224);
+  border: 1px solid white;
+  outline: none;
+  height: 42px;
+  border-radius: 10px;
+}
+
+#submit-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.circle-container {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.white-circle {
+  background: white;
+  color: rgb(28, 57, 77);
+  font-size: 24px;
+  text-align: center;
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  font-family: "Zhizn";
+}
+
+#bottom-flowers {
+  position: absolute;
+  bottom: -230px;
+  left: -20px;
+  height: 190px;
+}
+
+.high-input {
+  height: 84px;
 }

@@ -14,9 +14,6 @@ exports.saveChild = async (req, res) => {
         lastName: {
           rich_text: [{ text: { content: req.body.lastName } }],
         },
-        fatherName: {
-          rich_text: [{ text: { content: req.body.fatherName } }],
-        },
         dateOfBirth: {
           rich_text: [{ text: { content: req.body.dateOfBirth } }],
         },
