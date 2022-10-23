@@ -28,6 +28,7 @@ export class NewStudentComponent implements OnInit {
     device: '',
     country: '',
     language: '',
+    //TODO remove unused fields
     limits: '',
     telegram: '',
     email: '',

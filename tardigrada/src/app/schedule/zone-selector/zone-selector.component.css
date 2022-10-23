@@ -83,6 +83,7 @@ select:focus-visible {
 
 .new-student {
   width: calc(100% - 26px)!important;
+  max-width: calc(100% - 26px)!important;
   margin: 5px 0 24px 0;
   padding: 0 10px;
   font-size: 14px;
