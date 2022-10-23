@@ -14,6 +14,7 @@ import { LoginService } from 'src/app/login-screen/login.service';
 export class NewStudentComponent implements OnInit {
   public children = [];
   public saveError: string = '';
+  public startDate = new Date(2000, 0, 1);
 
   public childData: IChild = {
     id: 0,

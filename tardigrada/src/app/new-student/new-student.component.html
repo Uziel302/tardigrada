@@ -36,7 +36,7 @@
         #dateOfBirth="ngModel"
         (click)="picker.open()"
       />
-      <mat-datepicker #picker></mat-datepicker>
+      <mat-datepicker #picker startView="multi-year" [startAt]="startDate"></mat-datepicker>
       <div class="required-field">
         Ваш часовой пояс
         <div class="red-asterisk">*</div>
