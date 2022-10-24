@@ -89,6 +89,10 @@ mat-datepicker::after {
   margin-left: -35px;
 }
 
+#animal {
+  display: none;
+}
+
 @media screen and (min-width: 801px) {
   #container {
     display: flex;
@@ -132,5 +136,15 @@ mat-datepicker::after {
     margin: -200px 0 50px -547px;
     height: 465px;
     width: 460px;
+  }
+
+  #animal {
+    display: block;
+    transform: rotate(110deg);
+    height: 170px;
+    width: 210px;
+    margin-top: -740px;
+    margin-bottom: 740px;
+    margin-left: 390px;
   }
 }

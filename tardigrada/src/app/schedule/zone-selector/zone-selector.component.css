@@ -71,13 +71,6 @@ select:focus-visible {
     font-size: 18px;
   }
 
-  #zone-container {
-    width: calc(100% - 2px);
-    max-width: 400px;
-    height: 42.5px;
-    margin-bottom: 30px;
-  }
-
   #zone-select {
     font-size: 14px;
     width: 270px;
@@ -109,6 +102,13 @@ select:focus-visible {
     padding: 0 10px;
     font-size: 14px;
     height: 42px;
+  }
+
+  #zone-container {
+    width: calc(100% - 2px);
+    max-width: 400px;
+    height: 42.5px;
+    margin-bottom: 30px;
   }
 }
 
