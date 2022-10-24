@@ -87,6 +87,10 @@ select:focus-visible {
   ::ng-deep .notuserpage .mat-select-value {
     color: rgb(204, 206, 220);
   }
+
+  #zone-container::after {
+    margin-left: 38px;
+  }
 }
 
 .new-student {
