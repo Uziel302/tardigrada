@@ -38,7 +38,7 @@
         class="attendance narrow-none"
         (click)="toggleAttendance(lecture.id)"
       >
-        {{ scheduleService.childLectures[lecture.id] ? "-" : "+" }}
+        <span>{{ scheduleService.childLectures[lecture.id] ? "-" : "+" }}</span>
       </div>
       <a
         [attr.href]="lecture.url"
