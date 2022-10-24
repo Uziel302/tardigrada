@@ -82,7 +82,7 @@ textarea {
 }
 
 input.ng-invalid.ng-touched {
-  border: red 1px solid;
+  border: red 2px solid;
 }
 
 @media screen and (min-width: 801px) {
@@ -90,14 +90,32 @@ input.ng-invalid.ng-touched {
     display: flex;
     justify-content: center;
     background: rgb(28, 57, 77);
+    padding-top: 54px;
   }
 
   #wrapper {
-    width: 435px;
+    width: 433px;
+    font-size: 20px;
   }
 
   input,
   textarea {
     height: 52px;
+    font-size: 20px;
+    padding: 0 22px;
+    margin-top: 8px;
+    margin-bottom: 29px;
+    width: calc(100% - 50px);
+  }
+
+  .input-title {
+    padding-left: 10px;
+  }
+
+  .red-asterisk {
+    margin-bottom: -18px;
+    margin-top: 18px;
+    margin-right: -7px;
+    font-size: 32px;
   }
 }

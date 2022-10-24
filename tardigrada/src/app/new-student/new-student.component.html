@@ -3,7 +3,7 @@
     <form id="form" #addChild="ngForm">
       <div id="inner-form">
         <div class="required-field">
-          Имя
+          <div class="input-title">Имя</div>
           <div class="red-asterisk">*</div>
         </div>
         <input
@@ -13,7 +13,7 @@
           #firstName="ngModel"
         />
         <div class="required-field">
-          Фамилия
+          <div class="input-title">Фамилия</div>
           <div class="red-asterisk">*</div>
         </div>
         <input
@@ -23,7 +23,7 @@
           #lastName="ngModel"
         />
         <div class="required-field">
-          Дата рождения
+          <div class="input-title">Дата рождения</div>
           <div class="red-asterisk">*</div>
         </div>
         <input
@@ -43,7 +43,7 @@
           [startAt]="startDate"
         ></mat-datepicker>
         <div class="required-field">
-          Ваш часовой пояс
+          <div class="input-title">Ваш часовой пояс</div>
           <div class="red-asterisk">*</div>
         </div>
         <app-zone-selector
@@ -53,21 +53,21 @@
           (changeTz)="onChangeTz($event)"
         ></app-zone-selector>
         <div class="required-field">
-          В какой стране вы находитесь?
+          <div class="input-title">В какой стране вы находитесь?</div>
           <div class="red-asterisk">*</div>
         </div>
         <input [(ngModel)]="childData.country" name="5" required />
-        e-mail если есть
+        <div class="input-title">e-mail если есть</div>
         <input [(ngModel)]="childData.email" name="6" />
-        Телеграм если есть
+        <div class="input-title">Телеграм если есть</div>
         <input [(ngModel)]="childData.telegram" name="7" />
-        Какие предметы, которые вам нужны, вы не нашли их в нашем расписании?
+        <div class="input-title">Какие предметы, которые вам нужны, вы не нашли их в нашем расписании?</div>
         <textarea
           [(ngModel)]="childData.subjects"
           name="8"
           class="high-input"
         ></textarea>
-        Что-то, что мы забыли спросить
+        <div class="input-title">Что-то, что мы забыли спросить</div>
         <textarea
           [(ngModel)]="childData.note"
           name="9"
