@@ -21,11 +21,12 @@
   display: inline-block;
   width: 12px;
   height: 12px;
-  margin-left: 68px;
+  margin-left: -18px;
 }
 
 #zone-container.new-student::after {
   content: url("/assets/images/triangle-dark.svg");
+  margin-left: 68px;
 }
 
 #zone-select {
