@@ -16,6 +16,18 @@
   align-items: center;
 }
 
+#zone-container::after {
+  content: url("/assets/images/triangle.svg");
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 68px;
+}
+
+#zone-container.new-student::after {
+  content: url("/assets/images/triangle-dark.svg");
+}
+
 #zone-select {
   border: none;
   font-size: 19px;
@@ -30,12 +42,7 @@
 }
 
 ::ng-deep .mat-select-arrow {
-  border-left: 15px solid transparent !important;
-  border-right: none !important;
-  border-top: 15px solid transparent !important;
-  border-image-source: url("/assets/images/triangle.svg") !important;
-  border-image-repeat: stretch !important;
-  margin-top: 3px !important;
+  display: none !important;
 }
 
 select:focus-visible {
@@ -82,26 +89,31 @@ select:focus-visible {
 }
 
 .new-student {
-  width: calc(100% - 26px) !important;
-  max-width: calc(100% - 26px) !important;
-  margin: 5px 0 24px 0;
-  padding: 0 10px;
-  font-size: 14px;
-  font-weight: 300;
+  border: 1px solid white !important;
   background: rgb(215, 215, 224);
-  border: 1px solid white;
+  font-weight: 300;
   outline: none;
-  height: 42px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .new-student {
+    width: calc(100% - 26px) !important;
+    max-width: calc(100% - 26px) !important;
+    margin: 5px 0 24px 0;
+    padding: 0 10px;
+    font-size: 14px;
+    height: 42px;
+  }
 }
 
 @media screen and (min-width: 801px) {
   .new-student {
     height: 52px !important;
+    margin-bottom: 29px !important;
+    width: calc(100% - 16px) !important;
     font-size: 20px;
     padding: 0 5px;
     margin-top: 8px;
-    margin-bottom: 29px !important;
-    width: calc(100% - 16px) !important;
   }
 }

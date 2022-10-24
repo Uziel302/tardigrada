@@ -74,15 +74,19 @@ textarea {
 }
 
 .red-asterisk {
-  color: red;
+  color: rgb(191, 66, 58);
   margin-bottom: -14px;
   margin-top: 14px;
   margin-right: -4px;
   font-size: 25px;
 }
 
-input.ng-invalid.ng-touched {
-  border: red 2px solid;
+mat-datepicker::after {
+  content: url("/assets/images/triangle-dark.svg");
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: -35px;
 }
 
 @media screen and (min-width: 801px) {
@@ -105,6 +109,11 @@ input.ng-invalid.ng-touched {
     padding: 0 22px;
     margin-top: 8px;
     margin-bottom: 29px;
+    width: calc(100% - 48px);
+  }
+
+  input.ng-invalid.ng-touched {
+    border: rgb(191, 66, 58) 2px solid;
     width: calc(100% - 50px);
   }
 
@@ -115,7 +124,7 @@ input.ng-invalid.ng-touched {
   .red-asterisk {
     margin-bottom: -18px;
     margin-top: 18px;
-    margin-right: -7px;
+    margin-right: -9px;
     font-size: 32px;
   }
 
