@@ -15,11 +15,11 @@ export class ZoneSelectorComponent implements OnInit {
   @Output() changeTz = new EventEmitter();
 
   public timeZones: ITimeZone[] = [
-    { text: 'Иерусалим - Израиль', name: 'Asia/Jerusalem', offset: 0 },
-    { text: 'Тбилиси - Грузия', name: 'Asia/Tbilisi', offset: 0 },
-    { text: 'Киев - Украина', name: 'Europe/Kyiv', offset: 0 },
-    { text: 'Москва - Россия', name: 'Europe/Moscow', offset: 0 },
-    { text: 'Стамбул - Турция', name: 'Europe/Istanbul', offset: 0 },
+    { text: 'Израиль - Иерусалим', name: 'Asia/Jerusalem', offset: 0 },
+    { text: 'Грузия - Тбилиси', name: 'Asia/Tbilisi', offset: 0 },
+    { text: 'Украина - Киев', name: 'Europe/Kyiv', offset: 0 },
+    { text: 'Россия - Москва', name: 'Europe/Moscow', offset: 0 },
+    { text: 'Турция - Стамбул', name: 'Europe/Istanbul', offset: 0 },
   ];
 
   constructor(public scheduleService: ScheduleService) {}
