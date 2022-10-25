@@ -96,13 +96,12 @@ export class ScheduleDayComponent implements OnInit {
       this.madeVisibleNow = false;
     }
 
+    let regex = new RegExp(this.search, 'i');
     if (
       this.day === lecture.day &&
       this.filterAge(lecture) &&
       this.filterCategory(lecture) &&
-      (!this.search ||
-        lecture.title.includes(this.search) ||
-        lecture.teacher.includes(this.search))
+      (!this.search || regex.test(lecture.title) || regex.test(lecture.teacher))
     ) {
       this.makeVisible.emit(true);
       this.madeVisibleOnce = true;
