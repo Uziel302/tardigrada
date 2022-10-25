@@ -12,7 +12,7 @@ import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE, DateAdapter } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,6 +44,7 @@ import { ZoneSelectorComponent } from './schedule/zone-selector/zone-selector.co
 import { LecturePageComponent } from './lecture-page/lecture-page.component';
 import { RoundPipe } from './pipes/round';
 import { NewStudentComponent } from './new-student/new-student.component';
+import { CustomDateAdapter } from './new-student/custom-date-adapter';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { NewStudentComponent } from './new-student/new-student.component';
     { provide: MatDialogRef, useValue: {} },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: MAT_DATE_LOCALE, useValue: 'ru-RU' },
+    { provide: DateAdapter, useClass: CustomDateAdapter },
   ],
   bootstrap: [AppComponent],
 })
