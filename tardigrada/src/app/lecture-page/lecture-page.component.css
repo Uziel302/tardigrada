@@ -96,9 +96,10 @@ textarea {
 }
 
 .not-signed {
-  color: rgb(107, 47, 46);
-  padding-top: 12px;
+  color: rgb(67, 50, 60);
+  padding-top: 8px;
   font-size: 14px;
+  font-weight: 400;
 }
 
 .subtitle {
