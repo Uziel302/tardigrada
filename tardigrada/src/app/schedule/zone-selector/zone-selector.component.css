@@ -97,6 +97,11 @@ select:focus-visible {
   border-radius: 10px;
 }
 
+.new-student #zone-select {
+  margin-left: 0;
+  font-weight: 400;
+}
+
 @media screen and (max-width: 800px) {
   .new-student {
     width: calc(100% - 26px) !important;
