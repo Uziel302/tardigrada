@@ -58,6 +58,7 @@ input {
 .reg-button-wrapper {
   display: flex;
   justify-content: flex-end;
+  margin-top: -40px;
 }
 
 #animal-button {
