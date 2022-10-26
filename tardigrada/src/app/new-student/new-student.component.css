@@ -15,7 +15,7 @@ input,
 textarea {
   width: calc(100% - 26px);
   margin: 5px 0 24px 0;
-  padding: 7px 10px;
+  padding: 0 10px;
   font-size: 14px;
   font-weight: 300;
   background: rgb(215, 215, 224);
@@ -27,6 +27,8 @@ textarea {
 
 textarea {
   resize: none;
+  padding: 7px 10px;
+  height: 28px;
 }
 
 #submit-row {
@@ -83,10 +85,8 @@ textarea {
 
 mat-datepicker::after {
   content: url("/assets/images/triangle-dark.svg");
-  display: inline-block;
-  width: 12px;
-  height: 12px;
   margin-left: -35px;
+  margin-top: 7px;
 }
 
 #animal {
@@ -110,10 +110,15 @@ mat-datepicker::after {
   textarea {
     height: 52px;
     font-size: 20px;
-    padding: 7px 22px;
+    padding: 0 22px;
     margin-top: 8px;
     margin-bottom: 29px;
     width: calc(100% - 48px);
+  }
+
+  textarea {
+    padding: 7px 22px;
+    height: 38px;
   }
 
   input.ng-invalid.ng-touched {
