@@ -25,8 +25,7 @@
 }
 
 #zone-container.new-student::after {
-  content: url("/assets/images/triangle-dark.svg");
-  margin-left: 68px;
+  display: none;
 }
 
 #zone-select {
@@ -91,7 +90,7 @@ select:focus-visible {
 
 .new-student {
   border: 1px solid white !important;
-  max-width: 100%!important;
+  max-width: 100% !important;
   background: rgb(215, 215, 224);
   font-weight: 300;
   outline: none;

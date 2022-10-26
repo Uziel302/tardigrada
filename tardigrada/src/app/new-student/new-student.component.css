@@ -83,10 +83,17 @@ textarea {
   font-size: 25px;
 }
 
-mat-datepicker::after {
+.triangle {
   content: url("/assets/images/triangle-dark.svg");
-  margin-left: -35px;
-  margin-top: 7px;
+  margin-left: 268px;
+  margin-bottom: -22px;
+  margin-top: 22px;
+  position: absolute;
+}
+
+.second-triangle {
+  margin-bottom: -17px;
+  margin-top: 17px;
 }
 
 #animal {
@@ -154,5 +161,16 @@ input.ng-invalid.ng-touched {
     margin-top: -740px;
     margin-bottom: 740px;
     margin-left: 390px;
+  }
+
+  .triangle {
+    margin-left: 395px;
+    margin-bottom: -27px;
+    margin-top: 27px;
+  }
+
+  .second-triangle {
+    margin-bottom: -19px;
+    margin-top: 19px;
   }
 }
