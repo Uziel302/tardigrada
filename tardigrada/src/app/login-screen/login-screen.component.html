@@ -85,8 +85,8 @@
         </div>
       </div>
       <div id="bottom-line">
-        <div id="white-line"></div>
-        <div id="animal-button">
+        <div id="white-line" *ngIf="login"></div>
+        <div id="animal-button" *ngIf="login">
           <img id="animal" src="/assets/images/Animal.png" />
           <div id="dark-wrapper">
             <div class="button-wrapper">
@@ -97,10 +97,17 @@
           </div>
         </div>
       </div>
+      <div class="reg-button-wrapper" *ngIf="!login">
+        <div class="button-wrapper">
+          <div (click)="registrationClick()" class="button-submit">
+            <div class="smaller-button">Регистрация</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div id="mobile-white-line"></div>
+  <div id="mobile-white-line" *ngIf="login"></div>
 
   <img id="right-flower" src="/assets/images/Ryabchik.png" />
 </div>

@@ -55,6 +55,11 @@ input {
   align-items: center;
 }
 
+.reg-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
 #animal-button {
   justify-content: flex-start;
 }
@@ -71,6 +76,7 @@ input {
 #inputs-column {
   display: flex;
   flex-direction: column;
+  width: 332px;
 }
 
 .button-wrapper {
