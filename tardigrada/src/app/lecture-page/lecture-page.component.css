@@ -393,6 +393,7 @@ textarea {
     width: 116px;
     height: 116px;
     margin-left: 16px;
+    margin-right: 0;
   }
 
   .left-circle {
