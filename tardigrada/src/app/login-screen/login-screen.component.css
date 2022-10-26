@@ -9,6 +9,7 @@ input {
   margin-bottom: 27px;
   margin-left: 40px;
   padding-left: 10px;
+  outline: none;
 }
 
 ::placeholder {
@@ -150,6 +151,10 @@ input {
   font-family: "Ubuntu";
   font-weight: 300;
   color: #d8d7e1;
+}
+
+input.ng-invalid.ng-touched {
+  border: rgb(191, 66, 58) 1px solid;
 }
 
 @media screen and (min-width: 1261px) {

@@ -57,7 +57,7 @@
               minlength="3"
               #passwordRef="ngModel"
             />
-            <div class="error-message">
+            <div class="error-message" *ngIf="login">
               {{
                 loginService.currentError
                   ? "неверный емейл или пароль"
