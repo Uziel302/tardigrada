@@ -14,7 +14,7 @@
             <div>Телеграм</div>
             <div>Пароль</div>
           </div>
-          <div id="inputs-column">
+          <form id="inputs-column" #myForm="ngForm">
             <input
               *ngIf="!login"
               [(ngModel)]="firstName"
@@ -22,6 +22,7 @@
               required
               minlength="3"
               #nameRef="ngModel"
+              name="1"
             />
             <input
               *ngIf="!login"
@@ -30,6 +31,7 @@
               required
               minlength="3"
               #nameRef="ngModel"
+              name="2"
             />
             <input
               [(ngModel)]="email"
@@ -40,6 +42,7 @@
               required
               minlength="3"
               #emailRef="ngModel"
+              name="3"
             />
             <input
               *ngIf="!login"
@@ -48,6 +51,7 @@
               required
               minlength="3"
               #emailRef="ngModel"
+              name="4"
             />
             <input
               [(ngModel)]="password"
@@ -56,6 +60,7 @@
               required
               minlength="3"
               #passwordRef="ngModel"
+              name="5"
             />
             <div class="error-message" *ngIf="login">
               {{
@@ -71,7 +76,7 @@
               персональных данных и соглашаетесь <br />
               с <a routerLink="/privacy">политикой конфиденциальности</a>
             </div>
-          </div>
+          </form>
         </div>
 
         <div *ngIf="login" class="button-wrapper">
@@ -90,7 +95,7 @@
           <img id="animal" src="/assets/images/Animal.png" />
           <div id="dark-wrapper">
             <div class="button-wrapper">
-              <div (click)="registrationClick()" class="button-submit">
+              <div (click)="registrationClick(myForm)" class="button-submit">
                 <div class="smaller-button">Регистрация</div>
               </div>
             </div>
@@ -99,7 +104,7 @@
       </div>
       <div class="reg-button-wrapper" *ngIf="!login">
         <div class="button-wrapper">
-          <div (click)="registrationClick()" class="button-submit">
+          <div (click)="registrationClick(myForm)" class="button-submit">
             <div class="smaller-button">Регистрация</div>
           </div>
         </div>

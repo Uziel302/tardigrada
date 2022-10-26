@@ -30,9 +30,13 @@ export class LoginScreenComponent implements OnInit {
     this.loginService.login(this.email, this.password, this.isStudent);
   }
 
-  registrationClick() {
+  registrationClick(formObj: any) {
     if (this.login) {
       this.login = !this.login;
+    } else if (!formObj.valid) {
+      Object.keys(formObj.form.controls).forEach(key => {
+        formObj.controls[key].markAsTouched();
+      });
     } else {
       this.loginService.createUser(
         this.firstName,
