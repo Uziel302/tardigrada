@@ -15,7 +15,7 @@ input,
 textarea {
   width: calc(100% - 26px);
   margin: 5px 0 24px 0;
-  padding: 0 10px;
+  padding: 7px 10px;
   font-size: 14px;
   font-weight: 300;
   background: rgb(215, 215, 224);
@@ -110,7 +110,7 @@ mat-datepicker::after {
   textarea {
     height: 52px;
     font-size: 20px;
-    padding: 0 22px;
+    padding: 7px 22px;
     margin-top: 8px;
     margin-bottom: 29px;
     width: calc(100% - 48px);
