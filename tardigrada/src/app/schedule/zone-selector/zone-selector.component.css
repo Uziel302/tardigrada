@@ -98,7 +98,6 @@ select:focus-visible {
 }
 
 .new-student #zone-select {
-  margin-left: 0;
   font-weight: 400;
 }
 
@@ -110,6 +109,10 @@ select:focus-visible {
     padding: 0 10px;
     font-size: 14px;
     height: 42px;
+  }
+
+  .new-student #zone-select {
+    margin-left: 0;
   }
 }
 
