@@ -246,4 +246,12 @@ input {
     width: 90px;
     height: 90px;
   }
+
+  #inputs-column {
+    width: 252px;
+  }
+
+  .reg-button-wrapper {
+    margin-top: 0;
+  }
 }
