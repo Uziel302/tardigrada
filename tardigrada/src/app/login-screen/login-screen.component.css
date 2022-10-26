@@ -258,5 +258,6 @@ input.ng-invalid.ng-touched {
 
   .reg-button-wrapper {
     margin-top: 0;
+    max-width: 254px;
   }
 }
