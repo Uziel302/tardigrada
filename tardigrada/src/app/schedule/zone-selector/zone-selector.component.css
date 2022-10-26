@@ -81,8 +81,11 @@ select:focus-visible {
     color: rgb(204, 206, 220);
   }
 
-  #zone-container::after {
-    margin-left: 38px;
+  #zone-container {
+    width: calc(100% - 2px);
+    max-width: 360px;
+    height: 42.5px;
+    margin-bottom: 30px;
   }
 }
 
@@ -102,13 +105,6 @@ select:focus-visible {
     padding: 0 10px;
     font-size: 14px;
     height: 42px;
-  }
-
-  #zone-container {
-    width: calc(100% - 2px);
-    max-width: 400px;
-    height: 42.5px;
-    margin-bottom: 30px;
   }
 }
 
