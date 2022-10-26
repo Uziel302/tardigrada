@@ -93,6 +93,10 @@ mat-datepicker::after {
   display: none;
 }
 
+input.ng-invalid.ng-touched {
+  border: rgb(191, 66, 58) 2px solid;
+}
+
 @media screen and (min-width: 801px) {
   #container {
     display: flex;
@@ -122,7 +126,6 @@ mat-datepicker::after {
   }
 
   input.ng-invalid.ng-touched {
-    border: rgb(191, 66, 58) 2px solid;
     width: calc(100% - 50px);
   }
 
