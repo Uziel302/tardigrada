@@ -91,6 +91,7 @@ select:focus-visible {
 
 .new-student {
   border: 1px solid white !important;
+  max-width: 100%!important;
   background: rgb(215, 215, 224);
   font-weight: 300;
   outline: none;
