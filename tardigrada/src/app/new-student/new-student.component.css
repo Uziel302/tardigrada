@@ -128,7 +128,7 @@ input.ng-invalid.ng-touched {
   }
 
   textarea {
-    padding: 7px 22px;
+    padding: 7px 0 7px 22px;
     height: 38px;
   }
 
