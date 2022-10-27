@@ -65,8 +65,8 @@ textarea {
 #name {
   font-size: 34px;
   font-weight: 300;
-  padding-left: 80px;
-  padding-top: 24px;
+  padding-left: 55px;
+  padding-top: 44px;
   display: flex;
   flex-direction: column;
 }
