@@ -484,4 +484,10 @@ textarea {
     margin-bottom: -20px;
   }
 
+  .not-signed {
+    font-size: 12px;
+    padding-bottom: 65px;
+    line-height: 120%;
+    font-weight: 500;
+  }
 }
