@@ -12,6 +12,11 @@ input {
   outline: none;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #220315 inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
 ::placeholder {
   color: white;
   opacity: 1;
