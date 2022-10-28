@@ -104,6 +104,10 @@ input.ng-invalid.ng-touched {
   border: rgb(191, 66, 58) 2px solid;
 }
 
+#date-picker {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 801px) {
   #container {
     display: flex;
