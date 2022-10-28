@@ -209,6 +209,7 @@ export class ScheduleService {
         subjects.push(lecture.category);
       }
     }
+    subjects.sort();
     return subjects;
   }
 }
