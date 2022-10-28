@@ -43,6 +43,7 @@
 
 .new-student #zone-select {
   width: 100%;
+  margin-left: 7px;
 }
 
 ::ng-deep .mat-select-arrow {

@@ -121,14 +121,14 @@ input.ng-invalid.ng-touched {
   textarea {
     height: 52px;
     font-size: 20px;
-    padding: 0 0 0 22px;
+    padding: 0 0 0 12px;
     margin-top: 8px;
     margin-bottom: 29px;
-    width: calc(100% - 26px);
+    width: calc(100% - 16px);
   }
 
   textarea {
-    padding: 7px 0 7px 22px;
+    padding: 7px 0 7px 12px;
     height: 38px;
   }
 
