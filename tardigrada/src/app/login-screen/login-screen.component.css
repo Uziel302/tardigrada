@@ -166,6 +166,10 @@ input.ng-invalid.ng-touched {
     margin-top: -15px;
     margin-left: 40px;
   }
+
+  input::placeholder {
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 1260px) {
