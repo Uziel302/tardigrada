@@ -43,8 +43,9 @@ input:-webkit-autofill {
 }
 
 #terms-note {
-  text-align: center;
   font-size: 13px;
+  font-family: 'Ubuntu';
+  color: rgb(78, 67, 88);
 }
 
 #right-flower {
@@ -63,7 +64,8 @@ input:-webkit-autofill {
 
 .reg-button-wrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-top: -40px;
 }
 
@@ -91,7 +93,6 @@ input:-webkit-autofill {
   border-radius: 50%;
   cursor: pointer;
   margin-left: 30px;
-  margin-bottom: 40px;
   width: 128px;
   height: 128px;
 }
