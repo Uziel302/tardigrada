@@ -41,11 +41,6 @@ export class ScheduleService {
   public openHwResponse: boolean[] = [];
   public personalSlots: string[][] = this.getEmptyPersonalSlots();
   public personalSlotsOrig: string[][] = [];
-  public currentTz: ITimeZone = {
-    text: 'Россия - Москва',
-    name: 'Europe/Moscow',
-    offset: 0,
-  };
   public timeZones: ITimeZone[] = [
     { text: 'Израиль - Иерусалим', name: 'Asia/Jerusalem', offset: 0 },
     { text: 'Грузия - Тбилиси', name: 'Asia/Tbilisi', offset: 0 },
@@ -53,6 +48,7 @@ export class ScheduleService {
     { text: 'Россия - Москва', name: 'Europe/Moscow', offset: 0 },
     { text: 'Турция - Стамбул', name: 'Europe/Istanbul', offset: 0 },
   ];
+  public currentTz: ITimeZone = this.timeZones[3];
 
   constructor(private http: HttpClient, private loginService: LoginService) {}
 
