@@ -1,0 +1,29 @@
+<div id="container">
+  <div id="content">
+    <div id="title">Наши преподаватели</div>
+    <div id="flower-container">
+      <img id="flower" src="/assets/images/right-flower.png"/>
+    </div>
+    <div *ngFor="let subject of subjects; let i=index" class="subject-block">
+      <div class="subject-wrapper" [class.even]="i%2 === 1">
+        <div class="subject-title">{{subject}}</div>
+      </div>
+      <div class="teachers-container">
+        <div *ngFor="let teacher of teachers" class="teacher-block">
+          <div class="image-wrapper">
+              <img class="teacher-image" [src]="teacher.image"/>
+          </div>
+          <div class="teacher-name">
+            {{teacher.name}}
+          </div>
+          <div class="teacher-bio">
+            {{teacher.bio}}
+          </div>
+          <div *ngFor="let lecture of teacher.lectures" class="teacher-lecture">
+            {{lecture}}
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
