@@ -159,6 +159,7 @@ export class TeacherAreaComponent implements OnInit {
           for (let timezone of this.scheduleService.timeZones) {
             if (timezone.name === data.timezone) {
               this.scheduleService.currentTz = timezone;
+              break;
             }
           }
           this.scheduleService.getTeacherLectures(data.userId);

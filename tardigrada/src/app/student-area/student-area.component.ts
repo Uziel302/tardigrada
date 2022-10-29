@@ -30,6 +30,7 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
         for (let timezone of this.scheduleService.timeZones) {
           if (timezone.name === childData.timezone) {
             this.scheduleService.currentTz = timezone;
+            break;
           }
         }
       })
