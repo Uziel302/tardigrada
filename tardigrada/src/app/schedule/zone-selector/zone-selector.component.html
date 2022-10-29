@@ -7,8 +7,9 @@
     [class.notuserpage]="!userpage"
     [(ngModel)]="scheduleService.offsetFromMoscow"
   >
+  <input placeholder="введите для поиска" type="search" (keyup)="onKey($event)">
     <mat-option
-      *ngFor="let timezone of timeZones"
+      *ngFor="let timezone of filteredTimeZones"
       [value]="timezone.offset"
       (click)="changeTime(timezone.text)"
     >

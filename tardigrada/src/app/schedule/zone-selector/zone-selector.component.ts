@@ -15,6 +15,13 @@ export class ZoneSelectorComponent implements OnInit {
   @Input() newstudent: boolean = false;
   @Output() changeTz = new EventEmitter();
 
+  public promotedTz: string[] = [
+    'Asia/Jerusalem',
+    'Asia/Tbilisi',
+    'Europe/Kyiv',
+    'Europe/Moscow',
+    'Europe/Istanbul',
+  ];
   public timeZones: ITimeZone[] = [
     { text: 'Израиль - Иерусалим', name: 'Asia/Jerusalem', offset: 0 },
     { text: 'Грузия - Тбилиси', name: 'Asia/Tbilisi', offset: 0 },
@@ -22,6 +29,7 @@ export class ZoneSelectorComponent implements OnInit {
     { text: 'Россия - Москва', name: 'Europe/Moscow', offset: 0 },
     { text: 'Турция - Стамбул', name: 'Europe/Istanbul', offset: 0 },
   ];
+  public filteredTimeZones: ITimeZone[] = [];
 
   constructor(
     public scheduleService: ScheduleService,
@@ -49,13 +57,25 @@ export class ZoneSelectorComponent implements OnInit {
     let intl: any = Intl;
     let ary = intl.supportedValuesOf('timeZone');
     ary.forEach((timeZone: any) => {
-      let russianName = this.zonesInRussian.getZoneInRussian(timeZone);
-      let offset = this.getOffset(timeZone) - this.moscowOffset;
-      this.timeZones.push({text: russianName, name:  timeZone, offset});
+      if (!this.promotedTz.includes(timeZone)){
+        let russianName = this.zonesInRussian.getZoneInRussian(timeZone);
+        let offset = this.getOffset(timeZone) - this.moscowOffset;
+        this.timeZones.push({ text: russianName, name: timeZone, offset }); 
+      }
     });
+    this.filteredTimeZones = this.timeZones;
   }
 
   changeTime(time: string) {
     this.changeTz.emit(time);
+  }
+
+  onKey(event: any) {
+    let needle = event.target.value.toLowerCase();
+    this.filteredTimeZones = this.timeZones.filter(
+      (timezone) =>
+        timezone.text.toLowerCase().includes(needle) ||
+        timezone.name.toLowerCase().includes(needle)
+    );
   }
 }
