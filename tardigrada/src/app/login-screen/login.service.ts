@@ -39,6 +39,7 @@ export class LoginService {
     name: '',
     cover: null,
     profile: null,
+    timezone: null,
   };
 
   private isAuthenticated: boolean = false;

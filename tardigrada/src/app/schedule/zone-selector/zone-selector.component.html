@@ -5,13 +5,13 @@
     disableOptionCentering
     id="zone-select"
     [class.notuserpage]="!userpage"
-    [(ngModel)]="scheduleService.offsetFromMoscow"
+    [(ngModel)]="scheduleService.currentTz"
   >
   <input placeholder="введите для поиска" type="search" (keyup)="onKey($event)">
     <mat-option
       *ngFor="let timezone of filteredTimeZones"
-      [value]="timezone.offset"
-      (click)="changeTime(timezone.text)"
+      [value]="timezone"
+      (click)="changeTime(timezone)"
     >
       {{
         timezone.text +

@@ -29,6 +29,7 @@ const {
   saveStationery,
   getPersonalSlots,
   savePersonalSlot,
+  saveUserTz,
 } = require("./controllers/lectures.controller");
 const {
   saveAnnoying,
@@ -56,6 +57,7 @@ router.get("/getTeacherLectures", getTeacherLectures);
 router.get("/getChildLectures", getChildLectures);
 router.post("/saveStationery", saveStationery);
 router.post("/savePersonalSlot", savePersonalSlot);
+router.post("/saveUserTz", saveUserTz);
 router.get("/getPersonalSlots", getPersonalSlots);
 router.get("/homework", getHomework);
 router.get("/homeworks", getHomeworks);

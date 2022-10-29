@@ -3,4 +3,5 @@ export interface ITeacher {
   name: string;
   cover: string | null;
   profile: string | null;
+  timezone: string | null;
 }

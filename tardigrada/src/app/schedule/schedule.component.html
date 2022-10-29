@@ -12,7 +12,10 @@
           <div id="line"></div>
         </div>
       </div>
-      <app-zone-selector class="wide-none"></app-zone-selector>
+      <app-zone-selector
+        class="wide-none"
+        (changeTz)="scheduleService.saveUserTz($event)"
+      ></app-zone-selector>
       <div id="ages-title">возраст</div>
       <div id="ages">
         <div
@@ -54,7 +57,10 @@
   </div>
   <div id="right-part">
     <div id="inner-right">
-      <app-zone-selector class="narrow-none"></app-zone-selector>
+      <app-zone-selector
+        class="narrow-none"
+        (changeTz)="scheduleService.saveUserTz($event)"
+      ></app-zone-selector>
       <div id="week-buttons">
         <div
           *ngFor="let day of weekMapShort | keyvalue"

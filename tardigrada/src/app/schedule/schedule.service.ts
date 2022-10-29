@@ -6,6 +6,8 @@ import { IChild } from '../models/child';
 import { ILecture } from '../models/lecture';
 import { IHomeWork } from '../models/homework';
 import { ICourse } from '../models/course';
+import { ITimeZone } from '../models/timezone';
+import { LoginService } from '../login-screen/login.service';
 
 @Injectable({ providedIn: 'root' })
 export class ScheduleService {
@@ -39,9 +41,20 @@ export class ScheduleService {
   public openHwResponse: boolean[] = [];
   public personalSlots: string[][] = this.getEmptyPersonalSlots();
   public personalSlotsOrig: string[][] = [];
-  public offsetFromMoscow: number = 0;
+  public currentTz: ITimeZone = {
+    text: 'Россия - Москва',
+    name: 'Europe/Moscow',
+    offset: 0,
+  };
+  public timeZones: ITimeZone[] = [
+    { text: 'Израиль - Иерусалим', name: 'Asia/Jerusalem', offset: 0 },
+    { text: 'Грузия - Тбилиси', name: 'Asia/Tbilisi', offset: 0 },
+    { text: 'Украина - Киев', name: 'Europe/Kyiv', offset: 0 },
+    { text: 'Россия - Москва', name: 'Europe/Moscow', offset: 0 },
+    { text: 'Турция - Стамбул', name: 'Europe/Istanbul', offset: 0 },
+  ];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private loginService: LoginService) {}
 
   public getPersonalSlots(childId: number, userId: number) {
     let queryString = childId ? '/?childId=' + childId : '/?userId=' + userId;
@@ -151,7 +164,7 @@ export class ScheduleService {
   }
 
   public getTimeFormatted(lecture: ILecture | ICourse, end: boolean) {
-    let hour = lecture.hour + this.offsetFromMoscow + (end ? 1 : 0);
+    let hour = lecture.hour + this.currentTz.offset + (end ? 1 : 0);
     let minutes = lecture.minutes;
     let formatted = hour < 10 ? '0' + hour : '' + hour;
     formatted += minutes < 10 ? ':0' + minutes : ':' + minutes;
@@ -211,5 +224,19 @@ export class ScheduleService {
     }
     subjects.sort();
     return subjects;
+  }
+
+  saveUserTz(timezone: string) {
+    this.http
+      .post(environment.apiEndPoint + 'saveUserTz', {
+        childId: this.loginService.currentChildId,
+        userId: this.loginService.teacher.userId,
+        timezone,
+      })
+      .subscribe(
+        (data) => {},
+        (error) => {}
+      );
+
   }
 }

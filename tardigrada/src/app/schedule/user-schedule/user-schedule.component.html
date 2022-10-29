@@ -1,4 +1,7 @@
-<app-zone-selector [userpage]="true"></app-zone-selector>
+<app-zone-selector
+  [userpage]="true"
+  (changeTz)="scheduleService.saveUserTz($event)"
+></app-zone-selector>
 
 <div id="week-buttons" class="wide-none">
   <div class="left-triangle wide-none" (click)="secondHalf = !secondHalf">
@@ -21,7 +24,7 @@
   <div id="hour-column">
     <div class="decor"></div>
     <div class="decor hour" *ngFor="let hour of hourColumn">
-      {{ hour + scheduleService.offsetFromMoscow + ":00" }}
+      {{ hour + scheduleService.currentTz.offset + ":00" }}
     </div>
   </div>
 

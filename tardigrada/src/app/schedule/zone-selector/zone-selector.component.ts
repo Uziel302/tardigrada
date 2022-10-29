@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { LoginService } from 'src/app/login-screen/login.service';
 
 import { ITimeZone } from '../../models/timezone';
 import { ScheduleService } from '../../schedule/schedule.service';
@@ -22,18 +23,12 @@ export class ZoneSelectorComponent implements OnInit {
     'Europe/Moscow',
     'Europe/Istanbul',
   ];
-  public timeZones: ITimeZone[] = [
-    { text: 'Израиль - Иерусалим', name: 'Asia/Jerusalem', offset: 0 },
-    { text: 'Грузия - Тбилиси', name: 'Asia/Tbilisi', offset: 0 },
-    { text: 'Украина - Киев', name: 'Europe/Kyiv', offset: 0 },
-    { text: 'Россия - Москва', name: 'Europe/Moscow', offset: 0 },
-    { text: 'Турция - Стамбул', name: 'Europe/Istanbul', offset: 0 },
-  ];
   public filteredTimeZones: ITimeZone[] = [];
 
   constructor(
     public scheduleService: ScheduleService,
-    public zonesInRussian: ZonesInRussian
+    public zonesInRussian: ZonesInRussian,
+    public loginService: LoginService,
   ) {}
 
   ngOnInit(): void {
@@ -51,7 +46,7 @@ export class ZoneSelectorComponent implements OnInit {
 
   loadTimezones() {
     //first, calculate the offsets of the predefined timezones
-    for (let timezone of this.timeZones) {
+    for (let timezone of this.scheduleService.timeZones) {
       timezone.offset = this.getOffset(timezone.name) - this.moscowOffset;
     }
     let intl: any = Intl;
@@ -60,19 +55,19 @@ export class ZoneSelectorComponent implements OnInit {
       if (!this.promotedTz.includes(timeZone)){
         let russianName = this.zonesInRussian.getZoneInRussian(timeZone);
         let offset = this.getOffset(timeZone) - this.moscowOffset;
-        this.timeZones.push({ text: russianName, name: timeZone, offset }); 
+        this.scheduleService.timeZones.push({ text: russianName, name: timeZone, offset }); 
       }
     });
-    this.filteredTimeZones = this.timeZones;
+    this.filteredTimeZones = this.scheduleService.timeZones;
   }
 
-  changeTime(time: string) {
-    this.changeTz.emit(time);
+  changeTime(timezone: ITimeZone) {
+    this.changeTz.emit(timezone.name);
   }
 
   onKey(event: any) {
     let needle = event.target.value.toLowerCase();
-    this.filteredTimeZones = this.timeZones.filter(
+    this.filteredTimeZones = this.scheduleService.timeZones.filter(
       (timezone) =>
         timezone.text.toLowerCase().includes(needle) ||
         timezone.name.toLowerCase().includes(needle)

@@ -230,3 +230,26 @@ exports.getPersonalSlots = async (req, res) => {
       }
     });
 };
+
+exports.saveUserTz = async (req, res) => {
+  let whereObj = {};
+  let table = "children";
+  if (req.body.childId) {
+    whereObj.id = req.body.childId;
+  } else {
+    whereObj.userId = req.body.userId;
+    table = "teachers";
+  }
+  knex(table)
+    .update("timezone", req.body.timezone)
+    .where(whereObj)
+    .then((timezone) => {
+      if (!timezone) {
+        res.status(401).json({
+          message: "failed saving user timezone to db",
+        });
+      } else {
+        res.status(200).json(timezone);
+      }
+    });
+};

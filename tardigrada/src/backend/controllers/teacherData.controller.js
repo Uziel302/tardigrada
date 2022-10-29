@@ -3,7 +3,7 @@ const tableName = "teachers";
 
 exports.loadOrCreateTeacher = async (req, res) => {
   knex(tableName)
-    .select("userId", "name", "cover", "profile")
+    .select("userId", "name", "cover", "profile", "timezone")
     .where({ userId: req.body.userId })
     .first()
     .then((teacher) => {
