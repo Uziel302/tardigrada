@@ -56,7 +56,7 @@ select:focus-visible {
 }
 
 ::ng-deep .cdk-overlay-container {
-  top: 60px;
+  top: 40px;
   opacity: 0.95;
 }
 
