@@ -14,6 +14,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { DonationComponent } from './donation/donation.component';
 import { LecturePageComponent } from './lecture-page/lecture-page.component';
 import { NewStudentComponent } from './new-student/new-student.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'privacy', component: PrivacyComponent },
   { path: 'new-student', component: NewStudentComponent },
   { path: 'teacher', component: TeacherAreaComponent },
+  { path: 'teachers', component: TeachersComponent },
 ];
 
 @NgModule({

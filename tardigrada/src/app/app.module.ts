@@ -49,6 +49,7 @@ import { LecturePageComponent } from './lecture-page/lecture-page.component';
 import { RoundPipe } from './pipes/round';
 import { NewStudentComponent } from './new-student/new-student.component';
 import { CustomDateAdapter } from './new-student/custom-date-adapter';
+import { TeachersComponent } from './teachers/teachers.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { CustomDateAdapter } from './new-student/custom-date-adapter';
     LecturePageComponent,
     RoundPipe,
     NewStudentComponent,
+    TeachersComponent,
   ],
   imports: [
     BrowserModule,
