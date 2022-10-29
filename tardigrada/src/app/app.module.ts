@@ -12,7 +12,11 @@ import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule, MAT_DATE_LOCALE, DateAdapter } from '@angular/material/core';
+import {
+  MatNativeDateModule,
+  MAT_DATE_LOCALE,
+  DateAdapter,
+} from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

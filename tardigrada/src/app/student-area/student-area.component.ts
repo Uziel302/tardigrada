@@ -27,8 +27,8 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.loginService.getChildData().subscribe((childData: IChild) => {
         this.loginService.currentChild = childData;
-        for(let timezone of this.scheduleService.timeZones){
-          if(timezone.name === childData.timezone){
+        for (let timezone of this.scheduleService.timeZones) {
+          if (timezone.name === childData.timezone) {
             this.scheduleService.currentTz = timezone;
           }
         }

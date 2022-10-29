@@ -34,7 +34,7 @@ export class LoginScreenComponent implements OnInit {
     if (this.login) {
       this.login = !this.login;
     } else if (!formObj.valid) {
-      Object.keys(formObj.form.controls).forEach(key => {
+      Object.keys(formObj.form.controls).forEach((key) => {
         formObj.controls[key].markAsTouched();
       });
     } else {

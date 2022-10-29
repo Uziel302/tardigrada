@@ -45,7 +45,7 @@ export class NewStudentComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onChangeTz(event: string){
+  onChangeTz(event: string) {
     this.childData.timezone = event;
   }
 

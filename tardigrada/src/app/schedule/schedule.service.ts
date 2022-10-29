@@ -237,6 +237,5 @@ export class ScheduleService {
         (data) => {},
         (error) => {}
       );
-
   }
 }

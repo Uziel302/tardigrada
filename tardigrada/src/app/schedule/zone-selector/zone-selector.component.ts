@@ -28,7 +28,7 @@ export class ZoneSelectorComponent implements OnInit {
   constructor(
     public scheduleService: ScheduleService,
     public zonesInRussian: ZonesInRussian,
-    public loginService: LoginService,
+    public loginService: LoginService
   ) {}
 
   ngOnInit(): void {
@@ -52,10 +52,14 @@ export class ZoneSelectorComponent implements OnInit {
     let intl: any = Intl;
     let ary = intl.supportedValuesOf('timeZone');
     ary.forEach((timeZone: any) => {
-      if (!this.promotedTz.includes(timeZone)){
+      if (!this.promotedTz.includes(timeZone)) {
         let russianName = this.zonesInRussian.getZoneInRussian(timeZone);
         let offset = this.getOffset(timeZone) - this.moscowOffset;
-        this.scheduleService.timeZones.push({ text: russianName, name: timeZone, offset }); 
+        this.scheduleService.timeZones.push({
+          text: russianName,
+          name: timeZone,
+          offset,
+        });
       }
     });
     this.filteredTimeZones = this.scheduleService.timeZones;

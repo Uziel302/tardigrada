@@ -156,8 +156,8 @@ export class TeacherAreaComponent implements OnInit {
       .subscribe(
         (data) => {
           this.loginService.teacher = data;
-          for(let timezone of this.scheduleService.timeZones){
-            if(timezone.name === data.timezone){
+          for (let timezone of this.scheduleService.timeZones) {
+            if (timezone.name === data.timezone) {
               this.scheduleService.currentTz = timezone;
             }
           }

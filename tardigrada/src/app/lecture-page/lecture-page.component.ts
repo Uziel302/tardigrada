@@ -79,7 +79,9 @@ export class LecturePageComponent implements OnInit {
               count: likers.length,
               likers: likers,
             });
-            this.heartClicked[this.reviews.length-1] = likers.includes(this.loginService.currentChildId);
+            this.heartClicked[this.reviews.length - 1] = likers.includes(
+              this.loginService.currentChildId
+            );
           }
         },
         (error) => {}
@@ -145,12 +147,13 @@ export class LecturePageComponent implements OnInit {
       this.reviews[index].likers.push(this.loginService.currentChildId);
       this.reviews[index].count++;
     }
-    let likeData = {id: this.reviews[index].id, likers: JSON.stringify(this.reviews[index].likers)};
-    this.http
-      .post(environment.apiEndPoint + 'submitLike', likeData)
-      .subscribe(
-        (data) => {},
-        (error) => {}
-      );
+    let likeData = {
+      id: this.reviews[index].id,
+      likers: JSON.stringify(this.reviews[index].likers),
+    };
+    this.http.post(environment.apiEndPoint + 'submitLike', likeData).subscribe(
+      (data) => {},
+      (error) => {}
+    );
   }
 }
