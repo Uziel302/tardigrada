@@ -60,6 +60,13 @@ input:-webkit-autofill {
 #animal-button {
   display: flex;
   justify-content: center;
+}
+
+#columns {
+  align-items: flex-start;
+}
+
+#animal-button {
   align-items: center;
 }
 
@@ -129,6 +136,10 @@ input:-webkit-autofill {
 
 #bottom-line {
   color: white;
+  margin-top: 80px;
+}
+
+#space-for-reg {
   margin-top: 50px;
 }
 
@@ -270,5 +281,11 @@ input.ng-invalid.ng-touched {
   .reg-button-wrapper {
     margin-top: 0;
     max-width: 254px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #space-for-reg {
+    margin-top: 0;
   }
 }

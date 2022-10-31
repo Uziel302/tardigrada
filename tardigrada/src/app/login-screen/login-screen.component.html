@@ -82,8 +82,9 @@
           </div>
         </div>
       </div>
-      <div id="bottom-line">
-        <div id="white-line" *ngIf="login"></div>
+      <div id="space-for-reg" *ngIf="!login"></div>
+      <div id="bottom-line" *ngIf="login">
+        <div id="white-line"></div>
         <div id="animal-button" *ngIf="login">
           <img id="animal" src="/assets/images/Animal.png" />
           <div id="dark-wrapper">
