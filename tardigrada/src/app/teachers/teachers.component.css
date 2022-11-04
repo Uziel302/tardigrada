@@ -64,6 +64,7 @@
   margin-bottom: 40px;
   line-height: 120%;
   text-align: center;
+  white-space: pre-line;
 }
 
 .teacher-bio {
