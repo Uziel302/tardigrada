@@ -22,22 +22,6 @@
   transform: scaleX(-1)
 }
 
-.subject-block {
-
-}
-
-.subject-wrapper {
-  border-bottom: 1px solid white;
-  margin: 100px;
-}
-
-.subject-title {
-  font-size: 50px;
-  font-family: "Zhizn";
-  color: white;
-  padding: 20px 100px;
-}
-
 .even {
   text-align: right;
 }

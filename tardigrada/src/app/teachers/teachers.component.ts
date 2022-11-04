@@ -6,12 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teachers.component.css'],
 })
 export class TeachersComponent implements OnInit {
-  public subjects: string[] = [
-    'Математика',
-    'Биология',
-    'Математика',
-    'Биология',
-  ];
   public teachers: any[] = [
     {
       name: 'full name',
