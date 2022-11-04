@@ -1,7 +1,8 @@
 export interface ITeacher {
   userId: number;
   name: string;
-  cover: string | null;
+  about: string;
   profile: string | null;
+  cover: string | null;
   timezone: string | null;
 }

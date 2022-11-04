@@ -14,7 +14,7 @@ const {
   getNotes,
   deleteNote,
 } = require("./controllers/notes.controller");
-const { loadOrCreateTeacher } = require("./controllers/teacherData.controller");
+const { loadOrCreateTeacher, getTeachers } = require("./controllers/teacherData.controller");
 const {
   getLectures,
   getCourse,
@@ -54,6 +54,7 @@ router.post("/submitLike", submitLike);
 router.get("/getLectures", getLectures);
 router.get("/getLectureChildren", getLectureChildren);
 router.get("/getTeacherLectures", getTeacherLectures);
+router.get("/getTeachers", getTeachers);
 router.get("/getChildLectures", getChildLectures);
 router.post("/saveStationery", saveStationery);
 router.post("/savePersonalSlot", savePersonalSlot);

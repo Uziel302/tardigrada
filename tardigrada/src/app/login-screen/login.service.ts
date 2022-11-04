@@ -37,6 +37,7 @@ export class LoginService {
   public teacher: ITeacher = {
     userId: 0,
     name: '',
+    about: '',
     cover: null,
     profile: null,
     timezone: null,

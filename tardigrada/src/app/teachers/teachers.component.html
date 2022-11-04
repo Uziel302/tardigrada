@@ -7,17 +7,17 @@
     <div class="teachers-container">
       <div *ngFor="let teacher of teachers" class="teacher-block">
         <div class="image-wrapper">
-            <img class="teacher-image" [src]="teacher.image"/>
+            <img class="teacher-image" [src]="teacher.profile"/>
         </div>
         <div class="teacher-name">
           {{teacher.name}}
         </div>
         <div class="teacher-bio">
-          {{teacher.bio}}
+          {{teacher.about}}
         </div>
-        <div *ngFor="let lecture of teacher.lectures" class="teacher-lecture">
+        <!--div *ngFor="let lecture of teacher?.lectures" class="teacher-lecture">
           {{lecture}}
-        </div>
+        </div-->
       </div>
   </div>
 </div>

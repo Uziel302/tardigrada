@@ -10,6 +10,7 @@
   font-size: 50px;
   font-family: "Zhizn";
   text-align: center;
+  line-height: 120%;
 }
 
 #flower-container {
@@ -30,10 +31,11 @@
   display:flex;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .teacher-block {
-  width: 280px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,6 +62,7 @@
   font-family: "Zhizn";
   font-size: 30px;
   margin-bottom: 40px;
+  line-height: 120%;
 }
 
 .teacher-bio {

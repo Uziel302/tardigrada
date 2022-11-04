@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { environment } from '../../environments/environment';
+import { ITeacher } from '../models/teacher';
 
 @Component({
   selector: 'app-teachers',
@@ -6,55 +10,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teachers.component.css'],
 })
 export class TeachersComponent implements OnInit {
-  public teachers: any[] = [
-    {
-      name: 'full name',
-      image: '/assets/images/sonya.png',
-      bio: `Меня зовут Аглая! Мне 21, я учусь
-    на филфаке Санкт-Петербургского
-    университета, где изучаю прозу
-    Варлама Шаламова. Преподаю
-    русский и литературу в частном лицее
-    в Санкт-Петербурге. Люблю йогу и
-    гулять со своим псом по кличке Добби
-    !)»(как в «Гарри Поттере`,
-      lectures: [ ],
-    },
+  public teachers: ITeacher[] = [];
 
-    {
-      name: 'full name',
-      image: '/assets/images/sonya.png',
-      bio: `Меня зовут Аглая! Мне 21, я учусь
-    на филфаке Санкт-Петербургского
-    университета, где изучаю прозу
-    Варлама Шаламова. Преподаю
-    русский и литературу в частном лицее
-    в Санкт-Петербурге. Люблю йогу и
-    гулять со своим псом по кличке Добби
-    !)»(как в «Гарри Поттере`,
-      lectures: [
-        `математика для дошкольников
-    пн-чт 18.00`,
-        `русский 8-12 лет
-    вт-пт 15.00`,
-      ],
-    },
-    {
-      name: 'full name',
-      image: '/assets/images/sonya.png',
-      bio: `Меня зовут Аглая! Мне 21, я учусь
-    на филфаке Санкт-Петербургского
-    университета, где изучаю прозу
-    Варлама Шаламова. Преподаю
-    русский и литературу в частном лицее
-    в Санкт-Петербурге. Люблю йогу и
-    гулять со своим псом по кличке Добби
-    !)»(как в «Гарри Поттере`,
-      lectures: [],
-    },
-  ];
+  constructor(private http: HttpClient) {}
 
-  constructor() {}
+  ngOnInit(): void {
+    this.getTeachers();
+  }
 
-  ngOnInit(): void {}
+  getTeachers(): void {
+    this.http
+      .get<ITeacher[]>(
+        environment.apiEndPoint + 'getTeachers'
+      )
+      .subscribe(
+        (data) => {
+          this.teachers = data;
+        },
+        (error) => {}
+      );
+  }
 }
