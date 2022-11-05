@@ -34,6 +34,7 @@ export class LecturePageComponent implements OnInit {
     about: '',
     description: '',
     bullets: '',
+    background: '',
   };
   //todo: move reviews to separate component
   public reviews: IReview[] = [];

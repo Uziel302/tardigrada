@@ -2,7 +2,9 @@
   <div id="left-part">
     <div id="inner-left">
       <div id="top-line">
-        <img [src]="course.image" class="course-logo" />
+        <div class="logo-background" [style.background]="course.background">
+          <img [src]="course.image" class="course-logo" />
+        </div>
         <div class="title-and-reviews">
           <div class="course-title">{{ course.title }}</div>
           <div class="reviews-sum">

@@ -21,7 +21,14 @@ textarea {
 }
 
 .course-logo {
+  height: 135px;
+  width: 135px;
+}
+
+.logo-background {
+  border-radius: 50%;
   height: 142px;
+  width: 142px;
 }
 
 #top-line {
