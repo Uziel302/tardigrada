@@ -1,4 +1,4 @@
-.background {
+#background {
   background-color: #d8d7e1;
   overflow: scroll;
   display: flex;
@@ -79,9 +79,97 @@
 }
 
 #baloon {
-  height: 575px;
+  height: 470px;
+}
+
+#fossil {
+  width: 340px;
+}
+
+#orange-umbrella {
+  height: 420px;
 }
 
 #bold {
   font-weight: 400;
+}
+
+#fourth-container {
+  margin-top: 120px;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .mobile-none {
+    display: none;
+  }
+
+  #background {
+    padding: 100px 32px 32px 32px;
+  }
+
+  #top-passage {
+    font-size: 21px;
+  }
+
+  #mobile-separation {
+    border-bottom: 1px solid white;
+    margin: 50px -32px 0 -32px;
+    box-shadow: 0px 3px 5px black;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .passage {
+    font-size: 16px;
+  }
+
+  #five {
+    height: 150px;
+    padding-bottom: 40px;
+  }
+
+  #fossil {
+    width: 300px;
+    padding-top: 60px;
+  }
+
+  #orange-umbrella {
+    height: 400px;
+    padding-bottom: 25px;
+  }
+
+  #baloon {
+    height: 400px;
+    padding-bottom: 100px;
+    padding-top: 60px;
+  }
+
+  #third-container {
+    margin-top: 20px;
+  }
+
+  #fourth-container {
+    margin-top: 0;
+  }
+
+  #fourth-container .mobile-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
