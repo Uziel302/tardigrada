@@ -14,19 +14,24 @@
   line-height: 150%;
 }
 
-#first-passage, #second-passage, #third-passage, #fourth-passage {
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-family: "Zhizn";
+  font-size: 32px;
+  line-height: 80px;
+}
+
+.passage {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 300;
   font-size: 21px;
   line-height: 150%;
   color: #1c1717;
-}
-
-#first-title, #second-title, #third-title {
-  font-family: "Zhizn";
-  font-size: 32px;
-  line-height: 80px;
 }
 
 #first-title {
@@ -39,4 +44,10 @@
 
 #third-title {
   color: #9e415d;
+}
+
+
+#orange-umbrella, #baloon {
+  transform: scaleX(-1);
+
 }
