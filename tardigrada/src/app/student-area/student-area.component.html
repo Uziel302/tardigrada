@@ -95,7 +95,7 @@
       <div id="profile-teacher">
         <div id="image-container-teacher">
           <div id="profile-image-border-teacher">
-              <img id="profile-image-teacher" src="/assets/images/profile-default.jpg" />
+              <img id="profile-image-teacher" [src]="scheduleService.selectedLecture.teacherImage ?? '/assets/images/profile-default.jpg'" />
           </div>
         </div>
         <div id="name-teacher">

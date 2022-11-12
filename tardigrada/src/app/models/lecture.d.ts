@@ -3,6 +3,7 @@ export interface ILecture {
   title: string;
   subtitle: string;
   teacher: string;
+  teacherImage: string;
   day: number;
   hour: number;
   minutes: number;
