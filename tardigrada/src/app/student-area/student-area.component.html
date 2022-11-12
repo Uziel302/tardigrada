@@ -23,14 +23,12 @@
     <div id="profile">
       <div id="image-container">
         <div id="profile-image-border">
-          <div id="profile-image">
-            <img
+            <img id="profile-image"
               [src]="
                 loginService.currentChild.profile ??
                 '/assets/images/profile-default.jpg'
               "
             />
-          </div>
         </div>
       </div>
       <div id="name">
@@ -97,9 +95,7 @@
       <div id="profile-teacher">
         <div id="image-container-teacher">
           <div id="profile-image-border-teacher">
-            <div id="profile-image-teacher">
-              <img src="/assets/images/profile-default.jpg" />
-            </div>
+              <img id="profile-image-teacher" src="/assets/images/profile-default.jpg" />
           </div>
         </div>
         <div id="name-teacher">

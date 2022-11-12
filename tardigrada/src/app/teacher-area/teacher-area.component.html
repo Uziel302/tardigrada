@@ -24,15 +24,13 @@
     <div id="profile">
       <div id="image-container">
         <div id="profile-image-border">
-          <div id="profile-image">
-            <img
+            <img id="profile-image"
               [src]="
                 loginService.teacher.profile
                   ? loginService.teacher.profile
                   : '/assets/images/profile-default.jpg'
               "
             />
-          </div>
         </div>
       </div>
       <div id="name">
@@ -140,15 +138,13 @@
             (click)="selectChild(i)"
           >
             <div class="profile-image-border-children">
-              <div class="profile-image-children">
-                <img
+                <img class="profile-image-children"
                   [src]="
                     child.profile
                       ? child.profile
                       : '/assets/images/profile-default.jpg'
                   "
                 />
-              </div>
             </div>
             <div class="child-name">
               {{ child.firstName + " " + child.lastName }}

@@ -109,14 +109,7 @@ textarea {
   width: 176px;
 }
 
-#profile-image > img,
-#profile-image-teacher > img,
-.profile-image-children > img,
-.profile-image-child > img {
-  padding-top: 25px;
-}
-
-.profile-image-children > img {
+.profile-image-children {
   max-width: 150px;
 }
 
