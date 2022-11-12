@@ -101,15 +101,15 @@ input:-webkit-autofill {
   border-radius: 50%;
   cursor: pointer;
   margin-left: 30px;
-  width: 128px;
-  height: 128px;
+  width: 122px;
+  height: 122px;
 }
 
 #dark-wrapper {
   border: 30px solid #220315;
   border-radius: 50%;
-  width: 130 px;
-  height: 130px;
+  width: 124px;
+  height: 124px;
 }
 
 .button-submit {
@@ -118,8 +118,8 @@ input:-webkit-autofill {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  width: 100px;
-  height: 100px;
+  width: 94px;
+  height: 94px;
   background: white;
   border-radius: 50%;
   font-size: 28px;
