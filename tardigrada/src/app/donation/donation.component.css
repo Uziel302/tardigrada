@@ -197,8 +197,10 @@ input:focus::placeholder {
   line-height: 140%;
 }
 
-.button-submit:hover {
-  background: #d8d7e1;
+@media(hover: hover) {
+  .button-submit:hover {
+    background: #d8d7e1;
+  }
 }
 
 #bottom-line {
@@ -325,9 +327,11 @@ li::before {
   font-size: 16px;
 }
 
-#second-block .button-submit:hover {
-  background: #280d2c;
-  color: white;
+@media(hover: hover) {
+  #second-block .button-submit:hover {
+    background: #280d2c;
+    color: white;
+  }
 }
 
 .tooltip {
@@ -355,8 +359,10 @@ li::before {
     display: none;
   }
 
-  .tooltip:hover .tooltiptext {
-    left: 50%;
+  @media(hover: hover) {
+    .tooltip:hover .tooltiptext {
+      left: 50%;
+    }
   }
 }
 

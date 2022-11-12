@@ -35,8 +35,10 @@ img {
   padding: 32px;
 }
 
-.menu-item:hover {
-  color: #ad84a9;
+@media(hover: hover) {
+  .menu-item:hover {
+    color: #ad84a9;
+  }
 }
 
 #muscari {

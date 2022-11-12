@@ -129,9 +129,11 @@ input:-webkit-autofill {
   color: #220315;
 }
 
-.button-submit:hover {
-  background: #220315;
-  color: white;
+@media(hover: hover) {
+  .button-submit:hover {
+    background: #220315;
+    color: white;
+  }
 }
 
 #bottom-line {

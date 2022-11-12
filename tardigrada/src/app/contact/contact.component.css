@@ -70,8 +70,10 @@
   height: 70px;
 }
 
-.telegram-button:hover {
-  background-image: url("/assets/images/telegram-full.png");
+@media(hover: hover) {
+  .telegram-button:hover {
+    background-image: url("/assets/images/telegram-full.png");
+  }
 }
 
 #telegram-container {
@@ -87,8 +89,10 @@
   width: 180px;
 }
 
-#main-telegram-button:hover {
-  background-image: url("/assets/images/channel-hover.png");
+@media(hover: hover) {
+  #main-telegram-button:hover {
+    background-image: url("/assets/images/channel-hover.png");
+  }
 }
 
 .zoom-out {

@@ -375,9 +375,11 @@
   color: black;
 }
 
-.button-under-schedule:hover {
-  background: #661e4b;
-  color: white;
+@media(hover: hover) {
+  .button-under-schedule:hover {
+    background: #661e4b;
+    color: white;
+  }
 }
 
 #button-text {
