@@ -1,30 +1,17 @@
-.zoom-out {
-  transform: scale(0.9, 0.9);
-  padding: 0 10%;
-}
-
 .background {
   background-color: #d8d7e1;
   overflow: scroll;
   display: flex;
-}
-
-#top-title {
-  color: #8c5f5a;
-  font-family: "Zhizn";
-  font-size: 50px;
-  line-height: 130%;
-  width: 100%;
-  text-align: center;
-  margin-top: -58px;
+  flex-direction: column;
 }
 
 #opening-passage {
   color: #46313d;
-  font-size: 55px;
+  font-size: 35px;
   font-family: "Zhizn";
   text-align: center;
-  line-height: 100%;
+  line-height: 150%;
+  padding-top: 105px;
 }
 
 #second-container,
