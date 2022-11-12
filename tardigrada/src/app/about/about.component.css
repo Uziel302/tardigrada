@@ -19,6 +19,27 @@
   align-items: center;
 }
 
+#first-container {
+  margin-top: 80px;
+}
+
+#second-container {
+  margin-top: 100px;
+}
+
+#third-container {
+  margin-top: 65px;
+}
+
+.text, .image {
+  width: 100%;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+}
+
 .title {
   font-family: "Zhizn";
   font-size: 32px;
@@ -32,6 +53,7 @@
   font-size: 21px;
   line-height: 150%;
   color: #1c1717;
+  max-width: 580px;
 }
 
 #first-title {
@@ -44,10 +66,22 @@
 
 #third-title {
   color: #9e415d;
+  margin-top: 70px;
 }
 
 
 #orange-umbrella, #baloon {
   transform: scaleX(-1);
+}
 
+#five {
+  height: 350px;
+}
+
+#baloon {
+  height: 575px;
+}
+
+#bold {
+  font-weight: 400;
 }
