@@ -21,8 +21,8 @@ textarea {
 }
 
 .course-logo {
-  height: 135px;
-  width: 135px;
+  height: 142px;
+  width: 142px;
 }
 
 .logo-background {
@@ -294,8 +294,7 @@ textarea {
 }
 
 .teacher-wrapper,
-.teacher-image,
-.image-shade {
+.teacher-image {
   height: 192px;
   width: 192px;
   border-radius: 50%;
@@ -309,13 +308,6 @@ textarea {
 .teacher-image {
   position: absolute;
   z-index: 10;
-}
-
-.image-shade {
-  background: radial-gradient(transparent 62%, #000) 50% calc(90% + 3px);
-  transform: rotate(-45deg);
-  position: absolute;
-  z-index: 20;
 }
 
 .review-form {
