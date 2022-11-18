@@ -6,17 +6,17 @@
         [uploadColumn]="'cover'"
         [uploadTable]="isStudent ? 'children' : 'teachers'"
       ></app-upload-photo>
-      <div>upload cover photo</div>
+      <div>Сменить фото обложку</div>
     </div>
     <div class="upload-container">
       <app-upload-photo
         [uploadColumn]="'profile'"
         [uploadTable]="isStudent ? 'children' : 'teachers'"
       ></app-upload-photo>
-      <div>upload profile photo</div>
+      <div>Сменить фото профиля</div>
     </div>
     <div *ngIf="isStudent">
-      <div (click)="titleClick()">Choose child:</div>
+      <div (click)="titleClick()">Выбрать ученика:</div>
       <input [(ngModel)]="adminChild" *ngIf="!adminView" />
       <div
         class="settings-button"
@@ -26,9 +26,9 @@
         {{ child.firstName + " " + child.lastName }}
       </div>
       <div class="settings-button" routerLink="../new-student">
-        + add student
+        + Добавить ученика
       </div>
     </div>
-    <div class="settings-button" (click)="loginService.logout()">logout</div>
+    <div class="settings-button" (click)="loginService.logout()">Выйти</div>
   </div>
 </div>
