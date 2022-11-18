@@ -10,14 +10,9 @@
       : '#d8d7e1'
   "
 >
-  <div *ngIf="!data[selected].title" style="display: flex; align-items: center">
-    <input
-      id="personalSlot"
-      [(ngModel)]="scheduleService.personalSlots[dayNumber][rowNumber]"
-    />
-    <div *ngIf="scheduleService.personalSlots[dayNumber][rowNumber]">
-      <mat-icon (click)="savePersonalSlot()">save</mat-icon>
-    </div>
+  <div *ngIf="!data[selected].title" class="personal-slot">
+    <span>{{scheduleService.personalSlots[dayNumber][rowNumber]}}</span>
+    <mat-icon (click)="openPopup()">edit</mat-icon>
   </div>
   <div id="lecture-title">
     {{ data[selected].title }}
