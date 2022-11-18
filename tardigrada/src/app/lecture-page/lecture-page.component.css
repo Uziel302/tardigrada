@@ -39,13 +39,12 @@ textarea {
 
 .title-and-reviews {
   padding-left: 35px;
-  padding-top: 53px;
+  padding-top: 33px;
 }
 
 .course-title {
   color: rgb(37, 16, 43);
   font-size: 55px;
-  padding-bottom: 22px;
   font-family: "Zhizn";
   line-height: 120%;
 }
