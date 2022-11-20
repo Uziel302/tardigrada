@@ -9,12 +9,17 @@ import { LoginService } from '../login-screen/login.service';
 export class HeaderComponent implements OnInit {
   public tilted: boolean = false;
   public hidden: boolean = true;
+  public loggedIn: boolean = false;
 
   constructor(
     public loginService: LoginService,
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loginService.getAuthStatusListener().subscribe(loggedIn => {
+      setTimeout(() => { this.loggedIn = loggedIn; }, 300)
+    });
+  }
 
   toggleMenu() {
     this.tilted = !this.tilted;

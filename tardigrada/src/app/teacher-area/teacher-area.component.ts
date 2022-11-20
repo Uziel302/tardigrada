@@ -42,9 +42,21 @@ export class TeacherAreaComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.currentChildId = 0;
-    this.loadOrCreateTeacher();
+    this.loginService.loadOrCreateTeacher();
     this.getNotes();
     this.getAnnoying();
+    this.loginService.getAuthStatusListener().subscribe(loggedIn => {
+      if(loggedIn){
+        for (let timezone of this.scheduleService.timeZones) {
+          if (timezone.name === this.loginService.teacher.timezone) {
+            this.scheduleService.currentTz = timezone;
+            break;
+          }
+        }
+        this.scheduleService.getTeacherLectures(this.loginService.teacher.userId);
+        this.scheduleService.getPersonalSlots(0, this.loginService.teacher.userId);
+      }
+    });
   }
 
   stopProp(event: any) {
@@ -148,25 +160,6 @@ export class TeacherAreaComponent implements OnInit {
 
   updateHwFile(event: string) {
     this.homeworkFile = event;
-  }
-
-  loadOrCreateTeacher() {
-    this.http
-      .get<ITeacher>(environment.apiEndPoint + 'loadOrCreateTeacher')
-      .subscribe(
-        (data) => {
-          this.loginService.teacher = data;
-          for (let timezone of this.scheduleService.timeZones) {
-            if (timezone.name === data.timezone) {
-              this.scheduleService.currentTz = timezone;
-              break;
-            }
-          }
-          this.scheduleService.getTeacherLectures(data.userId);
-          this.scheduleService.getPersonalSlots(0, data.userId);
-        },
-        (error) => {}
-      );
   }
 
   saveStationery() {

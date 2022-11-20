@@ -43,19 +43,17 @@ export class LoginService {
     timezone: null,
   };
 
-  private isAuthenticated: boolean = false;
   private token: string = '';
   private tokenTimer: number = 0;
   private authStatusListener: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient, 
+    private router: Router,
+  ) {}
 
   getToken(): string {
     return this.token;
-  }
-
-  getIsAuth(): boolean {
-    return this.isAuthenticated;
   }
 
   getAuthStatusListener(): Observable<boolean> {
@@ -100,7 +98,6 @@ export class LoginService {
           this.token = token;
           if (token) {
             const expiresInDuration: number = data.expiresIn;
-            this.isAuthenticated = true;
             this.authStatusListener.next(true);
             const now: Date = new Date();
             const expirationDate: Date = new Date(
@@ -139,15 +136,13 @@ export class LoginService {
       authInformation.expirationDate.getTime() - now.getTime();
     if (expiresIn > 0) {
       this.token = authInformation.token;
-      this.currentChildId = authInformation.childId;
-      this.isAuthenticated = true;
+      this.currentChildId = authInformation.childId;      
       this.authStatusListener.next(true);
     }
   }
 
   logout(): void {
     this.token = '';
-    this.isAuthenticated = false;
     this.authStatusListener.next(false);
     clearTimeout(this.tokenTimer);
     this.clearAuthData();
@@ -202,5 +197,17 @@ export class LoginService {
 
   public getChildren() {
     return this.http.get<IChild[]>(environment.apiEndPoint + 'getChildren');
+  }
+
+  loadOrCreateTeacher(){
+    this.http
+    .get<ITeacher>(environment.apiEndPoint + 'loadOrCreateTeacher')
+    .subscribe(
+      (data) => {
+        this.teacher = data;
+        this.authStatusListener.next(true);
+      },
+      (error) => {}
+    );
   }
 }

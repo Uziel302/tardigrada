@@ -2,11 +2,10 @@
   <div id="topMenuLine" [class.tilted]="tilted" class=""></div>
   <div id="bottomMenuLine" [class.tilted]="tilted" class=""></div>
 </div>
-<div id="profile" *ngIf="loginService.currentChild.profile">
-  <img id="profile-image" [src]="loginService.currentChild.profile" routerLink="/student">
-</div>
-<div id="profile" *ngIf="loginService.teacher.profile">
-  <img id="profile-image" [src]="loginService.teacher.profile" routerLink="/teacher">
+<div *ngIf="loggedIn">
+  <div id="profile">
+    <img id="profile-image" [src]="(loginService.currentChildId ? loginService.currentChild.profile : loginService.teacher.profile) ?? '/assets/images/profile-default.jpg'" [routerLink]="loginService.currentChildId ? '/student' : '/teacher'">
+  </div>
 </div>
 <div id="menuScreen" [class.hidden]="hidden">
   <img id="tent" src="/assets/images/tent.png" />
