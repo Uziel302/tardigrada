@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login-screen/login.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,9 @@ export class HeaderComponent implements OnInit {
   public tilted: boolean = false;
   public hidden: boolean = true;
 
-  constructor() {}
+  constructor(
+    public loginService: LoginService,
+  ) {}
 
   ngOnInit(): void {}
 

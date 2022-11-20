@@ -68,28 +68,49 @@ body:after {
 }
 #bottomMenuLine,
 #topMenuLine,
-#toggle-nav {
+#toggle-nav, 
+#profile {
   position: fixed;
-  right: 50px;
   height: 2px;
   width: 48px;
   z-index: 121;
 }
+
+#bottomMenuLine,
+#topMenuLine,
+#toggle-nav {
+  right: 50px;
+}
+
+#profile {
+  left: 50px;
+  top: 30px;
+}
+
+#profile-image {
+  height: 35px;
+  width: 35px;
+}
+
 #topMenuLine {
   top: 40px;
   background-color: gray;
 }
+
 #bottomMenuLine {
   top: 46px;
   background-color: gray;
 }
+
 #toggle-nav {
   height: 60px;
 }
+
 #topMenuLine.tilted {
   transition: 0.5s;
   transform: translateY(3px) rotate(45deg);
 }
+
 #bottomMenuLine.tilted {
   transition: 0.5s;
   transform: translateY(-3px) rotate(-45deg);
@@ -99,7 +120,7 @@ body:after {
   #bottomMenuLine,
   #topMenuLine,
   #toggle-nav {
-    right: 30px;
+    right: 10px;
   }
 
   #topMenuLine {
@@ -107,5 +128,10 @@ body:after {
   }
   #bottomMenuLine {
     top: 36px;
+  }
+
+  #profile {
+    left: 0;
+    top: 20px;
   }
 }

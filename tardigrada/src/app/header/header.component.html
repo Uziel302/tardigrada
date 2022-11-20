@@ -2,6 +2,12 @@
   <div id="topMenuLine" [class.tilted]="tilted" class=""></div>
   <div id="bottomMenuLine" [class.tilted]="tilted" class=""></div>
 </div>
+<div id="profile" *ngIf="loginService.currentChild.profile">
+  <img id="profile-image" [src]="loginService.currentChild.profile" routerLink="/student">
+</div>
+<div id="profile" *ngIf="loginService.teacher.profile">
+  <img id="profile-image" [src]="loginService.teacher.profile" routerLink="/teacher">
+</div>
 <div id="menuScreen" [class.hidden]="hidden">
   <img id="tent" src="/assets/images/tent.png" />
   <img id="muscari" src="/assets/images/muscari.png" />
