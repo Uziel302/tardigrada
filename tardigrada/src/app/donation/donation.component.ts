@@ -17,7 +17,7 @@ export class DonationComponent implements OnInit {
   public showPayment: boolean = false;
 
   public paypalId =
-    'Ac5qubv1EmzyWivxbUMFPQwqtdIH3_Afj83TtHYVX2MHVTBZr7dbCd2W8xNUSkZDGDsRFqfKxmWrUi2B';
+    'ARaKC8HDKLoTOLrKqTjs2czeeevDCrodcdm31r7kbtU9Lv5RjVcfwy1eGKGo-ZXfi617BVCuVgh44Jhe';
 
   public loadPaypalScript(): Promise<any> {
     return new Promise((resolve, reject) => {

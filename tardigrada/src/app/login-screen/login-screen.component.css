@@ -1,4 +1,4 @@
-input {
+input:not(#teacher-checkbox) {
   background-color: #220315 !important;
   color: white;
   font-size: 21px;
@@ -12,7 +12,7 @@ input {
   outline: none;
 }
 
-input:-webkit-autofill {
+input:not(#teacher-checkbox):-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #220315 inset !important;
   -webkit-text-fill-color: white !important;
 }
@@ -129,6 +129,13 @@ input:-webkit-autofill {
   color: #220315;
 }
 
+.checkbox-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
 @media(hover: hover) {
   .button-submit:hover {
     background: #220315;
@@ -173,7 +180,7 @@ input:-webkit-autofill {
   color: #d8d7e1;
 }
 
-input.ng-invalid.ng-touched {
+input.ng-invalid.ng-touched:not(#teacher-checkbox) {
   border: rgb(191, 66, 58) 1px solid;
 }
 
@@ -187,7 +194,7 @@ input.ng-invalid.ng-touched {
     margin-left: 40px;
   }
 
-  input::placeholder {
+  input::placeholder:not(#teacher-checkbox) {
     opacity: 0;
   }
 }
@@ -216,7 +223,7 @@ input.ng-invalid.ng-touched {
     margin-top: 75px;
   }
 
-  input {
+  input:not(#teacher-checkbox) {
     width: 240px;
     margin-left: 0;
     margin-top: 12px;

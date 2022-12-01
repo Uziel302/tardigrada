@@ -8,15 +8,15 @@
             <div>Пароль</div>
           </div>
           <div *ngIf="!login" class="names-column narrow-none">
-            <div>Имя</div>
-            <div>Фамилия</div>
+            <div *ngIf="isStudent">Имя</div>
+            <div *ngIf="isStudent">Фамилия</div>
             <div>EMAIL</div>
             <div>Телеграм</div>
             <div>Пароль</div>
           </div>
           <form id="inputs-column" #myForm="ngForm">
             <input
-              *ngIf="!login"
+              *ngIf="!login && isStudent"
               [(ngModel)]="firstName"
               placeholder="Имя"
               required
@@ -25,7 +25,7 @@
               name="1"
             />
             <input
-              *ngIf="!login"
+              *ngIf="!login && isStudent"
               [(ngModel)]="lastName"
               placeholder="Фамилия"
               required
@@ -68,6 +68,9 @@
                   ? "неверный емейл или пароль"
                   : "&nbsp;"
               }}
+            </div>
+            <div class="checkbox-line">
+              <input id="teacher-checkbox" type="checkbox" (change)="isStudent = !isStudent">Я учитель в Тардиграде
             </div>
           </form>
         </div>

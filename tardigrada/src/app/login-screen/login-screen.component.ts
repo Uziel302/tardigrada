@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
 import { LoginService } from './login.service';
 
 @Component({
@@ -19,11 +17,9 @@ export class LoginScreenComponent implements OnInit {
 
   constructor(
     public loginService: LoginService,
-    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.isStudent = !this.route.snapshot.paramMap.get('teacher');
   }
 
   submit() {
