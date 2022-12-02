@@ -201,9 +201,9 @@ export class LoginService {
     return this.http.get<IChild[]>(environment.apiEndPoint + 'getChildren');
   }
 
-  loadOrCreateTeacher(){
+  loadTeacher(){
     this.http
-    .get<ITeacher>(environment.apiEndPoint + 'loadOrCreateTeacher')
+    .get<ITeacher>(environment.apiEndPoint + 'loadTeacher')
     .subscribe(
       (data) => {
         this.teacher = data;

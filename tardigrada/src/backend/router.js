@@ -14,7 +14,7 @@ const {
   getNotes,
   deleteNote,
 } = require("./controllers/notes.controller");
-const { loadOrCreateTeacher, getTeachers } = require("./controllers/teacherData.controller");
+const { loadTeacher, getTeachers } = require("./controllers/teacherData.controller");
 const {
   getLectures,
   getCourse,
@@ -108,9 +108,9 @@ router.get("/getChildren", (req, res) => {
   }
 });
 
-router.get("/loadOrCreateTeacher", (req, res) => {
+router.get("/loadTeacher", (req, res) => {
   if (checkAuth(req, res)) {
-    return loadOrCreateTeacher(req, res);
+    return loadTeacher(req, res);
   }
 });
 

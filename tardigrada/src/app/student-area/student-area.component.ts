@@ -5,6 +5,7 @@ import { ScheduleService } from '../schedule/schedule.service';
 import { LoginService } from '../login-screen/login.service';
 import { IChild } from '../models/child';
 import { ParsingService } from '../general/parser.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-area',
@@ -20,10 +21,14 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
   constructor(
     public scheduleService: ScheduleService,
     public loginService: LoginService,
-    public parsing: ParsingService
+    public parsing: ParsingService,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
+    if(!this.loginService.currentChildId){
+      this.router.navigate(['/new-student']);
+    }
     this.subscriptions.push(
       this.loginService.getChildData().subscribe((childData: IChild) => {
         this.loginService.currentChild = childData;
