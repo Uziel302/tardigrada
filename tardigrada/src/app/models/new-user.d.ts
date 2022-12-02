@@ -4,4 +4,5 @@ export interface INewUser {
   email: string;
   telegram: string;
   password: string;
+  teacherId: number;
 }

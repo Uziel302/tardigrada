@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-import { environment } from '../../environments/environment';
-import { ITeacher } from '../models/teacher';
+import { TeachersService } from './teachers.service';
 
 @Component({
   selector: 'app-teachers',
@@ -10,24 +7,9 @@ import { ITeacher } from '../models/teacher';
   styleUrls: ['./teachers.component.css'],
 })
 export class TeachersComponent implements OnInit {
-  public teachers: ITeacher[] = [];
-
-  constructor(private http: HttpClient) {}
+  constructor(public teachersService: TeachersService) {}
 
   ngOnInit(): void {
-    this.getTeachers();
-  }
-
-  getTeachers(): void {
-    this.http
-      .get<ITeacher[]>(
-        environment.apiEndPoint + 'getTeachers'
-      )
-      .subscribe(
-        (data) => {
-          this.teachers = data;
-        },
-        (error) => {}
-      );
+    this.teachersService.getTeachers();
   }
 }

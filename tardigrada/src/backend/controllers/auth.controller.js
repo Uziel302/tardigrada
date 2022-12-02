@@ -62,9 +62,13 @@ exports.signUp = async (req, res) => {
               .insert(req.body)
               .then((row) => {
                 if (row > 0) {
-                  return res
-                    .status(200)
-                    .send({ message: "New user was created" });
+                  if (req.body.teacherId) {
+                    
+                  } else {
+                    return res
+                      .status(200)
+                      .send({ message: "New user was created" });
+                  }
                 } else {
                   return res.status(200).send("error on data insert");
                 }

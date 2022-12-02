@@ -8,30 +8,32 @@
             <div>Пароль</div>
           </div>
           <div *ngIf="!login" class="names-column narrow-none">
-            <div *ngIf="isStudent">Имя</div>
-            <div *ngIf="isStudent">Фамилия</div>
+            <div *ngIf="isStudent || teacherId">Имя</div>
+            <div *ngIf="isStudent || teacherId">Фамилия</div>
             <div>EMAIL</div>
             <div>Телеграм</div>
             <div>Пароль</div>
           </div>
           <form id="inputs-column" #myForm="ngForm">
             <input
-              *ngIf="!login && isStudent"
+              *ngIf="!login && (isStudent || teacherId)"
               [(ngModel)]="firstName"
               placeholder="Имя"
               required
               minlength="3"
               #nameRef="ngModel"
               name="1"
+              [disabled]="!isStudent"
             />
             <input
-              *ngIf="!login && isStudent"
+              *ngIf="!login && (isStudent || teacherId)"
               [(ngModel)]="lastName"
               placeholder="Фамилия"
               required
               minlength="3"
               #nameRef="ngModel"
               name="2"
+              [disabled]="!isStudent"
             />
             <input
               [(ngModel)]="email"
@@ -62,6 +64,10 @@
               #passwordRef="ngModel"
               name="5"
             />
+            <select *ngIf="!login && !isStudent" (change)="onSelectTeacher($event)">
+              <option>выбирать</option>
+              <option *ngFor="let teacher of teachersService.teachers" [value]="teacher.userId">{{teacher.name}}</option>
+            </select>
             <div class="error-message" *ngIf="login">
               {{
                 loginService.currentError

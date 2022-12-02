@@ -66,7 +66,8 @@ export class LoginService {
     email: string,
     telegram: string,
     password: string,
-    isStudent: boolean
+    isStudent: boolean,
+    teacherId: number,
   ): void {
     const authData: INewUser = {
       firstName,
@@ -74,6 +75,7 @@ export class LoginService {
       email,
       telegram,
       password,
+      teacherId,
     };
     this.http.post(environment.apiEndPoint + 'signup', authData).subscribe(
       (data) => {

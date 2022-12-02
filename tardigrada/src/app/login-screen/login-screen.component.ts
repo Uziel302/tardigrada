@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ITeacher } from '../models/teacher';
+import { TeachersService } from '../teachers/teachers.service';
 import { LoginService } from './login.service';
 
 @Component({
@@ -14,13 +16,14 @@ export class LoginScreenComponent implements OnInit {
   public email: string = '';
   public telegram: string = '';
   public password: string = '';
+  public teacherId: number = 0;
 
   constructor(
     public loginService: LoginService,
+    public teachersService: TeachersService
   ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   submit() {
     this.loginService.login(this.email, this.password, this.isStudent);
@@ -29,6 +32,7 @@ export class LoginScreenComponent implements OnInit {
   registrationClick(formObj: any) {
     if (this.login) {
       this.login = !this.login;
+      this.teachersService.getTeachers();
     } else if (!formObj.valid) {
       Object.keys(formObj.form.controls).forEach((key) => {
         formObj.controls[key].markAsTouched();
@@ -40,8 +44,19 @@ export class LoginScreenComponent implements OnInit {
         this.email,
         this.telegram,
         this.password,
-        this.isStudent
+        this.isStudent,
+        this.teacherId,
       );
+    }
+  }
+
+  onSelectTeacher(event: any) {
+    this.teacherId = Number(event.target.value);
+    let teacher: ITeacher | undefined = this.teachersService.teachers.find(x=>x.userId === this.teacherId);
+    if(teacher){
+      let name = teacher.name.split(' ');
+      this.firstName = name[0];
+      this.lastName = name[1];
     }
   }
 }
