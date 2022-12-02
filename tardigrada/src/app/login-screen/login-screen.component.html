@@ -1,6 +1,11 @@
 <div id="container" [class.percent]="!login">
   <div id="wrapper">
     <div id="rows">
+      <h1>
+        Warning: the website is still under contsruction,<br> login is not
+        recommended
+      </h1>
+
       <div id="columns" [class.columns]="login">
         <div id="form-column">
           <div *ngIf="login" class="names-column narrow-none">
@@ -64,9 +69,17 @@
               #passwordRef="ngModel"
               name="5"
             />
-            <select *ngIf="!login && !isStudent" (change)="onSelectTeacher($event)">
+            <select
+              *ngIf="!login && !isStudent"
+              (change)="onSelectTeacher($event)"
+            >
               <option>выбирать</option>
-              <option *ngFor="let teacher of teachersService.teachers" [value]="teacher.userId">{{teacher.name}}</option>
+              <option
+                *ngFor="let teacher of teachersService.teachers"
+                [value]="teacher.userId"
+              >
+                {{ teacher.name }}
+              </option>
             </select>
             <div class="error-message" *ngIf="login">
               {{
@@ -76,7 +89,11 @@
               }}
             </div>
             <div class="checkbox-line">
-              <input id="teacher-checkbox" type="checkbox" (change)="isStudent = !isStudent">Я учитель в Тардиграде
+              <input
+                id="teacher-checkbox"
+                type="checkbox"
+                (change)="isStudent = !isStudent"
+              />Я учитель в Тардиграде
             </div>
           </form>
         </div>

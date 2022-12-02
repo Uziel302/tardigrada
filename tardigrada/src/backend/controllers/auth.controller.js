@@ -58,17 +58,31 @@ exports.signUp = async (req, res) => {
             });
           } else {
             req.body.password = hash;
+            let teacherId = req.body.teacherId;
+            delete req.body.teacherId;
             knex("users")
               .insert(req.body)
               .then((row) => {
                 if (row > 0) {
-                  if (req.body.teacherId) {
-                    
-                  } else {
-                    return res
-                      .status(200)
-                      .send({ message: "New user was created" });
+                  if (teacherId) {
+                    knex("teachers")
+                      .update({
+                        userId: row[0],
+                      })
+                      .where({ userId: teacherId })
+                      .then((u) => {})
+                      .catch((e) => {});
+                    knex("lectures")
+                      .update({
+                        teacherId: row[0],
+                      })
+                      .where({ teacherId: teacherId })
+                      .then((u) => {})
+                      .catch((e) => {});
                   }
+                  return res
+                    .status(200)
+                    .send({ message: "New user was created" });
                 } else {
                   return res.status(200).send("error on data insert");
                 }
