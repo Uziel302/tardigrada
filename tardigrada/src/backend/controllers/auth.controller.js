@@ -16,7 +16,7 @@ exports.login = async (req, res) => {
         });
       } else {
         //get child of the logged in user
-        this.getChildrenById(user.id).then((childId) => {
+        this.getFirstChildById(user.id).then((childId) => {
           return bcrypt
             .compare(req.body.password, user.password)
             .then((isAuthenticated) => {
@@ -93,7 +93,7 @@ exports.signUp = async (req, res) => {
     });
 };
 
-exports.getChildrenById = async (userId) => {
+exports.getFirstChildById = async (userId) => {
   return knex
     .select()
     .from("children")
