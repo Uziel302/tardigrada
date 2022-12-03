@@ -37,9 +37,8 @@
   text-align: center;
 }
 
-.subtitle {
-  font-size: 20px;
-  line-height: 1;
+#subtitle {
+  margin-bottom: 43px;
 }
 
 #telegram-container {
@@ -54,7 +53,6 @@
   border-radius: 50%;
   width: 128px;
   height: 128px;
-  margin-top: 43px;
 }
 
 .white-circle {
@@ -104,6 +102,7 @@
   font-family: "Zhizn";
   text-align: left;
   font-size: 34px;
+  margin-top: 40px;
 }
 
 input {
@@ -112,6 +111,8 @@ input {
   border: none;
   border-bottom: 0.5px solid #d7ccd3;
   outline: none;
+  margin-top: 10px;
+  height: 30px;
 }
 
 input::placeholder,
@@ -161,7 +162,13 @@ textarea {
   height: 100px;
   margin-top: -10px;
   margin-left: -40px;
+}
 
+#submit-button-container {
+  width: 650px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -70px;
 }
 
 @media screen and (max-width: 1260px) {
