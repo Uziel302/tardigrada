@@ -108,6 +108,17 @@
 
 input {
   width: 414px;
+  background-color: inherit;
+  border: none;
+  border-bottom: 0.5px solid #d7ccd3;
+  outline: none;
+}
+
+input::placeholder, input {
+  color: #d7ccd3;
+  font-weight: 300;
+  font-size: 16px;
+  font-family: 'Ubuntu';
 }
 
 textarea {
