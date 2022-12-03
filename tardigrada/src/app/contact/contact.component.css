@@ -6,7 +6,6 @@
   right: 0;
   left: 0;
   overflow: scroll;
-  height: 250vh;
 }
 
 #top-flower {
@@ -169,6 +168,84 @@ textarea {
   display: flex;
   justify-content: flex-end;
   margin-top: -70px;
+}
+
+#bottom-part {
+  margin-top: 100px;
+}
+
+.bottom-title {
+  font-family: "Zhizn";
+  font-size: 34px;
+}
+
+.bottom-text {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+#first-bottom-text {
+  margin-top: 13px;
+}
+
+#contact-links {
+  width: 100%;
+}
+
+#contact-links, #contact-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#telegram-icon, #envelop {
+  padding: 0 5px;
+}
+
+#telegram-icon {
+  height: 22px;
+}
+
+#envelop {
+  height: 25px;
+  padding-top: 5px;
+}
+
+#telegram-button {
+  height: 40px;
+  width: 40px;
+}
+
+#telegram-wrapper {
+  border-radius: 50%;
+  border: 1px solid white;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#telegram-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 80px 0;
+
+}
+
+#footer-container img {
+  margin: 0 2px;
+  height: 55px;
+  width: 55px;
+}
+
+#footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 35px 0 400px 0;
 }
 
 @media screen and (max-width: 1260px) {
