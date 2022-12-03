@@ -275,4 +275,9 @@
     margin: 90px 30px;
   }
 
+  .five-image {
+    justify-content: flex-end;
+    margin-bottom: -150px;
+  }
+
 }
