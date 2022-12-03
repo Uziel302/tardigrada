@@ -4,7 +4,7 @@
 </div>
 <div *ngIf="loggedIn">
   <div id="profile">
-    <img id="profile-image" [src]="(loginService.currentChildId ? loginService.currentChild.profile : loginService.teacher.profile) ?? '/assets/images/profile-default.jpg'" [routerLink]="loginService.currentChildId ? '/student' : '/teacher'">
+    <img id="profile-image" [src]="(loginService.isStudent ? loginService.currentChild.profile : loginService.teacher.profile) ?? '/assets/images/profile-default.jpg'" [routerLink]="loginService.isStudent ? '/student' : '/teacher'">
   </div>
 </div>
 <div id="menuScreen" [class.hidden]="hidden">

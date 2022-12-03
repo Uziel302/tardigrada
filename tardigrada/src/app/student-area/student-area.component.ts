@@ -29,6 +29,7 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
     if(!this.loginService.currentChildId){
       this.router.navigate(['/new-student']);
     }
+    this.loginService.isStudent = true;
     this.subscriptions.push(
       this.loginService.getChildData().subscribe((childData: IChild) => {
         this.loginService.currentChild = childData;

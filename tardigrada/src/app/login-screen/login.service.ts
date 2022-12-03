@@ -14,20 +14,16 @@ import { ITeacher } from '../models/teacher';
 export class LoginService {
   public currentError: string = '';
   public currentChildId: number = 0;
+  public isStudent = true;
   public children: IChild[] = [];
   public currentChild: IChild = {
     id: 0,
     firstName: '',
     lastName: '',
     dateOfBirth: '',
-    className: '',
     subjects: '',
     timezone: '',
-    zoom: '',
-    device: '',
     country: '',
-    language: '',
-    limits: '',
     telegram: '',
     email: '',
     note: '',

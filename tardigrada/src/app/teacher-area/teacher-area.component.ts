@@ -41,7 +41,7 @@ export class TeacherAreaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loginService.currentChildId = 0;
+    this.loginService.isStudent = false;
     this.loginService.loadTeacher();
     this.getNotes();
     this.getAnnoying();

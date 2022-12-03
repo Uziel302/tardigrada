@@ -100,7 +100,7 @@
             </div>
             <div class="white-line"></div>
           </div>
-          <div *ngIf="this.loginService.currentChildId" class="review-form">
+          <div *ngIf="this.loginService.isStudent" class="review-form">
             <textarea class="user-textarea" [(ngModel)]="newReview"></textarea>
             <div *ngIf="newReview" class="new-stars">
               <span
@@ -115,7 +115,7 @@
               <div class="white-circle">отправить</div>
             </div>
           </div>
-          <div *ngIf="!this.loginService.currentChildId" class="not-signed">
+          <div *ngIf="!this.loginService.isStudent" class="not-signed">
             Оценить курс и оставить комментарий могут только зарегистрированные
             пользователи
           </div>
@@ -242,7 +242,7 @@
           </div>
           <div class="white-line"></div>
         </div>
-        <div *ngIf="this.loginService.currentChildId" class="review-form">
+        <div *ngIf="this.loginService.isStudent" class="review-form">
           <textarea class="user-textarea" [(ngModel)]="newReview"></textarea>
           <div *ngIf="newReview" class="new-stars">
             <span
@@ -257,7 +257,7 @@
             <div class="white-circle">отправить</div>
           </div>
         </div>
-        <div *ngIf="!this.loginService.currentChildId" class="not-signed">
+        <div *ngIf="!this.loginService.isStudent" class="not-signed">
           Оценить курс и оставить комментарий могут только зарегистрированные
           пользователи
         </div>

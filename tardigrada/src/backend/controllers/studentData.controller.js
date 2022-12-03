@@ -17,26 +17,11 @@ exports.saveChild = async (req, res) => {
         dateOfBirth: {
           rich_text: [{ text: { content: req.body.dateOfBirth } }],
         },
-        className: {
-          rich_text: [{ text: { content: req.body.className } }],
-        },
         subjects: {
           rich_text: [{ text: { content: req.body.subjects } }],
         },
         timezone: {
           rich_text: [{ text: { content: req.body.timezone } }],
-        },
-        zoom: {
-          rich_text: [{ text: { content: req.body.zoom } }],
-        },
-        device: {
-          rich_text: [{ text: { content: req.body.device } }],
-        },
-        language: {
-          rich_text: [{ text: { content: req.body.language } }],
-        },
-        limits: {
-          rich_text: [{ text: { content: req.body.limits } }],
         },
         telegram: {
           rich_text: [{ text: { content: req.body.telegram } }],
