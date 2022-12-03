@@ -137,7 +137,7 @@ textarea {
   border-radius: 20px;
   outline: none;
   padding: 30px;
-  background-color: rgb(214,206,210);
+  background-color: rgb(214, 206, 210);
   font-size: 16px;
   font-family: "Ubuntu";
   font-weight: 300;
@@ -192,13 +192,15 @@ textarea {
   width: 100%;
 }
 
-#contact-links, #contact-links a {
+#contact-links,
+#contact-links a {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#telegram-icon, #envelop {
+#telegram-icon,
+#envelop {
   padding: 0 5px;
 }
 
@@ -232,7 +234,6 @@ textarea {
   justify-content: center;
   align-items: center;
   margin: 40px 0 80px 0;
-
 }
 
 #footer-container img {
@@ -248,9 +249,9 @@ textarea {
   margin: 35px 0 400px 0;
 }
 
-@media screen and (max-width: 1260px) {
-  #contact-container {
-    top: 160px;
+@media screen and (min-width: 1260px) {
+  .desktop-none {
+    display: none;
   }
 }
 
@@ -258,10 +259,27 @@ textarea {
   .mobile-none {
     display: none;
   }
-}
 
-@media screen and (min-width: 1260px) {
-  .desktop-none {
-    display: none;
+  #top-title {
+    margin-top: 98px;
+    font-size: 28px;
+  }
+
+  #contact-container {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+  }
+
+  #subtitle {
+    margin-top: 9px;
+  }
+
+  .textarea-container,
+  #animal-container,
+  #submit-button-container,
+  textarea,
+  input {
+    width: 100%;
   }
 }
