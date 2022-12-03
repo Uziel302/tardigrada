@@ -16,15 +16,6 @@
   max-height: 1260px;
 }
 
-.contact-title {
-  font-family: "Zhizn";
-  font-size: 50px;
-  line-height: 130%;
-  color: #d7ccd3;
-  width: 100%;
-  text-align: center;
-}
-
 #contact-container {
   width: 100%;
   text-align: center;
@@ -36,37 +27,9 @@
   line-height: 32px;
 }
 
-#faces-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.face-container {
-  width: 470px;
-  line-height: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .subtitle {
   font-size: 20px;
   line-height: 1;
-}
-
-.telegram-button {
-  background-image: url("/assets/images/telegram-button.png");
-  width: 70px;
-  height: 70px;
-}
-
-@media(hover: hover) {
-  .telegram-button:hover {
-    background-image: url("/assets/images/telegram-full.png");
-  }
 }
 
 #telegram-container {
@@ -115,31 +78,11 @@
 }
 
 @media screen and (max-width: 1260px) {
-
-  .contact-title {
-    font-size: 30px;
-  }
-  .separator {
-    display: none;
-  }
-  #faces-container {
-    flex-direction: column;
-  }
-  .mobile-sparator {
-    border: 1px solid;
-    color: white;
-    margin: 73px 45px;
-    width: 100%;
-  }
   #contact-container {
     top: 160px;
   }
 }
 
-body:after {
-  display: none;
-  content: url("/assets/images/channel-hover.png");
-}
 
 @media screen and (max-width: 1260px) {
   .mobile-none {
@@ -153,22 +96,3 @@ body:after {
   }
 }
 
-.space14 {
-  height: 14px;
-}
-
-.space24 {
-  height: 24px;
-}
-
-.space85 {
-  height: 85px;
-}
-
-.space100 {
-  height: 100px;
-}
-
-.space145 {
-  height: 145px;
-}
