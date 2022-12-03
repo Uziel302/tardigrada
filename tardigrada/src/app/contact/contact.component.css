@@ -22,7 +22,7 @@
   text-align: center;
   padding-top: 7px;
   color: #d7ccd3;
-  font-family: "Helvetica";
+  font-family: "Ubuntu";
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
@@ -114,25 +114,61 @@ input {
   outline: none;
 }
 
-input::placeholder, input {
+input::placeholder,
+input {
   color: #d7ccd3;
   font-weight: 300;
   font-size: 16px;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu";
+}
+
+.textarea-container {
+  border: 1px solid white;
+  margin-top: 40px;
+  width: 701px;
+  border-radius: 20px;
+  height: 358px;
 }
 
 textarea {
-  margin-top: 40px;
-  width: 693px;
+  width: 633px;
+  height: 290px;
+  border: 4px solid #380623;
+  border-radius: 20px;
+  outline: none;
+  padding: 30px;
+  background-color: rgb(214,206,210);
+  font-size: 16px;
+  font-family: "Ubuntu";
+  font-weight: 300;
 }
 
+.textarea-center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#animal-container {
+  width: 650px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#animal {
+  transform: scaleY(-1) rotate(20deg);
+  height: 100px;
+  margin-top: -10px;
+  margin-left: -40px;
+
+}
 
 @media screen and (max-width: 1260px) {
   #contact-container {
     top: 160px;
   }
 }
-
 
 @media screen and (max-width: 1260px) {
   .mobile-none {
@@ -145,4 +181,3 @@ textarea {
     display: none;
   }
 }
-
