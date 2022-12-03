@@ -86,6 +86,17 @@
   margin-top: 122px;
 }
 
+#stamp {
+  transform: rotate(20deg);
+  height: 137px;
+  width: 177px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1260px) {
   #contact-container {
     top: 160px;
