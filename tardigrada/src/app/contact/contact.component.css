@@ -6,6 +6,7 @@
   right: 0;
   left: 0;
   overflow: scroll;
+  height: 250vh;
 }
 
 #top-flower {
@@ -53,7 +54,7 @@
   border-radius: 50%;
   width: 128px;
   height: 128px;
-  margin-top: 33px;
+  margin-top: 43px;
 }
 
 .white-circle {
@@ -90,12 +91,30 @@
   transform: rotate(20deg);
   height: 137px;
   width: 177px;
+  margin-left: 80px;
 }
 
 .form-container {
   display: flex;
   justify-content: center;
+  margin-top: 140px;
 }
+
+.form-title {
+  font-family: "Zhizn";
+  text-align: left;
+  font-size: 34px;
+}
+
+input {
+  width: 414px;
+}
+
+textarea {
+  margin-top: 40px;
+  width: 693px;
+}
+
 
 @media screen and (max-width: 1260px) {
   #contact-container {
