@@ -40,11 +40,12 @@
   margin-bottom: 43px;
 }
 
-#telegram-container {
+.telegram-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .circle-container {
@@ -237,15 +238,6 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#telegram-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0 80px 0;
-  position: relative;
 }
 
 #footer-container img {
