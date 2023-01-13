@@ -48,6 +48,10 @@
   position: relative;
 }
 
+.bottom-telegram {
+  margin: 40px 0 80px 0;
+}
+
 .circle-container {
   border: 1px solid white;
   border-radius: 50%;
@@ -95,7 +99,6 @@
 .form-container {
   display: flex;
   justify-content: center;
-  margin-top: 140px;
 }
 
 .form-title {
@@ -257,11 +260,19 @@ textarea {
   .desktop-none {
     display: none;
   }
+
+  .form-container {
+    margin-top: 140px;
+  }
 }
 
 @media screen and (max-width: 1260px) {
   .mobile-none {
     display: none;
+  }
+
+  .form-container {
+    margin-top: 50px;
   }
 
   #top-title {
