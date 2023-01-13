@@ -163,6 +163,17 @@ textarea {
   margin-left: -40px;
 }
 
+#mobile-animal {
+  transform: rotate(70deg);
+  height: 70px;
+  margin-right: -115px;
+}
+
+#mobile-animal-container {
+  position: absolute;
+  top: -40px;
+}
+
 #submit-button-container {
   width: 650px;
   display: flex;
@@ -234,6 +245,7 @@ textarea {
   justify-content: center;
   align-items: center;
   margin: 40px 0 80px 0;
+  position: relative;
 }
 
 #footer-container img {
