@@ -131,7 +131,7 @@ input {
   margin-top: 40px;
   width: 701px;
   border-radius: 20px;
-  height: 358px;
+  line-height: 0;
 }
 
 textarea {
@@ -145,6 +145,9 @@ textarea {
   font-size: 16px;
   font-family: "Ubuntu";
   font-weight: 300;
+  box-sizing: border-box;
+  width: 100%;
+  resize: none;
 }
 
 .textarea-center {
@@ -301,21 +304,17 @@ textarea {
 
   #animal {
     transform: scale(-1) rotate(20deg);
-    margin-left: 40px;
+    margin-left: 0;
   }
 
-  #animal-container,
   input {
     width: 100%;
   }
-
+  
+  #animal-container,
   #submit-button-container,
   .textarea-container {
     width: 80%;
-  }
-
-  textarea {
-    width: 76%;
   }
 
   .bottom-text {
