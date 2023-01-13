@@ -299,6 +299,11 @@ textarea {
     margin-top: 9px;
   }
 
+  #animal {
+    transform: scale(-1) rotate(20deg);
+    margin-left: 40px;
+  }
+
   #animal-container,
   #submit-button-container,
   input {
