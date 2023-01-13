@@ -50,6 +50,7 @@ import { RoundPipe } from './pipes/round';
 import { NewStudentComponent } from './new-student/new-student.component';
 import { CustomDateAdapter } from './new-student/custom-date-adapter';
 import { TeachersComponent } from './teachers/teachers.component';
+import { ManagementComponent } from './management/management.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { TeachersComponent } from './teachers/teachers.component';
     RoundPipe,
     NewStudentComponent,
     TeachersComponent,
+    ManagementComponent,
   ],
   imports: [
     BrowserModule,

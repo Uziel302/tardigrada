@@ -15,11 +15,13 @@ import { DonationComponent } from './donation/donation.component';
 import { LecturePageComponent } from './lecture-page/lecture-page.component';
 import { NewStudentComponent } from './new-student/new-student.component';
 import { TeachersComponent } from './teachers/teachers.component';
+import { ManagementComponent } from './management/management.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'management', component: ManagementComponent },
   { path: 'donate', component: DonateComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'schedule', component: ScheduleComponent },
