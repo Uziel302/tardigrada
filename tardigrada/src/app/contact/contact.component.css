@@ -268,10 +268,10 @@ textarea {
 
 @media screen and (max-width: 1260px) {
   .mobile-none {
-    display: none;
+    display: none!important;
   }
 
-  .form-title {
+  .form-title, .bottom-title {
     font-size: 24px;
   }
 
@@ -316,5 +316,13 @@ textarea {
 
   textarea {
     width: 76%;
+  }
+
+  .bottom-text {
+    font-size: 16px;
+  }
+
+  #footer-container {
+    margin-bottom: 50px;
   }
 }
