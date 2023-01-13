@@ -305,11 +305,11 @@ textarea {
   }
 
   #animal-container,
-  #submit-button-container,
   input {
     width: 100%;
   }
 
+  #submit-button-container,
   .textarea-container {
     width: 80%;
   }
