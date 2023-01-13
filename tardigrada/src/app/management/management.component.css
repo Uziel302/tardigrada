@@ -1,0 +1,14 @@
+#container {
+  background-color: #220315;
+  padding-bottom: 500px;
+  width: 100%;
+  color: white;
+}
+
+#title {
+  padding-top: 125px;
+  font-size: 36px;
+  font-family: "Zhizn";
+  text-align: center;
+  line-height: 120%;
+}
