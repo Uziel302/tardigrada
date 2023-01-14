@@ -112,13 +112,13 @@
 
 @media screen and (mim-width: 1260px) {
   .desktop-none {
-    display: none;
+    display: none!important;
   }
 }
 
 @media screen and (max-width: 1260px) {
   .mobile-none {
-    display: none;
+    display: none!important;
   }
 
   .popup-inner {
