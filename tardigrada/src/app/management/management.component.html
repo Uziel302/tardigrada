@@ -6,7 +6,7 @@
         <div class="image-wrapper">
           <img class="manager-image" [src]="manager.photo" [style.border-color]="manager.background"/>
         </div>
-        <div class="manager-text">
+        <div class="manager-text" [class.center-text]="!manager.isLong">
           <div class="name">{{manager.name}}</div>
           <div class="title">{{manager.title}}</div>
           <div class="about">{{manager.about}}</div>
