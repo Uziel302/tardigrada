@@ -112,7 +112,7 @@
   <div id="courses-part" *ngIf="isCourses">
     <div id="inner-courses">
       <div *ngFor="let lecture of filteredLectures; let i = index">
-        <div class="lecture-square">
+        <div class="lecture-square" [routerLink]="'/course/'+lecture.id">
           <div class="top-banner" [style.background]="lecture.background"></div>
           <div class="logo-background" [style.background]="lecture.background">
             <img [src]="lecture.image" class="course-logo" />
