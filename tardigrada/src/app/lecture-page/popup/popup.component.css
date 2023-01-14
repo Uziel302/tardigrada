@@ -109,3 +109,16 @@
   border: 4px solid rgb(216, 215, 224);
   line-height: 130%;
 }
+
+@media screen and (max-width: 1260px) {
+  .popup-inner {
+    width: 100%;
+    height: 700px;
+    padding: 0;
+  }
+
+  #popup-box {
+    margin: 70px 10px;
+  }
+
+}
