@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: 'new-student', component: NewStudentComponent },
   { path: 'teacher', component: TeacherAreaComponent },
   { path: 'teachers', component: TeachersComponent },
+  { path: '**', component: HomepageComponent }
 ];
 
 @NgModule({
