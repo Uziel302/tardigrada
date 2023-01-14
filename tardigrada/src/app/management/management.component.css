@@ -51,3 +51,12 @@
 .about, .title {
   white-space: pre-line;
 }
+
+.name {
+  font-family: "Zhizn";
+  font-size: 23px;
+}
+
+.about {
+  font-weight: 300;
+}
