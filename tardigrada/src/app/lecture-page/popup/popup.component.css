@@ -110,15 +110,29 @@
   line-height: 130%;
 }
 
+@media screen and (mim-width: 1260px) {
+  .desktop-none {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1260px) {
+  .mobile-none {
+    display: none;
+  }
+
   .popup-inner {
     width: 100%;
     height: 700px;
-    padding: 0;
+    padding: 10px 0;
+    justify-content: flex-start;
   }
 
   #popup-box {
-    margin: 70px 10px;
+    margin: 90px 30px;
   }
 
+  .message {
+    padding: 10px;
+  }
 }
