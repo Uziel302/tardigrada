@@ -2,6 +2,7 @@
   <div id="settings-screen"></div>
   <div id="popup-box" (click)="stopProp($event)">
     <div *ngIf="isPaying" class="popup-inner">
+      <mat-icon class="close-icon" (click)="backgroundClick()">close</mat-icon>
       <div class="title">все получилось!</div>
       <div class="message">
         Теперь курс появится в Вашем личном кабинете.<br>
@@ -13,9 +14,14 @@
         Чтобы учеба была эффективной, рекомендуем посещать<br>
         все занятия и выполнять домашние задания.<br>
         <div class="bolder">До встречи в зуме!</div>
+        <div class="circle-container">
+          <div class="white-circle" routerLink="/student">в кабинет</div>
+        </div>
       </div>
     </div>
     <div *ngIf="!isPaying" class="popup-inner">
+      <mat-icon class="close-icon" (click)="backgroundClick()">close</mat-icon>
+
       Здравствуйте! Нам очень жаль, что вам пришлось покинуть
       страну и вашим детям пришлось прервать учебу.
       Или вы оказались отрезаны от систем образования по какой-то
