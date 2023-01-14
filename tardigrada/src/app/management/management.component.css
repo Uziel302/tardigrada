@@ -46,6 +46,7 @@
 .wide {
   height: 290px;
   width: 670px;
+  display: flex;
 }
 
 .about, .title {
@@ -59,4 +60,19 @@
 
 .about {
   font-weight: 300;
+}
+
+.image-wrapper {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 208px;
+  height: 208px;
+  margin-bottom: 40px;
+}
+
+.manager-image {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 9px solid;
 }

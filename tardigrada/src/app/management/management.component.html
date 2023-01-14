@@ -3,9 +3,14 @@
   <div id="tiles-container">
     <div *ngFor="let row of rows" class="tiles-row">
       <div *ngFor="let manager of row" [class.long]="manager.isLong" [class.wide]="!manager.isLong" [style.background]="manager.background">
-        <div class="name">{{manager.name}}</div>
-        <div class="title">{{manager.title}}</div>
-        <div class="about">{{manager.about}}</div>
+        <div class="image-wrapper">
+          <img class="manager-image" [src]="manager.photo" [style.border-color]="manager.background"/>
+        </div>
+        <div class="manager-text">
+          <div class="name">{{manager.name}}</div>
+          <div class="title">{{manager.title}}</div>
+          <div class="about">{{manager.about}}</div>
+        </div>
       </div>
     </div>
   </div>
