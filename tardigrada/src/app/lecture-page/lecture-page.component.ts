@@ -39,6 +39,8 @@ export class LecturePageComponent implements OnInit {
   //todo: move reviews to separate component
   public reviews: IReview[] = [];
   public newReview: string = '';
+  public showPopup: boolean = false;
+  public isPaying: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -156,5 +158,15 @@ export class LecturePageComponent implements OnInit {
       (data) => {},
       (error) => {}
     );
+  }
+
+  pay(){
+    this.isPaying = true;
+    this.showPopup = true;
+  }
+
+  skipPaying(){
+    this.isPaying = false;
+    this.showPopup = true;
   }
 }

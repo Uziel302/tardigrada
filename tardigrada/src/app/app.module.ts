@@ -52,6 +52,7 @@ import { CustomDateAdapter } from './new-student/custom-date-adapter';
 import { TeachersComponent } from './teachers/teachers.component';
 import { ManagementComponent } from './management/management.component';
 import { CoursesComponent } from './lecture-page/courses/courses.component';
+import { PopupComponent } from './lecture-page/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { CoursesComponent } from './lecture-page/courses/courses.component';
     TeachersComponent,
     ManagementComponent,
     CoursesComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,

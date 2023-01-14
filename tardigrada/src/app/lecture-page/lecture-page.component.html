@@ -31,10 +31,10 @@
         <div class="subtitle">запись на курс</div>
         <div class="circles">
           <div class="circle-container">
-            <div class="white-circle">хочу оплатить</div>
+            <div class="white-circle" (click)="pay()">хочу оплатить</div>
           </div>
           <div class="circle-container">
-            <div class="white-circle">не могу оплачивать</div>
+            <div class="white-circle" (click)="skipPaying()">не могу оплачивать</div>
           </div>
         </div>
         <div class="white-line"></div>
@@ -167,10 +167,10 @@
     <div class="white-line"></div>
     <div class="circles">
       <div class="circle-container left-circle">
-        <div class="white-circle">хочу оплатить</div>
+        <div class="white-circle" (click)="pay()">хочу оплатить</div>
       </div>
       <div class="circle-container">
-        <div class="white-circle">не могу оплачивать</div>
+        <div class="white-circle" (click)="skipPaying()">не могу оплачивать</div>
       </div>
     </div>
   </div>
@@ -268,3 +268,4 @@
   <div class="white-line"></div>
   <div id="padding"></div>
 </div>
+<app-popup [isPaying]="isPaying" *ngIf="showPopup"></app-popup>
