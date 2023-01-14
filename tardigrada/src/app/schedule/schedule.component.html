@@ -111,7 +111,7 @@
 
   <div id="courses-part" *ngIf="isCourses">
     <div id="inner-courses">
-      <div *ngFor="let lecture of scheduleService.lecturesData; let i = index">
+      <div *ngFor="let lecture of filteredLectures; let i = index">
         <div class="lecture-square">
           <div class="top-banner" [style.background]="lecture.background"></div>
           <div class="logo-background" [style.background]="lecture.background">

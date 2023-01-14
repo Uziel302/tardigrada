@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoginService } from '../login-screen/login.service';
+import { ILecture } from '../models/lecture';
 
 import { ScheduleService } from '../schedule/schedule.service';
 
@@ -48,6 +49,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   public selectedCategories: string[] = [];
   public selectedDays: number[] = [];
   public search: string = '';
+  public filteredLectures: ILecture[] = [];
 
   private subscriptions: Subscription[] = [];
 
@@ -65,6 +67,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
         this.scheduleService.processLecturesData(lecturesData);
+        this.filteredLectures = this.scheduleService.lecturesData;
       })
     );
 
@@ -89,6 +92,8 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     } else {
       this.selectedAges.push(age);
     }
+
+    this.filterLectures();
   }
 
   toggleCategory(category: string) {
@@ -100,6 +105,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     } else {
       this.selectedCategories.push(category);
     }
+    this.filterLectures();
   }
 
   toggleDay(day: number) {
@@ -136,5 +142,37 @@ export class ScheduleComponent implements OnInit, OnDestroy {
         this.ageShortList[i] += 5;
       });
     }
+  }
+
+  filterLectures(): void {
+    this.filteredLectures = [];
+    for(let lecture of this.scheduleService.lecturesData){
+      if(this.checkFilters(lecture)){
+        this.filteredLectures.push(lecture);
+      }
+    }
+  }
+
+  checkFilters(lecture: ILecture): boolean {
+    if(this.checkAge(lecture.minAge, lecture.maxAge) && this.checkSubject(lecture)){
+      return true;
+    }
+    return false;
+  }
+
+  checkAge(min: number, max: number): boolean {
+    if(!this.selectedAges.length){
+      return true;
+    }
+    return this.selectedAges
+      ? this.selectedAges.some((x) => x >= min && x <= max)
+      : false;
+  }
+
+  checkSubject(lecture: ILecture): boolean {
+    if(!this.selectedCategories.length){
+      return true;
+    }
+    return this.selectedCategories.includes(lecture.category);
   }
 }
