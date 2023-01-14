@@ -1,5 +1,12 @@
 <div id="container">
-  <div id="content">
-    <div id="title">наша коаманда</div>
+  <div id="title">наша коаманда</div>
+  <div id="tiles-container">
+    <div *ngFor="let row of rows" class="tiles-row">
+      <div *ngFor="let manager of row" [class.long]="manager.isLong" [class.wide]="!manager.isLong" [style.background]="manager.background">
+        <div>{{manager.name}}</div>
+        <div>{{manager.title}}</div>
+        <div class="about">{{manager.about}}</div>
+      </div>
+    </div>
   </div>
 </div>
