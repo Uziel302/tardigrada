@@ -1,3 +1,4 @@
+<app-popup [isPaying]="isPaying" [showPopup]="showPopup" (hidePopup)="showPopup = false"></app-popup>
 <div id="desktop">
   <div id="left-part">
     <div id="inner-left">
@@ -268,4 +269,3 @@
   <div class="white-line"></div>
   <div id="padding"></div>
 </div>
-<app-popup [isPaying]="isPaying" *ngIf="showPopup"></app-popup>

@@ -1,3 +1,6 @@
-<div>
-  Are you sure you don't pay?
+<div *ngIf="showPopup" id="settings-container" (click)="backgroundClick()">
+  <div id="settings-screen"></div>
+  <div id="settings-box" (click)="stopProp($event)">
+    fdskdjk
+  </div>
 </div>
