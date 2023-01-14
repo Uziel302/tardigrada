@@ -1,7 +1,7 @@
 <div *ngIf="showPopup" id="settings-container" (click)="backgroundClick()">
   <div id="settings-screen"></div>
-  <div id="settings-box" (click)="stopProp($event)">
-    <div *ngIf="isPaying">
+  <div id="popup-box" (click)="stopProp($event)">
+    <div *ngIf="isPaying" class="popup-inner">
       <div class="title">все получилось!</div>
 
       Теперь курс появится в Вашем личном кабинете.
@@ -13,7 +13,7 @@
       все занятия и выполнять домашние задания.
       До встречи в зуме!
     </div>
-    <div *ngIf="!isPaying">
+    <div *ngIf="!isPaying" class="popup-inner">
       Здравствуйте! Нам очень жаль, что вам пришлось покинуть
       страну и вашим детям пришлось прервать учебу.
       Или вы оказались отрезаны от систем образования по какой-то
