@@ -1,4 +1,4 @@
-<div class="background">
+<div class="background" [style.background]="isCourses ? '#280d2c' : '#182240'">
   <div id="left-part">
     <div id="inner-left">
       <div id="title-container">
@@ -55,7 +55,7 @@
       </div>
     </div>
   </div>
-  <div id="right-part">
+  <div id="right-part" *ngIf="!isCourses">
     <div id="inner-right">
       <app-zone-selector
         class="narrow-none"
