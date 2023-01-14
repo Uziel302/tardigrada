@@ -16,6 +16,7 @@ import { LecturePageComponent } from './lecture-page/lecture-page.component';
 import { NewStudentComponent } from './new-student/new-student.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { ManagementComponent } from './management/management.component';
+import { CoursesComponent } from './lecture-page/courses/courses.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -27,13 +28,14 @@ const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
   { path: 'login', component: LoginScreenComponent },
   { path: 'student', component: StudentAreaComponent },
+  { path: 'courses', component: CoursesComponent },
   { path: 'course/:id', component: LecturePageComponent },
   { path: 'admin', component: AdminAreaComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'new-student', component: NewStudentComponent },
   { path: 'teacher', component: TeacherAreaComponent },
   { path: 'teachers', component: TeachersComponent },
-  { path: '**', component: HomepageComponent }
+  { path: '**', component: HomepageComponent },
 ];
 
 @NgModule({
