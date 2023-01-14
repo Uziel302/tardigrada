@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoginService } from '../login-screen/login.service';
 
@@ -10,6 +10,7 @@ import { ScheduleService } from '../schedule/schedule.service';
   styleUrls: ['./schedule.component.css'],
 })
 export class ScheduleComponent implements OnInit, OnDestroy {
+  @Input() isCourses = false;
   public selectedDay: number = 0;
   public weekDays = [0, 1, 2, 3, 4, 5, 6];
   public weekMapShort = new Map([
