@@ -31,6 +31,7 @@ export class ScheduleService {
     stationeryFile: '',
     book: '',
     category: '',
+    image: '',
   };
   public selectedLecture: ILecture = this.emptyLecture;
   public currentChildren: IChild[] = [];

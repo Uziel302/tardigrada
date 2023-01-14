@@ -107,4 +107,24 @@
       </div>
     </div>
   </div>
+
+
+  <div id="courses-part" *ngIf="isCourses">
+    <div id="inner-courses">
+      <div *ngFor="let lecture of scheduleService.lecturesData; let i = index">
+        <div class="lecture-square">
+          <div class="top-banner" [style.background]="lecture.background"></div>
+          <div class="logo-background" [style.background]="lecture.background">
+            <img [src]="lecture.image" class="course-logo" />
+          </div>
+          <div class="lecture-title">
+            {{lecture.title}}
+          </div>
+          <div class="teacher-name">
+            {{lecture.teacher}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
