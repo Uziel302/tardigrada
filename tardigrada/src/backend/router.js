@@ -121,7 +121,7 @@ router.post("/upload", (req, res) => {
   }
 });
 
-router.get("/sendEmail", (req, res) => {
+router.post("/sendEmail", (req, res) => {
   const Sib = require("sib-api-v3-sdk");
   require("dotenv").config();
   const client = Sib.ApiClient.instance;
@@ -129,12 +129,11 @@ router.get("/sendEmail", (req, res) => {
   apiKey.apiKey = process.env.API_KEY;
   const tranEmailApi = new Sib.TransactionalEmailsApi();
   const sender = {
-    email: "shiduchduch@gmail.com",
-    name: "ShiduchDuch",
+    email: req.body.from,
   };
   const receivers = [
     {
-      email: "asafmalin@gmail.com",
+      email: "nomadic.tardigrade@gmail.com",
     },
   ];
 
@@ -142,9 +141,9 @@ router.get("/sendEmail", (req, res) => {
     .sendTransacEmail({
       sender,
       to: receivers,
-      subject: "I am email title",
-      textContent: `I am email content`,
-      htmlContent: `<h1>html content</h1>`,
+      subject: req.body.title,
+      textContent: 'message: '+req.body.message,
+      //htmlContent: `<h1>html content</h1>`,
       params: {
         role: "Frontend",
       },

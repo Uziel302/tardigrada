@@ -28,31 +28,36 @@
       </div>
     </a>
 
-    <div class="form-container">
-      <div class="form">
-        <div class="form-title">обратная связь</div>
-        <input placeholder="Имя Фамилия" /><br />
-        <input placeholder="Ваш e-mail" />
-      </div>
 
-      <img id="stamp" class="mobile-none" src="/assets/images/stamp.png" />
-    </div>
-
-    <div class="textarea-center">
-      <div class="textarea-container">
-        <textarea></textarea>
+    <div *ngIf="!success">
+      <div class="form-container">
+        <div class="form">
+          <div class="form-title">обратная связь</div>
+          <input [(ngModel)]="name" placeholder="Имя Фамилия" /><br />
+          <input [(ngModel)]="email" placeholder="Ваш e-mail" />
+        </div>
+  
+        <img id="stamp" class="mobile-none" src="/assets/images/stamp.png" />
       </div>
-      <div id="animal-container">
-        <img id="animal" src="/assets/images/Animal.png" />
-      </div>
-      <div id="submit-button-container">
-        <div class="circle-container">
-          <div class="white-circle">
-            <div class="white-circle-text">отправить</div>
+  
+      <div class="textarea-center">
+        <div class="textarea-container">
+          <textarea [(ngModel)]="message"></textarea>
+        </div>
+        <div id="animal-container">
+          <img id="animal" src="/assets/images/Animal.png" />
+        </div>
+        <div id="submit-button-container">
+          <div class="circle-container">
+            <div class="white-circle" (click)="sendEmail()">
+              <div class="white-circle-text">отправить</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div *ngIf="success" class="success">Спасибо за ваше сообщение, мы ответим вам в ближайшее время!</div>
 
     <div id="bottom-part">
       <div class="bottom-title">также можно написать директору школы</div>
