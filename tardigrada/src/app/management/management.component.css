@@ -30,6 +30,7 @@
   justify-content: space-between;
   height: 720px;
   width: 1120px;
+  padding-bottom: 20px;
 }
 
 .long, .wide {
@@ -47,6 +48,6 @@
   width: 670px;
 }
 
-.about {
+.about, .title {
   white-space: pre-line;
 }
