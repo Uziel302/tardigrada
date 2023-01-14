@@ -7,9 +7,12 @@ input:not(#teacher-checkbox), select {
   border: 1px solid #d8d7e1;
   border-radius: 15px;
   margin-bottom: 27px;
-  margin-left: 40px;
   padding-left: 10px;
   outline: none;
+}
+
+input:not(#teacher-checkbox) {
+  margin-left: 40px;
 }
 
 select {
@@ -301,5 +304,11 @@ input.ng-invalid.ng-touched:not(#teacher-checkbox) {
 
   #space-for-reg {
     margin-top: 0;
+  }
+
+  select {
+    width: 254px;
+    height: 40px;
+    border-radius: 10px;
   }
 }
