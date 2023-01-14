@@ -27,7 +27,7 @@
   flex-direction: column;
   opacity: 1;
   border-radius: 5px;
-  line-height: 150%;
+  line-height: 120%;
   font-size: 20px;
   background: #d8d7e1;
   z-index: 12;
@@ -43,4 +43,21 @@
   justify-content: center;
   align-items: center;
   padding: 80px;
+}
+
+.title {
+  color: #71284b;
+  font-size: 32px;
+  padding-bottom: 20px;
+  font-family: "Zhizn";
+}
+
+.message {
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+}
+
+.bolder {
+  font-weight: 400;
 }
