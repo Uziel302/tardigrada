@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
 import { ScheduleService } from '../schedule/schedule.service';
 import { IReview } from '../models/review';
 import { LoginService } from '../login-screen/login.service';
+import { DonationService } from '../donation/donation.service';
 
 @Component({
   selector: 'app-lecture-page',
@@ -42,12 +43,14 @@ export class LecturePageComponent implements OnInit {
   public showPopup: boolean = false;
   public isPaying: boolean = false;
   public isLoggedWarning: boolean = false;
+  public showPayment: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
     public scheduleService: ScheduleService,
-    public loginService: LoginService
+    public loginService: LoginService,
+    public donationService: DonationService
   ) {}
 
   ngOnInit(): void {
@@ -163,6 +166,19 @@ export class LecturePageComponent implements OnInit {
 
   pay(){
     if(this.checkLogged()){
+      this.showPayment = true;
+      this.donationService.loadPaypalScript().then(() => {
+        this.donationService.renderButtons();
+      });
+
+    }
+  }
+
+  @HostListener("window:click")
+  popupIfPaid() {
+    this.showPayment = false;
+    let element = document.getElementById('paypal-button') as HTMLElement;
+    if(element.innerHTML == '<h3>Thank you for your payment!</h3>'){
       this.isPaying = true;
       this.showPopup = true;
     }

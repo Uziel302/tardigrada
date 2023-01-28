@@ -1,4 +1,9 @@
 <app-popup [isPaying]="isPaying" [showPopup]="showPopup" [lectureId]="id" (hidePopup)="showPopup = false"></app-popup>
+<div id="paypal-backdrop" [style.display]="showPayment ? 'block' : 'none'"></div>
+<div id="paypal-container" [style.display]="showPayment ? 'flex' : 'none'">
+  <div id="paypal-button"></div>
+</div>
+<div id="paypal-sum" style="display: none">5</div>
 <div id="desktop">
   <div id="left-part">
     <div id="inner-left">
