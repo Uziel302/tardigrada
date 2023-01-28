@@ -317,6 +317,11 @@ textarea {
   padding-top: 12px;
 }
 
+.not-logged-warning {
+  color:red;
+  padding-left:5px;
+}
+
 @media screen and (min-width: 1261px) {
   #mobile {
     display: none;

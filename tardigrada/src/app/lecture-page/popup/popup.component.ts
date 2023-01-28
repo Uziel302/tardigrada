@@ -1,4 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { LoginService } from 'src/app/login-screen/login.service';
+import { ScheduleService } from 'src/app/schedule/schedule.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-popup',
@@ -8,9 +11,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class PopupComponent implements OnInit {
   @Input() isPaying: boolean = false;
   @Input() showPopup: boolean = false;
+  @Input() lectureId: number = 0;
   @Output() hidePopup = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(
+    private scheduleService: ScheduleService,
+    private loginService: LoginService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -24,4 +32,12 @@ export class PopupComponent implements OnInit {
     event.stopPropagation();
   }
 
+  joinLecture() {
+    this.scheduleService.joinLecture(
+      this.lectureId,
+      this.loginService.currentChildId
+    );
+    this.scheduleService.childLectures[this.lectureId] = true;
+    this.router.navigate(['/student']);
+  }
 }

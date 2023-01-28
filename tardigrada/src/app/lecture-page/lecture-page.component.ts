@@ -41,6 +41,7 @@ export class LecturePageComponent implements OnInit {
   public newReview: string = '';
   public showPopup: boolean = false;
   public isPaying: boolean = false;
+  public isLoggedWarning: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -161,12 +162,21 @@ export class LecturePageComponent implements OnInit {
   }
 
   pay(){
-    this.isPaying = true;
-    this.showPopup = true;
+    if(this.checkLogged()){
+      this.isPaying = true;
+      this.showPopup = true;
+    }
   }
 
   skipPaying(){
-    this.isPaying = false;
-    this.showPopup = true;
+    if(this.checkLogged()){
+      this.isPaying = false;
+      this.showPopup = true;
+    }
+  }
+
+  checkLogged(){
+    this.isLoggedWarning = !this.loginService.currentChildId;
+    return !this.isLoggedWarning;
   }
 }

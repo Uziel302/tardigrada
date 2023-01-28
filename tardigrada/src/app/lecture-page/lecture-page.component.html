@@ -1,4 +1,4 @@
-<app-popup [isPaying]="isPaying" [showPopup]="showPopup" (hidePopup)="showPopup = false"></app-popup>
+<app-popup [isPaying]="isPaying" [showPopup]="showPopup" [lectureId]="id" (hidePopup)="showPopup = false"></app-popup>
 <div id="desktop">
   <div id="left-part">
     <div id="inner-left">
@@ -37,6 +37,7 @@
           <div class="circle-container">
             <div class="white-circle" (click)="skipPaying()">не могу оплачивать</div>
           </div>
+          <div *ngIf="isLoggedWarning" class="not-logged-warning">Must login first</div>
         </div>
         <div class="white-line"></div>
         <img id="animal" src="/assets/images/Animal.png" />
@@ -173,6 +174,7 @@
       <div class="circle-container">
         <div class="white-circle" (click)="skipPaying()">не могу оплачивать</div>
       </div>
+      <div *ngIf="isLoggedWarning" class="not-logged-warning">Must login first</div>
     </div>
   </div>
   <div class="mobile-inner purple-second">
