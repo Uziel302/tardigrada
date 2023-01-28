@@ -119,20 +119,4 @@ export class ScheduleDayComponent implements OnInit {
     }
     return false;
   }
-
-  toggleAttendance(lectureId: number) {
-    if (this.scheduleService.childLectures[lectureId]) {
-      this.scheduleService.leaveLecture(
-        lectureId,
-        this.loginService.currentChildId
-      );
-      this.scheduleService.childLectures[lectureId] = false;
-    } else {
-      this.scheduleService.joinLecture(
-        lectureId,
-        this.loginService.currentChildId
-      );
-      this.scheduleService.childLectures[lectureId] = true;
-    }
-  }
 }

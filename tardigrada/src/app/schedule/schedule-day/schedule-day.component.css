@@ -64,21 +64,6 @@
   margin-top: -3px;
 }
 
-.attendance {
-  cursor: pointer;
-  font-size: 24px;
-  line-height: 75%;
-  width: 20px;
-  height: 20px;
-  background-color: rgb(75, 96, 133);
-  color: rgb(204, 206, 220);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  border-radius: 50%;
-  margin-right: 6px;
-}
-
 @media screen and (min-width: 1261px) {
   .wide-none {
     display: none;
