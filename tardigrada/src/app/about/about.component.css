@@ -178,6 +178,12 @@
   color: black;
 }
 
+@media(hover: hover) {
+  .button-under-schedule:hover {
+    background: #d8d7e1;
+  }
+}
+
 #button-text {
   margin-top: 10px;
 }
