@@ -254,9 +254,17 @@ input {
     width: 100%;
   }
 
-  #animal,
-  #search-container {
+  #animal {
     display: none;
+  }
+
+  #search-container {
+    margin-top: 27px;
+    padding-bottom: 40px;
+  }
+
+  #search {
+    width: 100%;
   }
 
   #title-container {
@@ -268,7 +276,7 @@ input {
   }
 
   #ages-title {
-    color: rgb(75, 96, 133);
+    color: white;
     font-size: 18px;
   }
 
@@ -332,5 +340,21 @@ input {
     padding-bottom: 6px;
     justify-content: space-between;
     max-width: 385px;
+  }
+
+  #inner-courses {
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #courses-part {
+    width: 100%;
+  }
+
+  .lecture-square {
+    margin-right: 0;
+    width: 300px;
+    height: 300px;
   }
 }

@@ -13,6 +13,7 @@
         </div>
       </div>
       <app-zone-selector
+        *ngIf="!isCourses"
         class="wide-none"
         (changeTz)="scheduleService.saveUserTz($event)"
       ></app-zone-selector>
