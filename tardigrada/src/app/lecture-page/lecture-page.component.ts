@@ -176,11 +176,16 @@ export class LecturePageComponent implements OnInit {
 
   @HostListener("window:click")
   popupIfPaid() {
-    this.showPayment = false;
     let element = document.getElementById('paypal-button') as HTMLElement;
     if(element.innerHTML == '<h3>Thank you for your payment!</h3>'){
+      this.showPayment = false;
       this.isPaying = true;
       this.showPopup = true;
+      this.scheduleService.joinLecture(
+        this.id,
+        this.loginService.currentChildId
+      );
+      this.scheduleService.childLectures[this.id] = true;
     }
   }
 
