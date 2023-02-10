@@ -201,6 +201,7 @@ input {
 .course-logo {
   height: 82px;
   width: 82px;
+  border-radius: 50%;
 }
 
 .logo-background {

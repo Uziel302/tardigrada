@@ -51,6 +51,7 @@ textarea {
 }
 
 .course-logo {
+  border-radius: 50%;
   height: 142px;
   width: 142px;
 }
