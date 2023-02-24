@@ -11,6 +11,10 @@
   flex-direction: column;
 }
 
+#explanation {
+  padding-bottom: 40px;
+}
+
 input,
 textarea {
   width: calc(100% - 26px);
