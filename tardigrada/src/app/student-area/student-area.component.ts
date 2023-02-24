@@ -72,15 +72,14 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
   }
 
   onLectureChange(event: number) {
+    this.showHomework = false;
     this.scheduleService.openHwResponse = [];
     this.scheduleService.getHomeworks(event, this.loginService.currentChildId);
   }
 
   showHomeworks() {
     this.scheduleService.selectedLecture = this.scheduleService.emptyLecture;
-    this.showHomework = !this.showHomework;
-    if (this.showHomework) {
-      this.scheduleService.getHomeworks(0, this.loginService.currentChildId);
-    }
+    this.showHomework = true;
+    this.scheduleService.getHomeworks(0, this.loginService.currentChildId);
   }
 }
