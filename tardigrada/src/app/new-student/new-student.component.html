@@ -26,25 +26,13 @@
           <div class="input-title">Дата рождения</div>
           <div class="red-asterisk">*</div>
         </div>
-        <div class="triangle"></div>
         <input
-          class="date"
-          matInput
-          [matDatepicker]="picker"
           [(ngModel)]="childData.dateOfBirth"
-          id="date-picker"
           name="3"
+          placeholder="dd.mm.yyyy"
           required
-          name="date"
-          #dateOfBirth="ngModel"
-          (click)="picker.open()"
+          #lastName="ngModel"
         />
-        <mat-datepicker
-          #picker
-          startView="multi-year"
-          [startAt]="startDate"
-          touchUi="true"
-        ></mat-datepicker>
         <div class="required-field">
           <div class="input-title">Ваш часовой пояс</div>
           <div class="red-asterisk">*</div>
