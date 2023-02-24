@@ -13,7 +13,6 @@
             <div>EMAIL</div>
             <div>Телеграм</div>
             <div>Пароль</div>
-            <div *ngIf="teacherId && !login">Школьный пароль</div>
           </div>
           <form id="inputs-column" #myForm="ngForm">
             <input
@@ -64,16 +63,6 @@
               minlength="3"
               #passwordRef="ngModel"
               name="5"
-            />
-            <input
-              *ngIf="teacherId && !login"
-              [(ngModel)]="schoolPassword"
-              type="password"
-              placeholder="Школьный пароль"
-              required
-              minlength="3"
-              #schoolpasswordRef="ngModel"
-              name="6"
             />
             <select
               *ngIf="!login && !isStudent"

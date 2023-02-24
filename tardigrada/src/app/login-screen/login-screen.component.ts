@@ -16,7 +16,6 @@ export class LoginScreenComponent implements OnInit {
   public email: string = '';
   public telegram: string = '';
   public password: string = '';
-  public schoolPassword: string = '';
   public teacherId: number = 0;
 
   constructor(
@@ -38,8 +37,6 @@ export class LoginScreenComponent implements OnInit {
       Object.keys(formObj.form.controls).forEach((key) => {
         formObj.controls[key].markAsTouched();
       });
-    } else if(this.teacherId && this.schoolPassword !== 'Tihohodka1') {
-      return;
     } else {
       this.loginService.createUser(
         this.firstName,
