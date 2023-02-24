@@ -96,8 +96,8 @@ input:not(#teacher-checkbox):-webkit-autofill {
 }
 
 .names-column div {
-  margin-bottom: 55px;
-  margin-top: 15px;
+  margin-bottom: 51px;
+  margin-top: 30px;
 }
 
 #inputs-column {
