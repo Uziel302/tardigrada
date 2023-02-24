@@ -19,6 +19,7 @@ input:not(#teacher-checkbox) {
 select {
   width: 292px;
   height: 50px;
+  margin-left: 40px;
 }
 
 input:not(#teacher-checkbox):-webkit-autofill {
