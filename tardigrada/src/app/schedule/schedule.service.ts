@@ -227,7 +227,7 @@ export class ScheduleService {
   saveUserTz(timezone: string) {
     this.http
       .post(environment.apiEndPoint + 'saveUserTz', {
-        childId: this.loginService.currentChildId,
+        childId: this.loginService.connectedChildId,
         userId: this.loginService.teacher.userId,
         timezone,
       })

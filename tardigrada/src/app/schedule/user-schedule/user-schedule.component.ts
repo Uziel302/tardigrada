@@ -47,10 +47,10 @@ export class UserScheduleComponent implements OnInit {
 
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
-    if (this.loginService.currentChildId) {
+    if (this.loginService.connectedChildId) {
       this.subscriptions.push(
         this.scheduleService
-          .getChildLectures(this.loginService.currentChildId)
+          .getChildLectures(this.loginService.connectedChildId)
           .subscribe((childLectures: any) => {
             this.scheduleService.processLecturesData(childLectures);
           })

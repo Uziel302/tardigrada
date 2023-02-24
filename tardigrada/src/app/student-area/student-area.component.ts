@@ -26,7 +26,7 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    if(!this.loginService.currentChildId){
+    if(!this.loginService.connectedChildId){
       this.router.navigate(['/new-student']);
     }
     this.loginService.isStudent = true;
@@ -50,7 +50,7 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
       );
     }
 
-    this.scheduleService.getPersonalSlots(this.loginService.currentChildId, 0);
+    this.scheduleService.getPersonalSlots(this.loginService.connectedChildId, 0);
   }
 
   ngOnDestroy(): void {
@@ -61,7 +61,7 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
 
   switchChild(child: IChild) {
     this.loginService.currentChild = child;
-    this.loginService.currentChildId = child.id;
+    this.loginService.connectedChildId = child.id;
     localStorage.setItem('childId', '' + child.id);
     this.showSettings = false;
     this.scheduleService.savedHomeworkText = '';
@@ -74,12 +74,12 @@ export class StudentAreaComponent implements OnInit, OnDestroy {
   onLectureChange(event: number) {
     this.showHomework = false;
     this.scheduleService.openHwResponse = [];
-    this.scheduleService.getHomeworks(event, this.loginService.currentChildId);
+    this.scheduleService.getHomeworks(event, this.loginService.connectedChildId);
   }
 
   showHomeworks() {
     this.scheduleService.selectedLecture = this.scheduleService.emptyLecture;
     this.showHomework = true;
-    this.scheduleService.getHomeworks(0, this.loginService.currentChildId);
+    this.scheduleService.getHomeworks(0, this.loginService.connectedChildId);
   }
 }

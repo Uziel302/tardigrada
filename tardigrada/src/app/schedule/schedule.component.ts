@@ -73,7 +73,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
     this.subscriptions.push(
       this.scheduleService
-        .getChildLectures(this.loginService.currentChildId)
+        .getChildLectures(this.loginService.connectedChildId)
         .subscribe((childLectures: any) => {
           this.scheduleService.processLecturesData(childLectures);
         })

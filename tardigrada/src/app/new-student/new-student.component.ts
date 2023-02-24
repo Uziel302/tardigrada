@@ -56,7 +56,7 @@ export class NewStudentComponent implements OnInit {
         (data) => {
           this.saveError = '';
           this.loginService.currentChild = this.childData;
-          this.loginService.currentChildId = data.createId;
+          this.loginService.connectedChildId = data.createId;
           this.router.navigate(['/student']);
         },
         (error) => {

@@ -32,7 +32,7 @@ export class UploadPhotoComponent {
       this.fileName = file.name;
       const formData = new FormData();
       formData.append('upfile', file);
-      formData.append('childId', '' + this.loginService.currentChildId);
+      formData.append('childId', '' + this.loginService.connectedChildId);
       formData.append(
         'lectureId',
         '' + this.scheduleService.selectedLecture.id

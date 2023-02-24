@@ -41,6 +41,7 @@ export class TeacherAreaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loginService.connectedChildId = 0;
     this.loginService.isStudent = false;
     this.loginService.loadTeacher();
     this.getNotes();
@@ -65,11 +66,11 @@ export class TeacherAreaComponent implements OnInit {
 
   selectChild(index: number) {
     this.chosenChild = index;
-    this.loginService.currentChildId =
+    this.loginService.selectedChildId =
       this.scheduleService.currentChildren[index].id;
     this.scheduleService.getHomeworks(
       this.scheduleService.selectedLecture.id,
-      this.loginService.currentChildId
+      this.loginService.selectedChildId
     );
     let element = document.getElementById('child-anchor') as HTMLElement;
     element.scrollIntoView({ behavior: 'smooth' });

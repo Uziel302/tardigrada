@@ -47,7 +47,7 @@ export class UserScheduleLectureComponent implements OnInit {
 
     this.http
       .post(environment.apiEndPoint + 'savePersonalSlot', {
-        childId: this.loginService.currentChildId,
+        childId: this.loginService.connectedChildId,
         userId: this.loginService.teacher.userId,
         day: this.dayNumber,
         hour: this.rowNumber,

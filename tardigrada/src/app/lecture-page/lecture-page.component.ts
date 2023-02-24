@@ -87,7 +87,7 @@ export class LecturePageComponent implements OnInit {
               likers: likers,
             });
             this.heartClicked[this.reviews.length - 1] = likers.includes(
-              this.loginService.currentChildId
+              this.loginService.connectedChildId
             );
           }
         },
@@ -111,7 +111,7 @@ export class LecturePageComponent implements OnInit {
       return;
     }
     const reviewData: any = {
-      childId: this.loginService.currentChildId,
+      childId: this.loginService.connectedChildId,
       lectureId: this.id,
       content: this.newReview,
       stars: this.newStars,
@@ -140,18 +140,18 @@ export class LecturePageComponent implements OnInit {
   }
 
   changeHeart(index: number) {
-    if (!this.loginService.currentChildId) {
+    if (!this.loginService.connectedChildId) {
       return;
     }
     this.heartClicked[index] = !this.heartClicked[index];
-    if (this.reviews[index].likers.includes(this.loginService.currentChildId)) {
+    if (this.reviews[index].likers.includes(this.loginService.connectedChildId)) {
       this.reviews[index].likers.splice(
-        this.reviews[index].likers.indexOf(this.loginService.currentChildId),
+        this.reviews[index].likers.indexOf(this.loginService.connectedChildId),
         1
       );
       this.reviews[index].count--;
     } else {
-      this.reviews[index].likers.push(this.loginService.currentChildId);
+      this.reviews[index].likers.push(this.loginService.connectedChildId);
       this.reviews[index].count++;
     }
     let likeData = {
@@ -183,7 +183,7 @@ export class LecturePageComponent implements OnInit {
       this.showPopup = true;
       this.scheduleService.joinLecture(
         this.id,
-        this.loginService.currentChildId
+        this.loginService.connectedChildId
       );
       this.scheduleService.childLectures[this.id] = true;
     }
@@ -197,7 +197,7 @@ export class LecturePageComponent implements OnInit {
   }
 
   checkLogged(){
-    this.isLoggedWarning = !this.loginService.currentChildId;
+    this.isLoggedWarning = !this.loginService.connectedChildId;
     return !this.isLoggedWarning;
   }
 }

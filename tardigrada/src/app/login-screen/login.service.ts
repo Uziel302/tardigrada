@@ -13,7 +13,8 @@ import { ITeacher } from '../models/teacher';
 @Injectable({ providedIn: 'root' })
 export class LoginService {
   public currentError: string = '';
-  public currentChildId: number = 0;
+  public connectedChildId: number = 0;
+  public selectedChildId: number = 0;
   public isStudent = true;
   public children: IChild[] = [];
   public currentChild: IChild = {
@@ -104,13 +105,13 @@ export class LoginService {
             this.currentError = '';
             let target = '/new-student';
             if (data.childId) {
-              this.currentChildId = data.childId;
+              this.connectedChildId = data.childId;
               target = '/student';
             }
             if (!isStudent) {
               target = '/teacher';
             }
-            this.saveAuthData(token, expirationDate, this.currentChildId);
+            this.saveAuthData(token, expirationDate, this.connectedChildId);
             this.router.navigate([target]);
           }
         },
@@ -134,7 +135,7 @@ export class LoginService {
       authInformation.expirationDate.getTime() - now.getTime();
     if (expiresIn > 0) {
       this.token = authInformation.token;
-      this.currentChildId = authInformation.childId;      
+      this.connectedChildId = authInformation.childId;      
       this.authStatusListener.next(true);
     }
   }
@@ -189,7 +190,7 @@ export class LoginService {
 
   public getChildData() {
     return this.http.get<IChild>(
-      environment.apiEndPoint + 'getChild/?id=' + this.currentChildId
+      environment.apiEndPoint + 'getChild/?id=' + this.connectedChildId
     );
   }
 

@@ -31,7 +31,7 @@ export class HomeworkComponent implements OnInit {
     this.http
       .post(environment.apiEndPoint + 'saveHwResponse', {
         lectureId: this.scheduleService.selectedLecture.id,
-        childId: this.loginService.currentChildId,
+        childId: this.loginService.connectedChildId,
         homeworkId: this.scheduleService.currentHomeworks[i].id,
         chwId: this.scheduleService.currentHomeworks[i].chwId,
         text: this.scheduleService.currentHomeworks[i].chwText,
@@ -49,7 +49,7 @@ export class HomeworkComponent implements OnInit {
     this.http
       .post(environment.apiEndPoint + 'saveHwFeedback', {
         lectureId: this.scheduleService.selectedLecture.id,
-        childId: this.loginService.currentChildId,
+        childId: this.loginService.selectedChildId,
         homeworkId: this.scheduleService.currentHomeworks[i].id,
         chwId: this.scheduleService.currentHomeworks[i].chwId,
         text: this.scheduleService.currentHomeworks[i].fhwText,

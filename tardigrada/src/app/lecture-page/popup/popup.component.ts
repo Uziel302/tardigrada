@@ -35,7 +35,7 @@ export class PopupComponent implements OnInit {
   joinLecture() {
     this.scheduleService.joinLecture(
       this.lectureId,
-      this.loginService.currentChildId
+      this.loginService.connectedChildId
     );
     this.scheduleService.childLectures[this.lectureId] = true;
     this.router.navigate(['/student']);
