@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ITeacher } from '../models/teacher';
 import { TeachersService } from '../teachers/teachers.service';
 import { LoginService } from './login.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-screen',
@@ -20,10 +22,14 @@ export class LoginScreenComponent implements OnInit {
 
   constructor(
     public loginService: LoginService,
-    public teachersService: TeachersService
+    public teachersService: TeachersService,
+    private route: ActivatedRoute,
+    private router: Router,
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.login = this.route?.snapshot?.routeConfig?.path == 'login';
+  }
 
   submit() {
     this.loginService.login(this.email, this.password, this.isStudent);
@@ -31,8 +37,8 @@ export class LoginScreenComponent implements OnInit {
 
   registrationClick(formObj: any) {
     if (this.login) {
-      this.login = !this.login;
       this.teachersService.getTeachers();
+      this.router.navigate(['/registration']);
     } else if (!formObj.valid) {
       Object.keys(formObj.form.controls).forEach((key) => {
         formObj.controls[key].markAsTouched();

@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'donation', component: DonationComponent },
   { path: 'schedule', component: ScheduleComponent },
   { path: 'login', component: LoginScreenComponent },
+  { path: 'registration', component: LoginScreenComponent },
   { path: 'student', component: StudentAreaComponent },
   { path: 'courses', component: CoursesComponent },
   { path: 'course/:id', component: LecturePageComponent },
