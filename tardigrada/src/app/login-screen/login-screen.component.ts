@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ITeacher } from '../models/teacher';
 import { TeachersService } from '../teachers/teachers.service';
 import { LoginService } from './login.service';
-import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,12 +22,11 @@ export class LoginScreenComponent implements OnInit {
   constructor(
     public loginService: LoginService,
     public teachersService: TeachersService,
-    private route: ActivatedRoute,
     private router: Router,
   ) {}
 
   ngOnInit(): void {
-    this.login = this.route?.snapshot?.routeConfig?.path == 'login';
+    this.login = this.router.url == 'login';
   }
 
   submit() {
