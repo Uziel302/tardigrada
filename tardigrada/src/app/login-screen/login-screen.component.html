@@ -79,7 +79,7 @@
               *ngIf="!login && !isStudent"
               (change)="onSelectTeacher($event)"
             >
-              <option>выбирать</option>
+              <option>выбрать</option>
               <option
                 *ngFor="let teacher of teachersService.teachers"
                 [value]="teacher.userId"
