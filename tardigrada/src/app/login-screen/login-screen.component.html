@@ -15,6 +15,19 @@
             <div>Пароль</div>
           </div>
           <form id="inputs-column" #myForm="ngForm">
+            <select
+              style="font-family: Zhizn;"
+              *ngIf="!login && !isStudent"
+              (change)="onSelectTeacher($event)"
+            >
+              <option>выбрать</option>
+              <option
+                *ngFor="let teacher of teachersService.teachers"
+                [value]="teacher.userId"
+              >
+                {{ teacher.name }}
+              </option>
+            </select>
             <input
               *ngIf="!login && (isStudent || teacherId)"
               [(ngModel)]="firstName"
@@ -64,18 +77,6 @@
               #passwordRef="ngModel"
               name="5"
             />
-            <select
-              *ngIf="!login && !isStudent"
-              (change)="onSelectTeacher($event)"
-            >
-              <option>выбрать</option>
-              <option
-                *ngFor="let teacher of teachersService.teachers"
-                [value]="teacher.userId"
-              >
-                {{ teacher.name }}
-              </option>
-            </select>
             <div class="error-message" *ngIf="login">
               {{
                 loginService.currentError

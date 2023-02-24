@@ -6,7 +6,8 @@ input:not(#teacher-checkbox), select {
   width: 278px;
   border: 1px solid #d8d7e1;
   border-radius: 15px;
-  margin-bottom: 27px;
+  margin-top: 12px;
+  margin-bottom: 10px;
   padding-left: 10px;
   outline: none;
 }
