@@ -242,6 +242,10 @@ input.ng-invalid.ng-touched:not(#teacher-checkbox) {
     border-radius: 10px;
   }
 
+  select {
+    margin-left: 0;
+  }
+
   #wrapper {
     margin-top: 0;
   }
