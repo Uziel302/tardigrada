@@ -59,9 +59,5 @@ export class UserScheduleLectureComponent implements OnInit {
         (error) => {}
       );
   }
-
-  openPopup(){
-    this.scheduleService.personalSlots[this.dayNumber][this.rowNumber] = prompt('type the name of the activity for this hour') ?? '';
-    this.savePersonalSlot();
-  }
+  
 }
