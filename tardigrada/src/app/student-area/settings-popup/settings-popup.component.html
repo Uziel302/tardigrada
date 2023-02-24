@@ -1,14 +1,14 @@
 <div *ngIf="showSettings" id="settings-container" (click)="backgroundClick()">
   <div id="settings-screen"></div>
   <div id="settings-box" (click)="stopProp($event)">
-    <div class="upload-container">
+    <div class="settings-button upload-container">
       <app-upload-photo
         [uploadColumn]="'cover'"
         [uploadTable]="isStudent ? 'children' : 'teachers'"
       ></app-upload-photo>
       <div>Сменить фото обложку</div>
     </div>
-    <div class="upload-container">
+    <div class="settings-button upload-container">
       <app-upload-photo
         [uploadColumn]="'profile'"
         [uploadTable]="isStudent ? 'children' : 'teachers'"
@@ -29,7 +29,7 @@
         + Добавить ученика
       </div>
     </div>
-    <div [routerLink]="isStudent ? '/teacher' : '/student'">Switch to {{isStudent ? 'teacher' : 'student'}}</div>
+    <div class="settings-button" [routerLink]="isStudent ? '/teacher' : '/student'">Switch to {{isStudent ? 'teacher' : 'student'}}</div>
     <div class="settings-button" (click)="loginService.logout()">Выйти</div>
   </div>
 </div>
