@@ -184,10 +184,11 @@ input:not(#teacher-checkbox):-webkit-autofill {
 }
 
 .error-message {
-  font-size: 12px;
+  font-size: 26px;
   font-family: "Ubuntu";
   font-weight: 300;
   color: #d8d7e1;
+  padding: 10px;
 }
 
 input.ng-invalid.ng-touched:not(#teacher-checkbox) {
