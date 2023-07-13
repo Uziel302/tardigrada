@@ -188,7 +188,7 @@ input:not(#teacher-checkbox):-webkit-autofill {
   font-family: "Ubuntu";
   font-weight: 300;
   color: #d8d7e1;
-  padding: 10px;
+  padding: 30px;
 }
 
 input.ng-invalid.ng-touched:not(#teacher-checkbox) {
