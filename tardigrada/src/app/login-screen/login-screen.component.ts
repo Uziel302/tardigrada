@@ -29,6 +29,7 @@ export class LoginScreenComponent implements OnInit {
 
   ngOnInit(): void {
     this.login = this.route?.snapshot?.routeConfig?.path == 'login';
+    this.teachersService.getTeachers();
   }
 
   submit() {
@@ -37,7 +38,6 @@ export class LoginScreenComponent implements OnInit {
 
   registrationClick(formObj: any) {
     if (this.login) {
-      this.teachersService.getTeachers();
       this.router.navigate(['/registration']);
     } else if (!formObj.valid) {
       Object.keys(formObj.form.controls).forEach((key) => {
