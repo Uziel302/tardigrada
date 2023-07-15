@@ -80,6 +80,7 @@ export class LoginService {
       },
       (error) => {
         this.currentError = error.error.message;
+        alert(this.currentError);
       }
     );
   }
