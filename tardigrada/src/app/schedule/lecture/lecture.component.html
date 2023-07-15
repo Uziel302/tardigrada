@@ -5,7 +5,7 @@
     [style.background]="data.background"
   >
     <div class="lecture-top">
-      <div id="hour">{{ scheduleService.getTimeFormatted(data, false) }}</div>
+      <div id="hour">{{ scheduleService.getTimeFormatted(data, false, false) }}</div>
       <img src="/assets/images/telegram-icon.png" />
     </div>
     <div id="title">{{ data.title }}</div>

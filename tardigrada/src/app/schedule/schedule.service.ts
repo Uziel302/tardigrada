@@ -23,6 +23,9 @@ export class ScheduleService {
     day: 0,
     hour: 0,
     minutes: 0,
+    day2: 0,
+    hour2: 0,
+    minutes2: 0,
     minAge: 0,
     maxAge: 0,
     background: '',
@@ -161,9 +164,16 @@ export class ScheduleService {
     }
   }
 
-  public getTimeFormatted(lecture: ILecture | ICourse, end: boolean) {
-    let hour = lecture.hour + this.currentTz.offset + (end ? 1 : 0);
-    let minutes = lecture.minutes;
+  public getTimeFormatted(lecture: ILecture | ICourse, end: boolean, isSecond: boolean) {
+    let hour = 0;
+    let minutes = 0;
+    if(isSecond){
+      hour = lecture.hour2 + this.currentTz.offset + (end ? 1 : 0);
+      minutes = lecture.minutes2;
+    } else {
+      hour = lecture.hour + this.currentTz.offset + (end ? 1 : 0);
+      minutes = lecture.minutes;
+    }
     let formatted = hour < 10 ? '0' + hour : '' + hour;
     formatted += minutes < 10 ? ':0' + minutes : ':' + minutes;
     return formatted;

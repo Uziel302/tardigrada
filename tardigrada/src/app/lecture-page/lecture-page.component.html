@@ -161,9 +161,12 @@
   <div id="right-part">
     <div id="inner-right">
       <div class="time-title">
-        уроки проходят<br />по пятницам<br />С
-        {{ scheduleService.getTimeFormatted(course, false) }} до
-        {{ scheduleService.getTimeFormatted(course, true) }}
+        уроки проходят<br />по {{ scheduleService.week[course.day] }}<br />С
+        {{ scheduleService.getTimeFormatted(course, false, false) }} до
+        {{ scheduleService.getTimeFormatted(course, true, false) }}
+        <br />&& по {{ scheduleService.week[course.day2] }} С
+        {{ scheduleService.getTimeFormatted(course, false, true) }} до
+        {{ scheduleService.getTimeFormatted(course, true, true) }}
       </div>
       <div class="oval">{{ course.subtitle }}</div>
       <div class="oval">{{ course.level }}</div>
@@ -218,9 +221,12 @@
   </div>
   <div class="mobile-inner purple-second">
     <div class="time-title">
-      уроки проходят<br />по пятницам<br />С
-      {{ scheduleService.getTimeFormatted(course, false) }} до
-      {{ scheduleService.getTimeFormatted(course, true) }}
+      уроки проходят<br />по {{ scheduleService.week[course.day] }}<br />С
+      {{ scheduleService.getTimeFormatted(course, false, false) }} до
+      {{ scheduleService.getTimeFormatted(course, true, false) }}
+      <br />&& по {{ scheduleService.week[course.day2] }} С
+      {{ scheduleService.getTimeFormatted(course, false, true) }} до
+      {{ scheduleService.getTimeFormatted(course, true, true) }}
     </div>
     <div class="oval">{{ course.subtitle }}</div>
     <div class="oval">{{ course.level }}</div>
@@ -246,7 +252,9 @@
     <div class="bullets">
       <div>{{ course.bullets }}</div>
     </div>
-    <div class="subtitle additional-subtitle subtitle-teacher">преподаватель</div>
+    <div class="subtitle additional-subtitle subtitle-teacher">
+      преподаватель
+    </div>
     <div class="white-line"></div>
     <div class="teacher-container">
       <div class="teacher-image-container">

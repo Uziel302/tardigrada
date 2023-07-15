@@ -7,6 +7,9 @@ export interface ILecture {
   day: number;
   hour: number;
   minutes: number;
+  day2: number;
+  hour2: number;
+  minutes2: number;
   minAge: number;
   maxAge: number;
   background: string;
