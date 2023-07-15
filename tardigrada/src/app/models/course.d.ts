@@ -12,6 +12,7 @@ export interface ICourse {
   image: string;
   about: string;
   description: string;
+  longDescription: string;
   bullets: string;
   background: string;
 }

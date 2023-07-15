@@ -1,5 +1,13 @@
-<app-popup [isPaying]="isPaying" [showPopup]="showPopup" [lectureId]="id" (hidePopup)="showPopup = false"></app-popup>
-<div id="paypal-backdrop" [style.display]="showPayment ? 'block' : 'none'"></div>
+<app-popup
+  [isPaying]="isPaying"
+  [showPopup]="showPopup"
+  [lectureId]="id"
+  (hidePopup)="showPopup = false"
+></app-popup>
+<div
+  id="paypal-backdrop"
+  [style.display]="showPayment ? 'block' : 'none'"
+></div>
 <div id="paypal-container" [style.display]="showPayment ? 'flex' : 'none'">
   <div id="paypal-button"></div>
 </div>
@@ -40,9 +48,13 @@
             <div class="white-circle" (click)="pay()">хочу оплатить</div>
           </div>
           <div class="circle-container">
-            <div class="white-circle" (click)="skipPaying()">не могу оплачивать</div>
+            <div class="white-circle" (click)="skipPaying()">
+              не могу оплачивать
+            </div>
           </div>
-          <div *ngIf="isLoggedWarning" class="not-logged-warning">Must login first</div>
+          <div *ngIf="isLoggedWarning" class="not-logged-warning">
+            Must login first
+          </div>
         </div>
         <div class="white-line"></div>
         <img id="animal" src="/assets/images/Animal.png" />
@@ -50,6 +62,18 @@
 
       <div class="passage">
         {{ course.description }}
+      </div>
+      <div *ngIf="course.longDescription">
+        <div class="continue-button-line">
+          <div class="circle-container">
+            <div class="white-circle" (click)="showLongDescription = true">
+              Подробнее
+            </div>
+          </div>
+        </div>
+        <div *ngIf="showLongDescription" class="passage description-passage">
+          {{ course.longDescription }}
+        </div>
       </div>
       <div id="profile-line">
         <div class="subtitle">преподаватель</div>
@@ -177,9 +201,13 @@
         <div class="white-circle" (click)="pay()">хочу оплатить</div>
       </div>
       <div class="circle-container">
-        <div class="white-circle" (click)="skipPaying()">не могу оплачивать</div>
+        <div class="white-circle" (click)="skipPaying()">
+          не могу оплачивать
+        </div>
       </div>
-      <div *ngIf="isLoggedWarning" class="not-logged-warning">Must login first</div>
+      <div *ngIf="isLoggedWarning" class="not-logged-warning">
+        Must login first
+      </div>
     </div>
   </div>
   <div class="mobile-inner purple-second">
@@ -194,6 +222,18 @@
   <div class="mobile-inner">
     <div class="passage description-passage">
       {{ course.description }}
+    </div>
+    <div *ngIf="course.longDescription">
+      <div class="continue-button-line">
+        <div class="circle-container">
+          <div class="white-circle" (click)="showLongDescription = true">
+            Подробнее
+          </div>
+        </div>
+      </div>
+      <div *ngIf="showLongDescription" class="passage description-passage">
+        {{ course.longDescription }}
+      </div>
     </div>
     <div class="subtitle subtitle-mobile">краткая программа</div>
     <div class="white-line"></div>

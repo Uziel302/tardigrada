@@ -34,6 +34,7 @@ export class LecturePageComponent implements OnInit {
     image: '',
     about: '',
     description: '',
+    longDescription: '',
     bullets: '',
     background: '',
   };
@@ -44,6 +45,7 @@ export class LecturePageComponent implements OnInit {
   public isPaying: boolean = false;
   public isLoggedWarning: boolean = false;
   public showPayment: boolean = false;
+  public showLongDescription: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
