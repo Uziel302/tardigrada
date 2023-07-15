@@ -174,7 +174,9 @@
 <div id="mobile">
   <div id="purple-block"></div>
   <div class="mobile-inner">
-    <img [src]="course.image" class="course-logo" />
+    <div class="logo-background" [style.background]="course.background">
+      <img [src]="course.image" class="course-logo" />
+    </div>
     <div class="course-title">{{ course.title }}</div>
     <div class="reviews-sum">
       <span

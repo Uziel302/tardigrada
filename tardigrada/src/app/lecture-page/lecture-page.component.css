@@ -394,6 +394,9 @@ textarea {
   .course-logo {
     height: 142px;
     width: 142px;
+  }
+
+  .logo-background {
     margin-top: -102px;
   }
 
