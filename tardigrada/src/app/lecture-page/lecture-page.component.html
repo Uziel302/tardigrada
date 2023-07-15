@@ -63,6 +63,8 @@
       <div class="passage">
         {{ course.description }}
       </div>
+      <div class="subtitle additional-subtitle">краткая программа</div>
+      <div class="white-line"></div>
       <div *ngIf="course.longDescription">
         <div class="continue-button-line">
           <div class="circle-container">
@@ -225,6 +227,8 @@
     <div class="passage description-passage">
       {{ course.description }}
     </div>
+    <div class="subtitle additional-subtitle">краткая программа</div>
+    <div class="white-line"></div>
     <div *ngIf="course.longDescription">
       <div class="continue-button-line">
         <div class="circle-container">
@@ -237,12 +241,10 @@
         {{ course.longDescription }}
       </div>
     </div>
-    <div class="subtitle subtitle-mobile">краткая программа</div>
-    <div class="white-line"></div>
     <div class="bullets">
       <div>{{ course.bullets }}</div>
     </div>
-    <div class="subtitle subtitle-mobile subtitle-teacher">преподаватель</div>
+    <div class="subtitle additional-subtitle subtitle-teacher">преподаватель</div>
     <div class="white-line"></div>
     <div class="teacher-container">
       <div class="teacher-image-container">
