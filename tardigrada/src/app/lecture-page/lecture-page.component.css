@@ -26,9 +26,16 @@ textarea {
 #paypal-button {
   width: 800px;
   background-color: white;
-  padding: 20px;
+  padding: 50px;
   justify-content: center;
   display: flex;
+}
+
+.close-icon {
+  margin-left: -40px;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
 }
 
 

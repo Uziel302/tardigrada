@@ -2,14 +2,16 @@
   [isPaying]="isPaying"
   [showPopup]="showPopup"
   [lectureId]="id"
-  (hidePopup)="showPopup = false"
+  (hidePopup)="showPopup = false; showPayment = false"
 ></app-popup>
 <div
   id="paypal-backdrop"
   [style.display]="showPayment ? 'block' : 'none'"
+  (click)="showPayment = false"
 ></div>
 <div id="paypal-container" [style.display]="showPayment ? 'flex' : 'none'">
   <div id="paypal-button"></div>
+  <mat-icon class="close-icon" (click)="showPayment = false">close</mat-icon>
 </div>
 <div id="paypal-sum" style="display: none">5</div>
 <div id="desktop">
