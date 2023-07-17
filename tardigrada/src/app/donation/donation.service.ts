@@ -15,7 +15,7 @@ export class DonationService {
       scriptElement.src =
         'https://www.paypal.com/sdk/js?client-id=' +
         this.paypalId +
-        '&currency=EUR&locale=en_IL';
+        '&currency=ILS&locale=en_IL';
       scriptElement.onload = resolve;
       document.body.appendChild(scriptElement);
     });
