@@ -98,7 +98,7 @@ export class ScheduleDayComponent implements OnInit {
 
     let regex = new RegExp(this.search, 'i');
     if (
-      this.day === lecture.day &&
+      (this.day === lecture.day || this.day === lecture.day2) &&
       this.filterAge(lecture) &&
       this.filterCategory(lecture) &&
       (!this.search || regex.test(lecture.title) || regex.test(lecture.teacher))

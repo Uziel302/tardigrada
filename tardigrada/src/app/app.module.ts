@@ -53,6 +53,7 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { ManagementComponent } from './management/management.component';
 import { CoursesComponent } from './lecture-page/courses/courses.component';
 import { PopupComponent } from './lecture-page/popup/popup.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { PopupComponent } from './lecture-page/popup/popup.component';
     HttpClientModule,
     MatIconModule,
     MatSelectModule,
+    OrderModule,
   ],
   providers: [
     {

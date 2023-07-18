@@ -2,12 +2,19 @@
   <div class="day-name">{{ dayNames[day] }}</div>
   <div class="day-date">{{ weekDates[day] }}</div>
 </div>
-<div *ngFor="let lecture of scheduleService.lecturesData; let i = index">
+<div *ngFor="let lecture of scheduleService.lecturesData | orderBy : 'hour'; let i = index">
   <div *ngIf="checkFilters(lecture, i)" class="lecture-line">
     <div class="lecture-time narrow-none">
-      {{ scheduleService.getTimeFormatted(lecture, false, false) }}-{{
-        scheduleService.getTimeFormatted(lecture, true, false)
-      }}
+      <div *ngIf="this.day === lecture.day">
+        {{ scheduleService.getTimeFormatted(lecture, false, false) }}-{{
+          scheduleService.getTimeFormatted(lecture, true, false)
+        }}
+      </div>
+      <div *ngIf="this.day === lecture.day2">
+        {{ scheduleService.getTimeFormatted(lecture, false, true) }}-{{
+          scheduleService.getTimeFormatted(lecture, true, true)
+        }}
+      </div>
     </div>
     <div class="lecture-title wide-none">{{ lecture.title }}</div>
     <div class="wrapped-part">
@@ -15,9 +22,16 @@
       <div class="lecture-teacher">{{ lecture.teacher }}</div>
       <div class="mobile-last wide-none">
         <div class="lecture-time">
-          {{ scheduleService.getTimeFormatted(lecture, false, false) }}-{{
-            scheduleService.getTimeFormatted(lecture, true, false)
-          }}
+          <div *ngIf="this.day === lecture.day">
+            {{ scheduleService.getTimeFormatted(lecture, false, false) }}-{{
+              scheduleService.getTimeFormatted(lecture, true, false)
+            }}
+          </div>
+          <div *ngIf="this.day === lecture.day2">
+            {{ scheduleService.getTimeFormatted(lecture, false, true) }}-{{
+              scheduleService.getTimeFormatted(lecture, true, true)
+            }}
+          </div>
         </div>
         <div class="lecture-age">
           / {{ lecture.minAge
