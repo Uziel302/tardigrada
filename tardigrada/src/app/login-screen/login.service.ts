@@ -79,7 +79,6 @@ export class LoginService {
         this.login(email, password, isStudent);
       },
       (error) => {
-        debugger;
         alert(this.currentError);
         this.currentError = error.error.message;
       }
