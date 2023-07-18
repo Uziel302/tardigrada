@@ -23,7 +23,7 @@
         </div>
         <div class="title-and-reviews">
           <div class="course-title">{{ course.title }}</div>
-          <div class="reviews-sum">
+          <div class="reviews-sum" *ngIf="false">
             <span
               class="material-icons iconRatingStar"
               *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
@@ -185,7 +185,7 @@
       <img [src]="course.image" class="course-logo" />
     </div>
     <div class="course-title">{{ course.title }}</div>
-    <div class="reviews-sum">
+    <div class="reviews-sum" *ngIf="false">
       <span
         class="material-icons iconRatingStar"
         *ngFor="let item of [0, 1, 2, 3, 4]; let i = index"
