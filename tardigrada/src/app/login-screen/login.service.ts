@@ -79,8 +79,9 @@ export class LoginService {
         this.login(email, password, isStudent);
       },
       (error) => {
-        this.currentError = error.error.message;
+        debugger;
         alert(this.currentError);
+        this.currentError = error.error.message;
       }
     );
   }
