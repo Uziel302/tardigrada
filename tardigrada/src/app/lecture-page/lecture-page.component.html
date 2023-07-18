@@ -183,8 +183,8 @@
         </div>
         <div *ngIf="course.startDate">первое занятие {{course.startDate}}</div>
       </div>
-      <div class="oval">{{ course.subtitle }}</div>
-      <div class="oval">{{ course.level }}</div>
+      <div class="oval" *ngIf="course.subtitle">{{ course.subtitle }}</div>
+      <div class="oval" *ngIf="course.level">{{ course.level }}</div>
       <div class="bullets-title">краткая программа курса</div>
       <div class="bullets">
         {{ course.bullets }}
@@ -258,8 +258,8 @@
       </div>
       <div *ngIf="course.startDate">первое занятие {{course.startDate}}</div>
     </div>
-    <div class="oval">{{ course.subtitle }}</div>
-    <div class="oval">{{ course.level }}</div>
+    <div class="oval" *ngIf="course.subtitle">{{ course.subtitle }}</div>
+    <div class="oval" *ngIf="course.level">{{ course.level }}</div>
   </div>
   <div class="mobile-inner">
     <div class="passage description-passage">
