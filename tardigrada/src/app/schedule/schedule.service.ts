@@ -23,9 +23,12 @@ export class ScheduleService {
     day: 0,
     hour: 0,
     minutes: 0,
+    duration: 0,
     day2: 0,
     hour2: 0,
     minutes2: 0,
+    duration2: 0,
+    startDate: '',
     minAge: 0,
     maxAge: 0,
     background: '',
@@ -40,6 +43,7 @@ export class ScheduleService {
   public currentChildren: IChild[] = [];
   public dayNumber: number = 0;
   public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+  public weekDays: string[] = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'];
   public savedHomeworkText: string = '';
   public savedHomeworkFile: string = '';
   public currentHomeworks: IHomeWork[] = [];
@@ -168,11 +172,11 @@ export class ScheduleService {
     let hour = 0;
     let minutes = 0;
     if(isSecond){
-      hour = lecture.hour2 + this.currentTz.offset + (end ? 1 : 0);
-      minutes = lecture.minutes2;
+      hour = lecture.hour2 + this.currentTz.offset + (end ? Math.floor(lecture.duration2 / 60 ) : 0);
+      minutes = lecture.minutes2 + (end ? lecture.duration2 % 60 : 0);
     } else {
-      hour = lecture.hour + this.currentTz.offset + (end ? 1 : 0);
-      minutes = lecture.minutes;
+      hour = lecture.hour + this.currentTz.offset + (end ? Math.floor(lecture.duration / 60 ) : 0);
+      minutes = lecture.minutes + (end ? lecture.duration % 60 : 0);
     }
     let formatted = hour < 10 ? '0' + hour : '' + hour;
     formatted += minutes < 10 ? ':0' + minutes : ':' + minutes;
