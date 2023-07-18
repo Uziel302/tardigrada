@@ -79,7 +79,7 @@ export class LoginService {
         this.login(email, password, isStudent);
       },
       (error) => {
-        alert(this.currentError);
+        alert(error.error.message);
         this.currentError = error.error.message;
       }
     );
