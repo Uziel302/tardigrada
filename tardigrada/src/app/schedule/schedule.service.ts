@@ -43,7 +43,7 @@ export class ScheduleService {
   public currentChildren: IChild[] = [];
   public dayNumber: number = 0;
   public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-  public weekDays: string[] = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'];
+  public weekDays: string[] = ['понедельникам', 'вторникам', 'средам', 'четвергам', 'пятницам', 'субботам', 'воскресенья'];
   public savedHomeworkText: string = '';
   public savedHomeworkFile: string = '';
   public currentHomeworks: IHomeWork[] = [];
@@ -179,7 +179,7 @@ export class ScheduleService {
       minutes = lecture.minutes + (end ? lecture.duration % 60 : 0);
     }
     let formatted = hour < 10 ? '0' + hour : '' + hour;
-    formatted += minutes < 10 ? ':0' + minutes : ':' + minutes;
+    formatted += minutes < 10 ? '.0' + minutes : '.' + minutes;
     return formatted;
   }
 
