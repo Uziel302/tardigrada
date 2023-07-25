@@ -16,7 +16,7 @@
         }}
       </div>
     </div>
-    <div class="lecture-title wide-none">{{ lecture.title }}</div>
+    <div [routerLink]="'/course/'+lecture.id" class="lecture-title wide-none">{{ lecture.title }}</div>
     <div class="wrapped-part">
       <div [routerLink]="'/course/'+lecture.id" class="lecture-title narrow-none">{{ lecture.title }}</div>
       <div class="lecture-teacher">{{ lecture.teacher }}</div>
