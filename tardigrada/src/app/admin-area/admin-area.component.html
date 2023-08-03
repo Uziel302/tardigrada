@@ -34,5 +34,9 @@
   Stats:
   <br />
   <br />
-  Courses on the site: {{ lecturesCount }}
+  Courses on the site: {{ lectures.length }}
+  <div *ngFor="let lecture of lectures; let i = index" style="display: flex;padding: 20px;">
+    <div>{{i+1}} {{lecture.title}}</div>
+    <button style="margin: 0 10px;" [routerLink]="'/admin/course/'+lecture.id">edit</button>
+  </div>
 </div>

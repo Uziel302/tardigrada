@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { ScheduleService } from '../schedule/schedule.service';
+import { ILecture } from '../models/lecture';
 
 @Component({
   selector: 'app-admin-area',
@@ -16,7 +17,7 @@ export class AdminAreaComponent implements OnInit {
   public annoyingSize: string = '20px';
   public saved: boolean = false;
 
-  public lecturesCount: number = 0;
+  public lectures: ILecture[] = [];
 
   private subscriptions: Subscription[] = [];
 
@@ -28,7 +29,7 @@ export class AdminAreaComponent implements OnInit {
   ngOnInit(): void {
     this.subscriptions.push(
       this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
-        this.lecturesCount = lecturesData.length;
+        this.lectures = lecturesData;
       })
     );
   }
