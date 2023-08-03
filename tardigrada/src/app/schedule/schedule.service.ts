@@ -250,4 +250,8 @@ export class ScheduleService {
         (error) => {}
       );
   }
+
+  updateLecture(lecture: ILecture){
+    return this.http.post(environment.apiEndPoint + 'updateLecture', lecture);
+  }
 }

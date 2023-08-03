@@ -253,3 +253,13 @@ exports.saveUserTz = async (req, res) => {
       }
     });
 };
+
+exports.updateLecture = async (req, res) => {
+  delete req.body.creation;
+  knex(tableName)
+    .update(req.body)
+    .where({id: req.body.id})
+    .then((lecture) => {
+      res.status(200).json(lecture);
+    });
+}

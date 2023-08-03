@@ -1,0 +1,98 @@
+<div *ngIf="!currentCourse">Couldn't find this course id in the system.</div>
+
+<div *ngIf="currentCourse">
+  <div class="input-row">
+    <div class="input-label">Course title</div>
+    <input [(ngModel)]="currentCourse.title" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Subtitle</div>
+    <input [(ngModel)]="currentCourse.subtitle" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Teacher name</div>
+    <input [(ngModel)]="currentCourse.teacher" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Teacher image</div>
+    <input [(ngModel)]="currentCourse.teacherImage" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">First day</div>
+    <input [(ngModel)]="currentCourse.day" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Hour on first day</div>
+    <input [(ngModel)]="currentCourse.hour" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Minutes after round hour (lecture start)</div>
+    <input [(ngModel)]="currentCourse.minutes" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Duration</div>
+    <input [(ngModel)]="currentCourse.duration" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Second day</div>
+    <input [(ngModel)]="currentCourse.day2" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Hour on second day</div>
+    <input [(ngModel)]="currentCourse.hour2" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Minutes after round hour (lecture start)</div>
+    <input [(ngModel)]="currentCourse.minutes2" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Duration</div>
+    <input [(ngModel)]="currentCourse.duration2" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Course start date</div>
+    <input [(ngModel)]="currentCourse.startDate" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Minimum age</div>
+    <input [(ngModel)]="currentCourse.minAge" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Maximum age</div>
+    <input [(ngModel)]="currentCourse.maxAge" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Background</div>
+    <input [(ngModel)]="currentCourse.background" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Zoom url</div>
+    <input [(ngModel)]="currentCourse.url" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Stationery text</div>
+    <input [(ngModel)]="currentCourse.stationeryText" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Stationery file</div>
+    <input [(ngModel)]="currentCourse.stationeryFile" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Book link</div>
+    <input [(ngModel)]="currentCourse.book" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Category</div>
+    <input [(ngModel)]="currentCourse.category" />
+  </div>
+  <div class="input-row">
+    <div class="input-label">Image</div>
+    <input [(ngModel)]="currentCourse.image" />
+  </div>
+  <button (click)="save()">Save</button>
+  <div *ngIf="success">Successfully saved!</div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>

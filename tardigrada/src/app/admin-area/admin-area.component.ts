@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { ScheduleService } from '../schedule/schedule.service';
-import { ILecture } from '../models/lecture';
+import { AdminDataService } from './admin-data.service';
 
 @Component({
   selector: 'app-admin-area',
@@ -16,22 +16,22 @@ export class AdminAreaComponent implements OnInit {
   public annoyingColor: string = 'red';
   public annoyingSize: string = '20px';
   public saved: boolean = false;
-
-  public lectures: ILecture[] = [];
-
   private subscriptions: Subscription[] = [];
 
   constructor(
     private http: HttpClient,
-    public scheduleService: ScheduleService
+    public scheduleService: ScheduleService,
+    public adminDataService: AdminDataService
   ) {}
 
   ngOnInit(): void {
-    this.subscriptions.push(
-      this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
-        this.lectures = lecturesData;
-      })
-    );
+    if(!this.adminDataService.lectures.length){
+      this.subscriptions.push(
+        this.scheduleService.getLecturesData().subscribe((lecturesData: any) => {
+          this.adminDataService.lectures = lecturesData;
+        })
+      );
+    }
   }
 
   submit() {

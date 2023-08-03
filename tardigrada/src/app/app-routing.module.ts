@@ -17,6 +17,7 @@ import { NewStudentComponent } from './new-student/new-student.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { ManagementComponent } from './management/management.component';
 import { CoursesComponent } from './lecture-page/courses/courses.component';
+import { CourseEditorComponent } from './admin-area/course-editor/course-editor.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -32,7 +33,7 @@ const routes: Routes = [
   { path: 'courses', component: CoursesComponent },
   { path: 'course/:id', component: LecturePageComponent },
   { path: 'admin', component: AdminAreaComponent },
-  { path: 'admin/course/:id', component: AdminAreaComponent },
+  { path: 'admin/course/:id', component: CourseEditorComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'new-student', component: NewStudentComponent },
   { path: 'teacher', component: TeacherAreaComponent },

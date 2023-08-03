@@ -54,6 +54,7 @@ import { ManagementComponent } from './management/management.component';
 import { CoursesComponent } from './lecture-page/courses/courses.component';
 import { PopupComponent } from './lecture-page/popup/popup.component';
 import { OrderModule } from 'ngx-order-pipe';
+import { CourseEditorComponent } from './admin-area/course-editor/course-editor.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { OrderModule } from 'ngx-order-pipe';
     ManagementComponent,
     CoursesComponent,
     PopupComponent,
+    CourseEditorComponent,
   ],
   imports: [
     BrowserModule,

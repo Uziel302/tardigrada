@@ -30,6 +30,7 @@ const {
   getPersonalSlots,
   savePersonalSlot,
   saveUserTz,
+  updateLecture,
 } = require("./controllers/lectures.controller");
 const {
   saveAnnoying,
@@ -59,6 +60,7 @@ router.get("/getChildLectures", getChildLectures);
 router.post("/saveStationery", saveStationery);
 router.post("/savePersonalSlot", savePersonalSlot);
 router.post("/saveUserTz", saveUserTz);
+router.post("/updateLecture", updateLecture);
 router.get("/getPersonalSlots", getPersonalSlots);
 router.get("/homework", getHomework);
 router.get("/homeworks", getHomeworks);
