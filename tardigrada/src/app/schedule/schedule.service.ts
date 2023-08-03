@@ -261,4 +261,9 @@ export class ScheduleService {
   updateLecture(lecture: ILecture){
     return this.http.post(environment.apiEndPoint + 'updateLecture', lecture);
   }
+
+
+  createEmptyLecture(){
+    return this.http.post<number>(environment.apiEndPoint + 'createEmptyLecture', this.emptyLecture);
+  }
 }

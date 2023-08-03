@@ -4,6 +4,7 @@
   <br />
   Actions:
   <br />
+  <button routerLink="/admin/courses">Manage courses</button>
   <br />
   Annoying notification to all teachers:&nbsp; &nbsp;
   <div id="annoying">
@@ -31,14 +32,4 @@
   <a routerLink="/teacher"><u>Go to teacher page</u></a>
   <br />
   <br />
-  Stats:
-  <br />
-  <br />
-  Courses on the site: {{ adminDataService.lectures.length }}
-  <button (click)="createEmptyLecture()">Create new empty course</button>
-  <div *ngIf="newId"><button [routerLink]="'/admin/course/'+newId">Edit new course</button></div>
-  <div *ngFor="let lecture of adminDataService.lectures; let i = index" style="display: flex;padding: 20px;">
-    <div>{{i+1}} {{lecture.title}}</div>
-    <button style="margin: 0 10px;" [routerLink]="'/admin/course/'+lecture.id">edit</button>
-  </div>
 </div>
