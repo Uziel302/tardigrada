@@ -20,6 +20,8 @@ import { ParsingService } from '../general/parser.service';
 export class TeacherAreaComponent implements OnInit {
   public userId: number = 0;
   public showSettings: boolean = false;
+  public editHomeworkText: boolean = false;
+  public editStationeryText: boolean = false;
   public chosenChild: number = -1;
   public noteList: INote[] = [];
   public currentNote: string = '';
@@ -176,6 +178,7 @@ export class TeacherAreaComponent implements OnInit {
         (data) => {
           this.scheduleService.selectedLecture.stationeryText =
             this.stationeryText;
+          this.editStationeryText = false;
         },
         (error) => {}
       );
@@ -192,6 +195,7 @@ export class TeacherAreaComponent implements OnInit {
         (data) => {
           this.scheduleService.savedHomeworkText = this.homeworkText;
           this.scheduleService.savedHomeworkFile = this.homeworkFile;
+          this.editHomeworkText = false;
         },
         (error) => {}
       );

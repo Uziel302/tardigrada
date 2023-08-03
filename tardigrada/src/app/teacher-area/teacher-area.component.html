@@ -24,13 +24,14 @@
     <div id="profile" *ngIf="loginService.teacher">
       <div id="image-container">
         <div id="profile-image-border">
-            <img id="profile-image"
-              [src]="
-                loginService.teacher.profile
-                  ? loginService.teacher.profile
-                  : '/assets/images/profile-default.jpg'
-              "
-            />
+          <img
+            id="profile-image"
+            [src]="
+              loginService.teacher.profile
+                ? loginService.teacher.profile
+                : '/assets/images/profile-default.jpg'
+            "
+          />
         </div>
       </div>
       <div id="name">
@@ -83,7 +84,8 @@
             {{
               scheduleService.getTimeFormatted(
                 scheduleService.selectedLecture,
-                false, false
+                false,
+                false
               )
             }}
           </div>
@@ -138,13 +140,14 @@
             (click)="selectChild(i)"
           >
             <div class="profile-image-border-children">
-                <img class="profile-image-children"
-                  [src]="
-                    child.profile
-                      ? child.profile
-                      : '/assets/images/profile-default.jpg'
-                  "
-                />
+              <img
+                class="profile-image-children"
+                [src]="
+                  child.profile
+                    ? child.profile
+                    : '/assets/images/profile-default.jpg'
+                "
+              />
             </div>
             <div class="child-name">
               {{ child.firstName + " " + child.lastName }}
@@ -158,6 +161,12 @@
         <br />
         <div id="stationery-container">
           <div>{{ scheduleService.selectedLecture.stationeryText }}</div>
+          <button 
+          *ngIf="scheduleService.selectedLecture.stationeryText"
+          (click)="editStationeryText = true"
+        >
+          Edit
+        </button>
           <ng-container
             *ngFor="
               let file of parsing.parse(
@@ -177,7 +186,7 @@
             </a>
           </ng-container>
         </div>
-        <textarea class="user-textarea" [(ngModel)]="stationeryText"></textarea>
+        <textarea class="user-textarea" [(ngModel)]="stationeryText" *ngIf="editStationeryText"></textarea>
         <div class="under-form-buttons">
           <app-upload-photo
             [uploadColumn]="'stationeryFile'"
@@ -194,6 +203,12 @@
         <div id="savedHomework">
           {{ scheduleService.savedHomeworkText }}&nbsp;
         </div>
+        <button 
+          *ngIf="scheduleService.savedHomeworkText"
+          (click)="editHomeworkText = true"
+        >
+          Edit
+        </button>
         <a
           *ngIf="scheduleService.savedHomeworkFile"
           id="savedHomeworkFile"
@@ -203,7 +218,12 @@
         >
           <mat-icon>file_download</mat-icon>
         </a>
-        <textarea class="user-textarea" [(ngModel)]="homeworkText"> </textarea>
+        <textarea
+          class="user-textarea"
+          [(ngModel)]="homeworkText"
+          *ngIf="!scheduleService.savedHomeworkText || editHomeworkText"
+        >
+        </textarea>
         <div class="under-form-buttons">
           <app-upload-photo
             (uploaded)="updateHwFile($event)"
