@@ -49,13 +49,15 @@ export class TeacherAreaComponent implements OnInit {
     this.loginService.getAuthStatusListener().subscribe(loggedIn => {
       if(loggedIn){
         for (let timezone of this.scheduleService.timeZones) {
-          if (timezone.name === this.loginService.teacher.timezone) {
+          if (this.loginService.teacher && timezone.name === this.loginService.teacher.timezone) {
             this.scheduleService.currentTz = timezone;
             break;
           }
         }
-        this.scheduleService.getTeacherLectures(this.loginService.teacher.userId);
-        this.scheduleService.getPersonalSlots(0, this.loginService.teacher.userId);
+        if(this.loginService.teacher){
+          this.scheduleService.getTeacherLectures(this.loginService.teacher.userId);
+          this.scheduleService.getPersonalSlots(0, this.loginService.teacher.userId);
+        }
       }
     });
   }

@@ -4,7 +4,7 @@
   (switchChild)="switchChild($event)"
   (settingsChange)="showSettings = $event"
 ></app-settings-popup>
-<div id="cover">
+<div id="cover" *ngIf="loginService.currentChild">
   <img
     id="cover-image"
     [src]="
@@ -20,7 +20,7 @@
         Settings
       </div>
     </div>
-    <div id="profile">
+    <div id="profile" *ngIf="loginService.currentChild">
       <div id="image-container">
         <div id="profile-image-border">
           <img

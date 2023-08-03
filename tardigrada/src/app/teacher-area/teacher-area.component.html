@@ -3,7 +3,7 @@
   [isStudent]="false"
   (settingsChange)="showSettings = $event"
 ></app-settings-popup>
-<div id="cover">
+<div id="cover" *ngIf="loginService.teacher">
   <img
     id="cover-image"
     [src]="
@@ -21,7 +21,7 @@
         Settings
       </div>
     </div>
-    <div id="profile">
+    <div id="profile" *ngIf="loginService.teacher">
       <div id="image-container">
         <div id="profile-image-border">
             <img id="profile-image"
