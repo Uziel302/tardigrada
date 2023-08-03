@@ -163,7 +163,14 @@ export class ScheduleService {
       ][0]['id']
         ? 1
         : 0;
+      const whichHalf2 = this.lecturesArray[lectureData.day2][
+          lectureData.hour2 - 9
+        ][0]['id']
+          ? 1
+          : 0;
       this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] =
+        lectureData;
+      this.lecturesArray[lectureData.day2][lectureData.hour2 - 9][whichHalf2] =
         lectureData;
     }
   }
