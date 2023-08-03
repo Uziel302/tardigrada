@@ -17,7 +17,7 @@ export class LoginService {
   public selectedChildId: number = 0;
   public isStudent = true;
   public children: IChild[] = [];
-  public currentChild: IChild = {
+  public emptyChild: IChild = {
     id: 0,
     firstName: '',
     lastName: '',
@@ -31,6 +31,7 @@ export class LoginService {
     cover: null,
     profile: null,
   };
+  public currentChild: IChild = JSON.parse(JSON.stringify(this.emptyChild));
   public teacher: ITeacher = {
     userId: 0,
     name: '',
@@ -104,7 +105,7 @@ export class LoginService {
               now.getTime() + expiresInDuration * 1000
             );
             this.currentError = '';
-            let target = '/new-student';
+            let target = '/new-student/';
             if (data.childId) {
               this.connectedChildId = data.childId;
               target = '/student';
@@ -113,13 +114,23 @@ export class LoginService {
               target = '/teacher';
             }
             this.saveAuthData(token, expirationDate, this.connectedChildId);
-            this.router.navigate([target]);
+            if(target == '/new-student/'){
+              this.createEmptyStudent().subscribe((data)=>{
+                this.router.navigate([target+data.createId]);
+              })
+            } else {
+              this.router.navigate([target]);
+            }
           }
         },
         (error) => {
           this.currentError = error.error.message;
         }
       );
+  }
+
+  createEmptyStudent(){
+    return this.http.get<{createId: number}>(environment.apiEndPoint +'createNewStudent');
   }
 
   autoAuthUser(): void {

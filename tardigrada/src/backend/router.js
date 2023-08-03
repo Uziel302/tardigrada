@@ -6,6 +6,7 @@ const {
   getChild,
   getChildren,
   saveChild,
+  createNewStudent,
 } = require("./controllers/studentData.controller");
 const checkAuth = require("./middleware/check-auth");
 const { upload } = require("./controllers/upload.controller");
@@ -14,7 +15,10 @@ const {
   getNotes,
   deleteNote,
 } = require("./controllers/notes.controller");
-const { loadTeacher, getTeachers } = require("./controllers/teacherData.controller");
+const {
+  loadTeacher,
+  getTeachers,
+} = require("./controllers/teacherData.controller");
 const {
   getLectures,
   getCourse,
@@ -100,6 +104,12 @@ router.post("/saveChild", (req, res) => {
   }
 });
 
+router.get("/createNewStudent", (req, res) => {
+  if (checkAuth(req, res)) {
+    return createNewStudent(req, res);
+  }
+});
+
 router.get("/getChild", (req, res) => {
   if (checkAuth(req, res)) {
     return getChild(req, res);
@@ -146,7 +156,7 @@ router.post("/sendEmail", (req, res) => {
       sender,
       to: receivers,
       subject: req.body.title,
-      textContent: 'message: '+req.body.message,
+      textContent: "message: " + req.body.message,
       //htmlContent: `<h1>html content</h1>`,
       params: {
         role: "Frontend",

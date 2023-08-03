@@ -1,44 +1,56 @@
 const knex = require("../dbConnection");
 const tableName = "children";
-const { Client } = require("@notionhq/client");
-const notion = new Client({ auth: process.env.NOTION_KEY });
+// const { Client } = require("@notionhq/client");
+// const notion = new Client({ auth: process.env.NOTION_KEY });
 
 exports.saveChild = async (req, res) => {
-  try {
-    notion.pages.create({
-      parent: { database_id: process.env.NOTION_DATABASE_ID },
-      properties: {
-        firstName: {
-          title: [{ type: "text", text: { content: req.body.firstName } }],
-        },
-        lastName: {
-          rich_text: [{ text: { content: req.body.lastName } }],
-        },
-        dateOfBirth: {
-          rich_text: [{ text: { content: req.body.dateOfBirth } }],
-        },
-        subjects: {
-          rich_text: [{ text: { content: req.body.subjects } }],
-        },
-        timezone: {
-          rich_text: [{ text: { content: req.body.timezone } }],
-        },
-        telegram: {
-          rich_text: [{ text: { content: req.body.telegram } }],
-        },
-        note: {
-          rich_text: [{ text: { content: req.body.note } }],
-        },
-      },
-    });
-  } catch (error) {}
+  // try {
+  //   notion.pages.create({
+  //     parent: { database_id: process.env.NOTION_DATABASE_ID },
+  //     properties: {
+  //       firstName: {
+  //         title: [{ type: "text", text: { content: req.body.firstName } }],
+  //       },
+  //       lastName: {
+  //         rich_text: [{ text: { content: req.body.lastName } }],
+  //       },
+  //       dateOfBirth: {
+  //         rich_text: [{ text: { content: req.body.dateOfBirth } }],
+  //       },
+  //       subjects: {
+  //         rich_text: [{ text: { content: req.body.subjects } }],
+  //       },
+  //       timezone: {
+  //         rich_text: [{ text: { content: req.body.timezone } }],
+  //       },
+  //       telegram: {
+  //         rich_text: [{ text: { content: req.body.telegram } }],
+  //       },
+  //       note: {
+  //         rich_text: [{ text: { content: req.body.note } }],
+  //       },
+  //     },
+  //   });
+  // } catch (error) {}
+  delete req.body.creation;
   knex(tableName)
-    .insert(req.body)
+    .update(req.body)
+    .where({id: req.body.id})
     .then((row) => {
       if (row > 0) {
         return res.status(200).send({ createId: row[0] });
       } else {
         return res.status(400).send({ message: "failed saving child" });
+      }
+    });
+};
+
+exports.createNewStudent = async (req, res) => {
+  knex(tableName)
+    .insert({})
+    .then((row) => {
+      if (row > 0) {
+        return res.status(200).send({createId: row[0]});
       }
     });
 };

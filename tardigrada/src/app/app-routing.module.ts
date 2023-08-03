@@ -37,7 +37,7 @@ const routes: Routes = [
   { path: 'admin/courses', component: CoursesManagementComponent },
   { path: 'admin/course/:id', component: CourseEditorComponent },
   { path: 'privacy', component: PrivacyComponent },
-  { path: 'new-student', component: NewStudentComponent },
+  { path: 'new-student/:id', component: NewStudentComponent },
   { path: 'teacher', component: TeacherAreaComponent },
   { path: 'teachers', component: TeachersComponent },
   { path: '**', component: HomepageComponent },
