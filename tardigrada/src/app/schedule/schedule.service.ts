@@ -43,7 +43,15 @@ export class ScheduleService {
   public currentChildren: IChild[] = [];
   public dayNumber: number = 0;
   public week: string[] = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-  public weekDays: string[] = ['понедельникам', 'вторникам', 'средам', 'четвергам', 'пятницам', 'субботам', 'воскресенья'];
+  public weekDays: string[] = [
+    'понедельникам',
+    'вторникам',
+    'средам',
+    'четвергам',
+    'пятницам',
+    'субботам',
+    'воскресенья',
+  ];
   public savedHomeworkText: string = '';
   public savedHomeworkFile: string = '';
   public currentHomeworks: IHomeWork[] = [];
@@ -163,26 +171,39 @@ export class ScheduleService {
       ][0]['id']
         ? 1
         : 0;
-      const whichHalf2 = this.lecturesArray[lectureData.day2][
+      this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] =
+        lectureData;
+      if (lectureData.hour2 > 9) {
+        const whichHalf2 = this.lecturesArray[lectureData.day2][
           lectureData.hour2 - 9
         ][0]['id']
           ? 1
           : 0;
-      this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] =
-        lectureData;
-      this.lecturesArray[lectureData.day2][lectureData.hour2 - 9][whichHalf2] =
-        lectureData;
+        this.lecturesArray[lectureData.day2][lectureData.hour2 - 9][
+          whichHalf2
+        ] = lectureData;
+      }
     }
   }
 
-  public getTimeFormatted(lecture: ILecture | ICourse, end: boolean, isSecond: boolean) {
+  public getTimeFormatted(
+    lecture: ILecture | ICourse,
+    end: boolean,
+    isSecond: boolean
+  ) {
     let hour = 0;
     let minutes = 0;
-    if(isSecond){
-      hour = lecture.hour2 + this.currentTz.offset + (end ? Math.floor(lecture.duration2 / 60 ) : 0);
+    if (isSecond) {
+      hour =
+        lecture.hour2 +
+        this.currentTz.offset +
+        (end ? Math.floor(lecture.duration2 / 60) : 0);
       minutes = lecture.minutes2 + (end ? lecture.duration2 % 60 : 0);
     } else {
-      hour = lecture.hour + this.currentTz.offset + (end ? Math.floor(lecture.duration / 60 ) : 0);
+      hour =
+        lecture.hour +
+        this.currentTz.offset +
+        (end ? Math.floor(lecture.duration / 60) : 0);
       minutes = lecture.minutes + (end ? lecture.duration % 60 : 0);
     }
     let formatted = hour < 10 ? '0' + hour : '' + hour;
@@ -258,12 +279,14 @@ export class ScheduleService {
       );
   }
 
-  updateLecture(lecture: ILecture){
+  updateLecture(lecture: ILecture) {
     return this.http.post(environment.apiEndPoint + 'updateLecture', lecture);
   }
 
-
-  createEmptyLecture(){
-    return this.http.post<number>(environment.apiEndPoint + 'createEmptyLecture', this.emptyLecture);
+  createEmptyLecture() {
+    return this.http.post<number>(
+      environment.apiEndPoint + 'createEmptyLecture',
+      this.emptyLecture
+    );
   }
 }
