@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'courses', component: CoursesComponent },
   { path: 'course/:id', component: LecturePageComponent },
   { path: 'admin', component: AdminAreaComponent },
+  { path: 'admin/course/:id', component: AdminAreaComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'new-student', component: NewStudentComponent },
   { path: 'teacher', component: TeacherAreaComponent },
