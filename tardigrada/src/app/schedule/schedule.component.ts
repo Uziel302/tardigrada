@@ -153,6 +153,13 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     }
   }
 
+  clearFilters(){
+    this.selectedAges = [];
+    this.selectedCategories = [];
+    this.selectedDays = [];
+    this.filterLectures();
+  }
+
   checkFilters(lecture: ILecture): boolean {
     if(this.checkAge(lecture.minAge, lecture.maxAge) && this.checkSubject(lecture)){
       return true;

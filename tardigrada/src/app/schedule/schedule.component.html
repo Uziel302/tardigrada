@@ -6,7 +6,7 @@
         <img id="animal" src="/assets/images/Animal.png" />
       </div>
       <div id="search-container">
-        <input id="search" [(ngModel)]="search" />
+        <input id="search" [(ngModel)]="search" (ngModelChange)="clearFilters()" />
         <div id="search-icon">
           <div id="circle"></div>
           <div id="line"></div>
