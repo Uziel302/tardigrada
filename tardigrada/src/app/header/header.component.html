@@ -2,7 +2,7 @@
   <div id="topMenuLine" [class.tilted]="tilted" class=""></div>
   <div id="bottomMenuLine" [class.tilted]="tilted" class=""></div>
 </div>
-<div *ngIf="loggedIn && router.url !== '/student' && router.url !== '/teacher'">
+<div *ngIf="loggedIn && router.url !== '/student' && router.url !== '/teacher' && (loginService.currentChild || loginService.teacher)">
   <div id="profile">
     <img id="profile-image" [src]="(loginService.isStudent ? loginService.currentChild.profile : loginService.teacher.profile) ?? '/assets/images/profile-default.jpg'" [routerLink]="loginService.isStudent ? '/student' : '/teacher'">
   </div>
