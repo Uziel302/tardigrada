@@ -263,3 +263,12 @@ exports.updateLecture = async (req, res) => {
       res.status(200).json(lecture);
     });
 }
+
+exports.createEmptyLecture = async (req, res) => {
+  delete req.body.creation;
+  knex(tableName)
+  .insert(req.body)
+  .then((lecture) => {
+    res.status(200).json(lecture[0]);
+  });
+}

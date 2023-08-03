@@ -16,6 +16,7 @@ export class AdminAreaComponent implements OnInit {
   public annoyingColor: string = 'red';
   public annoyingSize: string = '20px';
   public saved: boolean = false;
+  public newId: number = 0;
   private subscriptions: Subscription[] = [];
 
   constructor(
@@ -47,5 +48,14 @@ export class AdminAreaComponent implements OnInit {
         },
         (error) => {}
       );
+  }
+
+  createEmptyLecture(){
+    this.http.post<number>(environment.apiEndPoint + 'createEmptyLecture', this.scheduleService.emptyLecture).subscribe(
+      (data) => {
+        this.newId = data;
+      },
+      (error) => {}
+    );
   }
 }

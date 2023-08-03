@@ -14,7 +14,7 @@ export class CourseEditorComponent implements OnInit {
   private subscriptions: Subscription[] = [];
   public currentCourse: ILecture;
   public success: boolean = false;
-
+  public id: number = 0;
   constructor(
     public adminDataService: AdminDataService,
     private scheduleService: ScheduleService,
@@ -23,24 +23,30 @@ export class CourseEditorComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    let id = Number(this.route.snapshot.paramMap.get('id')) ?? 0;
-    
+    this.id = Number(this.route.snapshot.paramMap.get('id')) ?? 0;
     if (!this.adminDataService.lectures.length) {
-      this.subscriptions.push(
-        this.scheduleService
-          .getLecturesData()
-          .subscribe((lecturesData: any) => {
-            this.adminDataService.lectures = lecturesData;
-            this.setCurrentCourse(id);
-          })
-      );
+      this.loadCourses();
     } else {
-      this.setCurrentCourse(id);
+      this.setCurrentCourse();
+      if(!this.currentCourse){
+        this.loadCourses();
+      }
     }
   }
 
-  setCurrentCourse(id: number){
-    let foundCourse = this.adminDataService.lectures.find(x => x.id == id);
+  loadCourses(){
+    this.subscriptions.push(
+      this.scheduleService
+        .getLecturesData()
+        .subscribe((lecturesData: any) => {
+          this.adminDataService.lectures = lecturesData;
+          this.setCurrentCourse();
+        })
+    );
+  }
+
+  setCurrentCourse(){
+    let foundCourse = this.adminDataService.lectures.find(x => x.id == this.id);
     if(foundCourse){
       this.currentCourse = foundCourse;
     }
