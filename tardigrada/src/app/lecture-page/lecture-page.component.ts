@@ -53,6 +53,7 @@ export class LecturePageComponent implements OnInit {
   public isLoggedWarning: boolean = false;
   public showPayment: boolean = false;
   public showLongDescription: boolean = false;
+  public alreadyRegistered: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -65,7 +66,18 @@ export class LecturePageComponent implements OnInit {
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id')) ?? 0;
     this.getCourseDetails();
+    this.checkIfRegistered();
     this.getReviews();
+  }
+
+  checkIfRegistered(){
+    if(this.checkLogged()){
+      this.scheduleService.getChildLectures(this.loginService.connectedChildId).subscribe((childLectures)=>{
+        if(childLectures && childLectures.find(x => x.id == this.id)){
+          this.alreadyRegistered = true;
+        }
+      });
+    }
   }
 
   getCourseDetails() {

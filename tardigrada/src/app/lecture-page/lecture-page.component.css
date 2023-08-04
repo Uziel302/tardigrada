@@ -551,3 +551,9 @@ textarea {
   align-items: center;
   margin-top: 30px;
 }
+
+.already-registered-container {
+  display: flex;
+  justify-content: flex-end;
+  color: black;
+}

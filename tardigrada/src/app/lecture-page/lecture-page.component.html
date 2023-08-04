@@ -13,7 +13,7 @@
   <div id="paypal-button"></div>
   <mat-icon class="close-icon" (click)="showPayment = false">close</mat-icon>
 </div>
-<div id="paypal-sum" style="display: none">{{course.price}}</div>
+<div id="paypal-sum" style="display: none">{{ course.price }}</div>
 <div id="desktop">
   <div id="left-part">
     <div id="inner-left">
@@ -45,7 +45,12 @@
       </div>
       <div id="animal-line">
         <div class="subtitle">запись на курс</div>
-        <div class="circles">
+        <div class="already-registered-container">
+          <div class="already-registered" *ngIf="alreadyRegistered">
+            You are already registered to this course
+          </div>
+        </div>
+        <div class="circles" *ngIf="!alreadyRegistered">
           <div class="circle-container">
             <div class="white-circle" (click)="pay()">хочу оплатить</div>
           </div>
@@ -162,26 +167,37 @@
     <div id="inner-right">
       <div class="time-title">
         <div *ngIf="!course.day2">
-          Занятия проходят по {{ scheduleService.weekDays[course.day] }}
-          <br />С {{ scheduleService.getTimeFormatted(course, false, false) }} до
+          Занятия проходят по {{ scheduleService.weekDays[course.day] }} <br />С
+          {{ scheduleService.getTimeFormatted(course, false, false) }} до
           {{ scheduleService.getTimeFormatted(course, true, false) }}
         </div>
         <div *ngIf="course.day2">
-          <div *ngIf="course.hour == course.hour2 && course.minutes == course.minutes2 && course.duration == course.duration2; else notEqual">
-            Занятия проходят по {{ scheduleService.weekDays[course.day] }} и {{ scheduleService.weekDays[course.day2] }}
-            <br />С {{ scheduleService.getTimeFormatted(course, false, false) }} до
+          <div
+            *ngIf="
+              course.hour == course.hour2 &&
+                course.minutes == course.minutes2 &&
+                course.duration == course.duration2;
+              else notEqual
+            "
+          >
+            Занятия проходят по {{ scheduleService.weekDays[course.day] }} и
+            {{ scheduleService.weekDays[course.day2] }} <br />С
+            {{ scheduleService.getTimeFormatted(course, false, false) }} до
             {{ scheduleService.getTimeFormatted(course, true, false) }}
           </div>
           <ng-template #notEqual>
-            Занятия проходят по {{ scheduleService.weekDays[course.day] }} 
-            <br />С {{ scheduleService.getTimeFormatted(course, false, false) }} до
-            {{ scheduleService.getTimeFormatted(course, true, false) }} &&
-            по {{ scheduleService.weekDays[course.day2] }} С
+            Занятия проходят по {{ scheduleService.weekDays[course.day] }}
+            <br />С
+            {{ scheduleService.getTimeFormatted(course, false, false) }} до
+            {{ scheduleService.getTimeFormatted(course, true, false) }} && по
+            {{ scheduleService.weekDays[course.day2] }} С
             {{ scheduleService.getTimeFormatted(course, false, true) }} до
             {{ scheduleService.getTimeFormatted(course, true, true) }}
           </ng-template>
         </div>
-        <div *ngIf="course.startDate">первое занятие {{course.startDate}}</div>
+        <div *ngIf="course.startDate">
+          первое занятие {{ course.startDate }}
+        </div>
       </div>
       <div class="oval" *ngIf="course.subtitle">{{ course.subtitle }}</div>
       <div class="oval" *ngIf="course.level">{{ course.level }}</div>
@@ -220,7 +236,12 @@
     </div>
     <div class="subtitle">запись на курс</div>
     <div class="white-line"></div>
-    <div class="circles">
+    <div class="already-registered-container">
+      <div class="already-registered" *ngIf="alreadyRegistered">
+        You are already registered to this course
+      </div>
+    </div>
+    <div class="circles" *ngIf="!alreadyRegistered">
       <div class="circle-container left-circle">
         <div class="white-circle" (click)="pay()">хочу оплатить</div>
       </div>
@@ -237,26 +258,34 @@
   <div class="mobile-inner purple-second">
     <div class="time-title">
       <div *ngIf="!course.day2">
-        Занятия проходят по {{ scheduleService.weekDays[course.day] }}
-        <br />С {{ scheduleService.getTimeFormatted(course, false, false) }} до
+        Занятия проходят по {{ scheduleService.weekDays[course.day] }} <br />С
+        {{ scheduleService.getTimeFormatted(course, false, false) }} до
         {{ scheduleService.getTimeFormatted(course, true, false) }}
       </div>
       <div *ngIf="course.day2">
-        <div *ngIf="course.hour == course.hour2 && course.minutes == course.minutes2 && course.duration == course.duration2; else notEqual">
-          Занятия проходят по {{ scheduleService.weekDays[course.day] }} и {{ scheduleService.weekDays[course.day2] }}
-          <br />С {{ scheduleService.getTimeFormatted(course, false, false) }} до
+        <div
+          *ngIf="
+            course.hour == course.hour2 &&
+              course.minutes == course.minutes2 &&
+              course.duration == course.duration2;
+            else notEqual
+          "
+        >
+          Занятия проходят по {{ scheduleService.weekDays[course.day] }} и
+          {{ scheduleService.weekDays[course.day2] }} <br />С
+          {{ scheduleService.getTimeFormatted(course, false, false) }} до
           {{ scheduleService.getTimeFormatted(course, true, false) }}
         </div>
         <ng-template #notEqual>
-          Занятия проходят по {{ scheduleService.weekDays[course.day] }} 
-          <br />С {{ scheduleService.getTimeFormatted(course, false, false) }} до
-          {{ scheduleService.getTimeFormatted(course, true, false) }} &&
-          по {{ scheduleService.weekDays[course.day2] }} С
+          Занятия проходят по {{ scheduleService.weekDays[course.day] }} <br />С
+          {{ scheduleService.getTimeFormatted(course, false, false) }} до
+          {{ scheduleService.getTimeFormatted(course, true, false) }} && по
+          {{ scheduleService.weekDays[course.day2] }} С
           {{ scheduleService.getTimeFormatted(course, false, true) }} до
           {{ scheduleService.getTimeFormatted(course, true, true) }}
         </ng-template>
       </div>
-      <div *ngIf="course.startDate">первое занятие {{course.startDate}}</div>
+      <div *ngIf="course.startDate">первое занятие {{ course.startDate }}</div>
     </div>
     <div class="oval" *ngIf="course.subtitle">{{ course.subtitle }}</div>
     <div class="oval" *ngIf="course.level">{{ course.level }}</div>

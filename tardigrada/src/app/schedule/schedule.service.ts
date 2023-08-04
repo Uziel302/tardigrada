@@ -94,7 +94,7 @@ export class ScheduleService {
   }
 
   public getChildLectures(childId: number) {
-    return this.http.get(
+    return this.http.get<any[]>(
       environment.apiEndPoint + 'getChildLectures/?childId=' + childId
     );
   }
