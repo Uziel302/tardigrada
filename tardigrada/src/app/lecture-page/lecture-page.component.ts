@@ -43,6 +43,7 @@ export class LecturePageComponent implements OnInit {
     longDescription: '',
     bullets: '',
     background: '',
+    price: 0,
   };
   //todo: move reviews to separate component
   public reviews: IReview[] = [];
@@ -191,7 +192,8 @@ export class LecturePageComponent implements OnInit {
       this.showPopup = true;
       this.scheduleService.joinLecture(
         this.id,
-        this.loginService.connectedChildId
+        this.loginService.connectedChildId,
+        this.course.price,
       );
       this.scheduleService.childLectures[this.id] = true;
     }

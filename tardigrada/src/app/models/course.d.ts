@@ -21,4 +21,5 @@ export interface ICourse {
   longDescription: string;
   bullets: string;
   background: string;
+  price: number;
 }

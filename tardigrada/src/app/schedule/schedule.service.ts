@@ -136,9 +136,9 @@ export class ScheduleService {
     return personalSlots;
   }
 
-  public joinLecture(lectureId: number, childId: number) {
+  public joinLecture(lectureId: number, childId: number, amountPaid: number) {
     this.http
-      .post(environment.apiEndPoint + 'joinLecture', { lectureId, childId })
+      .post(environment.apiEndPoint + 'joinLecture', { lectureId, childId, amountPaid })
       .subscribe(
         (data) => {},
         (error) => {}
