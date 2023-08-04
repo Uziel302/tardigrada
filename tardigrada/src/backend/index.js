@@ -4,7 +4,9 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const indexRouter = require("./router.js");
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 
 app.use(bodyParser.json());
 
