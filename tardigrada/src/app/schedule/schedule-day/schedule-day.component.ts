@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ScheduleService } from '../../schedule/schedule.service';
 import { ILecture } from '../../models/lecture';
-import { LoginService } from 'src/app/login-screen/login.service';
 
 @Component({
   selector: 'app-schedule-day',
@@ -46,7 +45,6 @@ export class ScheduleDayComponent implements OnInit {
 
   constructor(
     public scheduleService: ScheduleService,
-    private loginService: LoginService
   ) {}
 
   ngOnInit(): void {
