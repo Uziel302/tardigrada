@@ -16,7 +16,7 @@
       <div>Сменить фото профиля</div>
     </div>
     <div *ngIf="isStudent">
-      <div [routerLink]="'/new-student/'+loginService.connectedChildId" style="cursor: pointer;">edit personal details</div>
+      <div [routerLink]="'/new-student/'+loginService.connectedChildId" style="cursor: pointer;">Редактировать личные данные</div>
       <div (click)="titleClick()">Выбрать ученика:</div>
       <input [(ngModel)]="adminChild" *ngIf="!adminView" />
       <div
