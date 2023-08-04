@@ -22,4 +22,5 @@ export interface ILecture {
   book: string;
   category: string;
   image: string;
+  price: number;
 }

@@ -38,6 +38,7 @@ export class ScheduleService {
     book: '',
     category: '',
     image: '',
+    price: 0,
   };
   public selectedLecture: ILecture = this.emptyLecture;
   public currentChildren: IChild[] = [];
