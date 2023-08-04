@@ -89,6 +89,10 @@
     <div class="input-label">Image</div>
     <input [(ngModel)]="currentCourse.image" />
   </div>
+  <div class="input-row">
+    <div class="input-label">Price</div>
+    <input [(ngModel)]="currentCourse.price" />
+  </div>
   <button (click)="save()">Save</button>
   <div *ngIf="success">Successfully saved!</div>
   <br>
