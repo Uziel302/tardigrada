@@ -43,9 +43,7 @@ export class ScheduleDayComponent implements OnInit {
   public madeVisibleOnce: boolean = false;
   public madeVisibleNow: boolean = false;
 
-  constructor(
-    public scheduleService: ScheduleService,
-  ) {}
+  constructor(public scheduleService: ScheduleService) {}
 
   ngOnInit(): void {
     this.calculateWeekDates();
@@ -92,6 +90,10 @@ export class ScheduleDayComponent implements OnInit {
   checkFilters(lecture: ILecture, index: number): boolean {
     if (!index) {
       this.madeVisibleNow = false;
+    }
+
+    if (!lecture.title) {
+      return false;
     }
 
     let regex = new RegExp(this.search, 'i');

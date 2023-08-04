@@ -139,7 +139,11 @@ export class ScheduleService {
 
   public joinLecture(lectureId: number, childId: number, amountPaid: number) {
     this.http
-      .post(environment.apiEndPoint + 'joinLecture', { lectureId, childId, amountPaid })
+      .post(environment.apiEndPoint + 'joinLecture', {
+        lectureId,
+        childId,
+        amountPaid,
+      })
       .subscribe(
         (data) => {},
         (error) => {}
@@ -167,13 +171,15 @@ export class ScheduleService {
       if (lectureData.lectureId) {
         this.childLectures[lectureData.lectureId] = true;
       }
-      const whichHalf = this.lecturesArray[lectureData.day][
-        lectureData.hour - 9
-      ][0]['id']
-        ? 1
-        : 0;
-      this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] =
-        lectureData;
+      if (lectureData.hour > 9) {
+        const whichHalf = this.lecturesArray[lectureData.day][
+          lectureData.hour - 9
+        ][0]['id']
+          ? 1
+          : 0;
+        this.lecturesArray[lectureData.day][lectureData.hour - 9][whichHalf] =
+          lectureData;
+      }
       if (lectureData.hour2 > 9) {
         const whichHalf2 = this.lecturesArray[lectureData.day2][
           lectureData.hour2 - 9
