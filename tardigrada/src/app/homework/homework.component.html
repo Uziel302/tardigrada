@@ -5,7 +5,7 @@
     <div *ngIf="location === 'all'" id="lecture-name">
       {{ getLectureName(homework.lectureId) }}
     </div>
-    <textarea class="user-textarea">{{ homework.hwText }}</textarea>
+    <textarea class="user-textarea" [disabled]="location == 'student'">{{ homework.hwText }}</textarea>
     <div class="hwActions">
       <a
         *ngIf="parsing.isImage(homework.hwFile)"
