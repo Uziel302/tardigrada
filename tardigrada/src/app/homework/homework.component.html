@@ -60,6 +60,7 @@
         class="user-textarea"
         [class.purple-border]="responseSuccess[i]"
         [(ngModel)]="homework.chwText"
+        [disabled]="location == 'teacher'"
       ></textarea>
       <div class="response-buttons">
         <ng-container *ngFor="let file of parsing.parse(homework.chwFile)">
