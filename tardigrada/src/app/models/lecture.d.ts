@@ -17,6 +17,7 @@ export interface ILecture {
   maxAge: number;
   background: string;
   url: string;
+  zoom: string;
   stationeryText: string;
   stationeryFile: string;
   book: string;

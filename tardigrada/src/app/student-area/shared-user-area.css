@@ -225,6 +225,7 @@ textarea {
   align-items: center;
   justify-content: center;
   margin: 10px;
+  cursor: pointer;
 }
 
 #telegram-half {

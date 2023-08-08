@@ -33,6 +33,7 @@ export class ScheduleService {
     maxAge: 0,
     background: '',
     url: '',
+    zoom: '',
     stationeryText: '',
     stationeryFile: '',
     book: '',
