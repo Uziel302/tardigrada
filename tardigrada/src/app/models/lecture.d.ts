@@ -4,6 +4,7 @@ export interface ILecture {
   subtitle: string;
   teacher: string;
   teacherImage: string;
+  teacherId: number;
   day: number;
   hour: number;
   minutes: number;

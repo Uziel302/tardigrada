@@ -9,14 +9,18 @@
     <div class="input-label">Subtitle</div>
     <input [(ngModel)]="currentCourse.subtitle" />
   </div>
-  <div class="input-row">
-    <div class="input-label">Teacher name</div>
-    <input [(ngModel)]="currentCourse.teacher" />
-  </div>
-  <div class="input-row">
-    <div class="input-label">Teacher image</div>
-    <input [(ngModel)]="currentCourse.teacherImage" />
-  </div>
+  <select
+    style="font-family: Zhizn;"
+    (change)="onSelectTeacher($event)"
+  >
+    <option>выбрать</option>
+    <option
+      *ngFor="let teacher of teachersService.teachers"
+      [value]="teacher.userId"
+    >
+      {{ teacher.name }}
+    </option>
+  </select>
   <div class="input-row">
     <div class="input-label">First day</div>
     <input [(ngModel)]="currentCourse.day" />

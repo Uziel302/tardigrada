@@ -20,6 +20,7 @@ export class ScheduleService {
     subtitle: '',
     teacher: '',
     teacherImage: '',
+    teacherId: 0,
     day: 0,
     hour: 0,
     minutes: 0,

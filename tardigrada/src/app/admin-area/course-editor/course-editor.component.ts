@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ScheduleService } from 'src/app/schedule/schedule.service';
 import { ActivatedRoute } from '@angular/router';
 import { ILecture } from 'src/app/models/lecture';
+import { TeachersService } from 'src/app/teachers/teachers.service';
 
 @Component({
   selector: 'app-course-editor',
@@ -15,14 +16,17 @@ export class CourseEditorComponent implements OnInit {
   public currentCourse: ILecture;
   public success: boolean = false;
   public id: number = 0;
+
   constructor(
     public adminDataService: AdminDataService,
     private scheduleService: ScheduleService,
     private route: ActivatedRoute,
-
+    public teachersService: TeachersService,
   ) {}
 
   ngOnInit(): void {
+    this.teachersService.getTeachers();
+
     this.id = Number(this.route.snapshot.paramMap.get('id')) ?? 0;
     if (!this.adminDataService.lectures.length) {
       this.loadCourses();
@@ -58,5 +62,9 @@ export class CourseEditorComponent implements OnInit {
         this.success = true;
       }
     });
+  }
+
+  onSelectTeacher(event: any) {
+    this.currentCourse.teacherId = Number(event.target.value);
   }
 }
