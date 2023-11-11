@@ -19,9 +19,12 @@ import { ManagementComponent } from './management/management.component';
 import { CoursesComponent } from './lecture-page/courses/courses.component';
 import { CourseEditorComponent } from './admin-area/course-editor/course-editor.component';
 import { CoursesManagementComponent } from './admin-area/courses-management/courses-management.component';
+import { EnTeachersComponent } from './en-teachers/en-teachers.component';
+import { EnAboutComponent } from './en-about/en-about.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
+  { path: 'en/about', component: EnAboutComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'management', component: ManagementComponent },
@@ -40,6 +43,7 @@ const routes: Routes = [
   { path: 'new-student/:id', component: NewStudentComponent },
   { path: 'teacher', component: TeacherAreaComponent },
   { path: 'teachers', component: TeachersComponent },
+  { path: 'en/teachers', component: EnTeachersComponent },
   { path: '**', component: HomepageComponent },
 ];
 
