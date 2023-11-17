@@ -1,0 +1,90 @@
+#container {
+    background: rgb(210, 161, 160);
+    padding-bottom: 500px;
+    width: 100%;
+  }
+  
+  #title {
+    padding-top: 125px;
+    color: black;
+    font-size: 50px;
+    font-family: "Zhizn";
+    text-align: center;
+    line-height: 120%;
+  }
+  
+  #flower-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #flower {
+    transform: scaleX(-1)
+  }
+  
+  .even {
+    text-align: right;
+  }
+  
+  .teachers-container {
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .teacher-block {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px;
+  }
+  
+  .image-wrapper {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 238px;
+    height: 238px;
+    margin-bottom: 40px;
+  }
+  
+  .teacher-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 9px solid rgb(210, 161, 160);
+  }
+  
+  .teacher-name {
+    font-family: "Zhizn";
+    font-size: 30px;
+    margin-bottom: 40px;
+    line-height: 120%;
+    text-align: center;
+    white-space: pre-line;
+  }
+  
+  .teacher-bio {
+    margin-bottom: 10px;
+  }
+  
+  .teacher-lecture {
+    margin: 10px;
+    text-align: center;
+    font-family: "Zhizn";
+    white-space: pre-line;
+  }
+  
+  @media screen and (max-width: 800px) {
+    #flower {
+      margin-top: 60px;
+      height: 250px;
+    }
+  
+    #title {
+      font-size: 30px;
+    }
+  }
