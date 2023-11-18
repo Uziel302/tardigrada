@@ -136,6 +136,11 @@ body:after {
     right: 10px;
   }
 
+  .language-link {
+    right: 40px;
+    top: 25px
+  }
+
   #topMenuLine {
     top: 30px;
   }
