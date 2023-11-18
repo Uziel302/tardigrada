@@ -21,6 +21,7 @@ import { CourseEditorComponent } from './admin-area/course-editor/course-editor.
 import { CoursesManagementComponent } from './admin-area/courses-management/courses-management.component';
 import { EnTeachersComponent } from './en-teachers/en-teachers.component';
 import { EnAboutComponent } from './en-about/en-about.component';
+import { ManagementEnComponent } from './management-en/management-en.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'management', component: ManagementComponent },
+  { path: 'en/management', component: ManagementEnComponent },
   { path: 'donate', component: DonateComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'schedule', component: ScheduleComponent },

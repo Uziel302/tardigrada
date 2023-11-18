@@ -1,0 +1,114 @@
+#container {
+    background-color: #220315;
+    padding-bottom: 300px;
+    width: 100%;
+    color: white;
+  }
+  
+  #title {
+    padding-top: 125px;
+    font-size: 36px;
+    font-family: "Zhizn";
+    text-align: center;
+    line-height: 120%;
+  }
+  
+  #tiles-container {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .tiles-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 720px;
+    width: 1220px;
+    padding-bottom: 20px;
+  }
+  
+  .long, .wide {
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .long {
+    height: 670px;
+    width: 390px;
+  }
+  
+  .wide {
+    height: 290px;
+    width: 670px;
+    display: flex;
+  }
+  
+  .about, .title {
+    white-space: pre-line;
+  }
+  
+  .name {
+    font-family: "Zhizn";
+    font-size: 23px;
+  }
+  
+  .about {
+    font-weight: 300;
+    font-size: 16px;
+  }
+  
+  .title {
+    font-size: 16px;
+  }
+  
+  .image-wrapper {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 208px;
+    height: 208px;
+    margin-bottom: 40px;
+    margin-right: 35px;
+  }
+  
+  .manager-image {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 9px solid;
+  }
+  
+  .center-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  @media screen and (max-width: 1240px) {
+    .tiles-row {
+      display: block;
+      width: calc(100% - 100px);
+      height: auto;
+      min-height: 1410px;
+      padding-bottom: 0;
+    }
+  
+    .long, .wide {
+      height: auto;
+      min-height: 390px;
+      width: calc(100% - 50px);
+      display: flex;
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .long, .wide {
+      display: block;
+    }
+  }

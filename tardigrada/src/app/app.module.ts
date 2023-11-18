@@ -58,6 +58,7 @@ import { CourseEditorComponent } from './admin-area/course-editor/course-editor.
 import { CoursesManagementComponent } from './admin-area/courses-management/courses-management.component';
 import { EnAboutComponent } from './en-about/en-about.component';
 import { EnTeachersComponent } from './en-teachers/en-teachers.component';
+import { ManagementEnComponent } from './management-en/management-en.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { EnTeachersComponent } from './en-teachers/en-teachers.component';
     CoursesManagementComponent,
     EnAboutComponent,
     EnTeachersComponent,
+    ManagementEnComponent,
   ],
   imports: [
     BrowserModule,
