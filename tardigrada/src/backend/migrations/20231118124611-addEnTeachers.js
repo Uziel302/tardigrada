@@ -29,7 +29,7 @@ exports.up = function (db, callback) {
     "enAbout",
     {
       type: "string",
-      length: 100,
+      length: 2000,
     },
     callback
   );
