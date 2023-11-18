@@ -10,6 +10,7 @@ export class EnAboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    sessionStorage.setItem('isEnglish', 'true');
   }
 
 }

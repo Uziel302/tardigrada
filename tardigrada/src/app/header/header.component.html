@@ -1,7 +1,9 @@
-<div id="toggle-nav" (click)="toggleMenu()">
-  <div id="topMenuLine" [class.tilted]="tilted" class=""></div>
-  <div id="bottomMenuLine" [class.tilted]="tilted" class=""></div>
-</div>
+  <div id="toggle-nav" (click)="toggleMenu()">
+    <div id="topMenuLine" [class.tilted]="tilted" class=""></div>
+    <div id="bottomMenuLine" [class.tilted]="tilted" class=""></div>
+  </div>
+<a *ngIf="!isEnglish" class="language-link" routerLink="/en/about" (click)="isEnglish = !isEnglish">EN</a>
+<a *ngIf="isEnglish" class="language-link" routerLink="/" (click)="isEnglish = !isEnglish">RU</a>
 <div *ngIf="loggedIn && router.url !== '/student' && router.url !== '/teacher' && (loginService.currentChild || loginService.teacher)">
   <div id="profile">
     <img id="profile-image" [src]="(loginService.isStudent ? loginService.currentChild.profile : loginService.teacher.profile) ?? '/assets/images/profile-default.jpg'" [routerLink]="loginService.isStudent ? '/student' : '/teacher'">
@@ -10,7 +12,7 @@
 <div id="menuScreen" [class.hidden]="hidden">
   <img id="tent" src="/assets/images/tent.png" />
   <img id="muscari" src="/assets/images/muscari.png" />
-  <div id="menu-box">
+  <div id="menu-box" *ngIf="!isEnglish">
     <a class="menu-item" routerLink="/login" (click)="toggleMenu()">Вход</a>
     <a class="menu-item" routerLink="/about" (click)="toggleMenu()">о школе</a>
     <a class="menu-item" routerLink="/schedule" (click)="toggleMenu()"
@@ -29,6 +31,14 @@
     >
     <a class="menu-item" routerLink="/" (click)="toggleMenu()"
       >на главную</a
+    >
+  </div>
+  <div id="menu-box" *ngIf="isEnglish">
+    <a class="menu-item" routerLink="/en/about" (click)="toggleMenu()">About</a>
+    <a class="menu-item" routerLink="/en/management" (click)="toggleMenu()"
+    >Our team</a>
+    <a class="menu-item" routerLink="/en/teachers" (click)="toggleMenu()"
+      >Our teachers</a
     >
   </div>
 </div>

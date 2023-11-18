@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   public tilted: boolean = false;
   public hidden: boolean = true;
   public loggedIn: boolean = false;
+  public isEnglish: boolean = false;
 
   constructor(
     public loginService: LoginService,
@@ -18,6 +19,8 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.isEnglish = sessionStorage.getItem('isEnglish') == 'true';
+
     this.loginService.getAuthStatusListener().subscribe(loggedIn => {
       setTimeout(() => { this.loggedIn = loggedIn; }, 300)
     });

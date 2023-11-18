@@ -109,6 +109,16 @@ body:after {
   height: 60px;
 }
 
+.language-link {
+  position: fixed;
+  right: 100px;
+  height: 2px;
+  width: 48px;
+  z-index: 121;
+  top: 35px;
+  color: white;
+}
+
 #topMenuLine.tilted {
   transition: 0.5s;
   transform: translateY(3px) rotate(45deg);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
   config: any;
   fullpage_api: any;
 
@@ -23,6 +23,10 @@ export class HomepageComponent {
         console.log(origin.index);
       },
     };
+  }
+
+  ngOnInit(){
+    sessionStorage.setItem('isEnglish', 'false');
   }
 
   getRef(fullPageRef: any) {
