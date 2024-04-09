@@ -131,14 +131,24 @@
   }
 
   .right-part {
-    padding: 10px;
+    padding: 0;
+    margin-top: 50px;
   }
 
   .left-part {
-    padding: 10px;
+    padding: 0;
+    margin-top: 50px;
   }
 
   #group {
     width: 90%;
+  }
+
+  #gladiolus {
+    display: none;
+  }
+
+  .to-right-text {
+    font-size: 20px;
   }
 }
