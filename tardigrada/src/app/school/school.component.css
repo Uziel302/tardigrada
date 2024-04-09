@@ -137,4 +137,8 @@
   .left-part {
     padding: 10px;
   }
+
+  #group {
+    width: 90%;
+  }
 }
