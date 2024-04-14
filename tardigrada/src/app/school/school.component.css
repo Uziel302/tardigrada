@@ -40,10 +40,6 @@
   margin-bottom: 150px;
 }
 
-.title-www {
-  margin-bottom: 50px;
-}
-
 .right-part,
 .left-part {
   width: 100%;
@@ -126,10 +122,6 @@
   text-align: right;
 }
 
-.w-100 {
-  width: 100%;
-}
-
 .program {
   font-size: 24px;
 }
@@ -145,8 +137,16 @@
 }
 
 .secondary-title {
+  width: 100%;
   margin-top: 70px;
+  margin-bottom: 50px;
   font-size: 42px;
+  text-align: left;
+}
+
+
+.second-block .secondary-title {
+  text-align: right;
 }
 
 @media screen and (max-width: 767px) {
