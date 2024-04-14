@@ -94,7 +94,6 @@
   font-size: 54px;
 }
 
-
 .button-wrapper {
   border: 1px solid white;
   border-radius: 50%;
@@ -121,7 +120,7 @@
   color: black;
 }
 
-@media(hover: hover) {
+@media (hover: hover) {
   .button-under-schedule:hover {
     background: unset;
     color: white;
@@ -153,7 +152,6 @@
   text-align: left;
 }
 
-
 .second-block .secondary-title {
   text-align: right;
 }
@@ -164,20 +162,36 @@
   }
 
   .second-title {
-    font-size: 28px;
+    font-size: 26px;
+  }
+
+  .secondary-title {
+    font-size: 30px;
   }
 
   .block {
     flex-direction: column;
   }
 
-  .right-part {
+  .second-block .secondary-title, .align-right {
+    text-align: left;
+  }
+
+  .numbers {
+    font-size: 18px;
+  }
+
+  .right-part,
+  .left-part {
+    font-size: 18px;
     padding: 0;
+  }
+
+  .right-part {
     margin-top: 50px;
   }
 
   .left-part {
-    padding: 0;
     margin-top: 50px;
   }
 
@@ -190,15 +204,28 @@
   }
 
   .to-right-text {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .inner {
-    padding: 10px;
+    padding: 30px;
   }
 
   .center-block {
     margin: 0;
-    width: 100%;
+  }
+
+  .center-block-text {
+    width: unset;
+  }
+
+  .button-wrapper {
+    height: 180px;
+    width: 180px;
+  }
+
+  .button-under-schedule {
+    width: 152px;
+    height: 152px;
   }
 }
