@@ -64,7 +64,7 @@
   width: 500px;
 }
 
-#gladiolus {
+.gladiolus {
   height: 1500px;
   transform: rotate(-5deg);
   margin-bottom: -300px;
@@ -207,10 +207,6 @@
     margin-top: 50px;
   }
 
-  #gladiolus {
-    display: none;
-  }
-
   .to-right-text {
     font-size: 18px;
   }
@@ -252,5 +248,18 @@
 
   .desktop-only {
     display: none;
+  }
+
+  .gladiolus {
+    height: 300px;
+    transform: rotate(-35deg);
+    margin-bottom: 0;
+  }
+
+  .gladiolus2 {
+    height: 300px;
+    transform: rotate(-45deg);
+    margin-bottom: 0;
+    margin-top: -220px;
   }
 }
