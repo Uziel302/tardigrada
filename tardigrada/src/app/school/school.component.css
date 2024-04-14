@@ -156,6 +156,10 @@
   text-align: right;
 }
 
+.mobile-only {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   .main-title {
     font-size: 46px;
@@ -163,6 +167,8 @@
 
   .second-title {
     font-size: 26px;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
   .secondary-title {
@@ -195,6 +201,10 @@
 
   .group, .animal-row {
     width: 90%;
+  }
+
+  .animal-row {
+    margin-top: 50px;
   }
 
   #gladiolus {
@@ -234,5 +244,13 @@
 
   .button-wrapper {
     margin-top: 50px;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
   }
 }
