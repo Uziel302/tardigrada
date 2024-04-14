@@ -196,4 +196,9 @@
   .inner {
     padding: 10px;
   }
+
+  .center-block {
+    margin: 0;
+    width: 100%;
+  }
 }
