@@ -60,7 +60,8 @@
   padding-right: 70px;
 }
 
-.group, .animal-row {
+.group,
+.animal-row {
   width: 500px;
 }
 
@@ -160,6 +161,14 @@
   display: none;
 }
 
+#animal {
+  width: 100px;
+  transform: rotate(45deg);
+  margin-bottom: -15px;
+  margin-right: -80px;
+  margin-top: 50px;
+}
+
 @media screen and (max-width: 767px) {
   .main-title {
     font-size: 46px;
@@ -199,7 +208,8 @@
     padding: 0;
   }
 
-  .group, .animal-row {
+  .group,
+  .animal-row {
     width: 90%;
   }
 
@@ -224,7 +234,8 @@
     font-size: 18px;
   }
 
-  .prices, .price {
+  .prices,
+  .price {
     font-size: 20px;
   }
 
@@ -236,10 +247,6 @@
   .button-under-schedule {
     width: 152px;
     height: 152px;
-  }
-
-  .button-wrapper {
-    margin-top: 50px;
   }
 
   .mobile-only {
@@ -261,5 +268,9 @@
     transform: rotate(-45deg);
     margin-bottom: 0;
     margin-top: -220px;
+  }
+
+  #animal {
+    width: 50px;
   }
 }
