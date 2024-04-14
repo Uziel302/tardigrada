@@ -231,4 +231,8 @@
     width: 152px;
     height: 152px;
   }
+
+  .button-wrapper {
+    margin-top: 50px;
+  }
 }
