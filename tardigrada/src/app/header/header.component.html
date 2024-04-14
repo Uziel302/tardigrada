@@ -1,12 +1,40 @@
-  <div id="toggle-nav" (click)="toggleMenu()">
-    <div id="topMenuLine" [class.tilted]="tilted" class=""></div>
-    <div id="bottomMenuLine" [class.tilted]="tilted" class=""></div>
-  </div>
-<a *ngIf="!isEnglish" class="language-link" routerLink="/en/about" (click)="isEnglish = !isEnglish">EN</a>
-<a *ngIf="isEnglish" class="language-link" routerLink="/" (click)="isEnglish = !isEnglish">RU</a>
-<div *ngIf="loggedIn && router.url !== '/student' && router.url !== '/teacher' && (loginService.currentChild || loginService.teacher)">
+<div id="toggle-nav" (click)="toggleMenu()">
+  <div id="topMenuLine" [class.tilted]="tilted" class=""></div>
+  <div id="bottomMenuLine" [class.tilted]="tilted" class=""></div>
+</div>
+<a
+  *ngIf="!isEnglish"
+  class="language-link"
+  routerLink="/en/about"
+  (click)="isEnglish = !isEnglish"
+  >EN</a
+>
+<a
+  *ngIf="isEnglish"
+  class="language-link"
+  routerLink="/"
+  (click)="isEnglish = !isEnglish"
+  >RU</a
+>
+<div
+  *ngIf="
+    loggedIn &&
+    router.url !== '/student' &&
+    router.url !== '/teacher' &&
+    (loginService.currentChild || loginService.teacher)
+  "
+>
   <div id="profile">
-    <img id="profile-image" [src]="(loginService.isStudent ? loginService.currentChild.profile : loginService.teacher.profile) ?? '/assets/images/profile-default.jpg'" [routerLink]="loginService.isStudent ? '/student' : '/teacher'">
+    <img
+      id="profile-image"
+      [src]="
+        (loginService.isStudent
+          ? loginService.currentChild.profile
+          : loginService.teacher.profile) ??
+        '/assets/images/profile-default.jpg'
+      "
+      [routerLink]="loginService.isStudent ? '/student' : '/teacher'"
+    />
   </div>
 </div>
 <div id="menuScreen" [class.hidden]="hidden">
@@ -15,29 +43,31 @@
   <div id="menu-box" *ngIf="!isEnglish">
     <a class="menu-item" routerLink="/login" (click)="toggleMenu()">Вход</a>
     <a class="menu-item" routerLink="/about" (click)="toggleMenu()">о школе</a>
-    <a class="menu-item" routerLink="/school" (click)="toggleMenu()">Набор 2024-25</a>
+    <a class="menu-item" routerLink="/school" (click)="toggleMenu()"
+      >Набор 2024-25</a
+    >
+    <a class="menu-item" routerLink="/teachers" (click)="toggleMenu()"
+      >наши учителя</a
+    >
+    <a class="menu-item" routerLink="/management" (click)="toggleMenu()"
+      >наша команда</a
+    >
     <a class="menu-item" routerLink="/schedule" (click)="toggleMenu()"
       >расписание</a
     >
     <a class="menu-item" routerLink="/donation" (click)="toggleMenu()"
       >помочь</a
     >
-    <a class="menu-item" routerLink="/management" (click)="toggleMenu()"
-    >наша команда</a>
     <a class="menu-item" routerLink="/contact" (click)="toggleMenu()"
       >контакты</a
     >
-    <a class="menu-item" routerLink="/teachers" (click)="toggleMenu()"
-      >наши учителя</a
-    >
-    <a class="menu-item" routerLink="/" (click)="toggleMenu()"
-      >на главную</a
-    >
+    <a class="menu-item" routerLink="/" (click)="toggleMenu()">на главную</a>
   </div>
   <div id="menu-box" *ngIf="isEnglish">
     <a class="menu-item" routerLink="/en/about" (click)="toggleMenu()">About</a>
     <a class="menu-item" routerLink="/en/management" (click)="toggleMenu()"
-    >Our team</a>
+      >Our team</a
+    >
     <a class="menu-item" routerLink="/en/teachers" (click)="toggleMenu()"
       >Our teachers</a
     >
