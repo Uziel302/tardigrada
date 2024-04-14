@@ -60,7 +60,7 @@
   padding-right: 70px;
 }
 
-.group {
+.group, .animal-row {
   width: 500px;
 }
 
@@ -171,13 +171,19 @@
 
   .block {
     flex-direction: column;
+    margin-bottom: 0;
   }
 
-  .second-block .secondary-title, .align-right {
+  .second-block .secondary-title,
+  .align-right {
     text-align: left;
   }
 
   .numbers {
+    font-size: 18px;
+  }
+
+  .program {
     font-size: 18px;
   }
 
@@ -187,15 +193,7 @@
     padding: 0;
   }
 
-  .right-part {
-    margin-top: 50px;
-  }
-
-  .left-part {
-    margin-top: 50px;
-  }
-
-  .group {
+  .group, .animal-row {
     width: 90%;
   }
 
@@ -217,6 +215,11 @@
 
   .center-block-text {
     width: unset;
+    font-size: 18px;
+  }
+
+  .prices, .price {
+    font-size: 20px;
   }
 
   .button-wrapper {
