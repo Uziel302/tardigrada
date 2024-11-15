@@ -22,7 +22,6 @@ import { CoursesManagementComponent } from './admin-area/courses-management/cour
 import { EnTeachersComponent } from './en-teachers/en-teachers.component';
 import { EnAboutComponent } from './en-about/en-about.component';
 import { ManagementEnComponent } from './management-en/management-en.component';
-import { SchoolComponent } from './school/school.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -34,7 +33,6 @@ const routes: Routes = [
   { path: 'donate', component: DonateComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'schedule', component: ScheduleComponent },
-  { path: 'school', component: SchoolComponent },
   { path: 'login', component: LoginScreenComponent },
   { path: 'registration', component: LoginScreenComponent },
   { path: 'student', component: StudentAreaComponent },

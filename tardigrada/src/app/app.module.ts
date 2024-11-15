@@ -59,7 +59,6 @@ import { CoursesManagementComponent } from './admin-area/courses-management/cour
 import { EnAboutComponent } from './en-about/en-about.component';
 import { EnTeachersComponent } from './en-teachers/en-teachers.component';
 import { ManagementEnComponent } from './management-en/management-en.component';
-import { SchoolComponent } from './school/school.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +98,6 @@ import { SchoolComponent } from './school/school.component';
     EnAboutComponent,
     EnTeachersComponent,
     ManagementEnComponent,
-    SchoolComponent,
   ],
   imports: [
     BrowserModule,
